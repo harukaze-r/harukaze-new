@@ -619,6 +619,9 @@ body {
     flex-direction: row;
     gap: 0;
     z-index: 9999;
+    /* モバイルでは常時表示（スクロール不要） */
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .float-side-btn {
