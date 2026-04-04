@@ -286,7 +286,7 @@ ul {
   border-right: 2px solid rgba(255,255,255,0.55);
   border-bottom: 2px solid rgba(255,255,255,0.55);
   transform: rotate(45deg);
-  margin: -8px auto -8px;
+  margin: -18px auto -18px;
   animation: nav-arrow-bounce 1.4s ease-in-out infinite;
 }
 
