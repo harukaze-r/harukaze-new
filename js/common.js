@@ -65,6 +65,8 @@
     overlay.className = 'mobile-nav-overlay';
     overlay.id = 'mobileNavOverlay';
     overlay.innerHTML = `
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="メニューを閉じる"><span></span><span></span></button>
+      <a href="/">ホーム</a>
       <a href="about.html">メッセージ</a>
       <a href="service.html">サービス・価格</a>
       <a href="flow.html">成婚までの流れ</a>
@@ -156,6 +158,13 @@
     // ハンバーガー（HTMLに直書きされている場合のバインド）
     const btn = document.getElementById('hamburgerBtn');
     const ovl = document.getElementById('mobileNavOverlay');
+
+    function closeNav() {
+      ovl.classList.remove('open');
+      btn.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
     if (btn && ovl && !btn._bound) {
       btn._bound = true;
       btn.addEventListener('click', function () {
@@ -164,12 +173,13 @@
         document.body.style.overflow = isOpen ? 'hidden' : '';
       });
       ovl.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', function () {
-          ovl.classList.remove('open');
-          btn.classList.remove('open');
-          document.body.style.overflow = '';
-        });
+        link.addEventListener('click', closeNav);
       });
+      // 閉じるボタン
+      const closeBtn = document.getElementById('mobileNavClose');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closeNav);
+      }
     }
 
     injectFloatingButtons();

@@ -200,7 +200,9 @@ ul {
   display: none;
   position: fixed;
   inset: 0;
-  background: var(--color-navy);
+  background: rgba(30, 58, 95, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   z-index: 999;
   flex-direction: column;
   align-items: center;
@@ -210,6 +212,37 @@ ul {
 
 .mobile-nav-overlay.open {
   display: flex;
+}
+
+/* 閉じるボタン */
+.mobile-nav-close {
+  position: absolute;
+  top: 18px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.mobile-nav-close span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+.mobile-nav-close span:nth-child(1) {
+  transform: translateY(3.5px) rotate(45deg);
+}
+
+.mobile-nav-close span:nth-child(2) {
+  transform: translateY(-3.5px) rotate(-45deg);
 }
 
 .mobile-nav-overlay a {
