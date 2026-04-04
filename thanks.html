@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>送信完了｜結婚相談所ハルカゼ</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" type="image/png" href="newimages/使用ロゴ.jpeg">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal: #4a6fa5;
+  --teal-dark: #2e4a7a;
+  --teal-pale: #e8edf8;
+  --pink: #e8a0a0;
+  --pink-dark: #d4697a;
+  --pink-pale: #fdf0f0;
+  --bg: #ffffff;
+  --white: #ffffff;
+  --deep: #2e4a7a;
+  --mid: #333333;
+  --light: #888888;
+  --border: #e8e4f0;
+  --line-green: #06C755;
+  --line-green-dark: #05A847;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--deep);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+}
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+@keyframes checkDraw {
+  from { stroke-dashoffset: 60; }
+  to   { stroke-dashoffset: 0; }
+}
+
+.thanks-card {
+  background: white;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 40px rgba(74,111,165,0.1);
+  padding: 60px 48px;
+  max-width: 560px;
+  width: 100%;
+  text-align: center;
+  animation: fadeUp 0.8s ease forwards 0.2s;
+  opacity: 0;
+}
+
+.check-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 28px;
+}
+.check-icon circle {
+  fill: none;
+  stroke: var(--teal-pale);
+  stroke-width: 3;
+}
+.check-icon path {
+  fill: none;
+  stroke: var(--teal);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 60;
+  stroke-dashoffset: 60;
+  animation: checkDraw 0.6s ease forwards 0.8s;
+}
+
+.thanks-eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  color: var(--teal);
+  display: block;
+  margin-bottom: 16px;
+}
+
+.thanks-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(22px, 3.5vw, 28px);
+  font-weight: 300;
+  color: var(--deep);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.thanks-body {
+  font-size: 13px;
+  color: var(--mid);
+  line-height: 2.2;
+  margin-bottom: 36px;
+  letter-spacing: 0.04em;
+}
+
+.thanks-note {
+  background: rgba(74,111,165,0.06);
+  border-radius: 10px;
+  padding: 16px 20px;
+  font-size: 12px;
+  color: var(--mid);
+  line-height: 2;
+  margin-bottom: 36px;
+  text-align: left;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+  color: white;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  padding: 15px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(74,111,165,0.28);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-back:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(74,111,165,0.36);
+}
+
+@media (max-width: 600px) {
+  .thanks-card { padding: 40px 24px; }
+}
+</style>
+</head>
+<body>
+
+<div class="thanks-card">
+  <svg class="check-icon" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="36" cy="36" r="33"/>
+    <path d="M22 37l10 10 18-20"/>
+  </svg>
+
+  <span class="thanks-eyebrow">Thank you</span>
+  <h1 class="thanks-title">
+    お問い合わせを<br>受け付けました
+  </h1>
+  <p class="thanks-body">
+    この度はお問い合わせいただき、ありがとうございます。<br>
+    ご入力いただいたメールアドレス宛に<br>
+    確認メールをお送りいたします。
+  </p>
+
+  <div class="thanks-note">
+    ・通常2〜3営業日以内にご連絡いたします。<br>
+    ・確認メールが届かない場合は、迷惑メールフォルダをご確認ください。<br>
+    ・お急ぎの場合は LINEよりご連絡ください。
+  </div>
+
+  <a href="index.html" class="btn-back">
+    トップページへ戻る
+  </a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>サービス・料金 | 結婚相談所ハルカゼ</title>
+<link rel="icon" href="newimages/使用ロゴ.jpeg">
+<meta property="og:image" content="newimages/h. (1).png">
+<meta property="og:title" content="サービス・料金 | 結婚相談所ハルカゼ">
+<meta property="og:description" content="全プラン月額・税込。お見合い料無料。IBJ正規加盟店。まずは無料相談でご提案します。">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="css/common.css">
+<style>
+/* ============================================================
+   service.html ページ固有スタイル
+   ============================================================ */
+
+/* ── ページヒーロー ── */
+.page-hero {
+  background: var(--color-navy);
+  padding: 80px 24px 72px;
+  text-align: center;
+  color: #fff;
+}
+.page-hero-label {
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-sky);
+  margin-bottom: 16px;
+}
+.page-hero-title {
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+/* ── インフォバー ── */
+.info-band {
+  background: var(--color-ice);
+  border-top: 1px solid rgba(14,165,233,0.2);
+  border-bottom: 1px solid rgba(14,165,233,0.2);
+  padding: 16px 24px;
+}
+.info-band-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.info-band-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--color-navy);
+  letter-spacing: 0.08em;
+}
+.info-band-item .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-sky);
+  flex-shrink: 0;
+}
+
+/* ── プランカード ── */
+.plan-section-wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.price-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.price-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 32px 28px;
+  border: 1.5px solid var(--color-ice);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.price-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(30,58,95,0.1);
+}
+.price-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(to right, var(--color-navy), var(--color-sky));
+}
+.price-card.popular {
+  border-color: rgba(14,165,233,0.35);
+  border-width: 2px;
+}
+.price-card.popular::before {
+  background: linear-gradient(to right, var(--color-sky), var(--color-pink));
+}
+.popular-badge {
+  position: absolute;
+  top: 14px; right: 14px;
+  background: var(--color-sky);
+  color: #fff;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  padding: 4px 12px;
+  border-radius: 50px;
+}
+.plan-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: #aaa;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+.plan-name {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-navy);
+  margin-bottom: 18px;
+}
+.plan-amount-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+.plan-amount {
+  font-size: 48px;
+  font-weight: 400;
+  color: var(--color-navy);
+  line-height: 1;
+  font-family: var(--font-display);
+}
+.price-card.popular .plan-amount { color: var(--color-sky); }
+.plan-amount-unit { font-size: 14px; color: #888; }
+.plan-tax { font-size: 11px; color: #aaa; margin-bottom: 16px; }
+
+.omiai-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-ice);
+  border: 1px solid rgba(14,165,233,0.25);
+  border-radius: 8px;
+  padding: 6px 14px;
+  margin-bottom: 16px;
+}
+.omiai-tag span { font-size: 11px; color: var(--color-sky); font-weight: 500; letter-spacing: 0.1em; }
+
+.plan-initial {
+  background: #fafbfc;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+}
+.plan-initial-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--color-ice);
+}
+.plan-initial-row:last-child { border-bottom: none; }
+.plan-initial-label { color: #777; }
+.plan-initial-val { font-weight: 500; color: var(--color-navy); }
+
+.plan-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 22px;
+}
+.plan-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.5;
+}
+.fi-sky { color: var(--color-sky); font-weight: 700; flex-shrink: 0; }
+.fi-pink { color: var(--color-pink); font-weight: 700; flex-shrink: 0; }
+.feat-sky { color: var(--color-sky) !important; font-weight: 500; }
+
+.plan-cta-btn {
+  display: block;
+  text-align: center;
+  background: var(--color-navy);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  padding: 14px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.plan-cta-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+.price-card.popular .plan-cta-btn { background: var(--color-sky); }
+
+/* ── LABチケットカード ── */
+.lab-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 32px 36px;
+  border: 1.5px solid rgba(14,165,233,0.25);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #fff 70%, var(--color-ice));
+}
+.lab-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(to right, var(--color-sky), var(--color-pink), var(--color-navy));
+}
+.lab-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.lab-tag {
+  display: inline-block;
+  background: var(--color-ice);
+  color: var(--color-sky);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  padding: 4px 12px;
+  border-radius: 50px;
+  margin-bottom: 8px;
+  border: 1px solid rgba(14,165,233,0.2);
+}
+.lab-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-navy);
+}
+.lab-title span { color: var(--color-sky); }
+.lab-subtitle { font-size: 12px; color: #777; margin-top: 6px; }
+.lab-paypay {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-ice);
+  border: 1px solid rgba(14,165,233,0.2);
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 11px;
+  color: var(--color-sky);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.lab-tickets {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.lab-ticket {
+  border: 1.5px solid var(--color-ice);
+  border-radius: 14px;
+  padding: 18px 14px;
+  text-align: center;
+  background: #fff;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.lab-ticket:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(14,165,233,0.1); }
+.ticket-name { font-size: 11px; letter-spacing: 0.08em; color: #777; margin-bottom: 10px; line-height: 1.5; }
+.ticket-price {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--color-navy);
+  line-height: 1;
+}
+.ticket-price span { font-size: 13px; font-family: inherit; }
+.ticket-per { font-size: 10px; color: #aaa; margin: 4px 0 8px; }
+.ticket-discount {
+  display: inline-block;
+  background: var(--color-ice);
+  color: var(--color-sky);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  padding: 2px 8px;
+  border-radius: 50px;
+  border: 1px solid rgba(14,165,233,0.2);
+}
+.lab-footer {
+  margin-top: 18px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 11px;
+  color: #888;
+}
+.lab-footer span::before { content: '✦ '; color: var(--color-sky); }
+
+/* ── 4つのサポート ── */
+.supports-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.support-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 22px 16px;
+  border: 1px solid var(--color-ice);
+  position: relative;
+  overflow: hidden;
+}
+.support-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+.support-card.s01::before { background: linear-gradient(to right, var(--color-navy), var(--color-sky)); }
+.support-card.s02::before { background: linear-gradient(to right, var(--color-pink), #ffaacc); }
+.support-card.s03::before { background: linear-gradient(to right, #c9a87a, #e8b84b); }
+.support-card.s04::before { background: linear-gradient(to right, var(--color-sky), var(--color-navy)); }
+.support-num {
+  font-family: var(--font-display);
+  font-size: 32px;
+  color: var(--color-ice);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.support-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-navy);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+.support-plan-badge {
+  display: inline-block;
+  background: rgba(255,143,171,0.12);
+  color: var(--color-pink);
+  font-size: 9px;
+  padding: 2px 8px;
+  border-radius: 50px;
+  margin-bottom: 6px;
+  letter-spacing: 0.1em;
+}
+.support-body {
+  font-size: 11px;
+  color: #666;
+  line-height: 1.9;
+}
+.support-note {
+  margin-top: 10px;
+  font-size: 10px;
+  border-radius: 6px;
+  padding: 8px 10px;
+  line-height: 1.7;
+}
+.support-note.n-sky { color: var(--color-navy); background: var(--color-ice); }
+.support-note.n-pink { color: #c0506a; background: rgba(255,143,171,0.1); }
+.support-note.n-gold { color: #8a6200; background: #fdfae8; border: 1px solid rgba(201,150,42,0.15); }
+
+/* ── 他社比較 ── */
+.compare-wrap { overflow-x: auto; }
+.compare-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--color-ice);
+  min-width: 580px;
+}
+.compare-table th {
+  padding: 14px 12px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-align: center;
+  line-height: 1.5;
+}
+.compare-table td {
+  padding: 12px 12px;
+  font-size: 12px;
+  text-align: center;
+  border-top: 1px solid var(--color-ice);
+  line-height: 1.5;
+}
+.compare-table td:first-child {
+  text-align: left;
+  color: #777;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  background: #fafbfc;
+}
+.th-other { background: #f5f5f5; color: #888; }
+.th-b { background: #f2f6fb; color: #6080a0; }
+.th-hz-light { background: linear-gradient(135deg, var(--color-ice), rgba(14,165,233,0.08)); color: var(--color-navy); }
+.th-hz-personal { background: linear-gradient(135deg, rgba(255,143,171,0.12), rgba(14,165,233,0.1)); color: var(--color-sky); position: relative; }
+.best-badge {
+  position: absolute;
+  top: -11px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-sky);
+  color: #fff;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  padding: 3px 10px;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+.td-other { background: #fff; color: #aaa; }
+.td-b { background: #fafcff; color: #7090b0; }
+.td-hz-light { background: rgba(14,165,233,0.04); color: var(--color-navy); font-weight: 500; }
+.td-hz-personal { background: rgba(255,143,171,0.06); color: var(--color-sky); font-weight: 500; }
+.check-sky { color: var(--color-sky); font-weight: 600; }
+.check-pink { color: var(--color-pink); font-weight: 600; }
+.cross { color: #ddd; }
+.zero-sky { color: var(--color-sky); font-weight: 600; }
+.compare-footnote { font-size: 10px; color: #aaa; margin-top: 10px; text-align: right; }
+
+/* ── LINE ボックス ── */
+.line-box-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.line-box {
+  background: #fff;
+  border-radius: 18px;
+  border: 1px solid rgba(14,165,233,0.2);
+  padding: 26px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 20px rgba(14,165,233,0.06);
+  position: relative;
+  overflow: hidden;
+}
+.line-box::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, var(--color-sky), #06C755);
+}
+.line-box-icon {
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  background: #06C755;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.line-box-text { flex: 1; }
+.line-box-text strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-navy);
+  margin-bottom: 6px;
+}
+.line-box-text p { font-size: 12px; line-height: 2; color: #666; }
+.line-box-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #06C755;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  padding: 12px 22px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(6,199,85,0.3);
+  transition: transform 0.25s;
+  flex-shrink: 0;
+}
+.line-box-btn:hover { transform: translateY(-2px); }
+
+/* ── CTA ── */
+.cta-section {
+  background: linear-gradient(135deg, var(--color-ice) 0%, rgba(255,143,171,0.12) 100%);
+  padding: 80px 24px;
+  text-align: center;
+}
+.cta-title { font-size: clamp(22px, 4vw, 36px); font-weight: 500; color: var(--color-navy); margin-bottom: 12px; }
+.cta-free-note { font-size: 13px; font-weight: 500; letter-spacing: 0.15em; color: var(--color-sky); margin-bottom: 28px; }
+.cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* ── responsive ── */
+@media (max-width: 768px) {
+  .price-grid { grid-template-columns: 1fr; }
+  .supports-grid { grid-template-columns: 1fr 1fr; }
+  .lab-tickets { grid-template-columns: 1fr 1fr; }
+  .lab-header { flex-direction: column; }
+  .line-box { flex-direction: column; text-align: center; }
+}
+@media (max-width: 480px) {
+  .supports-grid { grid-template-columns: 1fr; }
+  .lab-tickets { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ナビゲーション -->
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-sub">IBJ正規加盟店</span>
+    <span class="nav-logo-main">結婚相談所ハルカゼ</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html">メッセージ</a></li>
+    <li><a href="service.html">サービス・価格</a></li>
+    <li><a href="flow.html">成婚までの流れ</a></li>
+    <li><a href="lab.html">ハルカゼLAB</a></li>
+    <li><a href="faq.html">よくある質問</a></li>
+    <li><a href="blog.html">ブログ</a></li>
+    <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで相談</a></li>
+  </ul>
+  <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- モバイルオーバーレイ -->
+<div class="mobile-nav-overlay" id="mobileNavOverlay">
+  <a href="about.html">メッセージ</a>
+  <a href="service.html">サービス・価格</a>
+  <a href="flow.html">成婚までの流れ</a>
+  <a href="lab.html">ハルカゼLAB</a>
+  <a href="faq.html">よくある質問</a>
+  <a href="blog.html">ブログ</a>
+  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで相談</a>
+
+  <hr class="mobile-nav-divider">
+  <span class="mobile-nav-girls-label">女性の方はこちら</span>
+  <a href="girls.html" class="mobile-nav-girls">女子の婚活 Girls LAB</a>
+</div>
+
+<main>
+
+  <!-- ページヒーロー -->
+  <section class="page-hero">
+    <p class="page-hero-label">Service &amp; Price</p>
+    <h1 class="page-hero-title">サービス・料金</h1>
+  </section>
+
+  <!-- インフォバー -->
+  <div class="info-band">
+    <div class="info-band-inner">
+      <div class="info-band-item"><span class="dot"></span>全プラン 月額・税込表示</div>
+      <div class="info-band-item"><span class="dot"></span>お見合い料 全プラン無料</div>
+      <div class="info-band-item"><span class="dot"></span>IBJ正規加盟店</div>
+      <div class="info-band-item"><span class="dot"></span>少人数制・手厚いサポート</div>
+    </div>
+  </div>
+
+  <!-- プラン料金 -->
+  <section class="section" id="price">
+    <div class="plan-section-wrap">
+
+      <div style="text-align:center; margin-bottom:40px;">
+        <p class="section-label">Plan</p>
+        <h2 class="section-title">ハルカゼの料金プラン</h2>
+      </div>
+
+      <div class="price-grid">
+
+        <!-- ライトプラン -->
+        <div class="price-card">
+          <div class="plan-eyebrow">LIGHT PLAN</div>
+          <div class="plan-name">ライトプラン</div>
+          <div class="plan-amount-wrap">
+            <span class="plan-amount">13,800</span>
+            <span class="plan-amount-unit">円/月</span>
+          </div>
+          <p class="plan-tax">税込・月額払い</p>
+          <div class="omiai-tag">
+            <span>✦</span>
+            <span>お見合い料 無料</span>
+          </div>
+          <div class="plan-initial">
+            <div class="plan-initial-row">
+              <span class="plan-initial-label">入会金</span>
+              <span class="plan-initial-val">33,000円</span>
+            </div>
+            <div class="plan-initial-row">
+              <span class="plan-initial-label">登録料</span>
+              <span class="plan-initial-val">22,000円</span>
+            </div>
+            <div class="plan-initial-row">
+              <span class="plan-initial-label">成婚料</span>
+              <span class="plan-initial-val">165,000円</span>
+            </div>
+          </div>
+          <ul class="plan-features">
+            <li><span class="fi-sky">✓</span> お見合い申し込み 月100件</li>
+            <li><span class="fi-sky">✓</span> コンシェルジュよりご紹介</li>
+            <li><span class="fi-sky">✓</span> お見合い後フィードバック</li>
+            <li><span class="fi-sky">✓</span> 定期面談 年6回</li>
+            <li><span class="fi-sky">✓</span> プロフィール作成</li>
+          </ul>
+          <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="plan-cta-btn">このプランで相談する</a>
+        </div>
+
+        <!-- パーソナルプラン -->
+        <div class="price-card popular">
+          <span class="popular-badge">一番人気</span>
+          <div class="plan-eyebrow">PERSONAL PLAN</div>
+          <div class="plan-name">パーソナルプラン</div>
+          <div class="plan-amount-wrap">
+            <span class="plan-amount">15,800</span>
+            <span class="plan-amount-unit">円/月</span>
+          </div>
+          <p class="plan-tax">税込・月額払い</p>
+          <div class="omiai-tag">
+            <span>✦</span>
+            <span>お見合い料 無料</span>
+          </div>
+          <div class="plan-initial">
+            <div class="plan-initial-row">
+              <span class="plan-initial-label">入会金</span>
+              <span class="plan-initial-val">33,000円</span>
+            </div>
+            <div class="plan-initial-row">
+              <span class="plan-initial-label">登録料</span>
+              <span class="plan-initial-val">33,000円</span>
+            </div>
+            <div class="plan-initial-row">
+              <span class="plan-initial-label">成婚料</span>
+              <span class="plan-initial-val">230,000円</span>
+            </div>
+          </div>
+          <ul class="plan-features">
+            <li><span class="fi-sky">✓</span> お見合い申し込み 月200件</li>
+            <li><span class="fi-sky">✓</span> コンシェルジュよりご紹介</li>
+            <li><span class="fi-sky">✓</span> お見合い後フィードバック</li>
+            <li><span class="fi-sky">✓</span> 定期面談 年12回</li>
+            <li><span class="fi-sky">✓</span> プロフィール作成</li>
+            <li><span class="fi-pink">✓</span><span class="feat-sky"> プロフィール写真撮影（スタジオ or ロケーション）</span></li>
+            <li><span class="fi-pink">✓</span><span class="feat-sky"> イメージコンサルタントによるお買い物同行</span></li>
+            <li><span class="fi-pink">✓</span><span class="feat-sky"> ハルカゼLAB 各講座1回無料</span></li>
+            <li><span class="fi-pink">✓</span><span class="feat-sky"> お見合いアナリティクス診断</span></li>
+          </ul>
+          <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="plan-cta-btn">このプランで相談する</a>
+        </div>
+
+      </div>
+
+      <!-- ハルカゼLAB チケット -->
+      <div class="lab-card">
+        <div class="lab-header">
+          <div>
+            <span class="lab-tag">会員以外もOK</span>
+            <div class="lab-title">ハルカゼ<span>LAB</span></div>
+            <div class="lab-subtitle">必要な講座を、必要な分だけ。まとめて購入するほどお得に。</div>
+          </div>
+          <div class="lab-paypay">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M7 12h10M7 16h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            PayPay払いOK
+          </div>
+        </div>
+        <div class="lab-tickets">
+          <div class="lab-ticket">
+            <div class="ticket-name">お試し<br>3枚セット</div>
+            <div class="ticket-price">3,000<span>円</span></div>
+            <div class="ticket-per">1枚あたり 1,000円</div>
+            <span class="ticket-discount">まずはお試し</span>
+          </div>
+          <div class="lab-ticket">
+            <div class="ticket-name">スタンダード<br>5枚セット</div>
+            <div class="ticket-price">4,500<span>円</span></div>
+            <div class="ticket-per">1枚あたり 900円</div>
+            <span class="ticket-discount">10% OFF</span>
+          </div>
+          <div class="lab-ticket">
+            <div class="ticket-name">集中<br>10枚セット</div>
+            <div class="ticket-price">8,000<span>円</span></div>
+            <div class="ticket-per">1枚あたり 800円</div>
+            <span class="ticket-discount">20% OFF</span>
+          </div>
+        </div>
+        <div class="lab-footer">
+          <span>有効期限：購入から6ヶ月</span>
+          <span>リピート受講特典あり</span>
+          <span>3枚から購入可能</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 料金に含まれる4つのサポート -->
+  <section class="section section-ice">
+    <div class="section-inner">
+      <div style="text-align:center; margin-bottom:40px;">
+        <p class="section-label">4 Supports</p>
+        <h2 class="section-title">料金に含まれる、<br>ハルカゼの4つのサポート</h2>
+      </div>
+      <div class="supports-grid">
+
+        <div class="support-card s01">
+          <div class="support-num">01</div>
+          <div class="support-title">自己理解<br>カウンセリング</div>
+          <p class="support-body">スペックではなく価値観から。ブレない軸をみつける価値観ワーク・ヴィジョンボードで可視化。</p>
+          <div class="support-note n-sky">他社はスペック優先。ハルカゼはあなたの「本音」から。</div>
+        </div>
+
+        <div class="support-card s02">
+          <div class="support-num">02</div>
+          <div class="support-title">外見力UP<br>トータルコーディネート</div>
+          <span class="support-plan-badge">パーソナルプラン</span>
+          <p class="support-body">イメコン同行・プロ写真撮影・パーソナルカラー診断。第一印象を根本から変えます。</p>
+          <div class="support-note n-pink">他社では別途平均5万円〜。パーソナルプラン基本料金内。</div>
+        </div>
+
+        <div class="support-card s03">
+          <div class="support-num">03</div>
+          <div class="support-title">ステップアップ・<br>フィードバック</div>
+          <p class="support-body">少人数制で深く関わる。定期面談・お見合い後フィードバック・デートプラン提案。</p>
+          <div class="support-note n-gold">他社は結果報告のみの場合も。毎回振り返り・改善。</div>
+        </div>
+
+        <div class="support-card s04">
+          <div class="support-num">04</div>
+          <div class="support-title">マリッジ<br>メソッド</div>
+          <p class="support-body">結婚はゴールじゃなくスタート。結婚前に話すべきことを整理し、幸せな結婚生活の土台をつくります。</p>
+          <div class="support-note n-sky">ノルマで結婚させない。ビジョンで幸せにする。</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 他社比較 -->
+  <section class="section">
+    <div class="section-inner">
+      <p class="section-label">Comparison</p>
+      <h2 class="section-title">他社と比べてみると、<br>ハルカゼの「ちょうどよさ」がわかります。</h2>
+      <div class="compare-wrap" style="margin-top:32px;">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th style="background:#fafbfc; width:22%;"></th>
+              <th class="th-other">A社<br><span style="font-size:9px; font-weight:400; color:#aaa;">IBJ直営・大手</span></th>
+              <th class="th-b">B社<br><span style="font-size:9px; font-weight:400; color:#aaa;">オンライン格安型</span></th>
+              <th class="th-hz-light">ハルカゼ<br><span style="font-size:9px; color:var(--color-navy); font-weight:500;">ライトプラン</span></th>
+              <th class="th-hz-personal" style="position:relative;">
+                <span class="best-badge">一番人気</span>
+                ハルカゼ<br><span style="font-size:9px; color:var(--color-sky); font-weight:500;">パーソナルプラン</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>月会費（税込）</td>
+              <td class="td-other">約17,000円</td>
+              <td class="td-b">14,800円</td>
+              <td class="td-hz-light">13,800円</td>
+              <td class="td-hz-personal">15,800円</td>
+            </tr>
+            <tr>
+              <td>初期費用（税込）</td>
+              <td class="td-other">約250,000円</td>
+              <td class="td-b">44,000円</td>
+              <td class="td-hz-light">55,000円</td>
+              <td class="td-hz-personal">66,000円</td>
+            </tr>
+            <tr>
+              <td>成婚料（税込）</td>
+              <td class="td-other">220,000円</td>
+              <td class="td-b">110,000円</td>
+              <td class="td-hz-light">165,000円</td>
+              <td class="td-hz-personal">230,000円</td>
+            </tr>
+            <tr>
+              <td>お見合い料</td>
+              <td class="td-other"><span class="cross">—</span></td>
+              <td class="td-b">無料</td>
+              <td class="td-hz-light"><span class="zero-sky">無料</span></td>
+              <td class="td-hz-personal"><span class="zero-sky">無料</span></td>
+            </tr>
+            <tr>
+              <td>お見合い申し込み数</td>
+              <td class="td-other">月20名程度</td>
+              <td class="td-b">月60件</td>
+              <td class="td-hz-light">月100件</td>
+              <td class="td-hz-personal">月200件</td>
+            </tr>
+            <tr>
+              <td>定期面談</td>
+              <td class="td-other"><span class="check-sky">○</span></td>
+              <td class="td-b"><span class="cross">—</span></td>
+              <td class="td-hz-light"><span class="check-sky">○ 年6回</span></td>
+              <td class="td-hz-personal"><span class="check-sky">○ 年12回</span></td>
+            </tr>
+            <tr>
+              <td>写真撮影</td>
+              <td class="td-other"><span class="cross">—</span></td>
+              <td class="td-b"><span class="cross">—</span></td>
+              <td class="td-hz-light"><span class="cross">—</span></td>
+              <td class="td-hz-personal"><span class="check-pink">✓ パーソナルプラン</span></td>
+            </tr>
+            <tr>
+              <td>ファッションコンサル</td>
+              <td class="td-other"><span class="cross">—</span></td>
+              <td class="td-b"><span class="cross">—</span></td>
+              <td class="td-hz-light"><span class="cross">—</span></td>
+              <td class="td-hz-personal"><span class="check-pink">✓ パーソナルプラン</span></td>
+            </tr>
+            <tr>
+              <td>担当あたり会員数</td>
+              <td class="td-other">60名程度</td>
+              <td class="td-b">100名以上</td>
+              <td class="td-hz-light" colspan="2" style="text-align:center;"><span style="color:var(--color-navy); font-weight:500;">少人数制（手厚いサポート）</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="compare-footnote">※各社公式サイト・口コミ情報をもとに作成。料金は税込・代表プランでの比較（2025年時点）</p>
+    </div>
+  </section>
+
+  <!-- LINEいつでも相談 -->
+  <section style="padding: 56px 24px 0;">
+    <div class="line-box-section">
+      <div class="line-box">
+        <div class="line-box-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+            <path d="M21 11.5C21 16.2 16.97 20 12 20c-1.37 0-2.67-.28-3.84-.78L4 20l1.04-3.77C4.38 15.05 4 13.82 4 12.5 4 7.81 7.58 4 12 4c4.97 0 9 3.81 9 7.5z" fill="white" stroke="white" stroke-width="0.5"/>
+          </svg>
+        </div>
+        <div class="line-box-text">
+          <strong>LINEでいつでも相談できます。</strong>
+          <p>
+            「入会前に少し聞いてみたい」「活動中に悩みが出てきた」<br>
+            そんなとき、LINEでいつでも気軽にメッセージください。<br>
+            すべての会員様に、LINEでのやりとりが可能です。
+          </p>
+        </div>
+        <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="line-box-btn">
+          LINEで相談する →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-section">
+    <p class="section-label" style="color: var(--color-sky);">Contact</p>
+    <h2 class="cta-title">どのプランが合うか、<br>一緒に考えましょう</h2>
+    <p class="cta-free-note">＼ 来店不要・オンライン・40分・完全無料 ／</p>
+    <div class="cta-btns">
+      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn btn-line">初回無料面談に申し込む</a>
+      <a href="flow.html" class="btn btn-outline">成婚までの流れを見る</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- フッター -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-brand">大阪・吹田結婚相談所 ハルカゼ</p>
+    <nav class="footer-links">
+      <a href="about.html">メッセージ</a>
+      <a href="about.html#vision">ハルカゼの想い（VISION）</a>
+      <a href="lab.html">ハルカゼLAB</a>
+      <a href="service.html">サービス内容</a>
+      <a href="service.html#price">サービス・料金</a>
+      <a href="flow.html">ご成婚までの流れ</a>
+      <a href="faq.html">よくある質問</a>
+      <a href="blog.html">ブログ</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+    </nav>
+    <p class="footer-girls-label">女性の方はこちら</p>
+    <a href="girls.html" class="footer-girls-link">▶ 女子の婚活 Girls LAB</a>
+    <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="footer-line-btn">初回無料面談に申し込む</a>
+    <p class="footer-copy">© 2025 結婚相談所ハルカゼ</p>
+  </div>
+</footer>
+
+<!-- フローティングボタン -->
+<a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-line-btn">LINEで相談する</a>
+<div class="float-side-btns">
+  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn">面談を予約する</a>
+  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn">LINEで婚活突破口診断</a>
+</div>
+
+<script src="js/common.js"></script>
+</body>
+</html>

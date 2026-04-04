@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GLADIÀ | Global Well-Being Relationship</title>
+<link rel="icon" href="newimages/使用ロゴ.jpeg">
+<meta property="og:image" content="newimages/h. (1).png">
+<meta property="og:title" content="GLADIÀ | Global Well-Being Relationship">
+<meta property="og:description" content="白黒つけない勇気が、人とのつながりを変える。ライフコーチが教えるグラデーション思考の学び。">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="css/common.css">
+<style>
+/* ============================================================
+   gladia.html ページ固有スタイル（デザイン保持）
+   ============================================================ */
+
+  :root {
+    --rose: #e8a0a0;
+    --rose-light: #fdf0f0;
+    --rose-deep: #d4697a;
+    --sage: #4a6fa5;
+    --sage-light: #e8edf8;
+    --sage-deep: #2e4a7a;
+    --lavender: #C4B8D8;
+    --text-dark: #2e4a7a;
+    --text-mid: #333333;
+    --text-light: #888888;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  /* パンくず */
+  .gladia-breadcrumb {
+    background: var(--color-ice);
+    padding: 12px 24px;
+    font-size: 13px;
+    color: #888;
+  }
+  .gladia-breadcrumb-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .gladia-breadcrumb a {
+    color: var(--color-sky);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .gladia-breadcrumb a:hover { opacity: 0.7; }
+  .gladia-breadcrumb-sep { color: #ccc; }
+
+  /* HERO */
+  .gladia-hero { width: 100%; position: relative; background: #fff; }
+  .hero-img-wrap { width: 100%; overflow: hidden; position: relative; }
+  .hero-img-wrap img { width: 100%; display: block; object-fit: contain; object-position: center center; }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 55%, rgba(255,255,255,0.9) 100%);
+  }
+
+  /* SECTION BASE */
+  .gladia-section { padding: 5rem 2rem; }
+  .container { max-width: 860px; margin: 0 auto; }
+  .container-wide { max-width: 1080px; margin: 0 auto; }
+  .section-label {
+    display: block;
+    font-size: 0.68rem; letter-spacing: 0.4em; color: var(--rose);
+    text-transform: uppercase; margin-bottom: 1rem;
+  }
+  .section-title {
+    font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+    font-weight: 400; letter-spacing: 0.08em; color: var(--text-dark); line-height: 1.35;
+    margin-bottom: 1.8rem;
+  }
+  .g-divider {
+    width: 36px; height: 1px;
+    background: linear-gradient(to right, transparent, var(--rose), transparent);
+    margin: 1.5rem 0;
+  }
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.9s ease, transform 0.9s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* SNS ICONS */
+  .sns-row { display: flex; align-items: center; gap: 0.7rem; margin-top: 2rem; flex-wrap: wrap; }
+  .sns-link {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 34px; height: 34px; border-radius: 50%;
+    text-decoration: none;
+    border: 1px solid rgba(201,169,166,0.45);
+    color: var(--text-light);
+    transition: all 0.3s;
+    flex-shrink: 0;
+  }
+  .sns-link:hover { border-color: var(--rose); color: var(--rose-deep); background: rgba(201,169,166,0.08); }
+  .sns-icon { width: 15px; height: 15px; flex-shrink: 0; }
+  .note-img-icon {
+    height: 11px; width: auto; flex-shrink: 0;
+    filter: invert(45%) sepia(8%) saturate(500%) hue-rotate(320deg) brightness(90%);
+    transition: filter 0.3s;
+  }
+  .sns-link:hover .note-img-icon {
+    filter: invert(38%) sepia(12%) saturate(700%) hue-rotate(320deg) brightness(80%);
+  }
+
+  /* CONCEPT */
+  .section-concept { background: #fff; }
+  .concept-quote {
+    font-size: 1.1rem; font-style: italic; font-weight: 300; letter-spacing: 0.06em;
+    color: var(--rose-deep); line-height: 2; margin-bottom: 2rem;
+    padding-left: 1.4rem; border-left: 2px solid var(--rose-light);
+  }
+  .concept-body { font-size: 0.87rem; line-height: 2.6; color: var(--text-mid); letter-spacing: 0.06em; }
+
+  /* DEEP SECTION */
+  .section-deep { background: linear-gradient(135deg, #f9f5f8 0%, #f3ede8 50%, #f5f0f7 100%); }
+  .deep-text-body { font-size: 0.86rem; line-height: 2.6; color: var(--text-mid); letter-spacing: 0.06em; }
+  .deep-text-body p + p { margin-top: 1.2rem; }
+
+  /* LINE CTA */
+  .line-cta {
+    display: inline-flex; align-items: center; gap: 0.7rem;
+    background: #00b900; color: #fff;
+    padding: 0.75rem 1.6rem;
+    font-size: 0.75rem; letter-spacing: 0.15em;
+    text-decoration: none; margin-top: 2rem;
+    transition: all 0.3s;
+  }
+  .line-cta:hover { background: #009900; transform: translateY(-1px); box-shadow: 0 5px 18px rgba(0,185,0,0.2); }
+  .line-icon-g { width: 18px; height: 18px; fill: #fff; }
+
+  /* COUNSELORS */
+  .section-counselors { background: #fff; }
+  .counselors-header { text-align: center; margin-bottom: 4rem; }
+  .counselors-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4.5rem; }
+  .counselor-card { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .counselor-photo {
+    width: 175px; height: 175px; border-radius: 50%;
+    overflow: hidden; margin-bottom: 1.8rem;
+    border: 1px solid rgba(201,169,166,0.3);
+  }
+  .counselor-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .counselor-name { font-size: 1rem; font-weight: 500; color: var(--text-dark); letter-spacing: 0.12em; margin-bottom: 0.2rem; }
+  .counselor-name-en { font-size: 0.78rem; font-style: italic; color: var(--rose); letter-spacing: 0.2em; margin-bottom: 0.3rem; }
+  .counselor-title { font-size: 0.7rem; letter-spacing: 0.08em; color: var(--text-light); line-height: 1.7; margin-bottom: 1.2rem; }
+  .counselor-bio { font-size: 0.79rem; line-height: 2.3; color: var(--text-mid); letter-spacing: 0.05em; text-align: left; margin-bottom: 1.5rem; }
+  .counselor-sns { display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap; }
+
+  /* CTA FINAL */
+  .section-cta {
+    background: linear-gradient(135deg,#f2eaf8 0%,#ece0f5 15%,#ddd0ee 30%,#d8c8e4 45%,#d8c4dc 55%,#e0c4cc 65%,#ecd4c4 80%,#f4e4d8 100%);
+    background-size: 400% 400%; animation: holoShift 14s ease infinite;
+    text-align: center; padding: 6.5rem 2rem; position: relative; overflow: hidden;
+  }
+  @keyframes holoShift {
+    0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; }
+  }
+  .section-cta::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 40% 40%, rgba(255,255,255,0.28) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 70% at 65% 65%, rgba(255,255,255,0.18) 0%, transparent 50%);
+  }
+  .cta-inner { position: relative; z-index: 2; }
+  .cta-title { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 300; letter-spacing: 0.12em; color: var(--text-dark); margin-bottom: 1rem; }
+  .cta-sub { font-size: 0.84rem; line-height: 2.3; color: var(--text-mid); letter-spacing: 0.08em; max-width: 440px; margin: 0 auto 0.5rem; }
+  .btn-outline {
+    display: inline-block; font-size: 0.75rem;
+    letter-spacing: 0.18em; color: var(--text-mid); background: transparent;
+    padding: 0.8rem 2.2rem; border: 1px solid rgba(201,169,166,0.5);
+    text-decoration: none; transition: all 0.3s; margin-top: 1rem;
+  }
+  .btn-outline:hover { border-color: var(--rose); color: var(--rose-deep); }
+
+  @media (max-width: 768px) {
+    .gladia-section { padding: 4rem 1.5rem; }
+    .counselors-grid { grid-template-columns: 1fr; gap: 3.5rem; }
+    .counselor-photo { width: 150px; height: 150px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ナビゲーション -->
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-sub">IBJ正規加盟店</span>
+    <span class="nav-logo-main">結婚相談所ハルカゼ</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html">メッセージ</a></li>
+    <li><a href="service.html">サービス・価格</a></li>
+    <li><a href="flow.html">成婚までの流れ</a></li>
+    <li><a href="lab.html">ハルカゼLAB</a></li>
+    <li><a href="faq.html">よくある質問</a></li>
+    <li><a href="blog.html">ブログ</a></li>
+    <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで相談</a></li>
+  </ul>
+  <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- モバイルオーバーレイ -->
+<div class="mobile-nav-overlay" id="mobileNavOverlay">
+  <a href="about.html">メッセージ</a>
+  <a href="service.html">サービス・価格</a>
+  <a href="flow.html">成婚までの流れ</a>
+  <a href="lab.html">ハルカゼLAB</a>
+  <a href="faq.html">よくある質問</a>
+  <a href="blog.html">ブログ</a>
+  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで相談</a>
+
+  <hr class="mobile-nav-divider">
+  <span class="mobile-nav-girls-label">女性の方はこちら</span>
+  <a href="girls.html" class="mobile-nav-girls">女子の婚活 Girls LAB</a>
+</div>
+
+<!-- パンくず -->
+<div class="gladia-breadcrumb">
+  <div class="gladia-breadcrumb-inner">
+    <a href="index.html">ホーム</a>
+    <span class="gladia-breadcrumb-sep">›</span>
+    <a href="lab.html">ハルカゼLAB</a>
+    <span class="gladia-breadcrumb-sep">›</span>
+    <span>GLADIÀ</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="gladia-hero">
+  <div class="hero-img-wrap">
+    <img src="newimages/グラディア.webp" alt="GLADIÀ">
+    <div class="hero-overlay"></div>
+  </div>
+</div>
+
+
+<!-- CONCEPT -->
+<section class="gladia-section section-concept" id="concept">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">What is GLADIÀ</span>
+      <h2 class="section-title">GLADIA（グラディア）とは</h2>
+      <div class="g-divider"></div>
+    </div>
+
+    <div class="sns-row reveal">
+      <a href="https://www.instagram.com/gladia.wellbeing?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener" class="sns-link" title="@gladia.wellbeing">
+        <svg class="sns-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+      <a href="https://note.com/tomomi_smith/m/m8150df4f12f0" target="_blank" rel="noopener" class="sns-link" title="Global well-cation【Gladia】">
+        <img src="newimages/note.jpg" alt="note" class="note-img-icon">
+      </a>
+    </div>
+
+    <div class="reveal" style="margin-top:2.5rem;">
+      <blockquote class="concept-quote">
+        白黒つけない勇気が、人とのつながりを変える。
+      </blockquote>
+      <p class="concept-body">
+        GLADIA（グラディア）とは、グラデーションのようにゆるやかに変化する感情や価値観を無理なく整えていけるような、そんな「対話」と「つながり」を育てる講座。<br><br>
+        婚活をしていると、期待や希望と同じくらい、不安や迷いもついてくるもの。「相手に合わせすぎてしまう」「本音で話すのがこわい」「どこまで素を見せていいのかわからない」そんな"揺らぎ"は、誰かと関係を築こうとするときに誰にでも起こる、とても自然なものです。<br><br>
+        婚活は「選ばれる」ための活動ではありません。あなたの価値観を理解し、安心して関係を育んでいける相手と出会うプロセスです。そして結婚は"ゴール"ではなく"スタート"。ふたりで対話を重ね、違いも変化も楽しみながら、一緒に関係を育てていく旅のはじまりです。<br><br>
+        このハルカゼLABでは、全5回で"関係の育て方"をぎゅっと凝縮してお届けします。未来のパートナーと"心地よい関係"を築き育てるための、5つの基礎スキルをご案内します。
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- DEEP -->
+<section class="gladia-section section-deep" id="deep">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">For Those Who Want to Go Deeper</span>
+      <h2 class="section-title" style="font-size:clamp(1.4rem,2.5vw,2rem);">さらに深く学びたい方へ</h2>
+      <div class="g-divider"></div>
+    </div>
+
+    <div class="reveal">
+      <div class="deep-text-body">
+        <p>
+          本講座「GLADIA（グラディア）」は、「私は私らしく、相手も相手らしく」そのうえで"心地よい関係"を育んでいく力を身につける、約4ヶ月のグループ講座です。
+        </p>
+        <p>
+          GLADIAでは、物事や感情を白黒で決めつけるのではなく、グラデーションのように「間」を感じ取ることを大切にしています。自分が大切にしたい価値観・相手の想い・ふたりの距離感を柔らかく整えながら、揺らぎを否定せず、むしろ大切なサインとして受け取れるようになるメソッドです。
+        </p>
+        <p>
+          ワークと対話を中心に、実践の中で「心地よい関係の築き方」を身につけていくプログラムで、異文化の中でパートナーとの関係を大切に育ててきた国際結婚をしている2人のコーチが、実体験をもとに伴走します。
+        </p>
+        <p>
+          あなたが安心して、自分らしく、誰かとの未来を育んでいけるように。GLADIAは、その一歩をそっと後押しする学びのプログラムです。ぜひ、この機会にあなた自身の"心地よい関係性"を見つけるヒントを受け取ってください。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- COUNSELORS -->
+<section class="gladia-section section-counselors" id="counselors">
+  <div class="container-wide">
+    <div class="counselors-header reveal">
+      <span class="section-label">Instructors</span>
+      <h2 class="section-title">講師紹介</h2>
+      <div class="g-divider" style="margin: 1.5rem auto;"></div>
+    </div>
+
+    <div class="counselors-grid">
+
+      <!-- 知美 -->
+      <div class="counselor-card reveal">
+        <div class="counselor-photo">
+          <img src="newimages/ともちゃん.jpg" alt="スミス 知美">
+        </div>
+        <div class="counselor-name">スミス 知美</div>
+        <div class="counselor-name-en">Tomomi Smith</div>
+        <div class="counselor-title">ライフコーチ / 研修講師</div>
+        <p class="counselor-bio">
+          アメリカ人の夫・6歳娘・3歳息子の4人暮らし。大手広告代理店にて約10年、営業・広告運用の仕事に従事したのち、2024年からライフコーチとして活動をスタート。<br><br>
+          国際結婚に至るまでの葛藤の中で、「文化や価値観の違いがあったとしても、対話を重ねれば信頼関係は築ける」と実感。自分の中にあった「白か黒か」という思考のクセに気づき、グラデーションを認められるようになったことで、人間関係が柔らかく変化した。<br><br>
+          現在は、1on1セッションや企業研修、ウェルビーイングをテーマにした講座・ワークショップを通して、「違いを豊かさに変える視点」や「つながりを深める対話の力」を伝えている。
+        </p>
+        <div class="counselor-sns">
+          <a href="https://www.instagram.com/tomomi.smith?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener" class="sns-link">
+            <svg class="sns-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <a href="https://note.com/tomomi_smith/m/m8150df4f12f0" target="_blank" rel="noopener" class="sns-link">
+            <img src="newimages/note.jpg" alt="note" class="note-img-icon">
+          </a>
+        </div>
+      </div>
+
+      <!-- 千尋 -->
+      <div class="counselor-card reveal">
+        <div class="counselor-photo">
+          <img src="newimages/本間千尋１.jpeg" alt="本間 知尋">
+        </div>
+        <div class="counselor-name">本間 知尋</div>
+        <div class="counselor-name-en">Chihiro Honma</div>
+        <div class="counselor-title">ライフコーチ<br>セルフラブと対話で、あなたらしいWell-beingへ</div>
+        <p class="counselor-bio">
+          25歳年上のニュージーランド人の夫と国際結婚。20代は大手エステサロンに勤務。会社の評価が自分の存在価値のすべてのように感じていた、劣等感と自己否定だらけの暗黒期を経て、「セルフラブ」という考え方に出会う。<br><br>
+          ネガティブな自分や感情の揺らぎもすべて受け止める『グラデーション』の感覚を持てるようになったことで、自分の心のあり方から人間関係までもが穏やかに変化。<br><br>
+          NLP・非暴力コミュニケーション（NVC）・コーチングなどの学びをベースに現在は1on1セッションやセルフラブ講座、GLADIAを通して、"自分との対話"から始まるWell-beingを伝えている。
+        </p>
+        <div class="counselor-sns">
+          <a href="https://www.instagram.com/chii.aus?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener" class="sns-link">
+            <svg class="sns-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA -->
+<section class="section-cta">
+  <div class="cta-inner reveal">
+    <span class="section-label" style="color:var(--rose-deep); display:block; text-align:center;">Apply</span>
+    <h2 class="cta-title">受講は公式LINEより</h2>
+    <div class="g-divider" style="margin: 1.5rem auto;"></div>
+    <p class="cta-sub">
+      ご参加希望の方は、ハルカゼ公式LINEよりお申し込みください。<br>
+      まずはお気軽にメッセージをお送りください。
+    </p>
+    <br>
+    <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="line-cta">
+      <svg class="line-icon-g" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+      </svg>
+      公式LINEから申し込む
+    </a>
+    <br>
+    <a href="lab.html" class="btn-outline">← ハルカゼLABへ戻る</a>
+  </div>
+</section>
+
+
+<!-- フッター -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-brand">大阪・吹田結婚相談所 ハルカゼ</p>
+    <nav class="footer-links">
+      <a href="about.html">メッセージ</a>
+      <a href="about.html#vision">ハルカゼの想い（VISION）</a>
+      <a href="lab.html">ハルカゼLAB</a>
+      <a href="service.html">サービス内容</a>
+      <a href="service.html#price">サービス・料金</a>
+      <a href="flow.html">ご成婚までの流れ</a>
+      <a href="faq.html">よくある質問</a>
+      <a href="blog.html">ブログ</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+    </nav>
+    <p class="footer-girls-label">女性の方はこちら</p>
+    <a href="girls.html" class="footer-girls-link">▶ 女子の婚活 Girls LAB</a>
+    <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="footer-line-btn">初回無料面談に申し込む</a>
+    <p class="footer-copy">© 2025 結婚相談所ハルカゼ</p>
+  </div>
+</footer>
+
+<!-- フローティングボタン -->
+<a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-line-btn">LINEで相談する</a>
+<div class="float-side-btns">
+  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn">面談を予約する</a>
+  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn">LINEで婚活突破口診断</a>
+</div>
+
+<script src="js/common.js"></script>
+<script>
+  /* reveal アニメーション */
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+  reveals.forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

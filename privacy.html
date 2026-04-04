@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>個人情報保護方針 | 結婚相談所ハルカゼ</title>
+<link rel="icon" href="newimages/使用ロゴ.jpeg">
+<meta property="og:image" content="newimages/h. (1).png">
+<meta property="og:title" content="個人情報保護方針 | 結婚相談所ハルカゼ">
+<meta property="og:description" content="結婚相談所ハルカゼの個人情報保護方針・特定商取引法に基づく表記。">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="css/common.css">
+<style>
+/* ============================================================
+   privacy.html ページ固有スタイル
+   ============================================================ */
+
+/* ── ページヒーロー ── */
+.page-hero {
+  background: var(--color-navy);
+  padding: 80px 24px 64px;
+  text-align: center;
+  color: #fff;
+}
+.page-hero-label {
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-sky);
+  margin-bottom: 16px;
+}
+.page-hero-title {
+  font-size: clamp(22px, 4vw, 36px);
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+/* ── コンテンツエリア ── */
+.privacy-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 56px 28px 96px;
+}
+
+/* 前文 */
+.preamble {
+  font-size: 14px;
+  line-height: 2;
+  color: #555;
+  margin-bottom: 52px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid var(--color-ice);
+}
+
+/* 各条項 */
+.policy-section {
+  margin-bottom: 44px;
+}
+.policy-section-title {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--color-navy);
+  margin-bottom: 14px;
+  padding-left: 12px;
+  border-left: 3px solid var(--color-sky);
+}
+.policy-section-body {
+  font-size: 14px;
+  line-height: 2;
+  color: #4a4a4a;
+}
+.policy-section-body p {
+  margin-bottom: 10px;
+}
+.policy-section-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* 箇条書き */
+.list-items {
+  margin: 8px 0 10px 0;
+  padding-left: 0;
+  list-style: none;
+}
+.list-items li {
+  padding-left: 1.4em;
+  text-indent: -1.4em;
+  margin-bottom: 6px;
+  font-size: 14px;
+  line-height: 1.9;
+  color: #4a4a4a;
+}
+.list-items li::before {
+  content: '・';
+  color: var(--color-sky);
+}
+
+/* サブセクション */
+.sub-section {
+  margin: 16px 0;
+}
+.sub-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 8px;
+  letter-spacing: 0.04em;
+}
+.bracket-label {
+  display: inline-block;
+  font-size: 12px;
+  color: var(--color-sky);
+  border: 1px solid rgba(14,165,233,0.4);
+  border-radius: 2px;
+  padding: 1px 8px;
+  margin: 6px 0 4px;
+  letter-spacing: 0.04em;
+}
+
+/* 区切り線 */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--color-ice);
+  margin: 52px 0;
+}
+
+/* 特定商取引法セクション */
+.tokusho-label {
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-sky);
+  margin-bottom: 10px;
+}
+.tokusho-h2 {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--color-navy);
+  margin-bottom: 28px;
+}
+
+/* テーブル */
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.info-table tr {
+  border-bottom: 1px solid var(--color-ice);
+}
+.info-table th {
+  width: 180px;
+  padding: 14px 0;
+  text-align: left;
+  font-weight: 400;
+  color: #777;
+  vertical-align: top;
+  white-space: nowrap;
+}
+.info-table td {
+  padding: 14px 0 14px 16px;
+  color: #4a4a4a;
+  line-height: 1.8;
+}
+
+/* お問い合わせ枠 */
+.contact-box {
+  margin-top: 24px;
+  padding: 24px 28px;
+  background: var(--color-ice);
+  border-radius: 10px;
+}
+.contact-box p {
+  font-size: 14px;
+  line-height: 2;
+  color: #4a4a4a;
+  margin-bottom: 6px;
+}
+.contact-box p:last-child {
+  margin-bottom: 0;
+}
+.contact-label {
+  font-size: 12px;
+  color: var(--color-sky);
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 600px) {
+  .info-table th { width: 120px; font-size: 13px; }
+  .info-table td { font-size: 13px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ナビゲーション -->
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-sub">IBJ正規加盟店</span>
+    <span class="nav-logo-main">結婚相談所ハルカゼ</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html">メッセージ</a></li>
+    <li><a href="service.html">サービス・価格</a></li>
+    <li><a href="flow.html">成婚までの流れ</a></li>
+    <li><a href="lab.html">ハルカゼLAB</a></li>
+    <li><a href="faq.html">よくある質問</a></li>
+    <li><a href="blog.html">ブログ</a></li>
+    <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで相談</a></li>
+  </ul>
+  <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- モバイルオーバーレイ -->
+<div class="mobile-nav-overlay" id="mobileNavOverlay">
+  <a href="about.html">メッセージ</a>
+  <a href="service.html">サービス・価格</a>
+  <a href="flow.html">成婚までの流れ</a>
+  <a href="lab.html">ハルカゼLAB</a>
+  <a href="faq.html">よくある質問</a>
+  <a href="blog.html">ブログ</a>
+  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで相談</a>
+
+  <hr class="mobile-nav-divider">
+  <span class="mobile-nav-girls-label">女性の方はこちら</span>
+  <a href="girls.html" class="mobile-nav-girls">女子の婚活 Girls LAB</a>
+</div>
+
+<!-- ページヒーロー -->
+<div class="page-hero">
+  <p class="page-hero-label">Privacy Policy</p>
+  <h1 class="page-hero-title">個人情報保護方針</h1>
+</div>
+
+<main>
+  <div class="privacy-wrap">
+
+    <!-- 前文 -->
+    <p class="preamble">
+      当社は、個人情報を大切に保護することを重要な社会的使命と認識し、個人情報保護に関する法規範を遵守し、次に示す当社基本方針の具現化と、常に社会的要請の変化に着目しつつ継続的改善に全社を挙げて取り組むことを宣言いたします。
+    </p>
+
+    <!-- 1 -->
+    <div class="policy-section">
+      <p class="policy-section-title">１．個人情報の取り扱いについて</p>
+      <div class="policy-section-body">
+        <p>当社の運営する事業において、お預かりするお客様の個人情報を保護することの重要性を十分に考慮した上で、適切な個人情報の取得、利用および提供に努めます。また、要配慮個人情報は、本人の同意なくこれを取得することはありません。</p>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="policy-section">
+      <p class="policy-section-title">２．個人情報の利用について</p>
+      <div class="policy-section-body">
+        <p>結婚相手紹介サービス業、その他、当社が運営する各事業において取得する個人情報の利用にあたっては、特定した利用目的の達成に必要な範囲を超えた個人情報の取扱い（目的外利用）を行いません。また、目的外利用を行うことがないよう社内規程を作成し、従業者に社内規程を遵守させるよう監督に努めます。</p>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="policy-section">
+      <p class="policy-section-title">３．個人情報の利用目的について</p>
+      <div class="policy-section-body">
+        <p>結婚相手紹介サービス業、当社の各事業において、以下の利用目的において個人情報を利用します。</p>
+        <ul class="list-items">
+          <li>入会契約時において、本人確認及びプロフィール作成の為に利用します。</li>
+          <li>契約の履行を目的とした、ご成婚に向けた当社のサービス提供、カウンセリング等の為に利用します。</li>
+          <li>当社が加盟する連盟組織のシステム登録、及びシステムでのお相手紹介の為に利用します。</li>
+          <li>サービスに関連するイベント・パーティーの連絡に利用します。</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="policy-section">
+      <p class="policy-section-title">４．個人情報の共同利用について</p>
+      <div class="policy-section-body">
+        <p>当社では加盟する連盟（IBJ）の連盟システムにおいて、連盟システムを運営する事業者、また同じくお相手紹介を目的として連盟システムを利用する他の事業者の間で個人情報を共同利用致します。</p>
+
+        <div class="sub-section">
+          <p class="sub-title">①共同利用する個人情報の項目</p>
+          <p>ご記入いただくプロフィールシートまたはシステムのプロフィール入力画面をご確認ください。</p>
+          <br>
+          <span class="bracket-label">お見合い成立前</span>
+          <p>プロフィールシート・システムに入力する個人情報項目</p>
+          <span class="bracket-label">お見合い成立後</span>
+          <p>前項に苗字を追加した項目</p>
+          <span class="bracket-label">交際成立後</span>
+          <p>前項に名前、電話番号を追加した項目</p>
+        </div>
+
+        <div class="sub-section">
+          <p class="sub-title">②共同利用する範囲</p>
+          <span class="bracket-label">お見合い成立前</span>
+          <p>弊社が加盟する連盟・連盟システムおよび各システムを利用する事業者および各システムを利用して活動中の異性会員</p>
+          <span class="bracket-label">お見合い成立後</span>
+          <p>①の苗字についてはお見合いをする事業者・会員間</p>
+          <span class="bracket-label">交際成立後</span>
+          <p>①の名前・電話番号については交際する会員間・会員の事業者間</p>
+        </div>
+
+        <div class="sub-section">
+          <p class="sub-title">③共同利用の目的</p>
+          <span class="bracket-label">お見合い成立前</span>
+          <p>事業者間：会員へのご紹介・カウンセリング等の役務提供のため<br>会員間：お見合いを申し込むお相手選び、また申し込まれた際のお相手確認等のため</p>
+          <span class="bracket-label">お見合い成立後</span>
+          <p>事業者間・会員間ともお見合い実施のため</p>
+          <span class="bracket-label">交際成立後</span>
+          <p>事業者間・会員間とも交際継続のため</p>
+        </div>
+
+        <div class="sub-section">
+          <p class="sub-title">④共同利用する個人情報の管理責任者</p>
+          <p>個人情報保護管理責任者：石神りさ</p>
+        </div>
+
+        <div class="sub-section">
+          <p class="sub-title">⑤共同利用する個人情報の取得方法</p>
+          <p>事業者が会員から書面・システムへの直接入力により取得</p>
+        </div>
+
+        <div class="sub-section">
+          <p class="sub-title">⑥責任について</p>
+          <p>共同利用する個人情報については、当社が責任を負います。当社の住所及び代表者については、「１０．個人情報に関するお問い合わせについて」をご覧ください。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="policy-section">
+      <p class="policy-section-title">５．個人情報の第三者提供について</p>
+      <div class="policy-section-body">
+        <p>お客様から取得した個人情報は、以下の場合を除き、第三者に提供することはありません。</p>
+        <ul class="list-items">
+          <li>お客様からの同意を得た場合。</li>
+          <li>法令に定めがある場合。</li>
+          <li>本人の同意を得ることが困難であり、生命・身体・財産を保護する為に必要な場合。</li>
+          <li>本人の同意を得ることが困難であり、公衆衛生の向上・児童の健全な育成の推進の為に特に必要がある場合。</li>
+          <li>国、地方公共団体等の事務を遂行する上で、本人の同意を求めると、その推進に支障がある場合。</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="policy-section">
+      <p class="policy-section-title">６．個人情報の安全管理措置について</p>
+      <div class="policy-section-body">
+        <p>当社は安心して個人情報をご提供いただけるように、個人情報の漏えい、滅失または毀損等の危険に対して、以下の安全管理措置を講じます。</p>
+
+        <div class="sub-section">
+          <p class="sub-title">①個人情報保護指針の策定</p>
+          <p>個人情報の適正な取扱いの確保のため、「関係法令・ガイドライン等の遵守」、「質問及び苦情処理の窓口」等について本指針（個人情報保護指針）を策定しています。</p>
+        </div>
+
+        <div class="sub-section">
+          <p class="sub-title">②個人情報の取扱いに係る規律の整備</p>
+          <p>個人情報の取得、利用、保存等を行う場合の基本的な取り扱い方法を整備しています。</p>
+        </div>
+
+        <div class="sub-section">
+          <p class="sub-title">③組織的安全管理措置</p>
+          <p>整備した取り扱い方法に従って個人情報が取り扱われていることを責任者が確認し、従業者がいる場合、従業者から責任者に対する報告連絡体制を整備しています。</p>
+        </div>
+
+        <div class="sub-section">
+          <p class="sub-title">④人的安全管理措置</p>
+          <ul class="list-items">
+            <li>個人情報の取扱いに関する留意事項について、従業者に定期的な研修を実施しています。</li>
+            <li>個人情報についての秘密保持に関する事項を就業規則に記載しています。</li>
+          </ul>
+        </div>
+
+        <div class="sub-section">
+          <p class="sub-title">⑤物理的安全管理措置</p>
+          <ul class="list-items">
+            <li>個人情報を取り扱うことができる従業者及び本人以外が容易に個人情報を閲覧できないような措置を実施しています。</li>
+            <li>個人情報を取り扱う機器、電子媒体及び書類等の盗難又は紛失等を防止するための措置を講じるとともに、容易に個人情報が判明しないよう措置を実施しています。</li>
+          </ul>
+        </div>
+
+        <div class="sub-section">
+          <p class="sub-title">⑥技術的安全管理措置</p>
+          <ul class="list-items">
+            <li>個人情報を取り扱うことのできる機器及び当該機器を取り扱う従業者を明確化し、個人情報への不要なアクセスを防止しています。</li>
+            <li>個人情報を取り扱う情報システムを外部からの不正アクセス又は不正ソフトウェアから保護する仕組みを導入しています。</li>
+          </ul>
+        </div>
+
+        <div class="sub-section">
+          <p class="sub-title">⑦外的環境の把握</p>
+          <p>当社は海外に個人情報を保管することはありませんが、保管する場合には、個人情報を保管する国における個人情報の保護に関する制度を把握した上で安全管理措置を実施します。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="policy-section">
+      <p class="policy-section-title">７．個人情報の開示・訂正・利用停止について</p>
+      <div class="policy-section-body">
+        <p>当社は個人情報について、お客様からの開示、訂正、利用停止、消去等の請求がある場合には、迅速かつ適切な対応を講じます。また当社で利用する個人情報が違法に第三者に提供されている訴えがあり、かつそれが事実であった場合には遅滞なく第三者への提供を停止します。</p>
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="policy-section">
+      <p class="policy-section-title">８．個人情報の法令・規範の遵守について</p>
+      <div class="policy-section-body">
+        <p>大切な個人情報をお預かりする企業として、個人情報保護の取扱いに関する法令、個人情報保護法に基づいて各所管官庁が作成したガイドライン・指針をはじめとするその他の規範を遵守します。</p>
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="policy-section">
+      <p class="policy-section-title">９．個人情報の取り扱いの継続的改善について</p>
+      <div class="policy-section-body">
+        <p>個人情報を適切に利用し、またその保護を徹底するため、適切な利用について継続的な見直しおよび改善を行います。</p>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="policy-section">
+      <p class="policy-section-title">１０．個人情報に関するお問い合わせについて</p>
+      <div class="policy-section-body">
+        <p>当社の個人情報の取扱いに関する苦情および相談等があった場合には、下記の窓口にて、迅速かつ適切な対応をいたします。</p>
+      </div>
+      <div class="contact-box">
+        <p class="contact-label">個人情報に関するお問い合わせ先</p>
+        <p>結婚相談所ハルカゼ</p>
+        <p>個人情報保護管理責任者：石神りさ</p>
+        <p>メール：marriage.salon.harukaze@gmail.com</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 特定商取引法 -->
+    <div>
+      <p class="tokusho-label">Specified Commercial Transactions Act</p>
+      <h2 class="tokusho-h2">特定商取引法に基づく表記</h2>
+
+      <table class="info-table">
+        <tr>
+          <th>販売者名</th>
+          <td>結婚相談所ハルカゼ</td>
+        </tr>
+        <tr>
+          <th>代表責任者</th>
+          <td>石神りさ</td>
+        </tr>
+        <tr>
+          <th>メールアドレス</th>
+          <td>marriage.salon.harukaze@gmail.com</td>
+        </tr>
+        <tr>
+          <th>販売価格</th>
+          <td>商品毎に販売価格を表示</td>
+        </tr>
+        <tr>
+          <th>商品引き渡し方法</th>
+          <td>銀行振込：振込確認後3日以内</td>
+        </tr>
+        <tr>
+          <th>お支払い方法</th>
+          <td>銀行振込</td>
+        </tr>
+        <tr>
+          <th>役務の提供時期</th>
+          <td>入会手続き及び登録完了より退会のお申し出があった日まで</td>
+        </tr>
+        <tr>
+          <th>商品以外の必要料金</th>
+          <td>お見合い時の交通費、喫茶代は実費となります。<br>銀行振込の場合、振込み手数料をご負担いただきます。</td>
+        </tr>
+        <tr>
+          <th>中途解約・返金・<br>キャンセルについて</th>
+          <td>契約書面の交付から８日以内であれば無条件で解約することができます（クーリング・オフ）。クーリング・オフ後でも中途解約可能です。</td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+</main>
+
+<!-- フッター -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-brand">大阪・吹田結婚相談所 ハルカゼ</p>
+    <nav class="footer-links">
+      <a href="about.html">メッセージ</a>
+      <a href="about.html#vision">ハルカゼの想い（VISION）</a>
+      <a href="lab.html">ハルカゼLAB</a>
+      <a href="service.html">サービス内容</a>
+      <a href="service.html#price">サービス・料金</a>
+      <a href="flow.html">ご成婚までの流れ</a>
+      <a href="faq.html">よくある質問</a>
+      <a href="blog.html">ブログ</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+    </nav>
+    <p class="footer-girls-label">女性の方はこちら</p>
+    <a href="girls.html" class="footer-girls-link">▶ 女子の婚活 Girls LAB</a>
+    <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="footer-line-btn">初回無料面談に申し込む</a>
+    <p class="footer-copy">© 2025 結婚相談所ハルカゼ</p>
+  </div>
+</footer>
+
+<!-- フローティングボタン -->
+<a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-line-btn">LINEで相談する</a>
+<div class="float-side-btns">
+  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn">面談を予約する</a>
+  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn">LINEで婚活突破口診断</a>
+</div>
+
+<script src="js/common.js"></script>
+</body>
+</html>

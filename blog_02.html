@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大手広告代理店の面接で、「恋愛です」と答えた話。｜ハルカゼブログ</title>
+<meta name="description" content="新卒の就活面接で「学生時代にがんばってきたことは？」と聞かれ、答えたのが「恋愛です。」人が好きで、でも自分を信じられなかった、あの頃の話。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+.hamburger-btn {
+  display: none;
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1000;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  flex-direction: column;
+  gap: 5px;
+}
+.hamburger-btn span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #4a6fa5;
+  transition: all 0.3s ease;
+}
+.hamburger-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger-btn.open span:nth-child(2) { opacity: 0; }
+.hamburger-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.mobile-nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.97);
+  z-index: 999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+.mobile-nav-overlay.open { display: flex; }
+.mobile-nav-overlay a {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.1rem;
+  color: #2e4a7a;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+}
+.mobile-nav-overlay a:hover { color: #4a6fa5; }
+@media (max-width: 768px) {
+  .hamburger-btn { display: flex; }
+}
+:root {
+  --teal: #4a6fa5;
+  --teal-dark: #2e4a7a;
+  --teal-pale: #e8edf8;
+  --pink: #e8a0a0;
+  --pink-dark: #d4697a;
+  --pink-pale: #fdf0f0;
+  --bg: #ffffff;
+  --deep: #2e4a7a;
+  --mid: #333333;
+  --light: #888888;
+  --border: #e8e4f0;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--deep);
+  overflow-x: hidden;
+}
+
+/* HEADER */
+body > header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+.logo { display: flex; flex-direction: column; gap: 1px; text-decoration: none; flex-shrink: 0; margin-right: 32px; }
+.logo-sub { font-size: 8px; letter-spacing: 0.18em; color: var(--mid); font-weight: 400; }
+.logo-main { font-family: 'Noto Serif JP', serif; font-size: 14px; font-weight: 500; letter-spacing: 0.25em; color: #2e4a7a; }
+nav { display: flex; align-items: center; gap: 6px; flex: 1; }
+nav a { font-size: 11px; letter-spacing: 0.1em; color: #2e4a7a; text-decoration: none; padding: 6px 10px; border-radius: 6px; transition: background 0.2s, color 0.2s; white-space: nowrap; }
+nav a:hover { background: var(--teal-pale); color: var(--teal-dark); }
+nav a.active { color: var(--pink); font-weight: 500; }
+.nav-cta { margin-left: auto; background: var(--pink) !important; color: white !important; padding: 10px 18px !important; border-radius: 50px !important; font-size: 12px !important; font-weight: 500 !important; box-shadow: 0 4px 14px rgba(240,96,154,0.3); }
+.nav-cta:hover { background: var(--pink-dark) !important; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; margin-left: auto; padding: 8px; }
+.hamburger span { display:block; width:22px; height:1.5px; background:var(--deep); border-radius:2px; }
+
+/* BREADCRUMB */
+.breadcrumb {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 88px 24px 0;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 11px;
+  color: var(--light);
+  letter-spacing: 0.1em;
+}
+.breadcrumb a { color: var(--light); text-decoration: none; transition: color 0.2s; }
+.breadcrumb a:hover { color: var(--teal); }
+.breadcrumb-sep { font-size: 10px; }
+
+/* ARTICLE LAYOUT */
+.article-wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 32px 24px 96px;
+}
+
+/* ARTICLE HEADER */
+.article-header {
+  margin-bottom: 48px;
+  animation: fadeUp 0.8s ease forwards 0.2s; opacity:0;
+}
+@keyframes fadeUp {
+  from { opacity:0; transform: translateY(16px); }
+  to   { opacity:1; transform: translateY(0); }
+}
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.article-cat {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: white;
+  background: var(--pink);
+  padding: 5px 12px;
+  border-radius: 50px;
+}
+.article-date {
+  font-size: 11px;
+  color: var(--light);
+  letter-spacing: 0.15em;
+  font-family: 'Cormorant Garamond', serif;
+}
+.article-title {
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 400;
+  font-size: clamp(22px, 3.5vw, 30px);
+  line-height: 1.7;
+  color: var(--deep);
+  margin-bottom: 24px;
+}
+.article-eyecatch {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+  background: linear-gradient(135deg, var(--teal-pale), rgba(135,210,240,0.3));
+}
+.article-eyecatch-placeholder {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--teal-pale), rgba(135,210,240,0.3));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.article-eyecatch-placeholder span {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 72px;
+  color: rgba(74,111,165,0.2);
+  font-style: italic;
+}
+
+/* ARTICLE BODY */
+.article-body {
+  animation: fadeUp 0.8s ease forwards 0.4s; opacity:0;
+}
+.article-body p {
+  font-size: 15px;
+  line-height: 2.2;
+  color: var(--deep);
+  font-weight: 300;
+  margin-bottom: 28px;
+  letter-spacing: 0.04em;
+}
+.article-body h2 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--deep);
+  line-height: 1.6;
+  margin: 48px 0 20px;
+  padding-left: 16px;
+  border-left: 3px solid var(--pink);
+}
+.article-body h3 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--deep);
+  line-height: 1.6;
+  margin: 36px 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--teal-pale);
+}
+.article-body blockquote {
+  margin: 32px 0;
+  padding: 24px 28px;
+  background: var(--pink-pale);
+  border-left: 3px solid var(--pink);
+  border-radius: 0 12px 12px 0;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 15px;
+  line-height: 2;
+  color: var(--deep);
+}
+.article-body .point-box {
+  margin: 32px 0;
+  padding: 28px 32px;
+  background: linear-gradient(135deg, var(--teal-pale), rgba(135,210,240,0.2));
+  border-radius: 16px;
+  border: 1px solid rgba(74,111,165,0.2);
+}
+.article-body .point-box-title {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: var(--teal-dark);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.article-body .point-box p {
+  font-size: 14px;
+  margin-bottom: 0;
+  color: var(--mid);
+}
+.article-body img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+  margin: 32px 0;
+}
+
+/* DIVIDER */
+.article-divider {
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(to right, var(--pink), var(--teal));
+  margin: 48px 0;
+  border: none;
+}
+
+/* AUTHOR */
+.article-author {
+  margin-top: 64px;
+  padding: 32px;
+  background: white;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  animation: fadeUp 0.8s ease forwards 0.6s; opacity:0;
+}
+.article-author-avatar {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal-pale), var(--pink-pale));
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  color: var(--pink);
+  font-style: italic;
+  overflow: hidden;
+}
+.article-author-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.article-author-info { display: flex; flex-direction: column; gap: 6px; }
+.article-author-role { font-size: 10px; letter-spacing: 0.2em; color: var(--light); }
+.article-author-name { font-family: 'Noto Serif JP', serif; font-size: 16px; letter-spacing: 0.15em; color: #2e4a7a; }
+.article-author-bio { font-size: 12px; line-height: 1.9; color: var(--mid); font-weight: 300; }
+
+/* NAV BETWEEN ARTICLES */
+.article-nav {
+  margin-top: 56px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+.article-nav-link {
+  font-size: 12px;
+  color: var(--teal-dark);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+}
+.article-nav-link:hover { color: var(--pink); }
+.article-nav-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--mid);
+  text-decoration: none;
+  letter-spacing: 0.12em;
+  padding: 12px 24px;
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  transition: all 0.2s;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+}
+.article-nav-back:hover { border-color: var(--teal); color: var(--teal-dark); background: white; }
+
+/* CTA */
+.article-cta {
+  margin-top: 64px;
+  padding: 48px 40px;
+  background: var(--pink-pale);
+  border-radius: 24px;
+  text-align: center;
+  animation: fadeUp 0.8s ease forwards 0.7s; opacity:0;
+}
+.article-cta-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--deep);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+.article-cta-sub {
+  font-size: 13px;
+  color: var(--mid);
+  line-height: 2;
+  font-weight: 300;
+  margin-bottom: 28px;
+}
+.btn-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #06C755;
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  padding: 16px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: transform 0.25s, opacity 0.25s;
+}
+.btn-line:hover { transform: translateY(-2px); opacity: 0.9; }
+
+/* FOOTER */
+footer { background: #2e4a7a; border-top: 1px solid rgba(255,255,255,0.15); padding: 40px 24px; }
+.footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+.footer-logo { color: #FFFFFF; text-decoration: none; font-family: 'Noto Serif JP', serif; font-size: 14px; letter-spacing: 0.2em; }
+.footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.footer-links a { font-size: 11px; color: rgba(255,255,255,0.7); text-decoration: none; letter-spacing: 0.1em; transition: color 0.2s; }
+.footer-links a:hover { color: var(--pink); }
+.footer-copy { font-size: 10px; color: rgba(255,255,255,0.7); letter-spacing: 0.15em; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav { display: none; }
+  .article-wrap { padding: 24px 20px 72px; }
+  .article-title { font-size: 22px; }
+  .article-body h2 { font-size: 18px; }
+  .article-author { flex-direction: column; text-align: center; }
+  .article-cta { padding: 36px 24px; }
+  .footer-inner { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+<button class="hamburger-btn" id="hamburgerBtn" aria-label="メニュー">
+  <span></span><span></span><span></span>
+</button>
+<div class="mobile-nav-overlay" id="mobileNav">
+  <a href="index.html">トップ</a>
+  <a href="vision.html">ハルカゼの想い</a>
+  <a href="college.html">ハルカゼCollege</a>
+  <a href="service.html">サービス内容</a>
+  <a href="price.html">サービス・料金</a>
+  <a href="flow.html">ご成婚までの流れ</a>
+  <a href="faq.html">よくある質問</a>
+  <a href="blog.html">ブログ</a>
+  <a href="contact.html">お問い合わせ</a>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-sub">オンラインで始める婚活</span>
+      <span class="logo-main">結婚相談所 ハルカゼ</span>
+    </a>
+    <nav>
+      <a href="vision.html">ハルカゼの想い</a>
+      <a href="college.html">ハルカゼcollege</a>
+      <a href="service.html">サービス内容</a>
+      <a href="price.html">サービス・料金</a>
+      <a href="flow.html">ご成婚までの流れ</a>
+      <a href="faq.html">よくある質問</a>
+      <a href="blog.html" class="active">ブログ</a>
+      <a href="contact.html">お問い合わせ</a>
+      <a href="https://lin.ee/SNU5ure" target="_blank" class="nav-cta">無料相談</a>
+    </nav>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="index.html">TOP</a>
+  <span class="breadcrumb-sep">›</span>
+  <a href="blog.html">ブログ</a>
+  <span class="breadcrumb-sep">›</span>
+  <span>大手広告代理店の面接で、「恋愛です」と答えた話。</span>
+</div>
+
+<!-- ARTICLE -->
+<article class="article-wrap">
+
+  <!-- ヘッダー -->
+  <header class="article-header">
+    <div class="article-meta">
+      <span class="article-cat">ハルカゼの想い</span>
+      <span class="article-date">2026.03.26</span>
+    </div>
+    <h1 class="article-title">大手広告代理店の面接で、「恋愛です」と答えた話。</h1>
+    <div class="article-eyecatch-placeholder">
+      <span>h</span>
+    </div>
+  </header>
+
+  <!-- 本文 -->
+  <div class="article-body">
+    <p>
+      20・30代に特化した結婚相談所、ハルカゼ代表の石神りさです。
+    </p>
+
+    <p>
+      新卒の就活面接で、「学生時代にがんばってきたことは何ですか？」と聞かれたとき、真剣に考えて答えたのがそれでした。<br>
+      「恋愛です！」
+    </p>
+
+    <p>
+      冷静に考えたら、考えなくても、かなり痛いやつでした。（その面接は通ったけど……）当時の私は、それ以外に答えられないくらい、愛や恋に全力で、恋愛が人生の中心でした。
+    </p>
+
+    <h2>「好きなことは？」と聞かれたら、「人」としか答えられない</h2>
+
+    <p>
+      社会人になって営業を選んだのは、「たくさんの人に会えるから」というただそれだけの理由。個人では絶対に会えないような企業の代表に会って、仕事と関係ない話を聞いてみる。違う国籍の人と仲良くなって、そのまま海外旅行に誘われる。Instagramが出始めた頃、気になる人には直接コンタクトを取って、実際に会いに行く。
+    </p>
+
+    <p>
+      「好きなことは？」と聞かれたら、「人」としか答えられない。<br>
+      今は他にも好きなことがたくさん増えましたが、人と関わることが好きなのは変わっていません。
+    </p>
+
+    <h2>でも当時の私には、大きな矛盾があった</h2>
+
+    <p>
+      でも当時の私は、「人が好き」と言いながら、自分のことは全然好きではなく、自分を信じてもいませんでした。「何者かにならないといけない」「できないことばかりの自分ではダメ」。ミスコンに出て、モデルスクールに通って、会社員をしながらヨガのインストラクター資格を取って。傍から見ればアクティブに見えていたと思います。でも全部、「誰かに認められたい」が出発点でした。興味の前提は、好かれるため。
+    </p>
+
+    <p>
+      恋愛も、同じ。好きな状態が楽しい。好きでいてくれる状態が安心する。ベクトルはいつも自分に向いていて、相手を愛していたのか、愛されている状態が必要だったのか、当時は区別がつきませんでした。
+    </p>
+
+    <h2>転機は、子育てとキャリアの変化が重なった時期</h2>
+
+    <p>
+      本当は大切にしたいのに、夫にも不満ばかり。自分も、こんな自分が嫌で毎日自己嫌悪。「私ばっかり我慢してる」。愛する子供たちの前で、笑顔になれない日もありました。
+    </p>
+
+    <p>
+      そこでようやく気がつきました。根っこには「認められたい」「幸せにしてほしい」がずっとあったことに。
+    </p>
+
+    <p>
+      「このまま、誰かを目指して、誰かを気にして、評価を気にして生きていくのは嫌だ」——心の底から、そう思いました。
+    </p>
+
+    <h2>自分を信じられるようになったら</h2>
+
+    <p>
+      そこから、自分のために学ぶことを始めました。本を読んで、セミナーを受けて、コーチングを学んで。「好き」を知って、「嫌い」も認めて、自分の思考の癖と少しずつ向き合いました。
+    </p>
+
+    <p>
+      「自分軸」「セルフラブ」という言葉をよく聞く時代になって、もちろんその大切さも知っています。それが全て、だとも思う。だけど、なんとなくひねくれているのですが、「自分のことに必死になったとき、本気になり始めるとき」——周りなんてどうでもよくなる。私は自分自身を通してそう感じていて、そっちの方がしっくりきます。（言い方の問題ということで）そうなっていく中で、過去の失敗も執着もどうでもよくなって、完璧でない自分でも自分を信じられるようになりました。
+    </p>
+
+    <p>
+      大切にされたい、大切にすべき。そんな風に縛られていた時よりも、隣にいる人のことを、自然に大切にできるようになったと思います。
+    </p>
+
+    <div class="point-box">
+      <div class="point-box-title">ハルカゼのビジョン</div>
+      <p>「幸せな結婚は、幸せな人から始まる」——ハルカゼのビジョンは、きれいごとじゃなくて、私自身が時間をかけて辿り着いた、本当のことです。</p>
+    </div>
+
+    <p>
+      「在りたい自分」は、何度でも更新できる。あなたの婚活に伴走しながら、私もそれを信じ続けています。
+    </p>
+  </div>
+
+  <hr class="article-divider">
+
+  <!-- 著者 -->
+  <div class="article-author">
+    <div class="article-author-avatar">R</div>
+    <div class="article-author-info">
+      <span class="article-author-role">結婚相談所ハルカゼ 代表</span>
+      <span class="article-author-name">石神 りさ</span>
+      <p class="article-author-bio">
+        大阪・吹田を拠点に、全国からオンラインで婚活をサポート。<br>
+        一人ひとりの価値観に寄り添い、納得のいく出会いへ。
+      </p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="article-cta">
+    <div class="article-cta-title">まずは、気軽に話してみませんか。</div>
+    <p class="article-cta-sub">
+      来店不要・40分のオンライン面談で、<br>
+      あなたの婚活の悩みをお聞きします。
+    </p>
+    <a href="https://lin.ee/SNU5ure" target="_blank" class="btn-line">
+      初回無料面談に申し込む
+    </a>
+  </div>
+
+  <!-- 記事ナビ -->
+  <div class="article-nav">
+    <a href="blog.html" class="article-nav-back">← ブログ一覧に戻る</a>
+  </div>
+
+</article>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="footer-logo">結婚相談所 ハルカゼ</a>
+    <div class="footer-links">
+      <a href="vision.html">ハルカゼの想い</a>
+      <a href="college.html">ハルカゼcollege</a>
+      <a href="service.html">サービス内容</a>
+      <a href="price.html">サービス・料金</a>
+      <a href="flow.html">ご成婚までの流れ</a>
+      <a href="faq.html">よくある質問</a>
+      <a href="blog.html">ブログ</a>
+      <a href="contact.html">お問い合わせ</a>
+      <a href="https://lin.ee/SNU5ure" target="_blank">無料相談</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+    </div>
+    <span class="footer-copy">© 2025 結婚相談所ハルカゼ</span>
+  </div>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e,i) => {
+    if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('visible'),i*70); observer.unobserve(e.target); }
+  });
+},{ threshold:0.08 });
+reveals.forEach(el=>observer.observe(el));
+</script>
+<script>
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const mobileNav = document.getElementById('mobileNav');
+hamburgerBtn.addEventListener('click', () => {
+  hamburgerBtn.classList.toggle('open');
+  mobileNav.classList.toggle('open');
+});
+mobileNav.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    hamburgerBtn.classList.remove('open');
+    mobileNav.classList.remove('open');
+  });
+});
+</script>
+</body>
+</html>
