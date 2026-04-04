@@ -74,7 +74,7 @@
       <a href="girls.html">婚活女子のGirls LAB</a>
       <a href="faq.html">よくある質問</a>
       <a href="blog.html">ブログ</a>
-      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta btn">LINEで相談</a>
+      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta btn">初回無料面談に申し込む</a>
     `;
 
     document.body.insertBefore(overlay, document.body.firstChild);

@@ -278,6 +278,21 @@ ul {
   text-transform: uppercase;
 }
 
+/* モバイルナビ：下矢印 */
+.mobile-nav-arrow {
+  display: block;
+  color: rgba(255,255,255,0.45);
+  font-size: 18px;
+  animation: nav-arrow-bounce 1.4s ease-in-out infinite;
+  line-height: 1;
+  margin: -10px 0 -10px;
+}
+
+@keyframes nav-arrow-bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.45; }
+  50%       { transform: translateY(5px); opacity: 0.9; }
+}
+
 /* モバイルナビ：Girls LABリンク（ピンク） */
 .mobile-nav-girls {
   font-size: 18px !important;
