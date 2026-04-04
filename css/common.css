@@ -603,9 +603,52 @@ body {
     padding: 60px 20px;
   }
 
+  /* モバイル：フッター下部にボトムバー分の余白 */
+  .site-footer {
+    padding-bottom: 72px;
+  }
+
+  /* モバイル：サイドボタンを非表示にしてボトムバーに切り替え */
+  .float-side-btns {
+    top: auto;
+    right: auto;
+    transform: none;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    flex-direction: row;
+    gap: 0;
+    z-index: 9999;
+  }
+
   .float-side-btn {
-    font-size: 10px;
-    padding: 14px 8px;
+    flex: 1;
+    width: 50%;
+    height: 56px;
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+    padding: 0 8px;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+  }
+
+  .float-side-btn:hover {
+    transform: none;
+  }
+
+  /* 2ボタン色分け */
+  .float-side-btns .float-side-btn:first-child {
+    background: var(--color-navy);
+  }
+
+  .float-side-btns .float-side-btn:last-child {
+    background: var(--color-sky);
   }
 
   .float-line-btn {
