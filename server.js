@@ -39,7 +39,14 @@ http.createServer(function(req, res) {
       }
       return;
     }
-    res.writeHead(200, { 'Content-Type': contentType });
+    const noCache = ['.html', '.css', '.js'];
+    const headers = { 'Content-Type': contentType };
+    if (noCache.includes(ext)) {
+      headers['Cache-Control'] = 'no-cache, no-store, must-revalidate';
+      headers['Pragma'] = 'no-cache';
+      headers['Expires'] = '0';
+    }
+    res.writeHead(200, headers);
     res.end(data);
   });
 }).listen(PORT, function() {
