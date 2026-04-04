@@ -278,19 +278,21 @@ ul {
   text-transform: uppercase;
 }
 
-/* モバイルナビ：下矢印 */
+/* モバイルナビ：下矢印（シェブロン） */
 .mobile-nav-arrow {
   display: block;
-  color: rgba(255,255,255,0.45);
-  font-size: 18px;
+  width: 14px;
+  height: 14px;
+  border-right: 2px solid rgba(255,255,255,0.55);
+  border-bottom: 2px solid rgba(255,255,255,0.55);
+  transform: rotate(45deg);
+  margin: -8px auto -8px;
   animation: nav-arrow-bounce 1.4s ease-in-out infinite;
-  line-height: 1;
-  margin: -10px 0 -10px;
 }
 
 @keyframes nav-arrow-bounce {
-  0%, 100% { transform: translateY(0); opacity: 0.45; }
-  50%       { transform: translateY(5px); opacity: 0.9; }
+  0%, 100% { transform: rotate(45deg) translateY(0);   opacity: 0.55; }
+  50%       { transform: rotate(45deg) translateY(4px); opacity: 1;    }
 }
 
 /* モバイルナビ：Girls LABリンク（ピンク） */
