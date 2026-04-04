@@ -6,27 +6,8 @@
 (function () {
   'use strict';
 
-  /* ── ハンバーガーメニュー ── */
-  const hamburgerBtn = document.getElementById('hamburgerBtn');
-  const mobileNavOverlay = document.getElementById('mobileNavOverlay');
-
-  if (hamburgerBtn && mobileNavOverlay) {
-    hamburgerBtn.addEventListener('click', function () {
-      const isOpen = mobileNavOverlay.classList.toggle('open');
-      hamburgerBtn.classList.toggle('open', isOpen);
-      // スクロール抑止
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
-
-    // オーバーレイ内リンクをクリックしたら閉じる
-    mobileNavOverlay.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        mobileNavOverlay.classList.remove('open');
-        hamburgerBtn.classList.remove('open');
-        document.body.style.overflow = '';
-      });
-    });
-  }
+  /* ── ハンバーガーメニュー（DOMContentLoaded内で一本化） ── */
+  // ※ 即時実行とDOMContentLoadedの二重バインドを防ぐため、ここでは何もしない
 
   /* ── フローティングボタン 注入（共通HTML） ── */
   function injectFloatingButtons() {
