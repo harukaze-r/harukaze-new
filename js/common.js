@@ -61,8 +61,9 @@
     nav.className = 'site-nav';
     nav.innerHTML = `
       <a href="index.html" class="nav-logo">
-        <span class="nav-logo-sub">20・30代のための結婚相談所</span>
-        <span class="nav-logo-main">ハルカゼ</span>
+        <span class="nav-logo-sub">IBJ正規加盟店</span>
+        <span class="nav-logo-main">結婚相談所ハルカゼ</span>
+        <span class="nav-logo-target">20・30代男性向け結婚相談所</span>
       </a>
       <ul class="nav-links">
         <li><a href="about.html">メッセージ</a></li>
@@ -142,6 +143,26 @@
     document.body.appendChild(footer);
   }
 
+  /* harukaze-mod: 修正3 フローティングボタン スクロール表示 */
+  function initFloatSideScroll() {
+    var sideBtns = document.querySelector('.float-side-btns');
+    if (!sideBtns) return;
+
+    var hero = document.querySelector('.hero');
+    var threshold = hero ? hero.offsetHeight : window.innerHeight;
+
+    function onScroll() {
+      if (window.scrollY > threshold) {
+        sideBtns.classList.add('is-visible');
+      } else {
+        sideBtns.classList.remove('is-visible');
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // 初期チェック
+  }
+
   /* ── DOMContentLoaded で全部実行 ── */
   document.addEventListener('DOMContentLoaded', function () {
     // ナビ・フッターはHTMLに直書きしているページもあるため、
@@ -171,6 +192,7 @@
     }
 
     injectFloatingButtons();
+    initFloatSideScroll(); /* harukaze-mod: 修正3 */
   });
 
 })();

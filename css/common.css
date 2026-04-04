@@ -85,6 +85,15 @@ ul {
 }
 
 /* ロゴ */
+/* harukaze-mod: 修正2 ターゲット文言 */
+.nav-logo-target {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: #0EA5E9;
+  margin-top: 2px;
+  line-height: 1.2;
+}
+
 .nav-logo {
   display: flex;
   flex-direction: column;
@@ -336,6 +345,7 @@ body {
 .float-line-btn { display: none !important; }
 .float-line-btn:hover {}
 
+/* harukaze-mod: 修正3 フローティングボタン初期非表示＋スクロール表示 */
 /* サイドフローティングボタン（右端） */
 .float-side-btns {
   position: fixed;
@@ -346,6 +356,14 @@ body {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.float-side-btns.is-visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .float-side-btn {
