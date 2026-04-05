@@ -35,7 +35,39 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(30,58,95,1.00) 0%, rgba(30,58,95,1.00) 32%, rgba(30,58,95,0.50) 55%, rgba(30,58,95,0.00) 100%);
+  /* PC：左からダークネイビーでグラデーション（ヘッダーと差をつける） */
+  background: linear-gradient(to right,
+    rgba(10,20,40,1.00) 0%,
+    rgba(13,27,58,1.00) 28%,
+    rgba(20,40,85,0.55) 55%,
+    rgba(20,40,85,0.00) 100%
+  );
+}
+
+/* ── モバイル ヒーロー レイアウト修正 ── */
+@media (max-width: 640px) {
+  .hero {
+    align-items: flex-start;
+  }
+  .hero-bg {
+    /* 写真をやや下寄りに配置してテキストエリアと分離 */
+    background-position: center 60%;
+    background-size: 130% auto;
+  }
+  .hero-bg::after {
+    /* モバイル：上から下への縦グラデーション */
+    background: linear-gradient(to bottom,
+      rgba(10,20,40,0.97) 0%,
+      rgba(10,20,40,0.92) 30%,
+      rgba(10,20,40,0.60) 52%,
+      rgba(10,20,40,0.15) 75%,
+      rgba(10,20,40,0.00) 100%
+    );
+  }
+  .hero-content {
+    /* テキストを上から15〜18%の位置に */
+    padding: calc(15vh + 4px) 24px 32px;
+  }
 }
 .hero-content {
   position: relative;
@@ -592,7 +624,6 @@
       <a href="about.html" class="hero-about-link">ハルカゼについて →</a>
       <div class="hero-btns">
         <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn btn-sky">初回無料面談に申し込む</a>
-        <a href="service.html" class="hero-link-sub">どんなサポートか →</a>
       </div>
     </div>
     <p class="hero-photo-caption">代表　石神りさ</p>
