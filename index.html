@@ -57,20 +57,36 @@
   text-shadow: 0 1px 6px rgba(0,0,0,0.55);
 }
 .hero-title {
-  font-size: clamp(25px, 7vw, 72px);
+  font-size: clamp(32px, 8vw, 72px);
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1.25;
   letter-spacing: 0.04em;
-  white-space: nowrap;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 .hero-sub {
   font-size: clamp(13px, 3.8vw, 19px);
   line-height: 1.9;
   opacity: 0.92;
-  margin-bottom: 40px;
+  margin-bottom: 12px;
   white-space: nowrap;
 }
+.hero-name {
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+}
+.hero-about-link {
+  display: inline-block;
+  font-size: 13px;
+  color: rgba(255,255,255,0.85);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  letter-spacing: 0.06em;
+  margin-bottom: 36px;
+  transition: opacity 0.2s;
+}
+.hero-about-link:hover { opacity: 0.6; }
 .hero-btns {
   display: flex;
   flex-wrap: wrap;
@@ -84,6 +100,52 @@
   transition: opacity 0.2s;
 }
 .hero-link-sub:hover { opacity: 0.65; }
+
+/* ── ブログミニセクション ── */
+.blog-mini-section {
+  padding: 0 0 8px;
+}
+.blog-mini-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 24px;
+}
+.blog-mini-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(30,58,95,0.1);
+  text-decoration: none;
+  color: var(--color-navy);
+  transition: opacity 0.2s;
+}
+.blog-mini-item:first-child { border-top: 1px solid rgba(30,58,95,0.1); }
+.blog-mini-item:hover { opacity: 0.65; }
+.blog-mini-tag {
+  flex-shrink: 0;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--color-sky);
+  background: rgba(14,165,233,0.1);
+  border-radius: 4px;
+  padding: 2px 7px;
+}
+.blog-mini-date {
+  flex-shrink: 0;
+  font-size: 11px;
+  color: #999;
+}
+.blog-mini-title {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.blog-mini-footer {
+  margin-top: 20px;
+  text-align: right;
+}
 
 /* ── チェックリスト ── */
 .checklist-grid {
@@ -513,8 +575,10 @@
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-content">
-      <h1 class="hero-title">いい人で終わらせない。</h1>
+      <h1 class="hero-title">"いい人"で、<br>終わらせない。</h1>
       <p class="hero-sub">あなたの本当の良さを、磨いて、届ける。<br>この人と想える人に、出会うために。</p>
+      <p class="hero-name">代表　石神りさ</p>
+      <a href="about.html" class="hero-about-link">ハルカゼについて →</a>
       <div class="hero-btns">
         <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn btn-sky">初回無料面談に申し込む</a>
         <a href="service.html" class="hero-link-sub">どんなサポートか →</a>
@@ -527,7 +591,7 @@
   <section class="section">
     <div class="section-inner">
       <p class="section-label">Check List</p>
-      <h2 class="section-title">一生懸命な<em style="font-style:normal;">"いい人"</em><span style="font-size:0.55em;font-weight:400;color:#666;">に、</span><br><span style="font-weight:400;color:var(--color-pink);">当てはまるほど、ハルカゼ向き。</span></h2>
+      <h2 class="section-title">一生懸命な<em style="font-style:normal;">"いい人"</em>に、<br><span style="font-weight:400;color:var(--color-pink);">当てはまるほど、ハルカゼ向き。</span></h2>
       <div class="checklist-grid">
         <div class="checklist-item">
           <div class="check-icon">
@@ -535,7 +599,7 @@
               <path d="M2 7l3.5 3.5 6.5-6.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <p class="checklist-text">真面目なのになぜか選ばれない</p>
+          <p class="checklist-text">2回目のデートに繋がらない</p>
         </div>
         <div class="checklist-item">
           <div class="check-icon">
@@ -573,6 +637,33 @@
     </div>
   </section>
 
+  <!-- ②-b ブログミニセクション -->
+  <section class="section blog-mini-section">
+    <div class="section-inner">
+      <p class="section-label">Blog</p>
+      <div class="blog-mini-list">
+        <a href="blog-post.html" class="blog-mini-item">
+          <span class="blog-mini-tag">婚活のヒント</span>
+          <span class="blog-mini-date">2025.04.01</span>
+          <span class="blog-mini-title">なぜ、いい人どまりになるのか。</span>
+        </a>
+        <a href="blog-post.html" class="blog-mini-item">
+          <span class="blog-mini-tag">りさのつぶやき</span>
+          <span class="blog-mini-date">2025.03.20</span>
+          <span class="blog-mini-title">ハルカゼが生まれた理由。</span>
+        </a>
+        <a href="blog-post.html" class="blog-mini-item">
+          <span class="blog-mini-tag">婚活のヒント</span>
+          <span class="blog-mini-date">2025.03.10</span>
+          <span class="blog-mini-title">プロフィールで損してない？チェックリスト</span>
+        </a>
+      </div>
+      <div class="blog-mini-footer">
+        <a href="blog.html" class="text-link">ブログをもっと見る →</a>
+      </div>
+    </div>
+  </section>
+
   <!-- ③ 婚活突破口診断（チェックリスト直後） -->
   <section class="section section-ice" style="padding: 32px 24px;">
     <div class="section-inner">
@@ -588,10 +679,6 @@
   <!-- ④ りさのメッセージ -->
   <section class="message-section">
     <div class="message-inner">
-      <div class="message-photo">
-        <img src="newimages/IMG_8907.jpeg" alt="石神りさ – ハルカゼ代表">
-        <p class="message-photo-name">代表　石神りさ</p>
-      </div>
       <div class="message-text-area">
         <p class="section-label">MESSAGE FROM RISA</p>
         <h2 class="section-title">自分の魅力、<br>ちゃんと知ってますか？</h2>
