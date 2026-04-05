@@ -44,31 +44,6 @@
   );
 }
 
-/* ── モバイル ヒーロー レイアウト修正 ── */
-@media (max-width: 640px) {
-  .hero {
-    align-items: flex-start;
-  }
-  .hero-bg {
-    /* 写真をやや下寄りに配置してテキストエリアと分離 */
-    background-position: center 60%;
-    background-size: 130% auto;
-  }
-  .hero-bg::after {
-    /* モバイル：上から下への縦グラデーション */
-    background: linear-gradient(to bottom,
-      rgba(10,20,40,0.97) 0%,
-      rgba(10,20,40,0.92) 30%,
-      rgba(10,20,40,0.60) 52%,
-      rgba(10,20,40,0.15) 75%,
-      rgba(10,20,40,0.00) 100%
-    );
-  }
-  .hero-content {
-    /* テキストを上から15〜18%の位置に */
-    padding: calc(15vh + 4px) 24px 32px;
-  }
-}
 .hero-content {
   position: relative;
   z-index: 1;
@@ -132,6 +107,30 @@
   transition: opacity 0.2s;
 }
 .hero-link-sub:hover { opacity: 0.65; }
+
+/* ── モバイル ヒーロー レイアウト修正 ── */
+@media (max-width: 640px) {
+  .hero {
+    align-items: flex-start;
+  }
+  .hero-bg {
+    background-position: center 60%;
+    background-size: 130% auto;
+  }
+  .hero-bg::after {
+    background: linear-gradient(to bottom,
+      rgba(10,20,40,0.97) 0%,
+      rgba(10,20,40,0.92) 30%,
+      rgba(10,20,40,0.60) 52%,
+      rgba(10,20,40,0.15) 75%,
+      rgba(10,20,40,0.00) 100%
+    );
+  }
+  .hero-content {
+    /* テキストを上から15〜18%の位置に / 左右余白をsectionと統一（20px） */
+    padding: calc(15vh + 4px) 20px 32px;
+  }
+}
 
 /* ── チェックリスト締め一文 ── */
 .checklist-loop-text {
