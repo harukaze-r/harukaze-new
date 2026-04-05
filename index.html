@@ -52,17 +52,6 @@
   color: #fff;
 }
 /* harukaze-mod: 修正1 .hero-tag / .tag-pink は削除済み */
-.hero-photo-caption {
-  position: absolute;
-  bottom: 16px;
-  right: 16px;
-  font-size: 13px;
-  font-family: var(--font-display);
-  color: #fff;
-  letter-spacing: 0.18em;
-  z-index: 2;
-  text-shadow: 0 1px 6px rgba(0,0,0,0.55);
-}
 .hero-title {
   font-size: clamp(32px, 8vw, 72px);
   font-weight: 500;
@@ -114,21 +103,31 @@
     align-items: flex-start;
   }
   .hero-bg {
-    background-position: center 60%;
-    background-size: 130% auto;
+    /* サイズを元に戻す（70% auto）、写真を右下に配置しテキストエリアと分離 */
+    background-position: right bottom;
+    background-size: 70% auto;
   }
   .hero-bg::after {
+    /* 縦グラデーション：上ダーク（テキスト可読）→ 下透明（写真表示） */
     background: linear-gradient(to bottom,
       rgba(10,20,40,0.97) 0%,
-      rgba(10,20,40,0.92) 30%,
-      rgba(10,20,40,0.60) 52%,
-      rgba(10,20,40,0.15) 75%,
+      rgba(10,20,40,0.93) 38%,
+      rgba(10,20,40,0.55) 58%,
+      rgba(10,20,40,0.10) 78%,
       rgba(10,20,40,0.00) 100%
     );
   }
   .hero-content {
-    /* テキストを上から15〜18%の位置に / 左右余白をsectionと統一（20px） */
+    /* テキストを上部に配置・左右余白をsectionと統一（20px） */
     padding: calc(15vh + 4px) 20px 32px;
+  }
+  /* 代表名・リンクを中央揃え */
+  .hero-name {
+    text-align: center;
+  }
+  .hero-about-link {
+    display: block;
+    text-align: center;
   }
 }
 
@@ -625,7 +624,6 @@
         <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn btn-sky">初回無料面談に申し込む</a>
       </div>
     </div>
-    <p class="hero-photo-caption">代表　石神りさ</p>
   </section>
 
   <!-- ② 「俺だ！チェックリスト」 -->
