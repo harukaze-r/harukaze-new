@@ -88,12 +88,14 @@
         const isOpen = ovl.classList.toggle('open');
         btn.classList.toggle('open', isOpen);
         document.body.style.overflow = isOpen ? 'hidden' : '';
+        document.body.classList.toggle('nav-open', isOpen);
       });
       ovl.querySelectorAll('a').forEach(function (link) {
         link.addEventListener('click', function () {
           ovl.classList.remove('open');
           btn.classList.remove('open');
           document.body.style.overflow = '';
+          document.body.classList.remove('nav-open');
         });
       });
     }
@@ -163,6 +165,7 @@
       ovl.classList.remove('open');
       btn.classList.remove('open');
       document.body.style.overflow = '';
+      document.body.classList.remove('nav-open');
     }
 
     if (btn && ovl && !btn._bound) {
@@ -171,6 +174,7 @@
         const isOpen = ovl.classList.toggle('open');
         btn.classList.toggle('open', isOpen);
         document.body.style.overflow = isOpen ? 'hidden' : '';
+        document.body.classList.toggle('nav-open', isOpen);
       });
       ovl.querySelectorAll('a').forEach(function (link) {
         link.addEventListener('click', closeNav);
