@@ -103,11 +103,15 @@
 @media (max-width: 640px) {
   .hero {
     align-items: flex-start;
-    min-height: auto; /* コンテンツ量で高さを決定 */
+    min-height: auto;
+    background: rgb(10,20,40); /* フレームが見えないよう写真外側を同色で埋める */
   }
   .hero-bg {
-    background-position: right center;
-    background-size: 70% auto;
+    /* 写真の上下左のエッジを同色グラデーションでフェードアウト */
+    background:
+      linear-gradient(to bottom, rgb(10,20,40) 0%, transparent 18%, transparent 78%, rgb(10,20,40) 100%),
+      linear-gradient(to right,  rgb(10,20,40) 18%, transparent 36%),
+      url('newimages/IMG_0160.jpeg') right center / 70% auto no-repeat;
   }
   .hero-bg::after {
     /* 左上→右下 / タイトル末尾あたりまで暗帯にして右下へ抜ける */
