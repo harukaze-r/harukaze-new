@@ -103,25 +103,25 @@
 @media (max-width: 640px) {
   .hero {
     align-items: flex-start;
+    min-height: auto; /* コンテンツ量で高さを決定 */
   }
   .hero-bg {
-    /* 元のサイズ（70% auto）・右中央配置に戻す */
     background-position: right center;
     background-size: 70% auto;
   }
   .hero-bg::after {
-    /* 左上→右下グラデーション：テキスト〜メッセージ付近まで濃く、右下へ抜ける */
+    /* 左上→右下 / タイトル末尾あたりまで暗帯にして右下へ抜ける */
     background: linear-gradient(135deg,
       rgba(10,20,40,0.97) 0%,
-      rgba(10,20,40,0.95) 35%,
-      rgba(10,20,40,0.72) 55%,
-      rgba(10,20,40,0.30) 72%,
-      rgba(10,20,40,0.00) 90%
+      rgba(10,20,40,0.97) 18%,
+      rgba(10,20,40,0.60) 36%,
+      rgba(10,20,40,0.20) 54%,
+      rgba(10,20,40,0.00) 68%
     );
   }
   .hero-content {
-    /* テキストを上部に配置・左右余白をsectionと統一（20px） */
-    padding: calc(15vh + 4px) 20px 32px;
+    /* 上下余白を削減・左右余白をsectionと統一（20px） */
+    padding: calc(6vh) 20px 40px;
   }
   /* サブタイトル：折り返し許可・sp-brをモバイルで有効化 */
   .sp-br { display: block; }
@@ -129,13 +129,13 @@
     white-space: normal;
     max-width: 200px;
   }
-  /* 代表名・リンクを中央揃え */
+  /* 代表名・リンクを左寄せ */
   .hero-name {
-    text-align: center;
+    text-align: left;
   }
   .hero-about-link {
-    display: block;
-    text-align: center;
+    display: inline-block;
+    text-align: left;
   }
 }
 
