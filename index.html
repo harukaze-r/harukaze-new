@@ -156,7 +156,7 @@
 
 /* ── ブログミニセクション ── */
 .blog-mini-section {
-  padding: 0 0 8px;
+  /* .section のpadding（80px 24px / モバイル60px 20px）をそのまま使用 */
 }
 .blog-mini-list {
   display: flex;
@@ -526,6 +526,9 @@
   color: #fff;
 }
 .cta-title { font-size: clamp(24px, 4.5vw, 40px); font-weight: 500; margin-bottom: 16px; }
+@media (max-width: 640px) {
+  .cta-title { font-size: 17px; white-space: nowrap; }
+}
 .cta-sub { font-size: 15px; opacity: 0.85; margin-bottom: 40px; line-height: 1.9; }
 .cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
 
@@ -685,7 +688,7 @@
           <p class="checklist-text">相手に合わせてしまい、自分を出せない</p>
         </div>
       </div>
-      <p class="checklist-loop-text">そのループ、ハルカゼで抜け出しましょう。</p>
+      <p class="checklist-loop-text">そのループ、ハルカゼで抜け出しましょう！</p>
     </div>
   </section>
 
