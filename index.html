@@ -51,6 +51,8 @@
   padding: 100px 24px; /* harukaze-mod: 修正4 タグ削除分の余白調整 */
   color: #fff;
 }
+/* PC：モバイル専用改行を非表示 */
+.sp-br { display: none; }
 /* harukaze-mod: 修正1 .hero-tag / .tag-pink は削除済み */
 .hero-title {
   font-size: clamp(32px, 8vw, 72px);
@@ -103,23 +105,29 @@
     align-items: flex-start;
   }
   .hero-bg {
-    /* サイズを元に戻す（70% auto）、写真を右下に配置しテキストエリアと分離 */
-    background-position: right bottom;
+    /* 元のサイズ（70% auto）・右中央配置に戻す */
+    background-position: right center;
     background-size: 70% auto;
   }
   .hero-bg::after {
-    /* 縦グラデーション：上ダーク（テキスト可読）→ 下透明（写真表示） */
-    background: linear-gradient(to bottom,
+    /* 左上→右下グラデーション：テキスト〜メッセージ付近まで濃く、右下へ抜ける */
+    background: linear-gradient(135deg,
       rgba(10,20,40,0.97) 0%,
-      rgba(10,20,40,0.93) 38%,
-      rgba(10,20,40,0.55) 58%,
-      rgba(10,20,40,0.10) 78%,
-      rgba(10,20,40,0.00) 100%
+      rgba(10,20,40,0.95) 35%,
+      rgba(10,20,40,0.72) 55%,
+      rgba(10,20,40,0.30) 72%,
+      rgba(10,20,40,0.00) 90%
     );
   }
   .hero-content {
     /* テキストを上部に配置・左右余白をsectionと統一（20px） */
     padding: calc(15vh + 4px) 20px 32px;
+  }
+  /* サブタイトル：折り返し許可・sp-brをモバイルで有効化 */
+  .sp-br { display: block; }
+  .hero-sub {
+    white-space: normal;
+    max-width: 200px;
   }
   /* 代表名・リンクを中央揃え */
   .hero-name {
@@ -617,7 +625,7 @@
     <div class="hero-bg"></div>
     <div class="hero-content">
       <h1 class="hero-title">"いい人"で、<br>終わらせない。</h1>
-      <p class="hero-sub">あなたの本当の良さを、磨いて、届ける。<br>この人と想える人に、出会うために。</p>
+      <p class="hero-sub">あなたの本当の良さを、<br class="sp-br">磨いて、届ける。<br>この人と想える人に、<br class="sp-br">出会うために。</p>
       <p class="hero-name">代表　石神りさ</p>
       <a href="about.html" class="hero-about-link">ハルカゼについて →</a>
       <div class="hero-btns">
