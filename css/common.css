@@ -426,7 +426,7 @@ body {
 
 .float-side-btn {
   display: block;
-  background: var(--color-sky);
+  background: #0EA5E9;
   color: #fff;
   writing-mode: vertical-rl;
   text-orientation: mixed;
@@ -441,7 +441,7 @@ body {
 }
 
 .float-side-btn:hover {
-  background: #4A7A99;
+  background: #0891C2;
   transform: translateX(-3px);
 }
 
@@ -654,11 +654,11 @@ body {
 
   /* 2ボタン色分け */
   .float-side-btns .float-side-btn:first-child {
-    background: var(--color-navy);
+    background: #1E3A5F;
   }
 
   .float-side-btns .float-side-btn:last-child {
-    background: var(--color-sky);
+    background: #0EA5E9;
   }
 
   .float-line-btn {

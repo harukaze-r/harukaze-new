@@ -106,22 +106,22 @@
   .hero {
     align-items: flex-start;
     min-height: auto;
-    background: rgb(30,42,60); /* フレームが見えないよう写真外側を同色で埋める */
+    background: #2A3A4D; /* ナビと同色でフレームを隠し、境目をなくす */
   }
   .hero-bg {
     /* 写真の上下エッジをフェード。左右のフェードは::afterに委任 */
     background:
-      linear-gradient(to bottom, rgb(30,42,60) 0%, rgb(30,42,60) 22%, transparent 38%, transparent 74%, rgb(30,42,60) 100%),
+      linear-gradient(to bottom, #2A3A4D 0%, #2A3A4D 22%, transparent 38%, transparent 74%, #2A3A4D 100%),
       url('newimages/IMG_0160.jpeg') right center / 70% auto no-repeat;
   }
   .hero-bg::after {
     /* PC同様の左→右グラデーションでテキスト部分を自然に暗くする */
     background: linear-gradient(to right,
-      rgba(30,42,60,0.90) 0%,
-      rgba(30,42,60,0.84) 22%,
-      rgba(30,42,60,0.48) 48%,
-      rgba(30,42,60,0.14) 68%,
-      rgba(30,42,60,0.00) 82%
+      rgba(42,58,77,0.95) 0%,
+      rgba(42,58,77,0.88) 22%,
+      rgba(42,58,77,0.50) 48%,
+      rgba(42,58,77,0.14) 68%,
+      rgba(42,58,77,0.00) 82%
     );
   }
   .hero-content {
