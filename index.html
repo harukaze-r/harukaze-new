@@ -238,6 +238,20 @@
 .check-icon svg { width: 14px; height: 14px; }
 .checklist-text { font-size: 15px; line-height: 1.7; }
 
+/* ── チェックリスト モバイル：アンダーライン形式 ── */
+@media (max-width: 640px) {
+  .checklist-item {
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgba(42,58,77,0.14);
+    border-radius: 0;
+    padding: 13px 0;
+    gap: 12px;
+  }
+  .checklist-item:hover { box-shadow: none; }
+  .checklist-text { font-size: 15px; white-space: nowrap; }
+}
+
 /* ── 診断バナー ── */
 .shindan-wrap {
   text-align: center;
