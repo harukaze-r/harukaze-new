@@ -27,7 +27,7 @@
       const sideBtns = document.createElement('div');
       sideBtns.className = 'float-side-btns';
       sideBtns.innerHTML = `
-        <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn">面談を予約する</a>
+        <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn">初回無料面談を予約</a>
         <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn">LINEで婚活突破口診断</a>
       `;
       document.body.appendChild(sideBtns);

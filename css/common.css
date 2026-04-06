@@ -8,10 +8,10 @@
 
 /* --- CSS Variables --- */
 :root {
-  --color-navy:  #1E3A5F;
-  --color-sky:   #0EA5E9;
+  --color-navy:  #2A3A4D;
+  --color-sky:   #5B8FAF;
   --color-pink:  #FF8FAB;
-  --color-ice:   #E0F2FE;
+  --color-ice:   #E6EEF5;
   --color-white: #FFFFFF;
 
   /* ディスプレイ（見出し）用フォント */
@@ -89,7 +89,7 @@ ul {
 .nav-logo-target {
   font-size: 10px;
   letter-spacing: 0.08em;
-  color: #0EA5E9;
+  color: #8AB8D4;
   margin-top: 2px;
   line-height: 1.2;
 }
@@ -159,7 +159,7 @@ ul {
 }
 
 .nav-cta:hover {
-  background: #0284c7 !important;
+  background: #4A7A99 !important;
   transform: translateY(-1px);
 }
 
@@ -202,7 +202,7 @@ ul {
   inset: 0;
   height: 100dvh;
   overflow-y: auto;
-  background: rgba(45, 89, 134, 0.90);
+  background: rgba(36, 52, 68, 0.93);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   z-index: 999;
@@ -441,7 +441,7 @@ body {
 }
 
 .float-side-btn:hover {
-  background: #0284c7;
+  background: #4A7A99;
   transform: translateX(-3px);
 }
 
@@ -515,9 +515,9 @@ body {
 }
 
 .btn-navy:hover {
-  background: #142b4a;
+  background: #1E2B38;
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(30,58,95,0.3);
+  box-shadow: 0 4px 14px rgba(42,58,77,0.3);
 }
 
 .btn-sky {
@@ -526,9 +526,9 @@ body {
 }
 
 .btn-sky:hover {
-  background: #0284c7;
+  background: #4A7A99;
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(14,165,233,0.3);
+  box-shadow: 0 4px 14px rgba(91,143,175,0.35);
 }
 
 .btn-line {
