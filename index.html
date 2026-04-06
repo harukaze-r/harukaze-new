@@ -379,15 +379,25 @@
   margin: 0 auto;
 }
 .ibj-compare-lead {
-  font-size: 14px;
-  line-height: 2.2;
-  color: #555;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
   margin-bottom: 48px;
 }
-.ibj-compare-lead strong {
-  color: var(--color-navy);
+.ibj-lead-item {
+  font-size: clamp(14px, 3.5vw, 16px);
   font-weight: 600;
+  color: var(--color-navy);
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+}
+.ibj-lead-cross {
+  font-size: 22px;
+  color: var(--color-sky);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
 }
 .ibj-vs-wrap {
   display: grid;
@@ -754,7 +764,11 @@
     <div class="ibj-compare-inner">
       <p class="section-label">Why Harukaze</p>
       <h2 class="section-title">大手の安心感と、<br>少人数制の手厚さを、両方。</h2>
-      <p class="ibj-compare-lead">会員数10万名超のネットワーク × 少人数制の深いサポート</p>
+      <p class="ibj-compare-lead">
+        <span class="ibj-lead-item">会員数10万名超のネットワーク</span>
+        <span class="ibj-lead-cross">×</span>
+        <span class="ibj-lead-item">少人数制の深いサポート</span>
+      </p>
       <div class="ibj-vs-wrap">
         <div class="ibj-vs-card">
           <span class="ibj-vs-tag">大手相談所</span>
