@@ -76,12 +76,13 @@ ul {
   left: 0;
   right: 0;
   z-index: 900;
-  background: var(--color-navy);
+  background: #EBFFF7;
   height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 24px;
+  border-bottom: 1px solid rgba(54,163,36,0.2);
 }
 
 /* ロゴ */
@@ -89,7 +90,7 @@ ul {
 .nav-logo-target {
   font-size: 10px;
   letter-spacing: 0.08em;
-  color: #8AB8D4;
+  color: #2E8B57;
   margin-top: 2px;
   line-height: 1.2;
 }
@@ -105,8 +106,8 @@ ul {
 .nav-logo-sub {
   font-size: 10px;
   letter-spacing: 0.15em;
-  color: #fff;
-  opacity: 0.8;
+  color: var(--color-navy);
+  opacity: 0.7;
   padding-top: 4px;
 }
 
@@ -114,15 +115,14 @@ ul {
   font-size: 22px;
   font-weight: 600;
   font-family: var(--font-display);
-  color: #fff;
   letter-spacing: 0.18em;
   text-transform: none;
   font-feature-settings: "palt";
-  background: linear-gradient(135deg, #fff 0%, rgba(224,242,254,0.9) 100%);
+  background: linear-gradient(135deg, #1a6b40 0%, #2E8B57 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.15));
+  filter: drop-shadow(0 1px 1px rgba(54,163,36,0.15));
 }
 
 /* PC メニュー */
@@ -134,7 +134,7 @@ ul {
 
 .nav-links a {
   font-size: 13px;
-  color: #fff;
+  color: var(--color-navy);
   opacity: 0.9;
   transition: opacity 0.2s;
   white-space: nowrap;
@@ -147,7 +147,7 @@ ul {
 /* CTAボタン */
 .nav-cta {
   display: inline-block;
-  background: var(--color-sky);
+  background: #36A324;
   color: #fff !important;
   opacity: 1 !important;
   padding: 8px 18px;
@@ -159,7 +159,7 @@ ul {
 }
 
 .nav-cta:hover {
-  background: #4A7A99 !important;
+  background: #2a7d1a !important;
   transform: translateY(-1px);
 }
 
@@ -180,7 +180,7 @@ ul {
   display: block;
   width: 24px;
   height: 2px;
-  background: #fff;
+  background: var(--color-navy);
   border-radius: 2px;
   transition: all 0.3s ease;
 }
