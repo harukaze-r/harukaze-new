@@ -76,13 +76,13 @@ ul {
   left: 0;
   right: 0;
   z-index: 900;
-  background: #EBFFF7;
+  background: #EBF5FF;
   height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 24px;
-  border-bottom: 1px solid rgba(54,163,36,0.2);
+  border-bottom: 1px solid rgba(14,165,233,0.25);
 }
 
 /* ロゴ */
@@ -90,7 +90,7 @@ ul {
 .nav-logo-target {
   font-size: 10px;
   letter-spacing: 0.08em;
-  color: #2E8B57;
+  color: #0284C7;
   margin-top: 2px;
   line-height: 1.2;
 }
@@ -118,11 +118,11 @@ ul {
   letter-spacing: 0.18em;
   text-transform: none;
   font-feature-settings: "palt";
-  background: linear-gradient(135deg, #1a6b40 0%, #2E8B57 100%);
+  background: linear-gradient(135deg, #0369A1 0%, #0EA5E9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 1px 1px rgba(54,163,36,0.15));
+  filter: drop-shadow(0 1px 1px rgba(14,165,233,0.15));
 }
 
 /* PC メニュー */
