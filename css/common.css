@@ -90,7 +90,7 @@ ul {
 .nav-logo-target {
   font-size: 12px;
   letter-spacing: 0.08em;
-  background: linear-gradient(90deg, #9B5E6E 0%, #C4906A 45%, #A86878 100%);
+  background: linear-gradient(90deg, #C0537A 0%, #E07EA0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -100,9 +100,21 @@ ul {
 
 .nav-logo {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
   text-decoration: none;
   line-height: 1.5;
+  gap: 10px;
+}
+.nav-icon {
+  height: 44px;
+  width: 44px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.nav-logo-text {
+  display: flex;
+  flex-direction: column;
   gap: 2px;
 }
 
