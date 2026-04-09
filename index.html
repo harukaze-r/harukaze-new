@@ -388,12 +388,41 @@
 }
 
 /* ── WHY HARUKAZE インフォグラフィック ── */
-.why-infograph {
-  display: grid;
-  grid-template-columns: 1fr 110px 1fr;
-  gap: 16px;
-  align-items: center;
+.why-network-frame {
+  border: 2px solid rgba(14,165,233,0.35);
+  border-radius: 20px;
+  overflow: hidden;
   margin: 40px 0 48px;
+}
+.why-network-header {
+  background: var(--color-navy);
+  color: #fff;
+  padding: 20px 24px;
+  text-align: center;
+  line-height: 1.7;
+}
+.why-network-header-num {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 4vw, 34px);
+  font-weight: 700;
+  color: var(--color-sky);
+  vertical-align: baseline;
+}
+.why-network-header-text {
+  font-size: clamp(13px, 2vw, 16px);
+  color: rgba(255,255,255,0.9);
+}
+.why-network-header-sub {
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 4px;
+}
+.why-panels-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 24px;
+  background: rgba(235,245,255,0.4);
 }
 .why-panel {
   background: #fff;
@@ -468,37 +497,6 @@
   background: rgba(14,165,233,0.1);
   color: var(--color-sky);
 }
-/* 中央ネットワークバッジ */
-.why-net-center { text-align: center; }
-.why-net-badge {
-  background: var(--color-navy);
-  border-radius: 14px;
-  padding: 20px 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-}
-.why-net-num {
-  font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--color-sky);
-  line-height: 1;
-}
-.why-net-sub {
-  font-size: 10px;
-  color: rgba(255,255,255,0.6);
-  letter-spacing: 0.06em;
-}
-.why-net-check {
-  font-size: 10px;
-  color: #7EE8A2;
-  border: 1px solid rgba(126,232,162,0.35);
-  border-radius: 20px;
-  padding: 3px 8px;
-  margin-top: 2px;
-}
 /* 実績数字4枚 */
 .why-stats {
   display: grid;
@@ -536,8 +534,7 @@
   text-underline-offset: 3px;
 }
 @media (max-width: 640px) {
-  .why-infograph { grid-template-columns: 1fr; gap: 12px; }
-  .why-net-badge { flex-direction: row; flex-wrap: wrap; justify-content: center; padding: 14px 16px; }
+  .why-panels-grid { grid-template-columns: 1fr; gap: 12px; padding: 16px; }
   .why-stats { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -1085,60 +1082,59 @@
       <h2 class="section-title">大手の安心感と、<br>少人数制の手厚さを、両方。</h2>
       <p class="section-sub" style="margin-bottom:0;">ハルカゼは業界No.1のIBJネットワークに加盟しながら、<br>少人数制で「あなた」に伴走します。</p>
 
-      <div class="why-infograph">
+      <div class="why-network-frame">
+        <div class="why-network-header">
+          <div><span class="why-network-header-num">10万人以上</span><span class="why-network-header-text">のIBJ婚活ネットワーク</span></div>
+          <p class="why-network-header-sub">大手もハルカゼも、同じネットワークの中にいます</p>
+        </div>
+        <div class="why-panels-grid">
 
-        <div class="why-panel">
-          <p class="why-panel-name">大手相談所</p>
-          <div class="why-major-visual">
-            <svg class="pi pi--counselor-major" viewBox="0 0 34 40" fill="currentColor" aria-hidden="true">
-              <circle cx="17" cy="10" r="7"/>
-              <path d="M2 38c0-8.3 6.7-15 15-15s15 6.7 15 15"/>
-            </svg>
-            <span class="why-arrow-text">→</span>
-            <div class="why-crowd-major">
-              <svg class="pi pi--member-major" viewBox="0 0 17 20" fill="currentColor" aria-hidden="true"><circle cx="8.5" cy="5" r="4"/><path d="M1 19c0-4.1 3.4-7.5 7.5-7.5S16 14.9 16 19"/></svg>
-              <svg class="pi pi--member-major" viewBox="0 0 17 20" fill="currentColor" aria-hidden="true"><circle cx="8.5" cy="5" r="4"/><path d="M1 19c0-4.1 3.4-7.5 7.5-7.5S16 14.9 16 19"/></svg>
-              <svg class="pi pi--member-major" viewBox="0 0 17 20" fill="currentColor" aria-hidden="true"><circle cx="8.5" cy="5" r="4"/><path d="M1 19c0-4.1 3.4-7.5 7.5-7.5S16 14.9 16 19"/></svg>
-              <svg class="pi pi--member-major" viewBox="0 0 17 20" fill="currentColor" aria-hidden="true"><circle cx="8.5" cy="5" r="4"/><path d="M1 19c0-4.1 3.4-7.5 7.5-7.5S16 14.9 16 19"/></svg>
-              <svg class="pi pi--member-major" viewBox="0 0 17 20" fill="currentColor" aria-hidden="true"><circle cx="8.5" cy="5" r="4"/><path d="M1 19c0-4.1 3.4-7.5 7.5-7.5S16 14.9 16 19"/></svg>
-              <svg class="pi pi--member-major" viewBox="0 0 17 20" fill="currentColor" aria-hidden="true"><circle cx="8.5" cy="5" r="4"/><path d="M1 19c0-4.1 3.4-7.5 7.5-7.5S16 14.9 16 19"/></svg>
-              <svg class="pi pi--member-major" viewBox="0 0 17 20" fill="currentColor" aria-hidden="true"><circle cx="8.5" cy="5" r="4"/><path d="M1 19c0-4.1 3.4-7.5 7.5-7.5S16 14.9 16 19"/></svg>
-              <svg class="pi pi--member-major" viewBox="0 0 17 20" fill="currentColor" aria-hidden="true"><circle cx="8.5" cy="5" r="4"/><path d="M1 19c0-4.1 3.4-7.5 7.5-7.5S16 14.9 16 19"/></svg>
+          <div class="why-panel">
+            <p class="why-panel-name">大手相談所</p>
+            <div class="why-major-visual">
+              <svg class="pi pi--counselor-major" viewBox="0 0 34 40" fill="currentColor" aria-hidden="true">
+                <circle cx="17" cy="10" r="7"/>
+                <path d="M2 38c0-8.3 6.7-15 15-15s15 6.7 15 15"/>
+              </svg>
+              <span class="why-arrow-text">→</span>
+              <div class="why-crowd-major">
+                <svg class="pi pi--member-major" viewBox="0 0 17 20" fill="currentColor" aria-hidden="true"><circle cx="8.5" cy="5" r="4"/><path d="M1 19c0-4.1 3.4-7.5 7.5-7.5S16 14.9 16 19"/></svg>
+                <svg class="pi pi--member-major" viewBox="0 0 17 20" fill="currentColor" aria-hidden="true"><circle cx="8.5" cy="5" r="4"/><path d="M1 19c0-4.1 3.4-7.5 7.5-7.5S16 14.9 16 19"/></svg>
+                <svg class="pi pi--member-major" viewBox="0 0 17 20" fill="currentColor" aria-hidden="true"><circle cx="8.5" cy="5" r="4"/><path d="M1 19c0-4.1 3.4-7.5 7.5-7.5S16 14.9 16 19"/></svg>
+                <svg class="pi pi--member-major" viewBox="0 0 17 20" fill="currentColor" aria-hidden="true"><circle cx="8.5" cy="5" r="4"/><path d="M1 19c0-4.1 3.4-7.5 7.5-7.5S16 14.9 16 19"/></svg>
+                <svg class="pi pi--member-major" viewBox="0 0 17 20" fill="currentColor" aria-hidden="true"><circle cx="8.5" cy="5" r="4"/><path d="M1 19c0-4.1 3.4-7.5 7.5-7.5S16 14.9 16 19"/></svg>
+                <svg class="pi pi--member-major" viewBox="0 0 17 20" fill="currentColor" aria-hidden="true"><circle cx="8.5" cy="5" r="4"/><path d="M1 19c0-4.1 3.4-7.5 7.5-7.5S16 14.9 16 19"/></svg>
+                <svg class="pi pi--member-major" viewBox="0 0 17 20" fill="currentColor" aria-hidden="true"><circle cx="8.5" cy="5" r="4"/><path d="M1 19c0-4.1 3.4-7.5 7.5-7.5S16 14.9 16 19"/></svg>
+                <svg class="pi pi--member-major" viewBox="0 0 17 20" fill="currentColor" aria-hidden="true"><circle cx="8.5" cy="5" r="4"/><path d="M1 19c0-4.1 3.4-7.5 7.5-7.5S16 14.9 16 19"/></svg>
+              </div>
+            </div>
+            <p class="why-panel-caption">1人が100名以上を担当<br>どうしても「流れ作業」に</p>
+            <div class="why-tags">
+              <span class="why-tag">効率</span>
+              <span class="why-tag">システム化</span>
             </div>
           </div>
-          <p class="why-panel-caption">1人が100名以上を担当<br>どうしても「流れ作業」に</p>
-          <div class="why-tags">
-            <span class="why-tag">効率</span>
-            <span class="why-tag">システム化</span>
-          </div>
-        </div>
 
-        <div class="why-net-center">
-          <div class="why-net-badge">
-            <span class="why-net-num">10万人+</span>
-            <span class="why-net-sub">IBJ会員ネットワーク</span>
-            <span class="why-net-check">✓ ハルカゼも使える</span>
+          <div class="why-panel why-panel--h">
+            <p class="why-panel-name why-panel-name--h">ハルカゼ</p>
+            <div class="why-h-visual">
+              <svg class="pi pi--counselor-h" viewBox="0 0 44 52" fill="currentColor" aria-hidden="true">
+                <circle cx="22" cy="13" r="9"/>
+                <path d="M2 50c0-11 8.9-20 20-20s20 8.9 20 20"/>
+              </svg>
+              <svg class="pi pi--member-h" viewBox="0 0 22 26" fill="currentColor" aria-hidden="true"><circle cx="11" cy="6" r="5"/><path d="M1 25c0-5.5 4.5-10 10-10s10 4.5 10 10"/></svg>
+              <svg class="pi pi--member-h" viewBox="0 0 22 26" fill="currentColor" aria-hidden="true"><circle cx="11" cy="6" r="5"/><path d="M1 25c0-5.5 4.5-10 10-10s10 4.5 10 10"/></svg>
+              <svg class="pi pi--member-h" viewBox="0 0 22 26" fill="currentColor" aria-hidden="true"><circle cx="11" cy="6" r="5"/><path d="M1 25c0-5.5 4.5-10 10-10s10 4.5 10 10"/></svg>
+              <svg class="pi pi--member-h" viewBox="0 0 22 26" fill="currentColor" aria-hidden="true"><circle cx="11" cy="6" r="5"/><path d="M1 25c0-5.5 4.5-10 10-10s10 4.5 10 10"/></svg>
+            </div>
+            <p class="why-panel-caption why-panel-caption--h">少人数だから、あなたを深く知れる<br>「その人らしい」伴走ができる</p>
+            <div class="why-tags">
+              <span class="why-tag why-tag--h">伴走</span>
+              <span class="why-tag why-tag--h">オーダーメイド</span>
+              <span class="why-tag why-tag--h">あなたを理解する</span>
+            </div>
           </div>
-        </div>
 
-        <div class="why-panel why-panel--h">
-          <p class="why-panel-name why-panel-name--h">ハルカゼ</p>
-          <div class="why-h-visual">
-            <svg class="pi pi--counselor-h" viewBox="0 0 44 52" fill="currentColor" aria-hidden="true">
-              <circle cx="22" cy="13" r="9"/>
-              <path d="M2 50c0-11 8.9-20 20-20s20 8.9 20 20"/>
-            </svg>
-            <svg class="pi pi--member-h" viewBox="0 0 22 26" fill="currentColor" aria-hidden="true"><circle cx="11" cy="6" r="5"/><path d="M1 25c0-5.5 4.5-10 10-10s10 4.5 10 10"/></svg>
-            <svg class="pi pi--member-h" viewBox="0 0 22 26" fill="currentColor" aria-hidden="true"><circle cx="11" cy="6" r="5"/><path d="M1 25c0-5.5 4.5-10 10-10s10 4.5 10 10"/></svg>
-            <svg class="pi pi--member-h" viewBox="0 0 22 26" fill="currentColor" aria-hidden="true"><circle cx="11" cy="6" r="5"/><path d="M1 25c0-5.5 4.5-10 10-10s10 4.5 10 10"/></svg>
-            <svg class="pi pi--member-h" viewBox="0 0 22 26" fill="currentColor" aria-hidden="true"><circle cx="11" cy="6" r="5"/><path d="M1 25c0-5.5 4.5-10 10-10s10 4.5 10 10"/></svg>
-          </div>
-          <p class="why-panel-caption why-panel-caption--h">少人数だから、あなたを深く知れる<br>「その人らしい」伴走ができる</p>
-          <div class="why-tags">
-            <span class="why-tag why-tag--h">伴走</span>
-            <span class="why-tag why-tag--h">オーダーメイド</span>
-            <span class="why-tag why-tag--h">あなたを理解する</span>
-          </div>
         </div>
       </div>
 
