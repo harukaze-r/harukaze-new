@@ -387,138 +387,158 @@
   .ibj-bnr-row { gap: 10px; }
 }
 
-/* ── IBJ + 少人数制 比較 ── */
-.ibj-compare-section {
-  background: var(--color-ice);
-  padding: 80px 24px;
+/* ── WHY HARUKAZE インフォグラフィック ── */
+.why-infograph {
+  display: grid;
+  grid-template-columns: 1fr 110px 1fr;
+  gap: 16px;
+  align-items: center;
+  margin: 40px 0 48px;
 }
-.ibj-compare-inner {
-  max-width: 820px;
-  margin: 0 auto;
+.why-panel {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 20px 22px;
+  text-align: center;
+  border: 1.5px solid #e8e8e8;
 }
-.ibj-compare-lead {
+.why-panel--h {
+  border-color: var(--color-sky);
+  box-shadow: 0 4px 24px rgba(14,165,233,0.1);
+}
+.why-panel-name {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #bbb;
+  margin-bottom: 18px;
+  font-weight: 500;
+}
+.why-panel-name--h { color: var(--color-sky); }
+/* SVG person icon */
+.pi { display: inline-block; vertical-align: middle; }
+.pi--counselor-major { width: 34px; height: 40px; color: #ccc; }
+.pi--counselor-h     { width: 44px; height: 52px; color: var(--color-sky); }
+.pi--member-major    { width: 17px; height: 20px; color: #ddd; }
+.pi--member-h        { width: 22px; height: 26px; color: rgba(14,165,233,0.4); }
+/* 大手ビジュアル */
+.why-major-visual {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 48px;
+  gap: 8px;
+  margin: 8px 0 10px;
 }
-.ibj-lead-item {
-  font-size: clamp(13px, 3vw, 15px);
-  font-weight: 600;
-  color: var(--color-navy);
-  letter-spacing: 0.04em;
-  line-height: 1.5;
-  background: rgba(14,165,233,0.08);
-  border: 1px solid rgba(14,165,233,0.25);
-  border-radius: 50px;
-  padding: 6px 20px;
+.why-crowd-major {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
 }
-.ibj-lead-cross {
-  font-size: 20px;
-  color: var(--color-sky);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: 0;
-}
-.ibj-vs-wrap {
+.why-arrow-text { font-size: 16px; color: #ddd; flex-shrink: 0; }
+/* ハルカゼビジュアル */
+.why-h-visual {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  gap: 0 20px;
+  gap: 6px 8px;
+  justify-items: center;
   align-items: center;
-  margin-bottom: 40px;
+  max-width: 140px;
+  margin: 8px auto 10px;
 }
-.ibj-vs-card {
-  background: #fff;
-  border-radius: 20px;
-  padding: 32px 24px;
-  text-align: center;
-  border: 2px solid #e4eaf5;
+.why-h-visual .pi--counselor-h {
+  grid-column: 2;
+  grid-row: 1 / 3;
 }
-.ibj-vs-card.harukaze {
-  border-color: var(--color-sky);
-  box-shadow: 0 4px 28px rgba(14,165,233,0.12);
-}
-.ibj-vs-tag {
+.why-panel-caption {
   font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  padding: 4px 16px;
-  border-radius: 50px;
-  display: inline-block;
-  margin-bottom: 14px;
-}
-.ibj-vs-card:not(.harukaze) .ibj-vs-tag {
-  background: #f0f0f0;
-  color: #888;
-}
-.ibj-vs-card.harukaze .ibj-vs-tag {
-  background: rgba(14,165,233,0.12);
-  color: var(--color-sky);
-  border: 1px solid rgba(14,165,233,0.3);
-}
-.ibj-vs-number {
-  font-size: 42px;
-  font-weight: 700;
-  color: var(--color-navy);
-  line-height: 1;
-  margin-bottom: 6px;
-  font-family: var(--font-display);
-}
-.ibj-vs-card.harukaze .ibj-vs-number {
-  color: var(--color-sky);
-}
-.ibj-vs-unit {
-  font-size: 14px;
-  font-weight: 400;
-  color: #999;
-  margin-bottom: 14px;
-  display: block;
-}
-.ibj-vs-title {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--color-navy);
-  margin-bottom: 10px;
+  color: #aaa;
+  margin-bottom: 12px;
   line-height: 1.6;
 }
-.ibj-vs-desc {
-  font-size: 12px;
-  color: #888;
-  line-height: 1.9;
+.why-panel-caption--h { color: rgba(14,165,233,0.7); }
+.why-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; }
+.why-tag {
+  font-size: 10px;
+  padding: 3px 9px;
+  border-radius: 20px;
+  background: #f2f2f2;
+  color: #999;
 }
-.ibj-vs-card.harukaze .ibj-vs-desc {
-  color: #555;
+.why-tag--h {
+  background: rgba(14,165,233,0.1);
+  color: var(--color-sky);
 }
-.ibj-vs-badge {
-  display: inline-flex;
+/* 中央ネットワークバッジ */
+.why-net-center { text-align: center; }
+.why-net-badge {
+  background: var(--color-navy);
+  border-radius: 14px;
+  padding: 20px 12px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 6px;
-  background: rgba(14,165,233,0.08);
-  border: 1px solid rgba(14,165,233,0.25);
-  color: var(--color-sky);
-  font-size: 12px;
-  font-weight: 600;
-  padding: 6px 16px;
-  border-radius: 50px;
-  margin-top: 14px;
+  gap: 5px;
 }
-.ibj-vs-separator {
-  font-size: 22px;
-  font-weight: 800;
+.why-net-num {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
   color: var(--color-sky);
+  line-height: 1;
+}
+.why-net-sub {
+  font-size: 10px;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.06em;
+}
+.why-net-check {
+  font-size: 10px;
+  color: #7EE8A2;
+  border: 1px solid rgba(126,232,162,0.35);
+  border-radius: 20px;
+  padding: 3px 8px;
+  margin-top: 2px;
+}
+/* 実績数字4枚 */
+.why-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 32px;
+}
+.why-stat {
+  background: #fff;
+  border-radius: 14px;
+  padding: 24px 12px 20px;
   text-align: center;
-  letter-spacing: 0.05em;
+  border-top: 3px solid #e8e8e8;
 }
-@media (max-width: 600px) {
-  .ibj-vs-wrap {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .ibj-vs-separator { font-size: 18px; }
+.why-stat:nth-child(1) { border-top-color: #F6C543; }
+.why-stat:nth-child(2) { border-top-color: var(--color-pink); }
+.why-stat:nth-child(3) { border-top-color: var(--color-sky); }
+.why-stat:nth-child(4) { border-top-color: #72BB77; }
+.why-stat-icon { font-size: 26px; margin-bottom: 10px; line-height: 1; }
+.why-stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 3vw, 30px);
+  font-weight: 600;
+  color: var(--color-navy);
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+.why-stat-num span { font-size: 0.5em; font-weight: 400; color: #888; }
+.why-stat-label { font-size: 10px; color: #999; line-height: 1.65; }
+.why-ibj-link { text-align: center; margin-bottom: 12px; }
+.why-ibj-link a {
+  font-size: 12px;
+  color: var(--color-sky);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (max-width: 640px) {
+  .why-infograph { grid-template-columns: 1fr; gap: 12px; }
+  .why-net-badge { flex-direction: row; flex-wrap: wrap; justify-content: center; padding: 14px 16px; }
+  .why-stats { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ── WHAT WE DO ── */
@@ -1079,66 +1099,115 @@
     </div>
   </section>
 
-  <!-- ④-b 大手 VS ハルカゼ 比較 -->
-  <section class="ibj-compare-section">
-    <div class="ibj-compare-inner">
-      <p class="section-label">Why Harukaze</p>
-      <h2 class="section-title">大手の安心感と、<br>少人数制の手厚さを、両方。</h2>
-      <p class="ibj-compare-lead">
-        <span class="ibj-lead-item">会員数10万名超のネットワーク</span>
-        <span class="ibj-lead-cross">×</span>
-        <span class="ibj-lead-item">少人数制の深いサポート</span>
-      </p>
-      <div class="ibj-vs-wrap">
-        <div class="ibj-vs-card">
-          <span class="ibj-vs-tag">大手相談所</span>
-          <p class="ibj-vs-number">100<span style="font-size:16px;font-weight:400;">人以上</span></p>
-          <span class="ibj-vs-unit">カウンセラー1人が担当する会員数</span>
-          <p class="ibj-vs-title">手が回らず、<br>流れ作業になりがち</p>
-        </div>
-        <div class="ibj-vs-separator">VS</div>
-        <div class="ibj-vs-card harukaze">
-          <span class="ibj-vs-tag">ハルカゼ</span>
-          <p class="ibj-vs-number" style="font-size:28px;line-height:1.3;">少人数制</p>
-          <span class="ibj-vs-unit">あなたのことをちゃんとわかるから</span>
-          <p class="ibj-vs-title">「その人らしい」<br>サポートができる</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ⑤ IBJ数値・実績 -->
-  <section class="section">
+  <!-- ④-b Why Harukaze + IBJ Data 統合セクション -->
+  <section class="section section-ice">
     <div class="section-inner">
-      <p class="section-label">IBJ Data</p>
-      <h2 class="section-title">数字が証明する、<br>確かな出会いの場。</h2>
-      <p class="section-sub">ハルカゼが加盟するIBJは、業界No.1の成婚実績を持つ日本最大の婚活ネットワークです。</p>
-      <div class="ibj-grid">
-        <div class="ibj-card">
-          <p class="ibj-number">業界<br>No.1</p>
-          <p class="ibj-label">年間成婚者数<br>（日本マーケティングリサーチ機構調べ）</p>
+
+      <!-- 見出し -->
+      <p class="section-label">WHY HARUKAZE</p>
+      <h2 class="section-title">大手の安心感と、<br>少人数制の手厚さを、両方。</h2>
+      <p class="section-sub" style="margin-bottom:0;">ハルカゼは業界No.1のIBJネットワークに加盟しながら、<br>少人数制で「あなた」に伴走します。</p>
+
+      <!-- インフォグラフィック対比図 -->
+      <div class="why-infograph">
+
+        <!-- 左：大手 -->
+        <div class="why-panel">
+          <p class="why-panel-name">大手相談所</p>
+          <div class="why-major-visual">
+            <!-- カウンセラー1人 -->
+            <svg class="pi pi--counselor-major" viewBox="0 0 34 40" fill="currentColor" aria-hidden="true">
+              <circle cx="17" cy="10" r="7"/>
+              <path d="M2 38c0-8.3 6.7-15 15-15s15 6.7 15 15"/>
+            </svg>
+            <span class="why-arrow-text">→</span>
+            <!-- 会員多数 -->
+            <div class="why-crowd-major">
+              <svg class="pi pi--member-major" viewBox="0 0 17 20" fill="currentColor" aria-hidden="true"><circle cx="8.5" cy="5" r="4"/><path d="M1 19c0-4.1 3.4-7.5 7.5-7.5S16 14.9 16 19"/></svg>
+              <svg class="pi pi--member-major" viewBox="0 0 17 20" fill="currentColor" aria-hidden="true"><circle cx="8.5" cy="5" r="4"/><path d="M1 19c0-4.1 3.4-7.5 7.5-7.5S16 14.9 16 19"/></svg>
+              <svg class="pi pi--member-major" viewBox="0 0 17 20" fill="currentColor" aria-hidden="true"><circle cx="8.5" cy="5" r="4"/><path d="M1 19c0-4.1 3.4-7.5 7.5-7.5S16 14.9 16 19"/></svg>
+              <svg class="pi pi--member-major" viewBox="0 0 17 20" fill="currentColor" aria-hidden="true"><circle cx="8.5" cy="5" r="4"/><path d="M1 19c0-4.1 3.4-7.5 7.5-7.5S16 14.9 16 19"/></svg>
+              <svg class="pi pi--member-major" viewBox="0 0 17 20" fill="currentColor" aria-hidden="true"><circle cx="8.5" cy="5" r="4"/><path d="M1 19c0-4.1 3.4-7.5 7.5-7.5S16 14.9 16 19"/></svg>
+              <svg class="pi pi--member-major" viewBox="0 0 17 20" fill="currentColor" aria-hidden="true"><circle cx="8.5" cy="5" r="4"/><path d="M1 19c0-4.1 3.4-7.5 7.5-7.5S16 14.9 16 19"/></svg>
+              <svg class="pi pi--member-major" viewBox="0 0 17 20" fill="currentColor" aria-hidden="true"><circle cx="8.5" cy="5" r="4"/><path d="M1 19c0-4.1 3.4-7.5 7.5-7.5S16 14.9 16 19"/></svg>
+              <svg class="pi pi--member-major" viewBox="0 0 17 20" fill="currentColor" aria-hidden="true"><circle cx="8.5" cy="5" r="4"/><path d="M1 19c0-4.1 3.4-7.5 7.5-7.5S16 14.9 16 19"/></svg>
+            </div>
+          </div>
+          <p class="why-panel-caption">1人が100名以上を担当<br>どうしても「流れ作業」に</p>
+          <div class="why-tags">
+            <span class="why-tag">効率</span>
+            <span class="why-tag">システム化</span>
+          </div>
         </div>
-        <div class="ibj-card">
-          <p class="ibj-number">160,435<span style="font-size:16px">組</span></p>
-          <p class="ibj-label">年間交際成立数<br>（2025年実績・1日約440組）</p>
+
+        <!-- 中央：ネットワークバッジ -->
+        <div class="why-net-center">
+          <div class="why-net-badge">
+            <span class="why-net-num">10万人+</span>
+            <span class="why-net-sub">IBJ会員ネットワーク</span>
+            <span class="why-net-check">✓ ハルカゼも使える</span>
+          </div>
         </div>
-        <div class="ibj-card">
-          <p class="ibj-number">89.1<span style="font-size:16px">%</span></p>
-          <p class="ibj-label">男性成婚者の<br>「カウンセラー必要だった」率</p>
-        </div>
-        <div class="ibj-card">
-          <p class="ibj-number">4〜10<span style="font-size:16px">ヶ月</span></p>
-          <p class="ibj-label">成婚者の<br>代表的な活動期間</p>
+
+        <!-- 右：ハルカゼ -->
+        <div class="why-panel why-panel--h">
+          <p class="why-panel-name why-panel-name--h">ハルカゼ</p>
+          <div class="why-h-visual">
+            <!-- カウンセラー -->
+            <svg class="pi pi--counselor-h" viewBox="0 0 44 52" fill="currentColor" aria-hidden="true">
+              <circle cx="22" cy="13" r="9"/>
+              <path d="M2 50c0-11 8.9-20 20-20s20 8.9 20 20"/>
+            </svg>
+            <!-- 左の会員 -->
+            <svg class="pi pi--member-h" viewBox="0 0 22 26" fill="currentColor" aria-hidden="true"><circle cx="11" cy="6" r="5"/><path d="M1 25c0-5.5 4.5-10 10-10s10 4.5 10 10"/></svg>
+            <svg class="pi pi--member-h" viewBox="0 0 22 26" fill="currentColor" aria-hidden="true"><circle cx="11" cy="6" r="5"/><path d="M1 25c0-5.5 4.5-10 10-10s10 4.5 10 10"/></svg>
+            <!-- 右の会員 -->
+            <svg class="pi pi--member-h" viewBox="0 0 22 26" fill="currentColor" aria-hidden="true"><circle cx="11" cy="6" r="5"/><path d="M1 25c0-5.5 4.5-10 10-10s10 4.5 10 10"/></svg>
+            <svg class="pi pi--member-h" viewBox="0 0 22 26" fill="currentColor" aria-hidden="true"><circle cx="11" cy="6" r="5"/><path d="M1 25c0-5.5 4.5-10 10-10s10 4.5 10 10"/></svg>
+          </div>
+          <p class="why-panel-caption why-panel-caption--h">少人数だから、あなたを深く知れる<br>「その人らしい」伴走ができる</p>
+          <div class="why-tags">
+            <span class="why-tag why-tag--h">伴走</span>
+            <span class="why-tag why-tag--h">オーダーメイド</span>
+            <span class="why-tag why-tag--h">あなたを理解する</span>
+          </div>
         </div>
       </div>
-      <p style="text-align:center;margin-bottom:12px;"><a href="https://www.ibjapan.com/ibj/data/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--color-sky);text-decoration:underline;text-underline-offset:3px;">IBJの詳しいデータを見る →</a></p>
-      <p class="ibj-source">※出典：IBJ公式サイト（2025〜2026年実績）　初婚比率89.2% / お見合い数：10回以内が最多</p>
+
+      <!-- 実績数字 4枚 -->
+      <p class="section-label" style="margin-bottom:20px;">IBJ DATA</p>
+      <div class="why-stats">
+        <div class="why-stat">
+          <p class="why-stat-icon">🏆</p>
+          <p class="why-stat-num">業界<br>No.1<span>（成婚者数）</span></p>
+          <p class="why-stat-label">日本マーケティング<br>リサーチ機構調べ</p>
+        </div>
+        <div class="why-stat">
+          <p class="why-stat-icon">💑</p>
+          <p class="why-stat-num">160,435<span>組</span></p>
+          <p class="why-stat-label">年間交際成立数<br>（2025年・1日約440組）</p>
+        </div>
+        <div class="why-stat">
+          <p class="why-stat-icon">🤝</p>
+          <p class="why-stat-num">89.1<span>%</span></p>
+          <p class="why-stat-label">男性成婚者の<br>「カウンセラーが必要だった」率</p>
+        </div>
+        <div class="why-stat">
+          <p class="why-stat-icon">📅</p>
+          <p class="why-stat-num">4〜10<span>ヶ月</span></p>
+          <p class="why-stat-label">成婚者の代表的な<br>活動期間</p>
+        </div>
+      </div>
+
+      <p class="why-ibj-link"><a href="https://www.ibjapan.com/ibj/data/" target="_blank" rel="noopener noreferrer">IBJの詳しいデータを見る →</a></p>
+      <p class="ibj-source">※出典：IBJ公式サイト（2025〜2026年実績）</p>
       <div class="ibj-bnr-row">
         <img src="newimages/ibj_no1_all.png" alt="IBJ No.1 総合" class="ibj-bnr">
         <img src="newimages/ibj_no1_marriage.png" alt="IBJ No.1 成婚" class="ibj-bnr">
         <img src="newimages/ibj_no1_member.png" alt="IBJ No.1 会員数" class="ibj-bnr">
         <img src="newimages/ibj_no1_omiai.png" alt="IBJ No.1 お見合い" class="ibj-bnr">
       </div>
+
     </div>
   </section>
 
