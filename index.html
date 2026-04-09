@@ -531,16 +531,68 @@
   margin-top: 40px;
 }
 .whatwedo-item {
-  padding: 28px 24px 32px;
+  padding: 0;
   background: var(--color-white);
   border-radius: 20px;
   border-top: 3px solid var(--color-sky);
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.whatwedo-item:hover { box-shadow: 0 6px 28px rgba(30,58,95,0.1); }
+
+/* トグルヘッダー */
+.whatwedo-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 28px 24px;
+  cursor: pointer;
+  user-select: none;
+}
+.whatwedo-header-left {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  transition: box-shadow 0.2s, transform 0.2s;
 }
-.whatwedo-item:hover { box-shadow: 0 6px 28px rgba(30,58,95,0.1); transform: translateY(-3px); }
+.whatwedo-toggle-icon {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-sky);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-sky);
+  font-size: 18px;
+  line-height: 1;
+  transition: transform 0.3s, background 0.3s;
+  margin-top: 4px;
+}
+.whatwedo-item.open .whatwedo-toggle-icon {
+  background: var(--color-sky);
+  color: #fff;
+  transform: rotate(45deg);
+}
+
+/* 本文エリア：アコーディオン */
+.whatwedo-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+.whatwedo-item.open .whatwedo-body {
+  grid-template-rows: 1fr;
+}
+.whatwedo-body-inner {
+  overflow: hidden;
+  padding: 0 24px;
+}
+.whatwedo-item.open .whatwedo-body-inner {
+  padding: 0 24px 28px;
+}
+
 .whatwedo-num {
   font-size: 11px;
   letter-spacing: 0.22em;
@@ -556,7 +608,7 @@
 .whatwedo-bullets {
   list-style: none;
   padding: 0;
-  margin: 6px 0 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -599,6 +651,9 @@
   .message-inner { grid-template-columns: 300px 1fr; }
   .message-photo { margin: 0; }
   .ibj-grid { grid-template-columns: repeat(4, 1fr); }
+  .whatwedo-list { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
   .whatwedo-list { grid-template-columns: 1fr; }
 }
 </style>
@@ -832,29 +887,56 @@
       <div class="whatwedo-list">
 
         <div class="whatwedo-item">
-          <p class="whatwedo-num">01</p>
-          <p class="whatwedo-title">あなたの"本音"を、<br>届く言葉に</p>
-          <ul class="whatwedo-bullets">
-            <li>他人の型にはめない、あなたを伝えるプロフィール作成</li>
-            <li>「会いたい」と思わせる言葉へデザインする</li>
-          </ul>
+          <div class="whatwedo-header">
+            <div class="whatwedo-header-left">
+              <p class="whatwedo-num">01</p>
+              <p class="whatwedo-title">あなたの"本音"を、<br>届く言葉に</p>
+            </div>
+            <span class="whatwedo-toggle-icon">+</span>
+          </div>
+          <div class="whatwedo-body">
+            <div class="whatwedo-body-inner">
+              <ul class="whatwedo-bullets">
+                <li>他人の型にはめない、あなたを伝えるプロフィール作成</li>
+                <li>「会いたい」と思わせる言葉へデザインする</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div class="whatwedo-item">
-          <p class="whatwedo-num">02</p>
-          <p class="whatwedo-title">二人三脚で、<br>婚活を前に進める</p>
-          <ul class="whatwedo-bullets">
-            <li>デートの振り返りから次のプランニングまで</li>
-          </ul>
+          <div class="whatwedo-header">
+            <div class="whatwedo-header-left">
+              <p class="whatwedo-num">02</p>
+              <p class="whatwedo-title">二人三脚で、<br>婚活を前に進める</p>
+            </div>
+            <span class="whatwedo-toggle-icon">+</span>
+          </div>
+          <div class="whatwedo-body">
+            <div class="whatwedo-body-inner">
+              <ul class="whatwedo-bullets">
+                <li>デートの振り返りから次のプランニングまで</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div class="whatwedo-item">
-          <p class="whatwedo-num">03</p>
-          <p class="whatwedo-title">「深い理解」があるから、<br>迷わない</p>
-          <ul class="whatwedo-bullets">
-            <li>性格・価値観・言葉にできない本音まで把握</li>
-            <li>成婚後を見据えた、一貫したサポート</li>
-          </ul>
+          <div class="whatwedo-header">
+            <div class="whatwedo-header-left">
+              <p class="whatwedo-num">03</p>
+              <p class="whatwedo-title">「深い理解」があるから、<br>迷わない</p>
+            </div>
+            <span class="whatwedo-toggle-icon">+</span>
+          </div>
+          <div class="whatwedo-body">
+            <div class="whatwedo-body-inner">
+              <ul class="whatwedo-bullets">
+                <li>性格・価値観・言葉にできない本音まで把握</li>
+                <li>成婚後を見据えた、一貫したサポート</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -907,5 +989,14 @@
 </div>
 
 <script src="js/common.js"></script>
+<script>
+// ── What We Do アコーディオン ──
+document.querySelectorAll('.whatwedo-header').forEach(function(header) {
+  header.addEventListener('click', function() {
+    var item = this.closest('.whatwedo-item');
+    item.classList.toggle('open');
+  });
+});
+</script>
 </body>
 </html>
