@@ -56,8 +56,9 @@
 .sp-br { display: none; }
 /* harukaze-mod: 修正1 .hero-tag / .tag-pink は削除済み */
 .hero-title {
+  font-family: 'Klee One', 'Shippori Mincho', serif;
   font-size: clamp(32px, 8vw, 72px);
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.3;
   letter-spacing: 0.05em;
   margin-bottom: 24px;
@@ -524,110 +525,224 @@
 }
 
 /* ── WHAT WE DO ── */
-.whatwedo-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 40px;
+/* ── 成婚への4ステップ ── */
+.step-lead {
+  text-align: center;
+  margin-bottom: 40px;
 }
-.whatwedo-item {
-  padding: 0;
-  background: var(--color-white);
-  border-radius: 20px;
-  border-top: 3px solid var(--color-sky);
-  overflow: hidden;
-  transition: box-shadow 0.2s, transform 0.2s;
+.step-lead-main {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: clamp(15px, 4vw, 22px);
+  font-weight: 700;
+  color: var(--color-navy);
+  line-height: 1.75;
+  margin-bottom: 10px;
 }
-.whatwedo-item:hover { box-shadow: 0 6px 28px rgba(30,58,95,0.1); }
+.step-lead-main em {
+  font-style: normal;
+  color: var(--color-sky);
+}
+.step-lead-sub {
+  font-size: 13px;
+  color: #888;
+  line-height: 1.9;
+}
 
-/* トグルヘッダー */
-.whatwedo-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 28px 24px;
-  cursor: pointer;
-  user-select: none;
+.step-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 40px;
+  position: relative;
 }
-.whatwedo-header-left {
+.step-list::before {
+  content: '';
+  position: absolute;
+  left: 27px; top: 28px; bottom: 28px;
+  width: 2px;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(14,165,233,0.35) 0, rgba(14,165,233,0.35) 8px,
+    transparent 8px, transparent 16px
+  );
+  z-index: 0;
+}
+
+.step-card {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+}
+
+.step-marker {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-white);
+  border: 2px solid var(--color-sky);
   display: flex;
   flex-direction: column;
-  gap: 10px;
-}
-.whatwedo-toggle-icon {
-  width: 28px;
-  height: 28px;
-  min-width: 28px;
-  border-radius: 50%;
-  border: 1.5px solid var(--color-sky);
-  display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-sky);
-  font-size: 18px;
+  box-shadow: 0 2px 10px rgba(14,165,233,0.2);
+}
+.step-marker-num {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-navy);
   line-height: 1;
-  transition: transform 0.3s, background 0.3s;
-  margin-top: 4px;
 }
-.whatwedo-item.open .whatwedo-toggle-icon {
-  background: var(--color-sky);
-  color: #fff;
-  transform: rotate(45deg);
-}
-
-/* 本文エリア：アコーディオン */
-.whatwedo-body {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.35s ease;
-}
-.whatwedo-item.open .whatwedo-body {
-  grid-template-rows: 1fr;
-}
-.whatwedo-body-inner {
-  overflow: hidden;
-  padding: 0 24px;
-}
-.whatwedo-item.open .whatwedo-body-inner {
-  padding: 0 24px 28px;
-}
-
-.whatwedo-num {
-  font-size: 11px;
-  letter-spacing: 0.22em;
+.step-marker-en {
+  font-family: var(--font-display);
+  font-size: 9px;
+  letter-spacing: 0.1em;
   color: var(--color-sky);
-  font-weight: 700;
+  line-height: 1;
+  margin-top: 2px;
 }
-.whatwedo-title {
+
+.step-card-body {
+  flex: 1;
+  background: var(--color-white);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 12px rgba(30,58,95,0.07);
+  border: 1px solid var(--color-ice);
+  border-top: 3px solid var(--color-sky);
+}
+.step-01 .step-card-body { border-top-color: #63BAE0; }
+.step-02 .step-card-body { border-top-color: #F6C543; }
+.step-03 .step-card-body { border-top-color: #72BB77; }
+.step-04 .step-card-body { border-top-color: #B07AC0; }
+
+.step-card-title {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
   font-size: 16px;
   font-weight: 700;
   color: var(--color-navy);
-  line-height: 1.6;
+  margin-bottom: 8px;
 }
-.whatwedo-bullets {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.whatwedo-bullets li {
+.step-card-text {
   font-size: 13px;
+  line-height: 1.9;
   color: #555;
-  line-height: 1.75;
-  padding-left: 16px;
+}
+.step-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+.step-tag {
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: var(--color-ice);
+  color: var(--color-navy);
+  letter-spacing: 0.04em;
+}
+
+/* 価格バルーン */
+.step-price-balloon {
+  margin-top: 40px;
+  background: var(--color-ice);
+  border-radius: 20px;
+  padding: 32px 24px;
+  text-align: center;
+  border: 2px dashed rgba(14,165,233,0.45);
   position: relative;
 }
-.whatwedo-bullets li::before {
-  content: '—';
-  position: absolute;
-  left: 0;
-  color: var(--color-sky);
-  opacity: 0.7;
+.step-price-text {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 15px;
+  color: var(--color-navy);
+  font-weight: 500;
+  margin-bottom: 20px;
+  line-height: 1.9;
 }
-.whatwedo-footer { margin-top: 32px; text-align: center; }
+.step-price-text strong {
+  color: var(--color-sky);
+  font-size: 19px;
+}
+
+/* LABバナー */
+.lab-banner {
+  background: var(--color-navy);
+  color: #fff;
+  border-radius: 24px;
+  padding: 40px 28px 44px;
+  margin-top: 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.lab-banner::before {
+  content: '';
+  position: absolute;
+  top: -50px; right: -50px;
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  background: rgba(14,165,233,0.12);
+  pointer-events: none;
+}
+.lab-banner::after {
+  content: '';
+  position: absolute;
+  bottom: -40px; left: -40px;
+  width: 140px; height: 140px;
+  border-radius: 50%;
+  background: rgba(14,165,233,0.07);
+  pointer-events: none;
+}
+.lab-banner-label {
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  color: var(--color-sky);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  position: relative;
+}
+.lab-banner-title {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: clamp(20px, 5vw, 26px);
+  font-weight: 700;
+  margin-bottom: 16px;
+  position: relative;
+}
+.lab-banner-body {
+  font-size: 14px;
+  line-height: 1.9;
+  opacity: 0.85;
+  margin-bottom: 16px;
+  position: relative;
+}
+.lab-banner-price {
+  font-size: 13px;
+  color: var(--color-sky);
+  margin-bottom: 8px;
+  position: relative;
+}
+.lab-banner-msg {
+  font-size: 13px;
+  opacity: 0.65;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+/* スクロールアニメーション */
+.step-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.step-animate.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* ── CTA締め ── */
 .cta-section {
@@ -651,10 +766,17 @@
   .message-inner { grid-template-columns: 300px 1fr; }
   .message-photo { margin: 0; }
   .ibj-grid { grid-template-columns: repeat(4, 1fr); }
-  .whatwedo-list { grid-template-columns: 1fr; }
-}
-@media (max-width: 640px) {
-  .whatwedo-list { grid-template-columns: 1fr; }
+  /* ステップ：デスクトップ 2×2グリッド */
+  .step-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .step-list::before { display: none; }
+  .step-card {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .step-card-body { flex: 1; }
 }
 </style>
 </head>
@@ -704,7 +826,7 @@
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-content">
-      <h1 class="hero-title">「いい人だけど」で、<br>終わらせない。</h1>
+      <h1 class="hero-title">「いい人だけど」<br>で、終わらせない。</h1>
       <p class="hero-sub">あなたの本当の良さを、<br class="sp-br">磨いて、届ける。<br>この人と想える人に、<br class="sp-br">出会うために。</p>
       <p class="hero-name">代表　石神りさ</p>
       <a href="about.html" class="hero-about-link">ハルカゼについて →</a>
@@ -879,70 +1001,100 @@
     </div>
   </section>
 
-  <!-- ⑥ WHAT WE DO -->
-  <section class="section section-ice">
+  <!-- ⑥ 成婚への4ステップ -->
+  <section class="section">
     <div class="section-inner">
-      <p class="section-label">What We Do</p>
-      <h2 class="section-title">ハルカゼで大切にしていること</h2>
-      <div class="whatwedo-list">
 
-        <div class="whatwedo-item">
-          <div class="whatwedo-header">
-            <div class="whatwedo-header-left">
-              <p class="whatwedo-num">01</p>
-              <p class="whatwedo-title">あなたの"本音"を、<br>届く言葉に</p>
-            </div>
-            <span class="whatwedo-toggle-icon">+</span>
-          </div>
-          <div class="whatwedo-body">
-            <div class="whatwedo-body-inner">
-              <ul class="whatwedo-bullets">
-                <li>他人の型にはめない、あなたを伝えるプロフィール作成</li>
-                <li>「会いたい」と思わせる言葉へデザインする</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="whatwedo-item">
-          <div class="whatwedo-header">
-            <div class="whatwedo-header-left">
-              <p class="whatwedo-num">02</p>
-              <p class="whatwedo-title">二人三脚で、<br>婚活を前に進める</p>
-            </div>
-            <span class="whatwedo-toggle-icon">+</span>
-          </div>
-          <div class="whatwedo-body">
-            <div class="whatwedo-body-inner">
-              <ul class="whatwedo-bullets">
-                <li>デートの振り返りから次のプランニングまで</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="whatwedo-item">
-          <div class="whatwedo-header">
-            <div class="whatwedo-header-left">
-              <p class="whatwedo-num">03</p>
-              <p class="whatwedo-title">「深い理解」があるから、<br>迷わない</p>
-            </div>
-            <span class="whatwedo-toggle-icon">+</span>
-          </div>
-          <div class="whatwedo-body">
-            <div class="whatwedo-body-inner">
-              <ul class="whatwedo-bullets">
-                <li>性格・価値観・言葉にできない本音まで把握</li>
-                <li>成婚後を見据えた、一貫したサポート</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
+      <!-- リードコピー -->
+      <div class="step-lead">
+        <p class="step-lead-main">型にはまる婚活より、あなたが<em>「活きる」</em>婚活を。</p>
+        <p class="step-lead-sub">セオリー通りに進めるより、あなたが「活きる」ほうが、ずっといい。</p>
       </div>
-      <div class="whatwedo-footer">
-        <a href="service.html" class="text-link">サービス（成婚戦略）の詳細を見る →</a>
+
+      <p class="section-label" style="color:var(--color-sky);">Step</p>
+      <h2 class="section-title">ハルカゼで叶える、<br>成婚への4ステップ</h2>
+
+      <!-- 4ステップ -->
+      <div class="step-list">
+
+        <div class="step-card step-01 step-animate">
+          <div class="step-marker">
+            <span class="step-marker-num">01</span>
+            <span class="step-marker-en">Find</span>
+          </div>
+          <div class="step-card-body">
+            <h3 class="step-card-title">本音を見つける</h3>
+            <p class="step-card-text">セオリー通りの条件探しではなく、独自のワークで「本当に大切にしたい価値観」を可視化します。</p>
+            <div class="step-tags">
+              <span class="step-tag">自己理解</span>
+              <span class="step-tag">価値観ワーク</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-card step-02 step-animate">
+          <div class="step-marker">
+            <span class="step-marker-num">02</span>
+            <span class="step-marker-en">Shine</span>
+          </div>
+          <div class="step-card-body">
+            <h3 class="step-card-title">魅力を磨ききる</h3>
+            <p class="step-card-text">プロの買い物同行と写真撮影で、第一印象をアップデート。自分本来の魅力が伝わる準備を整えます。</p>
+            <div class="step-tags">
+              <span class="step-tag">買い物同行</span>
+              <span class="step-tag">プロ撮影</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-card step-03 step-animate">
+          <div class="step-marker">
+            <span class="step-marker-num">03</span>
+            <span class="step-marker-en">Meet</span>
+          </div>
+          <div class="step-card-body">
+            <h3 class="step-card-title">出会う</h3>
+            <p class="step-card-text">月最大200件の申し込みが可能。アプリのように気軽に、でも手厚いサポートの中で出会いを広げます。</p>
+            <div class="step-tags">
+              <span class="step-tag">お見合い料0円</span>
+              <span class="step-tag">FB面談</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-card step-04 step-animate">
+          <div class="step-marker">
+            <span class="step-marker-num">04</span>
+            <span class="step-marker-en">Design</span>
+          </div>
+          <div class="step-card-body">
+            <h3 class="step-card-title">望む未来へ</h3>
+            <p class="step-card-text">結婚をゴールにせず、その先の幸せな家庭の土台作りまで。ハルカゼLABの講座でパートナーシップを学びます。</p>
+            <div class="step-tags">
+              <span class="step-tag">ハルカゼLAB</span>
+              <span class="step-tag">成婚準備</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /step-list -->
+
+      <!-- 価格バルーン -->
+      <div class="step-price-balloon step-animate">
+        <p class="step-price-text">月々 <strong>13,800円〜</strong>。お見合い料はいつでも <strong>0円</strong>です。</p>
+        <a href="price.html" class="btn btn-outline">詳しい料金プランを見る ＞</a>
       </div>
+
+      <!-- ハルカゼLAB バナー -->
+      <div class="lab-banner step-animate">
+        <p class="lab-banner-label">Special Plus+</p>
+        <h3 class="lab-banner-title">ハルカゼLABで学ぶ</h3>
+        <p class="lab-banner-body">出会いだけじゃない。自分を楽しみ、<br>パートナーシップを学ぶための実践的な学び場。</p>
+        <p class="lab-banner-price">Harukaze LAB: 1枚 <strong>1,000円〜</strong>（チケット制）</p>
+        <p class="lab-banner-msg">「自分に合ったスタイルで始められます」</p>
+        <a href="lab.html" class="btn btn-sky">開催中の講座を見る ＞</a>
+      </div>
+
     </div>
   </section>
 
@@ -990,13 +1142,24 @@
 
 <script src="js/common.js"></script>
 <script>
-// ── What We Do アコーディオン ──
-document.querySelectorAll('.whatwedo-header').forEach(function(header) {
-  header.addEventListener('click', function() {
-    var item = this.closest('.whatwedo-item');
-    item.classList.toggle('open');
+// ── ステップ スクロールアニメーション ──
+(function() {
+  var items = document.querySelectorAll('.step-animate');
+  if (!items.length) return;
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (!entry.isIntersecting) return;
+      var el = entry.target;
+      var delay = parseInt(el.dataset.animDelay || 0);
+      setTimeout(function() { el.classList.add('is-visible'); }, delay);
+      io.unobserve(el);
+    });
+  }, { threshold: 0.12 });
+  items.forEach(function(el, i) {
+    el.dataset.animDelay = i * 120;
+    io.observe(el);
   });
-});
+})();
 </script>
 </body>
 </html>
