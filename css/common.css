@@ -619,6 +619,13 @@ body {
     padding-bottom: 72px;
   }
 
+  /* フッターブランド名：1行に収まるようフォント縮小 */
+  .footer-brand {
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
   /* モバイル：サイドボタンを非表示にしてボトムバーに切り替え */
   .float-side-btns {
     top: auto;
