@@ -90,7 +90,7 @@ ul {
 .nav-logo-target {
   font-size: 12px;
   letter-spacing: 0.08em;
-  background: linear-gradient(90deg, #C0537A 0%, #E07EA0 100%);
+  background: linear-gradient(90deg, #C87085 0%, #EAA5BC 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -107,8 +107,8 @@ ul {
   gap: 10px;
 }
 .nav-icon {
-  height: 44px;
-  width: 44px;
+  height: 54px;
+  width: 54px;
   object-fit: contain;
   flex-shrink: 0;
 }
