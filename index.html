@@ -57,11 +57,12 @@
 /* harukaze-mod: 修正1 .hero-tag / .tag-pink は削除済み */
 .hero-title {
   font-family: 'Klee One', 'Shippori Mincho', serif;
-  font-size: clamp(32px, 8vw, 72px);
+  font-size: clamp(32px, 8vw, 60px);
   font-weight: 600;
   line-height: 1.3;
   letter-spacing: 0.05em;
   margin-bottom: 24px;
+  white-space: nowrap; /* <br>は維持しつつ各行の折り返しを防ぐ */
 }
 .hero-sub {
   font-size: clamp(13px, 3.8vw, 19px);
