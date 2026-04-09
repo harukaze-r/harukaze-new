@@ -152,15 +152,17 @@
   }
 }
 
-/* ── チェックリスト締め一文 ── */
-.checklist-loop-text {
-  margin-top: 32px;
-  font-size: clamp(14px, 4vw, 20px);
-  font-weight: 500;
-  color: var(--color-navy);
+/* ── Let's Try! カーブバナー ── */
+.lets-try-wrap {
   text-align: center;
-  letter-spacing: 0.02em;
-  white-space: nowrap;
+  padding: 8px 0 0;
+  line-height: 1;
+}
+.lets-try-svg {
+  width: min(420px, 92vw);
+  display: block;
+  margin: 0 auto;
+  overflow: visible;
 }
 
 /* ── ブログミニセクション ── */
@@ -292,7 +294,7 @@
 }
 
 /* ── りさのメッセージ ── */
-.message-section { background: var(--color-ice); padding: 80px 24px; }
+.message-section { background: var(--color-ice); padding: 40px 24px 80px; }
 .message-inner {
   max-width: 960px;
   margin: 0 auto;
@@ -882,9 +884,20 @@
           <p class="checklist-text">「いい人だけど…」で終わってしまう気がしている</p>
         </div>
       </div>
-      <p class="checklist-loop-text">あなたの婚活、ここから変わります！</p>
     </div>
   </section>
+
+  <!-- Let's Try! カーブバナー -->
+  <div class="lets-try-wrap">
+    <svg class="lets-try-svg" viewBox="0 0 420 100" xmlns="http://www.w3.org/2000/svg" aria-label="Let's Try!">
+      <defs>
+        <path id="lets-try-arc" d="M 20,85 Q 210,8 400,85" fill="none"/>
+      </defs>
+      <text font-family="'Cormorant Garamond','Shippori Mincho',serif" font-size="42" font-weight="500" fill="#1E3A5F" letter-spacing="6">
+        <textPath href="#lets-try-arc" startOffset="50%" text-anchor="middle">Let's Try!</textPath>
+      </text>
+    </svg>
+  </div>
 
   <!-- ③ 婚活突破口診断（チェックリスト直後） -->
   <section class="section section-ice" style="padding: 32px 24px;">
