@@ -621,12 +621,50 @@
 .step-03 .step-card-body { border-top-color: #72BB77; }
 .step-04 .step-card-body { border-top-color: #B07AC0; }
 
+.step-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  gap: 12px;
+}
 .step-card-title {
   font-family: var(--font-display);
-  font-size: 16px;
+  font-size: clamp(22px, 4vw, 36px);
   font-weight: 500;
   color: var(--color-navy);
-  margin-bottom: 8px;
+  margin: 0;
+  line-height: 1.3;
+}
+.step-card-chevron {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-sky);
+  color: var(--color-sky);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 1;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.step-card.is-open .step-card-chevron {
+  transform: rotate(45deg);
+  background: var(--color-sky);
+  color: #fff;
+}
+.step-card-content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease, padding-top 0.4s ease;
+  padding-top: 0;
+}
+.step-card.is-open .step-card-content {
+  max-height: 300px;
+  padding-top: 14px;
 }
 .step-card-text {
   font-size: 13px;
@@ -972,11 +1010,16 @@
             <span class="step-marker-en">Find</span>
           </div>
           <div class="step-card-body">
-            <h3 class="step-card-title">見つける</h3>
-            <p class="step-card-text">独自のワークで「本当に大切にしたい価値観」を可視化</p>
-            <div class="step-tags">
-              <span class="step-tag">自己理解</span>
-              <span class="step-tag">価値観ワーク</span>
+            <div class="step-card-header" role="button" tabindex="0" aria-expanded="false">
+              <h3 class="step-card-title">見つける</h3>
+              <span class="step-card-chevron">＋</span>
+            </div>
+            <div class="step-card-content">
+              <p class="step-card-text">独自のワークで「本当に大切にしたい価値観」を可視化</p>
+              <div class="step-tags">
+                <span class="step-tag">自己理解</span>
+                <span class="step-tag">価値観ワーク</span>
+              </div>
             </div>
           </div>
         </div>
@@ -987,11 +1030,16 @@
             <span class="step-marker-en">Shine</span>
           </div>
           <div class="step-card-body">
-            <h3 class="step-card-title">磨く</h3>
-            <p class="step-card-text">イメージコンサルタントのお買い物同行と、写真撮影で、第一印象をアップデート</p>
-            <div class="step-tags">
-              <span class="step-tag">買い物同行</span>
-              <span class="step-tag">プロ撮影</span>
+            <div class="step-card-header" role="button" tabindex="0" aria-expanded="false">
+              <h3 class="step-card-title">磨く</h3>
+              <span class="step-card-chevron">＋</span>
+            </div>
+            <div class="step-card-content">
+              <p class="step-card-text">イメージコンサルタントのお買い物同行と、写真撮影で、第一印象をアップデート</p>
+              <div class="step-tags">
+                <span class="step-tag">買い物同行</span>
+                <span class="step-tag">プロ撮影</span>
+              </div>
             </div>
           </div>
         </div>
@@ -1002,11 +1050,16 @@
             <span class="step-marker-en">Meet</span>
           </div>
           <div class="step-card-body">
-            <h3 class="step-card-title">出会う</h3>
-            <p class="step-card-text">月最大200件の申し込みが可能。アプリの気軽さ×手厚いサポートの中で出会いを広げる</p>
-            <div class="step-tags">
-              <span class="step-tag">お見合い料0円</span>
-              <span class="step-tag">FB面談</span>
+            <div class="step-card-header" role="button" tabindex="0" aria-expanded="false">
+              <h3 class="step-card-title">出会う</h3>
+              <span class="step-card-chevron">＋</span>
+            </div>
+            <div class="step-card-content">
+              <p class="step-card-text">月最大200件の申し込みが可能。アプリの気軽さ×手厚いサポートの中で出会いを広げる</p>
+              <div class="step-tags">
+                <span class="step-tag">お見合い料0円</span>
+                <span class="step-tag">FB面談</span>
+              </div>
             </div>
           </div>
         </div>
@@ -1017,11 +1070,16 @@
             <span class="step-marker-en">Design</span>
           </div>
           <div class="step-card-body">
-            <h3 class="step-card-title">育む</h3>
-            <p class="step-card-text">結婚をゴールしない！その先の幸せな家庭の土台作りまでをハルカゼLABで学ぶ</p>
-            <div class="step-tags">
-              <span class="step-tag">ハルカゼLAB</span>
-              <span class="step-tag">成婚準備</span>
+            <div class="step-card-header" role="button" tabindex="0" aria-expanded="false">
+              <h3 class="step-card-title">育む</h3>
+              <span class="step-card-chevron">＋</span>
+            </div>
+            <div class="step-card-content">
+              <p class="step-card-text">結婚をゴールしない！その先の幸せな家庭の土台作りまでをハルカゼLABで学ぶ</p>
+              <div class="step-tags">
+                <span class="step-tag">ハルカゼLAB</span>
+                <span class="step-tag">成婚準備</span>
+              </div>
             </div>
           </div>
         </div>
@@ -1170,6 +1228,23 @@
   items.forEach(function(el, i) {
     el.dataset.animDelay = i * 120;
     io.observe(el);
+  });
+})();
+
+// ── ステップカード アコーディオン ──
+(function() {
+  var headers = document.querySelectorAll('.step-card-header');
+  headers.forEach(function(header) {
+    function toggle() {
+      var card = header.closest('.step-card');
+      var isOpen = card.classList.contains('is-open');
+      card.classList.toggle('is-open', !isOpen);
+      header.setAttribute('aria-expanded', String(!isOpen));
+    }
+    header.addEventListener('click', toggle);
+    header.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
   });
 })();
 </script>
