@@ -38,10 +38,10 @@
   inset: 0;
   /* PC：左からチャコールネイビーでグラデーション */
   background: linear-gradient(to right,
-    rgba(30,42,60,0.96) 0%,
-    rgba(32,44,62,0.90) 28%,
-    rgba(36,50,70,0.50) 55%,
-    rgba(36,50,70,0.00) 100%
+    rgba(30,58,95,0.96) 0%,
+    rgba(30,58,95,0.90) 28%,
+    rgba(30,58,95,0.50) 55%,
+    rgba(30,58,95,0.00) 100%
   );
 }
 
@@ -106,22 +106,22 @@
   .hero {
     align-items: flex-start;
     min-height: auto;
-    background: #2A3A4D; /* ナビと同色でフレームを隠し、境目をなくす */
+    background: #1E3A5F; /* ナビと同色でフレームを隠し、境目をなくす */
   }
   .hero-bg {
     /* 写真の上下エッジをフェード。左右のフェードは::afterに委任 */
     background:
-      linear-gradient(to bottom, #2A3A4D 0%, #2A3A4D 22%, transparent 38%, transparent 74%, #2A3A4D 100%),
+      linear-gradient(to bottom, #1E3A5F 0%, #1E3A5F 22%, transparent 38%, transparent 74%, #1E3A5F 100%),
       url('newimages/IMG_0160.jpeg') right center / 70% auto no-repeat;
   }
   .hero-bg::after {
     /* PC同様の左→右グラデーションでテキスト部分を自然に暗くする */
     background: linear-gradient(to right,
-      rgba(42,58,77,0.95) 0%,
-      rgba(42,58,77,0.88) 22%,
-      rgba(42,58,77,0.50) 48%,
-      rgba(42,58,77,0.14) 68%,
-      rgba(42,58,77,0.00) 82%
+      rgba(30,58,95,0.95) 0%,
+      rgba(30,58,95,0.88) 22%,
+      rgba(30,58,95,0.50) 48%,
+      rgba(30,58,95,0.14) 68%,
+      rgba(30,58,95,0.00) 82%
     );
   }
   .hero-content {
@@ -177,19 +177,19 @@
   align-items: center;
   gap: 12px;
   padding: 16px 0;
-  border-bottom: 1px solid rgba(42,58,77,0.1);
+  border-bottom: 1px solid rgba(30,58,95,0.1);
   text-decoration: none;
   color: var(--color-navy);
   transition: opacity 0.2s;
 }
-.blog-mini-item:first-child { border-top: 1px solid rgba(42,58,77,0.1); }
+.blog-mini-item:first-child { border-top: 1px solid rgba(30,58,95,0.1); }
 .blog-mini-item:hover { opacity: 0.65; }
 .blog-mini-tag {
   flex-shrink: 0;
   font-size: 10px;
   letter-spacing: 0.1em;
   color: var(--color-sky);
-  background: rgba(91,143,175,0.12);
+  background: rgba(14,165,233,0.12);
   border-radius: 4px;
   padding: 2px 7px;
 }
@@ -225,13 +225,13 @@
   padding: 20px 22px;
   transition: box-shadow 0.2s;
 }
-.checklist-item:hover { box-shadow: 0 4px 16px rgba(42,58,77,0.10); }
+.checklist-item:hover { box-shadow: 0 4px 16px rgba(30,58,95,0.10); }
 .check-icon {
   width: 28px;
   height: 28px;
   min-width: 28px;
   border-radius: 50%;
-  background: var(--color-pink);
+  background: var(--color-sky);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -245,7 +245,7 @@
   .checklist-item {
     background: none;
     border: none;
-    border-bottom: 1px solid rgba(42,58,77,0.14);
+    border-bottom: 1px solid rgba(30,58,95,0.14);
     border-radius: 0;
     padding: 13px 0;
     gap: 12px;
@@ -265,8 +265,8 @@
   border-radius: 16px;
   overflow: hidden;
   box-shadow:
-    0 6px 20px rgba(42,58,77,0.14),
-    0 18px 52px rgba(42,58,77,0.10),
+    0 6px 20px rgba(30,58,95,0.14),
+    0 18px 52px rgba(30,58,95,0.10),
     0 2px 6px rgba(0,0,0,0.06);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   max-width: 620px;
@@ -277,8 +277,8 @@
 .shindan-img-link:hover {
   transform: translateY(-5px);
   box-shadow:
-    0 12px 32px rgba(42,58,77,0.20),
-    0 28px 64px rgba(42,58,77,0.14),
+    0 12px 32px rgba(30,58,95,0.20),
+    0 28px 64px rgba(30,58,95,0.14),
     0 4px 10px rgba(0,0,0,0.09);
 }
 .shindan-img-link img {
@@ -458,7 +458,7 @@
   color: #888;
 }
 .ibj-vs-card.harukaze .ibj-vs-tag {
-  background: rgba(91,143,175,0.12);
+  background: rgba(14,165,233,0.12);
   color: var(--color-sky);
   border: 1px solid rgba(14,165,233,0.3);
 }
@@ -511,7 +511,7 @@
 .ibj-vs-separator {
   font-size: 22px;
   font-weight: 800;
-  color: var(--color-pink);
+  color: var(--color-sky);
   text-align: center;
   letter-spacing: 0.05em;
 }
@@ -718,7 +718,7 @@
   <section class="section">
     <div class="section-inner">
       <p class="section-label">Check List</p>
-      <h2 class="section-title">一生懸命な<em style="font-style:normal;">"いい人"</em>に、<br><span style="font-weight:400;color:var(--color-pink);">当てはまるほど、ハルカゼ向き。</span></h2>
+      <h2 class="section-title">一生懸命な<em style="font-style:normal;">"いい人"</em>に、<br><span style="font-weight:400;color:var(--color-sky);">当てはまるほど、ハルカゼ向き。</span></h2>
       <div class="checklist-grid">
         <div class="checklist-item">
           <div class="check-icon">
@@ -952,7 +952,7 @@
     <h2 class="cta-title">「話してみる」が、すべての始まり。</h2>
     <p class="cta-sub">入会を迷っていても大丈夫。<br>まずはあなたの話を聞かせてください。</p>
     <div class="cta-btns">
-      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn btn-line">初回無料面談に申し込む</a>
+      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn btn-sky">初回無料面談に申し込む</a>
       <a href="service.html" class="btn btn-outline">サービスを見る</a>
     </div>
   </section>

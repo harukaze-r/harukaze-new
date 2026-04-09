@@ -8,10 +8,10 @@
 
 /* --- CSS Variables --- */
 :root {
-  --color-navy:  #2A3A4D;
-  --color-sky:   #5B8FAF;
+  --color-navy:  #1E3A5F;
+  --color-sky:   #0EA5E9;
   --color-pink:  #FF8FAB;
-  --color-ice:   #E6EEF5;
+  --color-ice:   #EBF5FF;
   --color-white: #FFFFFF;
 
   /* ディスプレイ（見出し）用フォント */
@@ -88,9 +88,12 @@ ul {
 /* ロゴ */
 /* harukaze-mod: 修正2 ターゲット文言 */
 .nav-logo-target {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.08em;
-  color: #5B8FAF;
+  background: linear-gradient(90deg, #9B5E6E 0%, #C4906A 45%, #A86878 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-top: 2px;
   line-height: 1.2;
 }
@@ -118,11 +121,11 @@ ul {
   letter-spacing: 0.18em;
   text-transform: none;
   font-feature-settings: "palt";
-  background: linear-gradient(135deg, #4A7A99 0%, #5B8FAF 100%);
+  background: linear-gradient(135deg, #1E3A5F 0%, #0EA5E9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 1px 1px rgba(91,143,175,0.2));
+  filter: drop-shadow(0 1px 1px rgba(14,165,233,0.2));
 }
 
 /* PC メニュー */
@@ -147,7 +150,7 @@ ul {
 /* CTAボタン */
 .nav-cta {
   display: inline-block;
-  background: #36A324;
+  background: #0EA5E9;
   color: #fff !important;
   opacity: 1 !important;
   padding: 8px 18px;
@@ -159,7 +162,7 @@ ul {
 }
 
 .nav-cta:hover {
-  background: #2a7d1a !important;
+  background: #0891C2 !important;
   transform: translateY(-1px);
 }
 
@@ -202,7 +205,7 @@ ul {
   inset: 0;
   height: 100dvh;
   overflow-y: auto;
-  background: rgba(36, 52, 68, 0.93);
+  background: rgba(30, 58, 95, 0.93);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   z-index: 999;
@@ -519,9 +522,9 @@ body {
 }
 
 .btn-navy:hover {
-  background: #1E2B38;
+  background: #162D4A;
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(42,58,77,0.3);
+  box-shadow: 0 4px 14px rgba(30,58,95,0.3);
 }
 
 .btn-sky {
@@ -530,9 +533,9 @@ body {
 }
 
 .btn-sky:hover {
-  background: #4A7A99;
+  background: #0891C2;
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(91,143,175,0.35);
+  box-shadow: 0 4px 14px rgba(14,165,233,0.35);
 }
 
 .btn-line {
