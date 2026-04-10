@@ -22,7 +22,7 @@
 }
 .page-hero::before {
   content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse 60% 70% at 90% 30%, rgba(74,143,191,0.15) 0%, transparent 60%);
+  background: radial-gradient(ellipse 60% 70% at 90% 30%, rgba(184,199,230,0.20) 0%, transparent 60%);
   pointer-events: none;
 }
 .page-hero-label { font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--c-blue); margin-bottom: 16px; font-weight: 700; position: relative; }
@@ -39,7 +39,7 @@
   background: var(--c-white); color: var(--c-mid);
   transition: all 0.2s;
 }
-.faq-tab:hover { border-color: var(--c-blue); color: var(--c-blue); }
+.faq-tab:hover { border-color: var(--c-navy); color: var(--c-navy); }
 .faq-tab.active { background: var(--c-navy); border-color: var(--c-navy); color: #fff; }
 
 /* ── カテゴリ ── */
@@ -61,13 +61,13 @@
   display: flex; align-items: center; justify-content: center;
   font-size: 13px; font-weight: 900;
 }
-.faq-item.open .faq-q-mark { background: var(--c-coral); }
+.faq-item.open .faq-q-mark { background: var(--c-coral); color: var(--c-navy); }
 .faq-q-text { flex: 1; font-size: 15px; font-weight: 700; color: var(--c-navy); line-height: 1.5; }
 .faq-chevron {
   flex-shrink: 0; width: 24px; height: 24px; color: var(--c-lt);
   transition: transform 0.3s;
 }
-.faq-item.open .faq-chevron { transform: rotate(180deg); color: var(--c-coral); }
+.faq-item.open .faq-chevron { transform: rotate(180deg); color: var(--c-navy); }
 .faq-chevron svg { width: 100%; height: 100%; }
 
 .faq-answer {
