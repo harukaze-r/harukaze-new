@@ -1,158 +1,62 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ブログ | 結婚相談所ハルカゼ</title>
 <link rel="icon" href="newimages/使用ロゴ.jpeg">
-<meta property="og:image" content="newimages/h. (1).png">
+<meta name="description" content="ハルカゼ代表・石神りさによる婚活ブログ。20〜40代男性向けの婚活ノウハウ・恋愛コラムを発信中。">
 <meta property="og:title" content="ブログ | 結婚相談所ハルカゼ">
-<meta property="og:description" content="婚活のヒントや、りさのつぶやき。">
+<meta property="og:image" content="newimages/h. (1).png">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="css/common.css">
 <style>
-/* ============================================================
-   blog.html ページ固有スタイル
-   ============================================================ */
-
 .page-hero {
-  background: var(--color-navy);
-  padding: 80px 24px 72px;
-  text-align: center;
-  color: #fff;
+  background: var(--c-navy); padding: 96px 24px 80px;
+  text-align: center; color: #fff; position: relative; overflow: hidden;
 }
-.page-hero-label {
-  font-size: 11px;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--color-sky);
-  margin-bottom: 16px;
+.page-hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 70% at 80% 20%, rgba(74,143,191,0.15) 0%, transparent 60%);
+  pointer-events: none;
 }
-.page-hero-title {
-  font-size: clamp(28px, 5vw, 48px);
-  font-weight: 500;
-  margin-bottom: 8px;
-}
-.page-hero-sub {
-  font-size: 15px;
-  opacity: 0.8;
-}
+.page-hero-label { font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--c-blue); margin-bottom: 16px; font-weight: 700; position: relative; }
+.page-hero-title { font-size: clamp(30px, 5vw, 50px); font-weight: 700; line-height: 1.3; position: relative; }
 
-/* ── 記事グリッド ── */
-.blog-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 28px;
-  margin-top: 48px;
-}
+.blog-grid { display: grid; grid-template-columns: 1fr; gap: 28px; margin-top: 48px; }
+@media (min-width: 600px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 960px) { .blog-grid { grid-template-columns: repeat(3, 1fr); } }
 
 .blog-card {
-  background: var(--color-white);
-  border: 1px solid var(--color-ice);
-  border-radius: 14px;
-  overflow: hidden;
-  text-decoration: none;
-  color: inherit;
+  background: var(--c-white); border-radius: 14px;
+  border: 1px solid var(--c-border); overflow: hidden;
   transition: box-shadow 0.2s, transform 0.2s;
-  display: flex;
-  flex-direction: column;
+  text-decoration: none; color: inherit; display: block;
 }
-.blog-card:hover {
-  box-shadow: 0 8px 28px rgba(30,58,95,0.1);
-  transform: translateY(-3px);
-}
+.blog-card:hover { box-shadow: 0 8px 32px rgba(26,46,74,0.10); transform: translateY(-3px); }
+.blog-card-thumb { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: var(--c-bg); }
+.blog-card-body { padding: 20px 20px 22px; }
+.blog-card-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.blog-card-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; color: var(--c-blue); background: rgba(74,143,191,0.10); border-radius: 4px; padding: 2px 8px; }
+.blog-card-date { font-size: 11px; color: var(--c-lt); }
+.blog-card-title { font-size: 15px; font-weight: 700; color: var(--c-navy); line-height: 1.55; }
 
-.blog-card-thumb {
-  width: 100%;
-  aspect-ratio: 16/9;
-  background: var(--color-ice);
-  overflow: hidden;
-  position: relative;
-}
-.blog-card-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s;
-}
-.blog-card:hover .blog-card-thumb img {
-  transform: scale(1.04);
-}
-.blog-card-thumb-placeholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, var(--color-ice) 0%, #c8e8f8 100%);
-  font-size: 40px;
-}
+.note-box { background: var(--c-bg); border-radius: 16px; padding: 40px 32px; text-align: center; margin-top: 56px; }
+.note-box-title { font-size: 18px; font-weight: 700; color: var(--c-navy); margin-bottom: 10px; }
+.note-box-text { font-size: 14px; color: var(--c-mid); line-height: 1.9; margin-bottom: 24px; }
 
-.blog-card-body {
-  padding: 22px 24px 24px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.blog-card-meta {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-.blog-card-date {
-  font-size: 12px;
-  color: #999;
-}
-.blog-card-title {
-  font-size: 17px;
-  font-weight: 500;
-  color: var(--color-navy);
-  line-height: 1.5;
-  margin-bottom: 10px;
-}
-.blog-card-excerpt {
-  font-size: 13px;
-  color: #666;
-  line-height: 1.8;
-  flex: 1;
-}
-.blog-card-read-more {
-  margin-top: 16px;
-  font-size: 13px;
-  color: var(--color-sky);
-}
-
-/* ── CTA ── */
-.cta-section {
-  background: var(--color-navy);
-  padding: 80px 24px;
-  text-align: center;
-  color: #fff;
-}
-.cta-title { font-size: clamp(22px, 4vw, 36px); font-weight: 500; margin-bottom: 16px; }
-.cta-sub { font-size: 15px; opacity: 0.85; margin-bottom: 40px; line-height: 1.9; }
-.cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
-
-/* ── responsive ── */
-@media (min-width: 640px) {
-  .blog-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (min-width: 960px) {
-  .blog-grid { grid-template-columns: repeat(3, 1fr); }
-}
+.cta-section { background: var(--c-navy); padding: 96px 24px; text-align: center; color: #fff; }
+.cta-title { font-size: clamp(22px, 4vw, 36px); font-weight: 700; margin-bottom: 16px; line-height: 1.5; }
+.cta-sub { font-size: 15px; color: rgba(255,255,255,0.72); margin-bottom: 44px; line-height: 2; }
+.cta-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
 </style>
 </head>
 <body>
 
-<!-- ナビゲーション -->
 <nav class="site-nav">
   <a href="index.html" class="nav-logo">
     <img src="images/Photoroom_20260409_154324.png" alt="ハルカゼ" class="nav-icon">
-    <div class="nav-logo-text">
-      <span class="nav-logo-target">20～40代男性に特化</span>
-      <span class="nav-logo-main">結婚相談所 ハルカゼ</span>
-    </div>
+    <div class="nav-logo-text"><span class="nav-logo-main">結婚相談所 ハルカゼ</span></div>
   </a>
   <ul class="nav-links">
     <li><a href="about.html">メッセージ</a></li>
@@ -163,15 +67,11 @@
     <li><a href="blog.html">ブログ</a></li>
     <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで相談</a></li>
   </ul>
-  <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く"><span></span><span></span><span></span></button>
 </nav>
-
-<!-- モバイルオーバーレイ -->
 <div class="mobile-nav-overlay" id="mobileNavOverlay">
-  <button class="mobile-nav-close" id="mobileNavClose" aria-label="メニューを閉じる"><span></span><span></span></button>
-  <a href="/">ホーム</a>
+  <button class="mobile-nav-close" id="mobileNavClose" aria-label="閉じる"><span></span><span></span></button>
+  <a href="index.html">ホーム</a>
   <a href="about.html">メッセージ</a>
   <a href="service.html">サービス・価格</a>
   <a href="flow.html">成婚までの流れ</a>
@@ -179,7 +79,6 @@
   <a href="faq.html">よくある質問</a>
   <a href="blog.html">ブログ</a>
   <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">初回無料面談に申し込む</a>
-
   <hr class="mobile-nav-divider">
   <span class="mobile-nav-girls-label">女性の方はこちら</span>
   <span class="mobile-nav-arrow"></span>
@@ -187,112 +86,74 @@
 </div>
 
 <main>
-
-  <!-- ページヒーロー -->
   <section class="page-hero">
     <p class="page-hero-label">Blog</p>
-    <h1 class="page-hero-title">HARUKAZE BLOG</h1>
-    <p class="page-hero-sub">婚活のヒントや、りさのつぶやき。</p>
+    <h1 class="page-hero-title">ブログ</h1>
   </section>
 
-  <!-- 記事一覧 -->
   <section class="section">
     <div class="section-inner">
+      <p class="section-label">Latest Articles</p>
+      <h2 class="section-title">最新の婚活コラム</h2>
       <div class="blog-grid">
-
-        <!-- 記事1 -->
-        <a href="blog-post.html" class="blog-card">
-          <div class="blog-card-thumb">
-            <div class="blog-card-thumb-placeholder">💬</div>
-          </div>
+        <a href="blog_02.html" class="blog-card">
+          <img src="newimages/note.jpg" alt="" class="blog-card-thumb">
           <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span class="tag-sky">婚活のヒント</span>
-              <span class="blog-card-date">2025.04.01</span>
-            </div>
-            <h2 class="blog-card-title">なぜ、いい人どまりになるのか。</h2>
-            <p class="blog-card-excerpt">真面目で誠実なのに、なぜか選ばれない。そんな悩みを抱えている人へ。問題は中身ではなく、伝え方にある——その理由を解説します。</p>
-            <span class="blog-card-read-more">続きを読む →</span>
+            <div class="blog-card-meta"><span class="blog-card-tag">婚活ノウハウ</span><span class="blog-card-date">2026.03.15</span></div>
+            <h3 class="blog-card-title">「いい人なんだけど」と言われる男性が、婚活で成功するための3つのポイント</h3>
           </div>
         </a>
-
-        <!-- 記事2 -->
-        <a href="blog-post.html" class="blog-card">
-          <div class="blog-card-thumb">
-            <div class="blog-card-thumb-placeholder">🌱</div>
-          </div>
+        <a href="blog_02.html" class="blog-card">
+          <img src="newimages/note.jpg" alt="" class="blog-card-thumb">
           <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span class="tag-sky">りさのつぶやき</span>
-              <span class="blog-card-date">2025.03.20</span>
-            </div>
-            <h2 class="blog-card-title">ハルカゼが生まれた理由。</h2>
-            <p class="blog-card-excerpt">「もったいないな」と思い続けた日々から、ハルカゼは生まれました。誠実な人が報われる婚活をつくりたい——その想いをお話しします。</p>
-            <span class="blog-card-read-more">続きを読む →</span>
+            <div class="blog-card-meta"><span class="blog-card-tag">自己理解</span><span class="blog-card-date">2026.02.28</span></div>
+            <h3 class="blog-card-title">婚活を始める前に知っておきたい「自己理解」の大切さ</h3>
           </div>
         </a>
-
-        <!-- 記事3 -->
-        <a href="blog-post.html" class="blog-card">
-          <div class="blog-card-thumb">
-            <div class="blog-card-thumb-placeholder">📋</div>
-          </div>
+        <a href="blog_02.html" class="blog-card">
+          <img src="newimages/note.jpg" alt="" class="blog-card-thumb">
           <div class="blog-card-body">
-            <div class="blog-card-meta">
-              <span class="tag-sky">婚活のヒント</span>
-              <span class="blog-card-date">2025.03.10</span>
-            </div>
-            <h2 class="blog-card-title">プロフィールで損してない？チェックリスト</h2>
-            <p class="blog-card-excerpt">「プロフィールを褒められるのに先に進まない」——そんな状況、実はプロフィールにある落とし穴が原因かもしれません。今すぐ確認してみてください。</p>
-            <span class="blog-card-read-more">続きを読む →</span>
+            <div class="blog-card-meta"><span class="blog-card-tag">お見合い</span><span class="blog-card-date">2026.02.10</span></div>
+            <h3 class="blog-card-title">お見合いで「2回目がない」を卒業する会話術</h3>
           </div>
         </a>
-
+      </div>
+      <div class="note-box">
+        <h3 class="note-box-title">さらに多くの記事はnoteで公開中</h3>
+        <p class="note-box-text">婚活ノウハウ・恋愛コラム・ハルカゼ流の考え方など、<br>代表・石神りさが定期的に発信しています。</p>
+        <a href="https://note.com/" target="_blank" rel="noopener noreferrer" class="btn btn-navy">note でもっと読む →</a>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="cta-section">
-    <p class="section-label" style="color: var(--color-sky);">Contact</p>
-    <h2 class="cta-title">「ちょっと話してみる」が、すべての始まり。</h2>
-    <p class="cta-sub">記事を読んで、気になったことは<br>LINEで気軽に聞いてください。</p>
-    <div class="cta-btns">
-      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn btn-line">初回無料面談に申し込む</a>
+    <p class="section-label" style="color:var(--c-blue);">Contact</p>
+    <h2 class="cta-title">「話してみる」が、すべての始まり。</h2>
+    <p class="cta-sub">入会を迷っていても大丈夫。<br>まずはあなたの話を聞かせてください。</p>
+    <div class="cta-actions">
+      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn btn-sky">LINEで初回無料面談に申し込む</a>
     </div>
   </section>
-
 </main>
 
-<!-- フッター -->
 <footer class="site-footer">
   <div class="footer-inner">
     <p class="footer-brand">大阪・吹田・オンラインで全国対応<br>結婚相談所ハルカゼ</p>
     <nav class="footer-links">
-      <a href="about.html">メッセージ</a>
-      <a href="about.html#vision">ハルカゼの想い（VISION）</a>
-      <a href="lab.html">ハルカゼLAB</a>
-      <a href="service.html">サービス内容</a>
-      <a href="service.html#price">サービス・料金</a>
-      <a href="flow.html">ご成婚までの流れ</a>
-      <a href="faq.html">よくある質問</a>
-      <a href="blog.html">ブログ</a>
+      <a href="about.html">メッセージ</a><a href="service.html">サービス・料金</a>
+      <a href="flow.html">成婚までの流れ</a><a href="lab.html">ハルカゼLAB</a>
+      <a href="faq.html">よくある質問</a><a href="blog.html">ブログ</a>
       <a href="privacy.html">プライバシーポリシー</a>
     </nav>
     <p class="footer-girls-label">女性の方はこちら</p>
     <a href="girls.html" class="footer-girls-link">▶ 女子の婚活 Girls LAB</a>
-    <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="footer-line-btn">初回無料面談に申し込む</a>
     <p class="footer-copy">© 2025 結婚相談所ハルカゼ</p>
   </div>
 </footer>
-
-<!-- フローティングボタン -->
-<a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-line-btn">LINEで相談する</a>
 <div class="float-side-btns">
   <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn">初回無料面談を予約</a>
   <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn">LINEで婚活突破口診断</a>
 </div>
-
 <script src="js/common.js"></script>
 </body>
 </html>
