@@ -29,7 +29,7 @@
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url('newimages/IMG_0160.jpeg') right center / cover no-repeat;
+  background: url('newimages/IMG_0160.jpeg') right center / 55% auto no-repeat;
   filter: brightness(0.85) saturate(0.75);
   z-index: 0;
 }
@@ -151,6 +151,8 @@
 }
 @media (max-width: 639px) {
   .check-text { font-size: clamp(13px, 3.3vw, 15px); }
+  /* 「当てはまるほど、ハルカゼ向き。」を1行に収める */
+  .section-title-check { font-size: clamp(17px, 4.2vw, 22px); }
 }
 
 /* ── 診断バナー ── */
@@ -385,7 +387,7 @@
   <section class="section">
     <div class="section-inner">
       <p class="section-label">Check List</p>
-      <h2 class="section-title">一生懸命な<em style="font-style:normal;">"いい人"</em>に、<br><span style="font-weight:400; color:var(--c-blue);">当てはまるほど、ハルカゼ向き。</span></h2>
+      <h2 class="section-title section-title-check">一生懸命な<em style="font-style:normal;">"いい人"</em>に、<br><span style="font-weight:400; color:var(--c-blue); white-space:nowrap;">当てはまるほど、ハルカゼ向き。</span></h2>
       <div class="checklist">
         <div class="check-item">
           <div class="check-dot">
