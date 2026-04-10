@@ -538,10 +538,9 @@
   .why-stats { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* ── WHAT WE DO ── */
-/* ── 成婚への4ステップ ── */
+/* ── WHAT WE DO / ハルカゼだからできること ── */
 .step-main-title {
-  font-size: clamp(32px, 5vw, 38px);
+  font-size: clamp(28px, 4.5vw, 38px);
   font-weight: 600;
   margin-bottom: 12px;
 }
@@ -553,35 +552,20 @@
   line-height: 1.7;
   margin-bottom: 40px;
 }
-.step-sub-text em {
-  font-style: normal;
-  color: var(--color-sky);
-}
+.step-sub-text em { font-style: normal; color: var(--color-sky); }
 
+/* カードグリッド */
 .step-list {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
-  margin-top: 40px;
-  position: relative;
-}
-.step-list::before {
-  content: '';
-  position: absolute;
-  left: 27px; top: 28px; bottom: 28px;
-  width: 2px;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(14,165,233,0.35) 0, rgba(14,165,233,0.35) 8px,
-    transparent 8px, transparent 16px
-  );
-  z-index: 0;
+  gap: 40px;
+  margin-top: 48px;
 }
 
 .step-card {
   display: flex;
-  gap: 16px;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   position: relative;
   z-index: 1;
 }
@@ -592,41 +576,51 @@
   font-weight: 700;
   letter-spacing: 0;
 }
+
+/* 数字マーカー：上部中央 */
 .step-marker {
   flex-shrink: 0;
-  width: 72px;
-  height: 72px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  margin-bottom: -20px;
+  position: relative;
+  z-index: 2;
 }
 .step-01 .step-marker { background: #63BAE0; }
-.step-02 .step-marker { background: #F6C543; }
-.step-03 .step-marker { background: #72BB77; }
-.step-04 .step-marker { background: #B07AC0; }
+.step-02 .step-marker { background: #0EA5E9; }
+.step-03 .step-marker { background: #1E7AB8; }
+.step-04 .step-marker { background: #72BB77; }
+.step-05 .step-marker { background: #3DAA78; }
+.step-06 .step-marker { background: #1E3A5F; }
+
 .step-marker-num {
   font-family: var(--font-display);
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 600;
   color: #fff;
   line-height: 1;
 }
 
+/* カード本体 */
 .step-card-body {
-  flex: 1;
+  width: 100%;
   background: var(--color-white);
   border-radius: 16px;
-  padding: 20px;
+  padding: 36px 24px 24px;
   box-shadow: 0 2px 12px rgba(30,58,95,0.07);
   border: 1px solid var(--color-ice);
-  border-top: 3px solid var(--color-sky);
 }
-.step-01 .step-card-body { border-top-color: #63BAE0; }
-.step-02 .step-card-body { border-top-color: #F6C543; }
-.step-03 .step-card-body { border-top-color: #72BB77; }
-.step-04 .step-card-body { border-top-color: #B07AC0; }
+.step-01 .step-card-body { border-top: 3px solid #63BAE0; }
+.step-02 .step-card-body { border-top: 3px solid #0EA5E9; }
+.step-03 .step-card-body { border-top: 3px solid #1E7AB8; }
+.step-04 .step-card-body { border-top: 3px solid #72BB77; }
+.step-05 .step-card-body { border-top: 3px solid #3DAA78; }
+.step-06 .step-card-body { border-top: 3px solid #1E3A5F; }
 
 .step-card-header {
   display: flex;
@@ -638,11 +632,11 @@
 }
 .step-card-title {
   font-family: var(--font-display);
-  font-size: clamp(22px, 4vw, 36px);
+  font-size: clamp(18px, 2.8vw, 24px);
   font-weight: 500;
   color: var(--color-navy);
   margin: 0;
-  line-height: 1.3;
+  line-height: 1.4;
 }
 .step-card-chevron {
   flex-shrink: 0;
@@ -666,23 +660,23 @@
 .step-card-content {
   overflow: hidden;
   max-height: 0;
-  transition: max-height 0.4s ease, padding-top 0.4s ease;
+  transition: max-height 0.5s ease, padding-top 0.4s ease;
   padding-top: 0;
 }
 .step-card.is-open .step-card-content {
-  max-height: 300px;
-  padding-top: 14px;
+  max-height: 600px;
+  padding-top: 16px;
 }
 .step-card-text {
-  font-size: 13px;
-  line-height: 1.9;
+  font-size: 14px;
+  line-height: 2.1;
   color: #555;
 }
 .step-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: 12px;
+  margin-top: 14px;
 }
 .step-tag {
   font-size: 11px;
@@ -812,17 +806,11 @@
   .message-inner { grid-template-columns: 300px 1fr; }
   .message-photo { margin: 0; }
   .ibj-grid { grid-template-columns: repeat(4, 1fr); }
-  /* ステップ：デスクトップ 2×2グリッド */
+  /* ステップ：デスクトップ 2×3グリッド */
   .step-list {
     grid-template-columns: 1fr 1fr;
-    gap: 24px;
+    gap: 52px 28px;
   }
-  .step-list::before { display: none; }
-  .step-card {
-    flex-direction: column;
-    gap: 16px;
-  }
-  .step-card-body { flex: 1; }
 }
 </style>
 </head>
@@ -979,7 +967,7 @@
     <div class="section-inner">
 
       <p class="section-label">WHAT WE DO</p>
-      <h2 class="section-title step-main-title">ハルカゼで叶える、<br>成婚への<span class="step-title-num">4</span>ステップ</h2>
+      <h2 class="section-title step-main-title">ハルカゼだから、<br>できること。</h2>
 
       <div class="step-list">
 
@@ -989,15 +977,15 @@
           </div>
           <div class="step-card-body">
             <div class="step-card-header" role="button" tabindex="0" aria-expanded="false">
-              <h3 class="step-card-title">あなたのことを<br>聞かせてください</h3>
+              <h3 class="step-card-title">理想の結婚を言語化する</h3>
               <span class="step-card-chevron">＋</span>
             </div>
             <div class="step-card-content">
-              <p class="step-card-text">価値観ヒアリング・自己理解ワークを通じて、あなたが本当に大切にしているものを一緒に整理します。</p>
+              <p class="step-card-text">これまでの恋愛傾向や、あなたの性格、価値観。それらを丁寧に紐解きながら、「恋愛のクセ」や「思考のクセ」を一緒に振り返ります。世間の「正しさ」や周りの目ではなく、「本当は何が好きなのか」。あなた自身を深く知ることから、すべては始まります。</p>
               <div class="step-tags">
                 <span class="step-tag">価値観ヒアリング</span>
                 <span class="step-tag">自己理解ワーク</span>
-                <span class="step-tag">プロフィール作成</span>
+                <span class="step-tag">恋愛傾向の棚卸し</span>
               </div>
             </div>
           </div>
@@ -1009,15 +997,15 @@
           </div>
           <div class="step-card-body">
             <div class="step-card-header" role="button" tabindex="0" aria-expanded="false">
-              <h3 class="step-card-title">「本当に似合う」を<br>見つける</h3>
+              <h3 class="step-card-title">魅力の「認知」を整える</h3>
               <span class="step-card-chevron">＋</span>
             </div>
             <div class="step-card-content">
-              <p class="step-card-text">服装・髪型・見た目が伝わる印象の9割。骨格診断やイメコンお買い物同行で、あなたを活かすスタイルを作ります。</p>
+              <p class="step-card-text">理想の相手は、あなたを映し出す鏡でもあります。素敵な相手に見合う自分になれているか、あるいは、あなた本来の魅力が眠ったままになっていないか。イメージコンサルタントによるファッションコーデを通じて、まずは「見た目」から。あなた自身が自分の魅力を信じられる状態へと引き上げます。</p>
               <div class="step-tags">
-                <span class="step-tag">骨格診断</span>
-                <span class="step-tag">お買い物同行</span>
-                <span class="step-tag">プロ撮影</span>
+                <span class="step-tag">イメコン同行</span>
+                <span class="step-tag">ファッションコーデ</span>
+                <span class="step-tag">プロフィール写真</span>
               </div>
             </div>
           </div>
@@ -1029,16 +1017,15 @@
           </div>
           <div class="step-card-body">
             <div class="step-card-header" role="button" tabindex="0" aria-expanded="false">
-              <h3 class="step-card-title">価値観の合う人に<br>出会う</h3>
+              <h3 class="step-card-title">確実なチャンスを掴む</h3>
               <span class="step-card-chevron">＋</span>
             </div>
             <div class="step-card-content">
-              <p class="step-card-text">国内最大級のネットワークで、あなたに合う方との出会いをサポート。お見合い料0円、FB面談で安心の第一歩を。</p>
+              <p class="step-card-text">10万人以上の会員データの中から、あなたの価値観にフィットするお相手を探します。マッチングアプリのような気軽さと、結婚相談所ならではの安心感。お見合いのお店選びやスケジュール調整はすべてハルカゼが行いますので、あなたはただ、目の前のご縁を楽しむことに集中してください。</p>
               <div class="step-tags">
                 <span class="step-tag">お見合い料0円</span>
-                <span class="step-tag">FB面談</span>
-                <span class="step-tag">デートプランニング</span>
-                <span class="step-tag">トーク特訓</span>
+                <span class="step-tag">10万人以上のネットワーク</span>
+                <span class="step-tag">スケジュール調整</span>
               </div>
             </div>
           </div>
@@ -1050,12 +1037,53 @@
           </div>
           <div class="step-card-body">
             <div class="step-card-header" role="button" tabindex="0" aria-expanded="false">
-              <h3 class="step-card-title">結婚の先にある<br>幸せな家庭を作る</h3>
+              <h3 class="step-card-title">二人の関係を深める</h3>
               <span class="step-card-chevron">＋</span>
             </div>
             <div class="step-card-content">
-              <p class="step-card-text">成婚がゴールではありません。ハルカゼLABや成婚準備サポートで、二人の未来を一緒に描きます。</p>
+              <p class="step-card-text">あなたの良さが真っ直ぐにお相手に伝わるよう、細やかにサポートします。お見合い後のフィードバックや、次につなげるためのデートプランニング、時にはトークの練習まで。独りよがりにならない、心地よいパートナーシップの築き方を並走しながらお伝えします。</p>
               <div class="step-tags">
+                <span class="step-tag">FB面談</span>
+                <span class="step-tag">デートプランニング</span>
+                <span class="step-tag">トーク特訓</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-card step-05 step-animate">
+          <div class="step-marker">
+            <span class="step-marker-num">05</span>
+          </div>
+          <div class="step-card-body">
+            <div class="step-card-header" role="button" tabindex="0" aria-expanded="false">
+              <h3 class="step-card-title">「迷い」と誠実に向き合う</h3>
+              <span class="step-card-chevron">＋</span>
+            </div>
+            <div class="step-card-content">
+              <p class="step-card-text">「本当にこの人でいいのかな」という迷いは、真剣に向き合っているからこそ生まれるもの。そんな未来への不安も、カウンセラーと一緒に整理していきましょう。一つひとつ納得しながら進むことが、後悔しない決断へとつながります。</p>
+              <div class="step-tags">
+                <span class="step-tag">カウンセリング</span>
+                <span class="step-tag">不安の整理</span>
+                <span class="step-tag">意思決定サポート</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-card step-06 step-animate">
+          <div class="step-marker">
+            <span class="step-marker-num">06</span>
+          </div>
+          <div class="step-card-body">
+            <div class="step-card-header" role="button" tabindex="0" aria-expanded="false">
+              <h3 class="step-card-title">結ばれた、その先の未来へ</h3>
+              <span class="step-card-chevron">＋</span>
+            </div>
+            <div class="step-card-content">
+              <p class="step-card-text">プロポーズのプランニングやご両家のお顔合わせはもちろん、結婚はゴールではなく「始まり」です。幸せな家庭の土台となるパートナーシップの学び（ハルカゼLAB）を通じて、成婚後もずっと続く、二人らしい幸せを形にしていきます。</p>
+              <div class="step-tags">
+                <span class="step-tag">プロポーズサポート</span>
                 <span class="step-tag">ハルカゼLAB</span>
                 <span class="step-tag">成婚準備</span>
               </div>
