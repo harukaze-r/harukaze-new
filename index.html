@@ -29,19 +29,19 @@
   position: absolute;
   inset: 0;
   background: url('newimages/IMG_0160.jpeg') right center / 70% auto no-repeat;
-  filter: brightness(1.00) contrast(0.90) saturate(0.65) sepia(0.18);
+  filter: brightness(1.07) contrast(0.93) saturate(0.88) sepia(0.06);
   z-index: 0;
 }
 .hero-bg::after {
   content: '';
   position: absolute;
   inset: 0;
-  /* PC：左から温かみのあるダークでグラデーション */
+  /* PC：左からチャコールネイビーでグラデーション */
   background: linear-gradient(to right,
-    rgba(35,32,27,0.97) 0%,
-    rgba(35,32,27,0.92) 28%,
-    rgba(35,32,27,0.52) 55%,
-    rgba(35,32,27,0.00) 100%
+    rgba(30,58,95,0.96) 0%,
+    rgba(30,58,95,0.90) 28%,
+    rgba(30,58,95,0.50) 55%,
+    rgba(30,58,95,0.00) 100%
   );
 }
 
@@ -107,21 +107,22 @@
   .hero {
     align-items: flex-start;
     min-height: auto;
-    background: #23201B;
+    background: #1E3A5F; /* ナビと同色でフレームを隠し、境目をなくす */
   }
   .hero-bg {
+    /* 写真の上下エッジをフェード。左右のフェードは::afterに委任 */
     background:
-      linear-gradient(to bottom, #23201B 0%, #23201B 22%, transparent 38%, transparent 74%, #23201B 100%),
+      linear-gradient(to bottom, #1E3A5F 0%, #1E3A5F 22%, transparent 38%, transparent 74%, #1E3A5F 100%),
       url('newimages/IMG_0160.jpeg') right center / 70% auto no-repeat;
-    filter: brightness(0.95) contrast(0.90) saturate(0.60) sepia(0.22);
   }
   .hero-bg::after {
+    /* PC同様の左→右グラデーションでテキスト部分を自然に暗くする */
     background: linear-gradient(to right,
-      rgba(35,32,27,0.96) 0%,
-      rgba(35,32,27,0.88) 22%,
-      rgba(35,32,27,0.50) 48%,
-      rgba(35,32,27,0.14) 68%,
-      rgba(35,32,27,0.00) 82%
+      rgba(30,58,95,0.95) 0%,
+      rgba(30,58,95,0.88) 22%,
+      rgba(30,58,95,0.50) 48%,
+      rgba(30,58,95,0.14) 68%,
+      rgba(30,58,95,0.00) 82%
     );
   }
   .hero-content {
@@ -173,23 +174,22 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 18px 0;
-  border-bottom: 1px solid var(--color-border);
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(30,58,95,0.1);
   text-decoration: none;
-  color: var(--color-text);
+  color: var(--color-navy);
   transition: opacity 0.2s;
 }
-.blog-mini-item:first-child { border-top: 1px solid var(--color-border); }
-.blog-mini-item:hover { opacity: 0.55; }
+.blog-mini-item:first-child { border-top: 1px solid rgba(30,58,95,0.1); }
+.blog-mini-item:hover { opacity: 0.65; }
 .blog-mini-tag {
   flex-shrink: 0;
-  font-size: 9px;
-  letter-spacing: 0.12em;
-  color: var(--color-text-lt);
-  background: transparent;
-  border: 1px solid var(--color-border);
-  border-radius: 2px;
-  padding: 2px 8px;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--color-sky);
+  background: rgba(14,165,233,0.12);
+  border-radius: 4px;
+  padding: 2px 7px;
 }
 .blog-mini-date {
   flex-shrink: 0;
@@ -216,39 +216,41 @@
 .checklist-item {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid var(--color-border);
-  border-radius: 0;
-  padding: 22px 0;
-  transition: opacity 0.2s;
+  gap: 14px;
+  background: var(--color-white);
+  border: 1px solid var(--color-ice);
+  border-radius: 12px;
+  padding: 20px 22px;
+  transition: box-shadow 0.2s;
 }
-.checklist-item:first-child { border-top: 1px solid var(--color-border); }
-.checklist-item:hover { opacity: 0.65; }
+.checklist-item:hover { box-shadow: 0 4px 16px rgba(30,58,95,0.10); }
 .check-icon {
-  width: 22px;
-  height: 22px;
-  min-width: 22px;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
   border-radius: 50%;
-  background: transparent;
-  border: 1px solid var(--color-text-lt);
+  background: var(--color-sky);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 2px;
-  flex-shrink: 0;
+  margin-top: 1px;
 }
-.check-icon svg { width: 10px; height: 10px; }
-.checklist-text { font-size: 15px; line-height: 1.8; color: var(--color-text); }
+.check-icon svg { width: 14px; height: 14px; }
+.checklist-text { font-size: 15px; line-height: 1.7; }
 
-/* ── チェックリスト モバイル ── */
+/* ── チェックリスト モバイル：アンダーライン形式 ── */
 @media (max-width: 640px) {
   .checklist-item {
-    padding: 16px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgba(30,58,95,0.14);
+    border-radius: 0;
+    padding: 13px 0;
     gap: 12px;
   }
-  .checklist-text { font-size: clamp(13px, 3.2vw, 15px); white-space: nowrap; }
+  .checklist-item:hover { box-shadow: none; }
+  /* 最長22文字が1行に収まるようvwで自動スケール */
+  .checklist-text { font-size: clamp(11px, 3.2vw, 15px); white-space: nowrap; }
 }
 
 /* ── 診断バナー ── */
@@ -258,21 +260,24 @@
 }
 .shindan-img-link {
   display: inline-block;
-  border-radius: 6px;
+  border-radius: 16px;
   overflow: hidden;
   box-shadow:
-    0 4px 20px rgba(35,32,27,0.10),
-    0 12px 40px rgba(35,32,27,0.07);
+    0 6px 20px rgba(30,58,95,0.14),
+    0 18px 52px rgba(30,58,95,0.10),
+    0 2px 6px rgba(0,0,0,0.06);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   max-width: 620px;
   width: 100%;
+  /* 画像内の上下余白をクロップ */
   aspect-ratio: 3 / 1;
 }
 .shindan-img-link:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
   box-shadow:
-    0 10px 32px rgba(35,32,27,0.16),
-    0 24px 56px rgba(35,32,27,0.10);
+    0 12px 32px rgba(30,58,95,0.20),
+    0 28px 64px rgba(30,58,95,0.14),
+    0 4px 10px rgba(0,0,0,0.09);
 }
 .shindan-img-link img {
   display: block;
@@ -284,7 +289,7 @@
 }
 
 /* ── りさのメッセージ ── */
-.message-section { background: var(--color-ice); padding: 80px 24px 100px; }
+.message-section { background: var(--color-ice); padding: 40px 24px 80px; }
 .message-inner {
   max-width: 960px;
   margin: 0 auto;
@@ -294,48 +299,49 @@
   align-items: center;
 }
 .message-photo {
-  border-radius: 4px;
+  border-radius: 16px;
   overflow: hidden;
   aspect-ratio: 3/4;
   max-width: 320px;
   margin: 0 auto;
 }
-.message-photo img { width: 100%; height: 100%; object-fit: cover; filter: saturate(0.75) sepia(0.08); }
+.message-photo img { width: 100%; height: 100%; object-fit: cover; }
 .message-photo-name {
   font-size: 11px;
-  color: var(--color-text-lt);
+  color: #888;
   letter-spacing: 0.12em;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 .message-body {
   font-size: 15px;
-  line-height: 2.2;
-  color: var(--color-text-mid);
+  line-height: 2;
+  color: #444;
   white-space: pre-line;
-  margin-top: 24px;
+  margin-top: 20px;
 }
 .message-quote {
-  margin-top: 28px;
-  padding: 20px 24px;
-  border-left: 2px solid var(--color-border);
+  margin-top: 24px;
+  padding: 16px 20px;
+  background: var(--color-ice);
+  border-left: 3px solid var(--color-sky);
+  border-radius: 0 8px 8px 0;
   font-size: 14px;
-  line-height: 2;
-  color: var(--color-text-mid);
-  font-style: normal;
+  line-height: 1.9;
+  color: #444;
+  font-style: italic;
 }
 .message-sig {
   display: inline-block;
-  margin-top: 28px;
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--color-text-mid);
-  letter-spacing: 0.08em;
-  border-bottom: 1px solid var(--color-border);
-  padding-bottom: 3px;
+  margin-top: 24px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-navy);
+  border-bottom: 1px solid var(--color-sky);
+  padding-bottom: 2px;
   transition: opacity 0.2s;
 }
-.message-sig:hover { opacity: 0.6; }
+.message-sig:hover { opacity: 0.7; }
 
 /* ── IBJ実績 ── */
 .ibj-grid {
@@ -346,22 +352,22 @@
 }
 .ibj-card {
   background: var(--color-white);
-  border-radius: 4px;
+  border-radius: 16px;
   padding: 32px 16px 28px;
   text-align: center;
-  border-top: 2px solid var(--color-border);
-  box-shadow: none;
+  border-top: 3px solid var(--color-sky);
+  box-shadow: 0 2px 12px rgba(30,58,95,0.06);
 }
 .ibj-number {
   font-size: clamp(26px, 4.5vw, 38px);
-  font-weight: 400;
+  font-weight: 500;
   font-family: var(--font-display);
-  color: var(--color-text);
+  color: var(--color-navy);
   line-height: 1.2;
   margin-bottom: 8px;
 }
-.ibj-label { font-size: 12px; color: var(--color-text-mid); line-height: 1.7; }
-.ibj-source { font-size: 11px; color: var(--color-text-lt); margin-top: 24px; text-align: center; }
+.ibj-label { font-size: 12px; color: #555; line-height: 1.6; }
+.ibj-source { font-size: 11px; color: #999; margin-top: 24px; text-align: center; }
 .ibj-bnr-row {
   display: flex;
   justify-content: center;
@@ -383,70 +389,67 @@
 
 /* ── WHY HARUKAZE インフォグラフィック ── */
 .why-network-frame {
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
+  border: 2px solid rgba(14,165,233,0.35);
+  border-radius: 20px;
   overflow: hidden;
   margin: 40px 0 48px;
 }
 .why-network-header {
   background: var(--color-navy);
-  color: rgba(255,255,255,0.9);
-  padding: 24px 24px;
+  color: #fff;
+  padding: 20px 24px;
   text-align: center;
   line-height: 1.7;
 }
 .why-network-header-num {
   font-family: var(--font-display);
   font-size: clamp(26px, 4vw, 34px);
-  font-weight: 400;
-  color: rgba(255,255,255,0.95);
+  font-weight: 700;
+  color: var(--color-sky);
   vertical-align: baseline;
 }
 .why-network-header-text {
   font-size: clamp(13px, 2vw, 16px);
-  color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,0.9);
 }
 .why-network-header-sub {
   font-size: 11px;
-  color: rgba(255,255,255,0.4);
-  margin-top: 6px;
-  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.5);
+  margin-top: 4px;
 }
 .why-panels-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  padding: 0;
-  background: var(--color-border);
+  gap: 20px;
+  padding: 24px;
+  background: rgba(235,245,255,0.4);
 }
 .why-panel {
-  background: var(--color-bg);
-  border-radius: 0;
-  padding: 32px 24px 28px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 20px 22px;
   text-align: center;
-  border: none;
+  border: 1.5px solid #e8e8e8;
 }
 .why-panel--h {
-  background: #FFFFFF;
-  border: none;
-  box-shadow: none;
+  border-color: var(--color-sky);
+  box-shadow: 0 4px 24px rgba(14,165,233,0.1);
 }
 .why-panel-name {
-  font-size: 9px;
-  letter-spacing: 0.25em;
+  font-size: 10px;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-text-lt);
-  margin-bottom: 20px;
-  font-weight: 400;
-  font-family: 'Cormorant Garamond', serif;
+  color: #bbb;
+  margin-bottom: 18px;
+  font-weight: 500;
 }
 .why-panel-name--h { color: var(--color-sky); }
 /* SVG person icon */
 .pi { display: inline-block; vertical-align: middle; }
-.pi--counselor-major { width: 34px; height: 40px; color: #c8c0b8; }
+.pi--counselor-major { width: 34px; height: 40px; color: #ccc; }
 .pi--counselor-h     { width: 44px; height: 52px; color: var(--color-sky); }
-.pi--member-major    { width: 17px; height: 20px; color: #d8d0c8; }
-.pi--member-h        { width: 22px; height: 26px; color: rgba(140,109,92,0.45); }
+.pi--member-major    { width: 17px; height: 20px; color: #ddd; }
+.pi--member-h        { width: 22px; height: 26px; color: rgba(14,165,233,0.4); }
 /* 大手ビジュアル */
 .why-major-visual {
   display: flex;
@@ -477,60 +480,58 @@
 }
 .why-panel-caption {
   font-size: 11px;
-  color: var(--color-text-lt);
-  margin-bottom: 14px;
-  line-height: 1.8;
+  color: #aaa;
+  margin-bottom: 12px;
+  line-height: 1.6;
 }
-.why-panel-caption--h { color: var(--color-text-mid); }
+.why-panel-caption--h { color: rgba(14,165,233,0.7); }
 .why-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; }
 .why-tag {
   font-size: 10px;
-  padding: 3px 10px;
-  border-radius: 2px;
-  background: transparent;
-  border: 1px solid var(--color-border);
-  color: var(--color-text-lt);
+  padding: 3px 9px;
+  border-radius: 20px;
+  background: #f2f2f2;
+  color: #999;
 }
 .why-tag--h {
-  border-color: var(--color-sky);
-  background: transparent;
+  background: rgba(14,165,233,0.1);
   color: var(--color-sky);
 }
 /* 実績数字4枚 */
 .why-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
+  gap: 14px;
   margin-bottom: 32px;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  overflow: hidden;
-  background: var(--color-border);
 }
 .why-stat {
-  background: var(--color-bg);
-  border-radius: 0;
-  padding: 28px 12px 24px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 24px 12px 20px;
   text-align: center;
-  border-top: none;
+  border-top: 3px solid #e8e8e8;
 }
+.why-stat:nth-child(1) { border-top-color: #F6C543; }
+.why-stat:nth-child(2) { border-top-color: var(--color-pink); }
+.why-stat:nth-child(3) { border-top-color: var(--color-sky); }
+.why-stat:nth-child(4) { border-top-color: #72BB77; }
+.why-stat-icon { font-size: 26px; margin-bottom: 10px; line-height: 1; }
 .why-stat-num {
   font-family: var(--font-display);
-  font-size: clamp(20px, 3vw, 28px);
-  font-weight: 400;
-  color: var(--color-text);
+  font-size: clamp(20px, 3vw, 30px);
+  font-weight: 600;
+  color: var(--color-navy);
   line-height: 1.2;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
-.why-stat-num span { font-size: 0.55em; font-weight: 400; color: var(--color-text-lt); }
-.why-stat-label { font-size: 10px; color: var(--color-text-lt); line-height: 1.7; }
+.why-stat-num span { font-size: 0.5em; font-weight: 400; color: #888; }
+.why-stat-label { font-size: 10px; color: #999; line-height: 1.65; }
 .why-ibj-link { text-align: center; margin-bottom: 12px; }
 .why-ibj-link a {
   font-size: 12px;
-  color: var(--color-text-mid);
+  color: var(--color-sky);
   text-decoration: underline;
   text-underline-offset: 3px;
-  text-decoration-color: var(--color-border);
 }
 @media (max-width: 640px) {
   .why-panels-grid { grid-template-columns: 1fr; gap: 12px; padding: 16px; }
@@ -540,17 +541,17 @@
 /* ── WHAT WE DO ── */
 /* ── 成婚への4ステップ ── */
 .step-main-title {
-  font-size: clamp(28px, 4.5vw, 38px);
-  font-weight: 400;
-  margin-bottom: 16px;
+  font-size: clamp(32px, 5vw, 38px);
+  font-weight: 600;
+  margin-bottom: 12px;
 }
 .step-sub-text {
   font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, "Noto Sans JP", sans-serif;
-  font-size: clamp(13px, 2vw, 15px);
+  font-size: clamp(14px, 2vw, 16px);
   font-weight: 400;
-  color: var(--color-text-mid);
-  line-height: 2;
-  margin-bottom: 48px;
+  color: #888;
+  line-height: 1.7;
+  margin-bottom: 40px;
 }
 .step-sub-text em {
   font-style: normal;
@@ -568,8 +569,12 @@
   content: '';
   position: absolute;
   left: 27px; top: 28px; bottom: 28px;
-  width: 1px;
-  background: var(--color-border);
+  width: 2px;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(14,165,233,0.35) 0, rgba(14,165,233,0.35) 8px,
+    transparent 8px, transparent 16px
+  );
   z-index: 0;
 }
 
@@ -589,34 +594,39 @@
 }
 .step-marker {
   flex-shrink: 0;
-  width: 56px;
-  height: 56px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: none;
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
 }
+.step-01 .step-marker { background: #63BAE0; }
+.step-02 .step-marker { background: #F6C543; }
+.step-03 .step-marker { background: #72BB77; }
+.step-04 .step-marker { background: #B07AC0; }
 .step-marker-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
-  font-weight: 400;
-  color: var(--color-text-lt);
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 600;
+  color: #fff;
   line-height: 1;
 }
 
 .step-card-body {
   flex: 1;
-  background: #FFFFFF;
-  border-radius: 4px;
-  padding: 24px 24px;
-  box-shadow: 0 1px 8px rgba(35,32,27,0.05);
-  border: 1px solid var(--color-border);
-  border-top: none;
-  border-left: 2px solid var(--color-border);
+  background: var(--color-white);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 12px rgba(30,58,95,0.07);
+  border: 1px solid var(--color-ice);
+  border-top: 3px solid var(--color-sky);
 }
+.step-01 .step-card-body { border-top-color: #63BAE0; }
+.step-02 .step-card-body { border-top-color: #F6C543; }
+.step-03 .step-card-body { border-top-color: #72BB77; }
+.step-04 .step-card-body { border-top-color: #B07AC0; }
 
 .step-card-header {
   display: flex;
@@ -624,34 +634,33 @@
   justify-content: space-between;
   cursor: pointer;
   user-select: none;
-  gap: 16px;
+  gap: 12px;
 }
 .step-card-title {
   font-family: var(--font-display);
-  font-size: clamp(18px, 3.5vw, 26px);
-  font-weight: 400;
-  color: var(--color-text);
+  font-size: clamp(22px, 4vw, 36px);
+  font-weight: 500;
+  color: var(--color-navy);
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.3;
 }
 .step-card-chevron {
   flex-shrink: 0;
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-  border: 1px solid var(--color-border);
-  color: var(--color-text-lt);
+  border: 1.5px solid var(--color-sky);
+  color: var(--color-sky);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1;
-  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 .step-card.is-open .step-card-chevron {
   transform: rotate(45deg);
-  background: var(--color-text);
-  border-color: var(--color-text);
+  background: var(--color-sky);
   color: #fff;
 }
 .step-card-content {
@@ -665,57 +674,54 @@
   padding-top: 14px;
 }
 .step-card-text {
-  font-size: 14px;
-  line-height: 2;
-  color: var(--color-text-mid);
+  font-size: 13px;
+  line-height: 1.9;
+  color: #555;
 }
 .step-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: 14px;
+  margin-top: 12px;
 }
 .step-tag {
-  font-size: 10px;
+  font-size: 11px;
   padding: 3px 10px;
-  border-radius: 2px;
-  background: transparent;
-  border: 1px solid var(--color-border);
-  color: var(--color-text-lt);
-  letter-spacing: 0.06em;
+  border-radius: 20px;
+  background: var(--color-ice);
+  color: var(--color-navy);
+  letter-spacing: 0.04em;
 }
 
 /* 価格バルーン */
 .step-price-balloon {
-  margin-top: 48px;
-  background: #FFFFFF;
-  border-radius: 4px;
-  padding: 40px 32px;
+  margin-top: 40px;
+  background: var(--color-ice);
+  border-radius: 20px;
+  padding: 32px 24px;
   text-align: center;
-  border: 1px solid var(--color-border);
+  border: 2px dashed rgba(14,165,233,0.45);
   position: relative;
 }
 .step-price-text {
   font-size: 15px;
-  color: var(--color-text);
-  font-weight: 400;
-  margin-bottom: 24px;
-  line-height: 2.1;
-  font-family: var(--font-display);
+  color: var(--color-navy);
+  font-weight: 500;
+  margin-bottom: 20px;
+  line-height: 1.9;
 }
 .step-price-text strong {
-  color: var(--color-text);
-  font-size: 22px;
-  font-weight: 500;
+  color: var(--color-sky);
+  font-size: 19px;
 }
 
 /* LABバナー */
 .lab-banner {
-  background: var(--color-navy);
-  color: rgba(255,255,255,0.88);
-  border-radius: 4px;
-  padding: 48px 32px 52px;
-  margin-top: 56px;
+  background: linear-gradient(135deg, #C0537A 0%, #E07EA0 100%);
+  color: #fff;
+  border-radius: 24px;
+  padding: 40px 28px 44px;
+  margin-top: 48px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -739,39 +745,37 @@
   pointer-events: none;
 }
 .lab-banner-label {
-  font-size: 9px;
-  letter-spacing: 0.3em;
-  color: rgba(255,255,255,0.45);
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  color: #FFD6E5;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   position: relative;
-  font-family: 'Cormorant Garamond', serif;
 }
 .lab-banner-title {
   font-family: var(--font-display);
   font-size: clamp(22px, 4vw, 36px);
-  font-weight: 400;
-  margin-bottom: 20px;
+  font-weight: 500;
+  margin-bottom: 16px;
   position: relative;
-  color: #fff;
 }
 .lab-banner-body {
   font-size: 14px;
-  line-height: 2.1;
-  color: rgba(255,255,255,0.7);
+  line-height: 1.9;
+  opacity: 0.88;
   margin-bottom: 16px;
   position: relative;
 }
 .lab-banner-price {
   font-size: 13px;
-  color: rgba(255,255,255,0.5);
+  color: #FFD6E5;
   margin-bottom: 8px;
   position: relative;
 }
 .lab-banner-msg {
   font-size: 13px;
-  color: rgba(255,255,255,0.4);
-  margin-bottom: 28px;
+  opacity: 0.7;
+  margin-bottom: 24px;
   position: relative;
 }
 
@@ -788,16 +792,16 @@
 
 /* ── CTA締め ── */
 .cta-section {
-  background: var(--color-ice);
-  padding: 100px 24px;
+  background: var(--color-navy);
+  padding: 80px 24px;
   text-align: center;
-  color: var(--color-text);
+  color: #fff;
 }
-.cta-title { font-size: clamp(22px, 4vw, 36px); font-weight: 400; margin-bottom: 20px; line-height: 1.6; font-family: var(--font-display); }
+.cta-title { font-size: clamp(24px, 4.5vw, 40px); font-weight: 500; margin-bottom: 16px; }
 @media (max-width: 640px) {
-  .cta-title { font-size: 19px; white-space: nowrap; }
+  .cta-title { font-size: 17px; white-space: nowrap; }
 }
-.cta-sub { font-size: 14px; color: var(--color-text-mid); margin-bottom: 48px; line-height: 2.1; }
+.cta-sub { font-size: 15px; opacity: 0.85; margin-bottom: 40px; line-height: 1.9; }
 .cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
 
 /* ── responsive ── */
@@ -885,12 +889,12 @@
   <section class="section">
     <div class="section-inner">
       <p class="section-label">Check List</p>
-      <h2 class="section-title">一生懸命な<em style="font-style:normal;">"いい人"</em>に、<br><span style="font-weight:400;color:var(--color-text-mid);">当てはまるほど、ハルカゼ向き。</span></h2>
+      <h2 class="section-title">一生懸命な<em style="font-style:normal;">"いい人"</em>に、<br><span style="font-weight:400;color:var(--color-sky);">当てはまるほど、ハルカゼ向き。</span></h2>
       <div class="checklist-grid">
         <div class="checklist-item">
           <div class="check-icon">
             <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 7l3.5 3.5 6.5-6.5" stroke="var(--color-text-lt)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2 7l3.5 3.5 6.5-6.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
           <p class="checklist-text">お見合いは組めるのに、なぜか先に進まない</p>
@@ -898,7 +902,7 @@
         <div class="checklist-item">
           <div class="check-icon">
             <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 7l3.5 3.5 6.5-6.5" stroke="var(--color-text-lt)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2 7l3.5 3.5 6.5-6.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
           <p class="checklist-text">2回目のデートに繋がらず、理由もわからない</p>
@@ -906,7 +910,7 @@
         <div class="checklist-item">
           <div class="check-icon">
             <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 7l3.5 3.5 6.5-6.5" stroke="var(--color-text-lt)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2 7l3.5 3.5 6.5-6.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
           <p class="checklist-text">相手に気を遣いすぎて、気づけば無難な会話で終わる</p>
@@ -914,7 +918,7 @@
         <div class="checklist-item">
           <div class="check-icon">
             <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 7l3.5 3.5 6.5-6.5" stroke="var(--color-text-lt)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2 7l3.5 3.5 6.5-6.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
           <p class="checklist-text">恋愛経験が少なく、距離の縮め方がわからない</p>
@@ -922,7 +926,7 @@
         <div class="checklist-item">
           <div class="check-icon">
             <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 7l3.5 3.5 6.5-6.5" stroke="var(--color-text-lt)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2 7l3.5 3.5 6.5-6.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
           <p class="checklist-text">「いい人だけど…」で終わってしまう気がしている</p>
@@ -932,13 +936,13 @@
   </section>
 
   <!-- ③ 婚活突破口診断（Let's Try! + 診断バナー） -->
-  <section class="section section-ice" style="padding: 48px 24px;">
+  <section class="section section-ice" style="padding: 32px 24px;">
     <div class="section-inner">
       <svg class="lets-try-svg" viewBox="0 0 420 100" xmlns="http://www.w3.org/2000/svg" aria-label="Let's Try!">
         <defs>
           <path id="lets-try-arc" d="M 20,85 Q 210,8 400,85" fill="none"/>
         </defs>
-        <text font-family="'Shippori Mincho','Cormorant Garamond',serif" font-size="42" font-weight="400" fill="#9B8E84" letter-spacing="6">
+        <text font-family="'Cormorant Garamond','Shippori Mincho',serif" font-size="42" font-weight="500" fill="#1E3A5F" letter-spacing="6">
           <textPath href="#lets-try-arc" startOffset="50%" text-anchor="middle">Let's Try!</textPath>
         </text>
       </svg>
