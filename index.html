@@ -55,13 +55,35 @@
 /* PC：モバイル専用改行を非表示 */
 .sp-br { display: none; }
 /* harukaze-mod: 修正1 .hero-tag / .tag-pink は削除済み */
+
+/* ターゲットラベル（ヒーロー内） */
+.hero-target-label {
+  font-size: clamp(11px, 2vw, 13px);
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+
 .hero-title {
   font-size: clamp(30px, 6vw, 54px);
   font-weight: 500;
   line-height: 1.3;
   letter-spacing: 0.05em;
   margin-bottom: 24px;
-  white-space: nowrap; /* <br>は維持しつつ各行の折り返しを防ぐ */
+  white-space: nowrap;
+}
+/* タイトル強弱 */
+.hero-title-sub {
+  font-size: 0.62em;
+  font-weight: 400;
+  opacity: 0.82;
+  letter-spacing: 0.04em;
+}
+.hero-title-main {
+  font-size: 1em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
 }
 .hero-sub {
   font-size: clamp(13px, 3.8vw, 19px);
@@ -821,7 +843,6 @@
   <a href="index.html" class="nav-logo">
     <img src="images/Photoroom_20260409_154324.png" alt="ハルカゼ" class="nav-icon">
     <div class="nav-logo-text">
-      <span class="nav-logo-target">20～40代男性に特化</span>
       <span class="nav-logo-main">結婚相談所 ハルカゼ</span>
     </div>
   </a>
@@ -863,7 +884,8 @@
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-content">
-      <h1 class="hero-title">「いい人だけど」<br>で、終わらせない。</h1>
+      <p class="hero-target-label">20〜40代男性に特化した結婚相談所</p>
+      <h1 class="hero-title"><span class="hero-title-sub">「いい人だけど」で、</span><br><span class="hero-title-main">終わらせない。</span></h1>
       <p class="hero-sub">あなただけの魅力を、<br>最高の出会いに、<span class="sp-br"><br></span>変えていく。</p>
       <p class="hero-name">代表　石神りさ</p>
       <a href="about.html" class="hero-about-link">ハルカゼについて →</a>
