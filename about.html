@@ -6,115 +6,543 @@
 <title>ハルカゼの想い | 結婚相談所ハルカゼ</title>
 <link rel="icon" href="newimages/使用ロゴ.jpeg">
 <meta name="description" content="結婚相談所ハルカゼ代表・石神りさのメッセージ。婚活を通じて「自分の人生を最高の主役で生きる人」を増やしたい。">
-<meta property="og:title" content="ハルカゼの想い | 結婚相談所ハルカゼ">
-<meta property="og:image" content="newimages/h. (1).png">
-<meta property="og:type" content="website">
 <link rel="stylesheet" href="css/common.css">
 <style>
 /* ============================================================
    about.html — page styles
    ============================================================ */
 
-/* ── ページヒーロー ── */
-.page-hero {
-  background: var(--c-navy);
-  padding: 96px 24px 80px;
-  text-align: center;
-  color: #fff;
+/* ── 装飾要素 ── */
+/* 花モチーフ区切り */
+.deco-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 16px 0;
+  color: var(--pink);
+}
+.deco-divider::before,
+.deco-divider::after {
+  content: '';
+  flex: 1;
+  max-width: 100px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(220,100,120,0.3));
+}
+.deco-divider::after {
+  background: linear-gradient(to left, transparent, rgba(220,100,120,0.3));
+}
+.deco-divider svg { width: 22px; height: 22px; flex-shrink: 0; }
+/* 浮遊花びら装飾 */
+.section-deco-wrap {
   position: relative;
   overflow: hidden;
 }
-.page-hero::before {
+.deco-petal {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.13;
+  color: var(--pink);
+}
+/* ドットパターン背景 */
+.dot-bg {
+  background-image: radial-gradient(circle, rgba(220,100,120,0.18) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+/* 角花飾り */
+.corner-deco {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.12;
+  color: var(--pink);
+}
+.corner-deco-tl { top: -10px; left: -10px; }
+.corner-deco-br { bottom: -10px; right: -10px; transform: rotate(180deg); }
+
+/* ── HERO（分割レイアウト） ── */
+.page-hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: calc(90vh - var(--nav-h));
+  background: var(--bg);
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .page-hero { grid-template-columns: 1fr 1fr; min-height: calc(100vh - var(--nav-h)); }
+}
+
+/* 左：写真 */
+.hero-photo {
+  position: relative;
+  overflow: hidden;
+  min-height: 60vw;
+}
+@media (min-width: 768px) { .hero-photo { min-height: unset; } }
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.hero-photo::after {
   content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse 70% 80% at 80% 20%, rgba(184,199,230,0.22) 0%, transparent 60%);
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent 60%, var(--bg) 100%);
+}
+@media (max-width: 767px) {
+  .hero-photo::after {
+    background: linear-gradient(to bottom, transparent 60%, var(--bg) 100%);
+  }
+}
+
+/* 右：テキスト */
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(40px, 6vw, 80px) clamp(28px, 5vw, 64px);
+  background: var(--bg);
+  position: relative;
+}
+.hero-en {
+  font-family: var(--font-display);
+  font-size: clamp(52px, 8vw, 96px);
+  font-weight: 600;
+  color: rgba(26,42,68,0.06);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  display: block;
+  margin-bottom: 20px;
+  user-select: none;
+}
+.hero-eyebrow {
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--pink);
+  display: block;
+  margin-bottom: 14px;
+}
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 4vw, 44px);
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+  margin-bottom: 20px;
+}
+.hero-sub {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 2;
+  letter-spacing: 0.04em;
+  max-width: 320px;
+}
+.hero-rule {
+  width: 36px;
+  height: 2px;
+  background: var(--pink);
+  margin-top: 24px;
+  border-radius: 2px;
+}
+
+/* ── 素・良・芯 セクション ── */
+.shin-section {
+  padding: var(--section-py) clamp(24px, 5vw, 48px);
+  background: var(--bg-gray);
+}
+.shin-inner { max-width: var(--inner); margin: 0 auto; }
+.shin-header { text-align: center; margin-bottom: 56px; }
+.shin-intro {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 2;
+  max-width: 520px;
+  margin: 16px auto 0;
+}
+
+/* 三円：上1 + 下2 */
+.shin-circles-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 56px;
+}
+.shin-circles-top { display: flex; justify-content: center; }
+.shin-circles-bottom {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.shin-circle {
+  width: clamp(160px, 22vw, 220px);
+  height: clamp(160px, 22vw, 220px);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.shin-circle-1 { background: rgba(227,118,141,0.13); }
+.shin-circle-2 { background: rgba(26,42,68,0.08); }
+.shin-circle-3 { background: rgba(26,42,68,0.05); }
+
+.shin-circle-num {
+  position: absolute;
+  font-family: var(--font-display);
+  font-size: clamp(56px, 8vw, 80px);
+  font-weight: 600;
+  font-style: italic;
+  color: rgba(255,255,255,0.45);
+  line-height: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -55%);
+  user-select: none;
   pointer-events: none;
 }
-.page-hero-label {
-  font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase;
-  color: var(--c-blue); margin-bottom: 16px; font-weight: 700; position: relative;
+.shin-circle-en {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  color: var(--navy);
+  opacity: 0.55;
+  margin-bottom: 4px;
+  position: relative;
+  z-index: 1;
 }
-.page-hero-title {
-  font-size: clamp(32px, 6vw, 54px);
-  font-weight: 700; line-height: 1.3; position: relative;
+.shin-circle-rule {
+  width: 28px;
+  height: 1px;
+  background: var(--navy);
+  opacity: 0.3;
+  margin: 6px auto;
+}
+.shin-circle-ja {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 500;
+  color: var(--navy);
+  letter-spacing: 0.1em;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+}
+.shin-circle-desc {
+  font-size: 11px;
+  color: var(--text-mid);
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  margin-top: 6px;
+  position: relative;
+  z-index: 1;
+  padding: 0 12px;
+}
+/* 詳細パネル */
+.shin-circle { cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+.shin-circle.is-active { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+.shin-detail-panels { margin-top: 32px; }
+.shin-detail {
+  display: none;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 24px;
+  animation: shinDetailIn 0.28s ease;
+}
+.shin-detail.is-open { display: block; }
+@keyframes shinDetailIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.shin-detail-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--pink);
+  margin-bottom: 8px;
+}
+.shin-detail-heading {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 14px;
+  letter-spacing: 0.04em;
+}
+.shin-detail-body {
+  font-size: 15px;
+  line-height: 2;
+  color: var(--text-mid);
+}
+
+/* ブリッジテキスト */
+.shin-bridge {
+  text-align: center;
+  padding: clamp(32px, 5vw, 56px) 0 0;
+  border-top: 1px solid var(--border);
+}
+.shin-bridge-main {
+  font-family: var(--font-serif);
+  font-size: clamp(17px, 2.5vw, 22px);
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.8;
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+}
+.shin-bridge-sub {
+  font-family: var(--font-serif);
+  font-size: clamp(14px, 2vw, 17px);
+  font-weight: 400;
+  color: var(--text-mid);
+  letter-spacing: 0.08em;
+  line-height: 1.8;
 }
 
 /* ── VISION ── */
-.vision-wrap {
-  max-width: 640px; margin: 0 auto; text-align: center;
+.vision-section {
+  padding: var(--section-py) clamp(24px, 5vw, 48px);
+  background: var(--bg);
+}
+.vision-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+.vision-title {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 500;
+  color: var(--navy);
+  letter-spacing: 0.06em;
+  margin-bottom: 32px;
+  line-height: 1.5;
+}
+.vision-rule {
+  width: 40px; height: 2px;
+  background: var(--pink);
+  margin: 0 auto 40px;
+  border-radius: 2px;
 }
 .vision-body {
-  font-size: 16px; line-height: 2.3; color: var(--c-mid);
-  white-space: pre-line; text-align: left;
+  font-size: 16px;
+  line-height: 2.4;
+  color: var(--text-mid);
+  text-align: left;
 }
+.vision-body strong { color: var(--navy); font-weight: 500; }
 
-/* ── VALUE ── */
+/* ── VALUE 3カード ── */
+.value-section {
+  padding: var(--section-py) clamp(24px, 5vw, 48px);
+  background: var(--bg-gray);
+}
+.value-inner { max-width: var(--inner); margin: 0 auto; }
+.value-header { margin-bottom: 48px; }
 .value-grid {
-  display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 48px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
+@media (min-width: 768px) { .value-grid { grid-template-columns: repeat(3, 1fr); } }
+
 .value-card {
-  background: var(--c-white); border: 1px solid var(--c-border);
-  border-radius: 14px; padding: 32px 28px;
-  transition: box-shadow 0.2s, transform 0.2s;
-  border-top: 3px solid transparent;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 36px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.25s, transform 0.25s;
 }
-.value-card:nth-child(1) { border-top-color: var(--c-blue); }
-.value-card:nth-child(2) { border-top-color: var(--c-coral); }
-.value-card:nth-child(3) { border-top-color: var(--c-navy); }
-.value-card:hover { box-shadow: 0 8px 32px rgba(74,98,120,0.10); transform: translateY(-2px); }
-.value-num { font-size: 11px; letter-spacing: 0.2em; color: var(--c-navy); margin-bottom: 10px; font-weight: 700; opacity: 0.55; }
-.value-heading { font-size: 18px; font-weight: 700; color: var(--c-navy); margin-bottom: 12px; }
-.value-text { font-size: 14px; line-height: 1.9; color: var(--c-mid); }
-@media (min-width: 768px) {
-  .value-grid { grid-template-columns: repeat(3, 1fr); }
+.value-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.value-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 3px;
+  border-radius: 2px 2px 0 0;
+}
+.value-card:nth-child(1)::before { background: var(--pink); }
+.value-card:nth-child(2)::before { background: var(--navy-mid); }
+.value-card:nth-child(3)::before { background: var(--navy); }
+.value-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-gray);
+  border-radius: 100px;
+  padding: 4px 12px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--text-light);
+  margin-bottom: 16px;
+}
+.value-tag-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.value-card:nth-child(1) .value-tag-dot { background: var(--pink); }
+.value-card:nth-child(2) .value-tag-dot { background: var(--navy-mid); }
+.value-card:nth-child(3) .value-tag-dot { background: var(--navy); }
+.value-num-bg {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5vw, 56px);
+  font-weight: 600;
+  color: rgba(26,42,68,0.05);
+  line-height: 1;
+  margin-bottom: 4px;
+  display: block;
+  letter-spacing: -0.02em;
+}
+.value-heading {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 12px;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+}
+.value-text {
+  font-size: 14px;
+  line-height: 1.95;
+  color: var(--text-mid);
 }
 
-/* ── FINAL MESSAGE ── */
-.final-wrap { max-width: 640px; margin: 0 auto; text-align: center; }
-.final-lead {
-  font-size: clamp(20px, 3vw, 26px); font-weight: 700;
-  color: var(--c-navy); letter-spacing: 0.04em; margin-bottom: 28px;
+/* ── MESSAGE ── */
+.message-main-section {
+  padding: var(--section-py) clamp(24px, 5vw, 48px);
+  background: var(--bg);
 }
-.final-body {
-  font-size: 15px; line-height: 2; color: var(--c-mid);
-  white-space: pre-line; text-align: left;
+.message-main-inner {
+  max-width: var(--inner);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 56px;
+  align-items: center;
 }
-.final-photo-wrap {
-  margin-top: 52px;
-  display: flex; flex-direction: column; align-items: center; gap: 20px;
+@media (min-width: 768px) {
+  .message-main-inner { grid-template-columns: 280px 1fr; gap: 72px; }
 }
-.final-photo {
-  width: 180px; height: 180px; border-radius: 50%; overflow: hidden;
-  border: 3px solid var(--c-bg);
-  box-shadow: 0 6px 24px rgba(74,98,120,0.12);
+.message-photo-frame {
+  border-radius: 50%;
+  overflow: hidden;
+  width: clamp(180px, 25vw, 260px);
+  height: clamp(180px, 25vw, 260px);
+  margin: 0 auto;
+  border: 4px solid var(--bg-gray);
+  box-shadow: var(--shadow-md);
 }
-.final-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-.final-credit { text-align: center; }
-.final-credit-role { font-size: 12px; letter-spacing: 0.14em; color: var(--c-mid); margin-bottom: 6px; }
-.final-credit-name { font-size: 24px; font-weight: 700; color: var(--c-navy); letter-spacing: 0.1em; margin-bottom: 14px; }
-.final-profile-link {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 13px; font-weight: 700; color: var(--c-navy);
-  border-bottom: 1px solid rgba(74,98,120,0.4); padding-bottom: 2px;
+.message-photo-frame img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+}
+.message-credit {
+  text-align: center;
+  margin-top: 20px;
+}
+.message-credit-role {
+  font-size: 12px;
+  color: var(--text-light);
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+.message-credit-name {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--navy);
+  letter-spacing: 0.14em;
+  margin-bottom: 12px;
+}
+.message-profile-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid rgba(26,42,68,0.3);
+  padding-bottom: 2px;
   transition: opacity 0.2s;
 }
-.final-profile-link:hover { opacity: 0.7; }
+
+.message-lead {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 3.5vw, 32px);
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  letter-spacing: 0.04em;
+}
+.message-rule { width: 40px; height: 2px; background: var(--pink); margin-bottom: 24px; border-radius: 2px; }
+.message-body {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 2.2;
+}
+.message-body p + p { margin-top: 1.4em; }
 
 /* ── CTA ── */
-.cta-section { background: var(--c-navy); padding: 96px 24px; text-align: center; color: #fff; }
-.cta-title { font-size: clamp(22px, 4vw, 36px); font-weight: 700; margin-bottom: 16px; line-height: 1.5; }
-.cta-sub { font-size: 15px; color: rgba(255,255,255,0.72); margin-bottom: 44px; line-height: 2; }
-.cta-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+.about-cta {
+  background: var(--navy);
+  padding: clamp(72px, 9vw, 112px) clamp(24px, 5vw, 48px);
+  text-align: center;
+}
+.about-cta-eyebrow {
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--pink-light);
+  display: block;
+  margin-bottom: 20px;
+}
+.about-cta-title {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 4vw, 38px);
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.55;
+  letter-spacing: 0.06em;
+  margin-bottom: 18px;
+}
+.about-cta-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,0.6);
+  line-height: 2;
+  margin-bottom: 44px;
+}
+.about-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
 </style>
 </head>
 <body>
 
-<nav class="site-nav">
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<nav class="site-nav" id="siteNav">
   <a href="index.html" class="nav-logo">
-    <img src="images/Photoroom_20260409_154324.png" alt="ハルカゼ" class="nav-icon">
-    <div class="nav-logo-text">
-      <span class="nav-logo-main">結婚相談所 ハルカゼ</span>
-    </div>
+    <img src="images/Photoroom_20260409_154324.png" alt="ハルカゼ" class="nav-logo-icon">
+    <span class="nav-logo-text">結婚相談所 ハルカゼ</span>
   </a>
   <ul class="nav-links">
     <li><a href="about.html">メッセージ</a></li>
@@ -129,8 +557,11 @@
     <span></span><span></span><span></span>
   </button>
 </nav>
+
 <div class="mobile-nav-overlay" id="mobileNavOverlay">
-  <button class="mobile-nav-close" id="mobileNavClose" aria-label="閉じる"><span></span><span></span></button>
+  <button class="mobile-nav-close" id="mobileNavClose" aria-label="閉じる">
+    <span></span><span></span>
+  </button>
   <a href="index.html">ホーム</a>
   <a href="about.html">メッセージ</a>
   <a href="service.html">サービス・価格</a>
@@ -140,111 +571,175 @@
   <a href="blog.html">ブログ</a>
   <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">初回無料面談に申し込む</a>
   <hr class="mobile-nav-divider">
-  <span class="mobile-nav-girls-label">女性の方はこちら</span>
-  <span class="mobile-nav-arrow"></span>
-  <a href="girls.html" class="mobile-nav-girls">女子の婚活 Girls LAB</a>
+  <a href="girls.html" style="font-size:14px; color:rgba(255,255,255,0.5); letter-spacing:0.06em;">女子の婚活 Girls LAB →</a>
 </div>
 
 <main>
 
-  <!-- ページヒーロー -->
+  <!-- ============================================================
+       HERO（写真 ＋ タイポグラフィ分割）
+       ============================================================ -->
   <section class="page-hero">
-    <p class="page-hero-label">About</p>
-    <h1 class="page-hero-title">人生に、<br>はじまりの風を。</h1>
-  </section>
-
-  <!-- VISION -->
-  <section class="section" id="vision">
-    <div class="section-inner">
-      <div class="vision-wrap">
-        <p class="section-label" style="text-align:center;">Vision</p>
-        <h2 class="section-title" style="text-align:center; margin-bottom:40px;">誰よりも幸せであれ！</h2>
-        <p class="vision-body">ハルカゼは、婚活を通して
-「自分の人生を、最高の主役で生きる人」
-を増やしたい。
-
-あなたの充実感、満足感は、
-しあわせのバトンとして繋がれる。
-
-そんな「幸せが止まらない世界」を、
-広げていきたいと、そう考えています。</p>
-      </div>
+    <div class="hero-photo">
+      <img src="newimages/IMG_8907.jpeg" alt="石神りさ – ハルカゼ代表">
+    </div>
+    <div class="hero-text">
+      <span class="hero-en" aria-hidden="true">HARU<br>KAZE</span>
+      <span class="hero-eyebrow">About</span>
+      <h1 class="hero-title">人生に、<br>はじまりの風を。</h1>
+      <p class="hero-sub">「それなり」より、「これがいい」<br>そう思える自分へ。<br><br>この婚活が、人生を主役で楽しむ<br>「きっかけの時間」になるように。<br>「素・良・芯」で、始める婚活。</p>
+      <div class="hero-rule"></div>
     </div>
   </section>
 
-  <!-- VALUE -->
-  <section class="section section-ice">
-    <div class="section-inner">
-      <p class="section-label">Value</p>
-      <h2 class="section-title">ハルカゼが大切にしていること。</h2>
-      <div class="value-grid">
-        <div class="value-card">
-          <p class="value-num">01</p>
-          <h3 class="value-heading">自分を面白がる</h3>
-          <p class="value-text">不器用さも、隙も、魅力になる。完璧を脱ぎ捨てたとき、人は惹きつけられる。</p>
-        </div>
-        <div class="value-card">
-          <p class="value-num">02</p>
-          <h3 class="value-heading">「良さ」をデザインする</h3>
-          <p class="value-text">磨き、言葉にし、届けて価値になる。あなたの魅力を、戦略的に伝えていく。</p>
-        </div>
-        <div class="value-card">
-          <p class="value-num">03</p>
-          <h3 class="value-heading">「本音」を芯にする</h3>
-          <p class="value-text">好き嫌いを自覚する。大切な軸は、信頼になる。</p>
-        </div>
+  <!-- ============================================================
+       素・良・芯
+       ============================================================ -->
+  <section class="shin-section dot-bg section-deco-wrap">
+    <!-- 角装飾 -->
+    <svg class="corner-deco corner-deco-tl" width="120" height="120" viewBox="0 0 120 120" fill="currentColor" aria-hidden="true">
+      <circle cx="20" cy="20" r="6"/><circle cx="45" cy="10" r="4"/><circle cx="10" cy="45" r="4"/>
+      <circle cx="70" cy="15" r="3"/><circle cx="15" cy="70" r="3"/><circle cx="90" cy="25" r="2"/><circle cx="25" cy="90" r="2"/>
+      <ellipse cx="55" cy="30" rx="10" ry="5" transform="rotate(-30 55 30)"/>
+      <ellipse cx="30" cy="55" rx="10" ry="5" transform="rotate(60 30 55)"/>
+    </svg>
+    <svg class="corner-deco corner-deco-br" width="100" height="100" viewBox="0 0 120 120" fill="currentColor" aria-hidden="true">
+      <circle cx="20" cy="20" r="6"/><circle cx="45" cy="10" r="4"/><circle cx="10" cy="45" r="4"/>
+      <circle cx="70" cy="15" r="3"/><circle cx="15" cy="70" r="3"/>
+      <ellipse cx="55" cy="30" rx="10" ry="5" transform="rotate(-30 55 30)"/>
+    </svg>
+    <div class="shin-inner">
+      <div class="shin-header fade-up">
+        <span class="section-eyebrow">Philosophy</span>
+        <h2 class="section-title">ハルカゼの婚活、3つの軸。</h2>
+        <div class="section-rule section-rule-center"></div>
+        <p class="shin-intro"></p>
       </div>
-    </div>
-  </section>
 
-  <!-- FINAL MESSAGE -->
-  <section class="section">
-    <div class="section-inner">
-      <div class="final-wrap">
-        <p class="section-label" style="text-align:center;">Message</p>
-        <p class="final-lead">「正しさ」よりも、心躍る方へ。</p>
-        <p class="final-body">自分の人生を面白がる人は、かっこいい。
-その一歩に、伴走します。</p>
-
-        <div class="final-photo-wrap">
-          <div class="final-photo">
-            <img src="newimages/IMG_8907.jpeg" alt="石神りさ – ハルカゼ代表">
+      <!-- 三円 -->
+      <div class="shin-circles-wrap fade-up delay-1">
+        <div class="shin-circles-top">
+          <div class="shin-circle shin-circle-1" data-detail="1" role="button" tabindex="0" aria-expanded="false">
+            <span class="shin-circle-num">1</span>
+            <span class="shin-circle-en">Natural</span>
+            <div class="shin-circle-rule"></div>
+            <span class="shin-circle-ja">素</span>
+            <span class="shin-circle-desc">自分を<br>面白がる</span>
           </div>
-          <div class="final-credit">
-            <p class="final-credit-role">代表　マッチングプランナー</p>
-            <p class="final-credit-name">石神 りさ</p>
-            <a href="profile.html" class="final-profile-link">挨拶・プロフィール →</a>
+        </div>
+        <div class="shin-circles-bottom">
+          <div class="shin-circle shin-circle-2" data-detail="2" role="button" tabindex="0" aria-expanded="false">
+            <span class="shin-circle-num">2</span>
+            <span class="shin-circle-en">Design</span>
+            <div class="shin-circle-rule"></div>
+            <span class="shin-circle-ja">良</span>
+            <span class="shin-circle-desc">良さを<br>最大化する</span>
+          </div>
+          <div class="shin-circle shin-circle-3" data-detail="3" role="button" tabindex="0" aria-expanded="false">
+            <span class="shin-circle-num">3</span>
+            <span class="shin-circle-en">Core</span>
+            <div class="shin-circle-rule"></div>
+            <span class="shin-circle-ja">芯</span>
+            <span class="shin-circle-desc">本音を<br>芯にする</span>
           </div>
         </div>
       </div>
+
+      <!-- 詳細パネル -->
+      <div class="shin-detail-panels">
+        <div class="shin-detail" id="shin-detail-1">
+          <p class="shin-detail-tag">Natural / 素</p>
+          <h3 class="shin-detail-heading">自分を面白がる</h3>
+          <p class="shin-detail-body">欠点を探すのは終わり。今の自分を楽しみ、自信に変えることが、最大の魅力。</p>
+        </div>
+        <div class="shin-detail" id="shin-detail-2">
+          <p class="shin-detail-tag">Design / 良</p>
+          <h3 class="shin-detail-heading">「良さ」を最大化する</h3>
+          <p class="shin-detail-body">あなたの持ち味を、戦略的にカタチにする。正しく伝えることで、理想の相手と繋がる。</p>
+        </div>
+        <div class="shin-detail" id="shin-detail-3">
+          <p class="shin-detail-tag">Core / 芯</p>
+          <h3 class="shin-detail-heading">本音を芯にする</h3>
+          <p class="shin-detail-body">綺麗な言葉よりも、心にある本音を大切に。嘘のない自分だからこそ、一生モノの関係を築いていく。</p>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta-section">
-    <p class="section-label" style="color:var(--c-blue);">Contact</p>
-    <h2 class="cta-title">「話してみる」が、すべての始まり。</h2>
-    <p class="cta-sub">入会を迷っていても大丈夫。<br>まずはあなたの話を聞かせてください。</p>
-    <div class="cta-actions">
-      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn btn-sky">初回無料面談に申し込む</a>
-      <a href="service.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4); color:#fff;">サービスを見る</a>
+  <!-- ============================================================
+       VISION
+       ============================================================ -->
+  <section class="vision-section" id="vision">
+    <div class="vision-inner">
+      <span class="section-eyebrow fade-up">Vision</span>
+      <h2 class="vision-title fade-up delay-1">誰よりも幸せであれ！</h2>
+      <div class="vision-rule fade-up delay-1"></div>
+      <p class="vision-body fade-up delay-2">ハルカゼは、婚活を通して<br>
+「自分の人生を、最高の主役で生きる人」を増やしたい。<br>
+<br>
+あなたが、あなたを生きる充実感。<br>
+その輝きは、いつか必ず、大切な誰かの力になる。<br>
+一人の「満足」が、二人の「幸せ」へ。<br>
+ここから、新しい循環を始めましょう。</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MESSAGE
+       ============================================================ -->
+  <section class="message-main-section">
+    <div class="message-main-inner">
+      <div class="fade-up">
+        <div class="message-photo-frame">
+          <img src="newimages/IMG_8907.jpeg" alt="石神りさ – ハルカゼ代表">
+        </div>
+        <div class="message-credit">
+          <p class="message-credit-role">代表　マッチングプランナー</p>
+          <p class="message-credit-name">石神 りさ</p>
+          <a href="profile.html" class="message-profile-link">挨拶・プロフィール →</a>
+        </div>
+      </div>
+      <div class="fade-up delay-1">
+        <span class="section-eyebrow">Message</span>
+        <h2 class="message-lead">「正しさ」よりも、<br>心が動く方へ。</h2>
+        <div class="message-rule"></div>
+        <div class="message-body">
+          <p>自分の人生を面白がっている人は、かっこいい。<br>その一歩に、伴走します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA
+       ============================================================ -->
+  <section class="about-cta">
+    <span class="about-cta-eyebrow fade-up">Contact</span>
+    <h2 class="about-cta-title fade-up delay-1">「話してみる」が、すべての始まり。</h2>
+    <p class="about-cta-sub fade-up delay-2">入会を迷っていても大丈夫。<br>まずはあなたの話を聞かせてください。初回無料。</p>
+    <div class="about-cta-actions fade-up delay-3">
+      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn btn-line btn-lg">LINEで初回無料面談に申し込む</a>
+      <a href="service.html" class="btn btn-outline-white">サービスを見る</a>
     </div>
   </section>
 
 </main>
 
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
 <footer class="site-footer">
   <div class="footer-inner">
     <p class="footer-brand">大阪・吹田・オンラインで全国対応<br>結婚相談所ハルカゼ</p>
     <nav class="footer-links">
       <a href="about.html">メッセージ</a>
-      <a href="about.html#vision">ハルカゼの想い</a>
-      <a href="service.html">サービス内容</a>
-      <a href="service.html#price">サービス・料金</a>
+      <a href="service.html">サービス・料金</a>
       <a href="flow.html">成婚までの流れ</a>
       <a href="lab.html">ハルカゼLAB</a>
       <a href="faq.html">よくある質問</a>
       <a href="blog.html">ブログ</a>
+      <a href="profile.html">代表プロフィール</a>
       <a href="privacy.html">プライバシーポリシー</a>
     </nav>
     <p class="footer-girls-label">女性の方はこちら</p>
@@ -254,10 +749,56 @@
 </footer>
 
 <div class="float-side-btns">
-  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn">初回無料面談を予約</a>
-  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn">LINEで婚活突破口診断</a>
+  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn float-side-btn-line">初回無料面談を予約</a>
+  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn float-side-btn-line">LINEで婚活突破口診断</a>
 </div>
 
 <script src="js/common.js"></script>
+<script>
+(function () {
+  'use strict';
+  var nav = document.getElementById('siteNav');
+  if (nav) {
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+  }
+  var items = document.querySelectorAll('.fade-up');
+  if (items.length && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    items.forEach(function (el) { io.observe(el); });
+  }
+})();
+</script>
+<script>
+(function () {
+  var circles = document.querySelectorAll('.shin-circle[data-detail]');
+  circles.forEach(function (circle) {
+    function toggle() {
+      var id = circle.getAttribute('data-detail');
+      var panel = document.getElementById('shin-detail-' + id);
+      var isOpen = panel.classList.contains('is-open');
+      // 全パネルを閉じる
+      document.querySelectorAll('.shin-detail').forEach(function (p) { p.classList.remove('is-open'); });
+      document.querySelectorAll('.shin-circle[data-detail]').forEach(function (c) {
+        c.classList.remove('is-active');
+        c.setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        panel.classList.add('is-open');
+        circle.classList.add('is-active');
+        circle.setAttribute('aria-expanded', 'true');
+        panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+    circle.addEventListener('click', toggle);
+    circle.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+  });
+})();
+</script>
 </body>
 </html>

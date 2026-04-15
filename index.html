@@ -3,11 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>結婚相談所ハルカゼ｜「いい人だけど」で、終わらせない。</title>
+<title>結婚相談所ハルカゼ｜「あなたがいい」で選ばれる。</title>
 <link rel="icon" href="newimages/使用ロゴ.jpeg">
 <meta name="description" content="20〜40代男性に特化した結婚相談所。あなただけの魅力を、最高の出会いに変えていく。大阪・吹田・オンライン全国対応。IBJ正規加盟店。">
-<meta property="og:title" content="結婚相談所ハルカゼ｜「いい人だけど」で、終わらせない。">
-<meta property="og:description" content="正直、損してない？その誠実さ。伝え方を変えるだけで、出会いは変わる。">
+<meta property="og:title" content="結婚相談所ハルカゼ｜「あなたがいい」で選ばれる。">
 <meta property="og:image" content="newimages/h. (1).png">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="css/common.css">
@@ -16,323 +15,1052 @@
    index.html — page styles
    ============================================================ */
 
-/* ── Hero ── */
+/* ── HERO ── */
 .hero {
-  position: relative;
-  min-height: 100svh;
-  display: flex;
+  min-height: calc(100svh - var(--nav-h));
+  display: grid;
+  grid-template-columns: 1fr;
   align-items: center;
+  background: var(--bg);
   overflow: hidden;
-  margin-top: -64px;
-  padding-top: 64px;
+  position: relative;
 }
-.hero-bg {
+@media (min-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    min-height: calc(100vh - var(--nav-h));
+  }
+}
+
+.hero-content {
+  padding: clamp(48px, 8vw, 96px) clamp(24px, 5vw, 72px);
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--pink-pale);
+  color: var(--pink-dark);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 7px 18px;
+  border-radius: 100px;
+  margin-bottom: 48px;
+}
+.hero-badge::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--pink);
+  flex-shrink: 0;
+}
+.hero-kicker {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-mid);
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 4px;
+}
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  margin-bottom: 56px;
+}
+.hero-title em {
+  color: var(--pink);
+  font-style: normal;
+}
+.hero-desc {
+  font-size: clamp(14px, 1.8vw, 16px);
+  color: var(--text-mid);
+  line-height: 2;
+  margin-bottom: 40px;
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+}
+.hero-line-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.hero-note {
+  font-size: 12px;
+  color: var(--text-light);
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+/* ヒーロー画像側 */
+.hero-image {
+  height: 100%;
+  min-height: 420px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-photo-caption {
   position: absolute;
-  inset: 0;
-  background: url('newimages/IMG_0160.jpeg') right center / 55% auto no-repeat;
-  filter: brightness(0.85) saturate(0.75);
-  z-index: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 28px 20px 16px;
+  background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0) 100%);
+  text-align: center;
+  z-index: 2;
 }
-.hero-bg::after {
+.hero-photo-caption-role {
+  font-size: 11px;
+  color: rgba(255,255,255,0.82);
+  letter-spacing: 0.14em;
+  margin-bottom: 4px;
+}
+.hero-photo-caption-name {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.1em;
+}
+@media (max-width: 899px) {
+  .hero-image { height: 60vw; min-height: 280px; max-height: 480px; }
+}
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+.hero-image::after {
   content: '';
   position: absolute;
   inset: 0;
+  /* PC：左から白くフェード → テキストエリアとなじむ */
   background: linear-gradient(
-    105deg,
-    rgba(74,98,120,0.97) 0%,
-    rgba(74,98,120,0.88) 35%,
-    rgba(74,98,120,0.45) 65%,
-    rgba(74,98,120,0.00) 100%
+    to right,
+    #ffffff 0%,
+    rgba(255,255,255,0.55) 22%,
+    rgba(255,255,255,0) 50%
   );
 }
-.hero-content {
-  position: relative;
-  z-index: 1;
-  padding: 80px 24px 80px max(24px, calc(50vw - 480px));
-  max-width: 720px;
-  color: #fff;
-}
-.hero-badge {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  color: rgba(255,255,255,0.78);
-  background: rgba(255,255,255,0.10);
-  border: 1px solid rgba(255,255,255,0.25);
-  border-radius: 4px;
-  padding: 5px 14px;
-  margin-bottom: 28px;
-}
-.hero-title {
-  font-size: clamp(36px, 6vw, 62px);
-  font-weight: 900;
-  line-height: 1.25;
-  letter-spacing: 0.02em;
-  margin-bottom: 24px;
-}
-.hero-title-kicker {
-  display: block;
-  font-size: 0.52em;
-  font-weight: 500;
-  opacity: 0.72;
-  margin-bottom: 10px;
-  letter-spacing: 0.04em;
-}
-.hero-title-main {
-  display: block;
-}
-.hero-desc {
-  font-size: clamp(14px, 2vw, 17px);
-  line-height: 2;
-  color: rgba(255,255,255,0.82);
-  margin-bottom: 36px;
-  font-weight: 400;
-}
-.hero-from {
-  font-size: 12px;
-  color: rgba(255,255,255,0.48);
-  letter-spacing: 0.16em;
-  margin-bottom: 4px;
-}
-.hero-about-link {
-  display: inline-block;
-  font-size: 13px;
-  color: rgba(255,255,255,0.68);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  letter-spacing: 0.06em;
-  margin-bottom: 32px;
-  transition: opacity 0.2s;
-}
-.hero-about-link:hover { opacity: 0.6; }
-.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
-
-/* Mobile hero */
-@media (max-width: 600px) {
-  .hero { align-items: flex-start; min-height: auto; }
-  .hero-bg {
-    background:
-      linear-gradient(to bottom, rgba(74,98,120,1) 0%, rgba(74,98,120,0.85) 25%, rgba(74,98,120,0.4) 55%, rgba(74,98,120,1) 100%),
-      url('newimages/IMG_0160.jpeg') center / cover no-repeat;
-    filter: brightness(0.9) saturate(0.75);
+/* SP：画像が下に来るので上から白くフェード */
+@media (max-width: 899px) {
+  .hero-image::after {
+    background: linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      rgba(255,255,255,0.5) 18%,
+      rgba(255,255,255,0) 45%
+    );
   }
-  .hero-content { padding: 48px 20px 56px; width: 100%; }
-  .hero-title { font-size: clamp(30px, 8vw, 40px); }
-  .hero-actions { justify-content: center; }
-  .hero-sp-hide { display: none; }
 }
 
 /* ── チェックリスト ── */
-.checklist { margin-top: 40px; display: flex; flex-direction: column; gap: 0; }
+.check-section {
+  background: var(--navy);
+  padding: clamp(56px, 7vw, 96px) clamp(24px, 5vw, 48px);
+}
+.check-inner {
+  max-width: var(--inner);
+  margin: 0 auto;
+}
+.check-title {
+  font-family: var(--font-serif);
+  font-size: clamp(18px, 2.8vw, 26px);
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 0.06em;
+  margin-bottom: 36px;
+  text-align: center;
+}
+.check-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  max-width: 640px;
+  margin: 0 auto 40px;
+}
+@media (min-width: 640px) {
+  .check-list { grid-template-columns: 1fr 1fr; }
+  .check-list > li:last-child:nth-child(odd) {
+    grid-column: 1 / -1; max-width: 50%; margin: 0 auto;
+  }
+}
 .check-item {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
-  padding: 18px 0;
-  border-bottom: 1px solid var(--c-border);
+  gap: 12px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 16px 18px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.7;
+  letter-spacing: 0.03em;
 }
-.check-item:first-child { border-top: 1px solid var(--c-border); }
-.check-dot {
-  flex-shrink: 0;
-  width: 28px; height: 28px;
-  border-radius: 50%;
-  background: var(--c-navy);
-  display: flex; align-items: center; justify-content: center;
-  margin-top: 2px;
+.check-item::before {
+  content: '';
+  display: block;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  border: 1.5px solid var(--pink-light);
+  border-radius: 4px;
+  margin-top: 1px;
 }
-.check-dot svg { width: 13px; height: 13px; }
-.check-text { font-size: 15px; font-weight: 500; line-height: 1.8; color: var(--c-text); }
-@media (min-width: 640px) {
-  .checklist { display: grid; grid-template-columns: 1fr 1fr; }
-  .check-item:nth-child(1),
-  .check-item:nth-child(2) { border-top: 1px solid var(--c-border); }
-  .check-item:nth-child(odd) { padding-right: 32px; }
-}
-@media (max-width: 639px) {
-  .check-text { font-size: clamp(13px, 3.3vw, 15px); }
-  /* 「当てはまるほど、ハルカゼ向き。」を1行に収める */
-  .section-title-check { font-size: clamp(17px, 4.2vw, 22px); }
+.check-cta {
+  text-align: center;
 }
 
-/* ── 診断バナー ── */
-.shindan-section { background: var(--c-bg); padding: 48px 24px; }
-.shindan-inner { max-width: 640px; margin: 0 auto; text-align: center; }
-.shindan-kicker {
-  font-size: 11px; font-weight: 700; letter-spacing: 0.3em;
-  color: var(--c-blue); text-transform: uppercase; margin-bottom: 8px;
+/* ── LINE診断バナー ── */
+.shindan-section {
+  padding: clamp(20px, 2.5vw, 32px) clamp(24px, 5vw, 48px);
+  background: var(--bg-gray);
 }
-.shindan-title {
-  font-size: clamp(18px, 3vw, 24px); font-weight: 700;
-  color: var(--c-navy); margin-bottom: 24px;
+.shindan-inner {
+  max-width: 640px;
+  margin: 0 auto;
 }
-.shindan-img-link {
-  display: block; border-radius: 12px; overflow: hidden;
-  box-shadow: 0 8px 32px rgba(74,98,120,0.14);
-  transition: transform 0.3s, box-shadow 0.3s;
-  aspect-ratio: 3/1;
+.shindan-link {
+  display: block;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.25s, box-shadow 0.25s;
 }
-.shindan-img-link:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(74,98,120,0.20); }
-.shindan-img-link img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.shindan-link:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  opacity: 1;
+}
+.shindan-link img {
+  width: 100%;
+  display: block;
+}
 
-/* ── MESSAGE ── */
-.message-wrap {
-  max-width: 900px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center;
+/* ── MESSAGE（代表メッセージ） ── */
+.message-section {
+  padding: var(--section-py) clamp(24px, 5vw, 48px);
+  background: var(--bg);
 }
-.message-photo { border-radius: 12px; overflow: hidden; aspect-ratio: 3/4; max-width: 280px; margin: 0 auto; }
-.message-photo img { width: 100%; height: 100%; object-fit: cover; }
-.message-caption { font-size: 11px; color: var(--c-lt); letter-spacing: 0.12em; text-align: center; margin-top: 10px; }
-.message-label { /* uses .section-label from common */ }
-.message-heading { font-size: clamp(22px, 3.5vw, 32px); font-weight: 700; color: var(--c-navy); margin-bottom: 20px; line-height: 1.5; }
-.message-body { font-size: 15px; line-height: 2.3; color: var(--c-mid); white-space: pre-line; }
-.message-sig {
-  display: inline-block; margin-top: 28px;
-  font-size: 14px; font-weight: 700; color: var(--c-navy);
-  border-bottom: 2px solid var(--c-coral); padding-bottom: 4px;
-  transition: opacity 0.2s; text-decoration: none;
+.message-inner {
+  max-width: var(--inner);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: center;
 }
-.message-sig:hover { opacity: 0.7; }
 @media (min-width: 768px) {
-  .message-wrap { grid-template-columns: 260px 1fr; }
-  .message-photo { margin: 0; }
+  .message-inner { grid-template-columns: auto 1fr; gap: 48px; }
+}
+.message-photo-wrap {
+  border-radius: 50%;
+  overflow: hidden;
+  width: clamp(120px, 18vw, 160px);
+  height: clamp(120px, 18vw, 160px);
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+.message-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+.message-photo-caption {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--text-light);
+  letter-spacing: 0.06em;
+  line-height: 1.7;
+}
+.message-title {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  letter-spacing: 0.04em;
+}
+.message-body {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 2.1;
+}
+.message-body p + p { margin-top: 1.4em; }
+.message-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 28px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid rgba(26,42,68,0.35);
+  padding-bottom: 2px;
+  transition: opacity 0.2s;
 }
 
 /* ── WHAT WE DO ── */
-.step-list { display: grid; grid-template-columns: 1fr; gap: 36px; margin-top: 48px; }
-.step-card { position: relative; }
-.step-marker {
-  width: 52px; height: 52px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto -16px; position: relative; z-index: 2;
-  box-shadow: 0 4px 16px rgba(74,98,120,0.22);
+.steps-section {
+  padding: var(--section-py) clamp(24px, 5vw, 48px);
+  background: var(--bg);
 }
-.step-01 .step-marker { background: #B8C7E6; }
-.step-02 .step-marker { background: #9DB4D8; }
-.step-03 .step-marker { background: #7A9EC8; }
-.step-04 .step-marker { background: #F6B6C8; }
-.step-05 .step-marker { background: #E89BB0; }
-.step-06 .step-marker { background: #4A6278; }
-.step-marker-num { font-size: 18px; font-weight: 900; color: var(--c-navy); line-height: 1; }
-.step-06 .step-marker-num { color: #fff; }
-.step-body {
-  background: var(--c-white); border-radius: 16px;
-  padding: 28px 22px 20px;
-  box-shadow: 0 2px 16px rgba(74,98,120,0.07);
-  border: 1px solid var(--c-border);
-}
-.step-01 .step-body { border-top: 3px solid #B8C7E6; }
-.step-02 .step-body { border-top: 3px solid #9DB4D8; }
-.step-03 .step-body { border-top: 3px solid #7A9EC8; }
-.step-04 .step-body { border-top: 3px solid #F6B6C8; }
-.step-05 .step-body { border-top: 3px solid #E89BB0; }
-.step-06 .step-body { border-top: 3px solid #4A6278; }
-.step-header {
-  display: flex; align-items: center;
-  justify-content: space-between; gap: 12px;
-  cursor: pointer; user-select: none;
-}
-.step-header-title { font-size: clamp(15px, 2.5vw, 19px); font-weight: 700; color: var(--c-navy); line-height: 1.45; }
-.step-chevron {
-  flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
-  border: 2px solid var(--c-border); color: var(--c-mid);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 18px; transition: transform 0.3s, background 0.3s, border-color 0.3s;
-}
-.step-card.is-open .step-chevron { transform: rotate(45deg); background: var(--c-navy); border-color: var(--c-navy); color: #fff; }
-.step-content { overflow: hidden; max-height: 0; transition: max-height 0.5s ease, padding-top 0.4s ease; }
-.step-card.is-open .step-content { max-height: 500px; padding-top: 14px; }
-.step-text { font-size: 14px; line-height: 2.1; color: var(--c-mid); }
-.step-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
-.step-tag { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; background: var(--c-bg); color: var(--c-navy); letter-spacing: 0.03em; }
+.steps-inner { max-width: var(--inner); margin: 0 auto; }
 
-/* スクロールアニメーション */
-.step-animate { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
-.step-animate.is-visible { opacity: 1; transform: none; }
-
+/* ヘッダー：左寄せ + 右テキストの2カラム */
+.steps-header {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-bottom: 56px;
+  align-items: start;
+}
 @media (min-width: 768px) {
-  .step-list { grid-template-columns: 1fr 1fr; gap: 40px 28px; }
+  .steps-header { grid-template-columns: auto 1fr; gap: 64px; align-items: center; }
+}
+.steps-header-left { flex-shrink: 0; }
+.steps-header-right {}
+
+.steps-section .section-eyebrow { margin-bottom: 10px; }
+.steps-section .section-title { margin-bottom: 0; }
+.steps-divider {
+  width: 1px;
+  height: 100%;
+  background: var(--border);
+  display: none;
+}
+@media (min-width: 768px) { .steps-divider { display: block; } }
+
+.steps-lead {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 2.1;
+}
+.steps-lead p + p { margin-top: 1.2em; }
+
+/* カードグリッド：2列 */
+.steps-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+@media (min-width: 640px) {
+  .steps-grid { grid-template-columns: 1fr 1fr; }
 }
 
-/* ── LABバナー ── */
-.lab-cta {
-  background: linear-gradient(135deg, var(--c-navy) 0%, #3A5067 100%);
-  color: #fff; border-radius: 16px; padding: 48px 32px 52px; margin-top: 56px;
-  text-align: center; position: relative; overflow: hidden;
+.step-card {
+  background: var(--bg);
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  transition: background 0.2s;
 }
-.lab-cta::before {
-  content: ''; position: absolute; top: -60px; right: -60px;
-  width: 200px; height: 200px; border-radius: 50%; background: rgba(255,255,255,0.08);
+.step-card:hover { background: #fafafa; }
+/* 右列の右ボーダー消す */
+@media (min-width: 640px) {
+  .step-card:nth-child(2n) { border-right: none; }
+  .step-card:nth-last-child(-n+2) { border-bottom: none; }
 }
-.lab-cta-label { font-size: 11px; letter-spacing: 0.28em; color: rgba(255,255,255,0.72); text-transform: uppercase; margin-bottom: 12px; font-weight: 700; }
-.lab-cta-title { font-size: clamp(22px, 4vw, 34px); font-weight: 900; margin-bottom: 14px; }
-.lab-cta-body { font-size: 14px; line-height: 2; opacity: 0.88; margin-bottom: 12px; }
-.lab-cta-price { font-size: 13px; color: rgba(255,255,255,0.72); margin-bottom: 28px; }
+@media (max-width: 639px) {
+  .step-card:last-child { border-bottom: none; }
+}
 
-/* ── WHY HARUKAZE ── */
-.why-frame { border: 1px solid var(--c-border); border-radius: 16px; overflow: hidden; margin: 40px 0 48px; }
-.why-frame-head {
-  background: var(--c-navy); color: #fff;
-  padding: 28px 24px; text-align: center; line-height: 1.6;
+.step-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 28px 24px 24px;
+  cursor: pointer;
+  user-select: none;
 }
-.why-frame-num { font-size: clamp(26px, 4vw, 36px); font-weight: 900; }
-.why-frame-label { font-size: clamp(13px, 2vw, 16px); font-weight: 500; color: rgba(255,255,255,0.78); }
-.why-frame-note { font-size: 11px; color: rgba(255,255,255,0.42); margin-top: 6px; }
-.why-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--c-border); }
-.why-panel { background: var(--c-white); padding: 32px 24px 28px; text-align: center; }
-.why-panel-h { background: rgba(184,199,230,0.12); }
-.why-panel-name { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--c-lt); margin-bottom: 18px; font-weight: 700; }
-.why-panel-name-h { color: var(--c-blue); }
-.why-icon-major { font-size: 28px; margin-bottom: 10px; filter: grayscale(0.5) opacity(0.5); }
-.why-icon-h { font-size: 32px; margin-bottom: 10px; }
-.why-panel-caption { font-size: 12px; color: var(--c-lt); line-height: 1.7; margin-bottom: 14px; }
-.why-panel-caption-h { color: var(--c-mid); }
-.why-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
-.why-tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; background: var(--c-bg); color: var(--c-mid); font-weight: 500; }
-.why-tag-h { background: rgba(184,199,230,0.25); color: var(--c-navy); }
-
-.why-stats {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  gap: 1px; background: var(--c-border);
-  border-radius: 12px; overflow: hidden;
-  border: 1px solid var(--c-border); margin-bottom: 32px;
+.step-num-wrap {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
 }
-.why-stat { background: var(--c-white); padding: 28px 12px 24px; text-align: center; border-top: 3px solid transparent; }
-.why-stat:nth-child(1) { border-top-color: var(--c-blue); }
-.why-stat:nth-child(2) { border-top-color: var(--c-coral); }
-.why-stat:nth-child(3) { border-top-color: #9DB4D8; }
-.why-stat:nth-child(4) { border-top-color: #E89BB0; }
-.why-stat-num { font-size: clamp(20px, 3vw, 28px); font-weight: 900; color: var(--c-navy); line-height: 1.2; margin-bottom: 8px; }
-.why-stat-num small { font-size: 0.55em; font-weight: 500; color: var(--c-lt); }
-.why-stat-label { font-size: 10px; color: var(--c-lt); line-height: 1.7; }
-.why-ibj-link { text-align: center; margin-bottom: 8px; }
-.why-ibj-link a { font-size: 13px; font-weight: 700; color: var(--c-blue); text-decoration: underline; text-underline-offset: 3px; }
-.ibj-source { font-size: 11px; color: var(--c-lt); margin-top: 8px; text-align: center; }
-.ibj-bnr-row { display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 24px; flex-wrap: wrap; }
-.ibj-bnr { height: 72px; width: auto; object-fit: contain; border-radius: 8px; }
+.step-num {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: rgba(26,42,68,0.08);
+  line-height: 1;
+  display: block;
+}
+.step-num-label {
+  font-family: var(--font-display);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--pink);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.step-header-right {
+  flex: 1;
+  padding-top: 4px;
+}
+.step-title {
+  font-family: var(--font-serif);
+  font-size: clamp(14px, 1.8vw, 16px);
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.55;
+  letter-spacing: 0.04em;
+}
+.step-toggle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 15px;
+  color: var(--text-light);
+  transition: border-color 0.2s, background 0.2s, color 0.2s, transform 0.3s;
+  margin-top: 4px;
+}
+.step-card.is-open .step-toggle {
+  background: var(--pink);
+  border-color: var(--pink);
+  color: #fff;
+  transform: rotate(45deg);
+}
+.step-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+.step-card.is-open .step-body { max-height: 200px; }
+.step-body-inner {
+  padding: 0 24px 24px 84px;
+  font-size: 13px;
+  color: var(--text-mid);
+  line-height: 2;
+}
 
+/* ── ハルカゼLAB セクション ── */
+
+/* ブリッジ */
+.lab-bridge {
+  background: #fff;
+  padding: clamp(72px, 10vw, 120px) clamp(24px, 5vw, 48px);
+  text-align: center;
+}
+.lab-bridge-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.lab-bridge-lead {
+  font-size: 13px;
+  color: var(--text-light);
+  letter-spacing: 0.1em;
+  margin-bottom: 22px;
+}
+.lab-bridge-q {
+  font-family: var(--font-serif);
+  font-size: clamp(18px, 3vw, 24px);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.75;
+  margin-bottom: 28px;
+  letter-spacing: 0.04em;
+}
+.lab-bridge-body {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 2.3;
+  margin-bottom: 0;
+}
+
+/* 下向き誘導インジケーター */
+@keyframes scroll-line {
+  0%   { transform: scaleY(0); transform-origin: top; opacity: 0; }
+  40%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
+  100% { transform: scaleY(1); transform-origin: bottom; opacity: 0; }
+}
+@keyframes bounce-arrow {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(6px); }
+}
+.lab-scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding: 40px 0 0;
+}
+.lab-scroll-line {
+  width: 1px;
+  height: 52px;
+  background: linear-gradient(to bottom, transparent, var(--pink));
+  animation: scroll-line 1.8s ease-in-out infinite;
+}
+.lab-scroll-arrow {
+  color: var(--pink);
+  font-size: 20px;
+  line-height: 1;
+  animation: bounce-arrow 1.4s ease-in-out infinite;
+  margin-top: -4px;
+}
+
+/* LAB メインセクション */
+.lab-section {
+  background: #f9f7f5;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── 上段：ポスターエリア ── */
+.lab-poster {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 420px;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .lab-poster { grid-template-columns: 1.1fr 1fr; min-height: 520px; }
+}
+
+/* 左：巨大タイポグラフィ */
+.lab-poster-left {
+  background: var(--navy);
+  padding: clamp(48px, 7vw, 80px) clamp(28px, 5vw, 56px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+/* 背景装飾：大きな円 */
+.lab-poster-left::before {
+  content: '';
+  position: absolute;
+  width: 340px; height: 340px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.06);
+  right: -80px; top: -80px;
+  pointer-events: none;
+}
+.lab-poster-left::after {
+  content: '';
+  position: absolute;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  border: 1px solid rgba(239,167,182,0.15);
+  left: -40px; bottom: -40px;
+  pointer-events: none;
+}
+@keyframes lab-shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes lab-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+.lab-display-harukaze {
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 7vw, 72px);
+  font-weight: 400;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.18em;
+  line-height: 1;
+  display: block;
+  margin-bottom: 4px;
+}
+.lab-display-lab {
+  font-family: var(--font-display);
+  font-size: clamp(72px, 14vw, 148px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+  display: block;
+  background: linear-gradient(
+    90deg,
+    #fff 0%,
+    var(--pink) 30%,
+    #fff 55%,
+    var(--pink) 80%,
+    #fff 100%
+  );
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: lab-shimmer 10s linear infinite, lab-float 5s ease-in-out infinite;
+}
+.lab-poster-tag {
+  margin-top: 28px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.lab-poster-tag span {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: rgba(255,255,255,0.45);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 4px 12px;
+}
+
+/* 右：説明 + バッジ */
+.lab-poster-right {
+  background: #f9f7f5;
+  padding: clamp(48px, 7vw, 80px) clamp(28px, 5vw, 56px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 28px;
+  position: relative;
+}
+.lab-poster-eyebrow {
+  font-family: var(--font-display);
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--pink);
+  display: block;
+}
+.lab-poster-body {
+  font-family: var(--font-serif);
+  font-size: clamp(15px, 2vw, 19px);
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+}
+/* 円形バッジ */
+.lab-badge-wrap {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.lab-badge {
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  border: 1.5px solid var(--pink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-shrink: 0;
+  padding: 12px;
+  gap: 4px;
+}
+.lab-badge-top {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--pink);
+  line-height: 1.4;
+}
+.lab-badge-price {
+  font-family: var(--font-serif);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1;
+}
+.lab-badge-sub {
+  font-size: 9px;
+  color: var(--text-light);
+  letter-spacing: 0.06em;
+}
+.lab-badge-note {
+  font-size: 12px;
+  color: var(--text-mid);
+  line-height: 1.8;
+}
+
+/* ── 下段：カードエリア ── */
+.lab-cards-area {
+  background: var(--navy);
+  padding: clamp(48px, 7vw, 80px) clamp(24px, 5vw, 48px);
+  position: relative;
+  overflow: hidden;
+}
+/* 背景装飾 */
+.lab-cards-area::before {
+  content: 'WHAT YOU CAN DO';
+  position: absolute;
+  right: -1%;
+  bottom: 10%;
+  font-family: var(--font-display);
+  font-size: clamp(40px, 7vw, 80px);
+  font-weight: 700;
+  color: rgba(255,255,255,0.03);
+  letter-spacing: 0.08em;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.lab-inner {
+  max-width: var(--inner);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* フィーチャーラベル */
+.lab-features-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  display: block;
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+/* 丸いカード */
+.lab-features-circle {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 52px;
+}
 @media (max-width: 640px) {
-  .why-panels { grid-template-columns: 1fr; }
-  .why-stats { grid-template-columns: repeat(2, 1fr); }
-  .ibj-bnr { height: 54px; }
+  .lab-features-circle { grid-template-columns: 1fr; max-width: 280px; margin-left: auto; margin-right: auto; }
+}
+.lab-feature-circle-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px 18px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.lab-feature-circle-card:hover {
+  background: rgba(255,255,255,0.09);
+  transform: translateY(-5px);
+}
+.lab-feature-circle-num {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--pink);
+  display: block;
+  margin-bottom: 10px;
+}
+.lab-feature-circle-title {
+  font-family: var(--font-serif);
+  font-size: clamp(13px, 1.5vw, 14px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+.lab-feature-circle-desc {
+  font-size: 11px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.85;
+}
+
+/* CTAバー */
+.lab-cta-bar {
+  text-align: center;
+}
+
+/* ── WHY ── */
+.why-section {
+  padding: var(--section-py) clamp(24px, 5vw, 48px);
+  background: var(--bg-gray);
+}
+.why-inner { max-width: var(--inner); margin: 0 auto; }
+.why-header { text-align: center; margin-bottom: 56px; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 56px;
+}
+@media (min-width: 640px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
+.stat-item {
+  background: var(--bg);
+  padding: 32px 20px;
+  text-align: center;
+}
+.stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+.stat-num span {
+  font-size: 0.55em;
+  font-weight: 400;
+  color: var(--navy-light);
+  letter-spacing: 0.06em;
+}
+.stat-label {
+  font-size: 12px;
+  color: var(--text-light);
+  letter-spacing: 0.06em;
+}
+
+.compare-title {
+  font-family: var(--font-serif);
+  font-size: clamp(17px, 2.5vw, 22px);
+  font-weight: 500;
+  color: var(--navy);
+  text-align: center;
+  margin-bottom: 28px;
+  letter-spacing: 0.05em;
+}
+.compare-wrap { overflow-x: auto; }
+.compare-table {
+  width: 100%;
+  min-width: 480px;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  margin-bottom: 40px;
+}
+.compare-table thead th {
+  padding: 16px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+.compare-table thead th:nth-child(1) { background: var(--bg-gray); color: var(--text-mid); width: 44%; }
+.compare-table thead th:nth-child(2) { background: var(--bg-gray); color: var(--text-light); font-weight: 400; width: 28%; }
+.compare-table thead th:nth-child(3) { background: var(--navy); color: #fff; width: 28%; }
+.compare-table tbody tr { border-top: 1px solid var(--border); }
+.compare-table tbody tr:first-child { border-top: none; }
+.compare-table tbody td {
+  padding: 14px 20px;
+  font-size: 13px;
+  text-align: center;
+  vertical-align: middle;
+}
+.compare-table tbody td:nth-child(1) {
+  text-align: left;
+  color: var(--text);
+  font-weight: 500;
+  background: var(--bg);
+}
+.compare-table tbody td:nth-child(2) { background: #fafafa; color: var(--text-light); }
+.compare-table tbody td:nth-child(3) { background: var(--pink-pale); color: var(--navy); font-weight: 700; }
+.compare-mark-good { color: var(--pink); font-size: 16px; }
+.compare-mark-bad  { color: #ccc; font-size: 16px; }
+
+.ibj-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 28px;
+}
+.ibj-wrap img {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* IBJデータ */
+.ibj-data {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px 24px 20px;
+}
+.ibj-data-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--pink);
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.ibj-data-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+@media (min-width: 600px) {
+  .ibj-data-grid { grid-template-columns: repeat(4, 1fr); }
+}
+.ibj-data-item {
+  background: var(--bg-gray);
+  padding: 18px 14px;
+  text-align: center;
+}
+.ibj-data-num {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.1;
+  margin-bottom: 4px;
+  letter-spacing: 0.02em;
+}
+.ibj-data-num small {
+  font-size: 0.55em;
+  font-weight: 400;
+  color: var(--navy-light);
+  letter-spacing: 0.06em;
+}
+.ibj-data-desc {
+  font-size: 11px;
+  color: var(--text-light);
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+}
+.ibj-data-note {
+  font-size: 11px;
+  color: var(--text-light);
+  text-align: center;
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+.ibj-data-link {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: var(--navy-light);
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--border);
+  display: inline-block;
+  padding-bottom: 1px;
+  transition: color 0.2s;
+  margin: 0 auto;
+}
+.ibj-data-link:hover { color: var(--navy); opacity: 1; }
+.ibj-data-footer {
+  text-align: center;
 }
 
 /* ── CTA ── */
-.cta-section { background: var(--c-navy); padding: 96px 24px; text-align: center; color: #fff; }
-.cta-title { font-size: clamp(22px, 4vw, 36px); font-weight: 700; margin-bottom: 16px; line-height: 1.5; }
-.cta-sub { font-size: 15px; color: rgba(255,255,255,0.72); margin-bottom: 44px; line-height: 2; }
-.cta-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+.cta-section {
+  background: var(--navy);
+  padding: clamp(72px, 9vw, 112px) clamp(24px, 5vw, 48px);
+  text-align: center;
+}
+.cta-eyebrow {
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--pink-light);
+  display: block;
+  margin-bottom: 20px;
+}
+.cta-title {
+  font-family: var(--font-serif);
+  font-size: clamp(19px, 4vw, 40px);
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+  margin-bottom: 20px;
+}
+.cta-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,0.65);
+  line-height: 2;
+  margin-bottom: 48px;
+}
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+.cta-note {
+  margin-top: 16px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.04em;
+}
+
+/* footer girls */
+.footer-girls-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+.footer-girls-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--pink-light);
+  letter-spacing: 0.06em;
+  margin-bottom: 28px;
+  transition: color 0.2s;
+}
+.footer-girls-link:hover { color: #fff; opacity: 1; }
 </style>
 </head>
 <body>
 
-<!-- ナビ -->
-<nav class="site-nav">
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<nav class="site-nav" id="siteNav">
   <a href="index.html" class="nav-logo">
-    <img src="images/Photoroom_20260409_154324.png" alt="ハルカゼ" class="nav-icon">
-    <div class="nav-logo-text">
-      <span class="nav-logo-main">結婚相談所 ハルカゼ</span>
-    </div>
+    <img src="images/Photoroom_20260409_154324.png" alt="ハルカゼ" class="nav-logo-icon">
+    <span class="nav-logo-text">結婚相談所 ハルカゼ</span>
   </a>
   <ul class="nav-links">
     <li><a href="about.html">メッセージ</a></li>
@@ -347,8 +1075,12 @@
     <span></span><span></span><span></span>
   </button>
 </nav>
+
+<!-- モバイルメニュー -->
 <div class="mobile-nav-overlay" id="mobileNavOverlay">
-  <button class="mobile-nav-close" id="mobileNavClose" aria-label="閉じる"><span></span><span></span></button>
+  <button class="mobile-nav-close" id="mobileNavClose" aria-label="閉じる">
+    <span></span><span></span>
+  </button>
   <a href="index.html">ホーム</a>
   <a href="about.html">メッセージ</a>
   <a href="service.html">サービス・価格</a>
@@ -358,331 +1090,441 @@
   <a href="blog.html">ブログ</a>
   <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">初回無料面談に申し込む</a>
   <hr class="mobile-nav-divider">
-  <span class="mobile-nav-girls-label">女性の方はこちら</span>
-  <span class="mobile-nav-arrow"></span>
-  <a href="girls.html" class="mobile-nav-girls">女子の婚活 Girls LAB</a>
+  <a href="girls.html" style="font-size:14px; color:rgba(255,255,255,0.5); letter-spacing:0.06em;">女子の婚活 Girls LAB →</a>
 </div>
 
 <main>
 
-  <!-- ① Hero -->
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
   <section class="hero">
-    <div class="hero-bg"></div>
     <div class="hero-content">
-      <p class="hero-badge">20〜40代男性に特化した結婚相談所</p>
-      <h1 class="hero-title">
-        <span class="hero-title-kicker">「いい人だけど」で、</span>
-        <span class="hero-title-main">終わらせない。</span>
+      <span class="hero-badge fade-up">20〜40代男性に特化した結婚相談所</span>
+      <h1 class="hero-title fade-up delay-1">
+        <span class="hero-kicker">「いい人だけど」を卒業して、</span>
+        <em>「あなたがいい」で選ばれる。</em>
       </h1>
-      <p class="hero-desc">あなただけの魅力を、<br>最高の出会いに、変えていく。</p>
-      <p class="hero-from">代表　石神りさ</p>
-      <a href="about.html" class="hero-about-link">ハルカゼについて →</a>
-      <div class="hero-actions">
-        <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn btn-sky">初回無料面談に申し込む</a>
-        <a href="service.html" class="hero-sp-hide" style="font-size:13px; color:rgba(255,255,255,0.72); text-decoration:underline; text-underline-offset:3px;">料金を見る →</a>
+      <div class="hero-actions fade-up delay-3">
+        <div class="hero-line-wrap">
+          <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn btn-line btn-lg">LINEで初回無料面談に申し込む</a>
+          <p class="hero-note">初回無料・オンライン対応・全国OK</p>
+        </div>
+        <a href="about.html" class="btn btn-outline">ハルカゼとは</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="newimages/IMG_0160.jpeg" alt="ハルカゼのイメージ">
+      <div class="hero-photo-caption">
+        <p class="hero-photo-caption-role">代表　マッチングプランナー</p>
+        <p class="hero-photo-caption-name">石神りさ</p>
       </div>
     </div>
   </section>
 
-  <!-- ② チェックリスト -->
-  <section class="section">
-    <div class="section-inner">
-      <p class="section-label">Check List</p>
-      <h2 class="section-title section-title-check">一生懸命な<em style="font-style:normal;">"いい人"</em>に、<br><span style="font-weight:400; color:var(--c-blue); white-space:nowrap;">当てはまるほど、ハルカゼ向き。</span></h2>
-      <div class="checklist">
-        <div class="check-item">
-          <div class="check-dot">
-            <svg viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5 6.5-6.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <p class="check-text">お見合いは組めるのに、なぜか先に進まない</p>
-        </div>
-        <div class="check-item">
-          <div class="check-dot">
-            <svg viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5 6.5-6.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <p class="check-text">2回目のデートに繋がらず、理由もわからない</p>
-        </div>
-        <div class="check-item">
-          <div class="check-dot">
-            <svg viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5 6.5-6.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <p class="check-text">相手に気を遣いすぎて、気づけば無難な会話で終わる</p>
-        </div>
-        <div class="check-item">
-          <div class="check-dot">
-            <svg viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5 6.5-6.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <p class="check-text">恋愛経験が少なく、距離の縮め方がわからない</p>
-        </div>
-        <div class="check-item">
-          <div class="check-dot">
-            <svg viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5 6.5-6.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <p class="check-text">「いい人だけど…」で終わってしまう気がしている</p>
-        </div>
+  <!-- ============================================================
+       CHECK LIST
+       ============================================================ -->
+  <section class="check-section">
+    <div class="check-inner">
+      <h2 class="check-title fade-up">こんな悩み、ありませんか？</h2>
+      <ul class="check-list">
+        <li class="check-item fade-up delay-1">お見合いは組めるのに、その先に進まない</li>
+        <li class="check-item fade-up delay-2">2回目のデートに繋がらない</li>
+        <li class="check-item fade-up delay-1">気を遣いすぎて無難な会話になってしまう</li>
+        <li class="check-item fade-up delay-2">恋愛経験が少なく、距離の縮め方がわからない</li>
+        <li class="check-item fade-up delay-1">焦ってはいないが、いつか結婚したい気持ちはある。</li>
+      </ul>
+      <div class="check-cta fade-up delay-2">
+        <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn btn-line btn-lg">まずは無料で相談してみる</a>
+        <p style="margin-top:10px; font-size:12px; color:rgba(255,255,255,0.45); letter-spacing:0.06em;">初回無料・オンライン対応・全国OK</p>
       </div>
     </div>
   </section>
 
-  <!-- ③ 診断バナー -->
-  <div class="shindan-section">
+  <!-- ============================================================
+       LINE診断バナー
+       ============================================================ -->
+  <section class="shindan-section">
     <div class="shindan-inner">
-      <p class="shindan-kicker">Let's Try!</p>
-      <p class="shindan-title">あなたの婚活タイプを診断してみよう</p>
-      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="shindan-img-link">
-        <img src="newimages/①LINE リッチメニュー (2).png" alt="婚活突破口診断 – LINEで無料診断">
+      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="shindan-link fade-up">
+        <img src="newimages/①LINE リッチメニュー (2).png" alt="LINEで婚活突破口診断">
       </a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MESSAGE（代表メッセージ）
+       ============================================================ -->
+  <section class="message-section">
+    <div class="message-inner">
+      <div class="fade-up">
+        <div class="message-photo-wrap">
+          <img src="newimages/IMG_8907.jpeg" alt="代表 石神りさ">
+        </div>
+        <p class="message-photo-caption">代表 マッチングプランナー<br>石神 りさ</p>
+      </div>
+      <div class="fade-up delay-1">
+        <span class="section-eyebrow">Message</span>
+        <h2 class="message-title">あなただけの魅力を、<br>最高の出会いに、変えていく。</h2>
+        <div class="section-rule"></div>
+        <div class="message-body">
+          <p>婚活のセオリーやスペック、誰かが決めた「型」に合わせるよりも、あなたが「活きる」婚活で、戦略的に、そしてどこまでも誠実に。</p>
+        </div>
+        <a href="about.html" class="message-link">ハルカゼの想いを読む →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WHAT WE DO
+       ============================================================ -->
+  <section class="steps-section">
+    <div class="steps-inner">
+
+      <!-- ヘッダー：左タイトル ＋ 右説明文 -->
+      <div class="steps-header fade-up">
+        <div class="steps-header-left">
+          <span class="section-eyebrow">What We Do</span>
+          <h2 class="section-title">ハルカゼが<br>やること、6つ。</h2>
+        </div>
+        <div class="steps-header-right">
+          <div class="steps-lead">
+            <p>あなたの良さが「活きる」ために。<br>まずは、あなた自身を深く理解することから始めます。</p>
+            <p>「伝え方」ひとつで、届かなかった魅力は、<br>「選ばれるための確かな理由」に変わる。</p>
+            <p>戦略的に、そしてどこまでも誠実に。<br>入会から成婚まで、ひとつひとつ一緒に進んでいきます。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6カード（2列グリッド） -->
+      <div class="steps-grid">
+        <div class="step-card fade-up">
+          <div class="step-card-header" role="button" aria-expanded="false" tabindex="0">
+            <div class="step-num-wrap">
+              <span class="step-num">01</span>
+              <span class="step-num-label">Step</span>
+            </div>
+            <div class="step-header-right">
+              <span class="step-title">理想の結婚を言語化する</span>
+            </div>
+            <span class="step-toggle">+</span>
+          </div>
+          <div class="step-body">
+            <p class="step-body-inner">「フィーリングが合う」って何？「優しい人がいい」ってどんな人？を棚卸し、あなたの婚活の軸を言語化します。</p>
+          </div>
+        </div>
+        <div class="step-card fade-up delay-1">
+          <div class="step-card-header" role="button" aria-expanded="false" tabindex="0">
+            <div class="step-num-wrap">
+              <span class="step-num">02</span>
+              <span class="step-num-label">Step</span>
+            </div>
+            <div class="step-header-right">
+              <span class="step-title">魅力の「認知」を整える</span>
+            </div>
+            <span class="step-toggle">+</span>
+          </div>
+          <div class="step-body">
+            <p class="step-body-inner">「清潔感に気をつけているつもり」——婚活における客観的な評価は？あなたの良さ、ちゃんと伝わっていますか？あなたが活きるアドバイスで、印象を整えます。</p>
+          </div>
+        </div>
+        <div class="step-card fade-up">
+          <div class="step-card-header" role="button" aria-expanded="false" tabindex="0">
+            <div class="step-num-wrap">
+              <span class="step-num">03</span>
+              <span class="step-num-label">Step</span>
+            </div>
+            <div class="step-header-right">
+              <span class="step-title">確実なチャンスを掴む</span>
+            </div>
+            <span class="step-toggle">+</span>
+          </div>
+          <div class="step-body">
+            <p class="step-body-inner">メッセージが続かない。数を打てばそのうち当たる？——当たりません！戦略的サーチの実践で、チャンスの数を増やします。</p>
+          </div>
+        </div>
+        <div class="step-card fade-up delay-1">
+          <div class="step-card-header" role="button" aria-expanded="false" tabindex="0">
+            <div class="step-num-wrap">
+              <span class="step-num">04</span>
+              <span class="step-num-label">Step</span>
+            </div>
+            <div class="step-header-right">
+              <span class="step-title">二人の関係を深める</span>
+            </div>
+            <span class="step-toggle">+</span>
+          </div>
+          <div class="step-body">
+            <p class="step-body-inner">価値観に触れる会話のトレーニングで、表面的なやりとりを卒業。自然な距離の縮め方を一緒に磨きます。</p>
+          </div>
+        </div>
+        <div class="step-card fade-up">
+          <div class="step-card-header" role="button" aria-expanded="false" tabindex="0">
+            <div class="step-num-wrap">
+              <span class="step-num">05</span>
+              <span class="step-num-label">Step</span>
+            </div>
+            <div class="step-header-right">
+              <span class="step-title">「迷い」と誠実に向き合う</span>
+            </div>
+            <span class="step-toggle">+</span>
+          </div>
+          <div class="step-body">
+            <p class="step-body-inner">「この人で本当にいいのか？」——マリッジブルーはやってくる。進む「覚悟」のつくりかたを、一緒に整理します。</p>
+          </div>
+        </div>
+        <div class="step-card fade-up delay-1">
+          <div class="step-card-header" role="button" aria-expanded="false" tabindex="0">
+            <div class="step-num-wrap">
+              <span class="step-num">06</span>
+              <span class="step-num-label">Step</span>
+            </div>
+            <div class="step-header-right">
+              <span class="step-title">結ばれた、その先の未来へ</span>
+            </div>
+            <span class="step-toggle">+</span>
+          </div>
+          <div class="step-body">
+            <p class="step-body-inner">お金・キャリア・育児・介護——衝突せず話し合うためのシート作成で、二人の未来を一緒に設計します。</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ハルカゼLAB ブリッジ
+       ============================================================ -->
+  <div class="lab-bridge fade-up">
+    <div class="lab-bridge-inner">
+      <p class="lab-bridge-lead">でも、実際のところ……</p>
+      <p class="lab-bridge-q">「結婚相談所って、まるで物件選びみたい」<br>そう感じていませんか？</p>
+      <p class="lab-bridge-body">年収、学歴、年齢。スペックだけで判断し、判断される。<br>「ここからの出会いで、本当に好きになれるんだろうか？」</p>
+      <!-- 下向き誘導 -->
+      <div class="lab-scroll-indicator">
+        <div class="lab-scroll-line"></div>
+        <span class="lab-scroll-arrow">↓</span>
+      </div>
     </div>
   </div>
 
-  <!-- ④ Message from Risa -->
-  <section class="section">
-    <div class="section-inner">
-      <div class="message-wrap">
-        <div>
-          <div class="message-photo">
-            <img src="newimages/IMG_8907.jpeg" alt="代表 石神りさ">
-          </div>
-          <p class="message-caption">代表 マッチングプランナー　石神りさ</p>
-        </div>
-        <div>
-          <p class="section-label">Message from Risa</p>
-          <h2 class="message-heading">型にはまる婚活より、<br>あなたが「活きる」婚活を。</h2>
-          <p class="message-body">あなたの魅力、しっかり伝わっていますか？
-「とりあえず申し込む」の繰り返しなら、それ、あなたの魅力が活かせていない・伝えられていない、そんな「もったいない」状態になっているかも。
+  <!-- ============================================================
+       ハルカゼLAB メインセクション
+       ============================================================ -->
+  <section class="lab-section">
 
-スペック競争は、もう卒業。
-あなたにしかない「良さ」が、ちゃんと相手に届くようにすること。
-それが、ハルカゼの得意なことです。</p>
-          <a href="profile.html" class="message-sig">— 代表 石神 りさ</a>
+    <!-- 上段：ポスターエリア -->
+    <div class="lab-poster">
+
+      <!-- 左：巨大タイポグラフィ -->
+      <div class="lab-poster-left fade-up">
+        <span class="lab-display-harukaze">ハルカゼ</span>
+        <span class="lab-display-lab">LAB</span>
+        <div class="lab-poster-tag">
+          <span>コーチング</span>
+          <span>パートナーシップ</span>
+          <span>セルフラブ</span>
+        </div>
+      </div>
+
+      <!-- 右：説明 + バッジ -->
+      <div class="lab-poster-right fade-up delay-1">
+        <span class="lab-poster-eyebrow">Harukaze LAB</span>
+        <p class="lab-poster-body">
+          ハルカゼは「出会いの場」を<br>
+          提供するだけで終わらない。<br>
+          婚活のリアルに向き合い、<br>
+          各種のプロが、「マッチング」の先にある、<br>
+          「本音で笑い合える関係」までサポート。
+        </p>
+        <div class="lab-badge-wrap">
+          <div class="lab-badge">
+            <span class="lab-badge-top">チケット制</span>
+            <span class="lab-badge-price">1,000円〜</span>
+          </div>
+          <p class="lab-badge-note">パーソナル会員は<br>入会特典として<strong>無料</strong><br><span style="font-size:11px; color:var(--text-light);">結婚相談所に入会検討中の<br>会員以外もOK</span></p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 下段：カードエリア（ダーク） -->
+    <div class="lab-cards-area">
+      <div class="lab-inner">
+        <span class="lab-features-label fade-up">What You Can Do</span>
+        <div class="lab-features-circle fade-up delay-1">
+          <div class="lab-feature-circle-card">
+            <span class="lab-feature-circle-num">01</span>
+            <h3 class="lab-feature-circle-title">出会いのモヤモヤ相談室</h3>
+            <p class="lab-feature-circle-desc">出会いの悩みをぶっちゃける・現状の整理・コーチングセッション</p>
+          </div>
+          <div class="lab-feature-circle-card">
+            <span class="lab-feature-circle-num">02</span>
+            <h3 class="lab-feature-circle-title">小手先のテクニックではない、一生モノの学び</h3>
+            <p class="lab-feature-circle-desc">パートナーシップ・セルフラブ・セクシャルウェルネス</p>
+          </div>
+          <div class="lab-feature-circle-card">
+            <span class="lab-feature-circle-num">03</span>
+            <h3 class="lab-feature-circle-title">圧倒的な「始めやすさ」</h3>
+            <p class="lab-feature-circle-desc">パーソナル会員：入会特典（無料）<br>会員以外もOK：チケット制 1,000円〜</p>
+          </div>
+        </div>
+        <div class="lab-cta-bar fade-up delay-2">
+          <a href="lab.html" class="btn btn-light btn-lg">LABの詳細を見る →</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============================================================
+       WHY HARUKAZE
+       ============================================================ -->
+  <section class="why-section">
+    <div class="why-inner">
+      <div class="why-header fade-up">
+        <span class="section-eyebrow">Why Harukaze</span>
+        <h2 class="section-title">ハルカゼを選ぶ理由。</h2>
+        <div class="section-rule section-rule-center"></div>
+      </div>
+
+      <!-- 数字 -->
+      <div class="stats-grid">
+        <div class="stat-item fade-up">
+          <p class="stat-num">10<span>万人以上</span></p>
+          <p class="stat-label">IBJ会員数</p>
+        </div>
+        <div class="stat-item fade-up delay-1">
+          <p class="stat-num">¥0</p>
+          <p class="stat-label">お見合い料</p>
+        </div>
+        <div class="stat-item fade-up delay-2">
+          <p class="stat-num">4<span>つの出会い方</span></p>
+          <p class="stat-label">出会い方の選択肢</p>
+        </div>
+        <div class="stat-item fade-up delay-3">
+          <p class="stat-num">1対1</p>
+          <p class="stat-label">専任プランナー</p>
+        </div>
+      </div>
+
+      <!-- 比較表 -->
+      <h3 class="compare-title fade-up">大手相談所との違い</h3>
+      <div class="compare-wrap fade-up">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>大手相談所</th>
+              <th>ハルカゼ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>担当プランナー</td>
+              <td><span class="compare-mark-bad">△</span> 複数人・交替あり</td>
+              <td><span class="compare-mark-good">◎</span> 代表が専任担当</td>
+            </tr>
+            <tr>
+              <td>お見合い料</td>
+              <td><span class="compare-mark-bad">△</span> 1回ごとに発生</td>
+              <td><span class="compare-mark-good">◎</span> 無料（何回でも）</td>
+            </tr>
+            <tr>
+              <td>プロフィール写真</td>
+              <td><span class="compare-mark-bad">△</span> 各自手配</td>
+              <td><span class="compare-mark-good">◎</span> 無料（パーソナルプラン）</td>
+            </tr>
+            <tr>
+              <td>イメージコンサルタントによる<br>ファッションコンサル</td>
+              <td><span class="compare-mark-bad">△</span> なし</td>
+              <td><span class="compare-mark-good">◎</span> 無料（パーソナルプラン）</td>
+            </tr>
+            <tr>
+              <td>プロフィール作成</td>
+              <td><span class="compare-mark-bad">△</span> テンプレのみ</td>
+              <td><span class="compare-mark-good">◎</span> 婚活の進捗に応じて適時見直し</td>
+            </tr>
+            <tr>
+              <td>デートのサポート</td>
+              <td><span class="compare-mark-bad">△</span> アドバイスなし</td>
+              <td><span class="compare-mark-good">◎</span> 一緒にプランニング</td>
+            </tr>
+            <tr>
+              <td>フィードバック</td>
+              <td><span class="compare-mark-bad">△</span> ほぼなし</td>
+              <td><span class="compare-mark-good">◎</span> お見合後に随時</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- IBJバナー -->
+      <div class="ibj-wrap fade-up">
+        <img src="images/2025IBJbnr_2.png" alt="IBJ正規加盟店">
+      </div>
+
+      <!-- 数字で見るIBJ -->
+      <div class="ibj-data fade-up">
+        <span class="ibj-data-label">数字で見るIBJ</span>
+        <div class="ibj-data-grid">
+          <div class="ibj-data-item">
+            <p class="ibj-data-num">160,435<small>組/年</small></p>
+            <p class="ibj-data-desc">交際成立組数<br>（2025年実績）</p>
+          </div>
+          <div class="ibj-data-item">
+            <p class="ibj-data-num">36<small>歳</small></p>
+            <p class="ibj-data-desc">代表的成婚男性<br>の平均年齢</p>
+          </div>
+          <div class="ibj-data-item">
+            <p class="ibj-data-num">12<small>回</small></p>
+            <p class="ibj-data-desc">成婚男性の<br>平均お見合い数</p>
+          </div>
+          <div class="ibj-data-item">
+            <p class="ibj-data-num">313<small>日</small></p>
+            <p class="ibj-data-desc">成婚男性の<br>平均在籍日数</p>
+          </div>
+        </div>
+        <p class="ibj-data-note">※ IBJ公式データより（2025〜2026年実績）</p>
+        <div class="ibj-data-footer">
+          <a href="https://www.ibjapan.com/ibj/data/" target="_blank" rel="noopener noreferrer" class="ibj-data-link">詳しくはこちら（IBJ公式データページ）→</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ⑤ WHAT WE DO -->
-  <section class="section section-ice">
-    <div class="section-inner">
-      <p class="section-label">What We Do</p>
-      <h2 class="section-title">ハルカゼだから、<br>できること。</h2>
-      <p class="section-sub">スペックではなく、あなた自身の<em style="font-style:normal; color:var(--c-blue);">「良さ」</em>を届ける。6つのステップで伴走します。</p>
-
-      <div class="step-list">
-
-        <div class="step-card step-01 step-animate">
-          <div class="step-marker"><span class="step-marker-num">01</span></div>
-          <div class="step-body">
-            <div class="step-header" role="button" tabindex="0" aria-expanded="false">
-              <h3 class="step-header-title">理想の結婚を言語化する</h3>
-              <span class="step-chevron">＋</span>
-            </div>
-            <div class="step-content">
-              <p class="step-text">これまでの恋愛傾向や、あなたの性格、価値観。それらを丁寧に紐解きながら、「恋愛のクセ」や「思考のクセ」を一緒に振り返ります。世間の「正しさ」や周りの目ではなく、「本当は何が好きなのか」。あなた自身を深く知ることから、すべては始まります。</p>
-              <div class="step-tags">
-                <span class="step-tag">価値観ヒアリング</span>
-                <span class="step-tag">自己理解ワーク</span>
-                <span class="step-tag">恋愛傾向の棚卸し</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="step-card step-02 step-animate">
-          <div class="step-marker"><span class="step-marker-num">02</span></div>
-          <div class="step-body">
-            <div class="step-header" role="button" tabindex="0" aria-expanded="false">
-              <h3 class="step-header-title">魅力の「認知」を整える</h3>
-              <span class="step-chevron">＋</span>
-            </div>
-            <div class="step-content">
-              <p class="step-text">理想の相手は、あなたを映し出す鏡でもあります。素敵な相手に見合う自分になれているか、あるいは、あなた本来の魅力が眠ったままになっていないか。イメージコンサルタントによるファッションコーデを通じて、まずは「見た目」から。あなた自身が自分の魅力を信じられる状態へと引き上げます。</p>
-              <div class="step-tags">
-                <span class="step-tag">イメコン同行</span>
-                <span class="step-tag">ファッションコーデ</span>
-                <span class="step-tag">プロフィール写真</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="step-card step-03 step-animate">
-          <div class="step-marker"><span class="step-marker-num">03</span></div>
-          <div class="step-body">
-            <div class="step-header" role="button" tabindex="0" aria-expanded="false">
-              <h3 class="step-header-title">確実なチャンスを掴む</h3>
-              <span class="step-chevron">＋</span>
-            </div>
-            <div class="step-content">
-              <p class="step-text">10万人以上の会員データの中から、あなたの価値観にフィットするお相手を探します。マッチングアプリのような気軽さと、結婚相談所ならではの安心感。お見合いのお店選びやスケジュール調整はすべてハルカゼが行いますので、あなたはただ、目の前のご縁を楽しむことに集中してください。</p>
-              <div class="step-tags">
-                <span class="step-tag">お見合い料0円</span>
-                <span class="step-tag">10万人以上のネットワーク</span>
-                <span class="step-tag">スケジュール調整</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="step-card step-04 step-animate">
-          <div class="step-marker"><span class="step-marker-num">04</span></div>
-          <div class="step-body">
-            <div class="step-header" role="button" tabindex="0" aria-expanded="false">
-              <h3 class="step-header-title">二人の関係を深める</h3>
-              <span class="step-chevron">＋</span>
-            </div>
-            <div class="step-content">
-              <p class="step-text">あなたの良さが真っ直ぐにお相手に伝わるよう、細やかにサポートします。お見合い後のフィードバックや、次につなげるためのデートプランニング、時にはトークの練習まで。独りよがりにならない、心地よいパートナーシップの築き方を並走しながらお伝えします。</p>
-              <div class="step-tags">
-                <span class="step-tag">FB面談</span>
-                <span class="step-tag">デートプランニング</span>
-                <span class="step-tag">トーク特訓</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="step-card step-05 step-animate">
-          <div class="step-marker"><span class="step-marker-num">05</span></div>
-          <div class="step-body">
-            <div class="step-header" role="button" tabindex="0" aria-expanded="false">
-              <h3 class="step-header-title">「迷い」と誠実に向き合う</h3>
-              <span class="step-chevron">＋</span>
-            </div>
-            <div class="step-content">
-              <p class="step-text">「本当にこの人でいいのかな」という迷いは、真剣に向き合っているからこそ生まれるもの。そんな未来への不安も、カウンセラーと一緒に整理していきましょう。一つひとつ納得しながら進むことが、後悔しない決断へとつながります。</p>
-              <div class="step-tags">
-                <span class="step-tag">カウンセリング</span>
-                <span class="step-tag">不安の整理</span>
-                <span class="step-tag">意思決定サポート</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="step-card step-06 step-animate">
-          <div class="step-marker"><span class="step-marker-num">06</span></div>
-          <div class="step-body">
-            <div class="step-header" role="button" tabindex="0" aria-expanded="false">
-              <h3 class="step-header-title">結ばれた、その先の未来へ</h3>
-              <span class="step-chevron">＋</span>
-            </div>
-            <div class="step-content">
-              <p class="step-text">プロポーズのプランニングやご両家のお顔合わせはもちろん、結婚はゴールではなく「始まり」です。幸せな家庭の土台となるパートナーシップの学び（ハルカゼLAB）を通じて、成婚後もずっと続く、二人らしい幸せを形にしていきます。</p>
-              <div class="step-tags">
-                <span class="step-tag">プロポーズサポート</span>
-                <span class="step-tag">ハルカゼLAB</span>
-                <span class="step-tag">成婚準備</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div><!-- /step-list -->
-
-      <!-- LABバナー -->
-      <div class="lab-cta step-animate">
-        <p class="lab-cta-label">Special Plus+</p>
-        <h3 class="lab-cta-title">ハルカゼLAB</h3>
-        <p class="lab-cta-body">出会いだけじゃない。自分を楽しみ、<br>パートナーシップを学ぶための実践的な学び場。</p>
-        <p class="lab-cta-price">Harukaze LAB: 1枚 <strong>1,000円〜</strong>（チケット制）</p>
-        <a href="lab.html" class="btn btn-navy" style="background:rgba(255,255,255,0.15); border:2px solid rgba(255,255,255,0.5); color:#fff;">開催中のプログラムを見る ＞</a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ⑥ WHY HARUKAZE -->
-  <section class="section">
-    <div class="section-inner">
-      <p class="section-label">Why Harukaze</p>
-      <h2 class="section-title">大手の安心感と、<br>少人数制の手厚さを、両方。</h2>
-      <p class="section-sub">ハルカゼは業界No.1のIBJネットワークに加盟しながら、<br>少人数制で「あなた」に伴走します。</p>
-
-      <div class="why-frame">
-        <div class="why-frame-head">
-          <div><span class="why-frame-num">10万人以上</span><span class="why-frame-label">のIBJ婚活ネットワーク</span></div>
-          <p class="why-frame-note">大手もハルカゼも、同じネットワークの中にいます</p>
-        </div>
-        <div class="why-panels">
-          <div class="why-panel">
-            <p class="why-panel-name">大手相談所</p>
-            <div class="why-icon-major">👥</div>
-            <p class="why-panel-caption">多くの会員を抱え、<br>担当者が複数に分かれる</p>
-            <div class="why-tags">
-              <span class="why-tag">規模が大きい</span>
-              <span class="why-tag">担当が変わる</span>
-              <span class="why-tag">画一的なサポート</span>
-            </div>
-          </div>
-          <div class="why-panel why-panel-h">
-            <p class="why-panel-name why-panel-name-h">結婚相談所ハルカゼ</p>
-            <div class="why-icon-h">🤝</div>
-            <p class="why-panel-caption why-panel-caption-h">少人数制で、<br>担当者が最初から最後まで伴走</p>
-            <div class="why-tags">
-              <span class="why-tag-h why-tag">専任カウンセラー</span>
-              <span class="why-tag-h why-tag">少人数制</span>
-              <span class="why-tag-h why-tag">深いサポート</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="why-stats">
-        <div class="why-stat">
-          <div class="why-stat-num">10<small>万人以上</small></div>
-          <div class="why-stat-label">IBJ会員数<br>全国ネットワーク</div>
-        </div>
-        <div class="why-stat">
-          <div class="why-stat-num">0<small>円</small></div>
-          <div class="why-stat-label">お見合い料<br>全プラン無料</div>
-        </div>
-        <div class="why-stat">
-          <div class="why-stat-num">4<small>つの</small></div>
-          <div class="why-stat-label">出会い方<br>アプリ・紹介・AI等</div>
-        </div>
-        <div class="why-stat">
-          <div class="why-stat-num">1<small>対1</small></div>
-          <div class="why-stat-label">専任プランナー<br>が最後まで伴走</div>
-        </div>
-      </div>
-
-      <div class="why-ibj-link">
-        <a href="https://www.ibj.co.jp/" target="_blank" rel="noopener noreferrer">IBJ（日本結婚相談所連盟）公式サイト →</a>
-      </div>
-      <p class="ibj-source">※ IBJ公式データより（2024年実績）</p>
-      <div class="ibj-bnr-row">
-        <img src="images/2025IBJbnr_2.png" alt="IBJ加盟バナー" class="ibj-bnr">
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ⑦ CTA -->
+  <!-- ============================================================
+       CTA
+       ============================================================ -->
   <section class="cta-section">
-    <p class="section-label" style="color:var(--c-blue);">Contact</p>
-    <h2 class="cta-title">「話してみる」が、<br>すべての始まり。</h2>
-    <p class="cta-sub">入会を迷っていても大丈夫。<br>まずはあなたの話を聞かせてください。初回無料。</p>
-    <div class="cta-actions">
-      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn btn-sky">LINEで初回無料面談に申し込む</a>
-      <a href="service.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4); color:#fff;">料金・サービスを見る</a>
+    <span class="cta-eyebrow fade-up">Contact</span>
+    <h2 class="cta-title fade-up delay-1">何気ないことに笑い合える毎日を、<br>ハルカゼで。</h2>
+    <p class="cta-sub fade-up delay-2">入会を迷っていても大丈夫。<br>まずはあなたの話を聞かせてください。初回無料。</p>
+    <div class="cta-actions fade-up delay-3">
+      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn btn-line btn-lg">LINEで初回無料面談に申し込む</a>
+      <a href="service.html" class="btn btn-outline-white">サービス・料金を見る</a>
     </div>
+    <p class="cta-note fade-up delay-4">オンライン対応・全国OK・完全無料相談</p>
   </section>
 
 </main>
 
-<!-- フッター -->
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
 <footer class="site-footer">
   <div class="footer-inner">
     <p class="footer-brand">大阪・吹田・オンラインで全国対応<br>結婚相談所ハルカゼ</p>
     <nav class="footer-links">
       <a href="about.html">メッセージ</a>
-      <a href="about.html#vision">ハルカゼの想い</a>
-      <a href="service.html">サービス内容</a>
-      <a href="service.html#price">サービス・料金</a>
+      <a href="service.html">サービス・料金</a>
       <a href="flow.html">成婚までの流れ</a>
       <a href="lab.html">ハルカゼLAB</a>
       <a href="faq.html">よくある質問</a>
       <a href="blog.html">ブログ</a>
+      <a href="profile.html">代表プロフィール</a>
       <a href="privacy.html">プライバシーポリシー</a>
     </nav>
     <p class="footer-girls-label">女性の方はこちら</p>
@@ -693,10 +1535,52 @@
 
 <!-- フローティングボタン -->
 <div class="float-side-btns">
-  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn">初回無料面談を予約</a>
-  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn">LINEで婚活突破口診断</a>
+  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn float-side-btn-line">初回無料面談を予約</a>
+  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn float-side-btn-line">LINEで婚活突破口診断</a>
 </div>
 
 <script src="js/common.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  /* ── nav scroll shadow ── */
+  var nav = document.getElementById('siteNav');
+  if (nav) {
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+  }
+
+  /* ── step card accordion ── */
+  document.querySelectorAll('.step-card-header').forEach(function (header) {
+    function toggle() {
+      var card = header.closest('.step-card');
+      if (!card) return;
+      var isOpen = card.classList.toggle('is-open');
+      header.setAttribute('aria-expanded', String(isOpen));
+    }
+    header.addEventListener('click', toggle);
+    header.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
+  });
+
+  /* ── fade-up IntersectionObserver ── */
+  var items = document.querySelectorAll('.fade-up');
+  if (items.length && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    items.forEach(function (el) { io.observe(el); });
+  }
+
+})();
+</script>
 </body>
 </html>

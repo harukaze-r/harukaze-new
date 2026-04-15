@@ -48,8 +48,8 @@
       onScroll();
     }
 
-    /* ── スクロールアニメーション（.step-animate） ── */
-    var animItems = document.querySelectorAll('.step-animate');
+    /* ── スクロールアニメーション（.step-animate / .fade-up） ── */
+    var animItems = document.querySelectorAll('.step-animate, .fade-up');
     if (animItems.length > 0 && 'IntersectionObserver' in window) {
       var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
@@ -58,7 +58,7 @@
             io.unobserve(e.target);
           }
         });
-      }, { threshold: 0.12 });
+      }, { threshold: 0.08 });
       animItems.forEach(function (el) { io.observe(el); });
     }
 
