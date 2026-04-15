@@ -20,222 +20,196 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: stretch;
-  background: var(--bg);
-  overflow: hidden;
-  position: relative;
   min-height: calc(100svh - var(--nav-h));
 }
 @media (min-width: 900px) {
-  .hero {
-    min-height: calc(100vh - var(--nav-h));
-    align-items: center;
-  }
-}
-/* モバイル：写真を背景に、テキストを重ねる */
-@media (max-width: 899px) {
-  .hero {
-    grid-template-columns: 1fr;
-    min-height: unset;
-    max-height: unset;
-    position: relative;
-    background: transparent;
-  }
-  .hero-image {
-    position: absolute !important;
-    inset: 0 !important;
-    min-height: unset !important;
-    height: 100% !important;
-    width: 100% !important;
-    z-index: 0;
-    background-size: 88% !important;
-    background-position: 95% 10% !important;
-  }
-  .hero-image::after {
-    background: linear-gradient(
-      to right,
-      rgba(255,255,255,0.96) 0%,
-      rgba(255,255,255,0.85) 45%,
-      rgba(255,255,255,0.3) 65%,
-      rgba(255,255,255,0) 100%
-    ) !important;
-  }
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    text-align: left;
-    padding: clamp(24px, 6vw, 48px) clamp(16px, 4vw, 24px);
-    padding-right: 52%;
-    min-height: clamp(240px, 55vw, 380px);
-    background: transparent !important;
-  }
-  .hero-content .hero-actions {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-  .hero-content .hero-badge {
-    text-align: left;
-  }
-  /* キャプションをヒーロー右下に固定 */
-  .hero-image .hero-photo-caption {
-    position: absolute;
-    bottom: 8px;
-    right: 8px;
-    left: auto;
-    text-align: right;
-    padding: 12px 12px 8px;
-    background: linear-gradient(135deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.35) 100%);
-  }
+  .hero { min-height: calc(100vh - var(--nav-h)); }
 }
 
+/* テキストコンテンツ */
 .hero-content {
-  padding: clamp(20px, 4vw, 96px) clamp(12px, 3vw, 72px);
-  position: relative;
-  z-index: 1;
-  text-align: center;
+  background: var(--bg);
+  padding: clamp(40px, 6vw, 88px) clamp(28px, 5vw, 72px);
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--pink-pale);
-  color: var(--pink-dark);
-  font-size: clamp(9px, 2vw, 14px);
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  padding: clamp(4px, 1vw, 7px) clamp(10px, 2.5vw, 18px);
-  border-radius: 100px;
-  margin-bottom: clamp(24px, 6vw, 48px);
-}
-.hero-badge::before {
-  content: '';
-  display: block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--pink);
-  flex-shrink: 0;
-}
-.hero-kicker {
-  font-family: var(--font-serif);
-  font-size: clamp(13px, 3.6vw, 28px);
-  font-weight: 700;
-  color: var(--text-mid);
-  letter-spacing: 0.04em;
-  display: block;
-  margin-bottom: 2px;
-}
-.hero-title {
-  font-family: var(--font-serif);
-  font-size: clamp(13px, 3.6vw, 28px);
-  font-weight: 700;
-  color: var(--navy);
-  line-height: 1.6;
-  letter-spacing: 0.03em;
-  margin-bottom: clamp(28px, 7vw, 56px);
-  margin-top: 0;
-  padding: clamp(16px, 4vw, 32px) 0;
-  border-top: 1px solid rgba(26,42,68,0.08);
-  border-bottom: 1px solid rgba(26,42,68,0.08);
-}
-.hero-title em {
-  color: var(--pink);
-  font-style: normal;
-}
-.hero-desc {
-  font-size: clamp(11px, 1.8vw, 16px);
-  color: var(--text-mid);
-  line-height: 2;
-  margin-bottom: 40px;
-  max-width: 360px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: clamp(8px, 2vw, 14px);
-  align-items: center;
-  justify-content: center;
-}
-.hero-line-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.hero-note {
-  font-size: clamp(9px, 1.8vw, 12px);
-  color: var(--text-light);
-  letter-spacing: 0.04em;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
 }
 
-/* ヒーロー画像側 */
+/* 写真カラム */
 .hero-image {
-  height: 100%;
-  min-height: clamp(300px, 80vw, 420px);
   position: relative;
   overflow: hidden;
   background-image: url('newimages/IMG_0160.jpeg');
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
-  background-color: var(--bg);
-}
-.hero-photo-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 28px 20px 16px;
-  background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0) 100%);
-  text-align: center;
-  z-index: 2;
-}
-.hero-photo-caption-role {
-  font-size: clamp(9px, 1.8vw, 11px);
-  color: rgba(255,255,255,0.82);
-  letter-spacing: 0.14em;
-  margin-bottom: 4px;
-}
-.hero-photo-caption-name {
-  font-family: var(--font-serif);
-  font-size: clamp(12px, 2.5vw, 16px);
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: 0.1em;
 }
 .hero-image img { display: none; }
-.hero-image::after {
+/* 写真左端：テキスト側へのフェード */
+.hero-image::before {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to right,
-    #ffffff 0%,
-    rgba(255,255,255,0.55) 22%,
-    rgba(255,255,255,0) 50%
+    var(--bg) 0%,
+    rgba(249,247,245,0.3) 14%,
+    rgba(249,247,245,0) 32%
   );
+  z-index: 1;
+  pointer-events: none;
 }
+/* 写真下端：キャプション用暗いグラデーション */
+.hero-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.42) 0%,
+    rgba(0,0,0,0) 38%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* バッジ */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: clamp(9px, 1.2vw, 11px);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--pink-dark);
+  margin-bottom: clamp(18px, 3vw, 30px);
+}
+.hero-badge::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1.5px;
+  background: var(--pink);
+  flex-shrink: 0;
+}
+
+/* タイトル */
+.hero-kicker {
+  font-family: var(--font-serif);
+  font-size: clamp(17px, 2.6vw, 28px);
+  font-weight: 700;
+  color: var(--text-mid);
+  letter-spacing: 0.04em;
+  display: block;
+  margin-bottom: 4px;
+}
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(17px, 2.6vw, 28px);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.65;
+  letter-spacing: 0.03em;
+  margin: 0 0 clamp(18px, 3vw, 30px);
+  padding: clamp(14px, 2.5vw, 22px) 0;
+  border-top: 1px solid rgba(26,42,68,0.1);
+  border-bottom: 1px solid rgba(26,42,68,0.1);
+}
+.hero-title em {
+  color: var(--pink);
+  font-style: normal;
+}
+
+/* トラストバッジ */
+.hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: clamp(22px, 4vw, 34px);
+}
+.hero-trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: clamp(9px, 1.2vw, 11px);
+  font-weight: 600;
+  color: var(--text-mid);
+  letter-spacing: 0.06em;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(26,42,68,0.12);
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+.hero-trust-item::before {
+  content: '✓';
+  color: var(--pink);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* アクション */
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+/* キャプション */
+.hero-photo-caption {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  z-index: 3;
+  text-align: right;
+}
+.hero-photo-caption-role {
+  font-size: clamp(8px, 1.1vw, 10px);
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.12em;
+  margin-bottom: 3px;
+}
+.hero-photo-caption-name {
+  font-family: var(--font-serif);
+  font-size: clamp(11px, 1.6vw, 14px);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.1em;
+}
+
+/* ── モバイル ── */
 @media (max-width: 899px) {
-  .hero-image {
-    background-size: 88%;
-    background-position: 90% 10%;
+  .hero {
+    grid-template-columns: 1fr;
   }
+  .hero-image {
+    order: -1;
+    height: clamp(260px, 68vw, 360px);
+    background-position: center 10%;
+  }
+  .hero-image::before { display: none; }
   .hero-image::after {
     background: linear-gradient(
       to bottom,
-      rgba(255,255,255,0.75) 0%,
-      rgba(255,255,255,0.3) 40%,
-      rgba(255,255,255,0) 70%
+      rgba(249,247,245,0) 50%,
+      var(--bg) 100%
     );
+  }
+  .hero-content {
+    padding: clamp(8px, 3vw, 20px) clamp(20px, 5vw, 32px) clamp(32px, 7vw, 48px);
+    background: var(--bg);
+    margin-top: -48px;
+    justify-content: flex-start;
+  }
+  .hero-badge { margin-bottom: 14px; }
+  .hero-kicker { font-size: clamp(16px, 4.2vw, 22px); }
+  .hero-title { font-size: clamp(16px, 4.2vw, 22px); }
+  .hero-trust { margin-bottom: 18px; }
+  .hero-photo-caption {
+    bottom: 60px;
+    right: 14px;
   }
   .hero-content .btn {
     padding: 10px 16px;
@@ -1180,10 +1154,12 @@
         <span class="hero-kicker">「いい人だけど」を卒業して、</span>
         <em>「あなたがいい」で選ばれる。</em>
       </h1>
+      <div class="hero-trust fade-up delay-2">
+        <span class="hero-trust-item">初回無料面談</span>
+        <span class="hero-trust-item">IBJ正規加盟店</span>
+        <span class="hero-trust-item">大阪・北摂・全国オンライン対応</span>
+      </div>
       <div class="hero-actions fade-up delay-3">
-        <div class="hero-line-wrap">
-          <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn btn-line btn-lg">LINEで初回無料面談に申し込む</a>
-        </div>
         <a href="about.html" class="btn btn-outline">ハルカゼとは</a>
       </div>
     </div>
@@ -1233,12 +1209,6 @@
   <section class="message-section">
     <div class="message-inner">
       <div class="fade-up">
-        <div class="message-photo-wrap">
-          <img src="newimages/IMG_8907.jpeg" alt="代表 石神りさ">
-        </div>
-        <p class="message-photo-caption">代表 マッチングプランナー<br>石神 りさ</p>
-      </div>
-      <div class="fade-up delay-1">
         <span class="section-eyebrow">Message</span>
         <h2 class="message-title">あなただけの魅力を、<br>最高の出会いに、変えていく。</h2>
         <div class="section-rule"></div>
@@ -1260,7 +1230,7 @@
       <div class="steps-header fade-up">
         <div class="steps-header-left">
           <span class="section-eyebrow">What We Do</span>
-          <h2 class="section-title">ハルカゼが<br>やること、6つ。</h2>
+          <h2 class="section-title">ハルカゼで<br>やること、6つ。</h2>
         </div>
         <div class="steps-header-right">
           <div class="steps-lead">
@@ -1427,25 +1397,7 @@
     <!-- 下段：カードエリア（ダーク） -->
     <div class="lab-cards-area">
       <div class="lab-inner">
-        <span class="lab-features-label fade-up">What You Can Do</span>
-        <div class="lab-features-circle fade-up delay-1">
-          <div class="lab-feature-circle-card">
-            <span class="lab-feature-circle-num">01</span>
-            <h3 class="lab-feature-circle-title">出会いのモヤモヤ相談室</h3>
-            <p class="lab-feature-circle-desc">出会いの悩みをぶっちゃける・現状の整理・コーチングセッション</p>
-          </div>
-          <div class="lab-feature-circle-card">
-            <span class="lab-feature-circle-num">02</span>
-            <h3 class="lab-feature-circle-title">小手先のテクニックではない、一生モノの学び</h3>
-            <p class="lab-feature-circle-desc">パートナーシップ・セルフラブ・セクシャルウェルネス</p>
-          </div>
-          <div class="lab-feature-circle-card">
-            <span class="lab-feature-circle-num">03</span>
-            <h3 class="lab-feature-circle-title">圧倒的な「始めやすさ」</h3>
-            <p class="lab-feature-circle-desc">パーソナル会員：入会特典（無料）<br>会員以外もOK：チケット制 1,000円〜</p>
-          </div>
-        </div>
-        <div class="lab-cta-bar fade-up delay-2">
+        <div class="lab-cta-bar fade-up">
           <a href="lab.html" class="btn btn-light btn-lg">LABの詳細を見る →</a>
         </div>
       </div>
@@ -1574,8 +1526,8 @@
        ============================================================ -->
   <section class="cta-section">
     <span class="cta-eyebrow fade-up">Contact</span>
-    <h2 class="cta-title fade-up delay-1">何気ないことに笑い合える毎日を、<br>ハルカゼで。</h2>
-    <p class="cta-sub fade-up delay-2">入会を迷っていても大丈夫。<br>まずはあなたの話を聞かせてください。初回無料。</p>
+    <h2 class="cta-title fade-up delay-1">何気ないことに笑い合える毎日を、</h2>
+    <p class="cta-sub fade-up delay-2">入会を迷っていても大丈夫。<br>あなたの話を聞かせてください。</p>
     <div class="cta-actions fade-up delay-3">
       <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn btn-line btn-lg">LINEで初回無料面談に申し込む</a>
       <a href="service.html" class="btn btn-outline-white">サービス・料金を見る</a>
