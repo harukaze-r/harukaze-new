@@ -17,62 +17,77 @@
 
 /* ── HERO ── */
 .hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: stretch;
-  min-height: calc(100svh - var(--nav-h));
-}
-@media (min-width: 900px) {
-  .hero { min-height: calc(100vh - var(--nav-h)); }
-}
-
-/* テキストコンテンツ */
-.hero-content {
-  background: var(--bg);
-  padding: clamp(40px, 6vw, 88px) clamp(28px, 5vw, 72px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: left;
-}
-
-/* 写真カラム */
-.hero-image {
   position: relative;
   overflow: hidden;
-  background-image: url('newimages/IMG_0160.jpeg');
+  --pink: #D4637C;  /* 彩度を少し抑えたピンク */
+}
+
+/* 写真（全面背景） */
+.hero-image {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  background-image: url('newimages/Photoroom_20260419_000227.png');
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
+  background-color: #C8CDD5;  /* ソフトブルーグレー（参考配色） */
+  overflow: hidden;
+}
+@media (min-width: 900px) {
+  .hero-image {
+    min-height: 88vh;
+    background-size: 55% auto;
+    background-position: 80% center;
+  }
 }
 .hero-image img { display: none; }
-/* 写真左端：テキスト側へのフェード */
+
+/* 左側：ブルーグレーで文字コントラスト確保 */
 .hero-image::before {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to right,
-    var(--bg) 0%,
-    rgba(249,247,245,0.3) 14%,
-    rgba(249,247,245,0) 32%
+    rgba(30,38,52,0.68) 0%,
+    rgba(30,38,52,0.32) 48%,
+    rgba(30,38,52,0) 70%
   );
   z-index: 1;
   pointer-events: none;
 }
-/* 写真下端：キャプション用暗いグラデーション */
+
+/* 右側：背景と人物の境界をなじませる */
 .hero-image::after {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    to top,
-    rgba(0,0,0,0.42) 0%,
-    rgba(0,0,0,0) 38%
+    to left,
+    rgba(200,205,213,0.18) 0%,
+    rgba(200,205,213,0.06) 45%,
+    rgba(200,205,213,0) 62%
   );
   z-index: 1;
   pointer-events: none;
+}
+
+/* テキストオーバーレイ（PC: 左上 / モバイル: 写真下部） */
+.hero-text {
+  position: absolute;
+  z-index: 2;
+  left: clamp(40px, 7vw, 100px);
+  bottom: clamp(60px, 9vh, 130px);
+  max-width: min(52%, 560px);
+}
+@media (min-width: 900px) {
+  .hero-text {
+    top: clamp(60px, 10vh, 120px);
+    bottom: auto;
+    left: clamp(48px, 6vw, 100px);
+    max-width: min(48%, 580px);
+  }
 }
 
 /* バッジ */
@@ -80,11 +95,14 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-size: clamp(9px, 1.2vw, 11px);
+  font-size: clamp(9px, 1vw, 11px);
   font-weight: 700;
   letter-spacing: 0.14em;
-  color: var(--pink-dark);
-  margin-bottom: clamp(18px, 3vw, 30px);
+  color: rgba(255,255,255,0.9);
+  margin-bottom: clamp(16px, 2.5vw, 26px);
+}
+@media (min-width: 900px) {
+  .hero-badge { font-size: clamp(13px, 1.4vw, 18px); }
 }
 .hero-badge::before {
   content: '';
@@ -98,28 +116,59 @@
 /* タイトル */
 .hero-kicker {
   font-family: var(--font-serif);
-  font-size: clamp(17px, 2.6vw, 28px);
+  font-size: clamp(20px, 2.8vw, 34px);
   font-weight: 700;
-  color: var(--text-mid);
+  color: rgba(255,255,255,0.92);
   letter-spacing: 0.04em;
   display: block;
   margin-bottom: 4px;
 }
 .hero-title {
   font-family: var(--font-serif);
-  font-size: clamp(17px, 2.6vw, 28px);
+  font-size: clamp(20px, 2.8vw, 34px);
   font-weight: 700;
-  color: var(--navy);
-  line-height: 1.65;
+  color: #fff;
+  line-height: 1.6;
   letter-spacing: 0.03em;
-  margin: 0 0 clamp(18px, 3vw, 30px);
-  padding: clamp(14px, 2.5vw, 22px) 0;
-  border-top: 1px solid rgba(26,42,68,0.1);
-  border-bottom: 1px solid rgba(26,42,68,0.1);
+  margin: 0 0 8px;
+  padding: clamp(14px, 2vw, 20px) 0;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+@media (min-width: 900px) {
+  .hero-kicker {
+    font-size: clamp(26px, 3.2vw, 44px);
+    display: block;
+    white-space: nowrap;
+  }
+  .hero-title { font-size: clamp(26px, 3.2vw, 44px); }
+  .hero-title em {
+    display: block;
+    white-space: nowrap;
+  }
+  .hero-text { max-width: none; }
 }
 .hero-title em {
-  color: var(--pink);
   font-style: normal;
+}
+.hero-em-pink {
+  color: var(--pink);
+  text-shadow: 0 1px 6px rgba(0,0,0,0.35), 0 0 18px rgba(200,60,100,0.35);
+}
+.hero-em-white {
+  color: #fff;
+}
+
+/* サブタイトル */
+.hero-sub {
+  font-family: var(--font-sans);
+  font-size: clamp(12px, 1.3vw, 17px);
+  font-weight: 300;
+  color: rgba(255,255,255,0.88);
+  letter-spacing: 0.16em;
+  line-height: 1.7;
+  margin: 0 0 clamp(28px, 4vw, 44px);
+  white-space: nowrap;
 }
 
 /* トラストバッジ */
@@ -127,20 +176,21 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: clamp(22px, 4vw, 34px);
+  margin-bottom: clamp(20px, 2.5vw, 30px);
 }
 .hero-trust-item {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-size: clamp(9px, 1.2vw, 11px);
+  font-size: clamp(9px, 1vw, 11px);
   font-weight: 600;
-  color: var(--text-mid);
+  color: rgba(255,255,255,0.9);
   letter-spacing: 0.06em;
-  background: rgba(255,255,255,0.9);
-  border: 1px solid rgba(26,42,68,0.12);
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.35);
   border-radius: 4px;
   padding: 5px 10px;
+  backdrop-filter: blur(4px);
 }
 .hero-trust-item::before {
   content: '✓';
@@ -156,6 +206,45 @@
   gap: 10px;
   align-items: flex-start;
 }
+.hero-text .btn-outline {
+  color: #fff;
+  border-color: rgba(255,255,255,0.7);
+}
+.hero-text .btn-outline:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: #fff;
+}
+
+/* PC: 左下CTAボタン */
+.hero-cta-bottom {
+  display: none;
+}
+@media (min-width: 900px) {
+  .hero-cta-bottom {
+    display: inline-flex;
+    align-items: center;
+    position: absolute;
+    z-index: 3;
+    bottom: clamp(32px, 5vh, 60px);
+    left: clamp(48px, 6vw, 100px);
+    background: #000;
+    color: #fff;
+    font-family: var(--font-sans);
+    font-size: clamp(13px, 1.2vw, 15px);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    padding: 16px 40px;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: background 0.25s, transform 0.2s;
+  }
+  .hero-cta-bottom:hover {
+    background: #5C4A42;
+    transform: translateY(-2px);
+    opacity: 1;
+  }
+  .hero-text .hero-actions { display: none; }
+}
 
 /* キャプション */
 .hero-photo-caption {
@@ -166,61 +255,76 @@
   text-align: right;
 }
 .hero-photo-caption-role {
-  font-size: clamp(8px, 1.1vw, 10px);
+  font-size: clamp(8px, 1vw, 10px);
   color: rgba(255,255,255,0.85);
   letter-spacing: 0.12em;
   margin-bottom: 3px;
 }
+@media (min-width: 900px) {
+  .hero-photo-caption-role { color: rgba(0,0,0,0.7); }
+}
 .hero-photo-caption-name {
   font-family: var(--font-serif);
-  font-size: clamp(11px, 1.6vw, 14px);
+  font-size: clamp(11px, 1.5vw, 14px);
   font-weight: 700;
   color: #fff;
   letter-spacing: 0.1em;
 }
+@media (min-width: 900px) {
+  .hero-photo-caption-name { color: #000; }
+}
+
+/* モバイル下部エリア（PC: 非表示） */
+.hero-below { display: none; }
 
 /* ── モバイル ── */
 @media (max-width: 899px) {
-  .hero {
-    grid-template-columns: 1fr;
-  }
   .hero-image {
-    order: -1;
-    height: clamp(260px, 68vw, 360px);
-    background-position: center 10%;
+    min-height: 0;
+    height: 75vw;
+    background-position: center top;
   }
-  .hero-image::before { display: none; }
-  .hero-image::after {
+  .hero-image::before {
     background: linear-gradient(
       to bottom,
-      rgba(249,247,245,0) 50%,
-      var(--bg) 100%
+      rgba(0,0,0,0.05) 0%,
+      rgba(0,0,0,0.45) 65%,
+      rgba(0,0,0,0.65) 100%
     );
   }
-  .hero-content {
-    padding: clamp(8px, 3vw, 20px) clamp(20px, 5vw, 32px) clamp(32px, 7vw, 48px);
+  .hero-text {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    max-width: 100%;
+  }
+  .hero-kicker { font-size: clamp(16px, 4.5vw, 22px); }
+  .hero-title  { font-size: clamp(16px, 4.5vw, 22px); margin-bottom: 0; }
+  .hero-text .hero-trust,
+  .hero-text .hero-actions { display: none; }
+  .hero-below {
+    display: block;
     background: var(--bg);
-    margin-top: -48px;
-    justify-content: flex-start;
+    padding: 22px clamp(20px, 5vw, 32px) clamp(28px, 7vw, 44px);
   }
-  .hero-badge { margin-bottom: 14px; }
-  .hero-kicker { font-size: clamp(16px, 4.2vw, 22px); }
-  .hero-title { font-size: clamp(16px, 4.2vw, 22px); }
-  .hero-trust { margin-bottom: 18px; }
+  .hero-below .hero-trust {
+    margin-bottom: 16px;
+  }
+  .hero-below .hero-trust-item {
+    color: var(--text-mid);
+    background: rgba(255,255,255,0.9);
+    border: 1px solid rgba(26,42,68,0.12);
+    backdrop-filter: none;
+  }
+  .hero-below .hero-actions { align-items: flex-start; }
   .hero-photo-caption {
-    bottom: 60px;
-    right: 14px;
-  }
-  .hero-content .btn {
-    padding: 10px 16px;
-    font-size: 11px;
-    letter-spacing: 0.04em;
-  }
-  .hero-content .btn-lg {
-    padding: 11px 18px;
-    font-size: 11px;
+    bottom: auto;
+    top: 12px;
+    right: 12px;
   }
 }
+
+
 
 /* ── チェックリスト ── */
 .check-section {
@@ -283,7 +387,7 @@
 /* ── LINE診断バナー ── */
 .shindan-section {
   padding: clamp(20px, 2.5vw, 32px) clamp(24px, 5vw, 48px);
-  background: var(--bg-gray);
+  background: #fff;
 }
 .shindan-inner {
   max-width: 640px;
@@ -1148,26 +1252,41 @@
        HERO
        ============================================================ -->
   <section class="hero">
-    <div class="hero-content">
-      <span class="hero-badge fade-up">20〜40代男性に特化した結婚相談所</span>
-      <h1 class="hero-title fade-up delay-1">
-        <span class="hero-kicker">「いい人だけど」を卒業して、</span>
-        <em>「あなたがいい」で選ばれる。</em>
-      </h1>
-      <div class="hero-trust fade-up delay-2">
+    <div class="hero-image">
+      <img src="newimages/Photoroom_20260419_000227.png" alt="ハルカゼのイメージ">
+      <!-- PC: 全テキスト / モバイル: バッジ+タイトルのみ写真上に重ねる -->
+      <div class="hero-text">
+        <span class="hero-badge fade-up">男性専門結婚相談所</span>
+        <h1 class="hero-title fade-up delay-1">
+          <span class="hero-kicker">「いい人」を卒業して、</span>
+          <em><span class="hero-em-pink">「あなたがいい」</span><span class="hero-em-white">で選ばれる。</span></em>
+        </h1>
+        <p class="hero-sub fade-up delay-2">― 飾らないあなたのまま、結婚したいと思われる男性へ。</p>
+        <div class="hero-trust fade-up delay-3">
+          <span class="hero-trust-item">初回無料面談</span>
+          <span class="hero-trust-item">IBJ正規加盟店</span>
+          <span class="hero-trust-item">大阪・北摂・全国オンライン対応</span>
+        </div>
+        <div class="hero-actions fade-up delay-3">
+          <a href="about.html" class="btn btn-outline">ハルカゼとは</a>
+        </div>
+      </div>
+      <!-- PC: 左下CTA -->
+      <a href="contact.html" class="hero-cta-bottom fade-up">無料面談に申し込む</a>
+      <div class="hero-photo-caption">
+        <p class="hero-photo-caption-role">代表　マッチングプランナー</p>
+        <p class="hero-photo-caption-name">石神りさ</p>
+      </div>
+    </div>
+    <!-- モバイルのみ: 写真の下にtrust+ボタン -->
+    <div class="hero-below">
+      <div class="hero-trust fade-up">
         <span class="hero-trust-item">初回無料面談</span>
         <span class="hero-trust-item">IBJ正規加盟店</span>
         <span class="hero-trust-item">大阪・北摂・全国オンライン対応</span>
       </div>
-      <div class="hero-actions fade-up delay-3">
+      <div class="hero-actions fade-up delay-1">
         <a href="about.html" class="btn btn-outline">ハルカゼとは</a>
-      </div>
-    </div>
-    <div class="hero-image">
-      <img src="newimages/IMG_0160.jpeg" alt="ハルカゼのイメージ">
-      <div class="hero-photo-caption">
-        <p class="hero-photo-caption-role">代表　マッチングプランナー</p>
-        <p class="hero-photo-caption-name">石神りさ</p>
       </div>
     </div>
   </section>
@@ -1177,7 +1296,7 @@
        ============================================================ -->
   <section class="check-section">
     <div class="check-inner">
-      <h2 class="check-title fade-up">こんな悩み、ありませんか？</h2>
+      <h2 class="check-title fade-up">こんな人ほど、ハルカゼ向き。</h2>
       <ul class="check-list">
         <li class="check-item fade-up delay-1">お見合いは組めるのに、その先に進まない</li>
         <li class="check-item fade-up delay-2">2回目のデートに繋がらない</li>
@@ -1344,8 +1463,8 @@
   <div class="lab-bridge fade-up">
     <div class="lab-bridge-inner">
       <p class="lab-bridge-lead">でも、実際のところ……</p>
-      <p class="lab-bridge-q">「結婚相談所って、まるで物件選びみたい」<br>そう感じていませんか？</p>
-      <p class="lab-bridge-body">年収、学歴、年齢。スペックだけで判断し、判断される。<br>「ここからの出会いで、本当に好きになれるんだろうか？」</p>
+      <p class="lab-bridge-q">「結婚相談所って、物件選びみたい」<br>そう思っていませんか？</p>
+      <p class="lab-bridge-body">年収、学歴、年齢。<br>スペックだけで判断し、判断される。<br>「本当に好きになれる？」</p>
       <!-- 下向き誘導 -->
       <div class="lab-scroll-indicator">
         <div class="lab-scroll-line"></div>
@@ -1608,5 +1727,6 @@
 
 })();
 </script>
+
 </body>
 </html>
