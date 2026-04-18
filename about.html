@@ -253,6 +253,60 @@
 /* 詳細パネル */
 .shin-circle { cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
 .shin-circle.is-active { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+/* クリックヒント */
+.shin-circle-tap {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--pink);
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+  z-index: 1;
+  opacity: 0.8;
+}
+.shin-circle-tap::before {
+  content: '▼';
+  font-size: 8px;
+  color: var(--pink);
+  flex-shrink: 0;
+  transition: transform 0.3s;
+  line-height: 1;
+}
+.shin-circle.is-active .shin-circle-tap::before {
+  transform: rotate(180deg);
+}
+
+/* 促進テキスト */
+.shin-circles-hint {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-light);
+  letter-spacing: 0.1em;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.shin-circles-hint::before,
+.shin-circles-hint::after {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--border);
+}
+
+/* 円のパルスアニメーション */
+@keyframes shin-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212,99,124,0.15); }
+  50% { box-shadow: 0 0 0 8px rgba(212,99,124,0); }
+}
+.shin-circle:not(.is-active) {
+  animation: shin-pulse 2.5s ease-in-out infinite;
+}
 .shin-detail-panels { margin-top: 32px; }
 .shin-detail {
   display: none;
@@ -584,10 +638,9 @@
       <img src="newimages/IMG_8907.jpeg" alt="石神りさ – ハルカゼ代表">
     </div>
     <div class="hero-text">
-      <span class="hero-en" aria-hidden="true">HARU<br>KAZE</span>
       <span class="hero-eyebrow">About</span>
-      <h1 class="hero-title">人生に、<br>はじまりの風を。</h1>
-      <p class="hero-sub">「それなり」より、「これがいい」<br>そう思える自分へ。<br><br>この婚活が、人生を主役で楽しむ<br>「きっかけの時間」になるように。<br>「素・良・芯」で、始める婚活。</p>
+      <h1 class="hero-title">「これがいい」って<br>納得できる選択を。</h1>
+      <p class="hero-sub">ただ結婚相談所に登録しているだけの「ひとり婚活」も、<br>無難な自分を演じて「いい人」で終わる毎日も、もう終わり。<br><br>あなたの本質（素・良・芯）を、選ばれるための「戦略」に変える。<br>選ばれる以上に、あなたが心から納得できる「あなた自身」であるために。</p>
       <div class="hero-rule"></div>
     </div>
   </section>
@@ -625,6 +678,7 @@
             <div class="shin-circle-rule"></div>
             <span class="shin-circle-ja">素</span>
             <span class="shin-circle-desc">自分を<br>面白がる</span>
+            <span class="shin-circle-tap"></span>
           </div>
         </div>
         <div class="shin-circles-bottom">
@@ -634,6 +688,7 @@
             <div class="shin-circle-rule"></div>
             <span class="shin-circle-ja">良</span>
             <span class="shin-circle-desc">良さを<br>最大化する</span>
+            <span class="shin-circle-tap"></span>
           </div>
           <div class="shin-circle shin-circle-3" data-detail="3" role="button" tabindex="0" aria-expanded="false">
             <span class="shin-circle-num">3</span>
@@ -641,6 +696,7 @@
             <div class="shin-circle-rule"></div>
             <span class="shin-circle-ja">芯</span>
             <span class="shin-circle-desc">本音を<br>芯にする</span>
+            <span class="shin-circle-tap"></span>
           </div>
         </div>
       </div>
@@ -681,7 +737,7 @@
 あなたが、あなたを生きる充実感。<br>
 その輝きは、いつか必ず、大切な誰かの力になる。<br>
 一人の「満足」が、二人の「幸せ」へ。<br>
-ここから、新しい循環を始めましょう。</p>
+次は、あなたの大切な誰かと。</p>
     </div>
   </section>
 
