@@ -143,6 +143,35 @@
   letter-spacing: 0.04em;
   max-width: 320px;
 }
+.about-signature {
+  margin-top: 28px;
+  margin-bottom: 4px;
+}
+.about-signature-role {
+  font-size: 11px;
+  color: var(--text-mid);
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+.about-signature-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.12em;
+  margin-bottom: 12px;
+}
+.about-signature-link {
+  display: inline-block;
+  font-size: 12px;
+  color: var(--navy);
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid var(--navy);
+  padding-bottom: 2px;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.about-signature-link:hover { opacity: 1; }
 .hero-rule {
   width: 36px;
   height: 2px;
@@ -164,6 +193,15 @@
   line-height: 2;
   max-width: 520px;
   margin: 16px auto 0;
+}
+.shin-note {
+  font-size: 12px;
+  color: var(--text-mid);
+  line-height: 2;
+  letter-spacing: 0.06em;
+  max-width: 480px;
+  margin: 20px auto 0;
+  opacity: 0.7;
 }
 
 /* 三円：上1 + 下2 */
@@ -639,8 +677,13 @@
     </div>
     <div class="hero-text">
       <span class="hero-eyebrow">About</span>
-      <h1 class="hero-title">「これがいい」って<br>納得できる選択を。</h1>
-      <p class="hero-sub">ただ結婚相談所に登録しているだけの「ひとり婚活」も、<br>無難な自分を演じて「いい人」で終わる毎日も、もう終わり。<br><br>あなたの本質（素・良・芯）を、選ばれるための「戦略」に変える。<br>選ばれる以上に、あなたが心から納得できる「あなた自身」であるために。</p>
+      <h1 class="hero-title"><span style="display:block;">「この人がいい」と思える相手と、</span><span style="display:block;">2人で笑える毎日へ。</span></h1>
+      <p class="hero-sub">ただ登録しているだけの「ひとり婚活」も、<br>「いい人」止まりで終わる婚活も、もう卒業。<br><br>今の延長線上の未来より、<br>「こうだったらいいな」と思う未来を、結婚の先にある、もっと面白い人生を、選びにいく。</p>
+      <div class="about-signature">
+        <p class="about-signature-role">代表　マッチングプランナー</p>
+        <p class="about-signature-name">石神 りさ</p>
+        <a href="profile.html" class="about-signature-link">挨拶・プロフィール →</a>
+      </div>
       <div class="hero-rule"></div>
     </div>
   </section>
@@ -667,6 +710,7 @@
         <h2 class="section-title">ハルカゼの婚活、3つの軸。</h2>
         <div class="section-rule section-rule-center"></div>
         <p class="shin-intro"></p>
+        <p class="shin-note fade-up">誠実に？<br>それは「こうだったらいいな」に、嘘はつかないこと。</p>
       </div>
 
       <!-- 三円 -->
@@ -744,28 +788,6 @@
   <!-- ============================================================
        MESSAGE
        ============================================================ -->
-  <section class="message-main-section">
-    <div class="message-main-inner">
-      <div class="fade-up">
-        <div class="message-photo-frame">
-          <img src="newimages/IMG_8907.jpeg" alt="石神りさ – ハルカゼ代表">
-        </div>
-        <div class="message-credit">
-          <p class="message-credit-role">代表　マッチングプランナー</p>
-          <p class="message-credit-name">石神 りさ</p>
-          <a href="profile.html" class="message-profile-link">挨拶・プロフィール →</a>
-        </div>
-      </div>
-      <div class="fade-up delay-1">
-        <span class="section-eyebrow">Message</span>
-        <h2 class="message-lead">「正しさ」よりも、<br>心が動く方へ。</h2>
-        <div class="message-rule"></div>
-        <div class="message-body">
-          <p>自分の人生を面白がっている人は、かっこいい。<br>その一歩に、伴走します。</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ============================================================
        CTA
