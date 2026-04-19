@@ -282,57 +282,55 @@
 @media (max-width: 899px) {
   .hero-image {
     min-height: 0;
-    height: 75vw;
-    background-position: center top;
+    height: 138vw;
+    background-size: 82% auto;
+    background-position: center bottom;
+    background-color: #1A2A44;
   }
   .hero-image::before {
     background: linear-gradient(
       to bottom,
-      rgba(0,0,0,0.05) 0%,
-      rgba(0,0,0,0.45) 65%,
-      rgba(0,0,0,0.65) 100%
+      rgba(26,42,68,0.72) 0%,
+      rgba(26,42,68,0.30) 45%,
+      rgba(26,42,68,0) 70%
     );
   }
+  .hero-image::after  { display: none; }
   .hero-text {
-    left: 16px;
-    right: 16px;
-    bottom: 52px;
+    left: 20px;
+    right: 20px;
+    top: 56px;
+    bottom: auto;
     max-width: 100%;
   }
-  .hero-badge  { font-size: clamp(13px, 3.8vw, 17px); }
-  .hero-kicker { font-size: clamp(20px, 5.8vw, 28px); }
-  .hero-title  { font-size: clamp(20px, 5.8vw, 28px); margin-bottom: 0; }
+  .hero-badge  { font-size: clamp(13px, 3.8vw, 17px); color: rgba(255,255,255,0.75); }
+  .hero-kicker { font-size: clamp(22px, 6.4vw, 30px); white-space: nowrap; color: rgba(255,255,255,0.92); }
+  .hero-title  { font-size: clamp(22px, 6.4vw, 30px); margin-bottom: 0; border-color: rgba(255,255,255,0.25); color: #fff; }
+  .hero-title em { white-space: nowrap; display: block; }
   .hero-text .hero-sub,
   .hero-text .hero-trust,
   .hero-text .hero-actions { display: none; }
+  /* 下部エリア：ネイビー背景で統一 */
   .hero-below {
     display: block;
-    background: var(--bg);
+    background: #1A2A44;
     padding: 20px clamp(20px, 5vw, 32px) clamp(28px, 7vw, 44px);
   }
-  .hero-below .hero-trust {
-    margin-bottom: 16px;
-  }
+  .hero-below .hero-trust { margin-bottom: 16px; }
   .hero-below .hero-trust-item {
-    color: var(--text-mid);
-    background: rgba(255,255,255,0.9);
-    border: 1px solid rgba(26,42,68,0.12);
+    color: rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
     backdrop-filter: none;
   }
-  .hero-below .hero-actions { align-items: flex-start; }
-  /* キャプション: 右下 */
-  .hero-photo-caption {
-    bottom: 14px;
-    top: auto;
-    right: 14px;
-  }
-  /* モバイル用サブタイトル */
+  .hero-below .hero-actions { display: none; }
+  .hero-photo-caption { display: none; }
   .hero-sub-mobile {
     display: block;
     font-family: var(--font-sans);
     font-size: clamp(12px, 3.4vw, 15px);
     font-weight: 300;
-    color: var(--text-mid);
+    color: rgba(255,255,255,0.7);
     letter-spacing: 0.12em;
     line-height: 1.9;
     margin-bottom: 20px;
@@ -399,7 +397,7 @@
 
 /* ── チェックリスト ── */
 .check-section {
-  background: var(--navy);
+  background: #fff;
   padding: clamp(56px, 7vw, 96px) clamp(24px, 5vw, 48px);
 }
 .check-inner {
@@ -410,7 +408,7 @@
   font-family: var(--font-serif);
   font-size: clamp(18px, 2.8vw, 26px);
   font-weight: 500;
-  color: rgba(255,255,255,0.9);
+  color: var(--navy);
   letter-spacing: 0.06em;
   margin-bottom: 36px;
   text-align: center;
@@ -433,14 +431,14 @@
   align-items: center;
   gap: 14px;
   padding: 14px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(26,42,68,0.10);
   font-size: 14px;
-  color: rgba(255,255,255,0.82);
+  color: rgba(26,42,68,0.78);
   line-height: 1.7;
   letter-spacing: 0.03em;
 }
 .check-list > li:first-child {
-  border-top: 1px solid rgba(255,255,255,0.08);
+  border-top: 1px solid rgba(26,42,68,0.10);
 }
 .check-item::before {
   content: '✓';
@@ -452,6 +450,29 @@
 }
 .check-cta {
   text-align: center;
+}
+.wavy-em {
+  position: relative;
+  display: inline-block;
+}
+.wavy-em::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -7px;
+  height: 7px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='5'%3E%3Cpath d='M0,3 C20,0.5 40,4.5 80,2.5 C120,0.5 140,4.5 160,2.5' stroke='%23D4637C' stroke-width='1.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 160px 5px;
+}
+.check-cta .btn-line {
+  background: var(--navy);
+  box-shadow: none;
+}
+.check-cta .btn-line:hover {
+  background: #243654;
+  box-shadow: 0 8px 24px rgba(26,42,68,0.30);
 }
 
 /* ── LINE診断バナー ── */
@@ -1361,9 +1382,6 @@
         <span class="hero-trust-item">IBJ正規加盟店</span>
         <span class="hero-trust-item">大阪・北摂・全国オンライン対応</span>
       </div>
-      <div class="hero-actions fade-up delay-1">
-        <a href="about.html" class="btn btn-outline">ハルカゼとは</a>
-      </div>
     </div>
   </section>
 
@@ -1372,17 +1390,18 @@
        ============================================================ -->
   <section class="check-section">
     <div class="check-inner">
-      <h2 class="check-title fade-up">こんな人ほど、ハルカゼ向き。</h2>
+      <h2 class="check-title fade-up">こんな人ほど、<span class="wavy-em">ハルカゼ向き</span></h2>
       <ul class="check-list">
         <li class="check-item fade-up delay-1">お見合いは組めるのに、その先に進まない</li>
         <li class="check-item fade-up delay-2">2回目のデートに繋がらない</li>
         <li class="check-item fade-up delay-1">気を遣いすぎて無難な会話になってしまう</li>
         <li class="check-item fade-up delay-2">恋愛経験が少なく、距離の縮め方がわからない</li>
-        <li class="check-item fade-up delay-1">焦ってはいないが、いつか結婚したい気持ちはある。</li>
+        <li class="check-item fade-up delay-2">焦ってはいないが、いつか結婚したい気持ちはある。</li>
+        <li class="check-item fade-up delay-1">「いい人」で終わってしまう</li>
       </ul>
       <div class="check-cta fade-up delay-2">
         <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn btn-line btn-lg">まずは無料で相談してみる</a>
-        <p style="margin-top:10px; font-size:12px; color:rgba(255,255,255,0.45); letter-spacing:0.06em;">初回無料・オンライン対応・全国OK</p>
+        <p style="margin-top:10px; font-size:12px; color:var(--navy); letter-spacing:0.06em;">オンライン・40分・全国どこからでもOK</p>
       </div>
     </div>
   </section>
@@ -1405,7 +1424,7 @@
     <div class="message-inner">
       <div class="fade-up">
         <span class="section-eyebrow">Message</span>
-        <h2 class="message-title">あなただけの魅力を、<br>最高の出会いに、変えていく。</h2>
+        <h2 class="message-title">あなただけの魅力を、<br>最高の出会いに、変えていく</h2>
         <div class="section-rule"></div>
         <div class="message-body">
           <p>婚活のセオリーやスペック、誰かが決めた「型」に合わせるよりも、あなたが「活きる」婚活で、戦略的に、そしてどこまでも誠実に。</p>
@@ -1425,12 +1444,12 @@
       <div class="steps-header fade-up">
         <div class="steps-header-left">
           <span class="section-eyebrow">What We Do</span>
-          <h2 class="section-title">ハルカゼで<br>やること、6つ。</h2>
+          <h2 class="section-title">ハルカゼで<br>やること、6つ</h2>
         </div>
         <div class="steps-header-right">
           <div class="steps-lead">
-            <p>「伝え方」で、届かなかった魅力を、<br>「選ばれるための確かな理由」に変える。</p>
-            <p>入会から成婚まで、ひとつひとつ一緒に進んでいきます。</p>
+            <p>届かなかった魅力を、「選ばれる理由」へ。</p>
+            <p>「伝え方」を戦略に変え、マンツーマンで徹底サポート。<br>ひとりじゃないから、結果に繋がる。</p>
           </div>
         </div>
       </div>
@@ -1539,7 +1558,7 @@
     <div class="lab-bridge-inner">
       <p class="lab-bridge-lead">でも、実際のところ……</p>
       <p class="lab-bridge-q">「結婚相談所って、物件選びみたい」<br>そう思っていませんか？</p>
-      <p class="lab-bridge-body">年収、学歴、年齢。<br>スペックだけで判断し、判断される。<br>「本当に好きになれる？」</p>
+      <p class="lab-bridge-body">年収、学歴、年齢。<br>スペックだけで判断し、判断される！<br>「本当に好きになれる？」</p>
       <!-- 下向き誘導 -->
       <div class="lab-scroll-indicator">
         <div class="lab-scroll-line"></div>
@@ -1606,7 +1625,7 @@
     <div class="why-inner">
       <div class="why-header fade-up">
         <span class="section-eyebrow">Why Harukaze</span>
-        <h2 class="section-title">ハルカゼを選ぶ理由。</h2>
+        <h2 class="section-title">ハルカゼを選ぶ理由へ</h2>
         <div class="section-rule section-rule-center"></div>
       </div>
 
@@ -1720,7 +1739,7 @@
        ============================================================ -->
   <section class="cta-section">
     <span class="cta-eyebrow fade-up">Contact</span>
-    <h2 class="cta-title fade-up delay-1">何気ないことに笑い合える毎日を、</h2>
+    <h2 class="cta-title fade-up delay-1">何気ないことに、笑い合える毎日を</h2>
     <p class="cta-sub fade-up delay-2">入会を迷っていても大丈夫。<br>あなたの話を聞かせてください。</p>
     <div class="cta-actions fade-up delay-3">
       <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn btn-line btn-lg">LINEで初回無料面談に申し込む</a>
