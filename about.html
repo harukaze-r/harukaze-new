@@ -71,6 +71,34 @@
 @media (min-width: 768px) {
   .page-hero { grid-template-columns: 1fr 1fr; min-height: calc(100vh - var(--nav-h)); }
 }
+/* ヒーロー混在タイポ */
+.hero-kicker-sm {
+  font-size: clamp(13px, 2vw, 15px);
+  color: var(--text-mid);
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 10px;
+}
+.hero-highlight-block {
+  display: inline-block;
+  background: var(--navy);
+  color: #fff;
+  font-size: clamp(22px, 3.8vw, 36px);
+  font-weight: 700;
+  padding: 4px 14px;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+.hero-title-xl {
+  font-size: clamp(22px, 3.8vw, 36px);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.45;
+  letter-spacing: 0.03em;
+  display: block;
+  margin-top: 2px;
+}
 
 /* 左：写真 */
 .hero-photo {
@@ -676,9 +704,13 @@
       <img src="newimages/IMG_8907.jpeg" alt="石神りさ – ハルカゼ代表">
     </div>
     <div class="hero-text">
-      <span class="hero-eyebrow">About</span>
-      <h1 class="hero-title"><span style="display:block;">「この人がいい」と思える相手と、</span><span style="display:block;">2人で笑える毎日へ。</span></h1>
-      <p class="hero-sub">ただ登録しているだけの「ひとり婚活」も、<br>「いい人」止まりで終わる婚活も、もう卒業。<br><br>今の延長線上の未来より、<br>「こうだったらいいな」と思う未来を、結婚の先にある、もっと面白い人生を、選びにいく。</p>
+      <span class="hero-eyebrow">Message from founder</span>
+      <h1 class="hero-title">
+        <span class="hero-kicker-sm">婚活で大切なのは、</span>
+        <span class="hero-highlight-block">「いい人」止まり</span>
+        <span class="hero-title-xl">を、卒業すること。</span>
+      </h1>
+      <p class="hero-sub">今の延長線上の未来より、「こうだったらいいな」と思う未来を。<br>結婚の先にある、もっと面白い人生を、選びにいく。</p>
       <div class="about-signature">
         <p class="about-signature-role">代表　マッチングプランナー</p>
         <p class="about-signature-name">石神 りさ</p>
@@ -718,10 +750,10 @@
         <div class="shin-circles-top">
           <div class="shin-circle shin-circle-1" data-detail="1" role="button" tabindex="0" aria-expanded="false">
             <span class="shin-circle-num">1</span>
-            <span class="shin-circle-en">Natural</span>
+            <span class="shin-circle-en">Opportunity</span>
             <div class="shin-circle-rule"></div>
-            <span class="shin-circle-ja">素</span>
-            <span class="shin-circle-desc">自分を<br>面白がる</span>
+            <span class="shin-circle-ja">出会い</span>
+            <span class="shin-circle-desc">チャンスを<br>最大化する</span>
             <span class="shin-circle-tap"></span>
           </div>
         </div>
@@ -730,16 +762,16 @@
             <span class="shin-circle-num">2</span>
             <span class="shin-circle-en">Design</span>
             <div class="shin-circle-rule"></div>
-            <span class="shin-circle-ja">良</span>
-            <span class="shin-circle-desc">良さを<br>最大化する</span>
+            <span class="shin-circle-ja">外見</span>
+            <span class="shin-circle-desc">外見・スキルを<br>磨いて活かす</span>
             <span class="shin-circle-tap"></span>
           </div>
           <div class="shin-circle shin-circle-3" data-detail="3" role="button" tabindex="0" aria-expanded="false">
             <span class="shin-circle-num">3</span>
             <span class="shin-circle-en">Core</span>
             <div class="shin-circle-rule"></div>
-            <span class="shin-circle-ja">芯</span>
-            <span class="shin-circle-desc">本音を<br>芯にする</span>
+            <span class="shin-circle-ja">本音</span>
+            <span class="shin-circle-desc">自分の軸に<br>妥協しない</span>
             <span class="shin-circle-tap"></span>
           </div>
         </div>
@@ -748,19 +780,19 @@
       <!-- 詳細パネル -->
       <div class="shin-detail-panels">
         <div class="shin-detail" id="shin-detail-1">
-          <p class="shin-detail-tag">Natural / 素</p>
-          <h3 class="shin-detail-heading">自分を面白がる</h3>
-          <p class="shin-detail-body">欠点を探すのは終わり。今の自分を楽しみ、自信に変えることが、最大の魅力。</p>
+          <p class="shin-detail-tag">Opportunity / 出会い</p>
+          <h3 class="shin-detail-heading">出会い・チャンスの最大化</h3>
+          <p class="shin-detail-body">時間を無駄にせず、確実な出会いの場で出会いの数を増やす。正しい場所で、正しく動くことが婚活の第一歩。</p>
         </div>
         <div class="shin-detail" id="shin-detail-2">
-          <p class="shin-detail-tag">Design / 良</p>
-          <h3 class="shin-detail-heading">「良さ」を最大化する</h3>
-          <p class="shin-detail-body">あなたの持ち味を、戦略的にカタチにする。正しく伝えることで、理想の相手と繋がる。</p>
+          <p class="shin-detail-tag">Design / 外見</p>
+          <h3 class="shin-detail-heading">外見・スキルを上げる</h3>
+          <p class="shin-detail-body">「もう一度会いたい」の正体は、あなたの「自信」と「外見」のバランス。磨いて活かすことで、印象は確実に変わる。</p>
         </div>
         <div class="shin-detail" id="shin-detail-3">
-          <p class="shin-detail-tag">Core / 芯</p>
-          <h3 class="shin-detail-heading">本音を芯にする</h3>
-          <p class="shin-detail-body">綺麗な言葉よりも、心にある本音を大切に。嘘のない自分だからこそ、一生モノの関係を築いていく。</p>
+          <p class="shin-detail-tag">Core / 本音</p>
+          <h3 class="shin-detail-heading">内面：本音を大切にする</h3>
+          <p class="shin-detail-body">「どんな人生で生きていく？」自分の軸に妥協しない。本音を知ることが、本当に合う相手と出会う近道。</p>
         </div>
       </div>
 
