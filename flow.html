@@ -16,7 +16,7 @@
    ============================================================ */
 
 .page-hero {
-  background: var(--c-navy);
+  background: #1A2A44;
   padding: 96px 24px 80px;
   text-align: center; color: #fff; position: relative; overflow: hidden;
 }
@@ -25,7 +25,7 @@
   background: radial-gradient(ellipse 70% 80% at 20% 80%, rgba(184,199,230,0.20) 0%, transparent 60%);
   pointer-events: none;
 }
-.page-hero-label { font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--c-blue); margin-bottom: 16px; font-weight: 700; position: relative; }
+.page-hero-label { font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: #B8C7E6; margin-bottom: 16px; font-weight: 700; position: relative; }
 .page-hero-title { font-size: clamp(30px, 5vw, 50px); font-weight: 700; line-height: 1.3; position: relative; }
 
 /* ── タイムライン ── */
@@ -33,22 +33,22 @@
 .timeline::before {
   content: ''; position: absolute;
   left: 29px; top: 0; bottom: 0; width: 2px;
-  background: linear-gradient(to bottom, var(--c-blue), var(--c-coral), var(--c-navy));
+  background: linear-gradient(to bottom, #B8C7E6, #D4637C, #1A2A44);
   opacity: 0.3;
 }
 .tl-item { position: relative; padding-left: 76px; margin-bottom: 36px; }
 .tl-num {
   position: absolute; left: 0; top: 0;
   width: 60px; height: 60px; border-radius: 50%;
-  background: var(--c-navy); color: #fff;
+  background: #1A2A44; color: #fff;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   font-size: 9px; letter-spacing: 0.08em; line-height: 1.3; z-index: 1;
   box-shadow: 0 4px 12px rgba(74,98,120,0.25);
 }
 .tl-num strong { font-size: 16px; font-weight: 700; }
-.tl-item.goal .tl-num { background: var(--c-coral); color: var(--c-navy); }
+.tl-item.goal .tl-num { background: #D4637C; color: #fff; }
 .tl-card {
-  background: var(--c-white); border: 1px solid var(--c-border);
+  background: #fff; border: 1px solid rgba(26,42,68,0.1);
   border-radius: 14px; padding: 22px 24px 20px;
   box-shadow: 0 2px 12px rgba(74,98,120,0.05);
   transition: box-shadow 0.2s;
@@ -56,12 +56,12 @@
 .tl-card:hover { box-shadow: 0 6px 24px rgba(74,98,120,0.09); }
 .tl-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
 .tl-tag {
-  font-size: 11px; background: var(--c-bg);
-  color: var(--c-navy); padding: 3px 10px; border-radius: 10px; font-weight: 500;
+  font-size: 11px; background: #f5f6f8;
+  color: #1A2A44; padding: 3px 10px; border-radius: 10px; font-weight: 500;
 }
-.tl-title { font-size: 17px; font-weight: 700; color: var(--c-navy); margin-bottom: 10px; }
-.tl-body { font-size: 14px; line-height: 1.9; color: var(--c-mid); white-space: pre-line; }
-.tl-item.goal .tl-card { border-color: var(--c-coral); }
+.tl-title { font-size: 17px; font-weight: 700; color: #1A2A44; margin-bottom: 10px; }
+.tl-body { font-size: 14px; line-height: 1.9; color: rgba(26,42,68,0.7); white-space: pre-line; }
+.tl-item.goal .tl-card { border-color: #D4637C; }
 
 @media (min-width: 768px) {
   .timeline::before { left: 33px; }
@@ -74,19 +74,19 @@
   display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 40px;
 }
 .meet-card {
-  background: var(--c-white); border: 1px solid var(--c-border);
+  background: #fff; border: 1px solid rgba(26,42,68,0.1);
   border-radius: 14px; padding: 28px 22px; text-align: center;
   transition: box-shadow 0.2s, transform 0.2s;
 }
 .meet-card:hover { box-shadow: 0 6px 24px rgba(74,98,120,0.09); transform: translateY(-2px); }
-.meet-num { font-size: 11px; letter-spacing: 0.16em; color: var(--c-blue); margin-bottom: 8px; font-weight: 700; }
+.meet-num { font-size: 11px; letter-spacing: 0.16em; color: #B8C7E6; margin-bottom: 8px; font-weight: 700; }
 .meet-icon { font-size: 32px; margin-bottom: 10px; }
-.meet-title { font-size: 15px; font-weight: 700; color: var(--c-navy); margin-bottom: 8px; }
-.meet-text { font-size: 13px; color: var(--c-mid); line-height: 1.7; }
+.meet-title { font-size: 15px; font-weight: 700; color: #1A2A44; margin-bottom: 8px; }
+.meet-text { font-size: 13px; color: rgba(26,42,68,0.7); line-height: 1.7; }
 @media (min-width: 640px) { .meet-grid { grid-template-columns: repeat(4, 1fr); } }
 
 /* ── CTA ── */
-.cta-section { background: var(--c-navy); padding: 96px 24px; text-align: center; color: #fff; }
+.cta-section { background: #1A2A44; padding: 96px 24px; text-align: center; color: #fff; }
 .cta-title { font-size: clamp(22px, 4vw, 36px); font-weight: 700; margin-bottom: 16px; line-height: 1.5; }
 .cta-sub { font-size: 15px; color: rgba(255,255,255,0.72); margin-bottom: 44px; line-height: 2; }
 .cta-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
