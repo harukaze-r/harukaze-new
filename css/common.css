@@ -35,7 +35,7 @@
   --shadow-lg:     0 12px 40px rgba(26,42,68,0.14);
 
   /* ── Typography ── */
-  --font-serif:    'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+  --font-serif:    'Noto Serif JP', 'Yu Mincho', 'Hiragino Mincho ProN', serif;
   --font-sans:     'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
   --font-display:  'Cormorant Garamond', Georgia, serif; /* 英字装飾用 */
 
