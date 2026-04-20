@@ -270,6 +270,22 @@
   background-clip: text;
   animation: lab-shimmer 10s linear infinite, lab-float 5s ease-in-out infinite;
 }
+/* ピンクキャッチコピー */
+.lab-pink-catch {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 16px 0 4px;
+}
+.lab-pink-catch-line {
+  font-family: var(--font-serif);
+  font-size: clamp(14px, 2.2vw, 18px);
+  font-weight: 700;
+  color: var(--pink, #D4637C);
+  letter-spacing: 0.06em;
+  line-height: 1.6;
+}
+
 /* プログラム一覧（ポスター左列下） */
 .lab-program-list {
   margin-top: 20px;
@@ -750,6 +766,10 @@
           <span>パートナーシップ</span>
           <span>セクシャルウェルネス</span>
           <span>対人関係</span>
+        </div>
+        <div class="lab-pink-catch">
+          <span class="lab-pink-catch-line">女性の本音！</span>
+          <span class="lab-pink-catch-line">出会いの先を研究する！</span>
         </div>
         <div class="lab-program-list">
           <a href="lab-courses.html#p01" class="lab-program-item">
