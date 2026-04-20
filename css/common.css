@@ -561,12 +561,12 @@ body.nav-open { overflow: hidden; }
   background: var(--pink-dark);
 }
 .float-side-btn-line {
-  background: #C8EDD8;
-  color: #1A6638;
+  background: #4A7A5E;
+  color: rgba(255,255,255,0.92);
 }
 .float-side-btn-line:hover {
-  background: #B0E0C4;
-  color: #1A6638;
+  background: #3A6A4E;
+  color: #fff;
 }
 .float-side-btn-gold {
   background: linear-gradient(135deg, #D4AF6A 0%, #B8903A 100%);
