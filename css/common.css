@@ -245,7 +245,7 @@ ul, ol { list-style: none; }
 .mobile-nav-close span:nth-child(2) { transform: translateY(-3.75px) rotate(-45deg); }
 
 .mobile-nav-specialty {
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.28em;
   text-transform: uppercase;
