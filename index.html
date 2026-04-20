@@ -703,8 +703,71 @@
   border-bottom: 1px solid var(--border);
   position: relative;
   transition: background 0.2s;
+  cursor: pointer;
 }
-.step-card:hover { background: #fafafa; }
+.step-card:hover { background: #f5f6f9; }
+
+/* ── ステップモーダル ── */
+.step-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(26,42,68,0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.step-modal-overlay.open { display: flex; }
+.step-modal {
+  background: #fff;
+  border-radius: 20px;
+  max-width: 480px;
+  width: 100%;
+  padding: 36px 32px 32px;
+  position: relative;
+  box-shadow: 0 24px 64px rgba(26,42,68,0.2);
+  animation: modalIn 0.25s ease;
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.step-modal-close {
+  position: absolute;
+  top: 16px; right: 16px;
+  width: 32px; height: 32px;
+  border: none; background: none;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0.4;
+  font-size: 22px;
+  line-height: 1;
+  transition: opacity 0.2s;
+}
+.step-modal-close:hover { opacity: 1; }
+.step-modal-num {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--pink);
+  margin-bottom: 8px;
+}
+.step-modal-title {
+  font-size: clamp(16px, 3vw, 20px);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.5;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--pink);
+}
+.step-modal-body {
+  font-size: 14px;
+  color: rgba(26,42,68,0.75);
+  line-height: 2;
+}
 /* 右列の右ボーダー消す */
 @media (min-width: 640px) {
   .step-card:nth-child(2n) { border-right: none; }
@@ -1551,8 +1614,8 @@
 
       <!-- 6カード（2列グリッド） -->
       <div class="steps-grid">
-        <div class="step-card fade-up">
-          <div class="step-card-header" role="button" aria-expanded="false" tabindex="0">
+        <div class="step-card fade-up" data-modal-num="01" data-modal-title="「自分に合う人」を勘違いしていることが！" data-modal-body="ミスマッチな申し込みを繰り返す前に、あなたの本質を徹底的に深掘り。うまくいく相手の条件を、まずは明確に言語化。">
+          <div class="step-card-header">
             <div class="step-num-wrap">
               <span class="step-num">01</span>
               <span class="step-num-label">Step</span>
@@ -1562,12 +1625,9 @@
             </div>
             <span class="step-toggle">+</span>
           </div>
-          <div class="step-body">
-            <p class="step-body-inner">ポップアップ表示で、理想の結婚を言語化</p>
-          </div>
         </div>
-        <div class="step-card fade-up delay-1">
-          <div class="step-card-header" role="button" aria-expanded="false" tabindex="0">
+        <div class="step-card fade-up delay-1" data-modal-num="02" data-modal-title="" data-modal-body="">
+          <div class="step-card-header">
             <div class="step-num-wrap">
               <span class="step-num">02</span>
               <span class="step-num-label">Step</span>
@@ -1577,12 +1637,9 @@
             </div>
             <span class="step-toggle">+</span>
           </div>
-          <div class="step-body">
-            <p class="step-body-inner">ポップアップで、魅力の「認知」を整える</p>
-          </div>
         </div>
-        <div class="step-card fade-up">
-          <div class="step-card-header" role="button" aria-expanded="false" tabindex="0">
+        <div class="step-card fade-up" data-modal-num="03" data-modal-title="" data-modal-body="">
+          <div class="step-card-header">
             <div class="step-num-wrap">
               <span class="step-num">03</span>
               <span class="step-num-label">Step</span>
@@ -1592,12 +1649,9 @@
             </div>
             <span class="step-toggle">+</span>
           </div>
-          <div class="step-body">
-            <p class="step-body-inner">メッセージが続かない。数を打てばそのうち当たる？——当たりません！戦略的サーチの実践で、チャンスの数を増やします。</p>
-          </div>
         </div>
-        <div class="step-card fade-up delay-1">
-          <div class="step-card-header" role="button" aria-expanded="false" tabindex="0">
+        <div class="step-card fade-up delay-1" data-modal-num="04" data-modal-title="" data-modal-body="">
+          <div class="step-card-header">
             <div class="step-num-wrap">
               <span class="step-num">04</span>
               <span class="step-num-label">Step</span>
@@ -1607,12 +1661,9 @@
             </div>
             <span class="step-toggle">+</span>
           </div>
-          <div class="step-body">
-            <p class="step-body-inner">価値観に触れる会話のトレーニングで、表面的なやりとりを卒業。自然な距離の縮め方を一緒に磨きます。</p>
-          </div>
         </div>
-        <div class="step-card fade-up">
-          <div class="step-card-header" role="button" aria-expanded="false" tabindex="0">
+        <div class="step-card fade-up" data-modal-num="05" data-modal-title="" data-modal-body="">
+          <div class="step-card-header">
             <div class="step-num-wrap">
               <span class="step-num">05</span>
               <span class="step-num-label">Step</span>
@@ -1622,12 +1673,9 @@
             </div>
             <span class="step-toggle">+</span>
           </div>
-          <div class="step-body">
-            <p class="step-body-inner">「この人で本当にいいのか？」——マリッジブルーはやってくる。進む「覚悟」のつくりかたを、一緒に整理します。</p>
-          </div>
         </div>
-        <div class="step-card fade-up delay-1">
-          <div class="step-card-header" role="button" aria-expanded="false" tabindex="0">
+        <div class="step-card fade-up delay-1" data-modal-num="06" data-modal-title="" data-modal-body="">
+          <div class="step-card-header">
             <div class="step-num-wrap">
               <span class="step-num">06</span>
               <span class="step-num-label">Step</span>
@@ -1636,9 +1684,6 @@
               <span class="step-title">プロポーズ大作戦から始まるリアルなスタート</span>
             </div>
             <span class="step-toggle">+</span>
-          </div>
-          <div class="step-body">
-            <p class="step-body-inner">お金・キャリア・育児・介護——衝突せず話し合うためのシート作成で、二人の未来を一緒に設計します。</p>
           </div>
         </div>
       </div>
@@ -1844,6 +1889,16 @@
 
 </main>
 
+<!-- ステップモーダル -->
+<div class="step-modal-overlay" id="stepModalOverlay">
+  <div class="step-modal" id="stepModal">
+    <button class="step-modal-close" id="stepModalClose">✕</button>
+    <p class="step-modal-num" id="stepModalNum"></p>
+    <h3 class="step-modal-title" id="stepModalTitle"></h3>
+    <p class="step-modal-body" id="stepModalBody"></p>
+  </div>
+</div>
+
 <!-- ============================================================
      FOOTER
      ============================================================ -->
@@ -1885,18 +1940,44 @@
     }, { passive: true });
   }
 
-  /* ── step card accordion ── */
-  document.querySelectorAll('.step-card-header').forEach(function (header) {
-    function toggle() {
-      var card = header.closest('.step-card');
-      if (!card) return;
-      var isOpen = card.classList.toggle('is-open');
-      header.setAttribute('aria-expanded', String(isOpen));
-    }
-    header.addEventListener('click', toggle);
-    header.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+  /* ── step card modal ── */
+  var overlay = document.getElementById('stepModalOverlay');
+  var modalNum   = document.getElementById('stepModalNum');
+  var modalTitle = document.getElementById('stepModalTitle');
+  var modalBody  = document.getElementById('stepModalBody');
+  var closeBtn   = document.getElementById('stepModalClose');
+
+  function openModal(card) {
+    var num   = card.getAttribute('data-modal-num')   || '';
+    var title = card.getAttribute('data-modal-title') || '';
+    var body  = card.getAttribute('data-modal-body')  || '';
+    if (!title && !body) return; // no content yet — skip
+    modalNum.textContent   = 'STEP ' + num;
+    modalTitle.textContent = title;
+    modalBody.textContent  = body;
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.step-card').forEach(function (card) {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', function () { openModal(card); });
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card); }
     });
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (overlay)  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) closeModal();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeModal();
   });
 
   /* ── fade-up IntersectionObserver ── */
