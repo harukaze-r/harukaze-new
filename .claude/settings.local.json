@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node server.js)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(pkill -f \"node server.js\")",
+      "Read(//c/Users/user/OneDrive/Desktop/harukaze-new/**)",
+      "Bash(gh api *)",
+      "Bash(curl -s -H \"Authorization: token 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\" https://api.github.com/repos/harukaze-r/harukaze-new/pages)",
+      "Bash(curl -s -X POST -H \"Authorization: token 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\" -H \"Accept: application/vnd.github+json\" https://api.github.com/repos/harukaze-r/harukaze-new/pages -d '{\"source\":{\"branch\":\"main\",\"path\":\"/\"}}')",
+      "Bash(curl -s -H \"Authorization: token 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\" https://api.github.com/repos/harukaze-r/harukaze-new)",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('private:', d['private'], '/ plan:', d.get\\('owner',{}\\).get\\('plan',{}\\)\\)\")"
+    ]
+  }
+}

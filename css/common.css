@@ -244,6 +244,17 @@ ul, ol { list-style: none; }
 .mobile-nav-close span:nth-child(1) { transform: translateY(3.75px) rotate(45deg); }
 .mobile-nav-close span:nth-child(2) { transform: translateY(-3.75px) rotate(-45deg); }
 
+.mobile-nav-specialty {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--pink, #D4637C);
+  border: 1px solid rgba(212,99,124,0.4);
+  padding: 5px 16px;
+  border-radius: 40px;
+  margin-bottom: 8px;
+}
 .mobile-nav-overlay a {
   font-family: var(--font-serif);
   font-size: 17px;
