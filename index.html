@@ -552,6 +552,26 @@
   width: 100%;
   display: block;
 }
+.shindan-lead {
+  text-align: center;
+  font-size: clamp(13px, 3.5vw, 16px);
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.12em;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.shindan-lead::before,
+.shindan-lead::after {
+  content: '▼';
+  font-size: 10px;
+  color: var(--pink);
+  margin: 0 8px;
+  vertical-align: middle;
+}
 
 /* ── MESSAGE（代表メッセージ） ── */
 .message-section {
@@ -1480,6 +1500,7 @@
        ============================================================ -->
   <section class="shindan-section">
     <div class="shindan-inner">
+      <p class="shindan-lead fade-up">やってみて！2分で診断</p>
       <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="shindan-link fade-up">
         <img src="newimages/①LINE リッチメニュー (2).png" alt="LINEで婚活突破口診断">
       </a>
