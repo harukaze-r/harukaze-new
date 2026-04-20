@@ -566,6 +566,13 @@ body.nav-open { overflow: hidden; }
 .float-side-btn-line:hover {
   background: var(--line-green-dark);
 }
+.float-side-btn-gold {
+  background: linear-gradient(135deg, #D4AF6A 0%, #B8903A 100%);
+  color: #fff;
+}
+.float-side-btn-gold:hover {
+  background: linear-gradient(135deg, #C9A255 0%, #A07828 100%);
+}
 
 /* ============================================================
    RESPONSIVE
