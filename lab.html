@@ -15,6 +15,86 @@
    lab.html ページ固有スタイル
    ============================================================ */
 
+/* ── キャッチバナー ── */
+.lab-catch-banner {
+  position: relative;
+  overflow: hidden;
+  background: var(--c-navy, #1A2A44);
+  padding: clamp(48px, 9vw, 88px) clamp(24px, 6vw, 64px);
+  text-align: center;
+}
+.lab-catch-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.lab-catch-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.48em;
+  text-transform: uppercase;
+  color: var(--pink, #D4637C);
+  border: 1px solid rgba(212,99,124,0.5);
+  padding: 5px 18px;
+  border-radius: 40px;
+}
+.lab-catch-text {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 6vw, 52px);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  margin: 0;
+}
+.lab-catch-text em {
+  font-style: normal;
+  color: var(--pink, #D4637C);
+  position: relative;
+}
+.lab-catch-text em::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -4px;
+  height: 2px;
+  background: var(--pink, #D4637C);
+  border-radius: 2px;
+  opacity: 0.7;
+}
+.lab-catch-sub {
+  font-size: 12px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.38);
+  margin-top: 4px;
+}
+/* デコ円 */
+.lab-catch-deco {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+.lab-catch-deco-1 {
+  width: 300px; height: 300px;
+  border: 1px solid rgba(255,255,255,0.06);
+  top: -80px; right: -60px;
+}
+.lab-catch-deco-2 {
+  width: 180px; height: 180px;
+  border: 1px solid rgba(212,99,124,0.18);
+  bottom: -50px; left: -30px;
+}
+.lab-catch-deco-3 {
+  width: 80px; height: 80px;
+  background: rgba(212,99,124,0.1);
+  top: 30%; right: 12%;
+}
+
 /* ── Blob デコレーション ── */
 .blob-deco {
   position: absolute;
@@ -592,6 +672,20 @@
 </div>
 
 <main>
+
+  <!-- ============================================================
+       LAB キャッチバナー
+       ============================================================ -->
+  <section class="lab-catch-banner">
+    <div class="lab-catch-inner">
+      <span class="lab-catch-label">Research</span>
+      <p class="lab-catch-text">マッチングの<em>その後</em>を研究する</p>
+      <span class="lab-catch-sub">Harukaze LAB</span>
+    </div>
+    <div class="lab-catch-deco lab-catch-deco-1"></div>
+    <div class="lab-catch-deco lab-catch-deco-2"></div>
+    <div class="lab-catch-deco lab-catch-deco-3"></div>
+  </section>
 
   <!-- ============================================================
        LAB 概要（トップページのハルカゼLABセクション参照）
