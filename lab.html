@@ -259,6 +259,55 @@
   background-clip: text;
   animation: lab-shimmer 10s linear infinite, lab-float 5s ease-in-out infinite;
 }
+/* プログラム一覧（ポスター左列下） */
+.lab-program-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+.lab-program-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.lab-program-item:hover {
+  background: rgba(255,255,255,0.12);
+}
+.lab-program-num {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--pink);
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+  min-width: 20px;
+}
+.lab-program-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  flex: 1;
+  letter-spacing: 0.03em;
+}
+.lab-program-ticket {
+  font-size: 10px;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+}
+.lab-program-ticket.coming {
+  color: var(--pink);
+  opacity: 0.7;
+}
+
 .lab-poster-tag {
   margin-top: 28px;
   display: flex;
@@ -688,6 +737,33 @@
           <span>パートナーシップ</span>
           <span>セクシャルウェルネス</span>
           <span>対人関係</span>
+        </div>
+        <div class="lab-program-list">
+          <a href="lab-courses.html#p01" class="lab-program-item">
+            <span class="lab-program-num">01</span>
+            <span class="lab-program-name">突破口発見Talk Room</span>
+            <span class="lab-program-ticket">チケット2枚</span>
+          </a>
+          <a href="lab-courses.html#p02" class="lab-program-item">
+            <span class="lab-program-num">02</span>
+            <span class="lab-program-name">心と体の保健室</span>
+            <span class="lab-program-ticket">チケット2枚</span>
+          </a>
+          <a href="lab-courses.html#p03" class="lab-program-item">
+            <span class="lab-program-num">03</span>
+            <span class="lab-program-name">GLADIÀ</span>
+            <span class="lab-program-ticket">チケット1枚</span>
+          </a>
+          <a href="lab-courses.html#p04" class="lab-program-item">
+            <span class="lab-program-num">04</span>
+            <span class="lab-program-name">Vision Board</span>
+            <span class="lab-program-ticket">チケット3枚</span>
+          </a>
+          <a href="lab-courses.html#p05" class="lab-program-item">
+            <span class="lab-program-num">05</span>
+            <span class="lab-program-name">Image Consulting</span>
+            <span class="lab-program-ticket coming">Coming Soon</span>
+          </a>
         </div>
       </div>
 
