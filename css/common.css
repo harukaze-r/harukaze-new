@@ -561,12 +561,10 @@ body.nav-open { overflow: hidden; }
   background: var(--pink-dark);
 }
 .float-side-btn-line {
-  background: linear-gradient(135deg, #B8CCAA 0%, #96B088 100%);
-  color: #2E4028;
+  background: var(--line-green);
 }
 .float-side-btn-line:hover {
-  background: linear-gradient(135deg, #AABF9C 0%, #88A278 100%);
-  color: #2E4028;
+  background: var(--line-green-dark);
 }
 .float-side-btn-gold {
   background: linear-gradient(135deg, #EDD898 0%, #CEB06A 100%);
