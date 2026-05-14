@@ -83,11 +83,22 @@
     font-style: normal;
     font-size: 12px;
     color: var(--navy-dark);
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     letter-spacing: 0.1em;
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: 500;
     margin-top: 2px;
+  }
+  .logo em::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.6;
+    flex-shrink: 0;
   }
 
   .nav-links {
@@ -2230,7 +2241,7 @@
   <a href="index.html" class="logo">
     結婚相談所 ハルカゼ
     <span>MARRIAGE CONSULTING</span>
-    <em>── 男性のための婚活</em>
+    <em>男性のための婚活</em>
   </a>
   <ul class="nav-links">
     <li><a href="about.html">メッセージ</a></li>
@@ -2253,7 +2264,7 @@
   </button>
   <div class="mobile-nav-specialty">
     <span>MARRIAGE CONSULTING</span>
-    <em>── 男性のための婚活</em>
+    <em>男性のための婚活</em>
   </div>
   <a href="index.html">ホーム</a>
   <a href="about.html">メッセージ</a>
