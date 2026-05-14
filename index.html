@@ -249,90 +249,72 @@
   /* ── HERO ── */
   .hero {
     min-height: 100vh;
-    background: var(--gray-bg);
+    background: #fff;
     position: relative;
     display: flex;
     align-items: center;
     overflow: hidden;
   }
 
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background: #f8f9fb;
-  }
+  .hero-bg { display: none; }
+  .hero-lines { display: none; }
 
-  .hero-lines {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    pointer-events: none;
-  }
-
-  .hero-lines::before {
-    content: '';
-    position: absolute;
-    top: 0; right: 30%;
-    width: 0.5px;
-    height: 100%;
-    background: linear-gradient(to bottom, transparent, rgba(44,62,107,0.08), transparent);
-  }
-
-  .hero-lines::after {
-    content: '';
-    position: absolute;
-    top: 15%;
-    left: 0; right: 0;
-    height: 0.5px;
-    background: linear-gradient(to right, transparent, rgba(44,62,107,0.06), transparent);
-  }
-
+  /* 左：テキストエリア */
   .hero-content {
     position: relative;
-    z-index: 1;
-    padding: 80px 60px 80px;
-    max-width: 720px;
-    background: transparent;
-    margin-left: 6%;
+    z-index: 2;
+    padding: clamp(100px, 12vh, 140px) clamp(32px, 6vw, 80px);
+    width: 52%;
+    min-width: 340px;
   }
 
   .hero-eyebrow {
     display: flex;
     align-items: center;
-    gap: 16px;
-    margin-bottom: 32px;
+    gap: 14px;
+    margin-bottom: 28px;
     opacity: 0;
-    animation: fadeUp 0.8s ease 0.2s forwards;
+    animation: fadeUp 0.7s ease 0.2s forwards;
   }
 
   .hero-eyebrow::before {
     content: '';
     display: block;
-    width: 40px;
-    height: 3px;
+    width: 36px;
+    height: 1.5px;
     background: var(--pink);
+    flex-shrink: 0;
   }
 
   .hero-eyebrow span {
-    font-size: 13px;
-    letter-spacing: 0.2em;
-    color: var(--mint-dark);
-    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    color: var(--navy);
+    font-weight: 500;
+  }
+
+  /* 区切りライン */
+  .hero-rule {
+    width: 100%;
+    height: 0.5px;
+    background: rgba(44,62,107,0.12);
+    margin-bottom: 36px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.3s forwards;
   }
 
   .hero-headline {
     font-family: 'Noto Serif JP', serif;
     font-weight: 400;
-    font-size: clamp(22px, 2.8vw, 36px);
+    font-size: clamp(26px, 3vw, 40px);
     color: var(--navy-dark);
-    line-height: 1.7;
-    margin-bottom: 12px;
-    background: rgba(255,255,255,0.75);
-    box-shadow: 0 0 40px 28px rgba(255,255,255,0.75);
-    border-radius: 2px;
-    padding: 8px 4px;
+    line-height: 1.65;
+    margin-bottom: 20px;
+    background: none;
+    box-shadow: none;
+    padding: 0;
     opacity: 0;
-    animation: fadeUp 0.9s ease 0.4s forwards;
+    animation: fadeUp 0.8s ease 0.4s forwards;
   }
 
   .hero-headline em {
@@ -340,84 +322,73 @@
     color: var(--pink);
   }
 
-  .hero-headline strong {
-    font-weight: 500;
-    display: block;
-  }
-
   .hero-sub {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--text-mid);
-    margin: 28px 0 20px;
-    line-height: 2;
-    max-width: 500px;
+    margin-bottom: 32px;
+    line-height: 1.9;
     opacity: 0;
-    animation: fadeUp 0.9s ease 0.6s forwards;
+    animation: fadeUp 0.8s ease 0.55s forwards;
   }
 
-  .hero-achievement {
+  /* トラストバッジ */
+  .hero-badges {
     display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 36px;
     opacity: 0;
-    animation: fadeUp 0.9s ease 0.7s forwards;
+    animation: fadeUp 0.8s ease 0.65s forwards;
   }
 
-  .hero-achievement-line {
-    display: block;
-    width: 28px;
-    height: 0.5px;
-    background: var(--navy);
-    flex-shrink: 0;
+  .hero-badge-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--navy);
+    border: 0.5px solid rgba(44,62,107,0.3);
+    padding: 6px 14px;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
   }
 
-  .hero-achievement-text {
-    font-size: 16px;
-    color: var(--text-mid);
-    letter-spacing: 0.1em;
-    font-weight: 400;
+  .hero-badge-item::before {
+    content: '✓';
+    font-size: 10px;
+    color: var(--pink);
   }
+
+  .hero-achievement { display: none; }
 
   .hero-actions {
     display: flex;
-    gap: 16px;
+    gap: 14px;
     align-items: center;
     flex-wrap: wrap;
     opacity: 0;
-    animation: fadeUp 0.9s ease 0.9s forwards;
+    animation: fadeUp 0.8s ease 0.8s forwards;
   }
 
   .btn-primary {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: var(--navy);
-    color: var(--white);
+    background: #1e2d50;
+    color: #fff;
     padding: 16px 36px;
     font-size: 13px;
     font-weight: 500;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     text-decoration: none;
     border: none;
     cursor: pointer;
-    transition: all 0.3s;
-    position: relative;
-    overflow: hidden;
+    transition: background 0.3s;
     border-radius: 2px;
   }
 
-  .btn-primary::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(255,255,255,0.1);
-    transform: translateX(-100%);
-    transition: transform 0.4s;
-  }
-
   .btn-primary:hover { background: var(--navy-dark); }
-  .btn-primary:hover::after { transform: translateX(0); }
 
   .btn-line {
     display: inline-flex;
@@ -425,7 +396,7 @@
     gap: 8px;
     border: 0.5px solid rgba(44,62,107,0.3);
     color: var(--navy);
-    padding: 16px 28px;
+    padding: 16px 24px;
     font-size: 12px;
     letter-spacing: 0.08em;
     text-decoration: none;
@@ -435,14 +406,10 @@
     border-radius: 2px;
   }
 
-  .btn-line:hover {
-    border-color: var(--pink);
-    color: var(--pink);
-  }
+  .btn-line:hover { border-color: var(--pink); color: var(--pink); }
 
   .line-icon {
-    width: 18px;
-    height: 18px;
+    width: 18px; height: 18px;
     background: #06C755;
     border-radius: 4px;
     display: inline-flex;
@@ -454,151 +421,87 @@
     flex-shrink: 0;
   }
 
+  /* 右：写真エリア */
   .hero-right {
     position: absolute;
-    right: 0; top: -12%; bottom: 0;
-    width: 60%;
-    overflow: hidden;
+    right: 0; top: 0; bottom: 0;
+    width: 52%;
+    overflow: visible;
     opacity: 0;
-    animation: fadeIn 1.2s ease 1s forwards;
+    animation: fadeIn 1s ease 0.6s forwards;
   }
+
   .hero-photo {
     position: absolute;
     inset: 0;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: #f4f5f7;
   }
 
   .hero-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: right top;
+    object-position: center top;
     display: block;
-    opacity: 1;
   }
 
-  .hero-photo-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    border-left: 0.5px solid rgba(184,156,106,0.2);
-  }
-
-  .hero-photo-placeholder svg {
-    width: 52px;
-    height: 52px;
-    stroke: rgba(184,156,106,0.4);
-    fill: none;
-    stroke-width: 1;
-  }
-
-  .hero-photo-placeholder span {
-    font-size: 11px;
-    letter-spacing: 0.25em;
-    color: rgba(184,156,106,0.45);
-    text-transform: uppercase;
-  }
-
+  /* 左グラデーション（テキストとの境界なじませ） */
   .hero-photo-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(
       to right,
-      rgba(248,249,251,1) 0%,
-      rgba(248,249,251,0.85) 20%,
-      rgba(248,249,251,0.3) 38%,
-      transparent 52%
+      rgba(255,255,255,1) 0%,
+      rgba(255,255,255,0.5) 18%,
+      rgba(255,255,255,0) 36%
     );
     pointer-events: none;
+    z-index: 1;
   }
 
-  .hero-photo-overlay-bottom {
+  /* ピンク装飾サークル */
+  .hero-circle-deco {
     position: absolute;
-    bottom: 0; left: 0; right: 0;
-    background: linear-gradient(to top, rgba(255,255,255,0.95) 0%, transparent 100%);
-    padding: 36px 32px 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    align-items: flex-end;
-    justify-content: flex-end;
+    right: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 300px;
+    border: 1.5px solid rgba(224,37,106,0.25);
+    border-radius: 50%;
+    z-index: 2;
+    pointer-events: none;
   }
 
-  .stat-item {
-    border-left: 1.5px solid var(--pink);
-    padding-left: 14px;
-  }
-
-  .stat-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 36px;
-    font-weight: 300;
-    color: var(--navy);
-    line-height: 1;
-    letter-spacing: -0.02em;
-  }
-
-  .stat-num sup {
-    font-size: 12px;
-    vertical-align: sub;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 300;
-  }
-
-  .stat-label {
-    font-size: 10px;
-    color: var(--text-mid);
-    letter-spacing: 0.1em;
-    margin-top: 5px;
-    line-height: 1.5;
-  }
-
-  .stat-note {
-    width: 100%;
-    font-size: 9px;
-    color: var(--text-light);
-    letter-spacing: 0.05em;
-    margin-top: 10px;
-    text-align: right;
-    grid-column: 1 / -1;
-  }
-
+  /* 代表キャプション */
   .hero-rep-caption {
     position: absolute;
-    bottom: 180px;
-    right: 28px;
+    bottom: 32px;
+    right: 180px;
     z-index: 3;
     text-align: right;
-    pointer-events: none;
   }
 
   .hero-rep-caption-role {
     font-size: 10px;
-    color: rgba(30,45,80,0.55);
+    color: rgba(30,45,80,0.5);
     letter-spacing: 0.14em;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
   }
 
   .hero-rep-caption-name {
     font-family: 'Noto Serif JP', serif;
     font-size: 14px;
     font-weight: 500;
-    color: rgba(30,45,80,0.85);
+    color: rgba(30,45,80,0.8);
     letter-spacing: 0.12em;
   }
 
-  .hero-rep-title {
-    font-size: 10px;
-    color: var(--pink);
-    letter-spacing: 0.2em;
-  }
+  .hero-rep-title { display: none; }
+
+  /* 下部ステータスは非表示 */
+  .hero-photo-overlay-bottom { display: none; }
+  .hero-photo-placeholder { display: none; }
 
   /* ── PAIN SECTION ── */
   .pain-section {
@@ -2153,13 +2056,15 @@
     .hero { min-height: 100svh; }
     .hero-content {
       padding: 100px 24px 60px;
-      margin-left: 0;
-      max-width: 100%;
+      width: 100%;
+      min-width: unset;
     }
     .hero-right { display: none; }
-    .hero-headline { font-size: clamp(24px, 7vw, 32px); }
+    .hero-headline { font-size: clamp(22px, 7vw, 30px); }
     .hero-sub { font-size: 14px; }
-    .hero-achievement-text { font-size: 13px; }
+    .hero-rule { display: none; }
+    .hero-badges { gap: 6px; }
+    .hero-badge-item { font-size: 11px; padding: 5px 10px; }
     .hero-actions { flex-direction: column; gap: 12px; }
     .btn-primary, .btn-line { width: 100%; justify-content: center; }
 
@@ -2303,6 +2208,11 @@
   <div class="hero-lines"></div>
 
   <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span>男性専門結婚相談所</span>
+    </div>
+    <div class="hero-rule"></div>
+
     <h1 class="hero-headline">
       「いい人」を卒業して、<br>
       <em>「あなたがいい」</em>で選ばれる。
@@ -2314,17 +2224,16 @@
       あなたに合った出会いをつなぐ、マンツーマンの伴走サポート。
     </p>
 
-    <div class="hero-achievement">
-      <span class="hero-achievement-line"></span>
-      <span class="hero-achievement-text">最短5カ月・1年以内の成婚をサポート</span>
+    <div class="hero-badges">
+      <span class="hero-badge-item">初回無料面談</span>
+      <span class="hero-badge-item">IBJ正規加盟店</span>
+      <span class="hero-badge-item">大阪・北摂・全国オンライン対応</span>
     </div>
 
     <div class="hero-actions">
-      <a href="#cta" class="btn-primary">
-        無料カウンセリングを予約する
-      </a>
+      <a href="#cta" class="btn-primary">無料面談に申し込む</a>
       <button class="btn-line">
-        <span style="color: #06C755;">LINE</span>で予約する
+        <span class="line-icon">L</span>LINEで相談する
       </button>
     </div>
   </div>
@@ -2333,31 +2242,11 @@
     <div class="hero-photo">
       <img src="newimages/Photoroom_20260428_162738.jpeg" alt="代表 石神 りさ">
     </div>
-
-    <!-- 左側グラデーションオーバーレイ -->
     <div class="hero-photo-overlay"></div>
-
-    <!-- 代表名キャプション -->
+    <div class="hero-circle-deco"></div>
     <div class="hero-rep-caption">
       <p class="hero-rep-caption-role">代表　マッチングプランナー</p>
       <p class="hero-rep-caption-name">石神りさ</p>
-    </div>
-
-    <!-- 下部統計オーバーレイ -->
-    <div class="hero-photo-overlay-bottom">
-      <div class="stat-item">
-        <div class="stat-num">10<sup>万人</sup></div>
-        <div class="stat-label">会員数</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">11<sup>回</sup></div>
-        <div class="stat-label">成婚者のお見合い平均</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">9.2<sup>か月</sup></div>
-        <div class="stat-label">成婚者の在籍日数</div>
-      </div>
-      <div class="stat-note">会員数対象期間：2025年1月1日～12月31日</div>
     </div>
   </div>
 </section>
