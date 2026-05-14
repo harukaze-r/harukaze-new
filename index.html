@@ -249,7 +249,7 @@
   /* ── HERO ── */
   .hero {
     min-height: 100vh;
-    background: #fff;
+    background: var(--navy);
     position: relative;
     display: flex;
     align-items: center;
@@ -290,7 +290,7 @@
   .hero-eyebrow span {
     font-size: 12px;
     letter-spacing: 0.22em;
-    color: var(--navy);
+    color: rgba(255,255,255,0.8);
     font-weight: 500;
   }
 
@@ -298,7 +298,7 @@
   .hero-rule {
     width: 100%;
     height: 0.5px;
-    background: rgba(44,62,107,0.12);
+    background: rgba(255,255,255,0.2);
     margin-bottom: 36px;
     opacity: 0;
     animation: fadeUp 0.7s ease 0.3s forwards;
@@ -308,7 +308,7 @@
     font-family: 'Noto Serif JP', serif;
     font-weight: 400;
     font-size: clamp(28px, 3.6vw, 48px);
-    color: var(--navy-dark);
+    color: #ffffff;
     line-height: 1.65;
     margin-bottom: 20px;
     margin-left: -24px;
@@ -326,7 +326,7 @@
 
   .hero-sub {
     font-size: 15px;
-    color: var(--text-mid);
+    color: rgba(255,255,255,0.75);
     margin-bottom: 32px;
     line-height: 1.9;
     opacity: 0;
@@ -348,8 +348,8 @@
     align-items: center;
     gap: 6px;
     font-size: 12px;
-    color: var(--navy);
-    border: 0.5px solid rgba(44,62,107,0.3);
+    color: rgba(255,255,255,0.85);
+    border: 0.5px solid rgba(255,255,255,0.3);
     padding: 6px 14px;
     border-radius: 2px;
     letter-spacing: 0.05em;
@@ -369,12 +369,12 @@
     gap: 12px;
     font-size: 17px;
     font-weight: 600;
-    color: var(--navy-dark);
+    color: #ffffff;
     letter-spacing: 0.08em;
     margin-bottom: 32px;
     padding: 10px 20px 10px 16px;
     border-left: 3px solid var(--pink);
-    background: rgba(224,37,106,0.04);
+    background: rgba(255,255,255,0.08);
     border-radius: 0 4px 4px 0;
     opacity: 0;
     animation: fadeUp 0.8s ease 0.7s forwards;
@@ -452,7 +452,7 @@
   .hero-photo {
     position: absolute;
     inset: 0;
-    background: #f4f5f7;
+    background: var(--navy-dark);
   }
 
   .hero-photo img {
@@ -469,9 +469,9 @@
     inset: 0;
     background: linear-gradient(
       to right,
-      rgba(255,255,255,1) 0%,
-      rgba(255,255,255,0.5) 18%,
-      rgba(255,255,255,0) 36%
+      rgba(44,62,107,1) 0%,
+      rgba(44,62,107,0.5) 18%,
+      rgba(44,62,107,0) 36%
     );
     pointer-events: none;
     z-index: 1;
@@ -502,7 +502,7 @@
 
   .hero-rep-caption-role {
     font-size: 10px;
-    color: rgba(30,45,80,0.85);
+    color: rgba(255,255,255,0.7);
     letter-spacing: 0.14em;
     margin-bottom: 3px;
   }
@@ -511,7 +511,7 @@
     font-family: 'Noto Serif JP', serif;
     font-size: 14px;
     font-weight: 500;
-    color: rgba(30,45,80,0.8);
+    color: rgba(255,255,255,0.9);
     letter-spacing: 0.12em;
   }
 
