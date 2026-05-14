@@ -129,8 +129,10 @@ ul, ol { list-style: none; }
   letter-spacing: 0.12em;
   text-decoration: none;
   line-height: 1.2;
-  transform: rotate(-4deg);
+}
+.logo .logo-char {
   display: inline-block;
+  transform: rotate(-4deg);
 }
 .logo span {
   font-size: 10px;
