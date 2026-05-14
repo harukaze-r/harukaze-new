@@ -27,28 +27,37 @@
   position: relative;
   width: 100%;
   min-height: 100svh;
-  background-image: url('newimages/Photoroom_20260428_162738.jpeg');
+  background-image: url('newimages/Photoroom_20260419_000227.png');
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
-  background-color: #fff;
+  background-color: #C8CDD5;
   overflow: hidden;
 }
 @media (min-width: 900px) {
   .hero-image {
     min-height: 88vh;
     background-color: transparent;
-    background-image: url('newimages/Photoroom_20260428_162738.jpeg'),
-                      linear-gradient(to right, #fff 0%, #fff 100%);
+    background-image: url('newimages/Photoroom_20260419_000227.png'),
+                      linear-gradient(to right, #D8DCE3 0%, #F0ECEB 100%);
     background-repeat: no-repeat, no-repeat;
     background-size: 55% auto, cover;
     background-position: 80% center, center;
   }
   .hero-image::before {
-    background: none;
+    background: linear-gradient(
+      to right,
+      rgba(30,38,52,0.05) 0%,
+      rgba(30,38,52,0) 60%
+    );
   }
   .hero-image::after {
-    background: none;
+    background: linear-gradient(
+      to left,
+      rgba(255,252,250,0.6) 0%,
+      rgba(255,252,250,0.2) 45%,
+      rgba(255,252,250,0) 62%
+    );
   }
 }
 .hero-image img { display: none; }
@@ -1551,7 +1560,7 @@
        ============================================================ -->
   <section class="hero">
     <div class="hero-image">
-      <img src="newimages/Photoroom_20260428_162738.jpeg" alt="ハルカゼのイメージ">
+      <img src="newimages/Photoroom_20260419_000227.png" alt="ハルカゼのイメージ">
       <!-- 装飾要素 -->
       <div class="hero-deco hero-deco-circle-lg"></div>
       <div class="hero-deco hero-deco-circle-sm"></div>
