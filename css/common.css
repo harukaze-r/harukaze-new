@@ -129,6 +129,8 @@ ul, ol { list-style: none; }
   letter-spacing: 0.12em;
   text-decoration: none;
   line-height: 1.2;
+  transform: rotate(-4deg);
+  display: inline-block;
 }
 .logo span {
   font-size: 10px;
