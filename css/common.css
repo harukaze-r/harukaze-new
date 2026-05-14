@@ -4,7 +4,7 @@
    ============================================================ */
 
 /* ── Google Fonts ── */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;700&display=swap');
 
 /* ============================================================
    DESIGN TOKENS
@@ -24,6 +24,7 @@
   --pink-dark:     #C9566F;   /* ピンクホバー */
   --pink-light:    #EFA7B6;   /* ライトピンク */
   --pink-pale:     #FEF5F7;   /* 淡いピンク背景 */
+  --white:         #ffffff;   /* ホワイト */
   --line-green:    #06C755;   /* LINE公式グリーン */
   --line-green-dark: #04a648; /* LINEグリーンホバー */
   --text-mid:      #666666;   /* サブテキスト */
@@ -105,38 +106,48 @@ ul, ol { list-style: none; }
   top: 0; left: 0; right: 0;
   z-index: 900;
   height: var(--nav-h);
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
+  background: rgba(234,248,253,0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid #d0eef8;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 clamp(20px, 4vw, 48px);
+  padding: 0 clamp(20px, 4vw, 60px);
   transition: box-shadow 0.3s;
 }
 .site-nav.scrolled {
   box-shadow: var(--shadow-sm);
 }
 
-/* ロゴ */
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-}
-.nav-logo-icon {
-  height: 40px;
-  width: 40px;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-.nav-logo-text {
+/* ロゴ（テキスト型） */
+.logo {
   font-family: var(--font-serif);
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: 600;
   color: var(--navy);
   letter-spacing: 0.08em;
-  white-space: nowrap;
+  text-decoration: none;
+  line-height: 1.2;
+}
+.logo span {
+  font-size: 10px;
+  color: var(--text-light);
+  display: block;
+  letter-spacing: 0.2em;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  margin-top: 1px;
+}
+.logo em {
+  font-style: normal;
+  font-size: 12px;
+  color: var(--navy-dark);
+  display: block;
+  letter-spacing: 0.1em;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  margin-top: 2px;
 }
 
 /* PCリンク */
@@ -163,7 +174,7 @@ ul, ol { list-style: none; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--line-green) !important;
+  background: #6AB5D6 !important;
   color: #fff !important;
   font-size: 13px;
   font-weight: 700;
@@ -175,7 +186,7 @@ ul, ol { list-style: none; }
   opacity: 1 !important;
 }
 .nav-cta:hover {
-  background: var(--line-green-dark) !important;
+  background: #4e9dbf !important;
   transform: translateY(-1px);
   box-shadow: 0 4px 14px rgba(6,199,85,0.35) !important;
 }
@@ -211,9 +222,9 @@ ul, ol { list-style: none; }
   inset: 0;
   height: 100dvh;
   overflow-y: auto;
-  background: rgba(26, 42, 68, 0.97);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   z-index: 999;
   flex-direction: column;
   align-items: center;
@@ -238,52 +249,72 @@ ul, ol { list-style: none; }
   display: block;
   width: 24px;
   height: 1.5px;
-  background: rgba(255,255,255,0.7);
+  background: var(--navy);
   border-radius: 2px;
 }
 .mobile-nav-close span:nth-child(1) { transform: translateY(3.75px) rotate(45deg); }
 .mobile-nav-close span:nth-child(2) { transform: translateY(-3.75px) rotate(-45deg); }
 
 .mobile-nav-specialty {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--pink, #D4637C);
-  border: 1px solid rgba(212,99,124,0.4);
-  padding: 5px 16px;
-  border-radius: 40px;
+  text-align: center;
   margin-bottom: 8px;
+}
+.mobile-nav-specialty span {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  color: #2AB5E0;
+  margin-bottom: 6px;
+}
+.mobile-nav-specialty em {
+  display: block;
+  font-style: normal;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--navy);
 }
 .mobile-nav-overlay a {
   font-family: var(--font-serif);
   font-size: 17px;
   font-weight: 400;
-  color: rgba(255,255,255,0.85);
+  color: var(--navy);
   letter-spacing: 0.1em;
   transition: color 0.2s;
 }
 .mobile-nav-overlay a:hover {
-  color: #fff;
+  color: #2AB5E0;
   opacity: 1;
 }
 .mobile-nav-overlay .nav-cta {
   margin-top: 8px;
   font-size: 14px;
   padding: 12px 36px;
-  background: var(--line-green) !important;
+  background: #2AB5E0 !important;
+  color: #fff !important;
 }
 .mobile-nav-overlay .nav-cta:hover {
-  background: var(--line-green-dark) !important;
-  box-shadow: 0 4px 14px rgba(6,199,85,0.35) !important;
+  background: #1da0c9 !important;
+  box-shadow: 0 4px 14px rgba(42,181,224,0.35) !important;
 }
 
 .mobile-nav-divider {
   width: 100%;
   border: none;
-  border-top: 1px solid rgba(255,255,255,0.12);
+  border-top: 1px solid rgba(26,42,68,0.1);
   margin: 4px 0;
 }
+.mobile-nav-girls-link {
+  font-family: var(--font-sans) !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: var(--navy) !important;
+  letter-spacing: 0.08em;
+}
+.mobile-nav-girls-link:hover { color: #2AB5E0 !important; }
 
 body.nav-open { overflow: hidden; }
 
@@ -291,38 +322,72 @@ body.nav-open { overflow: hidden; }
    FOOTER
    ============================================================ */
 .site-footer {
-  background: var(--navy);
+  background: var(--navy-dark);
   color: rgba(255,255,255,0.65);
-  padding: clamp(48px, 7vw, 80px) clamp(20px, 4vw, 48px) 32px;
+  padding: 60px;
+  border-top: 0.5px solid rgba(255,255,255,0.08);
 }
 .footer-inner {
-  max-width: var(--inner);
-  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: var(--inner-wide);
+  margin: 0 auto 48px;
+  padding-bottom: 48px;
+  border-bottom: 0.5px solid rgba(255,255,255,0.06);
 }
 .footer-brand {
-  font-family: var(--font-serif);
-  font-size: 16px;
-  font-weight: 500;
-  color: rgba(255,255,255,0.9);
-  letter-spacing: 0.08em;
-  margin-bottom: 28px;
-  line-height: 1.7;
+  flex: 0 0 220px;
+}
+.footer-brand .logo {
+  font-size: 20px;
+}
+.footer-brand p {
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+  margin-top: 12px;
+  line-height: 1.8;
 }
 .footer-links {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px 24px;
-  margin-bottom: 32px;
+  flex-direction: column;
+  gap: 0;
+}
+.footer-links h4 {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.footer-links ul {
+  list-style: none;
+  display: grid;
+  gap: 10px;
 }
 .footer-links a {
   font-size: 13px;
   color: rgba(255,255,255,0.5);
+  text-decoration: none;
   letter-spacing: 0.03em;
-  transition: color 0.2s;
+  transition: color 0.3s;
 }
 .footer-links a:hover {
   color: rgba(255,255,255,0.9);
-  opacity: 1;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: rgba(255,255,255,0.2);
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: var(--inner-wide);
+  margin: 0 auto;
 }
 .footer-copy {
   font-size: 12px;
@@ -352,6 +417,32 @@ body.nav-open { overflow: hidden; }
   text-decoration: none;
   transition: background 0.22s, transform 0.22s, box-shadow 0.22s, color 0.22s;
   white-space: nowrap;
+}
+
+/* プライマリ（トップページ準拠） */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--navy);
+  color: var(--white);
+  padding: 16px 36px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+.btn-primary:hover {
+  background: var(--navy-dark);
+  transform: translateY(-2px);
+  opacity: 1;
 }
 
 /* ピンク（メインCTA） */
@@ -576,6 +667,48 @@ body.nav-open { overflow: hidden; }
 }
 
 /* ============================================================
+   CTA SECTION
+   ============================================================ */
+.cta-section {
+  background: var(--navy);
+  padding: clamp(80px, 10vw, 120px) clamp(20px, 4vw, 60px);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(184,156,106,0.06), transparent);
+}
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+.cta-section .btn-line {
+  background: transparent;
+  border: 0.5px solid var(--white);
+  color: var(--white);
+}
+.cta-section .btn-line:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: var(--white);
+  color: var(--white);
+  box-shadow: none;
+}
+.cta-note {
+  margin-top: 24px;
+  font-size: 11px;
+  color: #ffffff;
+  letter-spacing: 0.1em;
+  position: relative;
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 768px) {
@@ -608,7 +741,10 @@ body.nav-open { overflow: hidden; }
   }
   .float-side-btn:hover { transform: none; }
 
-  .site-footer { padding-bottom: 72px; }
+  .site-footer { padding: 48px 24px 80px; }
+  .footer-inner { flex-direction: column; gap: 32px; }
+  .footer-brand { flex: none; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
 
   .section { padding: clamp(48px, 8vw, 80px) clamp(20px, 5vw, 32px); }
 }
