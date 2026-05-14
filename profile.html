@@ -11,9 +11,16 @@
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="css/common.css">
 <style>
+:root {
+  --c-navy:  #1A2A44;
+  --c-blue:  #8496AE;
+  --c-mid:   #666666;
+  --c-bg:    #F5F3EF;
+  --c-coral: #c9603a;
+}
 .page-hero {
-  background: var(--c-navy); padding: 96px 24px 80px;
-  text-align: center; color: #fff; position: relative; overflow: hidden;
+  background: #ffffff !important; padding: 96px 24px 80px;
+  text-align: center; color: var(--c-navy); position: relative; overflow: hidden;
 }
 .page-hero::before {
   content: ''; position: absolute; inset: 0;
@@ -32,14 +39,14 @@
 .profile-photo { border-radius: 16px; overflow: hidden; aspect-ratio: 3/4; max-width: 280px; margin: 0 auto; }
 .profile-photo img { width: 100%; height: 100%; object-fit: cover; }
 .profile-name-en { font-size: 11px; letter-spacing: 0.24em; color: var(--c-mid); margin-bottom: 6px; font-weight: 700; text-transform: uppercase; }
-.profile-name-jp { font-size: clamp(26px, 4vw, 36px); font-weight: 700; color: var(--c-navy); letter-spacing: 0.1em; margin-bottom: 4px; }
-.profile-role { font-size: 13px; color: var(--c-mid); margin-bottom: 28px; }
+.profile-name-jp { font-family: 'Noto Sans JP', sans-serif; font-size: 13px; font-weight: 400; color: var(--c-navy); letter-spacing: 0.08em; line-height: 1.8; margin-bottom: 4px; }
+.profile-role { font-family: 'Noto Sans JP', sans-serif; font-size: 11px; color: var(--c-mid); letter-spacing: 0.12em; margin-bottom: 10px; }
 .profile-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
 .profile-tag { font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; background: var(--c-bg); color: var(--c-navy); }
-.profile-body { font-size: 15px; line-height: 2.2; color: var(--c-mid); white-space: pre-line; }
+.profile-body { font-size: 15px; line-height: 2.0; color: var(--c-mid); white-space: pre-line; }
 
-.profile-message-title { font-family: var(--font-serif, serif); font-size: clamp(18px, 3vw, 24px); font-weight: 700; color: var(--c-navy); letter-spacing: 0.06em; margin-bottom: 24px; line-height: 1.5; }
-.profile-body p { margin-bottom: 1.4em; }
+.profile-message-title { font-family: var(--font-serif, serif); font-size: clamp(14px, 2vw, 18px); font-weight: 700; color: var(--c-navy); letter-spacing: 0.06em; margin-bottom: 16px; line-height: 1.8; }
+.profile-body p { margin-bottom: 0.4em; }
 .profile-body p:last-child { margin-bottom: 0; }
 .profile-section-title { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; color: var(--c-navy); text-transform: uppercase; margin: 40px 0 14px; padding-bottom: 8px; border-bottom: 2px solid var(--c-coral); opacity: 0.8; }
 .profile-mid-title { font-family: var(--font-sans); font-size: 16px; font-weight: 700; color: var(--c-navy); letter-spacing: 0.04em; margin: 2em 0 0; line-height: 1.6; }
@@ -56,43 +63,48 @@
 </head>
 <body>
 
-<nav class="site-nav">
-  <a href="index.html" class="nav-logo">
-    <img src="images/Photoroom_20260409_154324.png" alt="ハルカゼ" class="nav-logo-icon">
-    <span class="nav-logo-text">結婚相談所 ハルカゼ</span>
+<nav class="site-nav" id="siteNav">
+  <a href="index.html" class="logo">
+    結婚相談所 ハルカゼ
+    <span>MARRIAGE CONSULTING</span>
+    <em>── 大人男子のための婚活</em>
   </a>
   <ul class="nav-links">
     <li><a href="about.html">メッセージ</a></li>
     <li><a href="service.html">サービス・価格</a></li>
     <li><a href="flow.html">成婚までの流れ</a></li>
-    <li><a href="lab.html">ハルカゼLAB</a></li>
+    <li><a href="lab.html">オトナ男子LAB</a></li>
     <li><a href="faq.html">よくある質問</a></li>
     <li><a href="blog.html">ブログ</a></li>
-    <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで相談</a></li>
+    <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで予約する</a></li>
   </ul>
-  <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く"><span></span><span></span><span></span></button>
+  <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 <div class="mobile-nav-overlay" id="mobileNavOverlay">
-  <button class="mobile-nav-close" id="mobileNavClose" aria-label="閉じる"><span></span><span></span></button>
-  <span class="mobile-nav-specialty">男性専門結婚相談所</span>
+  <button class="mobile-nav-close" id="mobileNavClose" aria-label="閉じる">
+    <span></span><span></span>
+  </button>
+  <div class="mobile-nav-specialty">
+    <span>MARRIAGE CONSULTING</span>
+    <em>── 大人男子のための婚活</em>
+  </div>
   <a href="index.html">ホーム</a>
   <a href="about.html">メッセージ</a>
   <a href="service.html">サービス・価格</a>
   <a href="flow.html">成婚までの流れ</a>
-  <a href="lab.html">ハルカゼLAB</a>
+  <a href="lab.html">オトナ男子LAB</a>
   <a href="faq.html">よくある質問</a>
   <a href="blog.html">ブログ</a>
   <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">初回無料面談に申し込む</a>
   <hr class="mobile-nav-divider">
-  <span class="mobile-nav-girls-label">女性の方はこちら</span>
-  <span class="mobile-nav-arrow"></span>
-  <a href="girls.html" class="mobile-nav-girls">女子の婚活 Girls LAB</a>
+  <a href="girls.html" class="mobile-nav-girls-link">大人女子の婚活はこちら</a>
 </div>
 
 <main>
   <section class="page-hero">
-    <p class="page-hero-label">Profile</p>
-    <h1 class="page-hero-title">代表プロフィール</h1>
+    <h2 class="profile-message-title" style="color: var(--c-navy);">正しいかどうかより、自分が納得できるか。<br>完璧を目指すより、自分らしく生きれるか。</h2>
   </section>
 
   <section class="section">
@@ -100,42 +112,22 @@
       <div class="profile-wrap">
         <div>
           <div class="profile-photo">
-            <img src="newimages/IMG_0160.jpeg" alt="石神りさ">
+            <img src="newimages/IMG_1964.jpeg" alt="石神りさ">
           </div>
         </div>
         <div>
-          <p class="profile-name-en">Risa Ishigami</p>
-          <h1 class="profile-name-jp">石神 りさ</h1>
           <p class="profile-role">代表　マッチングプランナー</p>
+          <h1 class="profile-name-jp">石神 りさ</h1>
+          <p class="profile-name-en">Risa Ishigami</p>
           <div class="profile-tags"></div>
-          <h2 class="profile-message-title">「正しい」よりも、「楽しい」を！</h2>
           <div class="profile-body">
-            <p>私の人生の中心には、いつも「人」がいます。</p>
-            <p>「好きなことは？」と聞かれたら、「人との出会い」と答えてしまうくらい。</p>
-            <p>周りから「人たらし」と言ってもらえることがありますが、私にとってそれは最高の褒め言葉。過去には、「自分に足りないものを、誰かに埋めてほしい」そんな切実な思いで、必死に人を求めていた時期もありました。でもそのおかげで、声色、相手のわずかな変化に気づいたり、距離感、コミュニケーションの取り方、親しくなるスキルが身についていったと感じています。</p>
-            <p>自分自身のキャリアの転換、結婚、そして子育て。</p>
-            <p>多くの葛藤や自己理解と向き合ってきた時間が、今の私の、ハルカゼの土台になっています。</p>
-
-            <h3 class="profile-mid-title">「型」にはまった婚活で、疲れていませんか？</h3>
-            <p>今、結婚相談所を運営していて一番強く思うのが、「もったいない婚活をしている人が多すぎる！」ということです。</p>
-            <p>ありがちなプロフィールの文章に、決められたポーズの写真。</p>
-            <p>それが悪いわけではないけれど、その方の魅力とちぐはぐで「全然似合ってないよ！」と感じてしまうことがよくあります。「婚活ってこういうものだから」と言われるがままにスタートして、大切なお金も時間もエネルギーも使っているのに。</p>
-            <p>「もうやめようかな」「いい人がいないな」と、心が折れそうになる瞬間は必ずあると思います。でも、出会えないのはあなたの価値の有無ではない。</p>
-
-            <h3 class="profile-mid-title">婚活は、最高の出会いのチャンス</h3>
-            <p>人によっては、外見を整え、コミュニケーションを磨くことも必要、だけどそれは出会いのテクニックのはなしでもない。自分を磨いた先には、理想のパートナーはもちろん、今とは違う「新しい自分」にも出会えているはず。「今、ここにない出会いを」という言葉のように、まだ出会っていない、あなた自身が未来で待っています。</p>
-
-            <h3 class="profile-mid-title">「正解」を探すより、自分を面白がる</h3>
-            <p>正直、婚活は面倒で苦しいことも多いです。なんなら結婚だって同じ。分かり合うための労力は、どうしても必要。</p>
-            <p>それでも、自分の弱いところも、楽しいことも、苦しいことも、愛しいことも、全部ひっくるめて一緒に共有できる人がいる。そんな毎日は、何より豊かだと私は思っています。</p>
-            <p>失敗も遠回りも自分の人生として楽しんでいる人は、本当にかっこいいと思います。</p>
-
-            <h3 class="profile-mid-title">ハルカゼが約束すること</h3>
-            <p>ハルカゼは、友達でも家族でもないからこそ、あなたが何を話してもいい場所でありたいと思っています。</p>
-            <p>・「もったいない」を「魅力」に変える、客観的な視点<br>・あなたの本来の魅力を、出会うべき相手に届けるための「戦略」<br>・あなたが心の底から納得できる幸せの追求</p>
-            <p>「何気ない毎日に笑い合える人が、家に帰れば待っている」</p>
-            <p>例えばそんな、あなたが望んでいた未来を必ず叶えてほしい。</p>
-            <p>正解のない道だからこそ、失敗も遠回りも面白がりながら、一緒に進んでいきましょう。あなたが心の底から幸せを感じる瞬間が、これからの人生にたくさん、たくさん増えますように！</p>
+            <p>オトナになるって大変なことが多いなぁと思います。<br>プレッシャーもある、迷いもある、妥協もしたくない—。<br>婚活も、そういうものかもしれません。</p>
+            <p>完璧な答えは、誰も持っていないとわかっていても、できるなら失敗もしたくない。</p>
+            <p>だからこそ、正しいかどうかより、自分が納得できるか。完璧な相手を探すより、自分らしく生きれるかを大切にしたいなと思っています。</p>
+            <p>だからまず、自分に期待してみる。<br>そうしながら、迷っても、悩んでも、一歩ずつ前に進んだ道は、「これでいい」と思えるようになるのではないでしょうか。</p>
+            <p>とはいえ、人生…結婚も、いい時ばかりじゃないから、そんな時には、そんな風に選んできた今までの自分が支えにもなる！そう思います。</p>
+            <p>オトナは大変だけど、自分で全てを選ぶことができる。</p>
+            <p>結婚は、ゴールじゃない。新しい人生の、スタートライン。<br>自分の生き方に納得できる、そんな人生の一歩を、ここからに始めてみませんか?</p>
           </div>
           <p class="profile-section-title">Career</p>
           <div class="career-list">
@@ -163,28 +155,58 @@
   </section>
 
   <section class="cta-section">
-    <p class="section-label" style="color:var(--c-blue);">Contact</p>
-
-    <p class="cta-sub">入会を迷っていても大丈夫。<br>まずはあなたの話を聞かせてください。</p>
-    <div class="cta-actions">
-      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn btn-sky">LINEで初回無料面談に申し込む</a>
-      <a href="about.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4); color:#fff;">ハルカゼの想いを読む</a>
+  <div class="cta-buttons">
+      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size: 14px; padding: 18px 44px; background: var(--white); color: var(--navy);">無料カウンセリングを予約する</a>
+      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn-line" style="font-size: 13px; padding: 18px 32px; border-color: var(--white); color: var(--white);"><span style="color:#06C755;">LINE</span>で予約する</a>
     </div>
-  </section>
+  <p class="cta-note">オンライン30分 ｜ 全国オンライン対応</p>
+</section>
 </main>
 
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
-    <p class="footer-brand">大阪・吹田・オンラインで全国対応<br>結婚相談所ハルカゼ</p>
-    <nav class="footer-links">
-      <a href="about.html">メッセージ</a><a href="service.html">サービス・料金</a>
-      <a href="flow.html">成婚までの流れ</a><a href="lab.html">ハルカゼLAB</a>
-      <a href="faq.html">よくある質問</a><a href="blog.html">ブログ</a>
-      <a href="privacy.html">プライバシーポリシー</a>
-    </nav>
-    <p class="footer-girls-label">女性の方はこちら</p>
-    <a href="girls.html" class="footer-girls-link">▶ 女子の婚活 Girls LAB</a>
-    <p class="footer-copy">© 2025 結婚相談所ハルカゼ</p>
+    <div class="footer-brand">
+      <a href="index.html" class="logo" style="color: var(--white);">結婚相談所　ハルカゼ<span>MARRIAGE CONSULTING</span></a>
+      <p>「あなたがいい」で選ばれる婚活を。<br>IBJ正規加盟店</p>
+      <div style="margin-top: 16px;">
+        <img src="images/Photoroom_20260409_154324.png" alt="結婚相談所ハルカゼ ロゴ" style="height: 112px; width: auto;">
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h4>Service</h4>
+      <ul>
+        <li><a href="about.html">メッセージ</a></li>
+        <li><a href="service.html">サービス内容</a></li>
+        <li><a href="lab.html">オトナ男子LAB</a></li>
+        <li><a href="service.html">料金プラン</a></li>
+        <li><a href="girls.html">オトナ<span style="color: var(--pink);">女子</span>の婚活はこちら</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h4>Info</h4>
+      <ul>
+        <li><a href="faq.html">よくある質問</a></li>
+        <li><a href="blog.html">ブログ</a></li>
+        <li><a href="privacy.html">プライバシーポリシー</a></li>
+        <li><a href="#">特定商取引法に基づく表記</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer">無料カウンセリング予約</a></li>
+        <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer">LINEで予約する</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2025 Harukaze Marriage Consulting. All rights reserved.</span>
+    <span>IBJ正規加盟店</span>
   </div>
 </footer>
 <div class="float-side-btns">

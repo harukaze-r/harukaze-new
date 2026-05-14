@@ -12,6 +12,13 @@
    about.html — page styles
    ============================================================ */
 
+body { background: #ffffff !important; }
+.msg-hero, .msg-section, .vision-section, .new-cta-section { background: #ffffff !important; }
+
+/* common.css override: section-rule をトップページ配色に統一 */
+.section-rule { background: var(--mint-dark); }
+.section-eyebrow span { color: var(--navy); opacity: 0.6; }
+
 /* ── 装飾要素 ── */
 /* 花モチーフ区切り */
 .deco-divider {
@@ -20,7 +27,7 @@
   justify-content: center;
   gap: 14px;
   padding: 16px 0;
-  color: var(--pink);
+  color: var(--mint-dark);
 }
 .deco-divider::before,
 .deco-divider::after {
@@ -28,10 +35,10 @@
   flex: 1;
   max-width: 100px;
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(220,100,120,0.3));
+  background: linear-gradient(to right, transparent, rgba(42,181,224,0.3));
 }
 .deco-divider::after {
-  background: linear-gradient(to left, transparent, rgba(220,100,120,0.3));
+  background: linear-gradient(to left, transparent, rgba(42,181,224,0.3));
 }
 .deco-divider svg { width: 22px; height: 22px; flex-shrink: 0; }
 /* 浮遊花びら装飾 */
@@ -43,19 +50,16 @@
   position: absolute;
   pointer-events: none;
   opacity: 0.13;
-  color: var(--pink);
+  color: var(--mint-dark);
 }
 /* ドットパターン背景 */
-.dot-bg {
-  background-image: radial-gradient(circle, rgba(220,100,120,0.18) 1.5px, transparent 1.5px);
-  background-size: 24px 24px;
-}
+.dot-bg { /* dot removed */ }
 /* 角花飾り */
 .corner-deco {
   position: absolute;
   pointer-events: none;
   opacity: 0.12;
-  color: var(--pink);
+  color: var(--mint-dark);
 }
 .corner-deco-tl { top: -10px; left: -10px; }
 .corner-deco-br { bottom: -10px; right: -10px; transform: rotate(180deg); }
@@ -131,7 +135,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(40px, 6vw, 80px) clamp(28px, 5vw, 64px);
+  padding: clamp(20px, 3vw, 40px) clamp(28px, 5vw, 64px);
   background: var(--bg);
   position: relative;
 }
@@ -151,13 +155,13 @@
   font-size: 11px;
   letter-spacing: 0.4em;
   text-transform: uppercase;
-  color: var(--pink);
+  color: var(--mint-dark);
   display: block;
   margin-bottom: 14px;
 }
 .hero-title {
   font-family: var(--font-serif);
-  font-size: clamp(26px, 4vw, 44px);
+  font-size: clamp(22px, 3.2vw, 36px);
   font-weight: 500;
   color: var(--navy);
   line-height: 1.5;
@@ -173,9 +177,9 @@
 }
 .hero-sub p + p { margin-top: 1.2em; }
 .hero-sub {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--text-mid);
-  line-height: 2;
+  line-height: 1.8;
   letter-spacing: 0.04em;
   max-width: 320px;
 }
@@ -211,7 +215,7 @@
 .hero-rule {
   width: 36px;
   height: 2px;
-  background: var(--pink);
+  background: var(--mint-dark);
   margin-top: 24px;
   border-radius: 2px;
 }
@@ -219,13 +223,13 @@
 /* ── 素・良・芯 セクション ── */
 .shin-section {
   padding: var(--section-py) clamp(24px, 5vw, 48px);
-  background: var(--bg-gray);
+  background: #EAF8FD;
 }
 .shin-inner { max-width: var(--inner); margin: 0 auto; }
 .shin-header { text-align: center; margin-bottom: 56px; }
 .shin-intro {
   font-size: 15px;
-  color: var(--text-mid);
+  color: var(--navy-mid);
   line-height: 2;
   max-width: 520px;
   margin: 16px auto 0;
@@ -240,25 +244,21 @@
   opacity: 0.7;
 }
 
-/* 三円：上1 + 下2 */
+/* 三長方形：横一列 */
 .shin-circles-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
   margin-bottom: 56px;
 }
-.shin-circles-top { display: flex; justify-content: center; }
-.shin-circles-bottom {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
+@media (max-width: 600px) {
+  .shin-circles-wrap { grid-template-columns: 1fr; }
 }
+.shin-circles-top { display: contents; }
+.shin-circles-bottom { display: contents; }
 .shin-circle {
-  width: clamp(160px, 22vw, 220px);
-  height: clamp(160px, 22vw, 220px);
-  border-radius: 50%;
+  border-radius: 0;
+  padding: clamp(32px, 5vw, 56px) clamp(20px, 3vw, 36px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -266,33 +266,19 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  flex-shrink: 0;
 }
-.shin-circle-1 { background: rgba(227,118,141,0.13); }
-.shin-circle-2 { background: rgba(26,42,68,0.08); }
-.shin-circle-3 { background: rgba(26,42,68,0.05); }
+.shin-circle-1,
+.shin-circle-2,
+.shin-circle-3 { background: #2ab5e0; }
 
-.shin-circle-num {
-  position: absolute;
-  font-family: var(--font-display);
-  font-size: clamp(56px, 8vw, 80px);
-  font-weight: 600;
-  font-style: italic;
-  color: rgba(255,255,255,0.45);
-  line-height: 1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-40%, -55%);
-  user-select: none;
-  pointer-events: none;
-}
+.shin-circle-num { display: none; }
 .shin-circle-en {
   font-family: var(--font-display);
   font-size: 11px;
   font-style: italic;
   letter-spacing: 0.1em;
   color: var(--navy);
-  opacity: 0.55;
+  opacity: 0.6;
   margin-bottom: 4px;
   position: relative;
   z-index: 1;
@@ -316,7 +302,8 @@
 }
 .shin-circle-desc {
   font-size: 11px;
-  color: var(--text-mid);
+  color: var(--navy);
+  opacity: 0.7;
   letter-spacing: 0.04em;
   line-height: 1.6;
   margin-top: 6px;
@@ -332,7 +319,7 @@
 .shin-circle-tap {
   font-size: 10px;
   letter-spacing: 0.1em;
-  color: var(--pink);
+  color: var(--mint-dark);
   margin-top: 8px;
   display: flex;
   align-items: center;
@@ -344,7 +331,7 @@
 .shin-circle-tap::before {
   content: '▼';
   font-size: 8px;
-  color: var(--pink);
+  color: var(--mint-dark);
   flex-shrink: 0;
   transition: transform 0.3s;
   line-height: 1;
@@ -373,13 +360,9 @@
   background: var(--border);
 }
 
-/* 円のパルスアニメーション */
-@keyframes shin-pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(212,99,124,0.15); }
-  50% { box-shadow: 0 0 0 8px rgba(212,99,124,0); }
-}
+/* ホバーエフェクト */
 .shin-circle:not(.is-active) {
-  animation: shin-pulse 2.5s ease-in-out infinite;
+  animation: none;
 }
 .shin-detail-panels { margin-top: 32px; }
 .shin-detail {
@@ -399,7 +382,7 @@
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.14em;
-  color: var(--pink);
+  color: var(--mint-dark);
   margin-bottom: 8px;
 }
 .shin-detail-heading {
@@ -444,26 +427,45 @@
 .vision-section {
   padding: var(--section-py) clamp(24px, 5vw, 48px);
   background: var(--bg);
+  position: relative;
+  overflow: hidden;
 }
-.vision-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+.vision-section::before {
+  content: 'Vision';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(100px, 18vw, 200px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: rgba(100, 160, 220, 0.10);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+}
+.vision-inner { max-width: 680px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
 .vision-title {
-  font-family: var(--font-serif);
-  font-size: clamp(24px, 4vw, 36px);
-  font-weight: 500;
+  font-family: var(--font-sans, sans-serif);
+  font-size: 16px;
+  font-weight: 400;
   color: var(--navy);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   margin-bottom: 32px;
-  line-height: 1.5;
+  line-height: 2.2;
 }
 .vision-rule {
   width: 40px; height: 2px;
-  background: var(--pink);
+  background: var(--mint-dark);
   margin: 0 auto 40px;
   border-radius: 2px;
 }
 .vision-body {
+  font-family: var(--font-sans, sans-serif);
   font-size: 16px;
-  line-height: 2.4;
+  line-height: 2.2;
   color: var(--text-mid);
   text-align: left;
 }
@@ -500,7 +502,7 @@
   width: 100%; height: 3px;
   border-radius: 2px 2px 0 0;
 }
-.value-card:nth-child(1)::before { background: var(--pink); }
+.value-card:nth-child(1)::before { background: var(--mint-dark); }
 .value-card:nth-child(2)::before { background: var(--navy-mid); }
 .value-card:nth-child(3)::before { background: var(--navy); }
 .value-tag {
@@ -520,7 +522,7 @@
   border-radius: 50%;
   flex-shrink: 0;
 }
-.value-card:nth-child(1) .value-tag-dot { background: var(--pink); }
+.value-card:nth-child(1) .value-tag-dot { background: var(--mint-dark); }
 .value-card:nth-child(2) .value-tag-dot { background: var(--navy-mid); }
 .value-card:nth-child(3) .value-tag-dot { background: var(--navy); }
 .value-num-bg {
@@ -616,7 +618,7 @@
   margin-bottom: 24px;
   letter-spacing: 0.04em;
 }
-.message-rule { width: 40px; height: 2px; background: var(--pink); margin-bottom: 24px; border-radius: 2px; }
+.message-rule { width: 40px; height: 2px; background: var(--mint-dark); margin-bottom: 24px; border-radius: 2px; }
 .message-body {
   font-size: 15px;
   color: var(--text-mid);
@@ -635,7 +637,7 @@
   font-size: 12px;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: var(--pink-light);
+  color: rgba(42,181,224,0.65);
   display: block;
   margin-bottom: 20px;
 }
@@ -660,6 +662,421 @@
   justify-content: center;
   gap: 16px;
 }
+
+/* ============================================================
+   NEW SECTIONS (PDF redesign)
+   ============================================================ */
+:root { --accent-warm: #c9603a; }
+
+/* SLIDE 1 — Magazine Hero */
+.msg-hero {
+  min-height: 80vh;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(64px, 10vw, 120px) clamp(24px, 5vw, 64px);
+}
+.msg-hero-eyebrow {
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  display: block;
+  margin-bottom: 32px;
+}
+.msg-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 9vw, 96px);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 28px;
+}
+.msg-hero-sub {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 3.5vw, 38px);
+  color: var(--navy);
+  letter-spacing: 0.06em;
+  line-height: 1.6;
+}
+
+/* SLIDE 2 — Message Section */
+.msg-section {
+  background: #fff;
+  padding: clamp(72px, 9vw, 112px) clamp(24px, 5vw, 48px);
+  max-width: 100%;
+}
+.msg-section-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.msg-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .msg-split { grid-template-columns: 1fr 1fr; }
+}
+.msg-section-tag {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-family: var(--font-display);
+  color: var(--text-light);
+  border-left: 4px solid #6AB5D6;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+.msg-accent-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(18px, 2.2vw, 22px);
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+.msg-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(18px, 2.2vw, 22px);
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.msg-body {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 2;
+  letter-spacing: 0.04em;
+}
+.msg-photo {
+  height: 400px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.msg-signature {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(26,42,68,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.msg-signature-name {
+  font-size: 13px;
+  color: var(--navy);
+  letter-spacing: 0.08em;
+  line-height: 1.8;
+}
+.msg-signature-name span {
+  display: block;
+  font-size: 11px;
+  color: var(--text-mid);
+  letter-spacing: 0.12em;
+}
+.msg-signature-link {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--navy);
+  text-decoration: none;
+  border-bottom: 1px solid var(--navy);
+  padding-bottom: 2px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.msg-signature-link:hover { opacity: 1; }
+
+/* SLIDE 3 — 鎧セクション */
+.yoroi-section {
+  background: #fff;
+  padding: clamp(72px, 9vw, 112px) clamp(24px, 5vw, 48px);
+}
+.yoroi-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.yoroi-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 700;
+  color: var(--navy);
+  border-left: 5px solid var(--accent-warm);
+  padding-left: 16px;
+  margin-bottom: 48px;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+}
+.yoroi-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 640px) {
+  .yoroi-grid { grid-template-columns: 1fr 1fr; }
+}
+.yoroi-card {
+  background: var(--bg-gray);
+  border-radius: 8px;
+  padding: clamp(28px, 4vw, 48px);
+}
+.yoroi-card--navy {
+  background: var(--navy);
+  border-radius: 8px;
+  padding: clamp(28px, 4vw, 48px);
+}
+.yoroi-card-label {
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-family: var(--font-display);
+  color: var(--text-light);
+  margin-bottom: 16px;
+  display: block;
+}
+.yoroi-card--navy .yoroi-card-label {
+  color: var(--accent-warm);
+}
+.yoroi-card-body {
+  font-size: 15px;
+  line-height: 2;
+  color: var(--text-mid);
+}
+.yoroi-card--navy .yoroi-card-body {
+  color: rgba(255,255,255,0.82);
+}
+
+/* SLIDE 4 — Vision (updated content only, reuses .vision-section) */
+
+/* SLIDE 5,6,7 — Value Sections */
+.value-section-new {
+  background: #fff;
+  padding: clamp(72px, 9vw, 112px) clamp(24px, 5vw, 48px);
+}
+.value-section-new--gray {
+  background: var(--bg-gray);
+}
+.value-section-new-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.value-section-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 2.8vw, 28px);
+  font-weight: 700;
+  color: var(--navy);
+  border-left: 5px solid var(--accent-warm);
+  padding-left: 16px;
+  margin-bottom: 48px;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+}
+.value-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 640px) {
+  .value-cards { grid-template-columns: repeat(3, 1fr); }
+}
+.value-card-new {
+  background: var(--bg-gray);
+  border-radius: 8px;
+  padding: 32px 24px;
+}
+.value-card-new--white {
+  background: #fff;
+}
+.value-card-icon {
+  font-size: 32px;
+  display: block;
+  margin-bottom: 16px;
+}
+.value-card-title {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 10px;
+  letter-spacing: 0.04em;
+}
+.value-card-body {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--text-mid);
+}
+
+/* Value 02 split */
+.value02-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: center;
+}
+@media (min-width: 640px) {
+  .value02-split { grid-template-columns: auto 1fr; }
+}
+.value02-circle {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: #e8e8e8;
+  flex-shrink: 0;
+  margin: 0 auto;
+}
+.value02-text-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 2.5vw, 26px);
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 20px;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+}
+.value02-body {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 2;
+}
+.value02-body p + p { margin-top: 1.2em; }
+
+/* Checklist (Value 03) */
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+.checklist-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent-warm);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.checklist-item-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+  letter-spacing: 0.03em;
+}
+.checklist-item-body {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.9;
+}
+
+/* SLIDE 8 — Quote Section */
+.quote-section {
+  background: #f9f8f6;
+  padding: clamp(72px, 9vw, 112px) clamp(24px, 5vw, 48px);
+  text-align: center;
+}
+.quote-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.quote-section-label {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-family: var(--font-display);
+  color: var(--text-light);
+  border-left: 4px solid var(--accent-warm);
+  padding-left: 10px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+.quote-large {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 4vw, 40px);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.7;
+  letter-spacing: 0.04em;
+  margin-bottom: 32px;
+}
+.quote-body {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 2;
+  letter-spacing: 0.04em;
+}
+
+/* New CTA Section */
+.new-cta-section {
+  background: #fff;
+  padding: clamp(72px, 9vw, 112px) clamp(24px, 5vw, 48px);
+  text-align: center;
+}
+.new-cta-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+.new-cta-title {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 4vw, 40px);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.55;
+  letter-spacing: 0.04em;
+  margin-bottom: 20px;
+}
+.new-cta-sub {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 2;
+  margin-bottom: 40px;
+}
+.new-cta-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 40px 0;
+}
+.new-cta-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+.new-cta-small {
+  font-size: 12px;
+  color: var(--text-light);
+  letter-spacing: 0.08em;
+  margin-bottom: 32px;
+}
+.new-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
 </style>
 </head>
 <body>
@@ -668,18 +1085,19 @@
      NAVIGATION
      ============================================================ -->
 <nav class="site-nav" id="siteNav">
-  <a href="index.html" class="nav-logo">
-    <img src="images/Photoroom_20260409_154324.png" alt="ハルカゼ" class="nav-logo-icon">
-    <span class="nav-logo-text">結婚相談所 ハルカゼ</span>
+  <a href="index.html" class="logo">
+    結婚相談所 ハルカゼ
+    <span>MARRIAGE CONSULTING</span>
+    <em>── 大人男子のための婚活</em>
   </a>
   <ul class="nav-links">
     <li><a href="about.html">メッセージ</a></li>
     <li><a href="service.html">サービス・価格</a></li>
     <li><a href="flow.html">成婚までの流れ</a></li>
-    <li><a href="lab.html">ハルカゼLAB</a></li>
+    <li><a href="lab.html">オトナ男子LAB</a></li>
     <li><a href="faq.html">よくある質問</a></li>
     <li><a href="blog.html">ブログ</a></li>
-    <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで相談</a></li>
+    <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで予約する</a></li>
   </ul>
   <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く">
     <span></span><span></span><span></span>
@@ -690,70 +1108,77 @@
   <button class="mobile-nav-close" id="mobileNavClose" aria-label="閉じる">
     <span></span><span></span>
   </button>
-  <span class="mobile-nav-specialty">男性専門結婚相談所</span>
+  <div class="mobile-nav-specialty">
+    <span>MARRIAGE CONSULTING</span>
+    <em>── 大人男子のための婚活</em>
+  </div>
   <a href="index.html">ホーム</a>
   <a href="about.html">メッセージ</a>
   <a href="service.html">サービス・価格</a>
   <a href="flow.html">成婚までの流れ</a>
-  <a href="lab.html">ハルカゼLAB</a>
+  <a href="lab.html">オトナ男子LAB</a>
   <a href="faq.html">よくある質問</a>
   <a href="blog.html">ブログ</a>
   <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">初回無料面談に申し込む</a>
   <hr class="mobile-nav-divider">
-  <a href="girls.html" style="font-size:14px; color:rgba(255,255,255,0.5); letter-spacing:0.06em;">女子の婚活 Girls LAB →</a>
+  <a href="girls.html" class="mobile-nav-girls-link">大人女子の婚活はこちら</a>
 </div>
 
 <main>
 
   <!-- ============================================================
-       HERO（写真 ＋ タイポグラフィ分割）
+       SLIDE 1 — Magazine Hero
        ============================================================ -->
-  <section class="page-hero">
-    <div class="hero-photo">
-      <img src="newimages/IMG_8907.jpeg" alt="石神りさ – ハルカゼ代表">
-    </div>
-    <div class="hero-text">
-      <span class="hero-eyebrow">Message from founder</span>
-      <h1 class="hero-title">
-        <span class="hero-kicker-sm">婚活で大切なのは、</span>
-        <span class="hero-highlight-block">「いい人」止まり</span>
-        <span class="hero-title-xl">を、卒業すること。</span>
-      </h1>
-      <div class="hero-sub">
-        <p class="about-msg-lead">今の自分に、もっと面白い人生を「追加」する。</p>
-        <p>婚活で大切なのは、「いい人」止まりを卒業すること。<br>それは自分を曲げることではなく、今の自分のままで、可能性を広げていくこと。</p>
-        <p>結婚は、人生を面白くするための「有力な選択肢」のひとつ。<br>今の延長線上の未来より、もっと「こうだったらいいな」と思う未来を。</p>
-        <p>新しい人生の設計を始めませんか。</p>
+  <section class="msg-hero">
+    <p class="msg-hero-sub">婚活は、<br>ひとつのきっかけ。</p>
+  </section>
+
+  <!-- ============================================================
+       SLIDE 2 — Message from Harukaze
+       ============================================================ -->
+  <section class="msg-section">
+    <div class="msg-section-inner">
+      <div class="msg-split">
+        <div class="msg-text-col">
+          <span class="msg-section-tag">Message from Harukaze</span>
+          <p class="msg-accent-heading">今ある大切な何か。</p>
+          <h2 class="msg-heading">届けたいのは、人生の「きっかけ」</h2>
+          <p class="msg-body">日々の忙しさや、世間の「正解」をこなす毎日。<br>いつの間にか、本当の自分を置き去りにしていませんか？<br><br>ハルカゼは、あなたが自分を再発見し、<br>新しい日常へ踏み出すための「入り口」です。<br><br>「この人となら」と心から思える相手との出会いは、<br>あなたの日常を、想像以上の喜びへと変えていきます。<br><br>新たな出会いと、新しい自分へ。</p>
+          <div class="msg-signature">
+            <p class="msg-signature-name">
+              <span>代表・マッチングプランナー</span>
+              石神 りさ
+            </p>
+            <a href="profile.html" class="msg-signature-link">Profile</a>
+          </div>
+        </div>
+        <div class="msg-photo">
+          <img src="newimages/IMG_1962.jpeg" alt="石神りさ" style="width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:8px;">
+        </div>
       </div>
-      <div class="about-signature">
-        <p class="about-signature-role">代表　マッチングプランナー</p>
-        <p class="about-signature-name">石神 りさ</p>
-        <a href="profile.html" class="about-signature-link">挨拶・プロフィール →</a>
-      </div>
-      <div class="hero-rule"></div>
     </div>
   </section>
 
   <!-- ============================================================
-       素・良・芯
+       SLIDE 4 — Vision
        ============================================================ -->
-  <section class="shin-section dot-bg section-deco-wrap">
+  <section class="vision-section" id="vision">
+    <div class="vision-inner">
+      <span class="section-eyebrow fade-up">Vision</span>
+      <div class="vision-rule fade-up delay-1"></div>
+      <p class="vision-body fade-up delay-2">「誰よりもしあわせな一人」を増やすこと。<br>しあわせな人は、人を幸せにできる。<br>そのしあわせが二人になり、そうやって<br>やさしさがめぐる世界を広げていく。</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       素・良・芯 (Philosophy — unchanged)
+       ============================================================ -->
+  <section class="shin-section section-deco-wrap">
     <!-- 角装飾 -->
-    <svg class="corner-deco corner-deco-tl" width="120" height="120" viewBox="0 0 120 120" fill="currentColor" aria-hidden="true">
-      <circle cx="20" cy="20" r="6"/><circle cx="45" cy="10" r="4"/><circle cx="10" cy="45" r="4"/>
-      <circle cx="70" cy="15" r="3"/><circle cx="15" cy="70" r="3"/><circle cx="90" cy="25" r="2"/><circle cx="25" cy="90" r="2"/>
-      <ellipse cx="55" cy="30" rx="10" ry="5" transform="rotate(-30 55 30)"/>
-      <ellipse cx="30" cy="55" rx="10" ry="5" transform="rotate(60 30 55)"/>
-    </svg>
-    <svg class="corner-deco corner-deco-br" width="100" height="100" viewBox="0 0 120 120" fill="currentColor" aria-hidden="true">
-      <circle cx="20" cy="20" r="6"/><circle cx="45" cy="10" r="4"/><circle cx="10" cy="45" r="4"/>
-      <circle cx="70" cy="15" r="3"/><circle cx="15" cy="70" r="3"/>
-      <ellipse cx="55" cy="30" rx="10" ry="5" transform="rotate(-30 55 30)"/>
-    </svg>
     <div class="shin-inner">
       <div class="shin-header fade-up">
-        <span class="section-eyebrow">Philosophy</span>
-        <h2 class="section-title">ハルカゼの婚活、3つの軸</h2>
+        <span class="section-eyebrow" style="color: var(--navy-mid);">Philosophy</span>
+        <h2 class="section-title" style="color: var(--navy);">3つの軸</h2>
         <div class="section-rule section-rule-center"></div>
         <p class="shin-intro"></p>
       </div>
@@ -790,6 +1215,8 @@
         </div>
       </div>
 
+      <p style="text-align: center; font-size: 15px; color: var(--navy); margin: 24px 0 0; line-height: 2;">あなたに必要なのはどこだろう？</p>
+
       <!-- 詳細パネル -->
       <div class="shin-detail-panels">
         <div class="shin-detail" id="shin-detail-1">
@@ -813,37 +1240,16 @@
   </section>
 
   <!-- ============================================================
-       VISION
+       SLIDE 12 — New CTA
        ============================================================ -->
-  <section class="vision-section" id="vision">
-    <div class="vision-inner">
-      <span class="section-eyebrow fade-up">Vision</span>
-      <h2 class="vision-title fade-up delay-1">誰よりも幸せであれ！</h2>
-      <div class="vision-rule fade-up delay-1"></div>
-      <p class="vision-body fade-up delay-2">ハルカゼは、婚活を通して<br>
-「自分の人生を、最高の主役で生きる人」を増やしたい。<br>
-<br>
-あなたが、あなたを生きる充実感。<br>
-その輝きは、いつか必ず、大切な誰かの力になる。<br>
-一人の「満足」が、二人の「幸せ」へ。<br>
-次は、あなたの大切な誰かと。</p>
-    </div>
-  </section>
+  <section class="new-cta-section">
+    <div class="new-cta-inner">
 
-  <!-- ============================================================
-       MESSAGE
-       ============================================================ -->
 
-  <!-- ============================================================
-       CTA
-       ============================================================ -->
-  <section class="about-cta">
-    <span class="about-cta-eyebrow fade-up">Contact</span>
-    <h2 class="about-cta-title fade-up delay-1">「話してみる」が、すべての始まり。</h2>
-    <p class="about-cta-sub fade-up delay-2">入会を迷っていても大丈夫。<br>まずはあなたの話を聞かせてください。初回無料。</p>
-    <div class="about-cta-actions fade-up delay-3">
-      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn btn-line btn-lg">LINEで初回無料面談に申し込む</a>
-      <a href="service.html" class="btn btn-outline-white">サービスを見る</a>
+      <div class="new-cta-buttons">
+        <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size: 14px; padding: 18px 44px;">無料カウンセリングを予約する</a>
+        <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn-line" style="font-size: 13px; padding: 18px 32px;"><span style="color:#fff;">LINE</span>で予約する</a>
+      </div>
     </div>
   </section>
 
@@ -852,22 +1258,50 @@
 <!-- ============================================================
      FOOTER
      ============================================================ -->
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
-    <p class="footer-brand">大阪・吹田・オンラインで全国対応<br>結婚相談所ハルカゼ</p>
-    <nav class="footer-links">
-      <a href="about.html">メッセージ</a>
-      <a href="service.html">サービス・料金</a>
-      <a href="flow.html">成婚までの流れ</a>
-      <a href="lab.html">ハルカゼLAB</a>
-      <a href="faq.html">よくある質問</a>
-      <a href="blog.html">ブログ</a>
-      <a href="profile.html">代表プロフィール</a>
-      <a href="privacy.html">プライバシーポリシー</a>
-    </nav>
-    <p class="footer-girls-label">女性の方はこちら</p>
-    <a href="girls.html" class="footer-girls-link">▶ 女子の婚活 Girls LAB</a>
-    <p class="footer-copy">© 2025 結婚相談所ハルカゼ</p>
+    <div class="footer-brand">
+      <a href="index.html" class="logo" style="color: var(--white);">結婚相談所　ハルカゼ<span>MARRIAGE CONSULTING</span></a>
+      <p>「あなたがいい」で選ばれる婚活を。<br>IBJ正規加盟店</p>
+      <div style="margin-top: 16px;">
+        <img src="images/Photoroom_20260409_154324.png" alt="結婚相談所ハルカゼ ロゴ" style="height: 112px; width: auto;">
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h4>Service</h4>
+      <ul>
+        <li><a href="about.html">メッセージ</a></li>
+        <li><a href="service.html">サービス内容</a></li>
+        <li><a href="lab.html">オトナ男子LAB</a></li>
+        <li><a href="service.html">料金プラン</a></li>
+        <li><a href="girls.html">オトナ<span style="color: var(--pink);">女子</span>の婚活はこちら</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h4>Info</h4>
+      <ul>
+        <li><a href="faq.html">よくある質問</a></li>
+        <li><a href="blog.html">ブログ</a></li>
+        <li><a href="privacy.html">プライバシーポリシー</a></li>
+        <li><a href="#">特定商取引法に基づく表記</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer">無料カウンセリング予約</a></li>
+        <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer">LINEで予約する</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2025 Harukaze Marriage Consulting. All rights reserved.</span>
+    <span>IBJ正規加盟店</span>
   </div>
 </footer>
 

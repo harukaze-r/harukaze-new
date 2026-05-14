@@ -434,19 +434,20 @@
 </head>
 <body>
 
-<nav class="site-nav">
-  <a href="index.html" class="nav-logo">
-    <img src="images/Photoroom_20260409_154324.png" alt="ハルカゼ" class="nav-logo-icon">
-    <span class="nav-logo-text">結婚相談所 ハルカゼ</span>
+<nav class="site-nav" id="siteNav">
+  <a href="index.html" class="logo">
+    結婚相談所 ハルカゼ
+    <span>MARRIAGE CONSULTING</span>
+    <em>── 大人男子のための婚活</em>
   </a>
   <ul class="nav-links">
     <li><a href="about.html">メッセージ</a></li>
     <li><a href="service.html">サービス・価格</a></li>
     <li><a href="flow.html">成婚までの流れ</a></li>
-    <li><a href="lab.html">ハルカゼLAB</a></li>
+    <li><a href="lab.html">オトナ男子LAB</a></li>
     <li><a href="faq.html">よくある質問</a></li>
     <li><a href="blog.html">ブログ</a></li>
-    <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで相談</a></li>
+    <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで予約する</a></li>
   </ul>
   <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く">
     <span></span><span></span><span></span>
@@ -454,20 +455,23 @@
 </nav>
 
 <div class="mobile-nav-overlay" id="mobileNavOverlay">
-  <button class="mobile-nav-close" id="mobileNavClose" aria-label="メニューを閉じる"><span></span><span></span></button>
-  <span class="mobile-nav-specialty">男性専門結婚相談所</span>
+  <button class="mobile-nav-close" id="mobileNavClose" aria-label="閉じる">
+    <span></span><span></span>
+  </button>
+  <div class="mobile-nav-specialty">
+    <span>MARRIAGE CONSULTING</span>
+    <em>── 大人男子のための婚活</em>
+  </div>
   <a href="index.html">ホーム</a>
   <a href="about.html">メッセージ</a>
   <a href="service.html">サービス・価格</a>
   <a href="flow.html">成婚までの流れ</a>
-  <a href="lab.html">ハルカゼLAB</a>
+  <a href="lab.html">オトナ男子LAB</a>
   <a href="faq.html">よくある質問</a>
   <a href="blog.html">ブログ</a>
   <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">初回無料面談に申し込む</a>
   <hr class="mobile-nav-divider">
-  <span class="mobile-nav-girls-label">女性の方はこちら</span>
-  <span class="mobile-nav-arrow"></span>
-  <a href="girls.html" class="mobile-nav-girls">女子の婚活 Girls LAB</a>
+  <a href="girls.html" class="mobile-nav-girls-link">大人女子の婚活はこちら</a>
 </div>
 
 <main>
@@ -627,22 +631,21 @@
 
   <!-- CTA -->
   <section class="cta-section">
-    <div class="cta-inner">
-      <span class="cta-eyebrow fade-up">Contact</span>
-      <h2 class="cta-title fade-up delay-1">まずは、LINEで<br>気軽に話しかけてください。</h2>
-      <p class="cta-sub fade-up delay-2">どのプログラムが合うか迷ったら、<br>一緒に選びます。</p>
-      <div class="cta-btns fade-up delay-3">
-        <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn btn-line btn-lg">LINEで申し込む</a>
-        <a href="lab.html" class="btn btn-outline">ハルカゼLABに戻る</a>
-      </div>
+  <div class="cta-buttons">
+      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size: 14px; padding: 18px 44px; background: var(--white); color: var(--navy);">無料カウンセリングを予約する</a>
+      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn-line" style="font-size: 13px; padding: 18px 32px; border-color: var(--white); color: var(--white);"><span style="color:#06C755;">LINE</span>で予約する</a>
     </div>
-  </section>
+  <p class="cta-note">オンライン30分 ｜ 全国オンライン対応</p>
+</section>
 
 </main>
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <p class="footer-brand">大阪・吹田・オンラインで全国対応<br>結婚相談所ハルカゼ</p>
+    <div class="footer-brand">
+      <img src="images/Photoroom_20260409_154324.png" alt="結婚相談所ハルカゼ ロゴ" style="height: 56px; width: auto; margin-bottom: 12px;">
+      <p>大阪・吹田・オンラインで全国対応<br>結婚相談所ハルカゼ</p>
+    </div>
     <nav class="footer-links">
       <a href="about.html">メッセージ</a>
       <a href="about.html#vision">ハルカゼの想い</a>

@@ -3,11 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ハルカゼLAB | 結婚相談所ハルカゼ</title>
+<title>大人男子LAB | 結婚相談所ハルカゼ</title>
 <link rel="icon" href="newimages/使用ロゴ.jpeg">
-<meta property="og:image" content="newimages/h. (1).png">
-<meta property="og:title" content="ハルカゼLAB | 結婚相談所ハルカゼ">
-<meta property="og:description" content="いい人が現れたときに、最高の関係を築ける「あなた」を育む場所。">
+<meta property="og:title" content="大人男子LAB | 結婚相談所ハルカゼ">
+<meta property="og:description" content="「選ばれる」以上に、この人生を面白くしたい。">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="css/common.css">
 <style>
@@ -15,715 +14,611 @@
    lab.html ページ固有スタイル
    ============================================================ */
 
-/* ── キャッチバナー ── */
-.lab-catch-banner {
-  position: relative;
-  overflow: hidden;
-  background: var(--c-navy, #1A2A44);
-  padding: clamp(48px, 9vw, 88px) clamp(24px, 6vw, 64px);
-  text-align: center;
-}
-.lab-catch-inner {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
-.lab-catch-label {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.48em;
-  text-transform: uppercase;
-  color: var(--pink, #D4637C);
-  border: 1px solid rgba(212,99,124,0.5);
-  padding: 5px 18px;
-  border-radius: 40px;
-}
-.lab-catch-text {
-  font-family: var(--font-serif);
-  font-size: clamp(26px, 6vw, 52px);
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: 0.06em;
-  line-height: 1.4;
-  margin: 0;
-}
-.lab-catch-text em {
-  font-style: normal;
-  color: var(--pink, #D4637C);
-  position: relative;
-}
-.lab-catch-text em::after {
-  content: '';
-  position: absolute;
-  left: 0; right: 0; bottom: -4px;
-  height: 2px;
-  background: var(--pink, #D4637C);
-  border-radius: 2px;
-  opacity: 0.7;
-}
-.lab-catch-sub {
-  font-size: 12px;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.38);
-  margin-top: 4px;
-}
-/* デコ円 */
-.lab-catch-deco {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 1;
-}
-.lab-catch-deco-1 {
-  width: 300px; height: 300px;
-  border: 1px solid rgba(255,255,255,0.06);
-  top: -80px; right: -60px;
-}
-.lab-catch-deco-2 {
-  width: 180px; height: 180px;
-  border: 1px solid rgba(212,99,124,0.18);
-  bottom: -50px; left: -30px;
-}
-.lab-catch-deco-3 {
-  width: 80px; height: 80px;
-  background: rgba(212,99,124,0.1);
-  top: 30%; right: 12%;
-}
-
-/* ── Blob デコレーション ── */
-.blob-deco {
-  position: absolute;
-  pointer-events: none;
-  opacity: 0.38;
-}
-.blob-1 {
-  width: 180px; height: 200px;
-  background: #ffb5c8;
-  top: -40px; right: 8%;
-  border-radius: 40% 60% 65% 35% / 40% 45% 55% 60%;
-}
-.blob-2 {
-  width: 130px; height: 150px;
-  background: #ffd4a0;
-  top: 30%; left: -30px;
-  border-radius: 65% 35% 30% 70% / 55% 30% 70% 45%;
-}
-.blob-3 {
-  width: 100px; height: 120px;
-  background: #b8d8f8;
-  bottom: 12%; right: -15px;
-  border-radius: 50% 50% 35% 65% / 55% 65% 35% 45%;
-}
-.blob-4 {
-  width: 75px; height: 95px;
-  background: #d0c4ff;
-  bottom: 28%; left: 6%;
-  border-radius: 70% 30% 55% 45% / 35% 70% 30% 65%;
-}
-.blob-5 {
-  width: 55px; height: 75px;
-  background: #b4e8d0;
-  top: 55%; right: 10%;
-  border-radius: 55% 45% 70% 30% / 65% 40% 60% 35%;
-}
-.blob-6 {
-  width: 65px; height: 55px;
-  background: #fff0b0;
-  top: 18%; left: 15%;
-  border-radius: 45% 55% 40% 60% / 60% 40% 65% 35%;
-}
-
-/* ── Hero ── */
+/* ── HERO ── */
 .lab-hero {
   position: relative;
+  background: var(--navy);
   overflow: hidden;
-  background: #fff;
-  padding: clamp(80px, 12vw, 140px) clamp(24px, 6vw, 64px) clamp(64px, 10vw, 100px);
-  text-align: center;
-}
-.lab-hero-inner {
-  position: relative;
-  z-index: 1;
-  max-width: 680px;
-  margin: 0 auto;
-}
-.lab-eyebrow {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
-  color: var(--pink);
-  margin-bottom: 28px;
-}
-.lab-hero-message {
-  text-align: left;
-  font-size: clamp(14px, 2vw, 16px);
-  color: var(--text-mid);
-  line-height: 2.2;
-  margin-bottom: 48px;
-}
-.lab-hero-message p {
-  margin-bottom: 24px;
-}
-.lab-hero-message p:last-child { margin-bottom: 0; }
-.lab-hero-message em {
-  font-style: normal;
-  color: var(--navy);
-  font-weight: 700;
-}
-.lab-hero-cta {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-}
-.lab-hero-note {
-  font-size: 12px;
-  color: var(--text-light);
-  letter-spacing: 0.06em;
-}
-
-/* ── LAB ポスター（index.html 参照） ── */
-.lab-overview { background: #f9f7f5; }
-
-.lab-poster {
+  min-height: 90vh;
   display: grid;
   grid-template-columns: 1fr;
-  position: relative;
+  align-items: end;
 }
 @media (min-width: 768px) {
-  .lab-poster { grid-template-columns: 1.1fr 1fr; min-height: 480px; }
+  .lab-hero { grid-template-columns: 1fr 1fr; min-height: 100vh; align-items: stretch; }
 }
-.lab-poster-left {
-  background: var(--navy);
-  padding: clamp(48px, 7vw, 80px) clamp(28px, 5vw, 56px);
+.lab-hero-image {
+  position: relative;
+  overflow: hidden;
+  min-height: 50vw;
+}
+@media (min-width: 768px) { .lab-hero-image { min-height: unset; } }
+.lab-hero-image img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.lab-hero-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent 50%, var(--navy) 100%);
+}
+@media (max-width: 767px) {
+  .lab-hero-image::after {
+    background: linear-gradient(to bottom, transparent 60%, var(--navy) 100%);
+  }
+}
+.lab-hero-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: clamp(40px, 6vw, 80px) clamp(28px, 5vw, 64px);
+  position: relative;
+  z-index: 1;
+}
+.lab-hero-eyebrow {
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--mint-dark);
+  display: block;
+  margin-bottom: 20px;
+}
+.lab-hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 2.8vw, 32px);
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.65;
+  letter-spacing: 0.06em;
+  margin-bottom: 28px;
+}
+.lab-hero-lead {
+  font-size: clamp(13px, 1.4vw, 15px);
+  color: rgba(255,255,255,0.62);
+  line-height: 2.1;
+  letter-spacing: 0.04em;
+  max-width: 420px;
+}
+.lab-hero-lead strong {
+  color: rgba(255,255,255,0.9);
+  font-weight: 500;
+}
+.lab-hero-rule {
+  width: 36px; height: 1.5px;
+  background: var(--mint-dark);
+  margin-top: 32px;
+}
+
+/* ── CONCEPT ── */
+.lab-concept {
+  background: var(--navy);
+  padding: clamp(72px, 10vw, 120px) clamp(16px, 3vw, 32px);
   position: relative;
   overflow: hidden;
 }
-.lab-poster-left::before {
-  content: '';
+.lab-concept::before {
+  content: 'LAB';
   position: absolute;
-  width: 340px; height: 340px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.06);
-  right: -80px; top: -80px;
-  pointer-events: none;
-}
-.lab-poster-left::after {
-  content: '';
-  position: absolute;
-  width: 200px; height: 200px;
-  border-radius: 50%;
-  border: 1px solid rgba(239,167,182,0.15);
-  left: -40px; bottom: -40px;
-  pointer-events: none;
-}
-@keyframes lab-shimmer {
-  0%   { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
-@keyframes lab-float {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-6px); }
-}
-.lab-research-label {
-  display: inline-block;
-  font-size: 11px;
+  right: -2%; bottom: -5%;
+  font-family: var(--font-display);
+  font-size: clamp(80px, 18vw, 200px);
   font-weight: 700;
-  letter-spacing: 0.18em;
-  color: #1A2A44;
-  background: #F5D94E;
-  padding: 4px 12px;
-  border-radius: 4px;
+  color: rgba(255,255,255,0.03);
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.lab-concept-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.lab-concept-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(18px, 2.5vw, 26px);
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+  margin-bottom: 32px;
+}
+.lab-concept-heading em {
+  font-style: normal;
+  color: var(--mint-dark);
+}
+.lab-concept-body {
+  font-size: clamp(14px, 1.6vw, 16px);
+  color: rgba(255,255,255,0.62);
+  line-height: 2.2;
+  letter-spacing: 0.04em;
+}
+
+/* ── SYSTEM ── */
+.lab-system {
+  background: var(--bg-gray);
+  padding: clamp(48px, 7vw, 80px) clamp(24px, 5vw, 64px);
+}
+.lab-system-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.lab-system-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 32px;
+}
+@media (min-width: 600px) {
+  .lab-system-cards { grid-template-columns: repeat(3, 1fr); }
+}
+.lab-system-card {
+  background: #fff;
+  border: 0.5px solid var(--border);
+  padding: 24px 20px;
+}
+.lab-system-card-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--mint-dark);
+  display: block;
+  margin-bottom: 10px;
+}
+.lab-system-card-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.8;
+}
+.lab-system-card-sub {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 6px;
+  line-height: 1.7;
+}
+
+/* ── MISSION LIST ── */
+.lab-missions-header {
+  text-align: center;
+  padding: clamp(64px, 9vw, 100px) clamp(24px, 5vw, 64px) clamp(32px, 4vw, 48px);
+  background: #dedad5;
+}
+.lab-missions-header-inner { max-width: 640px; margin: 0 auto; }
+
+/* ── MISSION CARDS ── */
+.lab-missions {
+  background: #dedad5;
+  padding: 0 clamp(24px, 5vw, 64px) clamp(72px, 10vw, 100px);
+}
+.lab-mission-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+@media (min-width: 900px) {
+  .lab-mission-grid { grid-template-columns: repeat(6, 1fr); }
+  .lab-mission-card { grid-column: span 2; }
+  .lab-mission-card:nth-child(4) { grid-column: 2 / span 2; }
+  .lab-mission-card:nth-child(5) { grid-column: 4 / span 2; }
+}
+@media (max-width: 560px) {
+  .lab-mission-grid { grid-template-columns: 1fr; }
+}
+.mission-s1 { --step-color: #e8859e; }
+.mission-s2 { --step-color: #7a9fc0; }
+.mission-s3 { --step-color: #7aaa78; }
+.mission-s4 { --step-color: #b87aaa; }
+.mission-s5 { --step-color: #c89040; }
+.lab-mission-card {
+  background: #fff;
+  border: 0.5px solid var(--border, #e8e3de);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.lab-mission-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(26,34,53,0.08);
+}
+.lab-mission-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--step-color, var(--mint-dark));
+  z-index: 2;
+}
+.lab-mission-body { padding: 28px 26px 32px; }
+.lab-mission-num {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #fff;
+  background: var(--step-color, var(--mint-dark));
+  border-radius: 20px;
+  padding: 3px 12px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+.lab-mission-category {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--step-color, var(--mint-dark));
+  display: block;
+  margin-bottom: 10px;
+}
+.lab-mission-rule {
+  width: 28px; height: 2px;
+  background: var(--step-color, var(--mint-dark));
+  border-radius: 2px;
+  margin-bottom: 12px;
+  opacity: 0.5;
+}
+.lab-mission-title {
+  font-family: var(--font-serif);
+  font-size: clamp(13px, 1.4vw, 16px);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.lab-mission-desc {
+  font-size: 12px;
+  color: var(--text-mid);
+  line-height: 2;
   margin-bottom: 12px;
 }
-.lab-display-harukaze {
-  font-family: var(--font-serif);
-  font-size: clamp(36px, 7vw, 72px);
-  font-weight: 400;
-  color: rgba(255,255,255,0.55);
-  letter-spacing: 0.18em;
-  line-height: 1;
-  display: block;
-  margin-bottom: 4px;
+.lab-mission-note {
+  font-size: 11px;
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 12px;
+  font-style: italic;
 }
-.lab-display-lab {
-  font-family: var(--font-display);
-  font-size: clamp(72px, 14vw, 148px);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 0.9;
-  display: block;
-  background: linear-gradient(90deg, #fff 0%, var(--pink) 30%, #fff 55%, var(--pink) 80%, #fff 100%);
-  background-size: 300% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: lab-shimmer 10s linear infinite, lab-float 5s ease-in-out infinite;
+.lab-mission-ticket {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--step-color, var(--mint-dark));
+  border: 1px solid var(--step-color, var(--mint-dark));
+  border-radius: 4px;
+  padding: 4px 12px;
+  margin-bottom: 14px;
+  opacity: 0.9;
 }
-/* ピンクキャッチコピー */
-.lab-pink-catch {
+.lab-mission-instructor {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 0.5px solid rgba(0,0,0,0.08);
+  flex-wrap: wrap;
+}
+.lab-mission-instructor-item {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  margin: 16px 0 4px;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
 }
-.lab-pink-catch-line {
-  font-family: var(--font-serif);
-  font-size: clamp(14px, 2.2vw, 18px);
-  font-weight: 700;
-  color: var(--pink, #D4637C);
-  letter-spacing: 0.06em;
+.lab-mission-avatar {
+  width: 90px; height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  flex-shrink: 0;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.14);
+}
+.lab-mission-placeholder {
+  width: 90px; height: 90px;
+  border-radius: 50%;
+  background: var(--step-color, #ccc);
+  opacity: 0.15;
+  flex-shrink: 0;
+  border: 1.5px dashed var(--step-color, #ccc);
+}
+.lab-mission-role {
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--text-light);
   line-height: 1.6;
 }
 
-/* プログラム一覧（ポスター左列下） */
-.lab-program-list {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  width: 100%;
-}
-.lab-program-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 12px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background 0.2s;
-}
-.lab-program-item:hover {
-  background: rgba(255,255,255,0.12);
-}
-.lab-program-num {
-  font-family: var(--font-display);
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--pink);
-  letter-spacing: 0.08em;
-  flex-shrink: 0;
-  min-width: 20px;
-}
-.lab-program-name {
-  font-size: 13px;
-  font-weight: 600;
-  color: #fff;
-  flex: 1;
-  letter-spacing: 0.03em;
-}
-.lab-program-ticket {
-  font-size: 10px;
-  color: rgba(255,255,255,0.5);
-  letter-spacing: 0.06em;
-  flex-shrink: 0;
-}
-.lab-program-ticket.coming {
-  color: var(--pink);
-  opacity: 0.7;
-}
-
-.lab-poster-tag {
-  margin-top: 28px;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-.lab-poster-tag span {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  color: rgba(255,255,255,0.45);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 20px;
-  padding: 4px 12px;
-}
-.lab-poster-right {
-  background: #f9f7f5;
-  padding: clamp(48px, 7vw, 80px) clamp(28px, 5vw, 56px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 28px;
-}
-.lab-poster-eyebrow {
-  font-size: 10px;
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
-  color: var(--pink);
-  display: block;
-}
-.lab-poster-body {
-  font-family: var(--font-serif);
-  font-size: clamp(15px, 2vw, 18px);
-  font-weight: 500;
-  color: var(--navy);
-  line-height: 1.9;
-  letter-spacing: 0.04em;
-}
-.lab-badge-wrap {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.lab-badge {
-  width: 108px; height: 108px;
-  border-radius: 50%;
-  border: 1.5px solid var(--pink);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  flex-shrink: 0;
-  padding: 12px;
-  gap: 4px;
-}
-.lab-badge-top {
-  font-size: 10px; font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--pink); line-height: 1.4;
-}
-.lab-badge-price {
-  font-family: var(--font-serif);
-  font-size: 19px; font-weight: 700;
-  color: var(--navy); line-height: 1;
-}
-.lab-badge-note {
-  font-size: 12px;
-  color: var(--text-mid);
-  line-height: 1.9;
-}
-
-/* ── What You Can Do ── */
-.lab-cards-area {
+/* ── PRICE & MEMBERSHIP ── */
+.lab-price {
   background: var(--navy);
-  padding: clamp(48px, 7vw, 80px) clamp(24px, 5vw, 48px);
+  padding: clamp(72px, 10vw, 120px) clamp(24px, 5vw, 64px);
   position: relative;
   overflow: hidden;
 }
-.lab-cards-area::before {
-  content: 'WHAT YOU CAN DO';
+.lab-price::before {
+  content: 'PRICE';
   position: absolute;
-  right: -1%; bottom: 10%;
+  right: -2%; bottom: -4%;
   font-family: var(--font-display);
-  font-size: clamp(40px, 7vw, 80px);
+  font-size: clamp(60px, 12vw, 140px);
   font-weight: 700;
   color: rgba(255,255,255,0.03);
   letter-spacing: 0.08em;
   pointer-events: none;
   white-space: nowrap;
 }
-.lab-inner { max-width: var(--inner); margin: 0 auto; position: relative; z-index: 1; }
-.lab-features-label {
-  font-size: 11px;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
-  display: block;
-  margin-bottom: 36px;
-  text-align: center;
+.lab-price-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
-.lab-features-circle {
+.lab-price-lead {
+  font-size: clamp(13px, 1.5vw, 15px);
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 40px;
+  letter-spacing: 0.04em;
+}
+.lab-price-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-bottom: 52px;
+  grid-template-columns: 1fr;
+  gap: 2px;
+  margin-bottom: 48px;
 }
-@media (max-width: 900px) {
-  .lab-features-circle { grid-template-columns: repeat(2, 1fr); max-width: 560px; margin-left: auto; margin-right: auto; }
+@media (min-width: 600px) {
+  .lab-price-grid { grid-template-columns: repeat(3, 1fr); }
 }
-@media (max-width: 480px) {
-  .lab-features-circle { grid-template-columns: 1fr; max-width: 280px; }
-}
-.lab-feature-circle-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 32px 18px;
+.lab-price-card {
   background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 50%;
-  aspect-ratio: 1 / 1;
-  justify-content: center;
-  transition: background 0.3s, transform 0.3s;
+  border: 0.5px solid rgba(255,255,255,0.1);
+  padding: clamp(24px, 3vw, 36px) clamp(20px, 3vw, 32px);
+  transition: background 0.3s;
 }
-.lab-feature-circle-card:hover { background: rgba(255,255,255,0.09); transform: translateY(-5px); }
-.lab-feature-circle-num {
-  font-size: 11px; font-weight: 700;
-  letter-spacing: 0.14em; color: var(--pink);
-  display: block; margin-bottom: 10px;
-}
-.lab-feature-circle-title {
-  font-family: var(--font-serif);
-  font-size: clamp(13px, 1.5vw, 14px);
-  font-weight: 700; color: #fff;
-  line-height: 1.6; margin-bottom: 8px;
-}
-.lab-feature-circle-desc {
+.lab-price-card:hover { background: rgba(255,255,255,0.08); }
+.lab-price-card-name {
   font-size: 11px;
-  color: rgba(255,255,255,0.45);
-  line-height: 1.85;
-}
-.lab-cta-bar { text-align: center; }
-
-/* ── What You Can Do 上部メッセージ ── */
-.lab-cards-message {
-  max-width: 560px;
-  margin: 0 auto 56px;
-  text-align: center;
-}
-.lab-cards-message-lead {
-  font-family: var(--font-serif);
-  font-size: clamp(17px, 2.5vw, 20px);
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: 0.06em;
-  line-height: 1.7;
-  margin-bottom: 32px;
-}
-.lab-cards-message-body {
-  font-size: clamp(13px, 1.8vw, 15px);
-  color: rgba(255,255,255,0.65);
-  line-height: 2.1;
-  margin-bottom: 20px;
-}
-.lab-cards-message-body:last-child { margin-bottom: 0; }
-.lab-cards-message-body strong {
-  color: #fff;
-  font-weight: 700;
-}
-.lab-cards-message-closing {
-  font-family: var(--font-serif);
-  font-size: clamp(14px, 2vw, 17px);
-  font-weight: 700;
-  color: var(--pink);
-  letter-spacing: 0.04em;
-  line-height: 1.8;
-  margin-top: 36px;
-  padding-top: 36px;
-  border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-/* ── プログラムリンク ── */
-.program-link-section {
-  background: #fff;
-  padding: clamp(48px, 8vw, 80px) 24px;
-  text-align: center;
-}
-.program-link-inner { max-width: 600px; margin: 0 auto; }
-.program-link-eyebrow {
-  font-size: 11px; letter-spacing: 0.3em;
-  text-transform: uppercase; color: var(--pink);
-  display: block; margin-bottom: 16px;
-}
-.program-link-title {
-  font-family: var(--font-serif);
-  font-size: clamp(20px, 3.5vw, 28px);
-  font-weight: 700; color: var(--navy);
-  margin-bottom: 12px; line-height: 1.5;
-}
-.program-link-sub {
-  font-size: 14px; color: var(--text-mid);
-  line-height: 2; margin-bottom: 36px;
-}
-.program-link-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 12px;
-  margin-bottom: 36px;
-}
-.program-tag-card {
-  background: #f9f7f5;
-  border: 1.5px solid var(--border);
-  border-radius: 12px;
-  padding: 16px 12px;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--navy);
-  letter-spacing: 0.04em;
-}
-.program-tag-card span {
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--mint-dark);
   display: block;
-  font-size: 11px;
-  color: var(--pink);
-  letter-spacing: 0.12em;
+  margin-bottom: 12px;
+}
+.lab-price-card-label {
+  font-family: var(--font-serif);
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.5;
   margin-bottom: 6px;
-  font-weight: 700;
 }
-
-/* ── チケット情報 ── */
-.ticket-info-section {
-  background: #f9f7f5;
-  padding: clamp(48px, 8vw, 80px) 24px;
+.lab-price-card-price {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 38px);
+  font-weight: 300;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: -0.02em;
+  margin-top: 8px;
 }
-.ticket-info-inner { max-width: 640px; margin: 0 auto; text-align: center; }
-.ticket-info-badges {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 32px;
+.lab-price-card-unit {
+  font-size: 0.48em;
+  font-weight: 400;
+  margin-left: 2px;
+  vertical-align: baseline;
 }
-.ticket-info-badge {
-  background: #fff;
-  border: 1.5px solid var(--border);
-  border-radius: 16px;
-  padding: 20px 24px;
-  flex: 1;
-  min-width: 180px;
-  max-width: 260px;
+.lab-price-card-desc {
+  font-size: 11px;
+  color: rgba(255,255,255,0.42);
+  margin-top: 6px;
+  letter-spacing: 0.06em;
 }
-.ticket-info-badge-label {
+.lab-price-card-note {
+  font-size: 10px;
+  color: rgba(255,255,255,0.32);
+  margin-top: 8px;
+  letter-spacing: 0.04em;
+}
+.lab-price-card-badge {
+  display: inline-block;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: var(--mint-dark);
+  border: 0.5px solid var(--mint-dark);
+  padding: 2px 8px;
+  margin-bottom: 10px;
+}
+.lab-price-card--featured {
+  border-color: rgba(42,181,224,0.3);
+  background: rgba(42,181,224,0.05);
+}
+/* Personal Member box */
+.lab-price-member {
+  background: rgba(42,181,224,0.07);
+  border: 1px solid rgba(42,181,224,0.25);
+  padding: clamp(28px, 4vw, 40px) clamp(24px, 4vw, 40px);
+  margin-top: 0;
+}
+.lab-price-member-badge {
+  display: inline-block;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.2em;
-  color: var(--pink);
-  display: block;
-  margin-bottom: 8px;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 20px;
+  padding: 3px 14px;
+  margin-bottom: 16px;
 }
-.ticket-info-badge-text {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--navy);
-  line-height: 1.7;
-}
-
-/* ── How to Start ── */
-.howto-section {
-  background: #fff;
-  padding: clamp(56px, 8vw, 96px) clamp(24px, 5vw, 48px);
-}
-.howto-inner { max-width: 640px; margin: 0 auto; }
-.howto-title {
+.lab-price-member-title {
   font-family: var(--font-serif);
-  font-size: clamp(20px, 3.5vw, 26px);
-  font-weight: 700; color: var(--navy);
-  text-align: center; margin-bottom: 48px;
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.6;
+  margin-bottom: 12px;
 }
-.howto-steps {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  position: relative;
-}
-.howto-steps::before {
-  content: '';
-  position: absolute;
-  left: 28px; top: 0; bottom: 0;
-  width: 1px;
-  background: linear-gradient(to bottom, var(--pink), rgba(239,167,182,0.1));
-}
-.howto-step {
-  display: grid;
-  grid-template-columns: 56px 1fr;
-  gap: 20px;
-  padding-bottom: 36px;
-  position: relative;
-}
-.howto-step:last-child { padding-bottom: 0; }
-.howto-step-num {
-  width: 56px; height: 56px;
-  border-radius: 50%;
-  border: 2px solid var(--pink);
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--pink);
-  position: relative;
-  z-index: 1;
-  flex-shrink: 0;
-  line-height: 1.3;
-}
-.howto-step-body { padding-top: 8px; }
-.howto-step-title {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 6px;
-  letter-spacing: 0.04em;
-}
-.howto-step-text {
+.lab-price-member-desc {
   font-size: 13px;
+  color: rgba(255,255,255,0.55);
   line-height: 2;
-  color: var(--text-mid);
+  margin-bottom: 20px;
 }
+.lab-price-member-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 0.5px solid rgba(255,255,255,0.4);
+  padding-bottom: 2px;
+  transition: opacity 0.2s;
+}
+.lab-price-member-link:hover { opacity: 0.7; }
 
-/* ── CTA ── */
-.lab-cta-section {
-  background: var(--navy);
-  padding: clamp(64px, 10vw, 100px) 24px;
+/* ── CLOSING ── */
+.lab-closing {
+  background: var(--bg-gray);
+  padding: clamp(80px, 12vw, 140px) clamp(24px, 5vw, 64px);
   text-align: center;
   position: relative;
   overflow: hidden;
 }
-.lab-cta-section::before {
+.lab-closing-inner { max-width: 640px; margin: 0 auto; }
+.lab-closing-title {
+  font-family: var(--font-serif);
+  font-size: clamp(14px, 1.8vw, 20px);
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.8;
+  letter-spacing: 0.06em;
+  margin-bottom: 28px;
+}
+.lab-closing-body {
+  font-size: clamp(14px, 1.6vw, 16px);
+  color: var(--text-mid);
+  line-height: 2.2;
+  letter-spacing: 0.04em;
+  margin-bottom: 40px;
+}
+.lab-closing-btn {
+  display: inline-block;
+  background: var(--navy);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  padding: 18px 44px;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: opacity 0.2s;
+}
+.lab-closing-btn:hover { opacity: 0.8; }
+
+/* ── HOW TO JOIN (college flow design) ── */
+.lab-ticket {
+  background: #fff;
+  padding: clamp(72px, 10vw, 120px) clamp(24px, 5vw, 64px);
+}
+.lab-ticket-inner { max-width: 900px; margin: 0 auto; }
+.lab-ticket-cta { text-align: center; margin-top: 56px; }
+.lab-ticket-header { text-align: center; margin-bottom: 64px; }
+.lab-ticket-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+.lab-ticket-steps::before {
   content: '';
   position: absolute;
-  width: 400px; height: 400px;
+  top: 40px;
+  left: 12.5%; right: 12.5%;
+  height: 1px;
+  background: var(--mint-dark);
+  opacity: 0.25;
+  z-index: 0;
+}
+.lab-ticket-step {
+  text-align: center;
+  padding: 0 16px;
+  position: relative;
+  z-index: 1;
+}
+.lab-ticket-step-num {
+  width: 80px; height: 80px;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.05);
-  left: 50%; top: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
+  background: #fff;
+  border: 2px solid var(--mint-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  flex-direction: column;
+  box-shadow: 0 4px 16px rgba(42,181,224,0.12);
 }
-.lab-cta-inner { position: relative; z-index: 1; max-width: 560px; margin: 0 auto; }
-.lab-cta-eyebrow {
+.lab-ticket-step-num-label {
+  font-family: var(--font-display);
   font-size: 10px;
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
-  display: block; margin-bottom: 20px;
+  letter-spacing: 0.1em;
+  color: var(--mint-dark);
 }
-.lab-cta-title {
-  font-family: var(--font-serif);
-  font-size: clamp(20px, 4vw, 28px);
-  font-weight: 500; color: #fff;
-  line-height: 1.7; margin-bottom: 12px;
+.lab-ticket-step-num-digit {
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: var(--mint-dark);
+  line-height: 1;
 }
-.lab-cta-sub {
+.lab-ticket-step-title {
   font-size: 13px;
-  color: rgba(255,255,255,0.55);
-  line-height: 2; margin-bottom: 40px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--navy);
+  margin-bottom: 8px;
 }
-.lab-cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.lab-ticket-step-text {
+  font-size: 11px;
+  color: var(--text-mid);
+  line-height: 1.8;
+  letter-spacing: 0.03em;
+}
+@media (max-width: 600px) {
+  .lab-ticket-steps { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .lab-ticket-steps::before { display: none; }
+}
+
+/* ── 共通 ── */
+.fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.fade-up.is-visible { opacity: 1; transform: translateY(0); }
+.delay-1 { transition-delay: 0.12s; }
+.delay-2 { transition-delay: 0.24s; }
+.delay-3 { transition-delay: 0.36s; }
 </style>
 </head>
 <body>
 
 <!-- ナビゲーション -->
 <nav class="site-nav" id="siteNav">
-  <a href="index.html" class="nav-logo">
-    <img src="images/Photoroom_20260409_154324.png" alt="ハルカゼ" class="nav-logo-icon">
-    <span class="nav-logo-text">結婚相談所 ハルカゼ</span>
+  <a href="index.html" class="logo">
+    結婚相談所 ハルカゼ
+    <span>MARRIAGE CONSULTING</span>
+    <em>── 大人男子のための婚活</em>
   </a>
   <ul class="nav-links">
     <li><a href="about.html">メッセージ</a></li>
     <li><a href="service.html">サービス・価格</a></li>
     <li><a href="flow.html">成婚までの流れ</a></li>
-    <li><a href="lab.html">ハルカゼLAB</a></li>
+    <li><a href="lab.html">オトナ男子LAB</a></li>
     <li><a href="faq.html">よくある質問</a></li>
     <li><a href="blog.html">ブログ</a></li>
-    <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで相談</a></li>
+    <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで予約する</a></li>
   </ul>
   <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く">
     <span></span><span></span><span></span>
@@ -732,244 +627,386 @@
 
 <!-- モバイルオーバーレイ -->
 <div class="mobile-nav-overlay" id="mobileNavOverlay">
-  <button class="mobile-nav-close" id="mobileNavClose" aria-label="メニューを閉じる"><span></span><span></span></button>
-  <span class="mobile-nav-specialty">男性専門結婚相談所</span>
+  <button class="mobile-nav-close" id="mobileNavClose" aria-label="閉じる">
+    <span></span><span></span>
+  </button>
+  <div class="mobile-nav-specialty">
+    <span>MARRIAGE CONSULTING</span>
+    <em>── 大人男子のための婚活</em>
+  </div>
   <a href="index.html">ホーム</a>
   <a href="about.html">メッセージ</a>
   <a href="service.html">サービス・価格</a>
   <a href="flow.html">成婚までの流れ</a>
-  <a href="lab.html">ハルカゼLAB</a>
+  <a href="lab.html">オトナ男子LAB</a>
   <a href="faq.html">よくある質問</a>
   <a href="blog.html">ブログ</a>
   <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">初回無料面談に申し込む</a>
   <hr class="mobile-nav-divider">
-  <span class="mobile-nav-girls-label">女性の方はこちら</span>
-  <span class="mobile-nav-arrow"></span>
-  <a href="girls.html" class="mobile-nav-girls">女子の婚活 Girls LAB</a>
+  <a href="girls.html" class="mobile-nav-girls-link">大人女子の婚活はこちら</a>
 </div>
 
 <main>
 
   <!-- ============================================================
-       LAB 概要（トップページのハルカゼLABセクション参照）
+       HERO
        ============================================================ -->
-  <section class="lab-overview">
-
-    <!-- ポスターエリア -->
-    <div class="lab-poster">
-      <div class="lab-poster-left fade-up">
-        <span class="lab-research-label">出会いと結婚を研究する</span>
-        <span class="lab-display-harukaze">ハルカゼ</span>
-        <span class="lab-display-lab">LAB</span>
-        <div class="lab-poster-tag">
-          <span>コーチング</span>
-          <span>パートナーシップ</span>
-          <span>セクシャルウェルネス</span>
-          <span>対人関係</span>
-        </div>
-        <div class="lab-pink-catch">
-          <span class="lab-pink-catch-line">女性の本音！</span>
-          <span class="lab-pink-catch-line">出会いの先を研究する！</span>
-        </div>
-        <div class="lab-program-list">
-          <a href="lab-courses.html#p01" class="lab-program-item">
-            <span class="lab-program-num">01</span>
-            <span class="lab-program-name">突破口発見Talk Room</span>
-            <span class="lab-program-ticket">チケット2枚</span>
-          </a>
-          <a href="lab-courses.html#p02" class="lab-program-item">
-            <span class="lab-program-num">02</span>
-            <span class="lab-program-name">心と体の保健室</span>
-            <span class="lab-program-ticket">チケット2枚</span>
-          </a>
-          <a href="lab-courses.html#p03" class="lab-program-item">
-            <span class="lab-program-num">03</span>
-            <span class="lab-program-name">GLADIÀ　信頼を深めるパートナーシップ</span>
-            <span class="lab-program-ticket">チケット1枚</span>
-          </a>
-          <a href="lab-courses.html#p04" class="lab-program-item">
-            <span class="lab-program-num">04</span>
-            <span class="lab-program-name">Vision Board　理想を可視化し実現するワーク</span>
-            <span class="lab-program-ticket">チケット3枚</span>
-          </a>
-          <a href="lab-courses.html#p05" class="lab-program-item">
-            <span class="lab-program-num">05</span>
-            <span class="lab-program-name">Image Consulting</span>
-            <span class="lab-program-ticket coming">Coming Soon</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="lab-poster-right fade-up delay-1">
-        <span class="lab-poster-eyebrow">Harukaze LAB</span>
-        <p class="lab-poster-body">
-          ハルカゼは「出会いの場」だけじゃない！<br><br>
-          婚活のリアルに向き合い、<br>
-          各種のプロが女性目線で、「マッチング」の先にある、<br>
-          「本音で笑い合える関係」までサポート。
-        </p>
-        <div class="lab-badge-wrap">
-          <div class="lab-badge">
-            <span class="lab-badge-top">チケット制</span>
-            <span class="lab-badge-price">3枚〜</span>
-            <span style="font-size:10px; color:var(--text-mid);">1枚あたり 1,000円</span>
-          </div>
-          <p class="lab-badge-note">パーソナル会員は<br>入会特典として<strong>無料</strong><br><span style="font-size:11px; color:var(--text-light);">結婚相談所に入会検討中の<br>方もOK</span></p>
-        </div>
-      </div>
+  <section class="lab-hero">
+    <div class="lab-hero-image">
+      <img src="newimages/大人男子LAB.jpg" alt="大人男子LAB">
     </div>
-
-    <!-- What You Can Do -->
-    <div class="lab-cards-area">
-      <div class="lab-inner">
-        <div class="lab-cards-message fade-up">
-          <p class="lab-cards-message-body">「とりあえずで結婚」なんてしたくない。<br>
-          妥協できない！それなら今のままでもいい。</p>
-          <p class="lab-cards-message-body">だけどふと、<strong>「このままでいいのかな」</strong>と立ち止まる瞬間があるなら…</p>
-          <p class="lab-cards-message-body">ハルカゼLABは、ただの「出会いの場」じゃない。<br>
-          「いい人待ち」をやめて、誰かと生きていくことを、<br>
-          もう一度、自分の意志で選ぶための場所。</p>
-          <p class="lab-cards-message-closing">正解は、育てる！</p>
-        </div>
-        <span class="lab-features-label fade-up delay-1">What You Can Do</span>
-        <div class="lab-features-circle fade-up delay-2">
-          <div class="lab-feature-circle-card">
-            <span class="lab-feature-circle-num">01</span>
-            <h3 class="lab-feature-circle-title">なぜ、俺はうまくいかない？「突破口」発見セッション</h3>
-            <p class="lab-feature-circle-desc">出会いの悩み、婚活の理不尽、ぶっちゃけどう思ってる？現状をロジカルに整理して、次の一手を見出すための作戦会議。</p>
-          </div>
-          <div class="lab-feature-circle-card">
-            <span class="lab-feature-circle-num">02</span>
-            <h3 class="lab-feature-circle-title">婚活疲れで削られた心を、再構築するマインドセット</h3>
-            <p class="lab-feature-circle-desc">「もう疲れた」「向いてない」……そう思うのは、やり方を知らないだけ。一生使える「人との距離の詰め方」を。</p>
-          </div>
-          <div class="lab-feature-circle-card">
-            <span class="lab-feature-circle-num">03</span>
-            <h3 class="lab-feature-circle-title">結婚相談所では教えてくれない「大人の関係」と本音</h3>
-            <p class="lab-feature-circle-desc">相談所のルールだけでは語れない、男女のリアルな距離感。チケット制だから、まずは一度、あなたの現状を話しに来るだけでOK。</p>
-          </div>
-          <div class="lab-feature-circle-card">
-            <span class="lab-feature-circle-num">04</span>
-            <h3 class="lab-feature-circle-title">「全然見向きもされない」を、突破するための客観分析</h3>
-            <p class="lab-feature-circle-desc">頑張っているのに、なぜか選ばれない。その「あと一歩」の正体を特定。清潔感、会話、振る舞い——残酷だけど確実な「変化」をここから。</p>
-          </div>
-        </div>
-        <div class="lab-cta-bar fade-up delay-2">
-          <a href="lab-courses.html" class="btn btn-light btn-lg">プログラム一覧を見る →</a>
-        </div>
-      </div>
+    <div class="lab-hero-text">
+      <span class="lab-hero-eyebrow">Otona Danshi LAB</span>
+      <h1 class="lab-hero-title">「選ばれる」以上に、<br>この人生を面白くしたい。</h1>
+      <p class="lab-hero-lead">
+        「最近、婚活がちょっと作業ゲーになっていないか？」<br>
+        そんな風に感じているのは、あなたが真面目に取り組んできたからこそ。<br><br>
+        大人男子LABは、独自の視点とロジックで、<br>
+        今の自分を楽しみながらアップデートするための<strong>「確かな最短ルート」</strong>です。
+      </p>
+      <div class="lab-hero-rule"></div>
     </div>
-
   </section>
 
   <!-- ============================================================
-       チケット情報
+       CONCEPT
        ============================================================ -->
-  <section class="ticket-info-section">
-    <div class="ticket-info-inner">
-      <span class="section-eyebrow fade-up">Ticket</span>
-      <h2 class="section-title fade-up delay-1">チケット制で、気軽にスタート</h2>
-      <div class="section-rule section-rule-center fade-up delay-1"></div>
-      <div class="ticket-info-badges fade-up delay-2">
-        <div class="ticket-info-badge">
-          <span class="ticket-info-badge-label">チケット制</span>
-          <p class="ticket-info-badge-text">3枚セット〜<br>（1枚あたり 1,000円）</p>
-        </div>
-        <div class="ticket-info-badge">
-          <span class="ticket-info-badge-label">パーソナルプラン会員</span>
-          <p class="ticket-info-badge-text">入会特典として<br><strong style="color:var(--pink)">無料</strong>で参加</p>
-        </div>
-        <div class="ticket-info-badge">
-          <span class="ticket-info-badge-label">入会検討中の方以外も</span>
-          <p class="ticket-info-badge-text">どなたでも<br>参加OK</p>
-        </div>
-      </div>
-      <p class="fade-up delay-3" style="text-align:center; margin-top:28px;">
-        <a href="service.html#lab-ticket" style="font-size:13px; color:var(--pink); text-decoration:underline; letter-spacing:0.04em;">チケット料金はこちら</a>
+  <section class="lab-concept">
+    <div class="lab-concept-inner">
+      <div class="section-eyebrow fade-up" style="--eyebrow-color: rgba(255,255,255,0.4);"><span style="color: rgba(255,255,255,0.4);">大人男子LABとは</span></div>
+      <h2 class="lab-concept-heading fade-up delay-1">「婚活を、<em>自分自身のアップデート</em>に。」</h2>
+      <p class="lab-concept-body fade-up delay-2">
+        義務感で自分をすり減らすのは、もう終わり。<br>
+        相手との関わりを「自分を磨くための研究」と捉え直し、ロジックと遊び心で自分を更新していく。<br><br>
+        ここは、あなたが自分の人生をよりスマートに、より自由に乗りこなすための場所です。
       </p>
     </div>
   </section>
 
   <!-- ============================================================
-       How to Start
+       SYSTEM
        ============================================================ -->
-  <section class="howto-section">
-    <div class="howto-inner">
-      <h2 class="howto-title fade-up">はじめ方</h2>
-      <div class="howto-steps">
-        <div class="howto-step fade-up">
-          <div class="howto-step-num">STEP<br>01</div>
-          <div class="howto-step-body">
-            <p class="howto-step-title">公式LINEに登録</p>
-            <p class="howto-step-text">まずは公式LINEへメッセージを。気軽に話しかけてください。</p>
-          </div>
+  <section class="lab-system">
+    <div class="lab-system-inner">
+      <div class="section-eyebrow fade-up"><span>System</span></div>
+      <div class="lab-system-cards fade-up delay-1">
+        <div class="lab-system-card">
+          <span class="lab-system-card-label">Ticket</span>
+          <p class="lab-system-card-text">チケット制：3枚〜</p>
+          <p class="lab-system-card-sub">自分のペースでチャージ</p>
         </div>
-        <div class="howto-step fade-up delay-1">
-          <div class="howto-step-num">STEP<br>02</div>
-          <div class="howto-step-body">
-            <p class="howto-step-title">プログラムを選ぶ</p>
-            <p class="howto-step-text">今のあなたに必要なプログラムを選びましょう。迷ったら相談OK。</p>
-          </div>
+        <div class="lab-system-card">
+          <span class="lab-system-card-label">Personal Member</span>
+          <p class="lab-system-card-text">パーソナル会員様は<br>入会特典として無料</p>
         </div>
-        <div class="howto-step fade-up delay-2">
-          <div class="howto-step-num">STEP<br>03</div>
-          <div class="howto-step-body">
-            <p class="howto-step-title">チケット購入</p>
-            <p class="howto-step-text">PayPay / 銀行振込でスムーズに。</p>
-          </div>
-        </div>
-        <div class="howto-step fade-up delay-3">
-          <div class="howto-step-num">STEP<br>04</div>
-          <div class="howto-step-body">
-            <p class="howto-step-title">オンラインで参加</p>
-            <p class="howto-step-text">当日はオンラインで。全国どこからでも参加できます。</p>
-          </div>
+        <div class="lab-system-card">
+          <span class="lab-system-card-label">Open to All</span>
+          <p class="lab-system-card-text">結婚相談所への<br>入会検討中の方も歓迎</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       CTA
+       MISSION LIST
        ============================================================ -->
-  <section class="lab-cta-section">
-    <div class="lab-cta-inner">
-      <div class="lab-cta-btns fade-up">
-        <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn btn-line btn-lg">LINEで申し込む</a>
-        <a href="lab-courses.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.35); color:#fff;">プログラム一覧を見る</a>
+  <div class="lab-missions-header">
+    <div class="lab-missions-header-inner">
+      <div class="section-eyebrow fade-up"><span>Mission List</span></div>
+      <h2 class="section-heading fade-up delay-1" style="font-size: clamp(16px, 2vw, 22px);">各種のプロが女性目線でサポート</h2>
+    </div>
+  </div>
+
+  <section class="lab-missions">
+    <div class="lab-mission-grid">
+
+      <!-- 01 -->
+      <div class="lab-mission-card mission-s1 fade-up">
+        <div class="lab-mission-body">
+          <span class="lab-mission-num">01</span>
+          <span class="lab-mission-category">代表と1on1</span>
+          <div class="lab-mission-rule"></div>
+          <h2 class="lab-mission-title">THE BREAKTHROUGH —<br>「突破口」発見セッション</h2>
+          <p class="lab-mission-desc">「なぜ、俺はうまくいかない？」その問いを、知的に解剖する。現状のパターンを整理し、人生の停滞を打破するための「作戦図」を一緒に引く。最短ルートを見出すための、40分間のブレインストーミング。</p>
+          <p class="lab-mission-note">※「何から手をつければいいか迷っている」なら、まずはここから。</p>
+          <p class="lab-mission-ticket">Ticket × 2</p>
+          <div class="lab-mission-instructor">
+            <div class="lab-mission-instructor-item">
+              <img class="lab-mission-avatar" src="images/IMG_8907.jpeg" alt="ハルカゼ代表">
+              <span class="lab-mission-role">ハルカゼ代表<br>婚活カウンセラー</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02 -->
+      <div class="lab-mission-card mission-s2 fade-up delay-1">
+        <div class="lab-mission-body">
+          <span class="lab-mission-num">02</span>
+          <span class="lab-mission-category">セクシャルウェルネスコーチ・精神対話士</span>
+          <div class="lab-mission-rule"></div>
+          <h2 class="lab-mission-title">MENTAL & GROOMING —<br>心と体の保健室</h2>
+          <p class="lab-mission-desc">一流の男ほど、自分の扱い方を知っている。日々のストレスをリセットするマインドセットから、大人の品格を上げる教養まで。自分を整え、次への活力をチャージするためのメンテナンス。</p>
+          <p class="lab-mission-ticket">Ticket × 2</p>
+          <div class="lab-mission-instructor">
+            <div class="lab-mission-instructor-item">
+              <img class="lab-mission-avatar" src="newimages/492004979_3368927726583503_3366660712559650101_n.jpg" alt="セクシャルウェルネスコーチ">
+              <span class="lab-mission-role">セクシャルウェルネスコーチ<br>精神対話士</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 03 -->
+      <div class="lab-mission-card mission-s3 fade-up delay-2">
+        <div class="lab-mission-body">
+          <span class="lab-mission-num">03</span>
+          <span class="lab-mission-category">ライフコーチング</span>
+          <div class="lab-mission-rule"></div>
+          <h2 class="lab-mission-title">GLADIÀ — 「関係」の研究</h2>
+          <p class="lab-mission-desc">一人では辿り着けない場所に、二人なら行ける。面倒なコミュニケーションを、自分の世界を広げ、一人では見られない景色を見るための、新しい繋がり方のデザイン。</p>
+          <p class="lab-mission-ticket">Ticket × 1</p>
+          <div class="lab-mission-instructor">
+            <div class="lab-mission-instructor-item">
+              <img class="lab-mission-avatar" src="images/本間千尋１.jpeg" alt="ライフコーチ">
+              <span class="lab-mission-role">ライフコーチ</span>
+            </div>
+            <div class="lab-mission-instructor-item">
+              <img class="lab-mission-avatar" src="newimages/ともちゃん.jpg" alt="ライフコーチ">
+              <span class="lab-mission-role">ライフコーチ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04 -->
+      <div class="lab-mission-card mission-s4 fade-up">
+        <div class="lab-mission-body">
+          <span class="lab-mission-num">04</span>
+          <span class="lab-mission-category">イメージコンサルティング</span>
+          <div class="lab-mission-rule"></div>
+          <h2 class="lab-mission-title">VISUAL STRATEGY — 外見戦略</h2>
+          <p class="lab-mission-desc">清潔感、ビジュアル。イケメンは雰囲気が9割！女性目線からの率直なフィードバックと、プロのスタイリングで、あなたの魅力を最大化させる。</p>
+          <p class="lab-mission-ticket" style="border-style: dashed; opacity: 0.6;">Coming Soon</p>
+          <div class="lab-mission-instructor">
+            <div class="lab-mission-instructor-item">
+              <div class="lab-mission-placeholder"></div>
+              <span class="lab-mission-role">イメージコンサルタント<br>（準備中）</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 05 -->
+      <div class="lab-mission-card mission-s5 fade-up delay-1">
+        <div class="lab-mission-body">
+          <span class="lab-mission-num">05</span>
+          <span class="lab-mission-category">ワークショップ</span>
+          <div class="lab-mission-rule"></div>
+          <h2 class="lab-mission-title">VISION ARCHIVE —<br>理想を可視化するワーク</h2>
+          <p class="lab-mission-desc">「なんとなくの幸せ」の解像度を上げ、自分が本当に望む豊かな時間を定義する。未来の完成予想図を描くことで、今日からの選択に迷いがなくなる。現実を動かすための、視覚的アプローチ。</p>
+          <p class="lab-mission-ticket">Ticket × 3</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PRICE & MEMBERSHIP
+       ============================================================ -->
+  <section class="lab-price">
+    <div class="lab-price-inner">
+      <div class="section-eyebrow fade-up" style="justify-content: flex-start;"><span style="color: rgba(255,255,255,0.4);">Price &amp; Membership</span></div>
+      <h2 class="section-heading fade-up delay-1" style="color: #fff; font-size: clamp(18px, 2.5vw, 26px); font-family: var(--font-serif);">LAB Ticket Price</h2>
+      <p class="lab-price-lead fade-up delay-2">必要な時に、必要な分だけ</p>
+
+      <div class="lab-price-grid fade-up delay-2">
+        <div class="lab-price-card">
+          <span class="lab-price-card-name">お試し</span>
+          <p class="lab-price-card-label">3枚セット</p>
+          <p class="lab-price-card-price">3,000<span class="lab-price-card-unit">円</span></p>
+          <p class="lab-price-card-desc">1枚 ¥1,000</p>
+          <p class="lab-price-card-note">※初回利用の方のみ</p>
+        </div>
+        <div class="lab-price-card lab-price-card--featured">
+          <span class="lab-price-card-badge">POPULAR</span>
+          <span class="lab-price-card-name">スタンダード</span>
+          <p class="lab-price-card-label">5枚セット</p>
+          <p class="lab-price-card-price">4,500<span class="lab-price-card-unit">円</span></p>
+          <p class="lab-price-card-desc">1枚 ¥900 / 10% OFF</p>
+        </div>
+        <div class="lab-price-card">
+          <span class="lab-price-card-name">集中</span>
+          <p class="lab-price-card-label">10枚セット</p>
+          <p class="lab-price-card-price">8,000<span class="lab-price-card-unit">円</span></p>
+          <p class="lab-price-card-desc">1枚 ¥800 / 20% OFF</p>
+        </div>
+      </div>
+
+      <div class="lab-price-member fade-up delay-3">
+        <span class="lab-price-member-badge">Personal Member</span>
+        <p class="lab-price-member-title">入会特典として、上記LABメニュー受講チケットを<br>各1回分無料で付与いたします。</p>
+        <p class="lab-price-member-desc">専属カウンセラーによる伴走を受けながら、LABをフル活用して「最短成婚」と「自己アップデート」を同時に叶えたい方へ。</p>
+        <a href="service.html" class="lab-price-member-link">➔ パーソナル会員の詳細はこちら</a>
       </div>
     </div>
+  </section>
+
+  <!-- ============================================================
+       CLOSING
+       ============================================================ -->
+  <section class="lab-closing">
+    <div class="lab-closing-inner">
+      <div class="section-eyebrow fade-up"><span>Start Here</span></div>
+      <h2 class="lab-closing-title fade-up delay-1">「正直、少し不安もある。でも、現状を変えたい」</h2>
+      <p class="lab-closing-body fade-up delay-2">
+        そんな本音から、アップデートは始まります。<br>
+        望む未来を掴むための「確かなスキル」を手に入れませんか。
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       HOW TO JOIN
+       ============================================================ -->
+  <section class="lab-ticket">
+    <div class="lab-ticket-inner">
+      <div class="lab-ticket-header fade-up">
+        <div class="section-eyebrow"><span>How to Join</span></div>
+        <h2 class="section-heading" style="font-size: clamp(16px, 2vw, 22px);">受講の流れ</h2>
+      </div>
+
+      <div class="lab-ticket-steps fade-up delay-1">
+
+        <div class="lab-ticket-step">
+          <div class="lab-ticket-step-num">
+            <span class="lab-ticket-step-num-label">STEP</span>
+            <span class="lab-ticket-step-num-digit">01</span>
+          </div>
+          <p class="lab-ticket-step-title">チケット<br>購入</p>
+          <p class="lab-ticket-step-text">PayPay・銀行振込にて。パーソナル会員様は特典チケットをご利用ください。</p>
+        </div>
+
+        <div class="lab-ticket-step">
+          <div class="lab-ticket-step-num">
+            <span class="lab-ticket-step-num-label">STEP</span>
+            <span class="lab-ticket-step-num-digit">02</span>
+          </div>
+          <p class="lab-ticket-step-title">LINEで<br>日程を予約</p>
+          <p class="lab-ticket-step-text">まずLINEにメッセージをお送りください。</p>
+        </div>
+
+        <div class="lab-ticket-step">
+          <div class="lab-ticket-step-num">
+            <span class="lab-ticket-step-num-label">STEP</span>
+            <span class="lab-ticket-step-num-digit">03</span>
+          </div>
+          <p class="lab-ticket-step-title">プログラムを<br>選ぶ</p>
+          <p class="lab-ticket-step-text">今のあなたに必要なプログラムを選びましょう。</p>
+        </div>
+
+        <div class="lab-ticket-step">
+          <div class="lab-ticket-step-num">
+            <span class="lab-ticket-step-num-label">STEP</span>
+            <span class="lab-ticket-step-num-digit">04</span>
+          </div>
+          <p class="lab-ticket-step-title">オンラインで<br>参加</p>
+          <p class="lab-ticket-step-text">当日はオンラインで。全国どこからでも参加できます。</p>
+        </div>
+
+      </div>
+      <div class="lab-ticket-cta fade-up delay-2">
+        <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="lab-closing-btn">大人男子LABのチケットを購入する</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-buttons">
+      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn-primary" style="font-size: 14px; padding: 18px 44px; background: var(--white); color: var(--navy);">無料カウンセリングを予約する</a>
+      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn-line" style="font-size: 13px; padding: 18px 32px; border-color: var(--white); color: var(--white);"><span style="color:#06C755;">LINE</span>で予約する</a>
+    </div>
+    <p class="cta-note">オンライン30分 ｜ 全国オンライン対応</p>
   </section>
 
 </main>
 
 <!-- フッター -->
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
-    <p class="footer-brand">大阪・吹田・オンラインで全国対応<br>結婚相談所ハルカゼ</p>
-    <nav class="footer-links">
-      <a href="about.html">メッセージ</a>
-      <a href="about.html#vision">ハルカゼの想い</a>
-      <a href="service.html">サービス内容</a>
-      <a href="service.html#price">サービス・料金</a>
-      <a href="flow.html">成婚までの流れ</a>
-      <a href="lab.html">ハルカゼLAB</a>
-      <a href="faq.html">よくある質問</a>
-      <a href="blog.html">ブログ</a>
-      <a href="privacy.html">プライバシーポリシー</a>
-    </nav>
-    <p class="footer-girls-label">女性の方はこちら</p>
-    <a href="girls.html" class="footer-girls-link">▶ 女子の婚活 Girls LAB</a>
-    <p class="footer-copy">© 2025 結婚相談所ハルカゼ</p>
+    <div class="footer-brand">
+      <a href="index.html" class="logo" style="color: var(--white);">結婚相談所　ハルカゼ<span>MARRIAGE CONSULTING</span></a>
+      <p>「あなたがいい」で選ばれる婚活を。<br>IBJ正規加盟店</p>
+      <div style="margin-top: 16px;">
+        <img src="images/Photoroom_20260409_154324.png" alt="結婚相談所ハルカゼ ロゴ" style="height: 112px; width: auto;">
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h4>Service</h4>
+      <ul>
+        <li><a href="about.html">メッセージ</a></li>
+        <li><a href="service.html">サービス内容</a></li>
+        <li><a href="lab.html">オトナ男子LAB</a></li>
+        <li><a href="service.html">料金プラン</a></li>
+        <li><a href="girls.html">オトナ<span style="color: var(--pink);">女子</span>の婚活はこちら</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h4>Info</h4>
+      <ul>
+        <li><a href="faq.html">よくある質問</a></li>
+        <li><a href="blog.html">ブログ</a></li>
+        <li><a href="privacy.html">プライバシーポリシー</a></li>
+        <li><a href="#">特定商取引法に基づく表記</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-links">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer">無料カウンセリング予約</a></li>
+        <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer">LINEで予約する</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2025 Harukaze Marriage Consulting. All rights reserved.</span>
+    <span>IBJ正規加盟店</span>
   </div>
 </footer>
 
 <!-- フローティングボタン -->
 <div class="float-side-btns">
-  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn">初回無料面談を予約</a>
-  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn">LINEで婚活突破口診断</a>
+  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn float-side-btn-line">初回無料面談を予約</a>
+  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn float-side-btn-line">LINEで婚活突破口診断</a>
 </div>
 
 <script src="js/common.js"></script>
+<script>
+(function () {
+  'use strict';
+  var nav = document.getElementById('siteNav');
+  if (nav) {
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+  }
+  var items = document.querySelectorAll('.fade-up');
+  if (items.length && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    items.forEach(function (el) { io.observe(el); });
+  }
+})();
+</script>
 </body>
 </html>
