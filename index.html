@@ -364,13 +364,29 @@
 
   .hero-achievement { display: none; }
   .hero-achievement-text {
-    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 17px;
     font-weight: 600;
     color: var(--navy-dark);
     letter-spacing: 0.08em;
     margin-bottom: 32px;
+    padding: 10px 20px 10px 16px;
+    border-left: 3px solid var(--pink);
+    background: rgba(224,37,106,0.04);
+    border-radius: 0 4px 4px 0;
     opacity: 0;
     animation: fadeUp 0.8s ease 0.7s forwards;
+  }
+  .hero-achievement-text::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--pink);
+    flex-shrink: 0;
   }
 
   .hero-actions {
