@@ -52,12 +52,7 @@
   box-shadow: 0 2px 20px rgba(74,98,120,0.06);
   position: relative; overflow: hidden;
 }
-.plan-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-  background: linear-gradient(to right, var(--c-blue), var(--c-navy));
-}
 .plan-card.popular { border-color: var(--c-coral); }
-.plan-card.popular::before { background: linear-gradient(to right, var(--c-coral), #E89BB0); }
 
 .popular-badge {
   position: absolute; top: 20px; right: 20px;
@@ -65,12 +60,39 @@
   font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
   padding: 4px 12px; border-radius: 20px;
 }
-.plan-eyebrow { font-size: 10px; letter-spacing: 0.24em; color: var(--c-lt); margin-bottom: 6px; font-weight: 700; text-transform: uppercase; }
-.plan-name { font-size: 20px; font-weight: 700; color: var(--c-navy); margin-bottom: 20px; }
-.plan-price-wrap { display: flex; align-items: baseline; gap: 2px; margin-bottom: 6px; }
+.plan-eyebrow { font-size: 10px; letter-spacing: 0.24em; color: rgba(255,255,255,0.65); margin-bottom: 4px; font-weight: 700; text-transform: uppercase; }
+.plan-card.popular .plan-eyebrow { color: rgba(26,42,68,0.65); }
+
+/* プラン名バナー */
+.plan-name-band {
+  margin: -36px -28px 20px;
+  padding: 20px 28px 16px;
+}
+.plan-card:not(.popular) .plan-name-band {
+  background: linear-gradient(135deg, #1A2A44 0%, #2d6b8a 100%);
+}
+.plan-card.popular .plan-name-band {
+  background: linear-gradient(135deg, #E8859E 0%, #f5b8ca 100%);
+}
+.plan-name { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 0; letter-spacing: 0.06em; }
+.plan-card.popular .plan-name { color: #1A2A44; }
+
+/* 価格ブロック */
+.plan-price-block {
+  background: rgba(106,181,214,0.10);
+  border-radius: 10px;
+  padding: 14px 20px 10px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(106,181,214,0.22);
+}
+.plan-card.popular .plan-price-block {
+  background: rgba(232,133,158,0.10);
+  border-color: rgba(232,133,158,0.28);
+}
+.plan-price-wrap { display: flex; align-items: baseline; gap: 2px; margin-bottom: 4px; }
 .plan-price { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 48px; font-weight: 300; color: var(--c-navy); line-height: 1; }
 .plan-price-unit { font-size: 14px; color: var(--c-mid); font-weight: 400; }
-.plan-tax { font-size: 11px; color: var(--c-lt); margin-bottom: 16px; }
+.plan-tax { font-size: 11px; color: var(--c-lt); margin-bottom: 0; }
 .plan-omiai {
   display: inline-flex; align-items: center; gap: 6px;
   background: rgba(184,199,230,0.20); color: var(--c-navy);
@@ -291,13 +313,17 @@
 
           <!-- ライトプラン -->
           <div class="plan-card">
-            <div class="plan-eyebrow">Light Plan</div>
-            <div class="plan-name">ライトプラン</div>
-            <div class="plan-price-wrap">
-              <span class="plan-price">13,800</span>
-              <span class="plan-price-unit">円/月</span>
+            <div class="plan-name-band">
+              <div class="plan-eyebrow">Light Plan</div>
+              <div class="plan-name">ライトプラン</div>
             </div>
-            <p class="plan-tax">税込・月額払い</p>
+            <div class="plan-price-block">
+              <div class="plan-price-wrap">
+                <span class="plan-price">13,800</span>
+                <span class="plan-price-unit">円/月</span>
+              </div>
+              <p class="plan-tax">税込・月額払い</p>
+            </div>
             <div class="plan-omiai">✦ お見合い料 無料</div>
             <div class="plan-initial">
               <div class="plan-initial-row">
@@ -320,19 +346,22 @@
               <li><span class="fi fi-blue">✓</span> 定期面談 年6回</li>
               <li><span class="fi fi-blue">✓</span> プロフィール作成</li>
             </ul>
-            <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="plan-btn">このプランで相談する</a>
           </div>
 
           <!-- パーソナルプラン -->
           <div class="plan-card popular">
             <span class="popular-badge">一番人気</span>
-            <div class="plan-eyebrow">Personal Plan</div>
-            <div class="plan-name">パーソナルプラン</div>
-            <div class="plan-price-wrap">
-              <span class="plan-price">15,800</span>
-              <span class="plan-price-unit">円/月</span>
+            <div class="plan-name-band">
+              <div class="plan-eyebrow">Personal Plan</div>
+              <div class="plan-name">パーソナルプラン</div>
             </div>
-            <p class="plan-tax">税込・月額払い</p>
+            <div class="plan-price-block">
+              <div class="plan-price-wrap">
+                <span class="plan-price">15,800</span>
+                <span class="plan-price-unit">円/月</span>
+              </div>
+              <p class="plan-tax">税込・月額払い</p>
+            </div>
             <div class="plan-omiai">✦ お見合い料 無料</div>
             <div class="plan-initial">
               <div class="plan-initial-row">
@@ -359,7 +388,6 @@
               <li><span class="fi fi-coral">✓</span> <span class="feat-bold">オトナ男子LAB 各講座1回無料</span></li>
               <li><span class="fi fi-coral">✓</span> <span class="feat-bold">お見合いアナリティクス診断</span></li>
             </ul>
-            <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="plan-btn">このプランで相談する</a>
           </div>
 
         </div><!-- /plan-grid -->
