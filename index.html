@@ -687,76 +687,6 @@
     line-height: 1.9;
   }
 
-  /* ── BRIDGE ── */
-  .bridge-section {
-    background: var(--navy);
-    padding: clamp(56px, 8vw, 96px) clamp(24px, 6vw, 80px);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .bridge-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 60% 80% at 80% 20%, rgba(224,37,106,0.08) 0%, transparent 60%),
-      radial-gradient(ellipse 50% 60% at 10% 80%, rgba(42,181,224,0.06) 0%, transparent 60%);
-    pointer-events: none;
-  }
-  .bridge-mottainai {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(20px, 3vw, 32px);
-    font-weight: 400;
-    color: rgba(255,255,255,0.55);
-    letter-spacing: 0.14em;
-    margin-bottom: 36px;
-    position: relative;
-  }
-  .bridge-formula {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px 6px;
-    margin-bottom: 40px;
-    position: relative;
-  }
-  .bridge-formula-item {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(18px, 2.8vw, 28px);
-    font-weight: 500;
-    color: #fff;
-    letter-spacing: 0.1em;
-    padding: 10px 20px;
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 4px;
-    background: rgba(255,255,255,0.05);
-  }
-  .bridge-formula-x {
-    font-size: clamp(16px, 2vw, 22px);
-    color: var(--pink);
-    font-weight: 700;
-    letter-spacing: 0.1em;
-  }
-  .bridge-tagline {
-    font-size: clamp(13px, 1.6vw, 16px);
-    color: rgba(255,255,255,0.6);
-    letter-spacing: 0.12em;
-    line-height: 2;
-    position: relative;
-  }
-  .bridge-tagline strong {
-    color: rgba(255,255,255,0.9);
-    font-weight: 500;
-  }
-  .bridge-accent-line {
-    width: 40px;
-    height: 1px;
-    background: var(--pink);
-    margin: 0 auto 28px;
-    opacity: 0.7;
-  }
 
   /* ── CONCEPT ── */
   .concept-section {
@@ -2435,22 +2365,6 @@
       <p>毎日の業務で精一杯。婚活のために生活を崩したくないが、このままでいいのかも不安。</p>
     </div>
   </div>
-</section>
-
-<!-- BRIDGE -->
-<section class="bridge-section">
-  <p class="bridge-mottainai">ここで止まってしまうのは、もったいない。</p>
-  <div class="bridge-accent-line"></div>
-  <div class="bridge-formula">
-    <span class="bridge-formula-item">行動力</span>
-    <span class="bridge-formula-x">×</span>
-    <span class="bridge-formula-item">自己認知</span>
-    <span class="bridge-formula-x">×</span>
-    <span class="bridge-formula-item">マインドセット</span>
-  </div>
-  <p class="bridge-tagline">
-    ハルカゼが提供するのは、<strong>一時的なテクニックではありません。</strong>
-  </p>
 </section>
 
 <!-- CONCEPT -->
