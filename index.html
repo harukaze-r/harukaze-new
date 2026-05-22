@@ -2250,26 +2250,24 @@
       z-index: 3;
     }
 
-    /* ピンクセクション（ヘッドライン） */
+    /* 下部セクション（白背景） */
     .hero-m-footer-pink {
       flex-shrink: 0;
-      background: linear-gradient(to bottom, rgba(201,134,154,0) 0%, #C9869A 28%);
-      padding: 20px 24px 24px;
-    }
-
-    /* グレーセクション（サブコピー＋CTA） */
-    .hero-m-footer-gray {
-      flex-shrink: 0;
-      background: #8a95a3;
-      padding: 20px 24px 36px;
+      background: #fff;
+      padding: 24px 24px 32px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 14px;
+      align-items: flex-start;
+      gap: 20px;
     }
 
+    /* ヘッドライン（ピンクラベル） */
     .hero-m-headline {
-      font-size: clamp(20px, 5.8vw, 24px);
+      display: inline-block;
+      background: #C9869A;
+      padding: 14px 20px;
+      border-radius: 8px;
+      font-size: clamp(18px, 5.2vw, 22px);
       font-weight: 600;
       font-family: 'Noto Serif JP', serif;
       color: #fff;
@@ -2491,8 +2489,6 @@
     </div>
     <div class="hero-m-footer-pink">
       <p class="hero-m-headline">「いい人」を卒業して、<br><em>「あなたがいい」</em>で選ばれる。</p>
-    </div>
-    <div class="hero-m-footer-gray">
       <p class="hero-m-sub">あなたに合った出会いをつなぐ、マンツーマンの伴走</p>
       <div class="hero-m-cta-wrap">
         <p class="hero-m-cta-note">1分で登録</p>
