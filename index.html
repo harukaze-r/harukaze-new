@@ -2245,24 +2245,22 @@
       z-index: 3;
     }
 
-    /* 写真に重ねる下部テキスト */
+    /* ピンクセクション */
     .hero-m-footer {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(to top, rgba(160,79,106,0.82) 0%, transparent 100%);
-      padding: 48px 20px 20px;
-      z-index: 2;
+      flex-shrink: 0;
+      background: transparent;
+      padding: 22px 24px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
 
     .hero-m-headline {
-      font-size: clamp(17px, 5.2vw, 22px);
+      font-size: clamp(18px, 5.5vw, 24px);
       font-weight: 700;
       color: #fff;
       line-height: 1.75;
       letter-spacing: 0.04em;
-      text-shadow: 0 1px 6px rgba(100,30,50,0.4);
     }
 
     .hero-m-headline em {
@@ -2272,6 +2270,20 @@
       padding: 2px 8px;
       border-radius: 4px;
       box-shadow: 0 0 18px rgba(255,255,255,0.9), 0 0 36px rgba(255,255,255,0.5);
+    }
+
+    /* CTAボタン */
+    .hero-m-cta {
+      display: block;
+      background: #1A2A44;
+      color: #fff;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      padding: 16px 24px;
+      border-radius: 3px;
+      text-decoration: none;
     }
 
     /* Sections padding */
@@ -2422,9 +2434,10 @@
     <div class="hero-m-photo-wrap">
       <img src="newimages/Photoroom_20260428_162738.jpeg" alt="石神りさ">
       <div class="hero-m-badge">最短5ヶ月・1年以内の<br>成婚サポート</div>
-      <div class="hero-m-footer">
-        <p class="hero-m-headline">「いい人」を卒業して、<br><em>「あなたがいい」</em>で選ばれる。</p>
-      </div>
+    </div>
+    <div class="hero-m-footer">
+      <p class="hero-m-headline">「いい人」を卒業して、<br><em>「あなたがいい」</em>で選ばれる。</p>
+      <a href="apply.html" class="hero-m-cta">初回無料相談に申し込む</a>
     </div>
   </div>
 
