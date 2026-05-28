@@ -2245,15 +2245,18 @@
       z-index: 3;
     }
 
-    /* 下部セクション（白背景） */
+    /* 画像下部オーバーレイ */
     .hero-m-footer-pink {
-      flex-shrink: 0;
-      background: #fff;
-      padding: 24px 24px 32px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255,255,255,0.92);
+      padding: 20px 24px 32px;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      gap: 20px;
+      align-items: center;
+      gap: 14px;
     }
 
     /* ヘッドライン（ピンクラベル） */
@@ -2477,12 +2480,12 @@
     <div class="hero-m-photo-wrap">
       <img src="newimages/置かれた 場所で 咲きなさい.png" alt="石神りさ">
       <div class="hero-m-badge">最短5ヶ月・1年以内の<br>成婚サポート</div>
-    </div>
-    <div class="hero-m-footer-pink">
-      <p class="hero-m-sub">あなたに合った出会いをつなぐ、マンツーマンの伴走</p>
-      <div class="hero-m-cta-wrap">
-        <p class="hero-m-cta-note">1分で登録</p>
-        <a href="apply.html" class="hero-m-cta">初回無料相談に申し込む</a>
+      <div class="hero-m-footer-pink">
+        <p class="hero-m-sub">あなたに合った出会いをつなぐ、マンツーマンの伴走</p>
+        <div class="hero-m-cta-wrap">
+          <p class="hero-m-cta-note">1分で登録</p>
+          <a href="apply.html" class="hero-m-cta">初回無料相談に申し込む</a>
+        </div>
       </div>
     </div>
   </div>
