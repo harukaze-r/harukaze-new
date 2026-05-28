@@ -22,7 +22,9 @@
       "Bash(cp -n \"C:/Users/user/OneDrive/Desktop/harukaze-new/newimages/データが導く 「結婚できる人」の平均像と、 婚活のリアル.jpg\" newimages/)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://harukaze-marriage.com/newimages/luigi-estuye-lucreative-ABzrpqEmlt8-unsplash.jpg\")",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://harukaze-marriage.com/newimages/panitan-punpuang-HZ09VYZvAFk-unsplash.jpg\")",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://harukaze-marriage.com/newimages/alexander-wang-KjyrxSHwqTg-unsplash.jpg\")"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://harukaze-marriage.com/newimages/alexander-wang-KjyrxSHwqTg-unsplash.jpg\")",
+      "Bash(git remote *)",
+      "Bash(xargs sed *)"
     ]
   }
 }
