@@ -13,29 +13,29 @@
 <style>
 /* ============================================================
    index.html — 女性向けトップページ専用スタイル
-   カラー: ローズ × クリーム × ウォームホワイト
+   カラー: コーラルピンク × ホワイト（Fibe-Mini参考）
    ============================================================ */
 
 :root {
-  --rose:         #B5526E;
-  --rose-light:   #D4778E;
-  --rose-dark:    #8E3A52;
-  --rose-pale:    #FAF0F3;
-  --rose-pale2:   #F5E8ED;
-  --champagne:    #F5EDE0;
-  --warm-beige:   #EDE8E2;
-  --cream:        #FDFBF8;
-  --text-w:       #2D2420;
-  --text-w-mid:   #5A4A48;
-  --text-w-light: #9A8C8A;
-  --gold-w:       #BFA07A;
+  --rose:         #F4688A;
+  --rose-light:   #F98FAA;
+  --rose-dark:    #D94F73;
+  --rose-pale:    #FFF3F6;
+  --rose-pale2:   #FFE4EC;
+  --champagne:    #FFF8FA;
+  --warm-beige:   #FFF0F4;
+  --cream:        #FFFFFF;
+  --text-w:       #333333;
+  --text-w-mid:   #666666;
+  --text-w-light: #999999;
+  --gold-w:       #F4688A;
 }
 
 /* ── ベース ── */
 body { background: var(--cream); color: var(--text-w); }
 
 /* ── NAV ── */
-.site-nav { background: rgba(253,251,248,0.96); border-bottom: 1px solid rgba(181,82,110,0.1); }
+.site-nav { background: rgba(255,255,255,0.97); border-bottom: 1px solid rgba(244,104,138,0.15); }
 .site-nav .logo em { color: var(--rose); }
 .nav-links a:hover { color: var(--rose); opacity: 1; }
 .nav-cta { background: var(--rose) !important; color: #fff !important; }
@@ -50,14 +50,14 @@ body { background: var(--cream); color: var(--text-w); }
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: var(--warm-beige);
+  background: #fff;
 }
 .w-hero-bg {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 80% 20%, rgba(181,82,110,0.12) 0%, transparent 55%),
-    radial-gradient(ellipse at 20% 80%, rgba(191,160,122,0.10) 0%, transparent 55%);
+    radial-gradient(ellipse at 85% 10%, rgba(244,104,138,0.13) 0%, transparent 50%),
+    radial-gradient(ellipse at 15% 90%, rgba(249,143,170,0.10) 0%, transparent 50%);
 }
 .w-hero-inner {
   position: relative;
@@ -294,7 +294,7 @@ body { background: var(--cream); color: var(--text-w); }
 
 /* ── CONCEPT ── */
 .w-concept {
-  background: var(--text-w);
+  background: var(--rose);
   padding: var(--section-py) 40px;
   position: relative;
   overflow: hidden;
@@ -304,8 +304,8 @@ body { background: var(--cream); color: var(--text-w); }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 10% 50%, rgba(181,82,110,0.2) 0%, transparent 50%),
-    radial-gradient(ellipse at 90% 50%, rgba(191,160,122,0.12) 0%, transparent 50%);
+    radial-gradient(ellipse at 10% 50%, rgba(255,255,255,0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 50%, rgba(255,255,255,0.08) 0%, transparent 50%);
 }
 .w-concept-inner {
   position: relative;
@@ -610,7 +610,7 @@ body { background: var(--cream); color: var(--text-w); }
 
 /* ── FLOW ── */
 .w-flow {
-  background: var(--text-w);
+  background: var(--rose-dark);
   padding: var(--section-py) 40px;
   position: relative;
   overflow: hidden;
@@ -619,7 +619,7 @@ body { background: var(--cream); color: var(--text-w); }
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 50%, rgba(181,82,110,0.15) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 60%);
 }
 .w-flow-inner {
   position: relative;
@@ -645,15 +645,15 @@ body { background: var(--cream); color: var(--text-w); }
   left: calc(10% + 20px);
   right: calc(10% + 20px);
   height: 1px;
-  background: rgba(181,82,110,0.4);
+  background: rgba(255,255,255,0.35);
 }
 .w-flow-step { text-align: center; padding: 0 12px; }
 .w-flow-dot {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: rgba(181,82,110,0.2);
-  border: 2px solid var(--rose-light);
+  background: rgba(255,255,255,0.2);
+  border: 2px solid rgba(255,255,255,0.8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -664,7 +664,7 @@ body { background: var(--cream); color: var(--text-w); }
 .w-flow-dot span {
   font-size: 12px;
   font-weight: 600;
-  color: var(--rose-light);
+  color: #fff;
   letter-spacing: 0.05em;
   font-family: var(--font-display);
 }
@@ -813,7 +813,7 @@ body { background: var(--cream); color: var(--text-w); }
 
 /* ── CTA ── */
 .w-cta {
-  background: linear-gradient(135deg, var(--rose-dark) 0%, var(--rose) 60%, var(--rose-light) 100%);
+  background: linear-gradient(135deg, #e04070 0%, var(--rose) 50%, var(--rose-light) 100%);
   padding: var(--section-py) 40px;
   text-align: center;
   position: relative;
