@@ -732,6 +732,51 @@ body { background: var(--cream); color: var(--text-w); }
 .w-online-text { font-size: 14px; color: var(--text-w-mid); line-height: 2; margin-bottom: 20px; }
 
 /* ============================================================
+   REAL DATA
+   ============================================================ */
+.w-realdata { background: var(--warm-beige); }
+.w-realdata-sub {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-w-mid);
+  margin-bottom: 28px;
+  letter-spacing: 0.05em;
+}
+.w-realdata-link {
+  display: block;
+  text-decoration: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+.w-realdata-link:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.18); }
+.w-realdata-img-wrap { position: relative; display: block; }
+.w-realdata-img { width: 100%; height: auto; display: block; }
+.w-realdata-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(18,24,90,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.w-realdata-link:hover .w-realdata-overlay { opacity: 1; }
+.w-realdata-btn {
+  background: #fff;
+  color: var(--navy);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  padding: 12px 32px;
+  border-radius: 40px;
+  font-family: var(--font-sans);
+}
+
+/* ============================================================
    FLOW
    ============================================================ */
 .w-flow { background: #fff; border: 3px solid var(--rose); }
@@ -1373,6 +1418,25 @@ body { background: var(--cream); color: var(--text-w); }
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     REAL DATA
+     ============================================================ -->
+<section class="w-section w-realdata">
+  <div class="w-section-inner" style="max-width:860px;">
+    <div class="w-section-label">Real Data</div>
+    <h2 class="w-section-title">婚活のリアルデータ</h2>
+    <p class="w-realdata-sub">IBJ結婚みらい研究所が公開する、最新の婚活データをご覧ください。</p>
+    <a href="https://www.ibj.co.jp/research/" target="_blank" rel="noopener noreferrer" class="w-realdata-link" aria-label="今どきの婚活事情 BY IBJ結婚みらい研究所">
+      <div class="w-realdata-img-wrap">
+        <img src="newimages/データが導く 「結婚できる人」の平均像と、 婚活のリアル.jpg" alt="今どきの婚活事情 BY IBJ結婚みらい研究所" class="w-realdata-img">
+        <div class="w-realdata-overlay">
+          <span class="w-realdata-btn">データを見る →</span>
+        </div>
+      </div>
+    </a>
   </div>
 </section>
 
