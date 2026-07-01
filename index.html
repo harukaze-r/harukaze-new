@@ -690,24 +690,19 @@ body { background: var(--cream); color: var(--text-w); }
    CTA
    ============================================================ */
 .w-cta {
-  background: var(--rose);
+  background: #ffffff;
   padding: clamp(80px, 10vw, 140px) clamp(24px, 6vw, 80px);
   text-align: center;
   position: relative;
   overflow: hidden;
 }
-.w-cta::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 60% 30%, rgba(255,255,255,0.1) 0%, transparent 60%);
-}
+.w-cta::before { display: none; }
 .w-cta-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
 .w-cta-label {
   font-family: 'Cormorant Garamond', serif;
   font-size: 11px;
   letter-spacing: 0.3em;
-  color: rgba(255,255,255,0.6);
+  color: var(--rose);
   text-transform: uppercase;
   margin-bottom: 24px;
 }
@@ -715,16 +710,16 @@ body { background: var(--cream); color: var(--text-w); }
   font-family: var(--font-elegant);
   font-size: clamp(22px, 3vw, 38px);
   font-weight: 500;
-  color: #fff;
+  color: var(--text-w);
   line-height: 1.7;
   margin-bottom: 16px;
   letter-spacing: 0.06em;
 }
-.w-cta-sub { font-size: 13px; color: rgba(255,255,255,0.72); margin-bottom: 48px; letter-spacing: 0.08em; }
+.w-cta-sub { font-size: 13px; color: var(--text-w-mid); margin-bottom: 48px; letter-spacing: 0.08em; }
 .w-cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-bottom: 16px; }
 .btn-cta-white {
-  background: #fff;
-  color: var(--rose);
+  background: var(--rose);
+  color: #fff;
   padding: 17px 44px;
   border-radius: 2px;
   font-size: 14px;
@@ -734,13 +729,13 @@ body { background: var(--cream); color: var(--text-w); }
   transition: all 0.2s;
   font-family: var(--font-elegant);
 }
-.btn-cta-white:hover { background: var(--cream); transform: translateY(-2px); opacity: 1; }
+.btn-cta-white:hover { background: var(--rose-dark); transform: translateY(-2px); opacity: 1; }
 .btn-cta-outline {
   background: transparent;
-  color: #fff;
+  color: #06C755;
   padding: 16px 36px;
   border-radius: 2px;
-  border: 1px solid rgba(255,255,255,0.6);
+  border: 1px solid #06C755;
   font-size: 13px;
   display: inline-flex;
   align-items: center;
@@ -749,20 +744,20 @@ body { background: var(--cream); color: var(--text-w); }
   transition: all 0.2s;
   font-family: var(--font-elegant);
 }
-.btn-cta-outline:hover { border-color: #fff; transform: translateY(-2px); opacity: 1; }
-.w-cta-note { font-size: 12px; color: rgba(255,255,255,0.55); letter-spacing: 0.08em; }
+.btn-cta-outline:hover { background: #e8faf0; transform: translateY(-2px); opacity: 1; }
+.w-cta-note { font-size: 12px; color: var(--text-w-light); letter-spacing: 0.08em; }
 .w-cta-men {
   margin-top: 56px;
   padding-top: 40px;
-  border-top: 1px solid rgba(255,255,255,0.2);
+  border-top: 1px solid rgba(0,0,0,0.08);
 }
-.w-cta-men p { font-size: 12px; color: rgba(255,255,255,0.55); margin-bottom: 12px; letter-spacing: 0.1em; }
+.w-cta-men p { font-size: 12px; color: var(--text-w-light); margin-bottom: 12px; letter-spacing: 0.1em; }
 .btn-men-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   font-size: 13px;
-  color: rgba(255,255,255,0.82);
+  color: var(--text-w-mid);
   border-bottom: 1px solid rgba(255,255,255,0.35);
   padding-bottom: 3px;
   letter-spacing: 0.1em;
