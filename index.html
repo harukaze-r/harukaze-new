@@ -751,20 +751,25 @@ body { background: var(--cream); color: var(--text-w); }
   padding-top: 40px;
   border-top: 1px solid rgba(0,0,0,0.08);
 }
-.w-cta-men p { font-size: 12px; color: var(--text-w-light); margin-bottom: 12px; letter-spacing: 0.1em; }
+.w-cta-men p { font-size: 11px; color: var(--text-w-light); margin-bottom: 14px; letter-spacing: 0.14em; text-transform: uppercase; }
 .btn-men-link {
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  color: var(--text-w-mid);
-  border-bottom: 1px solid rgba(255,255,255,0.35);
-  padding-bottom: 3px;
+  gap: 4px;
+  background: #1a2540;
+  color: #fff;
+  padding: 18px 48px;
+  border-radius: 2px;
+  font-size: 15px;
+  font-weight: 500;
   letter-spacing: 0.1em;
-  transition: all 0.2s;
+  transition: background 0.2s, transform 0.2s;
   font-family: 'Cormorant Garamond', serif;
+  line-height: 1.5;
 }
-.btn-men-link:hover { color: #fff; border-color: #fff; opacity: 1; }
+.btn-men-link span { font-size: 11px; color: rgba(255,255,255,0.55); letter-spacing: 0.12em; font-family: var(--font-base); font-weight: 400; }
+.btn-men-link:hover { background: #243060; transform: translateY(-2px); opacity: 1; }
 
 /* ============================================================
    RESPONSIVE
@@ -1263,9 +1268,10 @@ body { background: var(--cream); color: var(--text-w); }
     </div>
     <p class="w-cta-sub">オンライン30分　｜　全国対応　｜　完全無料</p>
     <div class="w-cta-men">
-      <p>男性の婚活をお探しの方はこちら</p>
+      <p>男性の婚活はこちら</p>
       <a href="men.html" class="btn-men-link">
-        男性の婚活 — オトナ男子の婚活はこちら →
+        オトナ男子の婚活
+        <span>男性の婚活はこちら →</span>
       </a>
     </div>
   </div>
