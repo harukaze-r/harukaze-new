@@ -601,7 +601,29 @@ body { background: var(--cream); color: var(--text-w); }
 /* ============================================================
    PRICE
    ============================================================ */
-.w-price { background: var(--rose-pale); }
+.w-price {
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.w-price::before {
+  content: 'PLANS\A& PRICING';
+  white-space: pre;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(80px, 18vw, 180px);
+  font-weight: 700;
+  color: rgba(244,104,138,0.1);
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  text-align: center;
+  pointer-events: none;
+  z-index: 0;
+}
+.w-price .w-section-inner { position: relative; z-index: 1; }
 .w-price-card {
   background: var(--warm-beige);
   border-radius: 4px;
