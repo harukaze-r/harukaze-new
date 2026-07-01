@@ -698,6 +698,25 @@
   .wlab-ticket-steps::before { display: none; }
 }
 
+/* ── CTA override ── */
+.cta-section {
+  background: #fff;
+}
+.cta-section::before { display: none; }
+.cta-section .btn-primary {
+  background: var(--rose) !important;
+  color: #fff !important;
+}
+.cta-section .btn-primary:hover { opacity: 0.85; }
+.cta-section .btn-line {
+  border-color: var(--rose) !important;
+  color: var(--rose) !important;
+}
+.cta-section .btn-line:hover {
+  background: var(--rose-pale) !important;
+}
+.cta-note { color: var(--text-w-light) !important; }
+
 /* ── FADE ── */
 .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .fade-up.is-visible { opacity: 1; transform: translateY(0); }
