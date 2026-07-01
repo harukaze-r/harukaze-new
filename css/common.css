@@ -184,14 +184,14 @@ ul, ol { list-style: none; }
   opacity: 1;
 }
 
-/* CTAボタン（ナビ内）— LINE案内はグリーン */
+/* CTAボタン（ナビ内） */
 .nav-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #fff !important;
-  color: #06C755 !important;
-  border: 1.5px solid #06C755;
+  background: var(--rose) !important;
+  color: #fff !important;
+  border: 1.5px solid var(--rose);
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -202,9 +202,9 @@ ul, ol { list-style: none; }
   opacity: 1 !important;
 }
 .nav-cta:hover {
-  background: #e8faf0 !important;
+  background: var(--rose-dark) !important;
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(6,199,85,0.2) !important;
+  box-shadow: 0 4px 14px rgba(244,104,138,0.3) !important;
 }
 
 /* ハンバーガー */
