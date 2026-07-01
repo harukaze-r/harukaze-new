@@ -851,19 +851,42 @@ body { background: var(--cream); color: var(--text-w); }
 .w-price-btn:hover { background: var(--rose); color: #fff; opacity: 1; }
 .w-price-campaign {
   margin-top: 20px;
-  background: #FFF3B0;
-  border-radius: 4px;
-  padding: 20px 28px;
+  background: linear-gradient(135deg, #FFF9C4 0%, #FFF0A0 100%);
+  border-radius: 16px;
+  border: 2.5px dashed var(--rose);
+  padding: 40px 32px 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 20px;
   flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
 }
-.w-price-campaign-label { font-size: 10px; letter-spacing: 0.2em; color: #333; margin-bottom: 4px; font-family: 'Cormorant Garamond', serif; }
-.w-price-campaign-title { font-size: 15px; font-weight: 500; color: #111; }
-.w-price-campaign-value { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 400; color: #111; text-align: center; }
-.w-price-campaign-value span { font-size: 13px; margin-left: 4px; font-family: var(--font-sans); }
+.w-price-campaign::before {
+  content: '★ SPECIAL OFFER ★';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  background: var(--rose);
+  color: #fff;
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  text-align: center;
+  padding: 4px 0;
+  font-family: 'Cormorant Garamond', serif;
+}
+.w-price-campaign-label { font-size: 11px; letter-spacing: 0.25em; color: var(--rose); margin-bottom: 4px; font-family: 'Cormorant Garamond', serif; font-weight: 700; }
+.w-price-campaign-title { font-size: 15px; font-weight: 700; color: #111; }
+.w-price-campaign-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--rose);
+  text-align: center;
+  line-height: 1;
+  text-shadow: 1px 1px 0 rgba(244,104,138,0.15);
+}
+.w-price-campaign-value span { font-size: 18px; margin-left: 4px; font-family: var(--font-sans); font-weight: 700; background: var(--rose); color: #fff; padding: 2px 8px; border-radius: 4px; vertical-align: middle; }
 .w-price-note { text-align: center; font-size: 12px; color: var(--text-w-light); line-height: 2; margin-top: 20px; }
 
 /* ============================================================
