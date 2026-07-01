@@ -379,6 +379,98 @@ body { background: var(--cream); color: var(--text-w); }
   font-size: 14px;
   font-family: var(--font-base);
 }
+/* POINT list layout */
+.w-point-list {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.w-point-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 460px;
+}
+.w-point-item--reverse {
+  direction: rtl;
+}
+.w-point-item--reverse > * {
+  direction: ltr;
+}
+.w-point-img {
+  overflow: hidden;
+}
+.w-point-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.w-point-item:hover .w-point-img img {
+  transform: scale(1.04);
+}
+.w-point-body {
+  padding: clamp(40px, 5vw, 72px) clamp(32px, 4vw, 64px);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.w-point-item:nth-child(even) .w-point-body {
+  background: var(--rose-pale);
+}
+.w-point-num {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--rose);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: block;
+}
+.w-point-num em {
+  font-style: normal;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+.w-point-title {
+  font-family: var(--font-elegant);
+  font-size: clamp(18px, 2vw, 26px);
+  font-weight: 500;
+  color: var(--text-w);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  letter-spacing: 0.04em;
+}
+.w-point-desc {
+  font-size: 14px;
+  color: var(--text-w-mid);
+  line-height: 2;
+  margin-bottom: 24px;
+}
+.w-point-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .w-point-item {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .w-point-item--reverse {
+    direction: ltr;
+  }
+  .w-point-img {
+    min-height: 240px;
+  }
+}
+
 .ibj-data-btn {
   display: inline-block;
   margin-top: 20px;
@@ -1029,103 +1121,113 @@ body { background: var(--cream); color: var(--text-w); }
 </section>
 
 <!-- ============================================================
-     FEATURES — 画像 + テキスト交互
+     FEATURES — POINT カード
      ============================================================ -->
 <section class="w-section w-features">
   <div class="w-section-inner">
     <div class="w-section-label">What We Do</div>
     <h2 class="w-section-title">ハルカゼの婚活サポート</h2>
-  </div>
 
-  <div class="w-feature-item">
-    <div class="w-feature-img">
-      <img src="newimages/スクリーンショット 2025-09-17 155708.png" alt="カウンセリング">
-    </div>
-    <div class="w-feature-text">
-      <div class="w-feature-num">01</div>
-      <h3>チャンスの最大化</h3>
-      <p>10万人以上が登録する業界最大級のIBJネットワークで、結婚したい意思のある人と出会える</p>
-      <div class="ibj-data">
-        <p class="ibj-data-label">IBJ Network Data</p>
-        <div class="ibj-data-grid">
-          <div class="ibj-data-item">
-            <span class="ibj-data-num">10<span>万人以上</span></span>
-            <span class="ibj-data-desc">登録会員数</span>
-          </div>
-          <div class="ibj-data-item">
-            <span class="ibj-data-num">6,000<span>社以上</span></span>
-            <span class="ibj-data-desc">全国加盟相談所数</span>
-          </div>
-          <div class="ibj-data-item">
-            <span class="ibj-data-num">No.1</span>
-            <span class="ibj-data-desc">成婚者数 業界最多</span>
+  </div><!-- /w-section-inner -->
+  <div class="w-point-list">
+
+      <!-- POINT 01 -->
+      <div class="w-point-item">
+        <div class="w-point-img">
+          <img src="newimages/スクリーンショット 2025-09-17 155708.png" alt="チャンスの最大化">
+        </div>
+        <div class="w-point-body">
+          <span class="w-point-num">POINT <em>01</em></span>
+          <h3 class="w-point-title">チャンスの最大化</h3>
+          <p class="w-point-desc">10万人以上が登録する業界最大級のIBJネットワークで、結婚したい意思のある人と出会える</p>
+          <div class="ibj-data">
+            <p class="ibj-data-label">IBJ Network Data</p>
+            <div class="ibj-data-grid">
+              <div class="ibj-data-item">
+                <span class="ibj-data-num">10<span>万人以上</span></span>
+                <span class="ibj-data-desc">登録会員数</span>
+              </div>
+              <div class="ibj-data-item">
+                <span class="ibj-data-num">6,000<span>社以上</span></span>
+                <span class="ibj-data-desc">全国加盟相談所数</span>
+              </div>
+              <div class="ibj-data-item">
+                <span class="ibj-data-num">No.1</span>
+                <span class="ibj-data-desc">成婚者数 業界最多</span>
+              </div>
+            </div>
+            <a href="https://www.ibjapan.jp/" target="_blank" rel="noopener noreferrer" class="ibj-data-btn">IBJを詳しく知る →</a>
           </div>
         </div>
-        <a href="https://www.ibjapan.jp/" target="_blank" rel="noopener noreferrer" class="ibj-data-btn">IBJを詳しく知る →</a>
       </div>
-    </div>
-  </div>
 
-  <div class="w-feature-item reverse">
-    <div class="w-feature-img">
-      <img src="newimages/スクリーンショット 2025-09-17 155708.png" alt="カウンセリング">
-    </div>
-    <div class="w-feature-text">
-      <div class="w-feature-num">02</div>
-      <h3>カウンセリング</h3>
-      <p>これまでの生き方、眠っていた価値観―。自分一人ではつい見つけるのが難しい「あなただけの輝き」を掘り起こし、魅力が伝わるプロフィールを作成します。</p>
-      <div class="w-feature-tags">
-        <span class="w-tag">魅力・強み発見</span>
-        <span class="w-tag">婚活プラン作成</span>
-        <span class="w-tag">プロフィール作成</span>
+      <!-- POINT 02 -->
+      <div class="w-point-item w-point-item--reverse">
+        <div class="w-point-img">
+          <img src="newimages/スクリーンショット 2025-09-17 155708.png" alt="カウンセリング">
+        </div>
+        <div class="w-point-body">
+          <span class="w-point-num">POINT <em>02</em></span>
+          <h3 class="w-point-title">カウンセリング</h3>
+          <p class="w-point-desc">これまでの生き方、眠っていた価値観―。自分一人ではつい見つけるのが難しい「あなただけの輝き」を掘り起こし、魅力が伝わるプロフィールを作成します。</p>
+          <div class="w-point-tags">
+            <span class="w-tag">魅力・強み発見</span>
+            <span class="w-tag">婚活プラン作成</span>
+            <span class="w-tag">プロフィール作成</span>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <div class="w-feature-item">
-    <div class="w-feature-img">
-      <img src="newimages/luigi-estuye-lucreative-ABzrpqEmlt8-unsplash.jpg" alt="イメージコンサル">
-    </div>
-    <div class="w-feature-text">
-      <div class="w-feature-num">03</div>
-      <h3>イメージコンサルタントによる<br>外見・印象を磨くサポート</h3>
-      <p>プロの視点であなたの魅力を最大化する外見戦略をトータルサポート。内面だけでなく見た目も整えることで、マッチング・お見合いの成功率が格段に上がります。</p>
-      <div class="w-feature-tags">
-        <span class="w-tag">骨格診断</span>
-        <span class="w-tag">お買い物同行</span>
+      <!-- POINT 03 -->
+      <div class="w-point-item">
+        <div class="w-point-img">
+          <img src="newimages/luigi-estuye-lucreative-ABzrpqEmlt8-unsplash.jpg" alt="イメージコンサル">
+        </div>
+        <div class="w-point-body">
+          <span class="w-point-num">POINT <em>03</em></span>
+          <h3 class="w-point-title">イメージコンサルタントによる<br>外見・印象を磨くサポート</h3>
+          <p class="w-point-desc">プロの視点であなたの魅力を最大化する外見戦略をトータルサポート。内面だけでなく見た目も整えることで、マッチング・お見合いの成功率が格段に上がります。</p>
+          <div class="w-point-tags">
+            <span class="w-tag">骨格診断</span>
+            <span class="w-tag">お買い物同行</span>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <div class="w-feature-item reverse">
-    <div class="w-feature-img">
-      <img src="newimages/panitan-punpuang-HZ09VYZvAFk-unsplash.jpg" alt="フィードバック">
-    </div>
-    <div class="w-feature-text">
-      <div class="w-feature-num">04</div>
-      <h3>確実に前に進む<br>ステップアップ・フィードバック</h3>
-      <p>定期面談・お見合い後フィードバック・デートプラン提案など、LINEで迅速にフォロー。悩みも疑問も放置しない、寄り添うサポートをお約束します。</p>
-      <div class="w-feature-tags">
-        <span class="w-tag">定期フィードバック面談</span>
-        <span class="w-tag">LINEサポート</span>
+      <!-- POINT 04 -->
+      <div class="w-point-item w-point-item--reverse">
+        <div class="w-point-img">
+          <img src="newimages/panitan-punpuang-HZ09VYZvAFk-unsplash.jpg" alt="フィードバック">
+        </div>
+        <div class="w-point-body">
+          <span class="w-point-num">POINT <em>04</em></span>
+          <h3 class="w-point-title">確実に前に進む<br>ステップアップ・フィードバック</h3>
+          <p class="w-point-desc">定期面談・お見合い後フィードバック・デートプラン提案など、LINEで迅速にフォロー。悩みも疑問も放置しない、寄り添うサポートをお約束します。</p>
+          <div class="w-point-tags">
+            <span class="w-tag">定期フィードバック面談</span>
+            <span class="w-tag">LINEサポート</span>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <div class="w-feature-item">
-    <div class="w-feature-img">
-      <img src="newimages/スクリーンショット 2026-04-03 154955.png" alt="マインドセット">
-    </div>
-    <div class="w-feature-text">
-      <div class="w-feature-num">05</div>
-      <h3>ハルカゼLAB</h3>
-      <p>結婚相談所で出会って本当にうまくいく？<br>失敗したくない！そんなあなたへ、成婚をゴールにしない、しあわせな結婚が続くためのオリジナルサポート</p>
-      <div class="w-feature-tags">
-        <span class="w-tag">コーチング</span>
-        <span class="w-tag">自己解析ワーク</span>
-        <span class="w-tag">パートナーシップ</span>
+      <!-- POINT 05 -->
+      <div class="w-point-item">
+        <div class="w-point-img">
+          <img src="newimages/スクリーンショット 2026-04-03 154955.png" alt="ハルカゼLAB">
+        </div>
+        <div class="w-point-body">
+          <span class="w-point-num">POINT <em>05</em></span>
+          <h3 class="w-point-title">ハルカゼLAB</h3>
+          <p class="w-point-desc">結婚相談所で出会って本当にうまくいく？失敗したくない！そんなあなたへ、成婚をゴールにしない、しあわせな結婚が続くためのオリジナルサポート</p>
+          <div class="w-point-tags">
+            <span class="w-tag">コーチング</span>
+            <span class="w-tag">自己解析ワーク</span>
+            <span class="w-tag">パートナーシップ</span>
+          </div>
+          <a href="harukaze-lab.html" class="ibj-data-btn" style="margin-top:20px;">ハルカゼLABの詳細を見る →</a>
+        </div>
       </div>
-      <a href="harukaze-lab.html" style="display:inline-block; margin-top:20px; font-size:13px; color:var(--rose,#F4688A); text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:2px; letter-spacing:0.06em;">ハルカゼLABの詳細を見る ➔</a>
+
     </div>
   </div>
 </section>
