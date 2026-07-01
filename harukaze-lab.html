@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ハルカゼLAB | 結婚相談所ハルカゼ</title>
+<link rel="icon" href="newimages/使用ロゴ.jpeg">
+<meta property="og:title" content="ハルカゼLAB | 結婚相談所ハルカゼ">
+<meta property="og:description" content="成婚をゴールにしない、しあわせな結婚が続くためのオリジナルサポート。">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="css/common.css">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   harukaze-lab.html — 女性向けLABページ
+   カラー: コーラルピンク × ホワイト
+   ============================================================ */
+
+:root {
+  --rose:         #F4688A;
+  --rose-light:   #F98FAA;
+  --rose-dark:    #D94F73;
+  --rose-pale:    #FFF3F6;
+  --rose-pale2:   #FFE4EC;
+  --warm-beige:   #FFF0F4;
+  --cream:        #FFFFFF;
+  --text-w:       #222222;
+  --text-w-mid:   #666666;
+  --text-w-light: #999999;
+  --font-elegant: 'Shippori Mincho', 'Noto Serif JP', serif;
+}
+
+/* ── HERO ── */
+.wlab-hero {
+  position: relative;
+  background: var(--rose-pale2);
+  overflow: hidden;
+  min-height: 90vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: end;
+}
+@media (min-width: 768px) {
+  .wlab-hero { grid-template-columns: 1fr 1fr; min-height: 100vh; align-items: stretch; }
+}
+.wlab-hero-image {
+  position: relative;
+  overflow: hidden;
+  min-height: 50vw;
+}
+@media (min-width: 768px) { .wlab-hero-image { min-height: unset; } }
+.wlab-hero-image img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.wlab-hero-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent 50%, var(--rose-pale2) 100%);
+}
+@media (max-width: 767px) {
+  .wlab-hero-image::after {
+    background: linear-gradient(to bottom, transparent 60%, var(--rose-pale2) 100%);
+  }
+}
+.wlab-hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(40px, 6vw, 80px) clamp(28px, 5vw, 64px);
+  position: relative;
+  z-index: 1;
+}
+.wlab-hero-eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--rose);
+  display: block;
+  margin-bottom: 20px;
+}
+.wlab-hero-title {
+  font-family: var(--font-elegant);
+  font-size: clamp(20px, 2.8vw, 32px);
+  font-weight: 500;
+  color: var(--text-w);
+  line-height: 1.65;
+  letter-spacing: 0.06em;
+  margin-bottom: 28px;
+}
+.wlab-hero-lead {
+  font-size: clamp(13px, 1.4vw, 15px);
+  color: var(--text-w-mid);
+  line-height: 2.1;
+  letter-spacing: 0.04em;
+  max-width: 420px;
+}
+.wlab-hero-lead strong {
+  color: var(--rose-dark);
+  font-weight: 500;
+}
+.wlab-hero-rule {
+  width: 36px; height: 1.5px;
+  background: var(--rose);
+  margin-top: 32px;
+}
+
+/* ── CONCEPT ── */
+.wlab-concept {
+  background: #fff;
+  padding: clamp(72px, 10vw, 120px) clamp(16px, 3vw, 32px);
+  position: relative;
+  overflow: hidden;
+}
+.wlab-concept::before {
+  content: 'LAB';
+  position: absolute;
+  right: -2%; bottom: -5%;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(80px, 18vw, 200px);
+  font-weight: 700;
+  color: rgba(244,104,138,0.04);
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.wlab-concept-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.wlab-concept-eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--rose);
+  display: block;
+  margin-bottom: 24px;
+}
+.wlab-concept-heading {
+  font-family: var(--font-elegant);
+  font-size: clamp(18px, 2.5vw, 26px);
+  font-weight: 500;
+  color: var(--text-w);
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+  margin-bottom: 32px;
+}
+.wlab-concept-heading em {
+  font-style: normal;
+  color: var(--rose);
+}
+.wlab-concept-body {
+  font-size: clamp(14px, 1.6vw, 16px);
+  color: var(--text-w-mid);
+  line-height: 2.2;
+  letter-spacing: 0.04em;
+}
+
+/* ── SYSTEM ── */
+.wlab-system {
+  background: var(--rose-pale);
+  padding: clamp(48px, 7vw, 80px) clamp(24px, 5vw, 64px);
+}
+.wlab-system-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.wlab-system-eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--rose);
+  display: block;
+  margin-bottom: 16px;
+}
+.wlab-system-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 32px;
+}
+@media (min-width: 600px) {
+  .wlab-system-cards { grid-template-columns: repeat(3, 1fr); }
+}
+.wlab-system-card {
+  background: #fff;
+  border: 0.5px solid rgba(244,104,138,0.2);
+  padding: 24px 20px;
+}
+.wlab-system-card-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--rose);
+  display: block;
+  margin-bottom: 10px;
+}
+.wlab-system-card-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-w);
+  line-height: 1.8;
+}
+
+/* ── MISSION LIST HEADER ── */
+.wlab-missions-header {
+  text-align: center;
+  padding: clamp(64px, 9vw, 100px) clamp(24px, 5vw, 64px) clamp(32px, 4vw, 48px);
+  background: var(--rose-pale2);
+}
+.wlab-missions-header-inner { max-width: 640px; margin: 0 auto; }
+.wlab-missions-eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--rose);
+  display: block;
+  margin-bottom: 16px;
+}
+.wlab-missions-title {
+  font-family: var(--font-elegant);
+  font-size: clamp(16px, 2vw, 22px);
+  font-weight: 500;
+  color: var(--text-w);
+  line-height: 1.7;
+  letter-spacing: 0.06em;
+}
+
+/* ── MISSION CARDS ── */
+.wlab-missions {
+  background: var(--rose-pale2);
+  padding: 0 clamp(24px, 5vw, 64px) clamp(72px, 10vw, 100px);
+}
+.wlab-mission-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+@media (min-width: 900px) {
+  .wlab-mission-grid { grid-template-columns: repeat(6, 1fr); }
+  .wlab-mission-card { grid-column: span 2; }
+  .wlab-mission-card:nth-child(4) { grid-column: 2 / span 2; }
+  .wlab-mission-card:nth-child(5) { grid-column: 4 / span 2; }
+}
+@media (max-width: 560px) {
+  .wlab-mission-grid { grid-template-columns: 1fr; }
+}
+
+.wmission-s1 { --step-color: #F4688A; }
+.wmission-s2 { --step-color: #c97ab2; }
+.wmission-s3 { --step-color: #e0896b; }
+.wmission-s4 { --step-color: #7aaa98; }
+.wmission-s5 { --step-color: #a07ac8; }
+
+.wlab-mission-card {
+  background: #fff;
+  border: 0.5px solid rgba(244,104,138,0.15);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.wlab-mission-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(244,104,138,0.10);
+}
+.wlab-mission-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--step-color, var(--rose));
+  z-index: 2;
+}
+.wlab-mission-body { padding: 28px 26px 32px; }
+.wlab-mission-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #fff;
+  background: var(--step-color, var(--rose));
+  border-radius: 20px;
+  padding: 3px 12px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+.wlab-mission-category {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--step-color, var(--rose));
+  display: block;
+  margin-bottom: 10px;
+}
+.wlab-mission-rule {
+  width: 28px; height: 2px;
+  background: var(--step-color, var(--rose));
+  border-radius: 2px;
+  margin-bottom: 12px;
+  opacity: 0.5;
+}
+.wlab-mission-title {
+  font-family: var(--font-elegant);
+  font-size: clamp(13px, 1.4vw, 16px);
+  font-weight: 700;
+  color: var(--text-w);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.wlab-mission-desc {
+  font-size: 12px;
+  color: var(--text-w-mid);
+  line-height: 2;
+  margin-bottom: 12px;
+}
+.wlab-mission-note {
+  font-size: 11px;
+  color: var(--text-w-light);
+  line-height: 1.8;
+  margin-bottom: 12px;
+  font-style: italic;
+}
+.wlab-mission-ticket {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--step-color, var(--rose));
+  border: 1px solid var(--step-color, var(--rose));
+  border-radius: 4px;
+  padding: 4px 12px;
+  margin-bottom: 14px;
+  opacity: 0.9;
+}
+.wlab-mission-format {
+  font-size: 11px;
+  color: var(--text-w-mid);
+  letter-spacing: 0.06em;
+  margin-bottom: 14px;
+}
+.wlab-mission-instructor {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 0.5px solid rgba(244,104,138,0.12);
+  flex-wrap: wrap;
+}
+.wlab-mission-instructor-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+.wlab-mission-avatar {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  flex-shrink: 0;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 16px rgba(244,104,138,0.18);
+}
+.wlab-mission-placeholder {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--step-color, #ccc);
+  opacity: 0.15;
+  flex-shrink: 0;
+  border: 1.5px dashed var(--step-color, #ccc);
+}
+.wlab-mission-role {
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--text-w-light);
+  line-height: 1.6;
+}
+
+/* ── PRICE ── */
+.wlab-price {
+  background: var(--rose);
+  padding: clamp(72px, 10vw, 120px) clamp(24px, 5vw, 64px);
+  position: relative;
+  overflow: hidden;
+}
+.wlab-price::before {
+  content: 'PRICE';
+  position: absolute;
+  right: -2%; bottom: -4%;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(60px, 12vw, 140px);
+  font-weight: 700;
+  color: rgba(255,255,255,0.07);
+  letter-spacing: 0.08em;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.wlab-price-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.wlab-price-eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  display: block;
+  margin-bottom: 16px;
+}
+.wlab-price-heading {
+  font-family: var(--font-elegant);
+  font-size: clamp(18px, 2.5vw, 26px);
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.wlab-price-lead {
+  font-size: clamp(13px, 1.5vw, 15px);
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 40px;
+  letter-spacing: 0.04em;
+}
+.wlab-price-card {
+  background: rgba(255,255,255,0.12);
+  border: 0.5px solid rgba(255,255,255,0.3);
+  padding: clamp(24px, 3vw, 36px) clamp(20px, 3vw, 32px);
+  max-width: 360px;
+  margin-bottom: 32px;
+}
+.wlab-price-card-label {
+  font-size: 14px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 8px;
+}
+.wlab-price-card-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 4vw, 38px);
+  font-weight: 300;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-top: 8px;
+}
+.wlab-price-card-unit {
+  font-size: 0.48em;
+  font-weight: 400;
+  margin-left: 2px;
+}
+.wlab-price-card-note {
+  font-size: 10px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 6px;
+}
+.wlab-price-member {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: clamp(28px, 4vw, 40px) clamp(24px, 4vw, 40px);
+}
+.wlab-price-member-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: 20px;
+  padding: 3px 14px;
+  margin-bottom: 16px;
+}
+.wlab-price-member-title {
+  font-family: var(--font-elegant);
+  font-size: clamp(14px, 1.8vw, 18px);
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.wlab-price-member-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 0.5px solid rgba(255,255,255,0.5);
+  padding-bottom: 2px;
+  transition: opacity 0.2s;
+}
+.wlab-price-member-link:hover { opacity: 0.7; }
+
+/* ── CLOSING ── */
+.wlab-closing {
+  background: #fff;
+  padding: clamp(80px, 12vw, 140px) clamp(24px, 5vw, 64px);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.wlab-closing-inner { max-width: 640px; margin: 0 auto; }
+.wlab-closing-eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--rose);
+  display: block;
+  margin-bottom: 20px;
+}
+.wlab-closing-title {
+  font-family: var(--font-elegant);
+  font-size: clamp(14px, 1.8vw, 20px);
+  font-weight: 500;
+  color: var(--text-w);
+  line-height: 1.8;
+  letter-spacing: 0.06em;
+  margin-bottom: 28px;
+}
+.wlab-closing-body {
+  font-size: clamp(14px, 1.6vw, 16px);
+  color: var(--text-w-mid);
+  line-height: 2.2;
+  letter-spacing: 0.04em;
+  margin-bottom: 40px;
+}
+.wlab-closing-btn {
+  display: inline-block;
+  background: var(--rose);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  padding: 18px 44px;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: opacity 0.2s;
+}
+.wlab-closing-btn:hover { opacity: 0.85; }
+
+/* ── HOW TO JOIN ── */
+.wlab-ticket {
+  background: var(--rose-pale);
+  padding: clamp(72px, 10vw, 120px) clamp(24px, 5vw, 64px);
+}
+.wlab-ticket-inner { max-width: 900px; margin: 0 auto; }
+.wlab-ticket-cta { text-align: center; margin-top: 56px; }
+.wlab-ticket-header { text-align: center; margin-bottom: 64px; }
+.wlab-ticket-eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--rose);
+  display: block;
+  margin-bottom: 16px;
+}
+.wlab-ticket-title {
+  font-family: var(--font-elegant);
+  font-size: clamp(16px, 2vw, 22px);
+  font-weight: 500;
+  color: var(--text-w);
+  line-height: 1.7;
+}
+.wlab-ticket-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+.wlab-ticket-steps::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 12.5%; right: 12.5%;
+  height: 1px;
+  background: var(--rose);
+  opacity: 0.25;
+  z-index: 0;
+}
+.wlab-ticket-step {
+  text-align: center;
+  padding: 0 16px;
+  position: relative;
+  z-index: 1;
+}
+.wlab-ticket-step-num {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--rose);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  flex-direction: column;
+  box-shadow: 0 4px 16px rgba(244,104,138,0.15);
+}
+.wlab-ticket-step-num-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--rose);
+}
+.wlab-ticket-step-num-digit {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  color: var(--rose);
+  line-height: 1;
+}
+.wlab-ticket-step-title {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--text-w);
+  margin-bottom: 8px;
+}
+.wlab-ticket-step-text {
+  font-size: 11px;
+  color: var(--text-w-mid);
+  line-height: 1.8;
+  letter-spacing: 0.03em;
+}
+@media (max-width: 600px) {
+  .wlab-ticket-steps { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .wlab-ticket-steps::before { display: none; }
+}
+
+/* ── FADE ── */
+.fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.fade-up.is-visible { opacity: 1; transform: translateY(0); }
+.delay-1 { transition-delay: 0.12s; }
+.delay-2 { transition-delay: 0.24s; }
+.delay-3 { transition-delay: 0.36s; }
+</style>
+</head>
+<body>
+
+<!-- ナビゲーション -->
+<nav class="site-nav" id="siteNav">
+  <a href="index.html" class="logo">
+    <span class="logo-char">結</span><span class="logo-char">婚</span><span class="logo-char">相</span><span class="logo-char">談</span><span class="logo-char">所</span> <span class="logo-char">ハ</span><span class="logo-char">ル</span><span class="logo-char">カ</span><span class="logo-char">ゼ</span>
+    <span>MARRIAGE CONSULTING</span>
+    <em>30代・40代のための賢い婚活</em>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html">メッセージ</a></li>
+    <li><a href="service.html">サービス・価格</a></li>
+    <li><a href="flow.html">成婚までの流れ</a></li>
+    <li><a href="harukaze-lab.html">ハルカゼLAB</a></li>
+    <li><a href="faq.html">よくある質問</a></li>
+    <li><a href="blog.html">ブログ</a></li>
+    <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで予約する</a></li>
+  </ul>
+  <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- モバイルオーバーレイ -->
+<div class="mobile-nav-overlay" id="mobileNavOverlay">
+  <button class="mobile-nav-close" id="mobileNavClose" aria-label="閉じる">
+    <span></span><span></span>
+  </button>
+  <div class="mobile-nav-specialty">
+    <span>MARRIAGE CONSULTING</span>
+    <em>30代・40代のための賢い婚活</em>
+  </div>
+  <a href="index.html">ホーム</a>
+  <a href="about.html">メッセージ</a>
+  <a href="service.html">サービス・価格</a>
+  <a href="flow.html">成婚までの流れ</a>
+  <a href="harukaze-lab.html">ハルカゼLAB</a>
+  <a href="faq.html">よくある質問</a>
+  <a href="blog.html">ブログ</a>
+  <a href="apply.html" class="nav-cta">初回無料面談に申し込む</a>
+  <hr class="mobile-nav-divider">
+  <a href="men.html" class="mobile-nav-girls-link">男性の婚活はこちら</a>
+</div>
+
+<main>
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="wlab-hero">
+    <div class="wlab-hero-image">
+      <img src="newimages/スクリーンショット 2026-04-03 154955.png" alt="ハルカゼLAB">
+    </div>
+    <div class="wlab-hero-text">
+      <span class="wlab-hero-eyebrow">Harukaze LAB</span>
+      <h1 class="wlab-hero-title">成婚をゴールにしない、<br>しあわせな結婚が続くために。</h1>
+      <p class="wlab-hero-lead">
+        「結婚できたらそれでいい」じゃなくて、<br>
+        「選んだ人と、ずっと笑っていたい」。<br><br>
+        ハルカゼLABは、婚活の先にある<strong>「結婚生活」</strong>を見据えた、<br>
+        あなただけのオリジナルサポートプログラムです。
+      </p>
+      <div class="wlab-hero-rule"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONCEPT
+       ============================================================ -->
+  <section class="wlab-concept">
+    <div class="wlab-concept-inner">
+      <span class="wlab-concept-eyebrow fade-up">What is Harukaze LAB</span>
+      <h2 class="wlab-concept-heading fade-up delay-1">「結婚相談所で出会って、<em>本当にうまくいく？</em>」<br>その不安ごと、向き合います。</h2>
+      <p class="wlab-concept-body fade-up delay-2">
+        成婚率を上げることだけが、婚活の正解ではないと私たちは考えます。<br>
+        大切なのは、出会った相手と「ずっと一緒にいたい」と思えるかどうか。<br><br>
+        自分の価値観を知り、自分らしさを言葉にし、<br>
+        パートナーと対等に関係を育てていける「土台」をつくること。<br>
+        それが、ハルカゼLABのテーマです。
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SYSTEM
+       ============================================================ -->
+  <section class="wlab-system">
+    <div class="wlab-system-inner">
+      <span class="wlab-system-eyebrow fade-up">System</span>
+      <div class="wlab-system-cards fade-up delay-1">
+        <div class="wlab-system-card">
+          <span class="wlab-system-card-label">Ticket</span>
+          <p class="wlab-system-card-text">1枚 1,000円<br>（※各講座初回利用時）</p>
+        </div>
+        <div class="wlab-system-card">
+          <span class="wlab-system-card-label">Personal Member</span>
+          <p class="wlab-system-card-text">パーソナル会員様は<br>入会特典として無料</p>
+        </div>
+        <div class="wlab-system-card">
+          <span class="wlab-system-card-label">Open to All</span>
+          <p class="wlab-system-card-text">結婚相談所への<br>入会検討中の方も歓迎</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MISSION LIST HEADER
+       ============================================================ -->
+  <div class="wlab-missions-header">
+    <div class="wlab-missions-header-inner">
+      <span class="wlab-missions-eyebrow fade-up">Program</span>
+      <h2 class="wlab-missions-title fade-up delay-1">「自分らしい結婚」のために、<br>必要なことだけを、丁寧に。</h2>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MISSION CARDS
+       ============================================================ -->
+  <section class="wlab-missions">
+    <div class="wlab-mission-grid">
+
+      <!-- 01 -->
+      <div class="wlab-mission-card wmission-s1 fade-up">
+        <div class="wlab-mission-body">
+          <span class="wlab-mission-num">01</span>
+          <span class="wlab-mission-category">自己解析ワーク・カウンセリング</span>
+          <div class="wlab-mission-rule"></div>
+          <h2 class="wlab-mission-title">SELF DISCOVERY —<br>「本当の自分」を知るセッション</h2>
+          <p class="wlab-mission-desc">「なんとなく好き」ではなく、「なぜ惹かれるのか」を言葉にできるようになる。これまでの恋愛パターンを整理し、自分の価値観・魅力・ブロックを丁寧に掘り起こす40分のセッション。</p>
+          <p class="wlab-mission-note">※「何から始めればいいかわからない」という方は、まずここから。</p>
+          <p class="wlab-mission-ticket">Ticket × 2</p>
+          <p class="wlab-mission-format">⏱ 40分｜オンラインセッション</p>
+          <div class="wlab-mission-instructor">
+            <div class="wlab-mission-instructor-item">
+              <img class="wlab-mission-avatar" src="newimages/IMG_2149.jpeg" alt="ハルカゼ代表">
+              <span class="wlab-mission-role">ハルカゼ代表<br>婚活カウンセラー</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02 -->
+      <div class="wlab-mission-card wmission-s2 fade-up delay-1">
+        <div class="wlab-mission-body">
+          <span class="wlab-mission-num">02</span>
+          <span class="wlab-mission-category">マインドセットコーチング</span>
+          <div class="wlab-mission-rule"></div>
+          <h2 class="wlab-mission-title">MINDSET & WELLBEING —<br>「がんばり屋さん」を、やめてみる</h2>
+          <p class="wlab-mission-desc">気が利く、いい子といわれるのに大切にされない。そのパターンの根っこにあるものを、やさしくほどいていく。自分を後回しにしない、新しい心の使い方を学ぶメンテナンスの時間。</p>
+          <p class="wlab-mission-ticket">Ticket × 2</p>
+          <p class="wlab-mission-format">⏱ 40分｜オンラインセッション</p>
+          <div class="wlab-mission-instructor">
+            <div class="wlab-mission-instructor-item">
+              <img class="wlab-mission-avatar" src="newimages/492004979_3368927726583503_3366660712559650101_n.jpg" alt="セクシャルウェルネスコーチ">
+              <span class="wlab-mission-role">セクシャルウェルネスコーチ<br>精神対話士</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 03 -->
+      <div class="wlab-mission-card wmission-s3 fade-up delay-2">
+        <div class="wlab-mission-body">
+          <span class="wlab-mission-num">03</span>
+          <span class="wlab-mission-category">パートナーシップ・ライフコーチング</span>
+          <div class="wlab-mission-rule"></div>
+          <h2 class="wlab-mission-title">RELATIONSHIP DESIGN —<br>ずっとうまくいく「関係」のつくり方</h2>
+          <p class="wlab-mission-desc">相手を選ぶだけでなく、一緒に育てていける関係を設計する。コミュニケーションのクセを知り、自分らしく愛され続けるためのパートナーシップを動画講座で学ぶ。</p>
+          <p class="wlab-mission-ticket">Ticket × 1</p>
+          <p class="wlab-mission-format">🎬 動画講座</p>
+          <div class="wlab-mission-instructor">
+            <div class="wlab-mission-instructor-item">
+              <img class="wlab-mission-avatar" src="images/本間千尋１.jpeg" alt="ライフコーチ">
+              <span class="wlab-mission-role">ライフコーチ</span>
+            </div>
+            <div class="wlab-mission-instructor-item">
+              <img class="wlab-mission-avatar" src="newimages/ともちゃん.jpg" alt="ライフコーチ">
+              <span class="wlab-mission-role">ライフコーチ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04 -->
+      <div class="wlab-mission-card wmission-s4 fade-up">
+        <div class="wlab-mission-body">
+          <span class="wlab-mission-num">04</span>
+          <span class="wlab-mission-category">イメージコンサルティング</span>
+          <div class="wlab-mission-rule"></div>
+          <h2 class="wlab-mission-title">IMAGE STYLING —<br>「なりたい私」を、まとう</h2>
+          <p class="wlab-mission-desc">内面の魅力を、見た目にも表現できるように。骨格・パーソナルカラーをもとに、あなたらしさが自然と伝わるスタイリングを提案。第一印象から好意を生む、外見の戦略。</p>
+          <p class="wlab-mission-ticket" style="border-style: dashed; opacity: 0.6;">Coming Soon</p>
+          <div class="wlab-mission-instructor">
+            <div class="wlab-mission-instructor-item">
+              <img class="wlab-mission-avatar" src="newimages/E33B9947-5CAC-4CBF-8048-B0505AAA80B0 (1).jpeg" alt="イメージコンサルタント">
+              <span class="wlab-mission-role">イメージコンサルタント<br>（準備中）</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 05 -->
+      <div class="wlab-mission-card wmission-s5 fade-up delay-1">
+        <div class="wlab-mission-body">
+          <span class="wlab-mission-num">05</span>
+          <span class="wlab-mission-category">ビジョンワーク</span>
+          <div class="wlab-mission-rule"></div>
+          <h2 class="wlab-mission-title">VISION BOARD —<br>「しあわせの解像度」を上げる</h2>
+          <p class="wlab-mission-desc">「なんとなく幸せになりたい」から、「これが私の望む暮らし」へ。自分の理想を言語化・視覚化することで、本当に出会いたい人・築きたい関係が明確になるビジョンワークショップ。</p>
+          <p class="wlab-mission-ticket">Ticket × 3</p>
+          <p class="wlab-mission-format">⏱ 120分｜オンラインワークショップ</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PRICE & MEMBERSHIP
+       ============================================================ -->
+  <section class="wlab-price">
+    <div class="wlab-price-inner">
+      <span class="wlab-price-eyebrow fade-up">Price &amp; Membership</span>
+      <h2 class="wlab-price-heading fade-up delay-1">LAB Ticket Price</h2>
+      <p class="wlab-price-lead fade-up delay-2">必要な時に、必要な分だけ</p>
+
+      <div class="wlab-price-card fade-up delay-2">
+        <p class="wlab-price-card-label">1枚</p>
+        <p class="wlab-price-card-price">1,000<span class="wlab-price-card-unit">円</span></p>
+        <p class="wlab-price-card-note">※各講座初回利用時</p>
+      </div>
+
+      <div class="wlab-price-member fade-up delay-3">
+        <span class="wlab-price-member-badge">Personal Member</span>
+        <p class="wlab-price-member-title">入会特典として、上記LABメニューを無料で付与いたします。</p>
+        <a href="service.html" class="wlab-price-member-link">➔ パーソナル会員の詳細はこちら</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CLOSING
+       ============================================================ -->
+  <section class="wlab-closing">
+    <div class="wlab-closing-inner">
+      <span class="wlab-closing-eyebrow fade-up">Start Here</span>
+      <h2 class="wlab-closing-title fade-up delay-1">「失敗したくない」<br>その気持ちは、正直でやさしい。</h2>
+      <p class="wlab-closing-body fade-up delay-2">
+        婚活に不安を感じるのは、それだけ真剣だから。<br>
+        まずは、あなたの話を聞かせてください。
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       HOW TO JOIN
+       ============================================================ -->
+  <section class="wlab-ticket">
+    <div class="wlab-ticket-inner">
+      <div class="wlab-ticket-header fade-up">
+        <span class="wlab-ticket-eyebrow">How to Join</span>
+        <h2 class="wlab-ticket-title">受講の流れ</h2>
+      </div>
+
+      <div class="wlab-ticket-steps fade-up delay-1">
+
+        <div class="wlab-ticket-step">
+          <div class="wlab-ticket-step-num">
+            <span class="wlab-ticket-step-num-label">STEP</span>
+            <span class="wlab-ticket-step-num-digit">01</span>
+          </div>
+          <p class="wlab-ticket-step-title">チケット<br>購入</p>
+          <p class="wlab-ticket-step-text">PayPay・銀行振込にて。パーソナル会員様は特典チケットをご利用ください。</p>
+        </div>
+
+        <div class="wlab-ticket-step">
+          <div class="wlab-ticket-step-num">
+            <span class="wlab-ticket-step-num-label">STEP</span>
+            <span class="wlab-ticket-step-num-digit">02</span>
+          </div>
+          <p class="wlab-ticket-step-title">LINEで<br>日程を予約</p>
+          <p class="wlab-ticket-step-text">まずLINEにメッセージをお送りください。</p>
+        </div>
+
+        <div class="wlab-ticket-step">
+          <div class="wlab-ticket-step-num">
+            <span class="wlab-ticket-step-num-label">STEP</span>
+            <span class="wlab-ticket-step-num-digit">03</span>
+          </div>
+          <p class="wlab-ticket-step-title">プログラムを<br>選ぶ</p>
+          <p class="wlab-ticket-step-text">今のあなたに必要なプログラムを選びましょう。</p>
+        </div>
+
+        <div class="wlab-ticket-step">
+          <div class="wlab-ticket-step-num">
+            <span class="wlab-ticket-step-num-label">STEP</span>
+            <span class="wlab-ticket-step-num-digit">04</span>
+          </div>
+          <p class="wlab-ticket-step-title">オンラインで<br>参加</p>
+          <p class="wlab-ticket-step-text">当日はオンラインで。全国どこからでも参加できます。</p>
+        </div>
+
+      </div>
+      <div class="wlab-ticket-cta fade-up delay-2">
+        <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="wlab-closing-btn">ハルカゼLABのチケットを購入する</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-buttons">
+      <a href="apply.html" class="btn-primary" style="font-size: 14px; padding: 18px 44px; background: var(--white); color: var(--navy);">無料カウンセリングを予約する</a>
+      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn-line" style="font-size: 13px; padding: 18px 32px; border-color: var(--white); color: var(--white);"><span style="color:#06C755;">LINE</span>で予約する</a>
+    </div>
+    <p class="cta-note">オンライン30分 ｜ 全国オンライン対応</p>
+  </section>
+
+</main>
+
+<!-- フッター -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo" style="color: var(--white); white-space: nowrap;">結婚相談所　ハルカゼ<span>MARRIAGE CONSULTING</span></a>
+      <p>「あなたがいい」で選ばれる婚活を。<br>IBJ正規加盟店</p>
+      <div style="margin-top: 16px;">
+        <img src="images/Photoroom_20260409_154324.png" alt="結婚相談所ハルカゼ ロゴ" style="height: 112px; width: auto;">
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Service</h4>
+      <ul>
+        <li><a href="about.html">メッセージ</a></li>
+        <li><a href="service.html">サービス内容</a></li>
+        <li><a href="harukaze-lab.html">ハルカゼLAB</a></li>
+        <li><a href="service.html">料金プラン</a></li>
+        <li><a href="men.html">男性の婚活はこちら</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Info</h4>
+      <ul>
+        <li><a href="faq.html">よくある質問</a></li>
+        <li><a href="blog.html">ブログ</a></li>
+        <li><a href="privacy.html">プライバシーポリシー</a></li>
+        <li><a href="#">特定商取引法に基づく表記</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="apply.html">無料カウンセリング予約</a></li>
+        <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer">LINEで予約する</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Harukaze Marriage Consulting. All rights reserved.</span>
+    <span>IBJ正規加盟店　大阪・北摂・吹田</span>
+  </div>
+</footer>
+
+<!-- フローティングボタン -->
+<div class="float-side-btns">
+  <a href="apply.html" class="float-side-btn float-side-btn-line">初回無料面談を予約する</a>
+  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn float-side-btn-line">LINEで婚活突破口診断</a>
+</div>
+
+<script src="js/common.js"></script>
+<script>
+(function () {
+  'use strict';
+  var nav = document.getElementById('siteNav');
+  if (nav) {
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+  }
+  var items = document.querySelectorAll('.fade-up');
+  if (items.length && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    items.forEach(function (el) { io.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>
