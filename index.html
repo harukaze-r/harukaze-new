@@ -181,6 +181,12 @@ body { background: var(--cream); color: var(--text-w); }
   position: relative;
   z-index: 2;
 }
+.quote-br { display: none; }
+.quote-sep { display: inline; }
+@media (max-width: 768px) {
+  .quote-br { display: inline; }
+  .quote-sep { display: none; }
+}
 .w-quote-bar p {
   font-family: var(--font-elegant);
   font-size: clamp(15px, 2vw, 22px);
@@ -1069,7 +1075,7 @@ body { background: var(--cream); color: var(--text-w); }
 
 <!-- QUOTE BAR -->
 <div class="w-quote-bar">
-  <p>最短5ヶ月・1年以内の成婚実績　｜　IBJ正規加盟店　｜　全国オンライン対応</p>
+  <p>最短5ヶ月・1年以内の成婚実績<span class="quote-sep">　｜　</span><br class="quote-br">IBJ正規加盟店　｜　全国オンライン対応</p>
 </div>
 
 <!-- ============================================================
