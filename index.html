@@ -345,6 +345,46 @@ body { background: var(--cream); color: var(--text-w); }
 }
 .w-concept-link:hover { color: #fff; border-color: #fff; opacity: 1; }
 
+.ibj-data {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(244,104,138,0.15);
+}
+.ibj-data-label {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--rose);
+  font-family: "Cormorant Garamond", serif;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+.ibj-data-grid {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.ibj-data-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.ibj-data-num {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--rose);
+  line-height: 1;
+}
+.ibj-data-num span {
+  font-size: 14px;
+  font-family: var(--font-base);
+}
+.ibj-data-desc {
+  font-size: 11px;
+  color: var(--text-w-light);
+  letter-spacing: 0.06em;
+}
+
 /* ============================================================
    FEATURES — 画像+テキスト交互
    ============================================================ */
@@ -998,6 +1038,23 @@ body { background: var(--cream); color: var(--text-w); }
         <span class="w-tag">魅力・強み発見</span>
         <span class="w-tag">婚活プラン作成</span>
         <span class="w-tag">プロフィール作成</span>
+      </div>
+      <div class="ibj-data">
+        <p class="ibj-data-label">IBJ Network Data</p>
+        <div class="ibj-data-grid">
+          <div class="ibj-data-item">
+            <span class="ibj-data-num">10<span>万人以上</span></span>
+            <span class="ibj-data-desc">登録会員数</span>
+          </div>
+          <div class="ibj-data-item">
+            <span class="ibj-data-num">6,000<span>社以上</span></span>
+            <span class="ibj-data-desc">全国加盟相談所数</span>
+          </div>
+          <div class="ibj-data-item">
+            <span class="ibj-data-num">No.<span>1</span></span>
+            <span class="ibj-data-desc">成婚者数 業界最多</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
