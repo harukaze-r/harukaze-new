@@ -1,2460 +1,962 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>結婚相談所ハルカゼ｜選び取る男になる婚活</title>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Montserrat:wght@400;500;600;700&family=Noto+Serif+JP:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<title>結婚相談所ハルカゼ｜30代・40代女性のための賢い婚活</title>
+<link rel="icon" href="newimages/使用ロゴ.jpeg">
+<meta property="og:image" content="newimages/h. (1).png">
+<meta property="og:title" content="結婚相談所ハルカゼ｜30代・40代のための賢い婚活">
+<meta property="og:description" content="頑張ってきたあなたが、本当に選びたい人と出会うために。マンツーマンで寄り添う婚活サポート。">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="css/common.css">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --navy: #2c3e6b;
-    --navy-mid: #3a4f85;
-    --navy-light: #4a6099;
-    --navy-dark: #1e2d50;
-    --pink: #e0256a;
-    --pink-light: #ed4d88;
-    --pink-pale: #fce8f1;
-    --pink-dark: #c41e5c;
-    --mint: #D6F3FC;
-    --mint-mid: #D6F3FC;
-    --mint-dark: #2AB5E0;
-    --white: #ffffff;
-    --off-white: #fafafa;
-    --text-main: #1e2d50;
-    --text-mid: #252f3f;
-    --text-light: #8a95a3;
-    --border: rgba(44,62,107,0.1);
-    --border-mint: rgba(42,181,224,0.4);
-    --gray-bg: #ffffff;
-    --gray-light: #f0f0f0;
-    --cream: #fafafa;
-    --gold: #b89c6a;
-    --gold-light: #d4b98a;
-    --gold-pale: #f5ede0;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Noto Sans JP', sans-serif;
-    background: var(--gray-bg);
-    color: var(--text-main);
-    font-weight: 300;
-    line-height: 1.8;
-    overflow-x: hidden;
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 60px;
-    background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(12px);
-    border-bottom: 0.5px solid var(--gray-light);
-  }
-
-  /* ── LOGO ── */
-  .logo {
-    font-family: 'Zen Kaku Gothic New', sans-serif;
-    font-size: 17px;
-    font-weight: 600;
-    color: var(--navy);
-    letter-spacing: 0.12em;
-    text-decoration: none;
-    line-height: 1.2;
-  }
-  .logo .logo-char {
-    display: inline-block;
-    transform: rotate(-4deg);
-  }
-  .logo span {
-    font-size: 10px;
-    color: var(--text-light);
-    display: block;
-    letter-spacing: 0.2em;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 300;
-    margin-top: 1px;
-  }
-  .logo em {
-    font-style: normal;
-    font-size: 12px;
-    color: var(--navy-dark);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    letter-spacing: 0.1em;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 500;
-    margin-top: 2px;
-  }
-  .logo em::before {
-    content: '';
-    display: block;
-    width: 20px;
-    height: 1px;
-    background: currentColor;
-    opacity: 0.6;
-    flex-shrink: 0;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 36px;
-    list-style: none;
-    align-items: center;
-  }
-
-  .nav-links a {
-    text-decoration: none;
-    color: var(--text-mid);
-    font-size: 13px;
-    letter-spacing: 0.05em;
-    transition: color 0.3s;
-  }
-
-  .nav-links a:hover { color: var(--pink); }
-
-  .nav-cta {
-    background: var(--pink);
-    border: none;
-    color: var(--white) !important;
-    padding: 10px 24px;
-    font-size: 13px !important;
-    letter-spacing: 0.05em;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: all 0.3s;
-  }
-
-  .nav-cta:hover {
-    background: var(--pink-dark) !important;
-  }
-
-  /* ── HAMBURGER ── */
-  .hamburger-btn {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    gap: 6px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px;
-    z-index: 1001;
-  }
-  .hamburger-btn span {
-    display: block;
-    width: 24px;
-    height: 1.5px;
-    background: var(--navy);
-    border-radius: 2px;
-    transition: all 0.3s ease;
-  }
-  .hamburger-btn.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
-  .hamburger-btn.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-  .hamburger-btn.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
-
-  /* ── MOBILE OVERLAY ── */
-  .mobile-nav-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    height: 100dvh;
-    overflow-y: auto;
-    background: rgba(255,255,255,0.97);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    z-index: 999;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 24px;
-    padding: 60px 24px;
-  }
-  .mobile-nav-overlay.open { display: flex; }
-
-  .mobile-nav-close {
-    position: absolute;
-    top: 20px; right: 20px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-  .mobile-nav-close span {
-    display: block;
-    width: 24px;
-    height: 1.5px;
-    background: var(--navy);
-    border-radius: 2px;
-  }
-  .mobile-nav-close span:nth-child(1) { transform: translateY(3.75px) rotate(45deg); }
-  .mobile-nav-close span:nth-child(2) { transform: translateY(-3.75px) rotate(-45deg); }
-
-  .mobile-nav-specialty {
-    text-align: center;
-    margin-bottom: 8px;
-  }
-  .mobile-nav-specialty span {
-    display: block;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 12px;
-    font-weight: 300;
-    letter-spacing: 0.25em;
-    color: var(--mint-dark);
-    margin-bottom: 6px;
-  }
-  .mobile-nav-specialty em {
-    display: block;
-    font-style: normal;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    color: var(--navy);
-    white-space: nowrap;
-  }
-  .mobile-nav-overlay a {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 17px;
-    font-weight: 400;
-    color: var(--navy);
-    letter-spacing: 0.1em;
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .mobile-nav-overlay a:hover { color: var(--mint-dark); }
-  .mobile-nav-overlay .nav-cta {
-    margin-top: 8px;
-    font-size: 14px;
-    padding: 12px 36px;
-    background: var(--mint-dark) !important;
-    border-radius: 4px;
-    color: #fff !important;
-  }
-  .mobile-nav-overlay .nav-cta:hover {
-    background: #1da0c9 !important;
-    box-shadow: 0 4px 14px rgba(42,181,224,0.35) !important;
-  }
-  .mobile-nav-divider {
-    width: 100%;
-    border: none;
-    border-top: 1px solid rgba(44,62,107,0.1);
-    margin: 4px 0;
-  }
-  .mobile-nav-girls-link {
-    font-family: 'Noto Sans JP', sans-serif !important;
-    font-size: 13px !important;
-    font-weight: 500 !important;
-    color: var(--navy) !important;
-    letter-spacing: 0.08em;
-  }
-  .mobile-nav-girls-link:hover { color: var(--mint-dark) !important; }
-
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    background: #8a9aaa;
-    position: relative;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-  }
-
-  .hero-bg { display: none; }
-  .hero-lines { display: none; }
-
-  /* 左：テキストエリア */
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    padding: clamp(120px, 15vh, 160px) clamp(32px, 6vw, 80px) clamp(80px, 10vh, 120px);
-    width: 62%;
-    min-width: 340px;
-    margin-left: 8%;
-  }
-
-  .hero-eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 28px;
-    opacity: 0;
-    animation: fadeUp 0.7s ease 0.2s forwards;
-  }
-
-  .hero-eyebrow::before {
-    content: '';
-    display: block;
-    width: 36px;
-    height: 1.5px;
-    background: var(--pink);
-    flex-shrink: 0;
-  }
-
-  .hero-eyebrow span {
-    font-size: 12px;
-    letter-spacing: 0.22em;
-    color: rgba(255,255,255,0.8);
-    font-weight: 500;
-  }
-
-  /* 区切りライン */
-  .hero-rule {
-    width: 100%;
-    height: 0.5px;
-    background: rgba(255,255,255,0.2);
-    margin-bottom: 36px;
-    opacity: 0;
-    animation: fadeUp 0.7s ease 0.3s forwards;
-  }
-
-  .hero-headline {
-    font-family: 'Noto Serif JP', serif;
-    font-weight: 400;
-    font-size: clamp(28px, 3.6vw, 48px);
-    color: #ffffff;
-    line-height: 1.65;
-    margin-bottom: 20px;
-    margin-left: -24px;
-    background: none;
-    box-shadow: none;
-    padding: 0;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.4s forwards;
-  }
-
-  .hero-headline em {
-    font-style: normal;
-    color: var(--pink);
-    text-shadow:
-      0 0 18px rgba(255,255,255,0.9),
-      0 0 36px rgba(255,255,255,0.5),
-      0 0 60px rgba(255,255,255,0.25);
-  }
-
-  .hero-sub {
-    font-size: 17px;
-    color: rgba(255,255,255,0.75);
-    margin-bottom: 32px;
-    line-height: 1.9;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.55s forwards;
-  }
-
-  /* トラストバッジ */
-  .hero-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 36px;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.65s forwards;
-  }
-
-  .hero-badge-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 12px;
-    color: rgba(255,255,255,0.85);
-    border: 0.5px solid rgba(255,255,255,0.3);
-    padding: 6px 14px;
-    border-radius: 2px;
-    letter-spacing: 0.05em;
-    white-space: nowrap;
-  }
-
-  .hero-badge-item::before {
-    content: '✓';
-    font-size: 10px;
-    color: var(--pink);
-  }
-
-  .hero-achievement { display: none; }
-  .hero-achievement-text {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 17px;
-    font-weight: 600;
-    color: #ffffff;
-    letter-spacing: 0.08em;
-    margin-bottom: 32px;
-    padding: 10px 20px 10px 16px;
-    border-left: 3px solid var(--pink);
-    background: rgba(255,255,255,0.08);
-    border-radius: 0 4px 4px 0;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.7s forwards;
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: 14px;
-    align-items: center;
-    flex-wrap: wrap;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.8s forwards;
-  }
-
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: #1e2d50;
-    color: #fff;
-    padding: 16px 36px;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s;
-    border-radius: 2px;
-  }
-
-  .btn-primary:hover { background: var(--navy-dark); }
-
-  .btn-line {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    border: 0.5px solid rgba(44,62,107,0.3);
-    color: var(--navy);
-    padding: 16px 24px;
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    text-decoration: none;
-    transition: all 0.3s;
-    cursor: pointer;
-    background: none;
-    border-radius: 2px;
-  }
-
-  .btn-line:hover { border-color: var(--pink); color: var(--pink); }
-
-  .hero-actions .btn-line {
-    background: #ffffff;
-    border-color: rgba(255,255,255,0.6);
-    color: var(--navy);
-    padding: 16px 36px;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-  }
-  .hero-actions .btn-line:hover { border-color: var(--pink); color: var(--pink); }
-
-  .line-icon {
-    width: 18px; height: 18px;
-    background: #06C755;
-    border-radius: 4px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 11px;
-    color: white;
-    font-weight: 700;
-    flex-shrink: 0;
-  }
-
-  /* 右：写真エリア */
-  .hero-right {
-    position: absolute;
-    right: 0; top: 0; bottom: 0;
-    width: 65%;
-    overflow: visible;
-    opacity: 0;
-    animation: fadeIn 1s ease 0.6s forwards;
-  }
-
-  .hero-photo {
-    position: absolute;
-    inset: 0;
-    background: #8a9aaa;
-  }
-  .hero-photo::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(
-      ellipse 70% 50% at 50% 85%,
-      rgba(255,255,255,0.18) 0%,
-      rgba(255,255,255,0.06) 50%,
-      transparent 70%
-    );
-    pointer-events: none;
-    z-index: 2;
-  }
-
-  .hero-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center -40px;
-    display: block;
-  }
-
-  /* 左グラデーション（テキストとの境界なじませ） */
-  .hero-photo-overlay {
-    position: absolute;
-    inset: 0;
-    background: none;
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  /* ピンク装飾サークル */
-  .hero-circle-deco {
-    position: absolute;
-    right: -100px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 300px;
-    height: 300px;
-    border: 1.5px solid rgba(224,37,106,0.5);
-    border-radius: 50%;
-    z-index: 2;
-    pointer-events: none;
-  }
-
-  .hero-circle-deco-sm {
-    position: absolute;
-    right: 40px;
-    top: 8%;
-    width: 180px;
-    height: 180px;
-    border: 1.5px solid rgba(224,37,106,0.5);
-    border-radius: 50%;
-    z-index: 2;
-    pointer-events: none;
-  }
-
-  /* 代表キャプション */
-  .hero-rep-caption {
-    position: absolute;
-    top: 58%;
-    right: 24px;
-    z-index: 3;
-    text-align: right;
-  }
-
-  .hero-rep-caption-role {
-    font-size: 11px;
-    color: rgba(255,255,255,0.7);
-    letter-spacing: 0.14em;
-    margin-bottom: 3px;
-  }
-
-  .hero-rep-caption-name {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 15px;
-    font-weight: 500;
-    color: rgba(255,255,255,0.9);
-    letter-spacing: 0.12em;
-    margin-right: 16px;
-  }
-
-  .hero-rep-title { display: none; }
-
-  /* 下部ステータスは非表示 */
-  .hero-photo-overlay-bottom { display: none; }
-  .hero-photo-placeholder { display: none; }
-
-  /* モバイル専用ヒーロー（デスクトップでは非表示） */
-  .hero-mobile-only { display: none; }
-
-  /* ── PAIN SECTION ── */
-  .pain-section {
-    background: var(--gray-bg) url('newimages/名称未設定のデザイン (1).jpg') center center / cover no-repeat;
-    padding: 100px 60px;
-    position: relative;
-  }
-  .pain-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(245, 243, 239, 0.82);
-  }
-  .pain-section > * {
-    position: relative;
-    z-index: 1;
-  }
-
-  .section-eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 20px;
-  }
-
-  .section-eyebrow::before {
-    content: '';
-    width: 32px;
-    height: 3px;
-    background: var(--mint-dark);
-  }
-
-  .section-eyebrow span {
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    color: var(--mint-dark);
-  }
-
-  /* ── 中タイトル（section-heading）フォントウェイト変更: 300 → 500 ── */
-  .section-heading {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(24px, 3vw, 36px);
-    font-weight: 500;
-    line-height: 1.6;
-    color: var(--navy);
-    margin-bottom: 48px;
-  }
-
-  .pain-lead {
-    font-size: 14px;
-    color: var(--text-mid);
-    line-height: 2.2;
-    margin-bottom: 48px;
-    max-width: 640px;
-  }
-
-  .section-eyebrow--pink::before {
-    background: var(--pink);
-  }
-
-  .section-eyebrow--pink span {
-    color: var(--pink);
-  }
-
-  .pain-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 0;
-    border: 0.5px solid var(--gray-light);
-  }
-
-  .pain-card {
-    padding: 40px 36px;
-    border-right: 0.5px solid var(--gray-light);
-    border-bottom: 0.5px solid var(--gray-light);
-    position: relative;
-    background: var(--white);
-    transition: background 0.3s;
-  }
-
-  .pain-card:hover {
-    background: var(--mint);
-  }
-
-  .pain-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 56px;
-    font-weight: 300;
-    color: rgba(184,156,106,0.35);
-    line-height: 1;
-    position: absolute;
-    top: 24px;
-    right: 28px;
-  }
-
-  .feature-card .pain-num {
-    position: static;
-    font-size: 48px;
-    margin-bottom: 12px;
-    display: block;
-  }
-
-  .pain-card h3 {
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--navy);
-    margin-bottom: 12px;
-    line-height: 1.5;
-  }
-
-  .pain-card p {
-    font-size: 13px;
-    color: var(--text-mid);
-    line-height: 1.9;
-  }
-
-  .pain-message {
-    max-width: 680px;
-    margin: 56px auto 0;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  .pain-message p {
-    font-size: 15px;
-    color: var(--text-mid);
-    line-height: 2.1;
-    letter-spacing: 0.04em;
-  }
-
-  .pain-message p:nth-child(2) {
-    font-weight: 600;
-    color: var(--navy);
-  }
-
-
-  /* ── CONCEPT ── */
-  .concept-section {
-    background: var(--mint);
-    padding: 120px 60px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .concept-section::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 0.5px;
-    background: linear-gradient(to right, transparent, var(--mint-dark), transparent);
-  }
-
-  .concept-inner {
-    max-width: 860px;
-    margin: 0 auto;
-    text-align: center;
-    background: #ffffff;
-    padding: 64px 56px;
-    border-radius: 2px;
-    box-shadow: 0 4px 32px rgba(42, 181, 224, 0.12);
-  }
-
-  .concept-quote {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(20px, 2.5vw, 30px);
-    font-weight: 500;
-    color: var(--navy);
-    line-height: 2;
-    margin-bottom: 24px;
-  }
-
-  .concept-quote em {
-    font-style: normal;
-    color: var(--navy);
-    border-bottom: 2px solid var(--mint-dark);
-    padding-bottom: 2px;
-  }
-
-  .concept-body {
-    font-size: 14px;
-    color: var(--text-mid);
-    max-width: 580px;
-    margin: 0 auto 48px;
-    line-height: 2.2;
-    font-weight: 400;
-    letter-spacing: 0.12em;
-  }
-
-  .concept-sig {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-  }
-
-  .concept-sig::before, .concept-sig::after {
-    content: '';
-    width: 40px;
-    height: 0.5px;
-    background: var(--mint-dark);
-  }
-
-  .concept-sig span {
-    font-size: 12px;
-    color: var(--navy);
-    letter-spacing: 0.2em;
-  }
-
-  /* ── FEATURES ── */
-  .features-section {
-    padding: 100px 60px;
-    background: var(--cream);
-  }
-
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-    margin-top: 60px;
-  }
-
-  .feature-card {
-    background: var(--white);
-    border: 0.5px solid var(--border);
-    padding: 0;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .feature-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 24px 60px rgba(26,34,53,0.08);
-  }
-
-  .feature-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 3px;
-    height: 0;
-    background: var(--mint-dark);
-    transition: height 0.4s;
-    z-index: 1;
-  }
-
-  .feature-card:hover::before { height: 100%; }
-
-  .feature-photo {
-    width: 100%;
-    height: 220px;
-    overflow: hidden;
-    position: relative;
-    background: var(--navy-mid);
-  }
-
-  .feature-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    transition: transform 0.5s ease;
-    opacity: 0.9;
-  }
-
-  .feature-card:hover .feature-photo img {
-    transform: scale(1.04);
-  }
-
-  .feature-photo-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: linear-gradient(135deg, var(--navy-mid), var(--navy-light));
-  }
-
-  .feature-photo-placeholder svg {
-    width: 36px;
-    height: 36px;
-    stroke: rgba(184,156,106,0.4);
-    fill: none;
-    stroke-width: 1;
-  }
-
-  .feature-photo-placeholder span {
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    color: rgba(184,156,106,0.4);
-    text-transform: uppercase;
-  }
-
-  .feature-card-body {
-    padding: 32px 36px 36px;
-    position: relative;
-  }
-
-  .feature-icon {
-    width: 44px;
-    height: 44px;
-    border: 0.5px solid var(--border-mint);
-    background: var(--mint);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-
-  .feature-icon svg {
-    width: 20px;
-    height: 20px;
-    stroke: var(--mint-dark);
-    fill: none;
-    stroke-width: 1.2;
-  }
-
-  .feature-card h3 {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 17px;
-    font-weight: 600;
-    color: var(--navy);
-    margin-bottom: 14px;
-    line-height: 1.5;
-  }
-
-  .feature-card p {
-    font-size: 13px;
-    color: var(--text-mid);
-    line-height: 2;
-  }
-
-  .feature-tag {
-    display: inline-block;
-    margin-top: 20px;
-    margin-right: 8px;
-    font-size: 13px;
-    letter-spacing: 0.15em;
-    color: var(--navy);
-    border: 0.5px solid var(--border-mint);
-    padding: 4px 12px;
-    background: var(--mint);
-  }
-
-  .feature-card--lab {
-    grid-column: 1 / -1;
-  }
-
-  .feature-card--lab .feature-photo {
-    height: 260px;
-  }
-
-  .feature-card--lab .feature-card-body {
-    display: flex;
-    align-items: flex-start;
-    gap: 32px;
-    flex-wrap: wrap;
-  }
-
-  .feature-card--lab .feature-icon {
-    flex-shrink: 0;
-  }
-
-  .feature-card--lab .feature-card-body > div:not(.feature-icon) {
-    flex: 1;
-    min-width: 200px;
-  }
-
-  .feature-card--lab h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-
-  .feature-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 16px;
-  }
-
-  .feature-tags .feature-tag {
-    margin-top: 0;
-    margin-right: 0;
-  }
-
-  .feature-lab-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: 20px;
-    font-size: 12px;
-    color: var(--gold);
-    letter-spacing: 0.15em;
-    text-decoration: none;
-    border-bottom: 0.5px solid rgba(184,156,106,0.4);
-    padding-bottom: 3px;
-    transition: all 0.3s;
-    white-space: nowrap;
-  }
-
-  .feature-lab-link:hover {
-    color: var(--gold-light);
-    border-bottom-color: var(--gold-light);
-  }
-
-  .feature-lab-divider {
-    width: 100%;
-    height: 0.5px;
-    background: var(--border);
-    margin: 24px 0;
-  }
-
-  .feature-lab-desc {
-    font-size: 13px;
-    color: var(--text-mid);
-    line-height: 1.9;
-    margin-bottom: 4px;
-  }
-
-  .feature-lab-label {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 10px;
-    letter-spacing: 0.25em;
-    color: var(--mint-dark);
-    margin: 20px 0 0;
-  }
-
-  .feature-lab-label::before,
-  .feature-lab-label::after {
-    content: '';
-    flex: 1;
-    height: 0.5px;
-    background: var(--border-mint);
-  }
-
-  .feature-lab-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 16px;
-  }
-
-  .feature-lab-tags .feature-tag {
-    margin-top: 0;
-    margin-right: 0;
-  }
-
-  .feature-lab-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: 20px;
-    font-size: 12px;
-    color: var(--mint-dark);
-    letter-spacing: 0.15em;
-    text-decoration: none;
-    border-bottom: 0.5px solid var(--border-mint);
-    padding-bottom: 3px;
-    transition: all 0.3s;
-  }
-
-  .feature-lab-link:hover {
-    color: var(--navy);
-    border-bottom-color: var(--navy);
-  }
-
-  /* ── MEMBER DATA ── */
-  .member-data-section {
-    background: var(--white);
-    padding: 80px 60px;
-  }
-
-  .member-data-lead {
-    font-size: 13px;
-    color: var(--text-light);
-    margin: -20px 0 40px;
-    letter-spacing: 0.05em;
-  }
-
-  .member-data-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    max-width: 780px;
-    margin: 0 auto;
-  }
-
-  .member-data-card {
-    background: var(--cream);
-    border: 0.5px solid var(--border);
-    padding: 16px 14px;
-    text-align: center;
-    transition: background 0.3s;
-  }
-
-  .member-data-card:hover {
-    background: var(--gold-pale);
-  }
-
-  .member-chart-wrap {
-    width: 70px;
-    height: 70px;
-    margin: 0 auto 10px;
-  }
-
-  .donut-chart { width: 100%; height: 100%; transform: rotate(-90deg); }
-
-  .donut-bg { stroke: rgba(26,34,53,0.07); }
-
-  .donut-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 28px;
-    font-weight: 300;
-    fill: var(--navy);
-    transform: rotate(90deg);
-    transform-origin: 60px 60px;
-  }
-
-  .donut-pct {
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 11px;
-    font-weight: 300;
-    fill: var(--gold);
-    transform: rotate(90deg);
-    transform-origin: 60px 60px;
-  }
-
-  .member-data-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--navy);
-    margin-bottom: 8px;
-  }
-
-  .member-data-desc {
-    font-size: 11px;
-    color: var(--text-mid);
-    line-height: 1.7;
-    margin-bottom: 12px;
-  }
-
-  .member-data-legend {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 6px 16px;
-    font-size: 11px;
-    color: var(--text-light);
-    align-items: center;
-  }
-
-  .legend-dot {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  .legend-dot--gold { background: var(--gold); }
-  .legend-dot--muted { background: rgba(26,34,53,0.12); }
-
-  .member-data-note {
-    text-align: center;
-    font-size: 11px;
-    color: var(--text-light);
-    margin-top: 40px;
-    letter-spacing: 0.05em;
-  }
-
-  /* ── ATMOSPHERE ── */
-  .atmosphere-section {
-    background: var(--white);
-    padding: 60px 60px;
-  }
-
-  .atmosphere-inner {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 48px;
-    align-items: center;
-  }
-
-  .atmosphere-body {
-    font-size: 13px;
-    color: var(--text-mid);
-    line-height: 2;
-    margin-top: 8px;
-  }
-
-  .atmosphere-photos {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 160px;
-    gap: 10px;
-  }
-
-  .atmosphere-photo {
-    overflow: hidden;
-    position: relative;
-    background: var(--navy-mid);
-  }
-
-  .atmosphere-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    transition: transform 0.5s ease;
-    opacity: 0.9;
-  }
-
-  .atmosphere-photo:hover img {
-    transform: scale(1.04);
-  }
-
-  .atmosphere-photo--1 { grid-column: 1; grid-row: 1; }
-  .atmosphere-photo--2 { grid-column: 2; grid-row: 1; }
-  .atmosphere-photo--3 { grid-column: 3; grid-row: 1; }
-  .atmosphere-photo--4 { grid-column: 4; grid-row: 1; }
-
-  .atmosphere-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--mint);
-    border: 0.5px solid var(--border-mint);
-  }
-
-  .atmosphere-placeholder span {
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    color: var(--mint-dark);
-  }
-
-  @media (max-width: 900px) {
-    .atmosphere-inner { grid-template-columns: 1fr; gap: 32px; }
-    .atmosphere-photos { grid-template-columns: repeat(2, 1fr); grid-template-rows: 120px 120px; }
-  }
-
-  /* ── VOICE ── */
-  .voice-section {
-    background: var(--white);
-    padding: 100px 60px;
-  }
-
-  .voice-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 28px;
-    margin-top: 60px;
-  }
-
-  .voice-card {
-    border: 0.5px solid var(--border);
-    border-top: 3px solid var(--mint-dark);
-    padding: 36px;
-    position: relative;
-    background: var(--white);
-  }
-
-  .voice-card::before {
-    content: '"';
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 80px;
-    color: var(--mint);
-    position: absolute;
-    top: 8px;
-    left: 24px;
-    line-height: 1;
-  }
-
-  .voice-text {
-    font-size: 14px;
-    line-height: 2;
-    color: var(--text-mid);
-    margin-bottom: 24px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .voice-meta {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    border-top: 0.5px solid var(--border);
-    padding-top: 20px;
-  }
-
-  .voice-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--navy-mid), var(--navy-light));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    color: var(--gold-light);
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 400;
-    flex-shrink: 0;
-  }
-
-  .voice-name {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--navy);
-  }
-
-  .voice-attr {
-    font-size: 11px;
-    color: var(--text-light);
-    margin-top: 2px;
-  }
-
-  /* ── FLOW ── */
-  .flow-section {
-    background: var(--navy);
-    padding: 100px 60px;
-  }
-
-  .flow-steps {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 0;
-    margin-top: 60px;
-    position: relative;
-  }
-
-  .flow-steps::before {
-    content: '';
-    position: absolute;
-    top: 28px;
-    left: 10%;
-    right: 10%;
-    height: 1px;
-    background: var(--mint-mid);
-  }
-
-  .flow-step {
-    text-align: center;
-    padding: 0 16px;
-  }
-
-  .flow-dot {
-    width: 56px;
-    height: 56px;
-    border: 2px solid var(--mint-dark);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
-    background: var(--mint);
-    position: relative;
-    z-index: 1;
-  }
-
-  .flow-dot span {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
-    color: var(--navy);
-    font-weight: 300;
-  }
-
-  .flow-step h4 {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--white);
-    margin-bottom: 8px;
-  }
-
-  .flow-step p {
-    font-size: 11px;
-    color: rgba(255,255,255,0.4);
-    line-height: 1.7;
-  }
-
-  /* ── PRICE ── */
-  .price-section {
-    padding: 100px 60px;
-    background: var(--cream);
-  }
-
-  .price-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: 60px;
-  }
-
-  .price-card {
-    background: var(--white);
-    border: 0.5px solid var(--border);
-    padding: 44px 36px;
-    position: relative;
-  }
-
-  .price-card.featured {
-    border: 1.5px solid var(--mint-dark);
-    background: var(--navy);
-  }
-
-  .price-badge {
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--mint-dark);
-    color: var(--white);
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-    padding: 4px 16px;
-    white-space: nowrap;
-  }
-
-  .price-plan {
-    font-size: 11px;
-    letter-spacing: 0.25em;
-    color: var(--mint-dark);
-    margin-bottom: 12px;
-    text-transform: uppercase;
-  }
-
-  .price-name {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 20px;
-    font-weight: 300;
-    color: var(--navy);
-    margin-bottom: 24px;
-    line-height: 1.4;
-  }
-
-  .price-card.featured .price-name {
-    color: var(--white);
-  }
-
-  .price-amount {
-    margin-bottom: 28px;
-    padding-bottom: 28px;
-    border-bottom: 0.5px solid var(--border);
-  }
-
-  .price-card.featured .price-amount {
-    border-bottom-color: rgba(184,156,106,0.25);
-  }
-
-  .price-main {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 42px;
-    font-weight: 300;
-    color: var(--navy);
-    line-height: 1;
-  }
-
-  .price-card.featured .price-main {
-    color: var(--gold-light);
-  }
-
-  .price-unit {
-    font-size: 13px;
-    color: var(--text-light);
-    margin-left: 4px;
-  }
-
-  .price-list {
-    list-style: none;
-    display: grid;
-    gap: 12px;
-    margin-bottom: 36px;
-  }
-
-  .price-list li {
-    font-size: 13px;
-    color: var(--text-mid);
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    line-height: 1.6;
-  }
-
-  .price-card.featured .price-list li {
-    color: rgba(255,255,255,0.6);
-  }
-
-  .price-list li::before {
-    content: '';
-    width: 14px;
-    height: 14px;
-    border: 0.5px solid var(--gold);
-    border-radius: 50%;
-    flex-shrink: 0;
-    margin-top: 2px;
-    position: relative;
-    background: radial-gradient(circle at center, rgba(184,156,106,0.4) 40%, transparent 70%);
-  }
-
-  .price-btn {
-    width: 100%;
-    padding: 14px;
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    cursor: pointer;
-    transition: all 0.3s;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 400;
-    background: transparent;
-    border: 0.5px solid var(--mint-dark);
-    color: var(--mint-dark);
-    text-align: center;
-  }
-
-  .price-btn:hover {
-    background: var(--mint);
-    color: var(--navy);
-  }
-
-  .price-card.featured .price-btn {
-    background: var(--pink);
-    color: var(--white);
-    border-color: var(--pink);
-  }
-
-  .price-card.featured .price-btn:hover {
-    background: var(--pink-dark);
-  }
-
-  .price-single {
-    max-width: 640px;
-    margin: 0 auto;
-  }
-
-  .price-card--single {
-    padding: 48px 52px;
-  }
-
-  .price-single-inner {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    margin: 28px 0 32px;
-  }
-
-  .price-single-left {
-    flex-shrink: 0;
-  }
-
-  .price-single-divider {
-    width: 0.5px;
-    height: 80px;
-    background: var(--border);
-    flex-shrink: 0;
-  }
-
-  .price-single-right {
-    flex: 1;
-  }
-
-  .price-campaign {
-    max-width: 640px;
-    margin: 20px auto 0;
-    border: 1px solid var(--pink);
-    border-radius: 2px;
-    padding: 24px 36px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    background: var(--pink-pale);
-  }
-
-  .price-campaign-label {
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    color: var(--pink);
-    font-weight: 500;
-  }
-
-  .price-campaign-title {
-    font-size: 14px;
-    color: var(--text-main);
-    margin-top: 6px;
-    letter-spacing: 0.05em;
-    font-weight: 500;
-  }
-
-  .price-campaign-value {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 32px;
-    font-weight: 300;
-    color: var(--pink);
-    white-space: nowrap;
-    letter-spacing: -0.02em;
-  }
-
-  .price-campaign-value span {
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    margin-left: 2px;
-  }
-
-  .price-highlight {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 16px;
-    font-size: 13px;
-    color: var(--white);
-    font-weight: 500;
-    background: var(--mint-dark);
-    padding: 6px 16px;
-    letter-spacing: 0.05em;
-  }
-
-  .price-highlight-icon {
-    font-size: 11px;
-  }
-
-  .price-btn--single {
-    display: block;
-    max-width: 200px;
-  }
-
-  /* ── BLOG ── */
-  .blog-section {
-    background: var(--white);
-    padding: 100px 60px;
-  }
-
-  .blog-list {
-    list-style: none;
-    max-width: 720px;
-    border-top: 0.5px solid var(--border);
-  }
-
-  .blog-item {
-    border-bottom: 0.5px solid var(--border);
-  }
-
-  .blog-link {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 20px 8px;
-    text-decoration: none;
-    transition: background 0.2s;
-  }
-
-  .blog-link:hover {
-    background: var(--mint);
-    padding-left: 16px;
-  }
-
-  .blog-link:hover svg {
-    stroke: var(--mint-dark);
-    transform: translateX(4px);
-  }
-
-  .blog-link svg {
-    flex-shrink: 0;
-    stroke: var(--text-light);
-    transition: all 0.3s;
-    margin-left: auto;
-  }
-
-  .blog-date {
-    font-size: 12px;
-    color: var(--text-light);
-    letter-spacing: 0.08em;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
-  .blog-title {
-    font-size: 15px;
-    color: var(--navy);
-    line-height: 1.6;
-  }
-
-  .blog-more {
-    display: inline-block;
-    font-size: 13px;
-    color: var(--mint-dark);
-    letter-spacing: 0.1em;
-    text-decoration: none;
-    border-bottom: 0.5px solid var(--border-mint);
-    padding-bottom: 3px;
-    transition: all 0.3s;
-  }
-
-  .blog-more:hover {
-    color: var(--navy);
-    border-bottom-color: var(--navy);
-  }
-
-  /* ── CTA ── */
-  .cta-section {
-    background: var(--navy);
-    padding: 120px 60px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .cta-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(184,156,106,0.06), transparent);
-  }
-
-  .cta-heading {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(24px, 3vw, 36px);
-    font-weight: 300;
-    color: var(--white);
-    margin-bottom: 20px;
-    line-height: 1.7;
-    position: relative;
-  }
-
-  .cta-heading em {
-    font-style: normal;
-    color: var(--gold-light);
-  }
-
-  .cta-sub {
-    font-size: 13px;
-    color: rgba(255,255,255,0.45);
-    margin-bottom: 52px;
-    line-height: 2.2;
-    position: relative;
-  }
-
-  .cta-buttons {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-    position: relative;
-  }
-
-  .cta-note {
-    margin-top: 24px;
-    font-size: 11px;
-    color: #ffffff;
-    letter-spacing: 0.1em;
-    position: relative;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--navy-dark);
-    padding: 60px;
-    border-top: 0.5px solid rgba(255,255,255,0.08);
-  }
-
-  .footer-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-bottom: 48px;
-    padding-bottom: 48px;
-    border-bottom: 0.5px solid rgba(255,255,255,0.06);
-  }
-
-  .footer-brand .logo { font-size: 20px; }
-
-  .footer-brand p {
-    font-size: 12px;
-    color: rgba(255,255,255,0.3);
-    margin-top: 12px;
-    line-height: 1.8;
-  }
-
-  .footer-links h4 {
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    color: rgba(255,255,255,0.4);
-    margin-bottom: 16px;
-    text-transform: uppercase;
-  }
-
-  .footer-links ul {
-    list-style: none;
-    display: grid;
-    gap: 10px;
-  }
-
-  .footer-links a {
-    font-size: 13px;
-    color: rgba(255,255,255,0.5);
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-
-  .footer-links a:hover { color: var(--gold-light); }
-
-  .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 11px;
-    color: rgba(255,255,255,0.2);
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  /* ── IBJ DATA ── */
-  .ibj-section {
-    background: var(--white);
-    padding: 100px 60px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .ibj-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(44,62,107,0.03), transparent);
-    pointer-events: none;
-  }
-
-  .ibj-lead {
-    text-align: center;
-    font-size: 13px;
-    color: var(--text-mid);
-    margin: -24px auto 56px;
-    max-width: 480px;
-    line-height: 2;
-  }
-
-  .ibj-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .ibj-card {
-    background: var(--gray-bg);
-    border: 0.5px solid var(--gray-light);
-    padding: 48px 36px;
-    text-align: center;
-    position: relative;
-    transition: background 0.4s;
-  }
-
-  .ibj-card:hover {
-    background: var(--white);
-  }
-
-  .ibj-card--featured {
-    background: var(--mint);
-    border: 1.5px solid var(--mint-dark);
-  }
-
-  .ibj-card--featured::before {
-    content: 'No.1';
-    position: absolute;
-    top: -1px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--mint-dark);
-    color: var(--white);
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-    padding: 3px 16px;
-  }
-
-  .ibj-icon {
-    width: 44px;
-    height: 44px;
-    margin: 0 auto 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .ibj-icon svg {
-    width: 28px;
-    height: 28px;
-    stroke: var(--navy);
-    opacity: 0.5;
-  }
-
-  .ibj-num-wrap {
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    gap: 4px;
-    margin-bottom: 14px;
-  }
-
-  .ibj-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(48px, 5vw, 68px);
-    font-weight: 300;
-    color: var(--navy);
-    line-height: 1;
-    letter-spacing: -0.02em;
-  }
-
-  .ibj-unit {
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 16px;
-    color: var(--navy-mid);
-    font-weight: 300;
-  }
-
-  .ibj-label {
-    font-size: 12px;
-    color: var(--text-mid);
-    letter-spacing: 0.15em;
-    line-height: 1.7;
-  }
-
-  .ibj-note {
-    text-align: center;
-    font-size: 11px;
-    color: var(--text-light);
-    margin-top: 40px;
-    letter-spacing: 0.05em;
-  }
-
-  .ibj-badges {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    margin-top: 16px;
-  }
-
-  .ibj-badges img {
-    height: 80px;
-    width: auto;
-    object-fit: contain;
-  }
-
-  .ibj-app-block {
-    margin-top: 48px;
-    text-align: center;
-  }
-  .ibj-app-img {
-    max-width: 480px;
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    display: block;
-    margin: 0 auto 20px;
-  }
-  .ibj-app-text1 {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--navy);
-    letter-spacing: 0.06em;
-    margin-bottom: 8px;
-  }
-  .ibj-app-text2 {
-    font-size: 14px;
-    color: var(--text-mid);
-    letter-spacing: 0.06em;
-  }
-
-  /* ── COMPARE ── */
-  .compare-section {
-    background: var(--white);
-    padding: 80px 60px;
-  }
-
-  .compare-section {
-    background: var(--white);
-    padding: 80px 60px;
-  }
-
-  .compare2-wrap {
-    display: flex;
-    align-items: stretch;
-    max-width: 560px;
-    margin: 40px auto 0;
-    gap: 0;
-  }
-
-  .compare2-side {
-    flex: 1;
-    padding: 28px 24px;
-    text-align: center;
-  }
-
-  .compare2-side--other {
-    background: var(--off-white);
-    border: 0.5px solid var(--border);
-    border-right: none;
-    border-radius: 4px 0 0 4px;
-  }
-
-  .compare2-side--harukaze {
-    background: var(--mint);
-    border: 0.5px solid var(--border-mint);
-    border-left: none;
-    border-radius: 0 4px 4px 0;
-    position: relative;
-  }
-
-  .compare2-vs {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    flex-shrink: 0;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 14px;
-    font-weight: 300;
-    color: var(--text-light);
-    letter-spacing: 0.1em;
-    background: transparent;
-    border: none;
-    z-index: 1;
-  }
-
-  .compare2-org {
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    color: var(--text-light);
-    margin-bottom: 16px;
-  }
-
-  .compare2-side--harukaze .compare2-org {
-    color: var(--mint-dark);
-  }
-
-  .compare2-ratio {
-    font-size: 13px;
-    color: var(--text-mid);
-    line-height: 1.6;
-  }
-
-  .compare2-ratio em {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: normal;
-    font-size: 30px;
-    font-weight: 300;
-    line-height: 1.1;
-    display: block;
-    color: var(--text-light);
-    margin: 4px 0;
-  }
-
-  .compare2-side--harukaze .compare2-ratio em {
-    color: var(--mint-dark);
-  }
-
-  .compare2-result {
-    margin-top: 14px;
-    font-size: 11px;
-    color: var(--navy);
-    letter-spacing: 0.06em;
-    padding: 6px 10px;
-    background: rgba(255,255,255,0.6);
-    border-radius: 2px;
-    display: inline-block;
-    line-height: 1.5;
-  }
-
-  /* ── COMPARE ONLINE CARD ── */
-  .compare-online-card {
-    display: flex;
-    align-items: stretch;
-    max-width: 560px;
-    margin: 16px auto 0;
-    border: 0.5px solid var(--border-mint);
-    border-radius: 4px;
-    overflow: hidden;
-    background: var(--mint);
-  }
-  .compare-online-photo {
-    width: 140px;
-    flex-shrink: 0;
-    overflow: hidden;
-  }
-  .compare-online-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .compare-online-body {
-    padding: 20px 20px;
-    flex: 1;
-  }
-  .compare-online-title {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(18px, 2.5vw, 24px);
-    font-weight: 500;
-    color: var(--navy);
-    letter-spacing: 0.06em;
-    line-height: 1.6;
-    margin-bottom: 10px;
-  }
-  .compare-online-text {
-    font-size: 12px;
-    color: var(--text-mid);
-    line-height: 1.8;
-    margin-bottom: 10px;
-  }
-
-  .compare-card--harukaze .compare-divider {
-    background: var(--mint-mid);
-  }
-
-  .compare-item--desc {
-    justify-content: center;
-    padding: 20px 0 4px;
-  }
-
-  .compare-item-desc {
-    font-size: 13px;
-    color: var(--text-light);
-    text-align: center;
-    line-height: 1.8;
-  }
-
-  .compare-item-desc--gold {
-    color: var(--mint-dark);
-  }
-
-  /* ── GOLD DIVIDER ── */
-  .gold-divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin: 0 0 60px;
-  }
-
-  .gold-divider::before, .gold-divider::after {
-    content: '';
-    flex: 1;
-    height: 0.5px;
-    background: var(--border);
-    max-width: 120px;
-  }
-
-  .gold-divider span {
-    width: 6px;
-    height: 6px;
-    border: 0.5px solid var(--gold);
-    transform: rotate(45deg);
-  }
-
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  /* ── RESPONSIVE ── */
-  /* ── TABLET ── */
-  @media (max-width: 1024px) {
-    .hero-content { margin-left: 2%; }
-    .hero-right { width: 60%; }
-    .features-grid { grid-template-columns: repeat(2, 1fr); }
-    .compare2-wrap { max-width: 100%; }
-    .ibj-stats { gap: 20px; }
-  }
-
-  /* ── MOBILE ── */
-  @media (max-width: 768px) {
-    /* Nav */
-    nav { padding: 20px 20px; }
-    .nav-links { display: none; }
-    .hamburger-btn { display: flex; }
-    nav .logo { font-size: 22px; }
-    nav .logo span { font-size: 11px; }
-    nav .logo em { font-size: 13px; }
-
-    /* Hero – モバイル専用デザイン */
-    .hero {
-      background: #C9869A !important;
-      flex-direction: column;
-      align-items: stretch;
-      justify-content: flex-start;
-      min-height: 100svh;
-      padding: 0;
-    }
-    .hero-content { display: none !important; }
-    .hero-right  { display: none !important; }
-    .hero-bg, .hero-lines { display: none; }
-
-    /* モバイルヒーロー全体 */
-    .hero-mobile-only {
-      display: flex;
-      flex-direction: column;
-      min-height: 100svh;
-      width: 100%;
-    }
-
-    /* 上部：サブコピー */
-    .hero-m-head {
-      padding: 84px 28px 12px;
-      text-align: left;
-      flex-shrink: 0;
-    }
-
-    .hero-m-question {
-      display: inline-block;
-      font-size: clamp(18px, 5.2vw, 26px);
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.35;
-      letter-spacing: 0.04em;
-      white-space: nowrap;
-      border: 2.5px solid rgba(255,255,255,0.85);
-      border-radius: 16px;
-      padding: 14px 24px;
-      position: relative;
-    }
-
-    /* 吹き出しの三角 */
-    .hero-m-question::after {
-      content: '';
-      position: absolute;
-      bottom: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      border: 8px solid transparent;
-      border-top-color: rgba(255,255,255,0.85);
-    }
-
-    /* サブコピー */
-    .hero-m-sub {
-      font-size: 13px;
-      color: #1A2A44;
-      letter-spacing: 0.07em;
-      line-height: 1.9;
-      margin-top: 18px;
-      padding: 0 4px;
-    }
-
-    /* 写真エリア */
-    .hero-m-photo-wrap {
-      flex: none;
-      position: relative;
-      width: 100%;
-      margin-top: 80px;
-    }
-
-    .hero-m-photo-wrap img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* 左上ラベル */
-    .hero-m-badge {
-      position: absolute;
-      top: 16px;
-      left: 14px;
-      color: #1A2A44;
-      font-size: 13px;
-      font-weight: 600;
-      line-height: 1.6;
-      letter-spacing: 0.06em;
-      border-left: 2.5px solid #1A2A44;
-      padding-left: 10px;
-      z-index: 3;
-    }
-
-    /* 画像下部オーバーレイ */
-    .hero-m-footer-pink {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(255,255,255,0.92);
-      padding: 20px 24px 32px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 14px;
-    }
-
-    /* ヘッドライン（ピンクラベル） */
-    .hero-m-headline {
-      display: inline-block;
-      background: #C9869A;
-      padding: 14px 20px;
-      border-radius: 8px;
-      font-size: clamp(18px, 5.2vw, 22px);
-      font-weight: 600;
-      font-family: 'Noto Serif JP', serif;
-      color: #fff;
-      line-height: 1.75;
-      letter-spacing: 0.04em;
-    }
-
-    .hero-m-headline em {
-      font-style: normal;
-      color: #1A2A44;
-      text-shadow:
-        0 0 12px rgba(255,255,255,1),
-        0 0 24px rgba(255,255,255,0.9),
-        0 0 48px rgba(255,255,255,0.6);
-    }
-
-    /* CTAエリア */
-    .hero-m-cta-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      width: 100%;
-    }
-
-    .hero-m-cta-note {
-      font-size: 11px;
-      color: #1A2A44;
-      letter-spacing: 0.12em;
-      font-weight: 500;
-    }
-
-    /* CTAボタン */
-    .hero-m-cta {
-      display: block;
-      width: 100%;
-      background: #1A2A44;
-      color: #fff;
-      text-align: center;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      padding: 16px 24px;
-      border-radius: 3px;
-      text-decoration: none;
-    }
-
-    /* 写真右下キャプション */
-    .hero-m-caption {
-      position: absolute;
-      bottom: 12px;
-      right: 14px;
-      text-align: right;
-      z-index: 3;
-    }
-
-    .hero-m-caption-role {
-      font-size: 10px;
-      color: var(--pink);
-      letter-spacing: 0.1em;
-      margin-bottom: 2px;
-    }
-
-    .hero-m-caption-name {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--pink);
-      letter-spacing: 0.1em;
-    }
-
-    /* Sections padding */
-    .pain-section,
-    .concept-section,
-    .features-section,
-    .ibj-section,
-    .compare-section,
-    .atmosphere-section,
-    .member-data-section,
-    .voice-section,
-    .flow-section,
-    .price-section,
-    .blog-section,
-    .cta-section,
-    footer { padding: 64px 24px; }
-
-    /* Concept inner padding & body adjustment */
-    .concept-inner { padding: 48px 20px; }
-    .concept-body { letter-spacing: 0.04em; white-space: nowrap; }
-
-    /* Section headings */
-    .section-heading { font-size: clamp(18px, 5vw, 24px) !important; }
-
-    /* Features */
-    .features-grid { grid-template-columns: 1fr; }
-    .feature-card--lab { grid-column: 1; }
-    .feature-card--lab .feature-photo { height: 200px; }
-
-    /* IBJ */
-    .ibj-grid { grid-template-columns: repeat(3, 1fr); gap: 2px; max-width: 100%; }
-    .ibj-card { padding: 20px 12px; }
-    .ibj-icon { display: none; }
-    .ibj-num { font-size: clamp(28px, 7vw, 42px); }
-    .ibj-num-wrap { margin-bottom: 6px; }
-    .ibj-unit { font-size: 13px; }
-    .ibj-label { font-size: 10px; letter-spacing: 0.06em; }
-    .ibj-badges { gap: 12px; }
-    .ibj-badges img { height: 60px; }
-
-    /* Compare */
-    .compare2-wrap { flex-direction: row; max-width: 100%; }
-    .compare2-side { padding: 16px 10px; }
-    .compare2-side--other { border-right: none; border-radius: 4px 0 0 4px; }
-    .compare2-side--harukaze { border-left: none; border-radius: 0 4px 4px 0; }
-    .compare2-vs { width: 32px; flex-shrink: 0; }
-    .compare2-org { font-size: 9px; margin-bottom: 8px; }
-    .compare2-ratio { font-size: 11px; }
-    .compare2-ratio em { font-size: 22px; }
-    .compare2-result { font-size: 10px; margin-top: 8px; }
-    .compare-online-card { max-width: 100%; margin-top: 12px; }
-    .compare-online-photo { width: 100px; }
-    .compare-online-body { padding: 14px 14px; }
-    .compare-online-title { font-size: 17px; margin-bottom: 8px; }
-    .compare-online-text { font-size: 11px; margin-bottom: 8px; }
-
-    /* Member data */
-    .member-data-grid { grid-template-columns: 1fr; }
-
-    /* Atmosphere */
-    .atmosphere-inner { grid-template-columns: 1fr; gap: 32px; }
-    .atmosphere-photos { grid-template-columns: repeat(2, 1fr); grid-template-rows: 120px 120px; }
-
-    /* Flow */
-    .flow-steps { grid-template-columns: 1fr; gap: 32px; }
-    .flow-steps::before { display: none; }
-
-    /* Price */
-    .price-single { max-width: 100%; }
-    .price-card--single { padding: 32px 24px; }
-    .price-single-inner { flex-direction: column; gap: 24px; }
-    .price-single-divider { width: 100%; height: 0.5px; }
-    .price-campaign { flex-direction: column; gap: 8px; padding: 20px 24px; text-align: center; }
-    .price-campaign-value { font-size: 28px; }
-
-    /* Voice */
-    .voice-grid { grid-template-columns: 1fr; }
-
-    /* Blog */
-    .blog-list { gap: 0; }
-
-    /* CTA */
-    .cta-buttons { flex-direction: column; gap: 12px; }
-
-    /* Footer */
-    .footer-inner { flex-direction: column; gap: 32px; }
-    .footer-links { flex-direction: column; gap: 24px; }
-  }
-
-  @media (max-width: 480px) {
-    .hero-headline { font-size: clamp(22px, 6.5vw, 28px); }
-    .compare2-ratio em { font-size: 26px; }
-    .ibj-badges img { height: 50px; }
-  }
+/* ============================================================
+   index.html — 女性向けトップページ専用スタイル
+   カラー: ローズ × クリーム × ウォームホワイト
+   ============================================================ */
+
+:root {
+  --rose:         #B5526E;
+  --rose-light:   #D4778E;
+  --rose-dark:    #8E3A52;
+  --rose-pale:    #FAF0F3;
+  --rose-pale2:   #F5E8ED;
+  --champagne:    #F5EDE0;
+  --warm-beige:   #EDE8E2;
+  --cream:        #FDFBF8;
+  --text-w:       #2D2420;
+  --text-w-mid:   #5A4A48;
+  --text-w-light: #9A8C8A;
+  --gold-w:       #BFA07A;
+}
+
+/* ── ベース ── */
+body { background: var(--cream); color: var(--text-w); }
+
+/* ── NAV ── */
+.site-nav { background: rgba(253,251,248,0.96); border-bottom: 1px solid rgba(181,82,110,0.1); }
+.site-nav .logo em { color: var(--rose); }
+.nav-links a:hover { color: var(--rose); opacity: 1; }
+.nav-cta { background: var(--rose) !important; color: #fff !important; }
+.nav-cta:hover { background: var(--rose-dark) !important; opacity: 1; }
+.hamburger-btn span { background: var(--text-w); }
+.hamburger-btn.open span { background: var(--text-w); }
+
+/* ── HERO ── */
+.w-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--warm-beige);
+}
+.w-hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(181,82,110,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 80%, rgba(191,160,122,0.10) 0%, transparent 55%);
+}
+.w-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: var(--inner-wide);
+  margin: 0 auto;
+  padding: 80px 40px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  width: 100%;
+}
+.w-hero-label {
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.w-hero-label::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--rose);
+}
+.w-hero-headline {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 500;
+  line-height: 1.55;
+  letter-spacing: 0.04em;
+  color: var(--text-w);
+  margin-bottom: 28px;
+}
+.w-hero-headline em {
+  font-style: normal;
+  color: var(--rose);
+}
+.w-hero-sub {
+  font-size: 15px;
+  color: var(--text-w-mid);
+  line-height: 2;
+  margin-bottom: 16px;
+}
+.w-hero-achievement {
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  color: var(--gold-w);
+  margin-bottom: 40px;
+  border-left: 2px solid var(--gold-w);
+  padding-left: 12px;
+}
+.w-hero-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.btn-rose {
+  background: var(--rose);
+  color: #fff;
+  padding: 16px 40px;
+  border-radius: 32px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  display: inline-block;
+  transition: background 0.2s, transform 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.btn-rose:hover { background: var(--rose-dark); transform: translateY(-2px); opacity: 1; }
+.btn-rose-line {
+  background: transparent;
+  color: var(--text-w-mid);
+  padding: 15px 32px;
+  border-radius: 32px;
+  font-size: 14px;
+  border: 1.5px solid rgba(181,82,110,0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.btn-rose-line:hover { border-color: var(--rose); color: var(--rose); transform: translateY(-2px); opacity: 1; }
+
+/* hero right — photo */
+.w-hero-photo-wrap {
+  position: relative;
+}
+.w-hero-photo {
+  width: 100%;
+  aspect-ratio: 3/4;
+  border-radius: 4px 60px 4px 60px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(181,82,110,0.15);
+}
+.w-hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.w-hero-badge {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  background: var(--rose);
+  color: #fff;
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 1.6;
+  font-weight: 500;
+  box-shadow: 0 8px 24px rgba(181,82,110,0.3);
+}
+.w-hero-caption {
+  position: absolute;
+  top: 20px;
+  right: -16px;
+  background: rgba(253,251,248,0.92);
+  border: 1px solid rgba(181,82,110,0.15);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text-w-mid);
+  backdrop-filter: blur(8px);
+}
+.w-hero-caption strong { display: block; font-size: 14px; color: var(--text-w); }
+
+/* Mobile hero */
+.w-hero-mobile {
+  display: none;
+  padding: 40px 24px 60px;
+  text-align: center;
+}
+.w-hero-mobile .w-hero-label { justify-content: center; }
+.w-hero-mobile .w-hero-label::before { display: none; }
+.w-hero-mobile .w-hero-headline { font-size: clamp(22px, 6vw, 32px); margin-bottom: 20px; }
+.w-hero-mobile .w-hero-photo {
+  width: 80%;
+  max-width: 300px;
+  margin: 0 auto 24px;
+  aspect-ratio: 3/4;
+  border-radius: 4px 40px 4px 40px;
+}
+.w-hero-mobile .w-hero-btns { justify-content: center; }
+
+/* ── PAIN ── */
+.w-pain {
+  background: var(--cream);
+  padding: var(--section-py) 40px;
+}
+.w-pain-inner { max-width: var(--inner); margin: 0 auto; }
+.w-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.w-eyebrow span {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rose);
+  font-family: var(--font-display);
+}
+.w-eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--rose);
+  flex-shrink: 0;
+}
+.w-section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 3.5vw, 36px);
+  font-weight: 500;
+  color: var(--text-w);
+  line-height: 1.5;
+  margin-bottom: 48px;
+}
+.w-pain-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 56px;
+}
+.w-pain-card {
+  background: #fff;
+  border: 1px solid rgba(181,82,110,0.12);
+  border-radius: 16px;
+  padding: 28px 24px;
+  position: relative;
+  overflow: hidden;
+}
+.w-pain-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--rose) 0%, var(--rose-light) 100%);
+}
+.w-pain-card h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-w);
+  margin-bottom: 10px;
+  line-height: 1.55;
+}
+.w-pain-card p { font-size: 13px; color: var(--text-w-mid); line-height: 1.85; }
+.w-pain-message {
+  background: var(--rose-pale);
+  border-radius: 16px;
+  padding: 40px 40px;
+  border: 1px solid rgba(181,82,110,0.12);
+}
+.w-pain-message p {
+  font-size: 15px;
+  line-height: 2;
+  color: var(--text-w-mid);
+  margin-bottom: 16px;
+}
+.w-pain-message p:last-child { margin-bottom: 0; }
+
+/* ── CONCEPT ── */
+.w-concept {
+  background: var(--text-w);
+  padding: var(--section-py) 40px;
+  position: relative;
+  overflow: hidden;
+}
+.w-concept::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 10% 50%, rgba(181,82,110,0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 50%, rgba(191,160,122,0.12) 0%, transparent 50%);
+}
+.w-concept-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+.w-concept .w-eyebrow { justify-content: center; }
+.w-concept .w-eyebrow::before { display: none; }
+.w-concept-quote {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 4vw, 42px);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.65;
+  margin: 28px 0 32px;
+  letter-spacing: 0.06em;
+}
+.w-concept-quote em { font-style: normal; color: var(--rose-light); }
+.w-concept-body {
+  font-size: 15px;
+  color: rgba(255,255,255,0.75);
+  line-height: 2.1;
+  margin-bottom: 36px;
+}
+.w-concept-link {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.55);
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+  padding-bottom: 4px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.w-concept-link:hover { color: var(--rose-light); border-color: var(--rose-light); opacity: 1; }
+
+/* ── FEATURES ── */
+.w-features {
+  background: var(--cream);
+  padding: var(--section-py) 40px;
+}
+.w-features-inner { max-width: var(--inner-wide); margin: 0 auto; }
+.w-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 48px;
+}
+.w-feature-card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.w-feature-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+.w-feature-photo {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+.w-feature-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.w-feature-card:hover .w-feature-photo img { transform: scale(1.05); }
+.w-feature-body { padding: 28px 28px 32px; }
+.w-feature-num {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--rose);
+  margin-bottom: 8px;
+  font-family: var(--font-display);
+}
+.w-feature-body h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-w);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+.w-feature-body p {
+  font-size: 14px;
+  color: var(--text-w-mid);
+  line-height: 1.9;
+  margin-bottom: 16px;
+}
+.w-feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.w-tag {
+  font-size: 11px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: var(--rose-pale);
+  color: var(--rose-dark);
+  letter-spacing: 0.05em;
+}
+
+/* ── IBJ ── */
+.w-ibj {
+  background: var(--warm-beige);
+  padding: var(--section-py) 40px;
+}
+.w-ibj-inner { max-width: var(--inner); margin: 0 auto; text-align: center; }
+.w-ibj-lead {
+  font-size: 15px;
+  color: var(--text-w-mid);
+  margin: 8px 0 48px;
+}
+.w-ibj-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+.w-ibj-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 20px;
+  border: 1px solid rgba(181,82,110,0.08);
+}
+.w-ibj-card--main {
+  background: var(--rose);
+  color: #fff;
+  border-color: var(--rose);
+}
+.w-ibj-icon { margin-bottom: 16px; }
+.w-ibj-icon svg {
+  width: 28px; height: 28px;
+  stroke: var(--rose);
+}
+.w-ibj-card--main .w-ibj-icon svg { stroke: rgba(255,255,255,0.8); }
+.w-ibj-num {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
+  font-family: var(--font-display);
+  color: var(--rose);
+  letter-spacing: 0.02em;
+}
+.w-ibj-card--main .w-ibj-num { color: #fff; }
+.w-ibj-unit { font-size: 18px; color: var(--text-w-mid); margin-left: 2px; }
+.w-ibj-card--main .w-ibj-unit { color: rgba(255,255,255,0.8); }
+.w-ibj-label {
+  font-size: 13px;
+  color: var(--text-w-light);
+  margin-top: 8px;
+  letter-spacing: 0.05em;
+}
+.w-ibj-card--main .w-ibj-label { color: rgba(255,255,255,0.75); }
+.w-ibj-badges {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+.w-ibj-badges img { height: 80px; width: auto; }
+.w-ibj-note {
+  font-size: 11px;
+  color: var(--text-w-light);
+  text-align: center;
+  margin-top: 16px;
+}
+
+/* ── COMPARE ── */
+.w-compare {
+  background: var(--cream);
+  padding: var(--section-py) 40px;
+}
+.w-compare-inner { max-width: var(--inner); margin: 0 auto; }
+.w-compare-vs {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0;
+  margin: 40px 0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.w-compare-side {
+  padding: 32px 24px;
+  text-align: center;
+}
+.w-compare-side--other { background: #f0f0ee; }
+.w-compare-side--harukaze { background: var(--rose-pale); }
+.w-compare-org {
+  font-size: 13px;
+  color: var(--text-w-light);
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+.w-compare-ratio {
+  font-size: 16px;
+  color: var(--text-w);
+  line-height: 1.7;
+}
+.w-compare-ratio em { font-style: normal; font-weight: 700; color: var(--rose); font-size: 20px; }
+.w-compare-divider {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-w-light);
+  letter-spacing: 0.1em;
+}
+.w-compare-result {
+  font-size: 13px;
+  color: var(--rose-dark);
+  margin-top: 10px;
+  font-weight: 500;
+}
+.w-online-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  margin-top: 8px;
+}
+.w-online-photo { overflow: hidden; min-height: 260px; }
+.w-online-photo img { width: 100%; height: 100%; object-fit: cover; }
+.w-online-body {
+  background: var(--rose-pale);
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.w-online-title {
+  font-size: clamp(17px, 2vw, 22px);
+  font-weight: 500;
+  color: var(--text-w);
+  margin-bottom: 16px;
+  line-height: 1.55;
+}
+.w-online-text {
+  font-size: 14px;
+  color: var(--text-w-mid);
+  line-height: 2;
+  margin-bottom: 20px;
+}
+
+/* ── VOICE ── */
+.w-voice {
+  background: var(--warm-beige);
+  padding: var(--section-py) 40px;
+}
+.w-voice-inner { max-width: var(--inner-wide); margin: 0 auto; }
+.w-voice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.w-voice-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 28px;
+  border: 1px solid rgba(181,82,110,0.08);
+  position: relative;
+}
+.w-voice-card::before {
+  content: '"';
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  font-family: var(--font-display);
+  font-size: 60px;
+  color: var(--rose-pale2);
+  line-height: 1;
+}
+.w-voice-text {
+  font-size: 14px;
+  line-height: 2;
+  color: var(--text-w-mid);
+  margin-bottom: 24px;
+}
+.w-voice-meta { display: flex; align-items: center; gap: 12px; }
+.w-voice-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--rose-pale);
+  color: var(--rose);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.w-voice-name { font-size: 14px; font-weight: 500; color: var(--text-w); }
+.w-voice-attr { font-size: 12px; color: var(--text-w-light); }
+
+/* ── FLOW ── */
+.w-flow {
+  background: var(--text-w);
+  padding: var(--section-py) 40px;
+  position: relative;
+  overflow: hidden;
+}
+.w-flow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(181,82,110,0.15) 0%, transparent 60%);
+}
+.w-flow-inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--inner);
+  margin: 0 auto;
+  text-align: center;
+}
+.w-flow-inner .w-eyebrow { justify-content: center; }
+.w-flow-inner .w-eyebrow::before { display: none; }
+.w-flow-inner .w-section-title { color: #fff; text-align: center; }
+.w-flow-steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  margin-top: 48px;
+  position: relative;
+}
+.w-flow-steps::before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: calc(10% + 20px);
+  right: calc(10% + 20px);
+  height: 1px;
+  background: rgba(181,82,110,0.4);
+}
+.w-flow-step { text-align: center; padding: 0 12px; }
+.w-flow-dot {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(181,82,110,0.2);
+  border: 2px solid var(--rose-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  position: relative;
+  z-index: 1;
+}
+.w-flow-dot span {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--rose-light);
+  letter-spacing: 0.05em;
+  font-family: var(--font-display);
+}
+.w-flow-step h4 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+.w-flow-step p {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+}
+
+/* ── PRICE ── */
+.w-price {
+  background: var(--cream);
+  padding: var(--section-py) 40px;
+}
+.w-price-inner { max-width: 800px; margin: 0 auto; }
+.w-price-card {
+  background: #fffdf8;
+  border: 1px solid rgba(191,160,122,0.3);
+  border-radius: 20px;
+  padding: 48px;
+  margin-top: 40px;
+  box-shadow: var(--shadow-sm);
+}
+.w-price-plan {
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  color: var(--gold-w);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.w-price-inner-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 32px;
+  align-items: center;
+}
+.w-price-amount {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+.w-price-main {
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--text-w);
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+.w-price-unit { font-size: 16px; color: var(--text-w-mid); }
+.w-price-highlight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--rose);
+  margin-bottom: 8px;
+}
+.w-price-divider {
+  width: 1px;
+  height: 100px;
+  background: rgba(191,160,122,0.25);
+}
+.w-price-list li {
+  font-size: 15px;
+  color: var(--text-w-mid);
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(181,82,110,0.08);
+}
+.w-price-list li:last-child { border-bottom: none; }
+.w-price-btn {
+  display: block;
+  text-align: center;
+  margin-top: 32px;
+  padding: 16px;
+  border-radius: 32px;
+  border: 1.5px solid var(--rose);
+  color: var(--rose);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  transition: all 0.2s;
+}
+.w-price-btn:hover { background: var(--rose); color: #fff; opacity: 1; }
+.w-price-campaign {
+  margin-top: 20px;
+  background: linear-gradient(135deg, var(--rose-pale) 0%, var(--champagne) 100%);
+  border-radius: 12px;
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.w-price-campaign-label {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--rose);
+  margin-bottom: 4px;
+}
+.w-price-campaign-title { font-size: 15px; font-weight: 500; color: var(--text-w); }
+.w-price-campaign-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--rose);
+  font-family: var(--font-display);
+}
+.w-price-campaign-value span { font-size: 14px; margin-left: 4px; }
+.w-price-note {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-w-light);
+  line-height: 2;
+  margin-top: 20px;
+}
+
+/* ── BLOG ── */
+.w-blog {
+  background: var(--warm-beige);
+  padding: var(--section-py) 40px;
+}
+.w-blog-inner { max-width: var(--inner); margin: 0 auto; }
+.w-blog-coming {
+  text-align: center;
+  padding: 40px 0;
+  color: var(--text-w-light);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+}
+.w-blog-coming strong {
+  display: block;
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--text-w);
+  margin-bottom: 8px;
+  font-family: var(--font-display);
+}
+
+/* ── CTA ── */
+.w-cta {
+  background: linear-gradient(135deg, var(--rose-dark) 0%, var(--rose) 60%, var(--rose-light) 100%);
+  padding: var(--section-py) 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.w-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 30%, rgba(255,255,255,0.08) 0%, transparent 60%);
+}
+.w-cta-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+.w-cta-label {
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  color: rgba(255,255,255,0.65);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.w-cta-title {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 3.5vw, 36px);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+.w-cta-sub { font-size: 14px; color: rgba(255,255,255,0.75); margin-bottom: 40px; }
+.w-cta-btns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.btn-cta-white {
+  background: #fff;
+  color: var(--rose);
+  padding: 16px 40px;
+  border-radius: 32px;
+  font-size: 15px;
+  font-weight: 500;
+  display: inline-block;
+  transition: all 0.2s;
+}
+.btn-cta-white:hover { background: var(--cream); transform: translateY(-2px); opacity: 1; }
+.btn-cta-outline {
+  background: transparent;
+  color: #fff;
+  padding: 15px 32px;
+  border-radius: 32px;
+  border: 1.5px solid rgba(255,255,255,0.6);
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+.btn-cta-outline:hover { border-color: #fff; transform: translateY(-2px); opacity: 1; }
+.w-cta-note { font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 4px; }
+.w-cta-men {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+.w-cta-men p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 12px;
+}
+.btn-men-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.85);
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+  padding-bottom: 2px;
+  letter-spacing: 0.08em;
+  transition: all 0.2s;
+}
+.btn-men-link:hover { color: #fff; border-color: #fff; opacity: 1; }
+
+/* ── FOOTER ── */
+.site-footer a:hover { color: var(--rose-light); }
+
+/* ── FLOAT BTNS ── */
+.float-line-btn {
+  background: var(--rose) !important;
+}
+.float-side-btn {
+  background: var(--rose) !important;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .w-hero-inner { grid-template-columns: 1fr; padding: 60px 24px; gap: 40px; }
+  .w-hero-inner > *:last-child { display: none; }
+  .w-hero-mobile { display: block; }
+  .w-hero-inner { display: none; }
+
+  .w-pain { padding: 64px 24px; }
+  .w-pain-grid { grid-template-columns: 1fr; }
+  .w-pain-message { padding: 28px 24px; }
+
+  .w-concept { padding: 64px 24px; }
+
+  .w-features { padding: 64px 24px; }
+  .w-features-grid { grid-template-columns: 1fr; gap: 20px; }
+
+  .w-ibj { padding: 64px 24px; }
+  .w-ibj-grid { grid-template-columns: 1fr; gap: 16px; }
+
+  .w-compare { padding: 64px 24px; }
+  .w-compare-vs { grid-template-columns: 1fr; }
+  .w-compare-divider { padding: 12px; font-size: 11px; }
+  .w-online-card { grid-template-columns: 1fr; }
+  .w-online-photo { min-height: 200px; }
+
+  .w-voice { padding: 64px 24px; }
+  .w-voice-grid { grid-template-columns: 1fr; }
+
+  .w-flow { padding: 64px 24px; }
+  .w-flow-steps { grid-template-columns: 1fr; gap: 24px; }
+  .w-flow-steps::before { display: none; }
+
+  .w-price { padding: 64px 24px; }
+  .w-price-card { padding: 28px 24px; }
+  .w-price-inner-grid { grid-template-columns: 1fr; gap: 20px; }
+  .w-price-divider { display: none; }
+
+  .w-blog { padding: 64px 24px; }
+  .w-cta { padding: 64px 24px; }
+}
+@media (min-width: 901px) {
+  .w-hero-mobile { display: none; }
+}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav>
+<nav class="site-nav" id="siteNav">
   <a href="index.html" class="logo">
     <span class="logo-char">結</span><span class="logo-char">婚</span><span class="logo-char">相</span><span class="logo-char">談</span><span class="logo-char">所</span> <span class="logo-char">ハ</span><span class="logo-char">ル</span><span class="logo-char">カ</span><span class="logo-char">ゼ</span>
     <span>MARRIAGE CONSULTING</span>
@@ -2464,7 +966,6 @@
     <li><a href="about.html">メッセージ</a></li>
     <li><a href="service.html">サービス・価格</a></li>
     <li><a href="flow.html">成婚までの流れ</a></li>
-    <li><a href="lab.html">オトナ男子LAB</a></li>
     <li><a href="faq.html">よくある質問</a></li>
     <li><a href="blog.html">ブログ</a></li>
     <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで予約する</a></li>
@@ -2487,503 +988,448 @@
   <a href="about.html">メッセージ</a>
   <a href="service.html">サービス・価格</a>
   <a href="flow.html">成婚までの流れ</a>
-  <a href="lab.html">オトナ男子LAB</a>
   <a href="faq.html">よくある質問</a>
   <a href="blog.html">ブログ</a>
   <a href="apply.html" class="nav-cta">初回無料面談に申し込む</a>
   <hr class="mobile-nav-divider">
-  <a href="girls.html" class="mobile-nav-girls-link">大人女子の婚活はこちら</a>
+  <a href="men.html" class="mobile-nav-girls-link">男性の婚活はこちら</a>
 </div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-lines"></div>
+<main>
 
-  <!-- モバイル専用ヒーロー -->
-  <div class="hero-mobile-only">
-    <div class="hero-m-photo-wrap">
-      <img src="newimages/置かれた 場所で 咲きなさい.png" alt="石神りさ">
-      <div class="hero-m-badge">最短5ヶ月・1年以内の<br>成婚サポート</div>
-      <div class="hero-m-footer-pink">
-        <p class="hero-m-sub">あなたに合った出会いをつなぐ、マンツーマンの伴走</p>
-        <div class="hero-m-cta-wrap">
-          <p class="hero-m-cta-note">1分で登録</p>
-          <a href="apply.html" class="hero-m-cta">初回無料相談に申し込む</a>
-        </div>
+<!-- HERO（デスクトップ） -->
+<section class="w-hero">
+  <div class="w-hero-bg"></div>
+  <div class="w-hero-inner">
+    <!-- LEFT: テキスト -->
+    <div>
+      <p class="w-hero-label">For Women 30s &amp; 40s</p>
+      <h1 class="w-hero-headline">
+        頑張ってきたあなたが、<br>
+        <em>本当に選びたい人</em>と<br>
+        出会うために。
+      </h1>
+      <p class="w-hero-sub">
+        一人で悩む婚活はもう終わり。<br>
+        あなただけの魅力を引き出す、マンツーマンの伴走サポート。
+      </p>
+      <p class="w-hero-achievement">最短5ヶ月・1年以内の成婚実績</p>
+      <div class="w-hero-btns">
+        <a href="apply.html" class="btn-rose">無料面談に申し込む</a>
+        <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn-rose-line">LINEで相談する</a>
+      </div>
+    </div>
+    <!-- RIGHT: 写真 -->
+    <div class="w-hero-photo-wrap">
+      <div class="w-hero-photo">
+        <img src="newimages/スクリーンショット 2026-04-03 154828.png" alt="ハルカゼ 代表">
+      </div>
+      <div class="w-hero-badge">最短5ヶ月・1年以内の<br>成婚サポート</div>
+      <div class="w-hero-caption">
+        <strong>石神 りさ</strong>
+        代表　マッチングプランナー
       </div>
     </div>
   </div>
+</section>
 
-  <div class="hero-content">
-    <h1 class="hero-headline">
-      「いい人」を卒業して、<br>
-      <span style="white-space: nowrap;"><em>「あなたがいい」</em>で選ばれる。</span>
-    </h1>
-
-    <p class="hero-sub">
-      一人で悩む婚活はもう終わり。<br>
-      あなたに合った出会いをつなぐ、マンツーマンの伴走
-    </p>
-
-    <p class="hero-achievement-text">最短５ヶ月・１年以内の成婚</p>
-
-    <div class="hero-actions">
-      <a href="apply.html" class="btn-primary">無料面談に申し込む</a>
-      <button class="btn-line">LINEで相談する</button>
-    </div>
+<!-- HERO（モバイル） -->
+<section class="w-hero-mobile">
+  <p class="w-hero-label">For Women 30s &amp; 40s</p>
+  <div class="w-hero-photo">
+    <img src="newimages/スクリーンショット 2026-04-03 154828.png" alt="ハルカゼ 代表">
   </div>
-
-  <div class="hero-right">
-    <div class="hero-photo">
-      <img src="newimages/Photoroom_20260514_160835.jpeg" alt="代表 石神 りさ">
-    </div>
-    <div class="hero-photo-overlay"></div>
-    <div class="hero-circle-deco"></div>
-    <div class="hero-circle-deco-sm"></div>
-    <div class="hero-rep-caption">
-      <p class="hero-rep-caption-role">代表　マッチングプランナー</p>
-      <p class="hero-rep-caption-name">石神りさ</p>
-    </div>
+  <h1 class="w-hero-headline">
+    頑張ってきたあなたが、<br>
+    <em>本当に選びたい人</em>と<br>
+    出会うために。
+  </h1>
+  <p class="w-hero-sub">
+    あなただけの魅力を引き出す、<br>マンツーマンの伴走サポート。
+  </p>
+  <p class="w-hero-achievement">最短5ヶ月・1年以内の成婚実績</p>
+  <div class="w-hero-btns">
+    <a href="apply.html" class="btn-rose">無料面談に申し込む</a>
+    <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn-rose-line">LINEで相談する</a>
   </div>
 </section>
 
 <!-- PAIN -->
-<section class="pain-section">
-  <div class="section-eyebrow"><span style="font-size: 15px; letter-spacing: 0.06em; font-weight: 600; color: var(--navy);">こんなお悩みよくご相談いただきます</span></div>
+<section class="w-pain">
+  <div class="w-pain-inner">
+    <div class="w-eyebrow"><span>こんなお悩みよくご相談いただきます</span></div>
+    <h2 class="w-section-title">あなたにも、心当たりはありませんか？</h2>
 
-  <div class="pain-grid">
-    <div class="pain-card">
-      <h3>「いい人どまり」で<br>次に進めない</h3>
-      <p>好印象は持たれるのに、交際に発展しない。何が足りないのか自分ではわからない。</p>
+    <div class="w-pain-grid">
+      <div class="w-pain-card">
+        <h3>「満たされなさ」を<br>どこかで感じている</h3>
+        <p>仕事も生活もそれなりに充実しているのに、なぜかぼんやりとした孤独感がある。</p>
+      </div>
+      <div class="w-pain-card">
+        <h3>頑張ってるのに<br>婚活がうまくいかない</h3>
+        <p>アプリも試した、街コンも行った。でも「いい人に出会えない」ループから抜け出せない。</p>
+      </div>
+      <div class="w-pain-card">
+        <h3>なぜか苦しい恋愛を<br>繰り返してしまう</h3>
+        <p>理想は高いわけじゃないのに、なぜかうまくいかない。自分に何か問題があるのかと悩んでしまう。</p>
+      </div>
+      <div class="w-pain-card">
+        <h3>仕事が忙しく<br>婚活に本気になれない</h3>
+        <p>毎日の仕事で精一杯。婚活のために時間もエネルギーも使う余裕が正直ない。</p>
+      </div>
     </div>
-    <div class="pain-card">
-      <h3>恋愛経験が少ないことが<br>コンプレックス</h3>
-      <p>なんとなく出会いがないまま、いつの間にか年齢だけ上ってしまった</p>
-    </div>
-    <div class="pain-card">
-      <h3>婚活を始めたが<br>何をすればいいか迷う</h3>
-      <p>プロフィールの書き方、服装、会話—何から手をつければ結果につながるのか。</p>
-    </div>
-    <div class="pain-card">
-      <h3>仕事が忙しく<br>婚活に時間を使えない</h3>
-      <p>毎日の業務で精一杯。婚活のために生活を崩したくないが、このままでいいのかも不安。</p>
-    </div>
-  </div>
 
-  <div class="pain-message">
-    <p>何か変えようと一歩を踏み出してみても、<br>マッチングアプリや街コンは、ただただ疲れてしまう。<br>大手の結婚相談所に登録したけれど、いまいち使いこなせていない。</p>
-    <p>時間だけが過ぎていく焦りの中で、「どうして自分だけ上手くいかないんだろう」と悩んでいませんか？</p>
-    <p>進まない理由、動けない理由は、人それぞれ違います。<br>だからこそ、正論のノウハウを押し付けるのではなく、あなただけの「ひっかかるポイント」をマンツーマンで丁寧に紐解いていく。</p>
-    <p>無駄な遠回りをせず、あなたの努力をまっすぐ結果に変えていくこと。<br>それが、ハルカゼの強みです。</p>
+    <div class="w-pain-message">
+      <p>「いつか」「もう少し落ち着いたら」と後回しにしているうちに、時間だけが過ぎていく。そんな焦りの中で、「どうして自分だけうまくいかないんだろう」と悩んでいませんか？</p>
+      <p>婚活がうまくいかない理由は、人それぞれ違います。だからこそ、正論のノウハウを押し付けるのではなく、あなただけの「ひっかかるポイント」をマンツーマンで丁寧に紐解いていく。</p>
+      <p>自分と向き合う覚悟のある方と一緒に、ハルカゼは歩んでいきます。</p>
+    </div>
   </div>
 </section>
 
 <!-- CONCEPT -->
-<section class="concept-section" id="concept">
-  <div class="concept-inner">
-    <div class="section-eyebrow" style="justify-content: center;">
-      <span style="color: var(--navy); opacity: 0.7;">Our Philosophy</span>
-    </div>
-
-    <p class="concept-quote" style="margin-top: 24px;">
+<section class="w-concept">
+  <div class="w-concept-inner">
+    <div class="w-eyebrow"><span>Our Philosophy</span></div>
+    <p class="w-concept-quote">
       婚活は、お相手探し、<br>
-      だけじゃない。
+      だけじゃない。<br>
+      <em>「私を好きになること」</em>から<br>
+      始まる旅。
     </p>
-
-    <p class="concept-body">
-      人生の充実と豊かさを手に入れる<br>
-      男性婚活に特化した、<br>
-      実践的な伴走サポート
+    <p class="w-concept-body">
+      誰かに合わせるために「頑張る」くらいなら、1人の人生も悪くない。<br>
+      でも、自分のしあわせのために「欲張る」人生は、やっぱり悪くない。<br><br>
+      ハルカゼが目指すのは、「あなたがいい」と言ってくれる人と出会うこと。<br>
+      そのために、まず「あなた自身」の魅力を一緒に引き出していきます。
     </p>
-
-    <div style="margin-top: 24px;">
-      <a href="about.html" style="font-size: 13px; color: var(--navy); letter-spacing: 0.15em; text-decoration: none; border-bottom: 0.5px solid var(--mint-dark); padding-bottom: 3px; transition: all 0.3s; opacity: 0.8;">
-        About Us
-      </a>
-    </div>
+    <a href="about.html" class="w-concept-link">About Us — もっと読む</a>
   </div>
 </section>
 
 <!-- FEATURES -->
-<section class="features-section" id="features">
-  <div class="section-eyebrow"><span>What We Do</span></div>
-  <h2 class="section-heading">ハルカゼが選ばれる<br>4つの理由</h2>
+<section class="w-features">
+  <div class="w-features-inner">
+    <div class="w-eyebrow"><span>What We Do</span></div>
+    <h2 class="w-section-title">ハルカゼが選ばれる<br>4つの理由</h2>
 
-  <div class="features-grid">
-    <div class="feature-card">
-      <div class="feature-photo">
-        <img src="newimages/スクリーンショット 2025-09-17 155708.png" alt="カウンセリングのイメージ">
-      </div>
-      <div class="feature-card-body">
-        <div class="pain-num">01</div>
-        <h3>「あなただけの魅力」を<br>言語化するカウンセリング</h3>
-        <p>スペックではなく人間性・価値観・生き方の魅力を掘り起こし、プロフィールと所作に落とし込みます。初回面談で多くの方が「こんな自分がいたのか」と感じます。</p>
-        <span class="feature-tag">魅力・強み発見</span>
-        <span class="feature-tag">婚活プラン作成</span>
-        <span class="feature-tag">プロフィール作成</span>
-      </div>
-    </div>
-
-    <div class="feature-card">
-      <div class="feature-photo">
-        <img src="newimages/大人男子LAB.jpg" alt="実践トレーニングのイメージ">
-      </div>
-      <div class="feature-card-body">
-        <div class="pain-num">02</div>
-        <h3>男性婚活に<br>特化した実践トレーニング</h3>
-        <p>会話の組み立て方、距離の縮め方、「また会いたい」と思わせる振る舞いまで。大人男子LABで実践的なスキルを身につけます。知識より「関係を深める力」を重視。</p>
-        <p class="feature-lab-label"><strong>オトナ男子LAB</strong>とは</p>
-        <div class="feature-lab-tags">
-          <span class="feature-tag">コーチング</span>
-          <span class="feature-tag">パートナーシップ</span>
-          <span class="feature-tag">セクシャルウェルネス</span>
+    <div class="w-features-grid">
+      <div class="w-feature-card">
+        <div class="w-feature-photo">
+          <img src="newimages/スクリーンショット 2025-09-17 155708.png" alt="カウンセリング">
         </div>
-        <a href="lab.html" class="feature-lab-link">
-          詳しく見る
-          <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
-        </a>
+        <div class="w-feature-body">
+          <div class="w-feature-num">01</div>
+          <h3>「あなただけの魅力」を<br>言語化するカウンセリング</h3>
+          <p>スペックではなく、人間性・価値観・生き方の魅力を掘り起こし、プロフィールと所作に落とし込みます。初回面談で多くの方が「こんな自分がいたのか」と感じます。</p>
+          <div class="w-feature-tags">
+            <span class="w-tag">魅力・強み発見</span>
+            <span class="w-tag">婚活プラン作成</span>
+            <span class="w-tag">プロフィール作成</span>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="feature-card">
-      <div class="feature-photo">
-        <img src="newimages/luigi-estuye-lucreative-ABzrpqEmlt8-unsplash.jpg" alt="イメージコンサルティングのイメージ">
+      <div class="w-feature-card">
+        <div class="w-feature-photo">
+          <img src="newimages/スクリーンショット 2026-04-03 154955.png" alt="マインドセット">
+        </div>
+        <div class="w-feature-body">
+          <div class="w-feature-num">02</div>
+          <h3>「がんばる女」を脱ぐ<br>マインドセットサポート</h3>
+          <p>一人で背負い込んできた「がんばる女」の鎧を、一枚ずつ丁寧におろしていきましょう。自分の本音に素直になることで、内側からあふれる魅力が変わります。</p>
+          <div class="w-feature-tags">
+            <span class="w-tag">コーチング</span>
+            <span class="w-tag">自己解析ワーク</span>
+            <span class="w-tag">パートナーシップ</span>
+          </div>
+        </div>
       </div>
-      <div class="feature-card-body">
-        <div class="pain-num">03</div>
-        <h3>イメージコンサルタントによる<br>外見・印象を磨くサポート</h3>
-        <p>「何を着るのが正解？」「髪型はどうすれば？」プロの視点であなたの魅力を最大化する外見戦略をトータルサポート。「内面だけでなく見た目も整える」ことで、マッチング・お見合いの成功率が格段に上がります。</p>
-        <span class="feature-tag">骨格診断</span>
-        <span class="feature-tag">お買い物同行</span>
-        <p style="margin-top: 12px; font-size: 11px; color: var(--text-light); letter-spacing: 0.05em;">※パーソナルプラン</p>
-      </div>
-    </div>
 
-    <div class="feature-card">
-      <div class="feature-photo">
-        <img src="newimages/panitan-punpuang-HZ09VYZvAFk-unsplash.jpg" alt="フィードバックのイメージ">
+      <div class="w-feature-card">
+        <div class="w-feature-photo">
+          <img src="newimages/luigi-estuye-lucreative-ABzrpqEmlt8-unsplash.jpg" alt="イメージコンサルティング">
+        </div>
+        <div class="w-feature-body">
+          <div class="w-feature-num">03</div>
+          <h3>イメージコンサルタントによる<br>外見・印象を磨くサポート</h3>
+          <p>「何を着るのが正解？」プロの視点であなたの魅力を最大化する外見戦略をトータルサポート。内面だけでなく見た目も整えることで、マッチング・お見合いの成功率が格段に上がります。</p>
+          <div class="w-feature-tags">
+            <span class="w-tag">骨格診断</span>
+            <span class="w-tag">お買い物同行</span>
+          </div>
+        </div>
       </div>
-      <div class="feature-card-body">
-        <div class="pain-num">04</div>
-        <h3>確実に進むステップアップ・フィードバック</h3>
-        <p>定期面談・お見合い後フィードバック・デートプラン提案など、LINEで迅速にフォローがあるから、<br>悩みも、疑問も放置しない</p>
-        <span class="feature-tag">デートプランニング</span>
-        <span class="feature-tag">定期フィードバック面談</span>
+
+      <div class="w-feature-card">
+        <div class="w-feature-photo">
+          <img src="newimages/panitan-punpuang-HZ09VYZvAFk-unsplash.jpg" alt="定期フィードバック">
+        </div>
+        <div class="w-feature-body">
+          <div class="w-feature-num">04</div>
+          <h3>確実に前に進む<br>ステップアップ・フィードバック</h3>
+          <p>定期面談・お見合い後フィードバック・デートプラン提案など、LINEで迅速にフォロー。悩みも疑問も放置しない、寄り添うサポートをお約束します。</p>
+          <div class="w-feature-tags">
+            <span class="w-tag">定期フィードバック面談</span>
+            <span class="w-tag">LINEサポート</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- IBJ DATA -->
-<section class="ibj-section">
-  <div class="section-eyebrow" style="justify-content:center;"><span>IBJ Network Data</span></div>
-  <h2 class="section-heading" style="text-align:center;">圧倒的な会員数</h2>
-  <p class="ibj-lead">業界No.1の実績と、業界最大級のIBJネットワーク</p>
+<section class="w-ibj">
+  <div class="w-ibj-inner">
+    <div class="w-eyebrow" style="justify-content: center;"><span>IBJ Network Data</span></div>
+    <h2 class="w-section-title" style="text-align: center;">業界最大級のネットワーク</h2>
+    <p class="w-ibj-lead">IBJ正規加盟店として、業界No.1の実績と会員数をご活用いただけます</p>
 
-  <div class="ibj-grid">
-    <div class="ibj-card">
-      <div class="ibj-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+    <div class="w-ibj-grid">
+      <div class="w-ibj-card">
+        <div class="w-ibj-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div>
+          <span class="w-ibj-num" data-target="19112">0</span><span class="w-ibj-unit">名</span>
+        </div>
+        <div class="w-ibj-label">成婚数（2025年）</div>
       </div>
-      <div class="ibj-num-wrap">
-        <span class="ibj-num" data-target="19112">0</span>
-        <span class="ibj-unit">名</span>
+
+      <div class="w-ibj-card w-ibj-card--main">
+        <div class="w-ibj-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div>
+          <span class="w-ibj-num" data-target="104673">0</span><span class="w-ibj-unit">名</span>
+        </div>
+        <div class="w-ibj-label">国内最大級の会員数</div>
       </div>
-      <div class="ibj-label">成婚数（2025年）</div>
+
+      <div class="w-ibj-card">
+        <div class="w-ibj-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        </div>
+        <div>
+          <span class="w-ibj-num" data-target="84320">0</span><span class="w-ibj-unit">件</span>
+        </div>
+        <div class="w-ibj-label">お見合い成立数（月間）</div>
+      </div>
     </div>
 
-    <div class="ibj-card ibj-card--featured">
-      <div class="ibj-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-      </div>
-      <div class="ibj-num-wrap">
-        <span class="ibj-num" data-target="104673">0</span>
-        <span class="ibj-unit">名</span>
-      </div>
-      <div class="ibj-label">国内最大級の会員数</div>
+    <p class="w-ibj-note">※成婚数：2025年IBJ連盟内実績　※会員数・お見合い成立数：2025年11月末時点</p>
+
+    <div class="w-ibj-badges">
+      <img src="newimages/ibj_no1_member.png" alt="IBJ会員数No.1">
+      <img src="newimages/ibj_no1_marriage.png" alt="IBJ成婚数No.1">
+      <img src="newimages/ibj_no1_omiai.png" alt="IBJお見合い成立数No.1">
     </div>
-
-    <div class="ibj-card">
-      <div class="ibj-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>
-      </div>
-      <div class="ibj-num-wrap">
-        <span class="ibj-num" data-target="84320">0</span>
-        <span class="ibj-unit">件</span>
-      </div>
-      <div class="ibj-label">お見合い成立数（月間）</div>
-    </div>
-  </div>
-
-  <p class="ibj-note">※成婚数：2025年IBJ連盟内実績　※会員数・お見合い成立数：2025年11月末時点</p>
-  <div class="ibj-badges">
-    <img src="newimages/ibj_no1_member.png" alt="IBJ会員数No.1">
-    <img src="newimages/ibj_no1_marriage.png" alt="IBJ成婚数No.1">
-    <img src="newimages/ibj_no1_omiai.png" alt="IBJお見合い成立数No.1">
-  </div>
-
-  <div class="ibj-app-block">
-    <img src="newimages/アプリ.png" alt="アプリイメージ" class="ibj-app-img">
-<p class="ibj-app-text2">アプリを使っていつでもどこでも、自分のタイミングで</p>
   </div>
 </section>
 
 <!-- COMPARE -->
-<section class="compare-section">
-  <div class="section-eyebrow"><span>Why Harukaze</span></div>
-  <h2 class="section-heading" style="font-size: clamp(16px, 2vw, 22px);">ネットワークは大手と同じ<br>違うのは、マンツーマンの手厚さ</h2>
+<section class="w-compare">
+  <div class="w-compare-inner">
+    <div class="w-eyebrow"><span>Why Harukaze</span></div>
+    <h2 class="w-section-title">ネットワークは大手と同じ<br>違うのは、マンツーマンの手厚さ</h2>
 
-  <div class="compare2-wrap">
-    <div class="compare2-side compare2-side--other">
-      <p class="compare2-org">大手結婚相談所</p>
-      <p class="compare2-ratio">1人のプランナーが<em>100名以上</em>を担当</p>
+    <div class="w-compare-vs">
+      <div class="w-compare-side w-compare-side--other">
+        <p class="w-compare-org">大手結婚相談所</p>
+        <p class="w-compare-ratio">1人のプランナーが<em>100名以上</em>を担当</p>
+      </div>
+      <div class="w-compare-divider">VS</div>
+      <div class="w-compare-side w-compare-side--harukaze">
+        <p class="w-compare-org">ハルカゼ</p>
+        <p class="w-compare-ratio">1人のプランナーが<em>最大30名</em>まで担当</p>
+        <p class="w-compare-result">だから、寄り添うサポートが実現</p>
+      </div>
     </div>
-    <div class="compare2-vs">VS</div>
-    <div class="compare2-side compare2-side--harukaze">
-      <p class="compare2-org">ハルカゼ</p>
-      <p class="compare2-ratio">1人のプランナーが<em>最大30名</em>まで担当</p>
-      <p class="compare2-result">だから、寄り添うサポートが実現</p>
-    </div>
-  </div>
 
-  <div class="compare-online-card">
-    <div class="compare-online-photo">
-      <img src="newimages/名称未設定のデザイン (5).png" alt="オンラインサポートのイメージ">
-    </div>
-    <div class="compare-online-body">
-      <h3 class="compare-online-title">忙しい男性のための<br>オンライン完結サポート</h3>
-      <p class="compare-online-text">面談・相談・フィードバックをオンライン対応<br>来店する必要がないから、仕事終わりの夜でも活動可能<br><br>LINEで迅速にフォローがあるから、<br>悩みも、疑問も放置しない</p>
-      <span class="feature-tag">Online First</span>
+    <div class="w-online-card">
+      <div class="w-online-photo">
+        <img src="newimages/名称未設定のデザイン (5).png" alt="オンラインサポート">
+      </div>
+      <div class="w-online-body">
+        <h3 class="w-online-title">忙しい女性のための<br>オンライン完結サポート</h3>
+        <p class="w-online-text">
+          面談・相談・フィードバックをオンライン対応。<br>
+          来店する必要がないから、仕事終わりの夜でも活動可能。<br><br>
+          LINEで迅速にフォローがあるから、<br>悩みも、疑問も、放置しない。
+        </p>
+        <span class="w-tag">Online First</span>
+      </div>
     </div>
   </div>
 </section>
-
-</section>
-
-<!-- ATMOSPHERE -->
-<!-- <section class="atmosphere-section">
-  <div class="atmosphere-inner">
-    <div class="atmosphere-text">
-      <div class="section-eyebrow section-eyebrow--pink"><span>Our Place</span></div>
-      <h2 class="section-heading" style="font-size: clamp(16px, 2vw, 22px); margin-bottom: 0; line-height: 1.7;">リアルでもオンラインでも、<br>話しやすい雰囲気と<br>安心感を大切にしています。</h2>
-    </div>
-
-    <div class="atmosphere-photos">
-      <div class="atmosphere-photo atmosphere-photo--1">
-        <div class="atmosphere-placeholder"><span>写真①</span></div>
-      </div>
-      <div class="atmosphere-photo atmosphere-photo--2">
-        <div class="atmosphere-placeholder"><span>写真②</span></div>
-      </div>
-      <div class="atmosphere-photo atmosphere-photo--3">
-        <div class="atmosphere-placeholder"><span>写真③</span></div>
-      </div>
-      <div class="atmosphere-photo atmosphere-photo--4">
-        <div class="atmosphere-placeholder"><span>写真④</span></div>
-      </div>
-    </div>
-  </div>
-</section> -->
 
 <!-- VOICE -->
-<section class="voice-section">
-  <div class="section-eyebrow"><span>Voice</span></div>
-  <h2 class="section-heading" style="font-size: clamp(16px, 2vw, 22px);">ハルカゼで変わった、<br>会員様の声</h2>
+<section class="w-voice">
+  <div class="w-voice-inner">
+    <div class="w-eyebrow"><span>Voice</span></div>
+    <h2 class="w-section-title">ハルカゼで変わった、<br>会員様の声</h2>
 
-  <div class="voice-grid">
+    <div class="w-voice-grid">
+      <div class="w-voice-card">
+        <p class="w-voice-text">入会前は何から始めればいいかわからず、不安だらけでした。プロフィールも一緒に作り込んでもらいましたが、今まで婚活がうまくいかなかったワケにやっと気が付けました。</p>
+        <div class="w-voice-meta">
+          <div class="w-voice-avatar">M</div>
+          <div>
+            <div class="w-voice-name">30代 女性</div>
+            <div class="w-voice-attr">会社員</div>
+          </div>
+        </div>
+      </div>
 
-    <div class="voice-card">
-      <p class="voice-text">入会前は何から始めればいいかわからず、不安だらけでした。プロフィールや写真も一緒に作り込んでもらいましたが、いままで自分が作成していたものとは全然違っていて、今までの婚活がうまくいかなかったワケにやっと気が付けました。</p>
-      <div class="voice-meta">
-        <div class="voice-avatar">M</div>
-        <div>
-          <div class="voice-name">30代 男性</div>
-          <div class="voice-attr">IT系</div>
+      <div class="w-voice-card">
+        <p class="w-voice-text">仕事が忙しくて婚活に時間を割けないと思っていましたが、オンライン対応で隙間時間に相談できるのが助かりました。自分では気づけなかった点を改善できました。</p>
+        <div class="w-voice-meta">
+          <div class="w-voice-avatar">T</div>
+          <div>
+            <div class="w-voice-name">30代 女性</div>
+            <div class="w-voice-attr">医療系</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-voice-card">
+        <p class="w-voice-text">自分のペースでいいと、成婚を焦らしたりすることなく、婚活を始めてからの戸惑いや葛藤にも親身に話を聞いていただいたおかげで、順調に婚活が進んでいます。</p>
+        <div class="w-voice-meta">
+          <div class="w-voice-avatar">K</div>
+          <div>
+            <div class="w-voice-name">40代 女性</div>
+            <div class="w-voice-attr">自営業</div>
+          </div>
         </div>
       </div>
     </div>
-
-    <div class="voice-card">
-      <p class="voice-text">仕事が忙しくて婚活に時間を割けないと思っていましたが、オンライン対応で隙間時間に相談できるのが助かりました。デートのフィードバックも的確で、自分では気づけなかった点を改善できました。</p>
-      <div class="voice-meta">
-        <div class="voice-avatar">T</div>
-        <div>
-          <div class="voice-name">30代 男性</div>
-          <div class="voice-attr">経営アドバイザー</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="voice-card">
-      <p class="voice-text">今の生活にもそれなりに満足しているし、今更誰かと歩む人生なんてもうないかと諦めていましたが、ずっとどこかで、良い人がいたらという気持ちがありました。自分のペースでいいと、成婚を焦らしたりすることなく、婚活を始めてからの、戸惑いや葛藤にも親身に話を聞いていただいたおかげで、順調に婚活が進んでいるのと、お相手との距離もしっかり深まっていると感じています。</p>
-      <div class="voice-meta">
-        <div class="voice-avatar">K</div>
-        <div>
-          <div class="voice-name">60代 男性</div>
-          <div class="voice-attr">自営業</div>
-        </div>
-      </div>
-    </div>
-
   </div>
-</section>
-
-<!-- MEMBER DATA -->
-<section class="member-data-section">
-  <div class="section-eyebrow"><span>婚活のリアルデータ</span></div>
-  <h2 class="section-heading" style="font-size: clamp(16px, 2vw, 22px);">どんな女性と出会えるのか？</h2>
-  <a href="https://www.ibjapan.jp/mirai-lab/seikon-hakusho/286/#toc-1" target="_blank" rel="noopener noreferrer" style="display: block; margin: 40px auto; max-width: 800px;">
-    <img src="newimages/データが導く 「結婚できる人」の平均像と、 婚活のリアル.jpg" alt="婚活のリアルデータ" style="width: 100%; height: 78%; display: block;">
-  </a>
-  <p class="member-data-lead">IBJネットワークで活動する女性会員のデータです。</p>
-
-  <div class="member-data-grid">
-
-    <div class="member-data-card">
-      <h3 class="member-data-title">20〜30代</h3>
-      <div class="member-data-legend">
-        <span class="legend-dot legend-dot--gold"></span><span>20〜30代　75%</span>
-        <span class="legend-dot legend-dot--muted"></span><span>その他　25%</span>
-      </div>
-    </div>
-
-    <div class="member-data-card">
-      <h3 class="member-data-title">大卒以上</h3>
-      <p class="member-data-desc">短大・大学・大学院卒が70%以上。しっかりとした職業に就く方が多いのが特徴です。</p>
-      <div class="member-data-legend">
-        <span class="legend-dot legend-dot--gold"></span><span>大卒以上　70%</span>
-        <span class="legend-dot legend-dot--muted"></span><span>その他　30%</span>
-      </div>
-    </div>
-
-    <div class="member-data-card">
-      <h3 class="member-data-title">女性会員の職業</h3>
-      <p class="member-data-desc">会社員・医療系・公務員など、しっかりとした職業に就く女性が中心です。</p>
-      <div class="member-data-legend" style="flex-direction: column; align-items: flex-start; gap: 4px;">
-        <span style="display:flex;align-items:center;gap:8px;"><span class="legend-dot" style="background:#2c3e6b;"></span><span>会社員　38.5%</span></span>
-        <span style="display:flex;align-items:center;gap:8px;"><span class="legend-dot" style="background:#e0256a;"></span><span>医療系職種　20.5%</span></span>
-        <span style="display:flex;align-items:center;gap:8px;"><span class="legend-dot" style="background:#4a6099;"></span><span>公務員　7.6%</span></span>
-        <span style="display:flex;align-items:center;gap:8px;"><span class="legend-dot" style="background:#8a95a3;"></span><span>販売・サービス系　5.3%</span></span>
-        <span style="display:flex;align-items:center;gap:8px;"><span class="legend-dot" style="background:#d0d5de;"></span><span>その他　19.3%</span></span>
-      </div>
-    </div>
-
-  </div>
-  <p class="member-data-note">※IBJ公式データ（2025年）をもとに作成</p>
 </section>
 
 <!-- FLOW -->
-<section class="flow-section" id="flow">
-  <div class="section-eyebrow" style="justify-content: center;">
-    <span style="color: rgba(184,156,106,0.7);">How It Works</span>
-  </div>
-  <h2 class="section-heading" style="color: var(--white); text-align: center;">成婚までの5ステップ</h2>
+<section class="w-flow" id="flow">
+  <div class="w-flow-inner">
+    <div class="w-eyebrow"><span>How It Works</span></div>
+    <h2 class="w-section-title">成婚までの5ステップ</h2>
 
-  <div class="flow-steps">
-    <div class="flow-step">
-      <div class="flow-dot"><span>01</span></div>
-      <h4>無料カウンセリング</h4>
-      <p>現状と目標を整理。費用・期間の説明も丁寧に</p>
-    </div>
-    <div class="flow-step">
-      <div class="flow-dot"><span>02</span></div>
-      <h4>カウンセリング</h4>
-      <p>あなたの魅力を言語化。プロフィール・写真を戦略的に磨き上げる</p>
-    </div>
-    <div class="flow-step">
-      <div class="flow-dot"><span>03</span></div>
-      <h4>お見合い開始</h4>
-      <p>IBJ 67,000名+からマッチング。事前準備を徹底サポート</p>
-    </div>
-    <div class="flow-step">
-      <div class="flow-dot"><span>04</span></div>
-      <h4>プレ交際・本交際</h4>
-      <p>オトナ男子LABと定期面談で関係の深め方を伴走</p>
-    </div>
-    <div class="flow-step">
-      <div class="flow-dot"><span>05</span></div>
-      <h4>成婚・卒業</h4>
-      <p>プロポーズのタイミングや準備もサポート</p>
+    <div class="w-flow-steps">
+      <div class="w-flow-step">
+        <div class="w-flow-dot"><span>01</span></div>
+        <h4>無料カウンセリング</h4>
+        <p>現状と目標を整理。費用・期間の説明も丁寧に</p>
+      </div>
+      <div class="w-flow-step">
+        <div class="w-flow-dot"><span>02</span></div>
+        <h4>カウンセリング</h4>
+        <p>あなたの魅力を言語化。プロフィール・写真を戦略的に磨き上げる</p>
+      </div>
+      <div class="w-flow-step">
+        <div class="w-flow-dot"><span>03</span></div>
+        <h4>お見合い開始</h4>
+        <p>IBJ 10万名超からマッチング。事前準備を徹底サポート</p>
+      </div>
+      <div class="w-flow-step">
+        <div class="w-flow-dot"><span>04</span></div>
+        <h4>プレ交際・本交際</h4>
+        <p>定期面談で関係の深め方を伴走。悩みをすぐに相談できる</p>
+      </div>
+      <div class="w-flow-step">
+        <div class="w-flow-dot"><span>05</span></div>
+        <h4>成婚・卒業</h4>
+        <p>プロポーズのタイミングや準備もサポート</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- PRICE -->
-<section class="price-section" id="price">
-  <div class="section-eyebrow"><span>Plans & Pricing</span></div>
-  <h2 class="section-heading" style="font-size: clamp(16px, 2vw, 22px); letter-spacing: 0.2em; font-weight: 400;">スタートしやすい料金体系</h2>
+<section class="w-price" id="price">
+  <div class="w-price-inner">
+    <div class="w-eyebrow"><span>Plans &amp; Pricing</span></div>
+    <h2 class="w-section-title">スタートしやすい料金体系</h2>
 
-  <div class="price-single">
-    <div class="price-card price-card--single" style="background: #fffdf0;">
-      <div class="price-plan">Light</div>
-      <div class="price-single-inner">
-        <div class="price-single-left">
-          <div class="price-amount">
-            <span class="price-main" style="font-size: 60px;">¥13,800</span>
-            <span class="price-unit" style="font-size: 17px;">/月（税込）</span>
+    <div class="w-price-card">
+      <div class="w-price-plan">Light Plan</div>
+      <div class="w-price-inner-grid">
+        <div>
+          <div class="w-price-amount">
+            <span class="w-price-main">¥13,800</span>
+            <span class="w-price-unit">/月（税込）</span>
           </div>
-          <div class="price-highlight">
-            <span class="price-highlight-icon">✦</span>
-            <span>お見合い料 無料</span>
+          <div class="w-price-highlight">
+            <span>✦</span><span>お見合い料 無料</span>
           </div>
-          <div class="price-highlight">
-            <span class="price-highlight-icon">✦</span>
-            <span>プロフィール写真撮影 無料</span>
+          <div class="w-price-highlight">
+            <span>✦</span><span>プロフィール写真撮影 無料</span>
           </div>
         </div>
-        <div class="price-single-divider"></div>
-        <div class="price-single-right">
-          <ul class="price-list" style="font-size: 17px;">
-            <li>入会金　¥33,000</li>
-            <li>登録料　¥22,000</li>
-          </ul>
-          <img src="newimages/alexander-wang-KjyrxSHwqTg-unsplash.jpg" alt="" style="width: 100%; max-width: 140px; display: block; margin-top: 16px; border-radius: 4px; opacity: 0.85;">
-        </div>
+        <div class="w-price-divider"></div>
+        <ul class="w-price-list">
+          <li>入会金　¥33,000</li>
+          <li>登録料　¥22,000</li>
+        </ul>
       </div>
-      <a href="service.html" class="price-btn price-btn--single">プラン・料金詳細を見る</a>
+      <a href="service.html" class="w-price-btn">プラン・料金詳細を見る</a>
     </div>
-  </div>
 
-  <div class="price-campaign">
-    <div>
-      <p class="price-campaign-label">CAMPAIGN</p>
-      <p class="price-campaign-title">他社乗換え割引キャンペーン</p>
+    <div class="w-price-campaign">
+      <div>
+        <p class="w-price-campaign-label">CAMPAIGN</p>
+        <p class="w-price-campaign-title">他社乗換え割引キャンペーン</p>
+      </div>
+      <div class="w-price-campaign-value">¥33,000<span>OFF</span></div>
     </div>
-    <div class="price-campaign-value">¥33,000<span>OFF</span></div>
-  </div>
 
-  <p style="text-align: center; margin-top: 28px; font-size: 12px; color: var(--text-light); line-height: 2;">
-    ※料金はすべて税込表示。成婚料は別途発生いたします。<br>
-    まずは無料カウンセリングで、あなたに最適なプランをご提案します。
-  </p>
+    <p class="w-price-note">
+      ※料金はすべて税込表示。成婚料は別途発生いたします。<br>
+      まずは無料カウンセリングで、あなたに最適なプランをご提案します。
+    </p>
+  </div>
 </section>
 
 <!-- BLOG -->
-<section class="blog-section">
-  <div class="section-eyebrow"><span>Blog</span></div>
-  <h2 class="section-heading">ブログ</h2>
-  <div style="text-align: center; padding: 40px 0;">
-    <p style="font-size: clamp(24px, 5vw, 40px); font-weight: 700; letter-spacing: 0.12em; color: var(--navy); margin-bottom: 12px;">Coming Soon</p>
-    <p style="font-size: 13px; color: var(--text-light); letter-spacing: 0.08em;">準備中です。もうしばらくお待ちください。</p>
+<section class="w-blog">
+  <div class="w-blog-inner">
+    <div class="w-eyebrow"><span>Blog</span></div>
+    <h2 class="w-section-title">ブログ</h2>
+    <div class="w-blog-coming">
+      <strong>Coming Soon</strong>
+      準備中です。もうしばらくお待ちください。
+    </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="cta-section" id="cta">
+<section class="w-cta" id="cta">
+  <div class="w-cta-inner">
+    <p class="w-cta-label">Free Consultation</p>
+    <h2 class="w-cta-title">
+      まず、話してみてください。<br>
+      「どうしたいか」を一緒に整理するところから。
+    </h2>
+    <p class="w-cta-sub">オンライン30分 ｜ 全国対応 ｜ 完全無料</p>
+    <div class="w-cta-btns">
+      <a href="apply.html" class="btn-cta-white">無料カウンセリングを予約する</a>
+      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn-cta-outline">
+        <span style="color:#06C755; font-weight:700;">LINE</span>で予約する
+      </a>
+    </div>
+    <p class="w-cta-note">1分で登録完了 ｜ しつこい勧誘は一切ありません</p>
 
-  <div class="cta-buttons">
-    <a href="#" class="btn-primary" style="font-size: 14px; padding: 18px 44px; background: var(--white); color: var(--navy);">
-      無料カウンセリングを予約する
-    </a>
-    <button class="btn-line" style="font-size: 13px; padding: 18px 32px; border-color: var(--white); color: var(--white);">
-      <span style="color: #06C755;">LINE</span><span style="color: #ffffff;">で予約する</span>
-    </button>
+    <!-- 男性向けリンク -->
+    <div class="w-cta-men">
+      <p>男性の婚活をお探しの方はこちら</p>
+      <a href="men.html" class="btn-men-link">
+        男性の婚活 — オトナ男子の婚活はこちら
+        <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </a>
+    </div>
   </div>
-  <p class="cta-note">オンライン30分 ｜ 全国オンライン対応</p>
 </section>
 
-<!-- FOOTER -->
+</main>
+
 <!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
@@ -3000,9 +1446,8 @@
       <ul>
         <li><a href="about.html">メッセージ</a></li>
         <li><a href="service.html">サービス内容</a></li>
-        <li><a href="lab.html">オトナ男子LAB</a></li>
         <li><a href="service.html">料金プラン</a></li>
-        <li><a href="girls.html">オトナ<span style="color: var(--pink);">女子</span>の婚活はこちら</a></li>
+        <li><a href="men.html">男性の婚活はこちら</a></li>
       </ul>
     </div>
 
@@ -3031,46 +1476,31 @@
   </div>
 </footer>
 
+<!-- フローティングボタン -->
+<a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-line-btn">LINEで相談する</a>
+<div class="float-side-btns">
+  <a href="apply.html" class="float-side-btn">初回無料面談を予約する</a>
+  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn">LINEで婚活突破口診断</a>
+</div>
+
+<script src="js/common.js"></script>
 <script>
-  const circumference = 2 * Math.PI * 50;
-  const donutSegs = document.querySelectorAll('.donut-seg');
-
-  const donutObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const seg = entry.target;
-        const value = parseFloat(seg.dataset.value);
-        const offset = parseFloat(seg.dataset.valueOffset || 0);
-        const filled = (value / 100) * circumference;
-        const gap = circumference - filled;
-        const dashOffset = -(offset / 100) * circumference + 78.5;
-        seg.style.strokeDasharray = `${filled} ${gap}`;
-        seg.style.strokeDashoffset = dashOffset;
-        donutObserver.unobserve(seg);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  donutSegs.forEach(seg => donutObserver.observe(seg));
-
-  const counters = document.querySelectorAll('.ibj-num');  const duration = 2000;
-
+  /* IBJカウンター */
+  const counters = document.querySelectorAll('.w-ibj-num');
+  const duration = 2000;
   const easeOut = t => 1 - Math.pow(1 - t, 3);
-
   const startCount = (el) => {
     const target = parseInt(el.dataset.target);
     const start = performance.now();
     const update = (now) => {
       const elapsed = now - start;
       const progress = Math.min(elapsed / duration, 1);
-      const value = Math.floor(easeOut(progress) * target);
-      el.textContent = value.toLocaleString('ja-JP');
+      el.textContent = Math.floor(easeOut(progress) * target).toLocaleString('ja-JP');
       if (progress < 1) requestAnimationFrame(update);
       else el.textContent = target.toLocaleString('ja-JP');
     };
     requestAnimationFrame(update);
   };
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -3079,35 +1509,21 @@
       }
     });
   }, { threshold: 0.5 });
-
   counters.forEach(el => observer.observe(el));
 
-  // ハンバーガーメニュー
+  /* ハンバーガーメニュー */
   (function () {
     var btn = document.getElementById('hamburgerBtn');
     var ovl = document.getElementById('mobileNavOverlay');
     var closeBtn = document.getElementById('mobileNavClose');
-    function openNav() {
-      ovl.classList.add('open');
-      btn.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeNav() {
-      ovl.classList.remove('open');
-      btn.classList.remove('open');
-      document.body.style.overflow = '';
-    }
+    function openNav() { ovl.classList.add('open'); btn.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeNav() { ovl.classList.remove('open'); btn.classList.remove('open'); document.body.style.overflow = ''; }
     if (btn && ovl) {
-      btn.addEventListener('click', function () {
-        ovl.classList.contains('open') ? closeNav() : openNav();
-      });
+      btn.addEventListener('click', function () { ovl.classList.contains('open') ? closeNav() : openNav(); });
       if (closeBtn) closeBtn.addEventListener('click', closeNav);
-      ovl.querySelectorAll('a').forEach(function (a) {
-        a.addEventListener('click', closeNav);
-      });
+      ovl.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeNav); });
     }
   })();
 </script>
 </body>
 </html>
-
