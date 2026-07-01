@@ -259,6 +259,63 @@
 .step-s4 { --step-color: #b87aaa; }
 .step-s5 { --step-color: #c89040; }
 
+/* ── Step 05 LAB logo background ── */
+.step-s5-lab {
+  background: var(--navy);
+}
+.step-s5-lab .step-bg-num {
+  color: rgba(255,255,255,0.04);
+}
+.step-s5-bg-logo {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+.step-s5-harukaze {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 3.5vw, 32px);
+  font-weight: 400;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.22em;
+  display: block;
+}
+@keyframes s5-shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes s5-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+.step-s5-lab-text {
+  font-family: var(--font-display);
+  font-size: clamp(72px, 14vw, 130px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+  display: block;
+  background: linear-gradient(
+    90deg,
+    #fff 0%,
+    var(--pink) 30%,
+    #fff 55%,
+    var(--pink) 80%,
+    #fff 100%
+  );
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: s5-shimmer 10s linear infinite, s5-float 5s ease-in-out infinite;
+}
+
 /* ── Rule ── */
 .step-rule {
   width: 36px;
@@ -592,9 +649,11 @@
     </div>
 
     <!-- 05 -->
-    <div class="step-item step-s5">
-      <div class="step-photo-bg" style="background-image: url('images/E33B9947-5CAC-4CBF-8048-B0505AAA80B0 (1).jpeg');"></div>
-      <div class="step-overlay"></div>
+    <div class="step-item step-s5 step-s5-lab">
+      <div class="step-s5-bg-logo" aria-hidden="true">
+        <span class="step-s5-harukaze">ハ ル カ ゼ</span>
+        <span class="step-s5-lab-text">LAB</span>
+      </div>
       <span class="step-bg-num" aria-hidden="true">05</span>
       <div class="step-content fade-up">
         <div class="step-num-label">
