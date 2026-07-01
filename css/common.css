@@ -281,7 +281,7 @@ ul, ol { list-style: none; }
   font-size: 12px;
   font-weight: 300;
   letter-spacing: 0.25em;
-  color: #2AB5E0;
+  color: #F4688A;
   margin-bottom: 6px;
 }
 .mobile-nav-specialty em {
@@ -309,12 +309,12 @@ ul, ol { list-style: none; }
   margin-top: 8px;
   font-size: 14px;
   padding: 12px 36px;
-  background: #2AB5E0 !important;
+  background: #F4688A !important;
   color: #fff !important;
 }
 .mobile-nav-overlay .nav-cta:hover {
-  background: #1da0c9 !important;
-  box-shadow: 0 4px 14px rgba(42,181,224,0.35) !important;
+  background: #D94F73 !important;
+  box-shadow: 0 4px 14px rgba(244,104,138,0.35) !important;
 }
 
 .mobile-nav-divider {
