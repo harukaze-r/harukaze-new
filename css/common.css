@@ -151,7 +151,7 @@ ul, ol { list-style: none; }
   align-items: center;
   gap: 8px;
   letter-spacing: 0.1em;
-  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
   font-weight: 500;
   margin-top: 2px;
 }
