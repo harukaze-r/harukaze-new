@@ -337,10 +337,10 @@ body.nav-open { overflow: hidden; }
    FOOTER
    ============================================================ */
 .site-footer {
-  background: var(--navy-dark);
-  color: rgba(255,255,255,0.65);
+  background: #F4688A;
+  color: rgba(255,255,255,0.8);
   padding: 60px;
-  border-top: 0.5px solid rgba(255,255,255,0.08);
+  border-top: none;
 }
 .footer-inner {
   display: flex;
@@ -351,17 +351,18 @@ body.nav-open { overflow: hidden; }
   max-width: var(--inner-wide);
   margin: 0 auto 48px;
   padding-bottom: 48px;
-  border-bottom: 0.5px solid rgba(255,255,255,0.06);
+  border-bottom: 0.5px solid rgba(255,255,255,0.2);
 }
 .footer-brand {
   flex: 0 0 220px;
 }
 .footer-brand .logo {
   font-size: 20px;
+  color: #fff !important;
 }
 .footer-brand p {
   font-size: 12px;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.7);
   margin-top: 12px;
   line-height: 1.8;
 }
@@ -373,7 +374,7 @@ body.nav-open { overflow: hidden; }
 .footer-links h4 {
   font-size: 11px;
   letter-spacing: 0.2em;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.6);
   margin-bottom: 16px;
   text-transform: uppercase;
   font-weight: 700;
@@ -385,20 +386,20 @@ body.nav-open { overflow: hidden; }
 }
 .footer-links a {
   font-size: 13px;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.75);
   text-decoration: none;
   letter-spacing: 0.03em;
   transition: color 0.3s;
 }
 .footer-links a:hover {
-  color: rgba(255,255,255,0.9);
+  color: #fff;
 }
 .footer-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 11px;
-  color: rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.5);
   flex-wrap: wrap;
   gap: 12px;
   max-width: var(--inner-wide);
