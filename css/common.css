@@ -359,6 +359,9 @@ body.nav-open { overflow: hidden; }
 .footer-brand .logo {
   font-size: 20px;
   color: #fff !important;
+  font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+  font-weight: 500;
+  letter-spacing: 0.12em;
 }
 .footer-brand p {
   font-size: 12px;
