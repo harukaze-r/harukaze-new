@@ -323,14 +323,17 @@ ul, ol { list-style: none; }
   border-top: 1px solid rgba(26,42,68,0.1);
   margin: 4px 0;
 }
-.mobile-nav-girls-link {
-  font-family: var(--font-sans) !important;
-  font-size: 13px !important;
-  font-weight: 500 !important;
-  color: var(--navy) !important;
-  letter-spacing: 0.08em;
+.mobile-nav-overlay .btn-men-link {
+  color: #fff !important;
+  opacity: 1;
 }
-.mobile-nav-girls-link:hover { color: #2AB5E0 !important; }
+.mobile-nav-overlay .btn-men-link span {
+  color: rgba(255,255,255,0.55) !important;
+}
+.mobile-nav-overlay .btn-men-link:hover {
+  color: #fff !important;
+  opacity: 1;
+}
 
 body.nav-open { overflow: hidden; }
 
