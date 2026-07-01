@@ -211,14 +211,14 @@
   line-height: 1.8;
 }
 
-/* ── MISSION LIST HEADER ── */
-.wlab-missions-header {
+/* ── PROGRAM HEADER ── */
+.wlab-program-header {
   text-align: center;
   padding: clamp(64px, 9vw, 100px) clamp(24px, 5vw, 64px) clamp(32px, 4vw, 48px);
-  background: var(--rose-pale2);
+  background: #fff;
 }
-.wlab-missions-header-inner { max-width: 640px; margin: 0 auto; }
-.wlab-missions-eyebrow {
+.wlab-program-header-inner { max-width: 640px; margin: 0 auto; }
+.wlab-program-eyebrow {
   font-family: 'Cormorant Garamond', serif;
   font-size: 11px;
   letter-spacing: 0.42em;
@@ -227,7 +227,7 @@
   display: block;
   margin-bottom: 16px;
 }
-.wlab-missions-title {
+.wlab-program-title {
   font-family: var(--font-elegant);
   font-size: clamp(16px, 2vw, 22px);
   font-weight: 500;
@@ -236,103 +236,175 @@
   letter-spacing: 0.06em;
 }
 
-/* ── MISSION CARDS ── */
-.wlab-missions {
-  background: var(--rose-pale2);
-  padding: 0 clamp(24px, 5vw, 64px) clamp(72px, 10vw, 100px);
-}
-.wlab-mission-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  max-width: 1040px;
-  margin: 0 auto;
-}
-@media (min-width: 900px) {
-  .wlab-mission-grid { grid-template-columns: repeat(6, 1fr); }
-  .wlab-mission-card { grid-column: span 2; }
-  .wlab-mission-card:nth-child(4) { grid-column: 2 / span 2; }
-  .wlab-mission-card:nth-child(5) { grid-column: 4 / span 2; }
-}
-@media (max-width: 560px) {
-  .wlab-mission-grid { grid-template-columns: 1fr; }
-}
+/* ── STEPS ── */
+.wlab-steps-section { background: #fff; }
 
-.wmission-s1 { --step-color: #F4688A; }
-.wmission-s2 { --step-color: #c97ab2; }
-.wmission-s3 { --step-color: #e0896b; }
-.wmission-s4 { --step-color: #7aaa98; }
-.wmission-s5 { --step-color: #a07ac8; }
-
-.wlab-mission-card {
-  background: #fff;
-  border: 0.5px solid rgba(244,104,138,0.15);
-  overflow: hidden;
+.wlab-step-item {
   position: relative;
-  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+  padding: clamp(56px, 8vw, 96px) clamp(24px, 6vw, 80px);
+  display: flex;
+  align-items: center;
+  min-height: clamp(540px, 65vh, 720px);
 }
-.wlab-mission-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 24px 60px rgba(244,104,138,0.10);
-}
-.wlab-mission-card::before {
-  content: '';
+.wlab-step-photo-bg {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 3px;
-  background: var(--step-color, var(--rose));
+  inset: 0;
+  background-size: auto 92%;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-color: var(--rose-pale);
+  z-index: 0;
+}
+.wlab-step-item:nth-child(odd)  .wlab-step-photo-bg { background-position: right top; }
+.wlab-step-item:nth-child(even) .wlab-step-photo-bg { background-position: left top; }
+.wlab-step-photo-bg-half {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 50%;
+  background-size: cover;
+  background-position: center top;
+  z-index: 0;
+}
+.wlab-step-photo-bg-half.left  { left: 0; }
+.wlab-step-photo-bg-half.right { right: 0; }
+.wlab-step-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.wlab-step-item:nth-child(odd) .wlab-step-overlay {
+  background: linear-gradient(100deg,
+    rgba(255,255,255,0.94) 0%,
+    rgba(255,255,255,0.76) 48%,
+    rgba(255,255,255,0.22) 100%
+  );
+}
+.wlab-step-item:nth-child(even) .wlab-step-overlay {
+  background: linear-gradient(260deg,
+    rgba(255,243,246,0.94) 0%,
+    rgba(255,243,246,0.76) 48%,
+    rgba(255,243,246,0.22) 100%
+  );
+}
+.wlab-step-bg-num {
+  position: absolute;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(160px, 22vw, 280px);
+  font-weight: 900;
+  color: var(--rose);
+  opacity: 0.06;
+  line-height: 1;
+  pointer-events: none;
+  top: 50%;
+  transform: translateY(-50%);
+  letter-spacing: -0.05em;
+  user-select: none;
   z-index: 2;
 }
-.wlab-mission-body { padding: 28px 26px 32px; }
-.wlab-mission-num {
+.wlab-step-item:nth-child(odd)  .wlab-step-bg-num { right: clamp(-10px, 2vw, 20px); }
+.wlab-step-item:nth-child(even) .wlab-step-bg-num { left:  clamp(-10px, 2vw, 20px); }
+.wlab-step-content {
+  position: relative;
+  z-index: 3;
+  max-width: 520px;
+  width: 100%;
+}
+.wlab-step-item:nth-child(odd)  .wlab-step-content { margin-right: auto; }
+.wlab-step-item:nth-child(even) .wlab-step-content { margin-left: auto; }
+@media (max-width: 600px) {
+  .wlab-step-item:nth-child(odd)  .wlab-step-content,
+  .wlab-step-item:nth-child(even) .wlab-step-content { margin-left: 0; margin-right: 0; }
+  .wlab-step-bg-num { opacity: 0.04; }
+}
+.wlab-step-num-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.wlab-step-num-badge {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.2em;
   color: #fff;
   background: var(--step-color, var(--rose));
   border-radius: 20px;
-  padding: 3px 12px;
-  display: inline-block;
-  margin-bottom: 8px;
+  padding: 4px 14px;
 }
-.wlab-mission-category {
-  font-size: 10px;
-  letter-spacing: 0.14em;
+.wlab-step-category {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   color: var(--step-color, var(--rose));
-  display: block;
-  margin-bottom: 10px;
 }
-.wlab-mission-rule {
-  width: 28px; height: 2px;
+.wlab-step-s1 { --step-color: #F4688A; }
+.wlab-step-s2 { --step-color: #c97ab2; }
+.wlab-step-s3 { --step-color: #e0896b; }
+.wlab-step-s4 { --step-color: #7aaa98; }
+.wlab-step-s5 { --step-color: #a07ac8; }
+.wlab-step-rule {
+  width: 36px; height: 2px;
   background: var(--step-color, var(--rose));
   border-radius: 2px;
-  margin-bottom: 12px;
-  opacity: 0.5;
+  margin-bottom: 18px;
+  opacity: 0.6;
 }
-.wlab-mission-title {
+.wlab-step-title {
   font-family: var(--font-elegant);
-  font-size: clamp(13px, 1.4vw, 16px);
+  font-size: clamp(17px, 2.8vw, 22px);
   font-weight: 700;
   color: var(--text-w);
-  line-height: 1.6;
-  margin-bottom: 10px;
+  line-height: 1.65;
+  margin-bottom: 16px;
 }
-.wlab-mission-desc {
-  font-size: 12px;
-  color: var(--text-w-mid);
-  line-height: 2;
+.wlab-step-subtitle {
+  font-size: 13px;
+  color: var(--step-color, var(--rose));
+  font-weight: 600;
+  letter-spacing: 0.05em;
   margin-bottom: 12px;
+  margin-top: -8px;
 }
-.wlab-mission-note {
-  font-size: 11px;
+.wlab-step-desc {
+  font-size: 14px;
+  color: var(--text-w-mid);
+  line-height: 2.1;
+  margin-bottom: 20px;
+}
+.wlab-step-note {
+  font-size: 12px;
   color: var(--text-w-light);
   line-height: 1.8;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   font-style: italic;
 }
-.wlab-mission-ticket {
+.wlab-step-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.wlab-step-points li {
+  font-size: 13px;
+  color: var(--text-w-mid);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.8;
+}
+.wlab-step-points li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 10px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--step-color, var(--rose));
+  opacity: 0.7;
+}
+.wlab-step-ticket {
   display: inline-block;
   font-size: 11px;
   font-weight: 600;
@@ -341,52 +413,38 @@
   border: 1px solid var(--step-color, var(--rose));
   border-radius: 4px;
   padding: 4px 12px;
-  margin-bottom: 14px;
+  margin-top: 14px;
   opacity: 0.9;
 }
-.wlab-mission-format {
-  font-size: 11px;
-  color: var(--text-w-mid);
-  letter-spacing: 0.06em;
-  margin-bottom: 14px;
-}
-.wlab-mission-instructor {
+.wlab-step-tags {
   display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  padding-top: 16px;
-  border-top: 0.5px solid rgba(244,104,138,0.12);
   flex-wrap: wrap;
-}
-.wlab-mission-instructor-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   gap: 8px;
-  text-align: center;
+  margin-top: 4px;
 }
-.wlab-mission-avatar {
-  width: 56px; height: 56px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center top;
-  flex-shrink: 0;
-  border: 2px solid #fff;
-  box-shadow: 0 4px 16px rgba(244,104,138,0.18);
-}
-.wlab-mission-placeholder {
-  width: 56px; height: 56px;
-  border-radius: 50%;
-  background: var(--step-color, #ccc);
-  opacity: 0.15;
-  flex-shrink: 0;
-  border: 1.5px dashed var(--step-color, #ccc);
-}
-.wlab-mission-role {
-  font-size: 10px;
+.wlab-step-tag {
+  font-size: 11px;
+  color: var(--step-color, var(--rose));
+  border: 1px solid var(--step-color, var(--rose));
+  border-radius: 20px;
+  padding: 4px 12px;
   letter-spacing: 0.04em;
+  opacity: 0.85;
+}
+.wlab-step-coming {
+  font-size: 11px;
   color: var(--text-w-light);
-  line-height: 1.6;
+  border: 1px dashed #ccc;
+  border-radius: 20px;
+  padding: 4px 12px;
+  letter-spacing: 0.08em;
+}
+.wlab-step-item + .wlab-step-item::before {
+  content: '';
+  position: absolute;
+  top: 0; left: clamp(24px, 6vw, 80px); right: clamp(24px, 6vw, 80px);
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(244,104,138,0.15) 30%, rgba(244,104,138,0.15) 70%, transparent);
 }
 
 /* ── PRICE ── */
@@ -731,115 +789,138 @@
   </section>
 
   <!-- ============================================================
-       MISSION LIST HEADER
+       PROGRAM HEADER
        ============================================================ -->
-  <div class="wlab-missions-header">
-    <div class="wlab-missions-header-inner">
-      <span class="wlab-missions-eyebrow fade-up">Program</span>
-      <h2 class="wlab-missions-title fade-up delay-1">「自分らしい結婚」のために、<br>必要なことだけを、丁寧に。</h2>
+  <div class="wlab-program-header">
+    <div class="wlab-program-header-inner">
+      <span class="wlab-program-eyebrow fade-up">Program</span>
+      <h2 class="wlab-program-title fade-up delay-1">「自分らしい結婚」のために、<br>必要なことだけを、丁寧に。</h2>
     </div>
   </div>
 
   <!-- ============================================================
-       MISSION CARDS
+       STEPS
        ============================================================ -->
-  <section class="wlab-missions">
-    <div class="wlab-mission-grid">
+  <section class="wlab-steps-section">
 
-      <!-- 01 -->
-      <div class="wlab-mission-card wmission-s1 fade-up">
-        <div class="wlab-mission-body">
-          <span class="wlab-mission-num">01</span>
-          <span class="wlab-mission-category">自己解析ワーク・カウンセリング</span>
-          <div class="wlab-mission-rule"></div>
-          <h2 class="wlab-mission-title">SELF DISCOVERY —<br>「本当の自分」を知るセッション</h2>
-          <p class="wlab-mission-desc">「なんとなく好き」ではなく、「なぜ惹かれるのか」を言葉にできるようになる。これまでの恋愛パターンを整理し、自分の価値観・魅力・ブロックを丁寧に掘り起こす40分のセッション。</p>
-          <p class="wlab-mission-note">※「何から始めればいいかわからない」という方は、まずここから。</p>
-          <p class="wlab-mission-ticket">Ticket × 2</p>
-          <p class="wlab-mission-format">⏱ 40分｜オンラインセッション</p>
-          <div class="wlab-mission-instructor">
-            <div class="wlab-mission-instructor-item">
-              <img class="wlab-mission-avatar" src="newimages/IMG_2149.jpeg" alt="ハルカゼ代表">
-              <span class="wlab-mission-role">ハルカゼ代表<br>婚活カウンセラー</span>
-            </div>
-          </div>
+    <!-- 01 -->
+    <div class="wlab-step-item wlab-step-s1">
+      <div class="wlab-step-photo-bg" style="background-image: url('newimages/IMG_2149.jpeg');"></div>
+      <div class="wlab-step-overlay"></div>
+      <span class="wlab-step-bg-num" aria-hidden="true">01</span>
+      <div class="wlab-step-content fade-up">
+        <div class="wlab-step-num-label">
+          <span class="wlab-step-num-badge">01</span>
+          <span class="wlab-step-category">自己解析ワーク・カウンセリング</span>
         </div>
-      </div>
-
-      <!-- 02 -->
-      <div class="wlab-mission-card wmission-s2 fade-up delay-1">
-        <div class="wlab-mission-body">
-          <span class="wlab-mission-num">02</span>
-          <span class="wlab-mission-category">マインドセットコーチング</span>
-          <div class="wlab-mission-rule"></div>
-          <h2 class="wlab-mission-title">MINDSET & WELLBEING —<br>「がんばり屋さん」を、やめてみる</h2>
-          <p class="wlab-mission-desc">気が利く、いい子といわれるのに大切にされない。そのパターンの根っこにあるものを、やさしくほどいていく。自分を後回しにしない、新しい心の使い方を学ぶメンテナンスの時間。</p>
-          <p class="wlab-mission-ticket">Ticket × 2</p>
-          <p class="wlab-mission-format">⏱ 40分｜オンラインセッション</p>
-          <div class="wlab-mission-instructor">
-            <div class="wlab-mission-instructor-item">
-              <img class="wlab-mission-avatar" src="newimages/492004979_3368927726583503_3366660712559650101_n.jpg" alt="セクシャルウェルネスコーチ">
-              <span class="wlab-mission-role">セクシャルウェルネスコーチ<br>精神対話士</span>
-            </div>
-          </div>
+        <div class="wlab-step-rule"></div>
+        <h2 class="wlab-step-title">SELF DISCOVERY —<br>「本当の自分」を知るセッション</h2>
+        <p class="wlab-step-desc">「なんとなく好き」ではなく、「なぜ惹かれるのか」を言葉にできるようになる。これまでの恋愛パターンを整理し、自分の価値観・魅力・ブロックを丁寧に掘り起こす40分のセッション。</p>
+        <p class="wlab-step-note">※「何から始めればいいかわからない」という方は、まずここから。</p>
+        <div class="wlab-step-tags">
+          <span class="wlab-step-tag">価値観の整理</span>
+          <span class="wlab-step-tag">自己分析</span>
+          <span class="wlab-step-tag">婚活カウンセラー</span>
         </div>
+        <p class="wlab-step-ticket">チケット2枚：40分</p>
       </div>
-
-      <!-- 03 -->
-      <div class="wlab-mission-card wmission-s3 fade-up delay-2">
-        <div class="wlab-mission-body">
-          <span class="wlab-mission-num">03</span>
-          <span class="wlab-mission-category">パートナーシップ・ライフコーチング</span>
-          <div class="wlab-mission-rule"></div>
-          <h2 class="wlab-mission-title">RELATIONSHIP DESIGN —<br>ずっとうまくいく「関係」のつくり方</h2>
-          <p class="wlab-mission-desc">相手を選ぶだけでなく、一緒に育てていける関係を設計する。コミュニケーションのクセを知り、自分らしく愛され続けるためのパートナーシップを動画講座で学ぶ。</p>
-          <p class="wlab-mission-ticket">Ticket × 1</p>
-          <p class="wlab-mission-format">🎬 動画講座</p>
-          <div class="wlab-mission-instructor">
-            <div class="wlab-mission-instructor-item">
-              <img class="wlab-mission-avatar" src="images/本間千尋１.jpeg" alt="ライフコーチ">
-              <span class="wlab-mission-role">ライフコーチ</span>
-            </div>
-            <div class="wlab-mission-instructor-item">
-              <img class="wlab-mission-avatar" src="newimages/ともちゃん.jpg" alt="ライフコーチ">
-              <span class="wlab-mission-role">ライフコーチ</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 04 -->
-      <div class="wlab-mission-card wmission-s4 fade-up">
-        <div class="wlab-mission-body">
-          <span class="wlab-mission-num">04</span>
-          <span class="wlab-mission-category">イメージコンサルティング</span>
-          <div class="wlab-mission-rule"></div>
-          <h2 class="wlab-mission-title">IMAGE STYLING —<br>「なりたい私」を、まとう</h2>
-          <p class="wlab-mission-desc">内面の魅力を、見た目にも表現できるように。骨格・パーソナルカラーをもとに、あなたらしさが自然と伝わるスタイリングを提案。第一印象から好意を生む、外見の戦略。</p>
-          <p class="wlab-mission-ticket" style="border-style: dashed; opacity: 0.6;">Coming Soon</p>
-          <div class="wlab-mission-instructor">
-            <div class="wlab-mission-instructor-item">
-              <img class="wlab-mission-avatar" src="newimages/E33B9947-5CAC-4CBF-8048-B0505AAA80B0 (1).jpeg" alt="イメージコンサルタント">
-              <span class="wlab-mission-role">イメージコンサルタント<br>（準備中）</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 05 -->
-      <div class="wlab-mission-card wmission-s5 fade-up delay-1">
-        <div class="wlab-mission-body">
-          <span class="wlab-mission-num">05</span>
-          <span class="wlab-mission-category">ビジョンワーク</span>
-          <div class="wlab-mission-rule"></div>
-          <h2 class="wlab-mission-title">VISION BOARD —<br>「しあわせの解像度」を上げる</h2>
-          <p class="wlab-mission-desc">「なんとなく幸せになりたい」から、「これが私の望む暮らし」へ。自分の理想を言語化・視覚化することで、本当に出会いたい人・築きたい関係が明確になるビジョンワークショップ。</p>
-          <p class="wlab-mission-ticket">Ticket × 3</p>
-          <p class="wlab-mission-format">⏱ 120分｜オンラインワークショップ</p>
-        </div>
-      </div>
-
     </div>
+
+    <!-- 02 -->
+    <div class="wlab-step-item wlab-step-s2">
+      <div class="wlab-step-photo-bg" style="background-image: url('newimages/492004979_3368927726583503_3366660712559650101_n.jpg');"></div>
+      <div class="wlab-step-overlay"></div>
+      <span class="wlab-step-bg-num" aria-hidden="true">02</span>
+      <div class="wlab-step-content fade-up">
+        <div class="wlab-step-num-label">
+          <span class="wlab-step-num-badge">02</span>
+          <span class="wlab-step-category">マインドセットコーチング</span>
+        </div>
+        <div class="wlab-step-rule"></div>
+        <h2 class="wlab-step-title">MINDSET & WELLBEING —<br>「がんばり屋さん」を、やめてみる</h2>
+        <p class="wlab-step-subtitle">自分を後回しにしない、心の使い方</p>
+        <p class="wlab-step-desc">気が利く、いい子といわれるのに大切にされない。そのパターンの根っこにあるものを、やさしくほどいていく。自分を後回しにしない、新しい心の使い方を学ぶメンテナンスの時間。</p>
+        <div class="wlab-step-tags">
+          <span class="wlab-step-tag">セルフラブ</span>
+          <span class="wlab-step-tag">セクシャルウェルネス</span>
+        </div>
+        <p class="wlab-step-ticket">チケット2枚：40分</p>
+      </div>
+    </div>
+
+    <!-- 03 -->
+    <div class="wlab-step-item wlab-step-s3">
+      <div class="wlab-step-photo-bg-half left" style="background-image: url('images/本間千尋１.jpeg'); background-position: center top;"></div>
+      <div class="wlab-step-photo-bg-half right" style="background-image: url('newimages/ともちゃん.jpg'); background-position: center top;"></div>
+      <div class="wlab-step-overlay"></div>
+      <span class="wlab-step-bg-num" aria-hidden="true">03</span>
+      <div class="wlab-step-content fade-up">
+        <div class="wlab-step-num-label">
+          <span class="wlab-step-num-badge">03</span>
+          <span class="wlab-step-category">パートナーシップ・ライフコーチング</span>
+        </div>
+        <div class="wlab-step-rule"></div>
+        <h2 class="wlab-step-title">RELATIONSHIP DESIGN —<br>ずっとうまくいく「関係」のつくり方</h2>
+        <p class="wlab-step-subtitle">自分らしく愛され続けるために</p>
+        <p class="wlab-step-desc">相手を選ぶだけでなく、一緒に育てていける関係を設計する。コミュニケーションのクセを知り、自分らしく愛され続けるためのパートナーシップを動画講座で学ぶ。</p>
+        <ul class="wlab-step-points">
+          <li>人間関係のストレスが軽くなる思考法</li>
+          <li>ちょうどいい距離感を知る</li>
+        </ul>
+        <div class="wlab-step-tags">
+          <span class="wlab-step-tag">コーチング</span>
+          <span class="wlab-step-tag">パートナーシップ</span>
+        </div>
+        <p class="wlab-step-ticket">チケット1枚：動画講座</p>
+      </div>
+    </div>
+
+    <!-- 04 -->
+    <div class="wlab-step-item wlab-step-s4">
+      <div class="wlab-step-photo-bg" style="background-image: url('newimages/E33B9947-5CAC-4CBF-8048-B0505AAA80B0 (1).jpeg');"></div>
+      <div class="wlab-step-overlay"></div>
+      <span class="wlab-step-bg-num" aria-hidden="true">04</span>
+      <div class="wlab-step-content fade-up">
+        <div class="wlab-step-num-label">
+          <span class="wlab-step-num-badge">04</span>
+          <span class="wlab-step-category">イメージコンサルティング</span>
+        </div>
+        <div class="wlab-step-rule"></div>
+        <h2 class="wlab-step-title">IMAGE STYLING —<br>「なりたい私」を、まとう</h2>
+        <p class="wlab-step-desc">内面の魅力を、見た目にも表現できるように。骨格・パーソナルカラーをもとに、あなたらしさが自然と伝わるスタイリングを提案。第一印象から好意を生む、外見の戦略。</p>
+        <div class="wlab-step-tags">
+          <span class="wlab-step-tag">パーソナルカラー診断</span>
+          <span class="wlab-step-tag">スタイリング</span>
+          <span class="wlab-step-coming">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 -->
+    <div class="wlab-step-item wlab-step-s5">
+      <div class="wlab-step-photo-bg" style="background-color: #f3eff8;"></div>
+      <div class="wlab-step-overlay"></div>
+      <span class="wlab-step-bg-num" aria-hidden="true">05</span>
+      <div class="wlab-step-content fade-up">
+        <div class="wlab-step-num-label">
+          <span class="wlab-step-num-badge">05</span>
+          <span class="wlab-step-category">ビジョンワーク</span>
+        </div>
+        <div class="wlab-step-rule"></div>
+        <h2 class="wlab-step-title">VISION BOARD —<br>「しあわせの解像度」を上げる</h2>
+        <p class="wlab-step-desc">「なんとなく幸せになりたい」から、「これが私の望む暮らし」へ。自分の理想を言語化・視覚化することで、本当に出会いたい人・築きたい関係が明確になるビジョンワークショップ。</p>
+        <ul class="wlab-step-points">
+          <li>自分の価値観と理想が明確になる</li>
+          <li>理想の相手像が自然と見えてくる</li>
+        </ul>
+        <div class="wlab-step-tags">
+          <span class="wlab-step-tag">ワークショップ</span>
+          <span class="wlab-step-tag">ビジョン</span>
+        </div>
+        <p class="wlab-step-ticket">チケット3枚：120分</p>
+      </div>
+    </div>
+
   </section>
 
   <!-- ============================================================
