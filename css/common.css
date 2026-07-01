@@ -189,9 +189,9 @@ ul, ol { list-style: none; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--rose) !important;
+  background: #F4688A !important;
   color: #fff !important;
-  border: 1.5px solid var(--rose);
+  border: 1.5px solid #F4688A;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -202,7 +202,7 @@ ul, ol { list-style: none; }
   opacity: 1 !important;
 }
 .nav-cta:hover {
-  background: var(--rose-dark) !important;
+  background: #D94F73 !important;
   transform: translateY(-1px);
   box-shadow: 0 4px 14px rgba(244,104,138,0.3) !important;
 }
