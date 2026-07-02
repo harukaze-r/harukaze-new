@@ -24,7 +24,8 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://harukaze-marriage.com/newimages/panitan-punpuang-HZ09VYZvAFk-unsplash.jpg\")",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://harukaze-marriage.com/newimages/alexander-wang-KjyrxSHwqTg-unsplash.jpg\")",
       "Bash(git remote *)",
-      "Bash(xargs sed *)"
+      "Bash(xargs sed *)",
+      "PowerShell(Resolve-DnsName harukaze-marriage.com -Type A)"
     ]
   }
 }
