@@ -29,7 +29,8 @@
       "Bash(node fix-pcnav.js)",
       "Bash(node fix-pcnav2.js)",
       "Bash(node fix-mobile-nav.js)",
-      "Bash(node fix-hamburger.js)"
+      "Bash(node fix-hamburger.js)",
+      "Bash(node -e ' *)"
     ]
   }
 }
