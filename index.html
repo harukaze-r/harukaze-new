@@ -547,15 +547,21 @@ body { background: var(--cream); color: var(--text-w); }
 }
 .w-point-num em {
   font-style: normal;
-  font-size: 28px;
+  font-size: 21px;
   font-weight: 400;
   letter-spacing: 0.05em;
   vertical-align: middle;
   margin-left: 4px;
 }
+.w-point-item--04 .w-point-num em {
+  font-size: 28px;
+}
+.w-point-item--04 .w-point-title {
+  font-size: clamp(18px, 2vw, 26px);
+}
 .w-point-title {
   font-family: var(--font-elegant);
-  font-size: clamp(18px, 2vw, 26px);
+  font-size: 21px;
   font-weight: 500;
   color: var(--text-w);
   line-height: 1.8;
@@ -1513,7 +1519,7 @@ body { background: var(--cream); color: var(--text-w); }
       </div>
 
       <!-- POINT 04 -->
-      <div class="w-point-item w-point-item--reverse">
+      <div class="w-point-item w-point-item--reverse w-point-item--04">
         <div class="w-point-img">
           <img src="newimages/名称未設定のデザイン (5).png" alt="LINE伴走サポート">
         </div>
