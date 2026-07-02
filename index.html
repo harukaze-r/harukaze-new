@@ -1033,55 +1033,90 @@ body { background: var(--cream); color: var(--text-w); }
   gap: 24px;
   margin-top: 48px;
 }
+/* --- service.html準拠カードデザイン --- */
 .w-price-card {
-  background: var(--warm-beige);
-  border-radius: 4px;
-  padding: clamp(28px, 4vw, 48px) clamp(20px, 3vw, 40px);
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid rgba(184,199,230,0.35);
+  padding: 36px 28px 32px;
+  box-shadow: 0 2px 20px rgba(74,98,120,0.06);
   position: relative;
+  overflow: hidden;
 }
 .w-price-card--popular {
-  border: 2px solid var(--rose);
+  border-color: var(--rose);
 }
 .w-price-popular-badge {
   position: absolute;
-  top: -13px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--rose);
-  color: #fff;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  padding: 4px 16px;
-  border-radius: 20px;
-  white-space: nowrap;
+  top: 20px; right: 20px;
+  background: var(--rose); color: #fff;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
+  padding: 4px 12px; border-radius: 20px;
 }
+/* プラン名バナー */
+.w-price-name-band {
+  margin: -36px -28px 20px;
+  padding: 20px 28px 16px;
+}
+.w-price-card:not(.w-price-card--popular) .w-price-name-band {
+  background: linear-gradient(135deg, #1A2A44 0%, #2d6b8a 100%);
+}
+.w-price-card--popular .w-price-name-band {
+  background: linear-gradient(135deg, #E8859E 0%, #f5b8ca 100%);
+}
+.w-price-plan-eyebrow {
+  font-size: 10px; letter-spacing: 0.24em; color: rgba(255,255,255,0.65);
+  margin-bottom: 4px; font-weight: 700; text-transform: uppercase;
+}
+.w-price-card--popular .w-price-plan-eyebrow { color: rgba(26,42,68,0.65); }
 .w-price-plan {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 16px;
-  letter-spacing: 0.28em;
-  color: #111;
-  text-transform: uppercase;
-  margin-bottom: 20px;
+  font-size: 20px; font-weight: 700; color: #fff;
+  margin-bottom: 0; letter-spacing: 0.06em;
 }
-.w-price-grid {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: 40px;
-  align-items: center;
+.w-price-card--popular .w-price-plan { color: #1A2A44; }
+/* 価格ブロック */
+.w-price-block {
+  background: rgba(106,181,214,0.10);
+  border-radius: 10px;
+  padding: 14px 20px 10px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(106,181,214,0.22);
 }
-.w-price-amount { display: flex; align-items: baseline; gap: 4px; margin-bottom: 16px; justify-content: center; }
+.w-price-card--popular .w-price-block {
+  background: rgba(232,133,158,0.10);
+  border-color: rgba(232,133,158,0.28);
+}
+.w-price-amount { display: flex; align-items: baseline; gap: 2px; margin-bottom: 4px; }
 .w-price-main {
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: clamp(50px, 7vw, 72px);
-  font-weight: 700;
-  color: var(--text-w);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 48px; font-weight: 300; color: #1A2A44; line-height: 1;
 }
-.w-price-unit { font-size: 17px; color: var(--text-w-mid); }
-.w-price-highlight { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--rose); margin-bottom: 8px; }
-.w-price-divider { width: 1px; height: 80px; background: rgba(244,104,138,0.2); }
-.w-price-list li { font-size: 15px; color: var(--text-w-mid); padding: 10px 0; border-bottom: 1px solid rgba(244,104,138,0.1); }
-.w-price-list li:last-child { border-bottom: none; }
+.w-price-unit { font-size: 14px; color: #7a8da0; font-weight: 400; }
+.w-price-tax { font-size: 11px; color: #aab; margin-bottom: 0; }
+.w-price-omiai {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(184,199,230,0.20); color: #1A2A44;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+  padding: 6px 14px; border-radius: 20px; margin-bottom: 20px;
+}
+/* 初期費用テーブル */
+.w-price-initial {
+  border: 1px solid rgba(184,199,230,0.35); border-radius: 10px;
+  padding: 16px 18px; margin-bottom: 20px; background: #faf9f7;
+}
+.w-price-initial-row {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 13px; padding: 5px 0;
+  border-bottom: 1px solid rgba(184,199,230,0.25);
+}
+.w-price-initial-row:last-child { border-bottom: none; }
+.w-price-initial-label { color: #7a8da0; }
+.w-price-initial-val { font-weight: 700; color: #1A2A44; }
+/* 旧スタイルは使わない */
+.w-price-grid { display: none; }
+.w-price-highlight { display: none; }
+.w-price-divider { display: none; }
+.w-price-list { display: none; }
 .w-price-btn {
   display: block;
   text-align: center;
@@ -1295,8 +1330,7 @@ body { background: var(--cream); color: var(--text-w); }
   .w-flow-steps::before { display: none; }
 
   .w-price-cards-wrap { grid-template-columns: 1fr; }
-  .w-price-grid { grid-template-columns: 1fr; gap: 24px; }
-  .w-price-divider { display: none; }
+  .w-price-name-band { margin: -36px -28px 20px; }
 }
 </style>
 </head>
@@ -1715,22 +1749,31 @@ body { background: var(--cream); color: var(--text-w); }
     <div class="w-price-cards-wrap">
       <!-- ライトプラン -->
       <div class="w-price-card">
-        <div class="w-price-plan">ライトプラン</div>
-        <div class="w-price-grid">
-          <div>
-            <div class="w-price-amount">
-              <span class="w-price-main">¥13,800</span>
-              <span class="w-price-unit">/月</span>
-            </div>
-            <div class="w-price-highlight"><span>✦</span><span>お見合い料 無料</span></div>
-            <div class="w-price-highlight"><span>✦</span><span>プロフィール写真撮影 無料</span></div>
+        <div class="w-price-name-band">
+          <div class="w-price-plan-eyebrow">Light Plan</div>
+          <div class="w-price-plan">ライトプラン</div>
+        </div>
+        <div class="w-price-block">
+          <div class="w-price-amount">
+            <span class="w-price-main">13,800</span>
+            <span class="w-price-unit">円/月</span>
           </div>
-          <div class="w-price-divider"></div>
-          <ul class="w-price-list">
-            <li>入会金　¥33,000</li>
-            <li>登録料　¥22,000</li>
-            <li>成婚料　¥165,000</li>
-          </ul>
+          <p class="w-price-tax">税込・月額払い</p>
+        </div>
+        <div class="w-price-omiai">✦ お見合い料 無料</div>
+        <div class="w-price-initial">
+          <div class="w-price-initial-row">
+            <span class="w-price-initial-label">入会金</span>
+            <span class="w-price-initial-val">33,000円</span>
+          </div>
+          <div class="w-price-initial-row">
+            <span class="w-price-initial-label">登録料</span>
+            <span class="w-price-initial-val">22,000円</span>
+          </div>
+          <div class="w-price-initial-row">
+            <span class="w-price-initial-label">成婚料</span>
+            <span class="w-price-initial-val">165,000円</span>
+          </div>
         </div>
         <button class="w-price-detail-btn" onclick="togglePriceDetail(this)" aria-expanded="false">
           詳細はこちら <span class="w-price-detail-arrow">▼</span>
@@ -1750,23 +1793,32 @@ body { background: var(--cream); color: var(--text-w); }
 
       <!-- パーソナルプラン -->
       <div class="w-price-card w-price-card--popular">
-        <div class="w-price-popular-badge">一番人気</div>
-        <div class="w-price-plan">パーソナルプラン</div>
-        <div class="w-price-grid">
-          <div>
-            <div class="w-price-amount">
-              <span class="w-price-main">¥15,800</span>
-              <span class="w-price-unit">/月</span>
-            </div>
-            <div class="w-price-highlight"><span>✦</span><span>お見合い料 無料</span></div>
-            <div class="w-price-highlight"><span>✦</span><span>写真撮影・買い物同行 無料</span></div>
+        <span class="w-price-popular-badge">一番人気</span>
+        <div class="w-price-name-band">
+          <div class="w-price-plan-eyebrow">Personal Plan</div>
+          <div class="w-price-plan">パーソナルプラン</div>
+        </div>
+        <div class="w-price-block">
+          <div class="w-price-amount">
+            <span class="w-price-main">15,800</span>
+            <span class="w-price-unit">円/月</span>
           </div>
-          <div class="w-price-divider"></div>
-          <ul class="w-price-list">
-            <li>入会金　¥33,000</li>
-            <li>登録料　¥33,000</li>
-            <li>成婚料　¥230,000</li>
-          </ul>
+          <p class="w-price-tax">税込・月額払い</p>
+        </div>
+        <div class="w-price-omiai">✦ お見合い料 無料</div>
+        <div class="w-price-initial">
+          <div class="w-price-initial-row">
+            <span class="w-price-initial-label">入会金</span>
+            <span class="w-price-initial-val">33,000円</span>
+          </div>
+          <div class="w-price-initial-row">
+            <span class="w-price-initial-label">登録料</span>
+            <span class="w-price-initial-val">33,000円</span>
+          </div>
+          <div class="w-price-initial-row">
+            <span class="w-price-initial-label">成婚料</span>
+            <span class="w-price-initial-val">230,000円</span>
+          </div>
         </div>
         <button class="w-price-detail-btn w-price-detail-btn--popular" onclick="togglePriceDetail(this)" aria-expanded="false">
           詳細はこちら <span class="w-price-detail-arrow">▼</span>
