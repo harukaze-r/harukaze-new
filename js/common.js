@@ -5,37 +5,7 @@
 (function () {
   'use strict';
 
-  document.addEventListener('DOMContentLoaded', function () {
-
-    /* ── ハンバーガーメニュー ── */
-    var btn = document.getElementById('hamburgerBtn');
-    var ovl = document.getElementById('mobileNavOverlay');
-    var closeBtn = document.getElementById('mobileNavClose');
-
-    function openNav() {
-      ovl.classList.add('open');
-      btn.classList.add('open');
-      document.body.style.overflow = 'hidden';
-      document.body.classList.add('nav-open');
-    }
-    function closeNav() {
-      ovl.classList.remove('open');
-      btn.classList.remove('open');
-      document.body.style.overflow = '';
-      document.body.classList.remove('nav-open');
-    }
-
-    if (btn && ovl) {
-      btn.addEventListener('click', function () {
-        ovl.classList.contains('open') ? closeNav() : openNav();
-      });
-      if (closeBtn) closeBtn.addEventListener('click', closeNav);
-      ovl.querySelectorAll('a').forEach(function (a) {
-        a.addEventListener('click', closeNav);
-      });
-    }
-
-    /* ── フローティングサイドボタン スクロール表示（PC） ── */
+  /* ── フローティングサイドボタン スクロール表示（PC） ── */
     var sideBtns = document.querySelector('.float-side-btns');
     if (sideBtns) {
       var hero = document.querySelector('.hero, .page-hero');
@@ -104,5 +74,4 @@
       });
     });
 
-  });
 })();
