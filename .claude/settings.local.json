@@ -27,7 +27,8 @@
       "Bash(xargs sed *)",
       "PowerShell(Resolve-DnsName harukaze-marriage.com -Type A)",
       "Bash(node fix-pcnav.js)",
-      "Bash(node fix-pcnav2.js)"
+      "Bash(node fix-pcnav2.js)",
+      "Bash(node fix-mobile-nav.js)"
     ]
   }
 }
