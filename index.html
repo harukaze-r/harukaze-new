@@ -1950,19 +1950,21 @@ body { background: var(--cream); color: var(--text-w); }
   }, { threshold: 0.5 });
   counters.forEach(el => observer.observe(el));
 
+  /* アコーディオン詳細 */
+  window.togglePriceDetail = function(btn) {
+    var detail = btn.nextElementSibling;
+    var expanded = btn.getAttribute('aria-expanded') === 'true';
+    if (expanded) {
+      detail.hidden = true;
+      btn.setAttribute('aria-expanded', 'false');
+    } else {
+      detail.hidden = false;
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  };
+
   /* ハンバーガーメニュー */
   (function () {
-    function togglePriceDetail(btn) {
-      var detail = btn.nextElementSibling;
-      var expanded = btn.getAttribute('aria-expanded') === 'true';
-      if (expanded) {
-        detail.hidden = true;
-        btn.setAttribute('aria-expanded', 'false');
-      } else {
-        detail.hidden = false;
-        btn.setAttribute('aria-expanded', 'true');
-      }
-    }
     var btn = document.getElementById('hamburgerBtn');
     var ovl = document.getElementById('mobileNavOverlay');
     var closeBtn = document.getElementById('mobileNavClose');
