@@ -310,6 +310,67 @@ body { background: var(--cream); color: var(--text-w); }
 .w-pain-message-box p:last-child { margin-bottom: 0; }
 
 /* ============================================================
+   APPROACH — お悩みとフィロソフィーの橋渡し
+   ============================================================ */
+.w-approach {
+  background: var(--warm-beige);
+}
+.w-approach-lead {
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+  font-weight: 500;
+  color: var(--navy);
+  letter-spacing: 0.06em;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.w-approach-intro {
+  font-size: 15px;
+  color: var(--text-w-mid);
+  line-height: 2;
+  max-width: 640px;
+  margin: 0 auto 56px;
+}
+.w-approach-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 0;
+}
+.w-approach-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px 24px;
+  border-top: 3px solid var(--rose);
+  box-shadow: 0 4px 20px rgba(244,104,138,0.07);
+}
+.w-approach-card-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  color: var(--rose);
+  margin-bottom: 12px;
+}
+.w-approach-card h3 {
+  font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 12px;
+  letter-spacing: 0.06em;
+  line-height: 1.6;
+}
+.w-approach-card p {
+  font-size: 13px;
+  color: var(--text-w-mid);
+  line-height: 1.9;
+}
+@media (max-width: 768px) {
+  .w-approach-cards { grid-template-columns: 1fr; gap: 16px; }
+  .w-approach-intro { text-align: left; }
+}
+
+/* ============================================================
    CONCEPT — 全画面写真 + テキスト
    ============================================================ */
 .w-concept {
@@ -1204,6 +1265,35 @@ body { background: var(--cream); color: var(--text-w); }
 </section>
 
 <!-- ============================================================
+     APPROACH — お悩みとフィロソフィーの橋渡し
+     ============================================================ -->
+<section class="w-section w-approach">
+  <div class="w-section-inner" style="text-align:center; max-width:860px;">
+    <p class="w-approach-lead">今のあなたに必要な、<br>あなただけのステップを。</p>
+    <p class="w-approach-intro">婚活と一言で言っても、100人いれば、100通りの婚活があります。<br>
+    世の中の婚活ノウハウをどれだけ集めても、それが「今のあなた」に合っていなければ、ただ疲れてしまうだけ。<br><br>
+    ハルカゼでは、世間の「正しさ」にあなたをハメ込むのではなく、<br>今のあなたに本当に必要なアプローチを一緒に見つけ、進みます。</p>
+    <div class="w-approach-cards">
+      <div class="w-approach-card">
+        <div class="w-approach-card-num">01</div>
+        <h3>心の土台をつくる</h3>
+        <p>「正しさの鎧」を脱ぎ、自分の本音や本当に望む未来をクリアにします。</p>
+      </div>
+      <div class="w-approach-card">
+        <div class="w-approach-card-num">02</div>
+        <h3>実践的なスキル磨き</h3>
+        <p>心地よいパートナーシップを築くための、具体的な対話のコツを学びます。</p>
+      </div>
+      <div class="w-approach-card">
+        <div class="w-approach-card-num">03</div>
+        <h3>一歩を踏み出す伴走</h3>
+        <p>実際の活動の不安を、心理学の視点を取り入れながら一緒に紐解きます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
      CONCEPT — 全画面写真 + テキスト
      ============================================================ -->
 <section class="w-concept">
@@ -1218,10 +1308,10 @@ body { background: var(--cream); color: var(--text-w); }
     </p>
     <p class="w-concept-body">
       誰かに合わせるために「頑張る」くらいなら、1人の人生も悪くない。<br>
-      でも、自分のしあわせのために「欲張る」人生は、もっといい。<br>
+      でも、自分のしあわせのために「欲張る」人生は、もっといい。<br><br>
       婚活は、あなたの人生が動き出す「きっかけ」<br><br>
       「こうだったらいいな」という人生を、自分で選んで、そのために動く。<br>
-      だけど、1人で動き出すのはエネルギーがいるから。<br>
+      だけど、1人で動き出すのはエネルギーがいるから。<br><br>
       一緒に進む、賢い婚活を選びませんか。
     </p>
     <a href="about.html" class="w-concept-link">About Us — もっと読む</a>
