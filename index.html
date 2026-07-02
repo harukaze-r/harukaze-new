@@ -559,6 +559,23 @@ body { background: var(--cream); color: var(--text-w); }
   line-height: 2;
   margin-bottom: 24px;
 }
+.w-point-category {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--rose);
+  font-family: 'Cormorant Garamond', serif;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.w-point-subtitle {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--navy);
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+  margin-bottom: 14px;
+  opacity: 0.75;
+}
 .w-point-tags {
   display: flex;
   flex-wrap: wrap;
@@ -752,6 +769,62 @@ body { background: var(--cream); color: var(--text-w); }
 }
 .w-voice-name { font-size: 13px; font-weight: 500; color: var(--text-w); }
 .w-voice-attr { font-size: 11px; color: var(--text-w-light); }
+
+/* ============================================================
+   LAB CTA セクション
+   ============================================================ */
+.w-lab-cta {
+  background: linear-gradient(135deg, #1A2A44 0%, #2D4468 100%);
+}
+.w-lab-cta-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 20px;
+  font-family: var(--font-sans);
+}
+.w-lab-cta-title {
+  font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 0.12em;
+  margin-bottom: 32px;
+  line-height: 1.4;
+}
+.w-lab-cta-title em {
+  font-style: normal;
+  color: var(--rose);
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+}
+.w-lab-cta-body {
+  font-size: 15px;
+  color: rgba(255,255,255,0.75);
+  line-height: 2;
+  margin-bottom: 40px;
+  text-align: left;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.w-lab-cta-body strong {
+  color: #fff;
+  font-weight: 500;
+}
+.w-lab-cta-btn {
+  display: inline-block;
+  background: #fff;
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  padding: 14px 40px;
+  border-radius: 100px;
+  transition: background 0.2s, transform 0.2s;
+  font-family: var(--font-sans);
+}
+.w-lab-cta-btn:hover { background: var(--rose); color: #fff; transform: translateY(-2px); opacity: 1; }
 
 /* ============================================================
    COMPARE
@@ -1350,12 +1423,14 @@ body { background: var(--cream); color: var(--text-w); }
       <!-- POINT 01 -->
       <div class="w-point-item">
         <div class="w-point-img">
-          <img src="newimages/ChatGPT Image 2026年7月2日 00_59_56.png" alt="チャンスの最大化">
+          <img src="newimages/ChatGPT Image 2026年7月2日 00_59_56.png" alt="出会いの環境">
         </div>
         <div class="w-point-body">
           <span class="w-point-num"><em>01</em></span>
-          <h3 class="w-point-title">チャンスの最大化</h3>
-          <p class="w-point-desc">10万人以上が登録する業界最大級のIBJネットワークで、結婚したい意思のある人と出会える</p>
+          <p class="w-point-category">出会いの環境</p>
+          <h3 class="w-point-title">出会いの未来を、妥協しない。</h3>
+          <p class="w-point-subtitle">10万人以上の真剣な出会いが出迎える、業界最大級のプラットフォーム</p>
+          <p class="w-point-desc">結婚への真剣な想いを持った10万人以上が登録する、業界最大級のIBJネットワークをご利用いただけます。お見合いごとの追加料金や、申し込み上限はなし！可能性を狭めず、あなたが心から「この人がいい」と思える選択を、ここから始めましょう。</p>
           <div class="ibj-data">
             <p class="ibj-data-label">IBJ Network Data</p>
             <div class="ibj-data-grid">
@@ -1380,12 +1455,32 @@ body { background: var(--cream); color: var(--text-w); }
       <!-- POINT 02 -->
       <div class="w-point-item w-point-item--reverse">
         <div class="w-point-img">
-          <img src="newimages/スクリーンショット 2025-09-17 155651.png" alt="カウンセリング">
+          <img src="newimages/スクリーンショット 2025-08-08 003934.png" alt="外見プロデュース">
         </div>
         <div class="w-point-body">
           <span class="w-point-num"><em>02</em></span>
-          <h3 class="w-point-title">カウンセリング</h3>
-          <p class="w-point-desc">これまでの生き方、眠っていた価値観―。自分一人ではつい見つけるのが難しい「あなただけの輝き」を掘り起こし、魅力が伝わるプロフィールを作成します。</p>
+          <p class="w-point-category">外見プロデュース</p>
+          <h3 class="w-point-title">自分史上、最高に愛しいわたしへ。</h3>
+          <p class="w-point-subtitle">各分野のプロがプロデュースする、あなただけの外見ときめき戦略</p>
+          <p class="w-point-desc">婚活って、ついつい「お相手に合わせるための自分磨き」になりがち。でも、本当に大切なのは、鏡に映った自分を見て自分が一番ワクワクできることです。ハルカゼでは、ヘア・メイク・ファッションなど、各種のプロフェッショナルがあなたの魅力をまるごとプロデュース。「お見合いでまた会いたい」と思われるのは、テクニックではなく、自分の魅力を120%活かして輝いている自信。</p>
+          <div class="w-point-tags">
+            <span class="w-tag">骨格診断</span>
+            <span class="w-tag">お買い物同行</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- POINT 03 -->
+      <div class="w-point-item">
+        <div class="w-point-img">
+          <img src="newimages/スクリーンショット 2025-09-17 155651.png" alt="内面・プロフィール">
+        </div>
+        <div class="w-point-body">
+          <span class="w-point-num"><em>03</em></span>
+          <p class="w-point-category">内面・プロフィール</p>
+          <h3 class="w-point-title">「これが、わたし」を最高に愛おしく表現する。</h3>
+          <p class="w-point-subtitle">あなたの本音を魅力に変える、パーソナル・プロファイリング</p>
+          <p class="w-point-desc">婚活の「正しさ」や「こうあるべき」に合わせたプロフィールは、読んでいてもどこか窮屈。ハルカゼのカウンセリングでは、これまでの生き方や、自分では気づかなかった眠れる価値観を丁寧に引き出します。あなたが「私自身の人生」を愛し、誇らしく思えるような、唯一無二の魅力を言葉にしてプロフィールへ。あなたの本当の価値が伝わるから、出会う前から「相性の良い人」を引き寄せます。</p>
           <div class="w-point-tags">
             <span class="w-tag">魅力・強み発見</span>
             <span class="w-tag">婚活プラン作成</span>
@@ -1394,31 +1489,17 @@ body { background: var(--cream); color: var(--text-w); }
         </div>
       </div>
 
-      <!-- POINT 03 -->
-      <div class="w-point-item">
-        <div class="w-point-img">
-          <img src="newimages/スクリーンショット 2025-08-08 003934.png" alt="イメージコンサル">
-        </div>
-        <div class="w-point-body">
-          <span class="w-point-num"><em>03</em></span>
-          <h3 class="w-point-title">各種のプロがあなたの魅力を活かしブランディング</h3>
-          <p class="w-point-desc">プロの視点であなたの魅力を最大化する外見戦略をトータルサポート。内面だけでなく見た目も整えることで、マッチング・お見合いの成功率が格段に上がります。</p>
-          <div class="w-point-tags">
-            <span class="w-tag">骨格診断</span>
-            <span class="w-tag">お買い物同行</span>
-          </div>
-        </div>
-      </div>
-
       <!-- POINT 04 -->
       <div class="w-point-item w-point-item--reverse">
         <div class="w-point-img">
-          <img src="newimages/panitan-punpuang-HZ09VYZvAFk-unsplash.jpg" alt="フィードバック">
+          <img src="newimages/panitan-punpuang-HZ09VYZvAFk-unsplash.jpg" alt="LINE伴走サポート">
         </div>
         <div class="w-point-body">
           <span class="w-point-num"><em>04</em></span>
-          <h3 class="w-point-title">確実に前に進む<br>ステップアップ・フィードバック</h3>
-          <p class="w-point-desc">定期面談・お見合い後フィードバック・デートプラン提案など、LINEで迅速にフォロー。悩みも疑問も放置しない、寄り添うサポートをお約束します。</p>
+          <p class="w-point-category">LINE伴走サポート</p>
+          <h3 class="w-point-title">1人で悩まない。だから、迷わず最短ルートで進める。</h3>
+          <p class="w-point-subtitle">心がすり減らないための、プレミアム・伴走フォロー</p>
+          <p class="w-point-desc">婚活で一番エネルギーを使うのは、「これで合ってるのかな？」と1人で悩み、立ち止まってしまう時間です。孤独な婚活はもう終わり。ハルカゼでは、定期的なカウンセリングはもちろん、日々のLINEでも迅速にあなたをフォロー。「次はどんなお洋服で行こう？」「どんな話をしよう？」という小さな疑問も、プロの視点で一緒に紐解き、具体的なアイデアを提案します。</p>
           <div class="w-point-tags">
             <span class="w-tag">定期フィードバック面談</span>
             <span class="w-tag">LINEサポート</span>
@@ -1426,25 +1507,21 @@ body { background: var(--cream); color: var(--text-w); }
         </div>
       </div>
 
-      <!-- POINT 05 -->
-      <div class="w-point-item">
-        <div class="w-point-img">
-          <img src="newimages/スクリーンショット 2026-04-03 154955.png" alt="ハルカゼLAB">
-        </div>
-        <div class="w-point-body">
-          <span class="w-point-num"><em>05</em></span>
-          <h3 class="w-point-title">ハルカゼLAB</h3>
-          <p class="w-point-desc">結婚相談所で出会って本当にうまくいく？失敗したくない！そんなあなたへ、成婚をゴールにしない、しあわせな結婚が続くためのオリジナルサポート</p>
-          <div class="w-point-tags">
-            <span class="w-tag">コーチング</span>
-            <span class="w-tag">自己解析ワーク</span>
-            <span class="w-tag">パートナーシップ</span>
-          </div>
-          <a href="harukaze-lab.html" class="ibj-data-btn" style="margin-top:20px;">ハルカゼLABの詳細を見る →</a>
-        </div>
-      </div>
-
     </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HARUKAZE LAB — 単独セクション
+     ============================================================ -->
+<section class="w-section w-lab-cta">
+  <div class="w-section-inner" style="max-width:800px; text-align:center;">
+    <p class="w-lab-cta-eyebrow">＼ 結婚の、その先までずっと続くしあわせを学ぶ ／</p>
+    <h2 class="w-lab-cta-title">ハルカゼ <em>LAB</em></h2>
+    <p class="w-lab-cta-body">婚活は、成婚したら終わりじゃない。本当に大切なのは、そこから始まる「一生モノのパートナーシップ」をどう育んでいくか。<br><br>
+    ハルカゼLABは、ただ結婚を目指すだけでなく、自分自身を深く知り、お互いを尊重し合える対話の力を身につけるための<strong>「わたしをアップデートする学びの場」</strong>です。<br><br>
+    心理学に基づいたワークや、同じ目標を持つ仲間とのシェア、自分の人生を愛し、2人でしあわせを欲張るための本質的なスキルが身につきます。</p>
+    <a href="harukaze-lab.html" class="w-lab-cta-btn">ハルカゼLABとは？</a>
   </div>
 </section>
 
