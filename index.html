@@ -1135,6 +1135,27 @@ body { background: var(--cream); color: var(--text-w); }
 }
 .w-price-campaign-value span { font-size: 18px; margin-left: 4px; font-family: var(--font-sans); font-weight: 700; background: var(--rose); color: #fff; padding: 2px 8px; border-radius: 4px; vertical-align: middle; }
 .w-price-note { text-align: center; font-size: 12px; color: var(--text-w-light); line-height: 2; margin-top: 20px; }
+.w-price-detail-btn {
+  display: block; width: 100%; margin-top: 20px;
+  background: transparent; border: 1px solid rgba(244,104,138,0.4);
+  color: var(--rose); font-size: 13px; font-weight: 700; letter-spacing: 0.08em;
+  padding: 12px; border-radius: 4px; cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.w-price-detail-btn:hover { background: var(--rose); color: #fff; }
+.w-price-detail-btn--popular { border-color: var(--rose); }
+.w-price-detail-arrow { display: inline-block; transition: transform 0.3s; margin-left: 6px; }
+.w-price-detail-btn[aria-expanded="true"] .w-price-detail-arrow { transform: rotate(180deg); }
+.w-price-detail-btn[aria-expanded="true"] { background: var(--rose); color: #fff; }
+.w-price-detail {
+  margin-top: 16px; border-top: 1px solid rgba(244,104,138,0.15); padding-top: 16px;
+}
+.w-price-detail-list { list-style: none; padding: 0; margin: 0 0 8px; }
+.w-price-detail-list li { font-size: 13px; color: var(--text-w-mid); padding: 7px 0; border-bottom: 1px solid rgba(244,104,138,0.08); display: flex; align-items: flex-start; gap: 8px; }
+.w-price-detail-list li:last-child { border-bottom: none; }
+.w-pd-check { color: #6AB5D6; font-size: 13px; flex-shrink: 0; }
+.w-pd-check--rose { color: var(--rose); font-weight: 700; }
+.w-price-detail-note { font-size: 11px; color: var(--text-w-light); margin: 0; }
 
 /* ============================================================
    BLOG
@@ -1692,6 +1713,7 @@ body { background: var(--cream); color: var(--text-w); }
     <h2 class="w-section-title">料金</h2>
 
     <div class="w-price-cards-wrap">
+      <!-- ライトプラン -->
       <div class="w-price-card">
         <div class="w-price-plan">ライトプラン</div>
         <div class="w-price-grid">
@@ -1707,11 +1729,25 @@ body { background: var(--cream); color: var(--text-w); }
           <ul class="w-price-list">
             <li>入会金　¥33,000</li>
             <li>登録料　¥22,000</li>
-            <li style="font-size:12px; color: var(--text-w-light); border-bottom: none; padding-top: 8px;">※料金はすべて税込表示。</li>
+            <li>成婚料　¥165,000</li>
           </ul>
+        </div>
+        <button class="w-price-detail-btn" onclick="togglePriceDetail(this)" aria-expanded="false">
+          詳細はこちら <span class="w-price-detail-arrow">▼</span>
+        </button>
+        <div class="w-price-detail" hidden>
+          <ul class="w-price-detail-list">
+            <li><span class="w-pd-check">✓</span> お見合い申し込み 月100件</li>
+            <li><span class="w-pd-check">✓</span> プランナーよりご紹介</li>
+            <li><span class="w-pd-check">✓</span> お見合い後フィードバック</li>
+            <li><span class="w-pd-check">✓</span> 定期面談 年6回</li>
+            <li><span class="w-pd-check">✓</span> プロフィール作成</li>
+          </ul>
+          <p class="w-price-detail-note">※料金はすべて税込表示。</p>
         </div>
       </div>
 
+      <!-- パーソナルプラン -->
       <div class="w-price-card w-price-card--popular">
         <div class="w-price-popular-badge">一番人気</div>
         <div class="w-price-plan">パーソナルプラン</div>
@@ -1729,12 +1765,27 @@ body { background: var(--cream); color: var(--text-w); }
             <li>入会金　¥33,000</li>
             <li>登録料　¥33,000</li>
             <li>成婚料　¥230,000</li>
-            <li style="font-size:12px; color: var(--text-w-light); border-bottom: none; padding-top: 8px;">※料金はすべて税込表示。</li>
           </ul>
+        </div>
+        <button class="w-price-detail-btn w-price-detail-btn--popular" onclick="togglePriceDetail(this)" aria-expanded="false">
+          詳細はこちら <span class="w-price-detail-arrow">▼</span>
+        </button>
+        <div class="w-price-detail" hidden>
+          <ul class="w-price-detail-list">
+            <li><span class="w-pd-check">✓</span> お見合い申し込み 月200件</li>
+            <li><span class="w-pd-check">✓</span> プランナーよりご紹介</li>
+            <li><span class="w-pd-check">✓</span> お見合い後フィードバック</li>
+            <li><span class="w-pd-check">✓</span> 定期面談 年12回</li>
+            <li><span class="w-pd-check">✓</span> プロフィール作成</li>
+            <li><span class="w-pd-check w-pd-check--rose">✓</span> プロフィール写真撮影（スタジオ or ロケーション）</li>
+            <li><span class="w-pd-check w-pd-check--rose">✓</span> イメージコンサルタントによるお買い物同行</li>
+            <li><span class="w-pd-check w-pd-check--rose">✓</span> ハルカゼLAB 各講座1回無料</li>
+            <li><span class="w-pd-check w-pd-check--rose">✓</span> お見合いアナリティクス診断</li>
+          </ul>
+          <p class="w-price-detail-note">※料金はすべて税込表示。</p>
         </div>
       </div>
     </div>
-    <a href="service.html" class="w-price-btn">詳細・プラン一覧はこちら</a>
 
     <div class="w-price-campaign">
       <div>
@@ -1848,6 +1899,17 @@ body { background: var(--cream); color: var(--text-w); }
 
   /* ハンバーガーメニュー */
   (function () {
+    function togglePriceDetail(btn) {
+      var detail = btn.nextElementSibling;
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      if (expanded) {
+        detail.hidden = true;
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        detail.hidden = false;
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    }
     var btn = document.getElementById('hamburgerBtn');
     var ovl = document.getElementById('mobileNavOverlay');
     var closeBtn = document.getElementById('mobileNavClose');
