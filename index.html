@@ -516,6 +516,13 @@ body { background: var(--cream); color: var(--text-w); }
   object-fit: contain;
   background: #fff;
 }
+@media (min-width: 769px) {
+  .w-point-extra-img {
+    grid-column: 2;
+    width: 100%;
+    display: block;
+  }
+}
 .w-point-item:hover .w-point-img img {
   transform: scale(1.04);
 }
@@ -564,7 +571,8 @@ body { background: var(--cream); color: var(--text-w); }
     margin-right: -24px !important;
     border-radius: 0 !important;
   }
-  .w-point-img--01 { order: 2; min-height: auto; }
+  .w-point-item--01 .w-point-img--01 { order: 3; min-height: auto; }
+  .w-point-extra-img { order: 2; width: 100% !important; margin-top: 0; border-radius: 0 !important; }
 }
 .w-point-desc {
   font-size: 14px;
@@ -1462,8 +1470,8 @@ body { background: var(--cream); color: var(--text-w); }
             </div>
             <a href="https://www.ibjapan.jp/" target="_blank" rel="noopener noreferrer" class="ibj-data-btn">IBJを詳しく知る →</a>
           </div>
-          <img src="newimages/ChatGPT Image 2026年7月2日 14_44_42.png" alt="" class="w-point-fullwidth-img" style="width:100%; margin-top:24px; border-radius:8px;">
         </div>
+        <img src="newimages/ChatGPT Image 2026年7月2日 14_44_42.png" alt="" class="w-point-fullwidth-img w-point-extra-img" style="border-radius:8px;">
       </div>
 
       <!-- POINT 02 -->
