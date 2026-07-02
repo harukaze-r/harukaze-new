@@ -571,8 +571,9 @@ body { background: var(--cream); color: var(--text-w); }
     margin-right: -24px !important;
     border-radius: 0 !important;
   }
-  .w-point-item--01 .w-point-img--01 { order: 2; min-height: auto; }
-  .w-point-extra-img { order: 3; width: 100% !important; margin-top: 0; border-radius: 0 !important; }
+  .w-point-item--01 .w-point-img--01 { order: 2; min-height: auto; width: 100%; display: flex; justify-content: center; }
+  .w-point-item--01 .w-point-img--01 img { width: 100%; height: auto; object-fit: contain; }
+  .w-point-extra-img { order: 3; width: 100% !important; margin: 0 auto !important; border-radius: 0 !important; display: block; }
 }
 .w-point-desc {
   font-size: 14px;
