@@ -1027,11 +1027,34 @@ body { background: var(--cream); color: var(--text-w); }
   z-index: 0;
 }
 .w-price .w-section-inner { position: relative; z-index: 1; }
+.w-price-cards-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 48px;
+}
 .w-price-card {
   background: var(--warm-beige);
   border-radius: 4px;
-  padding: clamp(36px, 5vw, 56px) clamp(28px, 4vw, 56px);
-  margin-top: 48px;
+  padding: clamp(28px, 4vw, 48px) clamp(20px, 3vw, 40px);
+  position: relative;
+}
+.w-price-card--popular {
+  border: 2px solid var(--rose);
+}
+.w-price-popular-badge {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--rose);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 4px 16px;
+  border-radius: 20px;
+  white-space: nowrap;
 }
 .w-price-plan {
   font-family: 'Cormorant Garamond', serif;
@@ -1250,6 +1273,7 @@ body { background: var(--cream); color: var(--text-w); }
   .w-flow-steps { grid-template-columns: 1fr; gap: 28px; }
   .w-flow-steps::before { display: none; }
 
+  .w-price-cards-wrap { grid-template-columns: 1fr; }
   .w-price-grid { grid-template-columns: 1fr; gap: 24px; }
   .w-price-divider { display: none; }
 }
@@ -1667,26 +1691,50 @@ body { background: var(--cream); color: var(--text-w); }
     <div class="w-section-label">Plans &amp; Pricing</div>
     <h2 class="w-section-title">料金</h2>
 
-    <div class="w-price-card">
-      <div class="w-price-plan">ライトプラン</div>
-      <div class="w-price-grid">
-        <div>
-          <div class="w-price-amount">
-            <span class="w-price-main">¥13,800</span>
-            <span class="w-price-unit">/月</span>
+    <div class="w-price-cards-wrap">
+      <div class="w-price-card">
+        <div class="w-price-plan">ライトプラン</div>
+        <div class="w-price-grid">
+          <div>
+            <div class="w-price-amount">
+              <span class="w-price-main">¥13,800</span>
+              <span class="w-price-unit">/月</span>
+            </div>
+            <div class="w-price-highlight"><span>✦</span><span>お見合い料 無料</span></div>
+            <div class="w-price-highlight"><span>✦</span><span>プロフィール写真撮影 無料</span></div>
           </div>
-          <div class="w-price-highlight"><span>✦</span><span>お見合い料 無料</span></div>
-          <div class="w-price-highlight"><span>✦</span><span>プロフィール写真撮影 無料</span></div>
+          <div class="w-price-divider"></div>
+          <ul class="w-price-list">
+            <li>入会金　¥33,000</li>
+            <li>登録料　¥22,000</li>
+            <li style="font-size:12px; color: var(--text-w-light); border-bottom: none; padding-top: 8px;">※料金はすべて税込表示。</li>
+          </ul>
         </div>
-        <div class="w-price-divider"></div>
-        <ul class="w-price-list">
-          <li>入会金　¥33,000</li>
-          <li>登録料　¥22,000</li>
-          <li style="font-size:12px; color: var(--text-w-light); border-bottom: none; padding-top: 8px;">※料金はすべて税込表示。</li>
-        </ul>
       </div>
-      <a href="service.html" class="w-price-btn">詳細・プラン一覧はこちら</a>
+
+      <div class="w-price-card w-price-card--popular">
+        <div class="w-price-popular-badge">一番人気</div>
+        <div class="w-price-plan">パーソナルプラン</div>
+        <div class="w-price-grid">
+          <div>
+            <div class="w-price-amount">
+              <span class="w-price-main">¥15,800</span>
+              <span class="w-price-unit">/月</span>
+            </div>
+            <div class="w-price-highlight"><span>✦</span><span>お見合い料 無料</span></div>
+            <div class="w-price-highlight"><span>✦</span><span>写真撮影・買い物同行 無料</span></div>
+          </div>
+          <div class="w-price-divider"></div>
+          <ul class="w-price-list">
+            <li>入会金　¥33,000</li>
+            <li>登録料　¥33,000</li>
+            <li>成婚料　¥230,000</li>
+            <li style="font-size:12px; color: var(--text-w-light); border-bottom: none; padding-top: 8px;">※料金はすべて税込表示。</li>
+          </ul>
+        </div>
+      </div>
     </div>
+    <a href="service.html" class="w-price-btn">詳細・プラン一覧はこちら</a>
 
     <div class="w-price-campaign">
       <div>
