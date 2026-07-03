@@ -239,6 +239,45 @@
 .cross { color: #ddd; }
 .compare-note { font-size: 10px; color: #aaa; margin-top: 10px; text-align: right; }
 
+/* キャンペーン */
+.svc-campaign {
+  margin-top: 28px;
+  background: linear-gradient(135deg, #FFF9C4 0%, #FFF0A0 100%);
+  border-radius: 16px;
+  border: 2.5px dashed var(--c-coral);
+  padding: 40px 32px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+.svc-campaign::before {
+  content: '★ SPECIAL OFFER ★';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  background: var(--c-coral);
+  color: #fff;
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  text-align: center;
+  padding: 4px 0;
+  font-family: 'Cormorant Garamond', serif;
+}
+.svc-campaign-label { font-size: 11px; letter-spacing: 0.25em; color: var(--c-coral); margin-bottom: 4px; font-family: 'Cormorant Garamond', serif; font-weight: 700; }
+.svc-campaign-title { font-size: 15px; font-weight: 700; color: #111; }
+.svc-campaign-value {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--c-coral);
+  text-align: center;
+  line-height: 1;
+}
+.svc-campaign-value span { font-size: 18px; margin-left: 4px; font-weight: 700; background: var(--c-coral); color: #fff; padding: 2px 8px; border-radius: 4px; vertical-align: middle; }
+
 /* ── CTA ── */
 .cta-section { background: #ffffff; padding: 96px 24px; text-align: center; color: var(--navy); }
 .cta-title { font-size: clamp(22px, 4vw, 36px); font-weight: 700; margin-bottom: 16px; line-height: 1.5; }
@@ -388,25 +427,13 @@
 
         </div><!-- /plan-grid -->
 
-        <!-- オトナ男子LABチケット -->
-        <div class="lab-card" id="lab-ticket">
-          <div class="lab-card-header">
-            <div>
-              <span class="lab-tag-badge">会員以外もOK</span>
-              <div class="lab-card-title">オトナ男子<span>LAB</span></div>
-            </div>
-            <div class="lab-pay-badge">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M7 12h10M7 16h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-              PayPay払いOK
-            </div>
+        <!-- キャンペーン -->
+        <div class="svc-campaign">
+          <div>
+            <p class="svc-campaign-label">CAMPAIGN</p>
+            <p class="svc-campaign-title">他社乗換え割引キャンペーン</p>
           </div>
-          <div class="lab-tickets" style="grid-template-columns: 1fr; max-width: 300px;">
-            <div class="lab-ticket">
-              <div class="ticket-name">チケット1枚</div>
-              <div class="ticket-price">1,000<span>円</span></div>
-              <div class="ticket-per">※各講座初回利用時</div>
-            </div>
-          </div>
+          <div class="svc-campaign-value">¥33,000<span>OFF</span></div>
         </div>
 
       </div><!-- /plan-wrap -->
