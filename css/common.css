@@ -189,9 +189,9 @@ ul, ol { list-style: none; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #F4688A !important;
+  background: #06C755 !important;
   color: #fff !important;
-  border: 1.5px solid #F4688A;
+  border: 1.5px solid #06C755;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -202,9 +202,9 @@ ul, ol { list-style: none; }
   opacity: 1 !important;
 }
 .nav-cta:hover {
-  background: #D94F73 !important;
+  background: #05a847 !important;
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(244,104,138,0.3) !important;
+  box-shadow: 0 4px 14px rgba(6,199,85,0.3) !important;
 }
 
 /* ハンバーガー */
