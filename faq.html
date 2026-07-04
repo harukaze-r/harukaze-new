@@ -385,6 +385,31 @@
 <script src="js/common.js"></script>
 <script>
   /* ハンバーガーメニュー */
+  /* FAQタブ切り替え */
+  (function () {
+    var tabs = document.querySelectorAll('.faq-tab');
+    var categories = document.querySelectorAll('.faq-category');
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        tabs.forEach(function (t) { t.classList.remove('active'); });
+        categories.forEach(function (c) { c.classList.remove('active'); });
+        tab.classList.add('active');
+        var target = document.getElementById(tab.getAttribute('data-target'));
+        if (target) target.classList.add('active');
+      });
+    });
+  })();
+
+  /* アコーディオン */
+  (function () {
+    document.querySelectorAll('.faq-question').forEach(function (q) {
+      q.addEventListener('click', function () {
+        var item = q.closest('.faq-item');
+        item.classList.toggle('open');
+      });
+    });
+  })();
+
   (function () {
     var btn = document.getElementById('hamburgerBtn');
     var ovl = document.getElementById('mobileNavOverlay');
