@@ -340,6 +340,39 @@ body.nav-open { overflow: hidden; }
 /* ============================================================
    FOOTER
    ============================================================ */
+
+/* オトナ男子の婚活バー */
+.footer-men-bar {
+  background: #0f1a2e;
+  text-align: center;
+  padding: 28px 24px;
+}
+.footer-men-link {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: #1a2540;
+  color: #fff;
+  padding: 18px 48px;
+  border-radius: 2px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  transition: background 0.2s, transform 0.2s;
+  font-family: 'Cormorant Garamond', serif;
+  line-height: 1.5;
+  text-decoration: none;
+}
+.footer-men-link span {
+  font-size: 11px;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.12em;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 400;
+}
+.footer-men-link:hover { background: #243060; transform: translateY(-2px); opacity: 1; }
+
 .site-footer {
   background: #F4688A;
   color: rgba(255,255,255,0.8);
