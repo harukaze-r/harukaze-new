@@ -25,7 +25,7 @@
   background: radial-gradient(ellipse 70% 80% at 20% 80%, rgba(184,199,230,0.15) 0%, transparent 60%);
   pointer-events: none;
 }
-.page-hero-label { font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--pink, #D4637C); margin-bottom: 12px; font-weight: 700; position: relative; font-family: 'Noto Sans JP', sans-serif; }
+.page-hero-label { font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--rose, #F4688A); margin-bottom: 12px; font-weight: 700; position: relative; font-family: 'Noto Sans JP', sans-serif; }
 .page-hero-title { font-size: clamp(18px, 2.8vw, 26px); font-weight: 500; line-height: 1.5; position: relative; color: #1A2A44; font-family: 'Noto Sans JP', sans-serif; letter-spacing: 0.06em; }
 
 /* ── タイムライン ── */
@@ -33,7 +33,7 @@
 .timeline::before {
   content: ''; position: absolute;
   left: 29px; top: 0; bottom: 0; width: 2px;
-  background: linear-gradient(to bottom, #B8C7E6, #D4637C, #1A2A44);
+  background: linear-gradient(to bottom, rgba(244,104,138,0.4), #F4688A, #1A2A44);
   opacity: 0.3;
 }
 .tl-item { position: relative; padding-left: 76px; margin-bottom: 36px; }
@@ -46,7 +46,7 @@
   box-shadow: 0 4px 12px rgba(74,98,120,0.25);
 }
 .tl-num strong { font-size: 16px; font-weight: 700; }
-.tl-item.goal .tl-num { background: #D4637C; color: #fff; }
+.tl-item.goal .tl-num { background: #F4688A; color: #fff; }
 .tl-card {
   background: #fff; border: 1px solid rgba(26,42,68,0.1);
   border-radius: 14px; padding: 22px 24px 20px;
@@ -61,7 +61,7 @@
 }
 .tl-title { font-size: 17px; font-weight: 700; color: #1A2A44; margin-bottom: 10px; }
 .tl-body { font-size: 14px; line-height: 1.9; color: rgba(26,42,68,0.7); white-space: pre-line; }
-.tl-item.goal .tl-card { border-color: #D4637C; }
+.tl-item.goal .tl-card { border-color: #F4688A; }
 
 @media (min-width: 768px) {
   .timeline::before { left: 33px; }
@@ -79,7 +79,7 @@
   transition: box-shadow 0.2s, transform 0.2s;
 }
 .meet-card:hover { box-shadow: 0 6px 24px rgba(74,98,120,0.09); transform: translateY(-2px); }
-.meet-num { font-size: 11px; letter-spacing: 0.16em; color: #B8C7E6; margin-bottom: 8px; font-weight: 700; }
+.meet-num { font-size: 11px; letter-spacing: 0.16em; color: rgba(244,104,138,0.4); margin-bottom: 8px; font-weight: 700; }
 .meet-icon { font-size: 32px; margin-bottom: 10px; }
 .meet-title { font-size: 15px; font-weight: 700; color: #1A2A44; margin-bottom: 8px; }
 .meet-text { font-size: 13px; color: rgba(26,42,68,0.7); line-height: 1.7; }
