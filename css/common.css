@@ -106,10 +106,10 @@ ul, ol { list-style: none; }
   top: 0; left: 0; right: 0;
   z-index: 900;
   height: var(--nav-h);
-  background: rgba(234,248,253,0.97);
+  background: rgba(255,255,255,0.96);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 0.5px solid #d0eef8;
+  border-bottom: 0.5px solid rgba(244,104,138,0.15);
   display: flex;
   align-items: center;
   justify-content: space-between;
