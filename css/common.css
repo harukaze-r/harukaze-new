@@ -291,7 +291,7 @@ ul, ol { list-style: none; }
   font-size: 15px;
   font-weight: 500;
   letter-spacing: 0.12em;
-  color: var(--navy);
+  color: #F4688A;
 }
 .mobile-nav-overlay a {
   font-family: var(--font-serif);
