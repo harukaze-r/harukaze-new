@@ -351,6 +351,15 @@ ul, ol { list-style: none; }
   color: #fff !important;
   opacity: 1;
 }
+.mobile-nav-renew-note {
+  font-size: 11px;
+  color: #888;
+  letter-spacing: 0.06em;
+  text-align: center;
+  line-height: 1.7;
+  margin-top: 8px;
+  padding: 0 16px;
+}
 
 body.nav-open { overflow: hidden; }
 
