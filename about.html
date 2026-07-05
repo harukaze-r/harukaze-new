@@ -257,13 +257,16 @@ body { background: #ffffff !important; }
   margin-bottom: 56px;
 }
 @media (max-width: 600px) {
-  .shin-circles-wrap { grid-template-columns: 1fr; }
+  .shin-circles-wrap { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .shin-circle-ja { font-size: clamp(14px, 4vw, 20px); }
+  .shin-circle-desc { font-size: 10px; }
 }
 .shin-circles-top { display: contents; }
 .shin-circles-bottom { display: contents; }
 .shin-circle {
-  border-radius: 0;
-  padding: clamp(32px, 5vw, 56px) clamp(20px, 3vw, 36px);
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  padding: clamp(24px, 4vw, 40px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -274,7 +277,7 @@ body { background: #ffffff !important; }
 }
 .shin-circle-1,
 .shin-circle-2,
-.shin-circle-3 { background: #F4688A; }
+.shin-circle-3 { background: #FBCCD8; }
 
 .shin-circle-num { display: none; }
 .shin-circle-en {
