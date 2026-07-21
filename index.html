@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>結婚相談所ハルカゼ｜20・30代の結婚相談所</title>
+<meta name="description" content="大阪・吹田発、全国オンライン対応の結婚相談所ハルカゼ。IBJ正規加盟、最短5ヶ月・平均1年以内の成婚実績。「頑張る婚活」をやめて、あなたらしいまま進める伴走型サポート。20・30代向け。">
 <link rel="icon" href="newimages/使用ロゴ.jpeg">
 <meta property="og:image" content="newimages/h. (1).png">
 <meta property="og:title" content="結婚相談所ハルカゼ｜20・30代のための賢い婚活のススメ">
@@ -381,6 +382,15 @@ body { background: var(--cream); color: var(--text-w); }
   color: var(--text-w-mid);
   line-height: 2;
 }
+.w-approach-closing {
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(244,104,138,0.2);
+  font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+  font-size: 15px;
+  line-height: 2.1;
+  color: var(--navy);
+}
 @media (max-width: 768px) {
   .w-approach-cards {
     grid-template-columns: 1fr;
@@ -616,6 +626,30 @@ body { background: var(--cream); color: var(--text-w); }
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+}
+
+.w-point-more { margin: -8px 0 24px; }
+.w-point-more summary {
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--rose);
+  letter-spacing: 0.08em;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-bottom: 1px solid var(--rose);
+  padding-bottom: 1px;
+  width: fit-content;
+}
+.w-point-more summary::-webkit-details-marker { display: none; }
+.w-point-more summary::after { content: '+'; font-size: 13px; }
+.w-point-more[open] summary::after { content: '−'; }
+.w-point-more[open] summary { margin-bottom: 12px; }
+.w-point-more-body {
+  font-size: 13px;
+  color: var(--text-w-mid);
+  line-height: 2;
 }
 
 @media (max-width: 768px) {
@@ -1330,12 +1364,6 @@ body { background: var(--cream); color: var(--text-w); }
 }
 .btn-cta-outline:hover { background: #e8faf0; transform: translateY(-2px); opacity: 1; }
 .w-cta-note { font-size: 12px; color: var(--text-w-light); letter-spacing: 0.08em; }
-.w-cta-men {
-  margin-top: 56px;
-  padding-top: 40px;
-  border-top: 1px solid rgba(0,0,0,0.08);
-}
-.w-cta-men p { font-size: 11px; color: var(--text-w-light); margin-bottom: 14px; letter-spacing: 0.14em; text-transform: uppercase; }
 .btn-men-link {
   display: inline-flex;
   flex-direction: column;
@@ -1437,7 +1465,6 @@ body { background: var(--cream); color: var(--text-w); }
     オトナ男子の婚活
     <span>男性の婚活はこちら</span>
   </a>
-  <p class="mobile-nav-renew-note">現在サイトリニューアル中です、詳細はLINEにてお問合せください！</p>
 </div>
 
 <main>
@@ -1454,11 +1481,10 @@ body { background: var(--cream); color: var(--text-w); }
   <div class="w-hero-content">
     <p class="w-hero-eyebrow">婚活から、早く卒業したい人へ。</p>
     <h1 class="w-hero-headline">
-      「"頑張る婚活"は、もうやめる。」<br>
+      "頑張る婚活"は、もうやめる。<br>
       そのほうが、うまくいく。
     </h1>
     <p class="w-hero-sub">
-      最短5ヶ月、平均1年以内の成婚実績。<br>
       頑張るからじゃなく、合うやり方だから、早い。
     </p>
     <div class="w-hero-cta-btns">
@@ -1531,27 +1557,31 @@ body { background: var(--cream); color: var(--text-w); }
      ============================================================ -->
 <section class="w-section w-approach">
   <div class="w-section-inner" style="text-align:center; max-width:860px;">
-    <p class="w-approach-lead">今のあなたに必要な、<br>あなただけのステップを。</p>
-    <p class="w-approach-intro">婚活と一言で言っても、100人いれば、100通り。<br>
-    世の中の婚活ノウハウをどれだけ集めても、それがあなたに合っていなければ、ただ疲れてしまうだけ。<br><br>
-    ハルカゼでは、婚活の「セオリー」にあなたをハメ込むのではなく、<br>今のあなたに本当に必要なアプローチを一緒に見つけ、進みます。</p>
+    <p class="w-approach-lead">マッチングアプリや<br>他社で上手くいかなかった、<br>あなたのための婚活へ。</p>
+    <p class="w-approach-intro">ハルカゼでは、3つのことを大切にしています。</p>
     <div class="w-approach-cards">
       <div class="w-approach-card">
         <div class="w-approach-card-num">01</div>
-        <h3>出会うための土台をつくる</h3>
-        <p>「正しさの鎧」を脱ぎ、自分の本音や本当に望む未来をクリアにします。</p>
+        <h3>理想の言語化</h3>
+        <p>「条件だけで決めていいの？」そのモヤモヤを、まず言葉にする。</p>
       </div>
       <div class="w-approach-card">
         <div class="w-approach-card-num">02</div>
-        <h3>実践的なスキル磨き</h3>
-        <p>心地よいパートナーシップを築くための、具体的な対話のコツを学びます。</p>
+        <h3>納得の意思決定</h3>
+        <p>「この人でいいのか」の違和感を、放置しない。</p>
       </div>
       <div class="w-approach-card">
         <div class="w-approach-card-num">03</div>
-        <h3>一歩を踏み出す伴走</h3>
-        <p>実際の活動の不安を、心理学の視点を取り入れながら一緒に紐解きます。</p>
+        <h3>自走する力</h3>
+        <p>結婚はゴールじゃない。ここで得た習慣が、その先も続く。</p>
       </div>
     </div>
+    <p class="w-approach-closing">
+      「出会えないこと」より、<br>「選択を間違えること」が怖いから。<br><br>
+      焦らず、丁寧に。<br>
+      目の前の不安を一つずつクリアにして、<br>
+      納得できる「答え」を見つけます。
+    </p>
   </div>
 </section>
 
@@ -1566,11 +1596,11 @@ body { background: var(--cream); color: var(--text-w); }
   <div class="w-concept-content">
     <div class="w-section-label">Our Philosophy</div>
     <p class="w-concept-quote">
-      出会うために、<br>自分を作り変えなくていい。
+      婚活のセオリーよりも、<br>あなたの「納得」を一番に大切にしたい。
     </p>
     <p class="w-concept-body">
-      誰かに選ばれるための婚活じゃなく、<br>
-      自分を大事にしたまま進める婚活があります。
+      誰かの作った「正解」より、<br>
+      あなたのしあわせを見つけていきます。
     </p>
     <a href="about.html" class="w-concept-link">About Us — もっと読む</a>
   </div>
@@ -1596,7 +1626,11 @@ body { background: var(--cream); color: var(--text-w); }
           <span class="w-point-num"><em>01</em></span>
           <h3 class="w-point-title">出会いのチャンスの最大化</h3>
           <p class="w-point-subtitle">10万人以上の真剣な出会いが出迎える、業界最大級のプラットフォーム</p>
-          <p class="w-point-desc">結婚への真剣な想いを持った10万人以上が登録する、業界最大級のIBJネットワークをご利用いただけます。<span style="color:#D94F73; font-weight:600;">お見合いごとの追加料金や、申し込み上限はなし！</span>可能性を狭めず、あなたが妥協せず「この人がいい」と思える選択を、ここから。</p>
+          <p class="w-point-desc">業界最大級のIBJネットワークで、真剣な10万人以上との出会いへ。お見合い料・申込上限もなし。</p>
+          <details class="w-point-more">
+            <summary>もっと見る</summary>
+            <p class="w-point-more-body">結婚への真剣な想いを持った10万人以上が登録する、業界最大級のIBJネットワークをご利用いただけます。<span style="color:#D94F73; font-weight:600;">お見合いごとの追加料金や、申し込み上限はなし！</span>可能性を狭めず、あなたが妥協せず「この人がいい」と思える選択を、ここから。</p>
+          </details>
           <div class="ibj-data">
             <p class="ibj-data-label">IBJ Network Data</p>
             <div class="ibj-data-grid">
@@ -1626,8 +1660,12 @@ body { background: var(--cream); color: var(--text-w); }
         </div>
         <div class="w-point-body">
           <span class="w-point-num"><em>02</em></span>
-          <h3 class="w-point-title">自分史上、最高に！外見プロデュース</h3>
-          <p class="w-point-desc">婚活って、ついつい「お相手に合わせるための自分磨き」になりがち。でも、本当に大切なのは、鏡に映った自分を見て自分が一番ワクワクできること。ハルカゼでは、ヘア・メイク・ファッションなど、各種のプロフェッショナルがあなたの魅力をまるごとプロデュース。「お見合いでまた会いたい」と思われるのは、テクニックではなく、自分の魅力を120%活かして輝いている自信。</p>
+          <h3 class="w-point-title">あなたらしさが、もっと伝わる見た目づくり</h3>
+          <p class="w-point-desc">ヘア・メイク・ファッションのプロが、今のあなたの魅力をもっと自然に引き出すお手伝いをします。</p>
+          <details class="w-point-more">
+            <summary>もっと見る</summary>
+            <p class="w-point-more-body">婚活って、ついつい「お相手に合わせるための自分磨き」になりがち。でも、本当に大切なのは、鏡に映った自分を見て自分が一番ワクワクできること。ハルカゼでは、ヘア・メイク・ファッションなど、各種のプロフェッショナルが、今のあなたの魅力をもっと自然に引き出すお手伝いをします。「お見合いでまた会いたい」と思われるのは、作り込んだテクニックではなく、自分らしさを活かして輝いている自信。</p>
+          </details>
           <div class="w-point-tags">
             <span class="w-tag">骨格診断</span>
             <span class="w-tag">お買い物同行</span>
@@ -1646,7 +1684,11 @@ body { background: var(--cream); color: var(--text-w); }
           <p class="w-point-category">内面・プロフィール</p>
           <h3 class="w-point-title">「これが、わたし」を最高に愛おしく表現する。</h3>
           <p class="w-point-subtitle">あなたの本音を魅力で伝える</p>
-          <p class="w-point-desc">婚活の「正しさ」や「こうあるべき」に合わせたプロフィールは、読んでいてもどこか窮屈。ハルカゼのカウンセリングでは、これまでの生き方や、自分では気づかなかった眠れる価値観を丁寧に引き出します。あなたが「私自身の人生」を愛し、誇らしく思えるような、唯一無二の魅力を言葉にしてプロフィールへ。あなたの本当の価値が伝わるから、出会う前から「相性の良い人」を引き寄せます。</p>
+          <p class="w-point-desc">眠れる価値観を丁寧に引き出し、あなたらしい唯一無二のプロフィールへ言葉にします。</p>
+          <details class="w-point-more">
+            <summary>もっと見る</summary>
+            <p class="w-point-more-body">婚活の「正しさ」や「こうあるべき」に合わせたプロフィールは、読んでいてもどこか窮屈。ハルカゼのカウンセリングでは、これまでの生き方や、自分では気づかなかった眠れる価値観を丁寧に引き出します。あなたが「私自身の人生」を愛し、誇らしく思えるような、唯一無二の魅力を言葉にしてプロフィールへ。あなたの本当の価値が伝わるから、出会う前から「相性の良い人」を引き寄せます。</p>
+          </details>
           <div class="w-point-tags">
             <span class="w-tag">魅力・強み発見</span>
             <span class="w-tag">婚活プラン作成</span>
@@ -1663,7 +1705,11 @@ body { background: var(--cream); color: var(--text-w); }
         <div class="w-point-body">
           <span class="w-point-num"><em>04</em></span>
           <h3 class="w-point-title">1人で悩まない。LINE伴走サポート</h3>
-          <p class="w-point-desc">婚活で一番エネルギーを使うのは、「これで合ってるのかな？」と1人で悩み、立ち止まってしまう時間です。孤独な婚活はもう終わり。ハルカゼでは、定期的なカウンセリングはもちろん、日々のLINEでも迅速にあなたをフォロー。「次はどんなお洋服で行こう？」「どんな話をしよう？」という小さな疑問も、具体的なアイデアを提案します。</p>
+          <p class="w-point-desc">定期カウンセリングに加え、日々のLINEでも迅速にフォロー。1人で悩む時間をなくします。</p>
+          <details class="w-point-more">
+            <summary>もっと見る</summary>
+            <p class="w-point-more-body">婚活で一番エネルギーを使うのは、「これで合ってるのかな？」と1人で悩み、立ち止まってしまう時間です。孤独な婚活はもう終わり。ハルカゼでは、定期的なカウンセリングはもちろん、日々のLINEでも迅速にあなたをフォロー。「次はどんなお洋服で行こう？」「どんな話をしよう？」という小さな疑問も、具体的なアイデアを提案します。</p>
+          </details>
           <div class="w-point-tags">
             <span class="w-tag">定期フィードバック面談</span>
             <span class="w-tag">LINEサポート</span>
@@ -1684,7 +1730,7 @@ body { background: var(--cream); color: var(--text-w); }
     <h2 class="w-lab-cta-title">ハルカゼ <em>LAB</em></h2>
     <p class="w-lab-cta-body">「結婚相談所で出会って、本当にうまくいく？」<br>
     婚活は、成婚したら終わりじゃない。本当に大切なのは、そこから始まる「一生モノのパートナーシップ」をどう育んでいくか。<br>
-    ハルカゼLABは、「自分をアップデートする学びの場」です。</p>
+    ハルカゼLABは、「一人で抱えなくていい、一緒に整理する場」です。</p>
     <a href="harukaze-lab.html" class="w-lab-cta-btn">ハルカゼLABとは？</a>
   </div>
 </section>
@@ -1941,12 +1987,6 @@ body { background: var(--cream); color: var(--text-w); }
       </a>
     </div>
     <p class="w-cta-sub">オンライン40分　｜　全国対応　｜　完全無料</p>
-    <div class="w-cta-men">
-      <a href="men.html" class="btn-men-link">
-        オトナ男子の婚活
-        <span>男性の婚活はこちら →</span>
-      </a>
-    </div>
   </div>
 </section>
 
@@ -1961,10 +2001,6 @@ body { background: var(--cream); color: var(--text-w); }
       <div style="margin-top: 16px;">
         <img src="images/Photoroom_20260409_154324.png" alt="結婚相談所ハルカゼ ロゴ" style="height: 112px; width: auto;">
       </div>
-      <a href="men.html" class="footer-men-btn">
-        オトナ男子の婚活
-        <span>男性の婚活はこちら →</span>
-      </a>
     </div>
     <div class="footer-links">
       <ul>

@@ -261,25 +261,44 @@ body { background: #ffffff !important; }
   .shin-circle-ja { font-size: clamp(14px, 4vw, 20px); }
   .shin-circle-desc { font-size: 10px; }
 }
+@media (max-width: 480px) {
+  .shin-circles-wrap {
+    grid-template-columns: 1fr;
+    max-width: 260px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 24px;
+  }
+  .shin-circle-ja { font-size: 22px; }
+  .shin-circle-desc { font-size: 12px; }
+}
 .shin-circles-top { display: contents; }
 .shin-circles-bottom { display: contents; }
 .shin-circle {
-  border-radius: 50%;
-  aspect-ratio: 1 / 1;
-  padding: clamp(24px, 4vw, 40px);
+  background: #fff;
+  border-radius: 6px;
+  border-top: 2px solid var(--rose);
+  padding: clamp(28px, 4vw, 36px) clamp(20px, 3vw, 28px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
   position: relative;
-  overflow: hidden;
 }
 .shin-circle-1,
 .shin-circle-2,
-.shin-circle-3 { background: #FBCCD8; }
+.shin-circle-3 { background: #fff; }
 
-.shin-circle-num { display: none; }
+.shin-circle-num {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  font-weight: 400;
+  color: var(--rose);
+  opacity: 0.35;
+  line-height: 1;
+  margin-bottom: 8px;
+}
 .shin-circle-en {
   font-family: var(--font-display);
   font-size: 11px;
@@ -300,7 +319,7 @@ body { background: #ffffff !important; }
 }
 .shin-circle-ja {
   font-family: var(--font-serif);
-  font-size: clamp(22px, 3vw, 30px);
+  font-size: clamp(20px, 2.6vw, 26px);
   font-weight: 500;
   color: var(--navy);
   letter-spacing: 0.1em;
@@ -309,12 +328,12 @@ body { background: #ffffff !important; }
   z-index: 1;
 }
 .shin-circle-desc {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--navy);
   opacity: 0.7;
   letter-spacing: 0.04em;
   line-height: 1.6;
-  margin-top: 6px;
+  margin-top: 10px;
   position: relative;
   z-index: 1;
   padding: 0 12px;
@@ -478,6 +497,27 @@ body { background: #ffffff !important; }
   text-align: left;
 }
 .vision-body strong { color: var(--navy); font-weight: 500; }
+.vision-highlight {
+  text-align: center;
+  margin: 44px 0;
+}
+.vision-highlight::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--rose);
+  margin: 0 auto 28px;
+}
+.vision-highlight p {
+  font-family: var(--font-serif);
+  font-size: clamp(16px, 2.3vw, 20px);
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 2;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
 
 /* ── VALUE 3カード ── */
 .value-section {
@@ -674,7 +714,7 @@ body { background: #ffffff !important; }
 /* ============================================================
    NEW SECTIONS (PDF redesign)
    ============================================================ */
-:root { --accent-warm: #c9603a; }
+:root { --accent-warm: #c9603a; --rose: #F4688A; }
 
 /* SLIDE 1 — Magazine Hero */
 .msg-hero {
@@ -1195,7 +1235,8 @@ body { background: #ffffff !important; }
        SLIDE 1 — Magazine Hero
        ============================================================ -->
   <section class="msg-hero">
-    <p class="msg-hero-sub">いい結婚は、<br>いい恋愛体質から。</p>
+    <p style="font-family: var(--font-serif); font-size: clamp(14px, 1.8vw, 16px); color: var(--text-light); letter-spacing: 0.05em; line-height: 2; margin-bottom: 32px;">「いつか、いい人に出会えたら」<br>そう思いながら、なんとなく時間だけが過ぎていく——<br>その感覚、ありませんか？</p>
+    <p class="msg-hero-sub">婚活は、<br>ひとつのきっかけ。</p>
   </section>
 
   <!-- ============================================================
@@ -1206,8 +1247,8 @@ body { background: #ffffff !important; }
       <div class="msg-split">
         <div class="msg-text-col">
           <span class="msg-section-tag">Message from Harukaze</span>
-          <p class="msg-body" style="font-size: clamp(17px, 2vw, 20px); color: var(--navy); font-weight: 500; line-height: 1.6; margin-bottom: 20px; font-family: 'Shippori Mincho', 'Noto Serif JP', serif; letter-spacing: 0.06em;">それは、変わることじゃなく、<br>気づくことから始まる。</p>
-          <p class="msg-body">「いい人と出会えたら、幸せになれる」<br>そう思って婚活をしている人は、実はとても多い。<br><br>でも、本当にうまくいっている人を見ていると、<br>少し違うことに気づきます。<br><br><strong style="font-weight: 600;">出会いのチャンスを、自分から掴みにいく。<br>自分の見た目や心地よさに、手をかける。<br>そして、本音を後回しにしない。</strong><br><br>この3つを、誰かのためじゃなく、<br>自分のために大事にできている人から、<br>婚活は、うまくいく。<br><br>ハルカゼが婚活を通してお手伝いしたいのは、<br>"運命の人"を探すことだけじゃありません。<br>あなたが、あなた自身の幸せに、<br>少しずつ気づいていくこと。</p>
+          <p class="msg-body" style="font-size: clamp(17px, 2vw, 20px); color: var(--navy); font-weight: 500; line-height: 1.6; margin-bottom: 20px; font-family: 'Shippori Mincho', 'Noto Serif JP', serif; letter-spacing: 0.06em;">いちばん近くで、<br>いちばんフラットに。</p>
+          <p class="msg-body">婚活は、小さな選択の積み重ね。<br>デートの準備も、ふとした違和感も。<br>どんなことでも聞かせてください。<br><br>プロの視点で、あなたの味方として<br>一緒に答えを出していきます。</p>
           <div class="msg-signature">
             <p class="msg-signature-name">
               <span>代表・マッチングプランナー</span>
@@ -1224,16 +1265,26 @@ body { background: #ffffff !important; }
   </section>
 
   <!-- ============================================================
-       SLIDE 4 — Vision
+       SLIDE 3 — Philosophy
        ============================================================ -->
-  <section class="vision-section" id="vision">
-    <div class="vision-inner">
-      <span class="section-eyebrow fade-up">Vision</span>
+  <section class="section-deco-wrap" style="padding: var(--section-py) clamp(24px, 5vw, 48px); background: var(--bg); position: relative;">
+    <span class="corner-deco corner-deco-tl"><svg width="120" height="120" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="6" r="3" fill="currentColor"/><circle cx="18" cy="12" r="3" fill="currentColor"/><circle cx="12" cy="18" r="3" fill="currentColor"/><circle cx="6" cy="12" r="3" fill="currentColor"/><circle cx="12" cy="12" r="2.5" fill="currentColor"/></svg></span>
+    <span class="corner-deco corner-deco-br"><svg width="120" height="120" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="6" r="3" fill="currentColor"/><circle cx="18" cy="12" r="3" fill="currentColor"/><circle cx="12" cy="18" r="3" fill="currentColor"/><circle cx="6" cy="12" r="3" fill="currentColor"/><circle cx="12" cy="12" r="2.5" fill="currentColor"/></svg></span>
+    <div class="vision-inner" style="position: relative; z-index: 1;">
+      <span class="section-eyebrow fade-up">Philosophy</span>
       <div class="vision-rule fade-up delay-1"></div>
-      <p class="vision-title fade-up delay-1" style="font-size: clamp(18px, 2.5vw, 26px); font-weight: 500; color: var(--navy); text-align: center; margin-bottom: 28px; line-height: 1.6; font-family: 'Shippori Mincho', 'Noto Serif JP', serif; letter-spacing: 0.06em;">しあわせを、めぐらせる。</p>
-      <p class="vision-body fade-up delay-2" style="text-align: center;">あなたが誰よりも自分がしあわせであること。<br>それは、まわりの誰かをハッピーにする最大のパワーだと思う。<br>1人のしあわせが、大切な人たちとの未来に繋がっていく。<br>私たちは「しあわせな1人」から、<br>やさしさがめぐる世界を広げていきます。</p>
+      <p class="vision-title fade-up delay-1" style="font-size: clamp(18px, 2.5vw, 26px); font-weight: 500; color: var(--navy); text-align: center; margin-bottom: 28px; line-height: 1.6; font-family: 'Shippori Mincho', 'Noto Serif JP', serif; letter-spacing: 0.06em;">婚活のセオリーよりも、<br>あなたの「納得」を一番に大切にしたい。</p>
+      <p class="vision-body fade-up delay-2" style="text-align: center;">「こうあるべき」という型に、自分を無理やり当てはめなくて大丈夫。<br>
+      できないことは、やらなくていい。<br>
+      違和感があることは、やらない方がいい。<br><br>
+      誰かの作った「正解」を探すのは、もうおしまい。<br>
+      「正しい婚活」よりも、あなたのしあわせを見つけていきます。</p>
     </div>
   </section>
+
+  <div class="deco-divider">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="6" r="2.2" fill="currentColor"/><circle cx="18" cy="12" r="2.2" fill="currentColor"/><circle cx="12" cy="18" r="2.2" fill="currentColor"/><circle cx="6" cy="12" r="2.2" fill="currentColor"/><circle cx="12" cy="12" r="1.8" fill="currentColor"/></svg>
+  </div>
 
   <!-- ============================================================
        素・良・芯 (Philosophy — unchanged)
@@ -1243,9 +1294,9 @@ body { background: #ffffff !important; }
     <div class="shin-inner">
       <div class="shin-header fade-up">
         <span class="section-eyebrow" style="color: var(--navy-mid);">Philosophy</span>
-        <h2 class="section-title" style="color: var(--navy);">3つの軸</h2>
+        <h2 class="section-title" style="color: var(--navy);">3つの柱</h2>
         <div class="section-rule section-rule-center"></div>
-        <p class="shin-intro"></p>
+        <p class="shin-intro">ハルカゼでは、3つのことを大切にしています。</p>
       </div>
 
       <!-- 三円 -->
@@ -1253,54 +1304,72 @@ body { background: #ffffff !important; }
         <div class="shin-circles-top">
           <div class="shin-circle shin-circle-1" data-detail="1" role="button" tabindex="0" aria-expanded="false">
             <span class="shin-circle-num">1</span>
-            <span class="shin-circle-en">Opportunity</span>
+            <span class="shin-circle-en">Language</span>
             <div class="shin-circle-rule"></div>
-            <span class="shin-circle-ja">出会い</span>
-            <span class="shin-circle-desc">チャンスを<br>最大化する</span>
-            <span class="shin-circle-tap">タップして詳しく</span>
+            <span class="shin-circle-ja">言語化</span>
+            <span class="shin-circle-desc">モヤモヤを<br>言葉にする</span>
+            <span class="shin-circle-tap"></span>
           </div>
         </div>
         <div class="shin-circles-bottom">
           <div class="shin-circle shin-circle-2" data-detail="2" role="button" tabindex="0" aria-expanded="false">
             <span class="shin-circle-num">2</span>
-            <span class="shin-circle-en">Design</span>
+            <span class="shin-circle-en">Decision</span>
             <div class="shin-circle-rule"></div>
-            <span class="shin-circle-ja">魅力</span>
-            <span class="shin-circle-desc">魅力・スキルを<br>磨いて活かす</span>
-            <span class="shin-circle-tap">タップして詳しく</span>
+            <span class="shin-circle-ja">意思決定</span>
+            <span class="shin-circle-desc">違和感を<br>放置しない</span>
+            <span class="shin-circle-tap"></span>
           </div>
           <div class="shin-circle shin-circle-3" data-detail="3" role="button" tabindex="0" aria-expanded="false">
             <span class="shin-circle-num">3</span>
-            <span class="shin-circle-en">Core</span>
+            <span class="shin-circle-en">Momentum</span>
             <div class="shin-circle-rule"></div>
-            <span class="shin-circle-ja">本音</span>
-            <span class="shin-circle-desc">自分の軸に<br>妥協しない</span>
-            <span class="shin-circle-tap">タップして詳しく</span>
+            <span class="shin-circle-ja">自走力</span>
+            <span class="shin-circle-desc">婚活の先も<br>続く習慣に</span>
+            <span class="shin-circle-tap"></span>
           </div>
         </div>
       </div>
-
-      <p style="text-align: center; font-size: 15px; color: var(--navy); margin: 24px 0 0; line-height: 2;">あなたに必要なのはどこだろう？</p>
 
       <!-- 詳細パネル -->
       <div class="shin-detail-panels">
         <div class="shin-detail" id="shin-detail-1">
-          <p class="shin-detail-tag">Opportunity / 出会い</p>
-          <h3 class="shin-detail-heading">出会い・チャンスの最大化</h3>
-          <p class="shin-detail-body">時間を無駄にせず、確実な出会いの場で出会いの数を増やす。正しい場所で、正しく動くことが婚活の第一歩。</p>
+          <p class="shin-detail-tag">01 / 理想の言語化</p>
+          <h3 class="shin-detail-heading">理想の言語化</h3>
+          <p class="shin-detail-body">「条件だけで決めていいの？」そのモヤモヤを、まず言葉にする。</p>
         </div>
         <div class="shin-detail" id="shin-detail-2">
-          <p class="shin-detail-tag">Design / 魅力</p>
-          <h3 class="shin-detail-heading">魅力・スキルを上げる</h3>
-          <p class="shin-detail-body">「もう一度会いたい」の正体は、あなたの「自信」と「魅力」のバランス。磨いて活かすことで、印象は確実に変わる。</p>
+          <p class="shin-detail-tag">02 / 納得の意思決定</p>
+          <h3 class="shin-detail-heading">納得の意思決定</h3>
+          <p class="shin-detail-body">「この人でいいのか」の違和感を、放置しない。</p>
         </div>
         <div class="shin-detail" id="shin-detail-3">
-          <p class="shin-detail-tag">Core / 本音</p>
-          <h3 class="shin-detail-heading">内面：本音を大切にする</h3>
-          <p class="shin-detail-body">「どんな人生で生きていく？」自分の軸に妥協しない。本音を知ることが、本当に合う相手と出会う近道。</p>
+          <p class="shin-detail-tag">03 / 自走する力</p>
+          <h3 class="shin-detail-heading">自走する力</h3>
+          <p class="shin-detail-body">結婚はゴールじゃない。ここで得た習慣が、その先も続く。</p>
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <div class="deco-divider">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="6" r="2.2" fill="currentColor"/><circle cx="18" cy="12" r="2.2" fill="currentColor"/><circle cx="12" cy="18" r="2.2" fill="currentColor"/><circle cx="6" cy="12" r="2.2" fill="currentColor"/><circle cx="12" cy="12" r="1.8" fill="currentColor"/></svg>
+  </div>
+
+  <!-- ============================================================
+       SLIDE 4 — Vision
+       ============================================================ -->
+  <section class="vision-section" id="vision">
+    <div class="vision-inner">
+      <span class="section-eyebrow fade-up">Vision</span>
+      <div class="vision-rule fade-up delay-1"></div>
+      <p class="vision-title fade-up delay-1" style="font-size: clamp(19px, 2.6vw, 26px); font-weight: 500; color: var(--navy); text-align: center; margin-bottom: 28px; line-height: 1.7; font-family: 'Shippori Mincho', 'Noto Serif JP', serif; letter-spacing: 0.06em;">幸せな結婚は、<br>幸せな人から始まる。</p>
+      <p class="vision-body fade-up delay-2" style="text-align: center;">あなたが大切にしているものを、大切にしたい。<br><br>自分を上手に愛せている人は、<br>隣にいる人とも、力を抜いて温かな関係を築いていける。</p>
+      <div class="vision-highlight fade-up delay-2">
+        <p>自分を大切にできる人は、相手も大切にできる。<br>その積み重ねが、パートナーになり、家庭になり、<br>日常に、未来になる。</p>
+      </div>
+      <p class="vision-body fade-up delay-2" style="text-align: center;">あなたの「結婚」のその先に、<br>しあわせがずっと続きますように。</p>
     </div>
   </section>
 
