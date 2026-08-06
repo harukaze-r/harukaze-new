@@ -340,38 +340,99 @@ body { background: var(--cream); color: var(--text-w); }
   max-width: 640px;
   margin: 0 auto 56px;
 }
+.w-bridge-sub {
+  font-size: 14px;
+  color: var(--text-w-light);
+  letter-spacing: 0.06em;
+  margin-bottom: 18px;
+}
+.w-bridge-main {
+  font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+  font-size: clamp(20px, 3vw, 29px);
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+}
+.w-bridge-highlight {
+  color: var(--rose-dark);
+  font-weight: 700;
+  background: linear-gradient(transparent 62%, var(--rose-pale2) 62%);
+  padding: 0 2px;
+}
+.w-philo-title {
+  font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+  font-size: clamp(24px, 4vw, 38px);
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  margin-bottom: 28px;
+}
+.w-philo-term { position: relative; }
+.w-philo-term--1 { color: var(--rose); }
+.w-philo-term--2 { color: var(--rose-dark); }
+.w-philo-term--3 { color: var(--navy); }
+.w-philo-x {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: normal;
+  font-weight: 600;
+  color: var(--navy);
+  opacity: 0.55;
+  margin: 0 8px;
+  font-size: 0.8em;
+}
+.w-philo-rule {
+  width: 44px;
+  height: 2px;
+  background: var(--navy);
+  opacity: 0.45;
+  margin: 0 auto 32px;
+}
+@media (max-width: 480px) {
+  .w-philo-title { letter-spacing: 0.01em; }
+  .w-philo-x { margin: 0 4px; }
+}
 .w-approach-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0;
+  gap: 28px;
   margin-bottom: 0;
-  border-top: 1px solid rgba(244,104,138,0.2);
 }
 .w-approach-card {
-  padding: 40px 32px 0;
+  background: #fff;
+  border-radius: 28px;
+  padding: 44px 28px 36px;
   position: relative;
+  box-shadow: 0 12px 32px rgba(244,104,138,0.16);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-.w-approach-card + .w-approach-card::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 40px; bottom: 0;
-  width: 1px;
-  background: rgba(244,104,138,0.2);
+.w-approach-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(244,104,138,0.24);
 }
 .w-approach-card-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 48px;
-  font-weight: 300;
-  color: var(--rose);
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
   letter-spacing: -0.02em;
   line-height: 1;
-  margin-bottom: 20px;
-  opacity: 0.5;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 16px rgba(244,104,138,0.35);
 }
+.w-approach-card:nth-child(1) .w-approach-card-num { background: linear-gradient(135deg, var(--rose-light), var(--rose)); transform: rotate(-5deg); }
+.w-approach-card:nth-child(2) .w-approach-card-num { background: linear-gradient(135deg, var(--rose), var(--rose-dark)); transform: rotate(4deg); }
+.w-approach-card:nth-child(3) .w-approach-card-num { background: linear-gradient(135deg, #FFC397, #FF9A62); transform: rotate(-4deg); }
 .w-approach-card h3 {
   font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
-  font-size: 17px;
-  font-weight: 500;
+  font-size: 19px;
+  font-weight: 600;
   color: var(--navy);
   margin-bottom: 14px;
   letter-spacing: 0.06em;
@@ -381,6 +442,7 @@ body { background: var(--cream); color: var(--text-w); }
   font-size: 13px;
   color: var(--text-w-mid);
   line-height: 2;
+  text-align: left;
 }
 .w-approach-closing {
   margin-top: 56px;
@@ -394,13 +456,11 @@ body { background: var(--cream); color: var(--text-w); }
 @media (max-width: 768px) {
   .w-approach-cards {
     grid-template-columns: 1fr;
-    border-top: none;
+    gap: 20px;
   }
   .w-approach-card {
-    padding: 28px 0;
-    border-top: 1px solid rgba(244,104,138,0.2);
+    padding: 32px 24px 28px;
   }
-  .w-approach-card + .w-approach-card::before { display: none; }
   .w-approach-intro { text-align: left; }
 }
 
@@ -492,11 +552,13 @@ body { background: var(--cream); color: var(--text-w); }
   gap: 2px;
 }
 .ibj-data-num {
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: 32px;
-  font-weight: 700;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px;
+  font-weight: 600;
   color: var(--rose);
   line-height: 1;
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum";
 }
 .ibj-data-num span {
   font-size: 14px;
@@ -1500,6 +1562,16 @@ body { background: var(--cream); color: var(--text-w); }
 </div>
 
 <!-- ============================================================
+     BRIDGE — ファーストビューと悩みセクションの橋渡し
+     ============================================================ -->
+<section class="w-section w-approach">
+  <div class="w-section-inner" style="text-align:center; max-width:760px;">
+    <p class="w-bridge-sub">婚活を"マッチングの作業"にすると、苦しくなる。</p>
+    <p class="w-bridge-main">ここは、あなたのこれからの<span class="w-bridge-highlight">ワクワク</span>を、<br>増やしていくための場所。</p>
+  </div>
+</section>
+
+<!-- ============================================================
      PAIN
      ============================================================ -->
 <section class="w-section w-pain">
@@ -1517,28 +1589,28 @@ body { background: var(--cream); color: var(--text-w); }
             <div class="w-pain-card-num">01</div>
             <div class="w-pain-card-body">
               <h3>仕事が忙しく<br>婚活に本気になれない</h3>
-              <p>毎日の仕事で精一杯。婚活のために時間もエネルギーも使う余裕が正直ない。</p>
+              <p>気づけば周りは結婚していて、焦りだけが募っていく。</p>
             </div>
           </div>
           <div class="w-pain-card">
             <div class="w-pain-card-num">02</div>
             <div class="w-pain-card-body">
               <h3>マッチングアプリや<br>他社で上手くいかなかった</h3>
-              <p>「メッセージの往復に、力尽きた」——<br><br>出会えても、手応えがなく、頑張ることに疲れた。</p>
+              <p>メッセージのやりとりだけで疲れる。<br><br>がんばろうと動いても、マッチする相手をみては、自分の魅力についてモヤモヤする。</p>
             </div>
           </div>
           <div class="w-pain-card">
             <div class="w-pain-card-num">03</div>
             <div class="w-pain-card-body">
               <h3>なぜか苦しい恋愛を<br>繰り返してしまう</h3>
-              <p>気が利く、いい子といわれるのに大切にされない。</p>
+              <p>気が利く、いい子だと言われる。なのに、大切にされない。<br><br>「もっと頑張れば愛される」と思って尽くすほど、なぜか関係は苦しくなっていく。</p>
             </div>
           </div>
           <div class="w-pain-card">
             <div class="w-pain-card-num">04</div>
             <div class="w-pain-card-body">
               <h3>それなりに順調なはずなのに、<br>ふと虚しくなる</h3>
-              <p>条件のいい人と出会えても、<br>「本当にこの人でいいのかな」と、<br>考えてしまう。</p>
+              <p>1人の時間も楽しめる。だけど、このままでいいのか正解がわからない。</p>
             </div>
           </div>
         </div>
@@ -1549,28 +1621,19 @@ body { background: var(--cream); color: var(--text-w); }
 </section>
 
 <!-- ============================================================
-     APPROACH — お悩みとフィロソフィーの橋渡し
+     PHILOSOPHY — 出会いのチャンス×恋愛コミュ力×マインド
      ============================================================ -->
 <section class="w-section w-approach">
   <div class="w-section-inner" style="text-align:center; max-width:860px;">
-    <p class="w-approach-intro">ハルカゼでは、3つのことを大切にしています。</p>
-    <div class="w-approach-cards">
-      <div class="w-approach-card">
-        <div class="w-approach-card-num">01</div>
-        <h3>理想の言語化</h3>
-        <p>「条件だけで決めていいの？」そのモヤモヤを、まず言葉にする。</p>
-      </div>
-      <div class="w-approach-card">
-        <div class="w-approach-card-num">02</div>
-        <h3>納得の意思決定</h3>
-        <p>「この人でいいのか」の違和感を、放置しない。</p>
-      </div>
-      <div class="w-approach-card">
-        <div class="w-approach-card-num">03</div>
-        <h3>自走する力</h3>
-        <p>結婚はゴールじゃない。ここで得た習慣が、その先も続く。</p>
-      </div>
-    </div>
+    <div class="w-section-label" style="justify-content:center;">Our Approach</div>
+    <h2 class="w-philo-title">
+      <span class="w-philo-term w-philo-term--1">出会いのチャンス</span><span class="w-philo-x">×</span><span class="w-philo-term w-philo-term--2">恋愛コミュ力</span><span class="w-philo-x">×</span><span class="w-philo-term w-philo-term--3">マインド</span>
+    </h2>
+    <div class="w-philo-rule"></div>
+    <p class="w-approach-intro" style="margin-bottom:0;">
+      良い出会いのためには、この3つのバランスが大切。<br>
+      今のあなたに必要なのは、どこだろう。
+    </p>
   </div>
 </section>
 
@@ -1590,7 +1653,8 @@ body { background: var(--cream); color: var(--text-w); }
     <p class="w-concept-body">
       焦らず、丁寧に、<br>
       目の前の不安を一つずつクリアにしながら、<br>
-      あなたの「納得」を一番に大切にしたい。
+      あなたの「納得」を、その先の毎日まで、<br>
+      一番に大切にしたい。
     </p>
     <a href="about.html" class="w-concept-link">About Us — もっと読む</a>
   </div>
@@ -1672,7 +1736,7 @@ body { background: var(--cream); color: var(--text-w); }
         <div class="w-point-body">
           <span class="w-point-num"><em>03</em></span>
           <p class="w-point-category">内面・プロフィール</p>
-          <h3 class="w-point-title">「これが、わたし」を最高に愛おしく表現する。</h3>
+          <h3 class="w-point-title">あなたの魅力をしっかり伝える</h3>
           <p class="w-point-subtitle">あなたの本音を魅力で伝える</p>
           <p class="w-point-desc">眠れる価値観を丁寧に引き出し、あなたらしい唯一無二のプロフィールへ言葉にします。</p>
           <details class="w-point-more">
