@@ -44,8 +44,8 @@ body { background: var(--cream); color: var(--text-w); }
 }
 .site-nav .logo em { color: var(--rose); }
 .nav-links a:hover { color: var(--rose); opacity: 1; }
-.nav-cta { background: var(--rose) !important; color: #fff !important; }
-.nav-cta:hover { background: var(--rose-dark) !important; opacity: 1; }
+.nav-cta { background: var(--rose) !important; color: #fff !important; border-color: var(--rose) !important; }
+.nav-cta:hover { background: var(--rose-dark) !important; border-color: var(--rose-dark) !important; opacity: 1; }
 
 /* ============================================================
    HERO — 全画面写真 + テキストオーバーレイ
@@ -94,6 +94,8 @@ body { background: var(--cream); color: var(--text-w); }
   color: var(--rose);
   margin-bottom: 28px;
   font-family: 'Cormorant Garamond', serif;
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum";
 }
 .w-hero-eyebrow {
   font-family: var(--font-elegant);
@@ -409,7 +411,7 @@ body { background: var(--cream); color: var(--text-w); }
   margin: 0 auto 56px;
 }
 .w-bridge-sub {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--text-w-light);
   letter-spacing: 0.06em;
   margin-bottom: 18px;
@@ -473,15 +475,20 @@ body { background: var(--cream); color: var(--text-w); }
 }
 .w-venn-num {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 20px;
+  font-size: 23px;
   letter-spacing: 0.1em;
   fill: rgba(26,42,68,0.45);
 }
 .w-venn-label {
   font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
-  font-size: 27px;
+  font-size: 31px;
   font-weight: 600;
   fill: var(--navy);
+}
+@media (max-width: 480px) {
+  .w-bridge-sub { font-size: 19px; }
+  .w-venn-num { font-size: 30px; }
+  .w-venn-label { font-size: 40px; }
 }
 .w-approach--reflect { background: #F5F1EC; position: relative; overflow: hidden; }
 .w-confetti {
@@ -1671,8 +1678,9 @@ body { background: var(--cream); color: var(--text-w); }
    RESPONSIVE
    ============================================================ */
 @media (max-width: 900px) {
-  .w-hero { height: 70vh; min-height: 500px; align-items: flex-start; }
-  .w-hero-content { padding: 48px 28px 40px; max-width: none; }
+  .w-hero { height: 70vh; min-height: 500px; align-items: flex-end; }
+  .w-hero-content { padding: 48px 28px 32px; max-width: none; height: 100%; position: relative; }
+  .w-hero-bottom { position: absolute; left: 28px; right: 28px; bottom: 32px; }
   .w-hero-headline { font-size: 20px; }
   .w-hero-scroll { display: none; }
   .w-quote-bar { padding: 24px 24px; }
@@ -1761,18 +1769,22 @@ body { background: var(--cream); color: var(--text-w); }
   <div class="w-hero-overlay"></div>
 
   <div class="w-hero-content">
-    <p class="w-hero-label">20・30代のための結婚相談所</p>
-    <h1 class="w-hero-headline">
-      "頑張る婚活"は、もうやめる。<br>
-      そのほうが、うまくいく。
-    </h1>
-    <p class="w-en-accent">Your Choice, Your Happiness.</p>
-    <p class="w-hero-sub" style="letter-spacing:0.04em; line-height:1.9;">
-      選ばれようと、頑張らなくていい。<br>
-      「婚活用の自分」を、演じなくていい。
-    </p>
-    <div class="w-hero-cta-btns">
-      <a href="apply.html" class="w-hero-cta">無料カウンセリングを予約する →</a>
+    <div class="w-hero-top">
+      <p class="w-hero-label">20・30代のための結婚相談所</p>
+      <h1 class="w-hero-headline">
+        "頑張る婚活"は、もうやめる。<br>
+        そのほうが、うまくいく。
+      </h1>
+    </div>
+    <div class="w-hero-bottom">
+      <p class="w-en-accent">Your Choice, Your Happiness.</p>
+      <p class="w-hero-sub" style="letter-spacing:0.04em; line-height:1.9;">
+        選ばれようと、頑張らなくていい。<br>
+        「婚活用の自分」を、演じなくていい。
+      </p>
+      <div class="w-hero-cta-btns">
+        <a href="apply.html" class="w-hero-cta">無料カウンセリングを予約する →</a>
+      </div>
     </div>
   </div>
 
@@ -1784,7 +1796,7 @@ body { background: var(--cream); color: var(--text-w); }
 
 <!-- QUOTE BAR -->
 <div class="w-quote-bar">
-  <p>オンライン40分｜全国対応｜完全無料　｜最短5ヶ月・平均1年以内の成婚実績｜IBJ正規加盟店</p>
+  <p>オンライン40分｜全国対応｜完全無料<br>最短5ヶ月・平均1年以内の成婚実績</p>
 </div>
 
 <!-- ============================================================
@@ -1795,7 +1807,7 @@ body { background: var(--cream); color: var(--text-w); }
     <div class="w-pain-closing">
       <p>どうやったら出会えるか。どうすれば選ばれるか。<br>なぜ出会えないのか、選ばれないのか。<br>このままでいいのか。</p>
       <p>考えれば考えるほど、すり減っていく。</p>
-      <p>アプリ、街コン、婚活パーティー……<br>結婚相談所に登録したものの、うまく活用できていない。<br>こんなご相談を、よく受けます。</p>
+      <p>アプリ、街コン、婚活パーティー……<br>結婚相談所に登録したものの、<br>うまく活用できていない。<br>こんなご相談を、よく受けます。</p>
     </div>
   </div>
 </section>
@@ -1851,15 +1863,15 @@ body { background: var(--cream); color: var(--text-w); }
             <stop offset="100%" stop-color="#1A2A44"/>
           </linearGradient>
         </defs>
-        <circle cx="260" cy="200" r="180" fill="none" stroke="url(#wvGrad1)" stroke-width="10" opacity="0.4"/>
-        <circle cx="520" cy="200" r="180" fill="none" stroke="url(#wvGrad2)" stroke-width="10" opacity="0.4"/>
-        <circle cx="780" cy="200" r="180" fill="none" stroke="url(#wvGrad3)" stroke-width="10" opacity="0.4"/>
-        <text x="260" y="163" text-anchor="middle" class="w-venn-num">01</text>
-        <text x="260" y="200" text-anchor="middle" class="w-venn-label"><tspan x="260" dy="0">出会いの</tspan><tspan x="260" dy="32">チャンス</tspan></text>
-        <text x="520" y="163" text-anchor="middle" class="w-venn-num">02</text>
-        <text x="520" y="200" text-anchor="middle" class="w-venn-label"><tspan x="520" dy="0">恋愛</tspan><tspan x="520" dy="32">コミュ力</tspan></text>
-        <text x="780" y="163" text-anchor="middle" class="w-venn-num">03</text>
-        <text x="780" y="216" text-anchor="middle" class="w-venn-label">マインド</text>
+        <circle cx="200" cy="200" r="180" fill="none" stroke="url(#wvGrad1)" stroke-width="10" opacity="0.4"/>
+        <circle cx="500" cy="200" r="180" fill="none" stroke="url(#wvGrad2)" stroke-width="10" opacity="0.4"/>
+        <circle cx="800" cy="200" r="180" fill="none" stroke="url(#wvGrad3)" stroke-width="10" opacity="0.4"/>
+        <text x="200" y="163" text-anchor="middle" class="w-venn-num">01</text>
+        <text x="200" y="200" text-anchor="middle" class="w-venn-label"><tspan x="200" dy="0">出会いの</tspan><tspan x="200" dy="32">チャンス</tspan></text>
+        <text x="500" y="163" text-anchor="middle" class="w-venn-num">02</text>
+        <text x="500" y="200" text-anchor="middle" class="w-venn-label"><tspan x="500" dy="0">恋愛</tspan><tspan x="500" dy="32">コミュ力</tspan></text>
+        <text x="800" y="163" text-anchor="middle" class="w-venn-num">03</text>
+        <text x="800" y="216" text-anchor="middle" class="w-venn-label">マインド</text>
       </svg>
     </div>
     <p class="w-approach-poem-intro">
@@ -1978,7 +1990,7 @@ body { background: var(--cream); color: var(--text-w); }
         </div>
         <div class="w-point-body">
           <span class="w-point-num"><em>04</em></span>
-          <h3 class="w-point-title">1人で悩まない。<span class="w-point-title-accent">LINE伴走サポート</span></h3>
+          <h3 class="w-point-title">1人で悩まない。<br><span class="w-point-title-accent">LINE伴走サポート</span></h3>
           <p class="w-point-desc">
             このループ、出会いの数を増やしても解決しません。<br>
             効いてくるのは、自己開示の仕方と、関係を深めるコミュニケーション。
@@ -2273,7 +2285,7 @@ body { background: var(--cream); color: var(--text-w); }
   </div>
   <div class="w-cta-inner">
     <h2 class="w-cta-title">
-      今の延長線上の未来か。<br>選びたい未来か。<br>まずは、話を聞かせてください。
+      今の延長線上の未来か。<br>選びたい未来か。<br><span style="white-space:nowrap;">まずは、話を聞かせてください。</span>
     </h2>
     <p class="w-cta-note">1分で登録完了</p>
     <div class="w-cta-btns">
