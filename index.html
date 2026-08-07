@@ -26,6 +26,7 @@
   --rose-pale:    #FFF3F6;
   --rose-pale2:   #FFE4EC;
   --warm-beige:   #FFF0F4;
+  --neutral-pale: #F7F6F4;
   --cream:        #FFFFFF;
   --text-w:       #222222;
   --text-w-mid:   #666666;
@@ -129,6 +130,23 @@ body { background: var(--cream); color: var(--text-w); }
   margin-bottom: 48px;
   font-family: var(--font-elegant);
 }
+.w-en-accent {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(15px, 1.8vw, 19px);
+  letter-spacing: 0.08em;
+  color: var(--rose);
+  margin-bottom: 20px;
+}
+.w-hero-precta {
+  font-size: 14px;
+  color: var(--text-w-mid);
+  line-height: 1.9;
+  margin-bottom: 32px;
+  padding-left: 14px;
+  border-left: 2px solid var(--rose);
+}
 .w-hero-cta {
   display: inline-flex;
   align-items: center;
@@ -183,25 +201,20 @@ body { background: var(--cream); color: var(--text-w); }
    QUOTE / MESSAGE ライン
    ============================================================ */
 .w-quote-bar {
-  background: var(--rose);
-  padding: 28px 48px;
+  background: var(--navy);
+  padding: 22px 48px;
   text-align: center;
   margin-top: -40px;
   position: relative;
   z-index: 2;
 }
-.quote-br { display: none; }
-.quote-sep { display: inline; }
-@media (max-width: 768px) {
-  .quote-br { display: inline; }
-  .quote-sep { display: none; }
-}
+.w-quote-bar p + p { margin-top: 8px; }
 .w-quote-bar p {
   font-family: var(--font-elegant);
-  font-size: clamp(15px, 2vw, 22px);
+  font-size: clamp(13px, 1.6vw, 16px);
   font-weight: 500;
   color: #fff;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   line-height: 1.7;
 }
 
@@ -242,6 +255,23 @@ body { background: var(--cream); color: var(--text-w); }
   letter-spacing: 0.06em;
   margin-bottom: 40px;
 }
+.w-features .w-section-label {
+  display: block;
+  font-size: clamp(30px, 4.2vw, 42px);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+.w-features .w-section-label::after { display: none; }
+.w-features .w-section-title {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-w-mid);
+  letter-spacing: 0.08em;
+  margin-bottom: 40px;
+}
 .w-section-body {
   font-size: 15px;
   color: var(--text-w-mid);
@@ -271,18 +301,23 @@ body { background: var(--cream); color: var(--text-w); }
   }
 }
 .w-pain-cards {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 0;
+  border-top: 1px solid rgba(244,104,138,0.12);
+  border-left: 1px solid rgba(244,104,138,0.12);
 }
 .w-pain-card {
-  padding: 28px 0;
+  padding: 28px 24px;
   border-bottom: 1px solid rgba(244,104,138,0.12);
+  border-right: 1px solid rgba(244,104,138,0.12);
   display: flex;
   gap: 20px;
   align-items: flex-start;
 }
-.w-pain-card:first-child { border-top: 1px solid rgba(244,104,138,0.12); }
+@media (max-width: 480px) {
+  .w-pain-cards { grid-template-columns: 1fr; }
+}
 .w-pain-card-num {
   font-family: 'Cormorant Garamond', serif;
   font-size: 13px;
@@ -293,10 +328,10 @@ body { background: var(--cream); color: var(--text-w); }
 }
 .w-pain-card-body h3 {
   font-family: var(--font-elegant);
-  font-size: 19px;
+  font-size: 16px;
   font-weight: 500;
   color: var(--text-w);
-  margin-bottom: 8px;
+  margin-bottom: 0;
   line-height: 1.5;
 }
 .w-pain-card-body p {
@@ -317,6 +352,39 @@ body { background: var(--cream); color: var(--text-w); }
   margin-bottom: 16px;
 }
 .w-pain-message-box p:last-child { margin-bottom: 0; }
+.w-pain-closing {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+.w-pain-closing p {
+  font-size: 14px;
+  color: var(--text-w-mid);
+  line-height: 2;
+  margin-bottom: 24px;
+}
+.w-pain-closing-title {
+  font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+  font-size: clamp(19px, 2.6vw, 24px);
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+  margin-bottom: 20px !important;
+}
+.w-pain-closing-emph {
+  position: relative;
+  margin-bottom: 0 !important;
+  padding-top: 32px;
+}
+.w-pain-closing-emph::before {
+  content: '↓';
+  display: block;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--rose);
+  margin-bottom: 14px;
+}
 
 /* ============================================================
    APPROACH — お悩みとフィロソフィーの橋渡し
@@ -362,11 +430,12 @@ body { background: var(--cream); color: var(--text-w); }
 }
 .w-philo-title {
   font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
-  font-size: clamp(24px, 4vw, 38px);
+  font-size: clamp(15px, 4.5vw, 38px);
   font-weight: 700;
   line-height: 1.6;
   letter-spacing: 0.02em;
   margin-bottom: 28px;
+  white-space: nowrap;
 }
 .w-philo-term { position: relative; }
 .w-philo-term--1 { color: var(--rose); }
@@ -388,12 +457,88 @@ body { background: var(--cream); color: var(--text-w); }
   opacity: 0.45;
   margin: 0 auto 32px;
 }
-.w-philo-mobile-break { display: none; }
 @media (max-width: 480px) {
-  .w-philo-title { letter-spacing: 0.01em; }
-  .w-philo-x { margin: 0 4px; }
-  .w-philo-mobile-break { display: block; content: ""; }
+  .w-philo-title { letter-spacing: 0; }
+  .w-philo-x { margin: 0 3px; }
 }
+.w-venn {
+  max-width: 640px;
+  margin: 8px auto 24px;
+}
+.w-venn-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+.w-venn-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  fill: rgba(26,42,68,0.45);
+}
+.w-venn-label {
+  font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+  font-size: 27px;
+  font-weight: 600;
+  fill: var(--navy);
+}
+.w-approach--reflect { background: #F5F1EC; position: relative; overflow: hidden; }
+.w-confetti {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.w-confetti span {
+  position: absolute;
+  display: block;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+.w-approach--reflect .w-section-inner,
+.w-features-confetti-host > *:not(.w-confetti) {
+  position: relative;
+  z-index: 1;
+}
+.w-approach-poem-intro {
+  font-size: 14px;
+  color: var(--text-w-mid);
+  line-height: 2.1;
+  max-width: 560px;
+  margin: 0 auto 44px;
+}
+.w-approach-poem {
+  max-width: 560px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+.w-approach-poem p {
+  font-size: 13px;
+  color: var(--text-w-mid);
+  line-height: 3;
+  margin-bottom: 32px;
+}
+.w-approach-poem-last {
+  font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.8 !important;
+  margin-bottom: 0 !important;
+}
+.w-approach-soft-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--text-w-mid);
+  border-bottom: 1px solid rgba(102,102,102,0.35);
+  padding-bottom: 4px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.w-approach-soft-cta:hover { color: var(--rose-dark); border-color: var(--rose-dark); opacity: 1; }
 .w-approach-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -491,7 +636,7 @@ body { background: var(--cream); color: var(--text-w); }
 .w-concept-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(244,104,138,0.72);
+  background: rgba(26,42,68,0.72);
 }
 .w-concept-content {
   position: relative;
@@ -566,6 +711,63 @@ body { background: var(--cream); color: var(--text-w); }
   font-size: 14px;
   font-family: var(--font-base);
 }
+.w-features-intro {
+  font-size: 15px;
+  color: var(--text-w-mid);
+  line-height: 2;
+  max-width: 620px;
+  margin: 24px 0 40px;
+}
+.w-features-patterns {
+  max-width: 560px;
+  margin: 0 0 8px;
+  padding: 32px 36px;
+  background: var(--neutral-pale);
+  border-radius: 16px;
+}
+.w-features-patterns-lead {
+  font-size: 14px;
+  color: var(--text-w-mid);
+  line-height: 1.9;
+  margin-bottom: 18px;
+}
+.w-features-patterns-list {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+}
+.w-features-patterns-list li {
+  font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.9;
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 10px;
+}
+.w-features-patterns-list li::before {
+  content: '・';
+  position: absolute;
+  left: 0;
+  color: var(--rose);
+}
+.w-features-patterns-close {
+  font-size: 14px;
+  color: var(--rose-dark);
+  font-weight: 600;
+  margin-bottom: 0;
+}
+.w-point-linked-worry {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--rose-dark);
+  background: var(--rose-pale);
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
 /* POINT list layout */
 .w-point-list {
   margin-top: 60px;
@@ -616,27 +818,36 @@ body { background: var(--cream); color: var(--text-w); }
   justify-content: center;
 }
 .w-point-item:nth-child(even) .w-point-body {
-  background: var(--rose-pale);
+  background: var(--neutral-pale);
 }
 .w-point-num {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 11px;
-  letter-spacing: 0.3em;
-  color: var(--rose);
-  text-transform: uppercase;
-  margin-bottom: 16px;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+  margin-bottom: 20px;
 }
 .w-point-num em {
+  font-family: "Cormorant Garamond", serif;
   font-style: normal;
-  font-size: 21px;
-  font-weight: 400;
-  letter-spacing: 0.05em;
-  vertical-align: middle;
-  margin-left: 4px;
+  font-size: 56px;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  color: var(--rose);
+  line-height: 1;
+}
+.w-point-num::after {
+  content: 'Point';
+  font-family: "Cormorant Garamond", serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-top: 4px;
 }
 .w-point-item--04 .w-point-num em {
-  font-size: 28px;
+  font-size: 56px;
 }
 .w-point-item--04 .w-point-title {
   font-size: clamp(18px, 2vw, 26px);
@@ -649,8 +860,13 @@ body { background: var(--cream); color: var(--text-w); }
   line-height: 1.8;
   margin-bottom: 20px;
   letter-spacing: 0.04em;
-  background: linear-gradient(transparent 55%, #FFE566 55%);
-  display: inline;
+  display: block;
+  padding-bottom: 16px;
+  border-bottom: 2px solid rgba(244,104,138,0.25);
+}
+.w-point-title-accent {
+  color: var(--rose);
+  font-weight: 600;
 }
 @media (max-width: 768px) {
   .w-point-fullwidth-img {
@@ -754,6 +970,7 @@ body { background: var(--cream); color: var(--text-w); }
    FEATURES — 画像+テキスト交互
    ============================================================ */
 .w-features { background: #fff; }
+.w-features-confetti-host { position: relative; overflow: hidden; }
 .w-feature-item {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -867,12 +1084,12 @@ body { background: var(--cream); color: var(--text-w); }
   margin-top: 56px;
 }
 .w-voice-card {
-  background: var(--rose-pale);
+  background: var(--neutral-pale);
   padding: 40px 32px;
   position: relative;
 }
-.w-voice-card:nth-child(2) { background: var(--rose-pale2); }
-.w-voice-card:nth-child(3) { background: var(--warm-beige); }
+.w-voice-card:nth-child(2) { background: #F2F1EE; }
+.w-voice-card:nth-child(3) { background: #EFEFEC; }
 .w-voice-mark {
   font-family: 'Cormorant Garamond', serif;
   font-size: 80px;
@@ -909,7 +1126,10 @@ body { background: var(--cream); color: var(--text-w); }
    ============================================================ */
 .w-lab-cta {
   background: linear-gradient(135deg, #1A2A44 0%, #2D4468 100%);
+  position: relative;
+  overflow: hidden;
 }
+.w-lab-cta .w-section-inner { position: relative; z-index: 1; }
 .w-lab-cta-eyebrow {
   font-size: 12px;
   letter-spacing: 0.15em;
@@ -1018,7 +1238,7 @@ body { background: var(--cream); color: var(--text-w); }
 /* ============================================================
    REAL DATA
    ============================================================ */
-.w-realdata { background: var(--warm-beige); }
+.w-realdata { background: var(--neutral-pale); }
 .w-realdata-sub {
   text-align: center;
   font-size: 13px;
@@ -1300,7 +1520,7 @@ body { background: var(--cream); color: var(--text-w); }
 /* ============================================================
    BLOG
    ============================================================ */
-.w-blog { background: var(--warm-beige); }
+.w-blog { background: var(--neutral-pale); }
 .w-blog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -1490,7 +1710,6 @@ body { background: var(--cream); color: var(--text-w); }
   <a href="index.html" class="logo">
     <span class="logo-char">結</span><span class="logo-char">婚</span><span class="logo-char">相</span><span class="logo-char">談</span><span class="logo-char">所</span> <span class="logo-char">ハ</span><span class="logo-char">ル</span><span class="logo-char">カ</span><span class="logo-char">ゼ</span>
     <span>MARRIAGE CONSULTING</span>
-    <em>20・30代のための賢い婚活</em>
   </a>
   <ul class="nav-links">
     <li><a href="about.html">メッセージ</a></li>
@@ -1514,7 +1733,6 @@ body { background: var(--cream); color: var(--text-w); }
   </button>
   <div class="mobile-nav-specialty">
     <span>MARRIAGE CONSULTING</span>
-    <em>20・30代のための賢い婚活</em>
   </div>
   <a href="index.html">ホーム</a>
   <a href="about.html">メッセージ</a>
@@ -1543,10 +1761,16 @@ body { background: var(--cream); color: var(--text-w); }
   <div class="w-hero-overlay"></div>
 
   <div class="w-hero-content">
+    <p class="w-hero-label">20・30代のための結婚相談所</p>
     <h1 class="w-hero-headline">
       "頑張る婚活"は、もうやめる。<br>
       そのほうが、うまくいく。
     </h1>
+    <p class="w-en-accent">Your Choice, Your Happiness.</p>
+    <p class="w-hero-sub" style="letter-spacing:0.04em; line-height:1.9;">
+      選ばれようと、頑張らなくていい。<br>
+      「婚活用の自分」を、演じなくていい。
+    </p>
     <div class="w-hero-cta-btns">
       <a href="apply.html" class="w-hero-cta">無料カウンセリングを予約する →</a>
     </div>
@@ -1560,87 +1784,24 @@ body { background: var(--cream); color: var(--text-w); }
 
 <!-- QUOTE BAR -->
 <div class="w-quote-bar">
-  <p>最短5ヶ月・1年以内の成婚実績<span class="quote-sep">　｜　</span><br class="quote-br">IBJ正規加盟店　｜　全国オンライン対応</p>
+  <p>オンライン40分｜全国対応｜完全無料　｜最短5ヶ月・平均1年以内の成婚実績｜IBJ正規加盟店</p>
 </div>
 
 <!-- ============================================================
-     BRIDGE — ファーストビューと悩みセクションの橋渡し
-     ============================================================ -->
-<section class="w-section w-approach">
-  <div class="w-section-inner" style="text-align:center; max-width:760px;">
-    <p class="w-bridge-sub">婚活を"マッチングの作業"にすると、苦しくなる。</p>
-    <p class="w-bridge-main">あなたの<span class="w-bridge-highlight">ワクワク</span>を、<br>増やしていくための場所。</p>
-  </div>
-</section>
-
-<!-- ============================================================
-     PAIN
+     PAIN — 悩みリスト（見出しなし）
      ============================================================ -->
 <section class="w-section w-pain">
   <div class="w-section-inner">
-    <div class="w-pain-layout">
-      <div class="w-pain-left">
-        <h2 class="w-section-title">こんなお悩み、<br>ご相談いただきます</h2>
-        <img src="newimages/スクリーンショット 2025-09-17 160314.png" alt="" class="w-pain-sub-img">
-        <div class="w-section-body">
-        </div>
-      </div>
-      <div>
-        <div class="w-pain-cards">
-          <div class="w-pain-card">
-            <div class="w-pain-card-num">01</div>
-            <div class="w-pain-card-body">
-              <h3>仕事が忙しく<br>婚活に本気になれない</h3>
-              <p>気づけば周りは結婚していて、焦りだけが募っていく。</p>
-            </div>
-          </div>
-          <div class="w-pain-card">
-            <div class="w-pain-card-num">02</div>
-            <div class="w-pain-card-body">
-              <h3>マッチングアプリや<br>他社で上手くいかなかった</h3>
-              <p>メッセージのやりとりだけで疲れる。<br><br>がんばろうと動いても、マッチする相手をみては、自分の魅力についてモヤモヤする。</p>
-            </div>
-          </div>
-          <div class="w-pain-card">
-            <div class="w-pain-card-num">03</div>
-            <div class="w-pain-card-body">
-              <h3>なぜか苦しい恋愛を<br>繰り返してしまう</h3>
-              <p>気が利く、いい子だと言われる。なのに、大切にされない。<br><br>「もっと頑張れば愛される」と思って尽くすほど、なぜか関係は苦しくなっていく。</p>
-            </div>
-          </div>
-          <div class="w-pain-card">
-            <div class="w-pain-card-num">04</div>
-            <div class="w-pain-card-body">
-              <h3>それなりに順調なはずなのに、<br>ふと虚しくなる</h3>
-              <p>1人の時間も楽しめる。だけど、このままでいいのか正解がわからない。</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="w-pain-closing">
+      <p>どうやったら出会えるか。どうすれば選ばれるか。<br>なぜ出会えないのか、選ばれないのか。<br>このままでいいのか。</p>
+      <p>考えれば考えるほど、すり減っていく。</p>
+      <p>アプリ、街コン、婚活パーティー……<br>結婚相談所に登録したものの、うまく活用できていない。<br>こんなご相談を、よく受けます。</p>
     </div>
-
   </div>
 </section>
 
 <!-- ============================================================
-     PHILOSOPHY — 出会いのチャンス×恋愛コミュ力×マインド
-     ============================================================ -->
-<section class="w-section w-approach">
-  <div class="w-section-inner" style="text-align:center; max-width:860px;">
-    <div class="w-section-label" style="justify-content:center;">Our Approach</div>
-    <h2 class="w-philo-title">
-      <span class="w-philo-term w-philo-term--1">出会いのチャンス</span><span class="w-philo-x">×</span><br class="w-philo-mobile-break"><span class="w-philo-term w-philo-term--2">恋愛コミュ力</span><span class="w-philo-x">×</span><br class="w-philo-mobile-break"><span class="w-philo-term w-philo-term--3">マインド</span>
-    </h2>
-    <div class="w-philo-rule"></div>
-    <p class="w-approach-intro" style="margin-bottom:0;">
-      婚活には、この3つのバランスが必要。<br>
-      今のあなたに必要なのは、どこだろう。
-    </p>
-  </div>
-</section>
-
-<!-- ============================================================
-     CONCEPT — 全画面写真 + テキスト
+     CONCEPT — リフレーム（全画面写真 + テキスト）
      ============================================================ -->
 <section class="w-concept">
   <div class="w-concept-photo">
@@ -1649,22 +1810,81 @@ body { background: var(--cream); color: var(--text-w); }
   <div class="w-concept-overlay"></div>
   <div class="w-concept-content">
     <div class="w-section-label">Our Philosophy</div>
-    <p class="w-concept-body">
-      「出会えないこと」より、<br>
-      「選択を間違えること」が怖いのかもしれない。<br>
-      だから、焦らず、丁寧に、<br>
-      目の前の不安を一つずつクリアにしながら、<br>
-      あなたの「納得」を、その先の毎日まで、<br>
-      一番に大切にしたい。
+    <p class="w-concept-quote">
+      婚活で大切なこと、それは<br>どれだけ動くかよりも<br>どんなあなたで動くか。
     </p>
-    <a href="about.html" class="w-concept-link">About Us — もっと読む</a>
+  </div>
+</section>
+
+<!-- ============================================================
+     APPROACH — 出会いのチャンス×恋愛コミュ力×マインド（手段）
+     ============================================================ -->
+<section class="w-section w-approach w-approach--reflect">
+  <div class="w-confetti" aria-hidden="true">
+    <span style="top:6%; left:6%; width:12px; height:12px; background:var(--rose); opacity:0.55; transform:rotate(-18deg);"></span>
+    <span style="top:12%; right:9%; width:9px; height:9px; background:var(--navy); opacity:0.5; transform:rotate(30deg);"></span>
+    <span style="top:22%; left:14%; width:7px; height:7px; background:#FFC397; opacity:0.6; transform:rotate(-55deg);"></span>
+    <span style="top:38%; left:3%; width:10px; height:10px; background:#FFC397; opacity:0.55; transform:rotate(60deg);"></span>
+    <span style="top:30%; right:4%; width:11px; height:11px; background:var(--rose-light); opacity:0.5; transform:rotate(140deg);"></span>
+    <span style="bottom:26%; left:9%; width:10px; height:10px; background:var(--navy); opacity:0.45; transform:rotate(-40deg);"></span>
+    <span style="bottom:16%; left:20%; width:8px; height:8px; background:var(--rose); opacity:0.4; transform:rotate(15deg);"></span>
+    <span style="top:60%; right:3%; width:9px; height:9px; background:var(--rose); opacity:0.55; transform:rotate(80deg);"></span>
+    <span style="bottom:10%; right:14%; width:10px; height:10px; background:var(--navy); opacity:0.4; transform:rotate(110deg);"></span>
+  </div>
+  <div class="w-section-inner" style="text-align:center; max-width:720px;">
+    <div class="w-section-label" style="justify-content:center;">Our Approach</div>
+    <p class="w-bridge-sub">必要なのはこの３つ</p>
+    <h2 class="w-philo-title sr-only">出会いのチャンス×恋愛コミュ力×マインド</h2>
+    <div class="w-venn" aria-hidden="true">
+      <svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg" class="w-venn-svg">
+        <defs>
+          <linearGradient id="wvGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#F98FAA"/>
+            <stop offset="100%" stop-color="#F4688A"/>
+          </linearGradient>
+          <linearGradient id="wvGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#F4688A"/>
+            <stop offset="100%" stop-color="#D94F73"/>
+          </linearGradient>
+          <linearGradient id="wvGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#8496AE"/>
+            <stop offset="100%" stop-color="#1A2A44"/>
+          </linearGradient>
+        </defs>
+        <circle cx="260" cy="200" r="180" fill="none" stroke="url(#wvGrad1)" stroke-width="10" opacity="0.4"/>
+        <circle cx="520" cy="200" r="180" fill="none" stroke="url(#wvGrad2)" stroke-width="10" opacity="0.4"/>
+        <circle cx="780" cy="200" r="180" fill="none" stroke="url(#wvGrad3)" stroke-width="10" opacity="0.4"/>
+        <text x="260" y="163" text-anchor="middle" class="w-venn-num">01</text>
+        <text x="260" y="200" text-anchor="middle" class="w-venn-label"><tspan x="260" dy="0">出会いの</tspan><tspan x="260" dy="32">チャンス</tspan></text>
+        <text x="520" y="163" text-anchor="middle" class="w-venn-num">02</text>
+        <text x="520" y="200" text-anchor="middle" class="w-venn-label"><tspan x="520" dy="0">恋愛</tspan><tspan x="520" dy="32">コミュ力</tspan></text>
+        <text x="780" y="163" text-anchor="middle" class="w-venn-num">03</text>
+        <text x="780" y="216" text-anchor="middle" class="w-venn-label">マインド</text>
+      </svg>
+    </div>
+    <p class="w-approach-poem-intro">
+      この3つのバランスで理想の出会いが動き始める。
+    </p>
+    <div class="w-approach-poem">
+      <p>出会いの数が足りないなら、場を増やせば解決する。<br>会話が噛み合わないなら、学べば変えられる。</p>
+      <p>でも、"自分は愛される価値がある"と<br>信じきれていないなら、場所や話し方を変えても埋まらない。</p>
+      <p class="w-approach-poem-last">今のあなたに必要なのは、どこだろう。</p>
+    </div>
+    <a href="apply.html" class="w-approach-soft-cta">無料カウンセリングで、自分に必要なところを見つける →</a>
   </div>
 </section>
 
 <!-- ============================================================
      FEATURES — POINT カード
      ============================================================ -->
-<section class="w-section w-features">
+<section class="w-section w-features w-features-confetti-host">
+  <div class="w-confetti" aria-hidden="true">
+    <span style="top:5%; left:4%; width:10px; height:10px; background:var(--navy); opacity:0.45; transform:rotate(-20deg);"></span>
+    <span style="top:10%; right:7%; width:12px; height:12px; background:#FFC397; opacity:0.55; transform:rotate(25deg);"></span>
+    <span style="top:20%; left:12%; width:8px; height:8px; background:var(--rose); opacity:0.5; transform:rotate(-50deg);"></span>
+    <span style="top:32%; right:3%; width:9px; height:9px; background:var(--rose-light); opacity:0.45; transform:rotate(100deg);"></span>
+    <span style="bottom:12%; left:5%; width:10px; height:10px; background:#FFC397; opacity:0.4; transform:rotate(70deg);"></span>
+  </div>
   <div class="w-section-inner">
     <div class="w-section-label">What We Do</div>
     <h2 class="w-section-title">ハルカゼの婚活サポート</h2>
@@ -1673,15 +1893,58 @@ body { background: var(--cream); color: var(--text-w); }
   <div class="w-point-list">
 
       <!-- POINT 01 -->
+      <div class="w-point-item">
+        <div class="w-point-img">
+          <img src="newimages/スクリーンショット 2025-08-08 003934.png" alt="プロフィール写真撮影">
+        </div>
+        <div class="w-point-body">
+          <span class="w-point-num"><em>01</em></span>
+          <h3 class="w-point-title">あなたの良さを引き出す、<br><span class="w-point-title-accent">プロフィール写真撮影</span></h3>
+          <p class="w-point-desc">
+            「盛れる角度」を演じた写真は、本当のあなたが伝わらない。<br><br>
+            ヘア・メイク・ファッションのプロと一緒に、<br>
+            "自然体で一番魅力的なあなた"を撮ります。
+          </p>
+          <div class="w-point-tags">
+            <span class="w-tag">骨格診断</span>
+            <span class="w-tag">お買い物同行</span>
+            <span class="w-tag">プロフィール写真撮影</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- POINT 02 -->
+      <div class="w-point-item w-point-item--reverse">
+        <div class="w-point-img">
+          <img src="newimages/スクリーンショット 2025-09-17 155651.png" alt="プロフィール作成">
+        </div>
+        <div class="w-point-body">
+          <span class="w-point-num"><em>02</em></span>
+          <h3 class="w-point-title">あなたの本音を、<br><span class="w-point-title-accent">あなたの言葉で伝えるプロフィール</span></h3>
+          <p class="w-point-desc">
+            そつなく書けているのに、誰の記憶にも残らない。<br>
+            プランナーが、あなたにしか書けないプロフィールに仕上げます。
+          </p>
+          <div class="w-point-tags">
+            <span class="w-tag">魅力・強み発見</span>
+            <span class="w-tag">婚活プラン作成</span>
+            <span class="w-tag">プロフィール作成</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- POINT 03 -->
       <div class="w-point-item w-point-item--01">
         <div class="w-point-img w-point-img--01">
           <img src="newimages/ChatGPT Image 2026年7月2日 00_59_56.png" alt="出会いのチャンスの最大化">
         </div>
         <div class="w-point-body">
-          <span class="w-point-num"><em>01</em></span>
-          <h3 class="w-point-title">出会いのチャンスの最大化</h3>
-          <p class="w-point-subtitle">10万人以上の真剣な出会いが出迎える、業界最大級のプラットフォーム</p>
-          <p class="w-point-desc">業界最大級のIBJネットワークで、真剣な10万人以上との出会いへ。お見合い料・申込上限もなし。</p>
+          <span class="w-point-num"><em>03</em></span>
+          <h3 class="w-point-title"><span class="w-point-title-accent">出会いのチャンス</span>の最大化</h3>
+          <p class="w-point-desc">
+            10万人以上が登録する、業界最大級のIBJネットワーク。<br>
+            お見合い料・申し込み上限もなし。
+          </p>
           <details class="w-point-more">
             <summary>もっと見る</summary>
             <p class="w-point-more-body">結婚への真剣な想いを持った10万人以上が登録する、業界最大級のIBJネットワークをご利用いただけます。<span style="color:#D94F73; font-weight:600;">お見合いごとの追加料金や、申し込み上限はなし！</span>可能性を狭めず、あなたが妥協せず「この人がいい」と思える選択を、ここから。</p>
@@ -1708,50 +1971,6 @@ body { background: var(--cream); color: var(--text-w); }
         <img src="newimages/ChatGPT Image 2026年7月2日 14_44_42.png" alt="" class="w-point-fullwidth-img w-point-extra-img" style="border-radius:8px;">
       </div>
 
-      <!-- POINT 02 -->
-      <div class="w-point-item w-point-item--reverse">
-        <div class="w-point-img">
-          <img src="newimages/スクリーンショット 2025-08-08 003934.png" alt="外見プロデュース">
-        </div>
-        <div class="w-point-body">
-          <span class="w-point-num"><em>02</em></span>
-          <h3 class="w-point-title">あなたらしさが、もっと伝わる見た目づくり</h3>
-          <p class="w-point-desc">ヘア・メイク・ファッションのプロが、今のあなたの魅力をもっと自然に引き出すお手伝いをします。</p>
-          <details class="w-point-more">
-            <summary>もっと見る</summary>
-            <p class="w-point-more-body">婚活って、ついつい「お相手に合わせるための自分磨き」になりがち。でも、本当に大切なのは、鏡に映った自分を見て自分が一番ワクワクできること。ハルカゼでは、ヘア・メイク・ファッションなど、各種のプロフェッショナルが、今のあなたの魅力をもっと自然に引き出すお手伝いをします。「お見合いでまた会いたい」と思われるのは、作り込んだテクニックではなく、自分らしさを活かして輝いている自信。</p>
-          </details>
-          <div class="w-point-tags">
-            <span class="w-tag">骨格診断</span>
-            <span class="w-tag">お買い物同行</span>
-            <span class="w-tag">プロフィール写真撮影</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- POINT 03 -->
-      <div class="w-point-item">
-        <div class="w-point-img">
-          <img src="newimages/スクリーンショット 2025-09-17 155651.png" alt="内面・プロフィール">
-        </div>
-        <div class="w-point-body">
-          <span class="w-point-num"><em>03</em></span>
-          <p class="w-point-category">内面・プロフィール</p>
-          <h3 class="w-point-title">あなたの魅力をしっかり伝える</h3>
-          <p class="w-point-subtitle">あなたの本音を魅力で伝える</p>
-          <p class="w-point-desc">眠れる価値観を丁寧に引き出し、あなたらしい唯一無二のプロフィールへ言葉にします。</p>
-          <details class="w-point-more">
-            <summary>もっと見る</summary>
-            <p class="w-point-more-body">婚活の「正しさ」や「こうあるべき」に合わせたプロフィールは、読んでいてもどこか窮屈。ハルカゼのカウンセリングでは、これまでの生き方や、自分では気づかなかった眠れる価値観を丁寧に引き出します。あなたが「私自身の人生」を愛し、誇らしく思えるような、唯一無二の魅力を言葉にしてプロフィールへ。あなたの本当の価値が伝わるから、出会う前から「相性の良い人」を引き寄せます。</p>
-          </details>
-          <div class="w-point-tags">
-            <span class="w-tag">魅力・強み発見</span>
-            <span class="w-tag">婚活プラン作成</span>
-            <span class="w-tag">プロフィール作成</span>
-          </div>
-        </div>
-      </div>
-
       <!-- POINT 04 -->
       <div class="w-point-item w-point-item--reverse w-point-item--04">
         <div class="w-point-img">
@@ -1759,8 +1978,11 @@ body { background: var(--cream); color: var(--text-w); }
         </div>
         <div class="w-point-body">
           <span class="w-point-num"><em>04</em></span>
-          <h3 class="w-point-title">1人で悩まない。LINE伴走サポート</h3>
-          <p class="w-point-desc">定期カウンセリングに加え、日々のLINEでも迅速にフォロー。1人で悩む時間をなくします。</p>
+          <h3 class="w-point-title">1人で悩まない。<span class="w-point-title-accent">LINE伴走サポート</span></h3>
+          <p class="w-point-desc">
+            このループ、出会いの数を増やしても解決しません。<br>
+            効いてくるのは、自己開示の仕方と、関係を深めるコミュニケーション。
+          </p>
           <details class="w-point-more">
             <summary>もっと見る</summary>
             <p class="w-point-more-body">婚活で一番エネルギーを使うのは、「これで合ってるのかな？」と1人で悩み、立ち止まってしまう時間です。孤独な婚活はもう終わり。ハルカゼでは、定期的なカウンセリングはもちろん、日々のLINEでも迅速にあなたをフォロー。「次はどんなお洋服で行こう？」「どんな話をしよう？」という小さな疑問も、具体的なアイデアを提案します。</p>
@@ -1780,6 +2002,16 @@ body { background: var(--cream); color: var(--text-w); }
      HARUKAZE LAB — 単独セクション
      ============================================================ -->
 <section class="w-section w-lab-cta">
+  <div class="w-confetti" aria-hidden="true">
+    <span style="top:8%; left:6%; width:11px; height:11px; background:#fff; opacity:0.5; transform:rotate(-18deg);"></span>
+    <span style="top:12%; right:10%; width:10px; height:10px; background:var(--rose-light); opacity:0.6; transform:rotate(20deg);"></span>
+    <span style="top:24%; left:16%; width:8px; height:8px; background:#FFC397; opacity:0.55; transform:rotate(-45deg);"></span>
+    <span style="top:40%; left:3%; width:9px; height:9px; background:var(--rose-light); opacity:0.55; transform:rotate(-30deg);"></span>
+    <span style="top:30%; right:5%; width:9px; height:9px; background:#fff; opacity:0.4; transform:rotate(120deg);"></span>
+    <span style="bottom:16%; left:10%; width:10px; height:10px; background:#fff; opacity:0.45; transform:rotate(50deg);"></span>
+    <span style="bottom:22%; right:16%; width:8px; height:8px; background:var(--rose-light); opacity:0.4; transform:rotate(95deg);"></span>
+    <span style="top:70%; right:4%; width:11px; height:11px; background:#FFC397; opacity:0.5; transform:rotate(70deg);"></span>
+  </div>
   <div class="w-section-inner" style="max-width:800px; text-align:center;">
     <p class="w-lab-cta-eyebrow">＼ 結婚の、その先までずっと続くしあわせを学ぶ ／</p>
     <h2 class="w-lab-cta-title">ハルカゼ <em>LAB</em></h2>
@@ -1844,7 +2076,7 @@ body { background: var(--cream); color: var(--text-w); }
   <div class="w-section-inner" style="max-width:860px;">
     <div class="w-section-label">Real Data</div>
     <h2 class="w-section-title">婚活のリアルデータ</h2>
-    <p class="w-realdata-sub">IBJ結婚みらい研究所が公開する、最新の婚活データはこちら</p>
+    <p class="w-realdata-sub">最新の婚活データはこちら</p>
     <a href="https://www.ibjapan.jp/mirai-lab/" target="_blank" rel="noopener noreferrer" class="w-realdata-link" aria-label="今どきの婚活事情 BY IBJ結婚みらい研究所">
       <div class="w-realdata-img-wrap">
         <img src="newimages/データが導く 「結婚できる人」の平均像と、 婚活のリアル.jpg" alt="今どきの婚活事情 BY IBJ結婚みらい研究所" class="w-realdata-img">
@@ -2029,10 +2261,19 @@ body { background: var(--cream); color: var(--text-w); }
      CTA
      ============================================================ -->
 <section class="w-cta" id="cta">
+  <div class="w-confetti" aria-hidden="true">
+    <span style="top:6%; left:6%; width:11px; height:11px; background:var(--rose); opacity:0.55; transform:rotate(-20deg);"></span>
+    <span style="top:14%; right:8%; width:9px; height:9px; background:var(--navy); opacity:0.4; transform:rotate(25deg);"></span>
+    <span style="top:24%; left:16%; width:8px; height:8px; background:#FFC397; opacity:0.55; transform:rotate(-50deg);"></span>
+    <span style="top:34%; left:3%; width:10px; height:10px; background:#FFC397; opacity:0.5; transform:rotate(50deg);"></span>
+    <span style="top:30%; right:4%; width:10px; height:10px; background:var(--rose-light); opacity:0.5; transform:rotate(130deg);"></span>
+    <span style="bottom:18%; left:8%; width:9px; height:9px; background:var(--navy); opacity:0.4; transform:rotate(-45deg);"></span>
+    <span style="bottom:12%; right:16%; width:8px; height:8px; background:var(--rose); opacity:0.4; transform:rotate(90deg);"></span>
+    <span style="top:66%; right:3%; width:10px; height:10px; background:var(--rose); opacity:0.5; transform:rotate(65deg);"></span>
+  </div>
   <div class="w-cta-inner">
-    <p class="w-cta-label">Free Consultation</p>
     <h2 class="w-cta-title">
-      一歩は、ここから。
+      今の延長線上の未来か。<br>選びたい未来か。<br>まずは、話を聞かせてください。
     </h2>
     <p class="w-cta-note">1分で登録完了</p>
     <div class="w-cta-btns">
@@ -2041,7 +2282,7 @@ body { background: var(--cream); color: var(--text-w); }
         <span style="color:#06C755; font-weight:700;">LINE</span>で予約する
       </a>
     </div>
-    <p class="w-cta-sub">オンライン40分　｜　全国対応　｜　完全無料</p>
+    <p class="w-cta-sub">オンライン40分｜全国対応｜完全無料</p>
   </div>
 </section>
 
