@@ -19,6 +19,8 @@ body { background: #ffffff !important; }
 /* common.css override: section-rule をトップページ配色に統一 */
 .section-rule { background: var(--rose); }
 .section-eyebrow span { color: var(--navy); opacity: 0.6; }
+.nav-cta { background: var(--rose) !important; color: #fff !important; border-color: var(--rose) !important; }
+.nav-cta:hover { background: #D94F73 !important; border-color: #D94F73 !important; opacity: 1; }
 
 /* フォント統一: 3つの軸・出会い・魅力・本音 */
 .shin-section .section-title,
@@ -795,7 +797,7 @@ body { background: #ffffff !important; }
 .msg-heading {
   font-family: var(--font-serif);
   font-size: clamp(18px, 2.2vw, 22px);
-  font-weight: 700;
+  font-weight: 500;
   color: var(--navy);
   letter-spacing: 0.04em;
   line-height: 1.6;
@@ -949,38 +951,145 @@ body { background: #ffffff !important; }
   line-height: 1.5;
 }
 .value-cards {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 20px;
-}
-@media (min-width: 640px) {
-  .value-cards { grid-template-columns: repeat(3, 1fr); }
 }
 .value-card-new {
   background: var(--bg-gray);
   border-radius: 8px;
-  padding: 32px 24px;
+  padding: 36px 32px;
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  text-align: left;
 }
 .value-card-new--white {
   background: #fff;
+}
+@media (max-width: 560px) {
+  .value-card-new { flex-direction: column; gap: 16px; }
 }
 .value-card-icon {
   font-size: 32px;
   display: block;
   margin-bottom: 16px;
 }
+.value-card-num-wrap {
+  flex-shrink: 0;
+  width: 72px;
+  text-align: center;
+}
+.value-card-num {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--rose);
+  display: block;
+  line-height: 1;
+}
+.value-card-num-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-top: 6px;
+  display: block;
+}
+.value-card-content { flex: 1; min-width: 0; }
 .value-card-title {
   font-family: var(--font-serif);
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 10px;
+  color: var(--rose);
+  margin-bottom: 14px;
   letter-spacing: 0.04em;
+  padding-bottom: 14px;
+  border-bottom: 2px solid rgba(244,104,138,0.25);
 }
 .value-card-body {
   font-size: 14px;
   line-height: 1.9;
   color: var(--text-mid);
+}
+.value-cards-label {
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--rose);
+  text-align: center;
+  margin: 56px 0 24px;
+}
+.about-en-accent {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(14px, 1.6vw, 17px);
+  letter-spacing: 0.06em;
+  color: var(--rose);
+  text-align: center;
+  margin-bottom: 20px;
+}
+.rep-profile {
+  max-width: 640px;
+  margin: 0 auto 64px;
+  text-align: center;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(26,42,68,0.12);
+}
+.rep-profile-photo {
+  width: 256px;
+  height: 256px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 24px;
+}
+.rep-profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+.rep-profile-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 16px;
+}
+.rep-profile-name {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 2.6vw, 26px);
+  font-weight: 500;
+  color: var(--navy);
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+.rep-profile-name-en {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--text-mid);
+  letter-spacing: 0.04em;
+  margin-left: 6px;
+}
+.rep-profile-meta {
+  font-size: 13px;
+  color: var(--text-mid);
+  letter-spacing: 0.08em;
+  margin-bottom: 24px;
+}
+.rep-profile-bio {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 2;
+  text-align: left;
 }
 
 /* Value 02 split */
@@ -1189,7 +1298,6 @@ body { background: #ffffff !important; }
   <a href="index.html" class="logo">
     <span class="logo-char">結</span><span class="logo-char">婚</span><span class="logo-char">相</span><span class="logo-char">談</span><span class="logo-char">所</span> <span class="logo-char">ハ</span><span class="logo-char">ル</span><span class="logo-char">カ</span><span class="logo-char">ゼ</span>
     <span>MARRIAGE CONSULTING</span>
-    <em>20・30代のための賢い婚活のススメ</em>
   </a>
   <ul class="nav-links">
     <li><a href="about.html">メッセージ</a></li>
@@ -1198,7 +1306,7 @@ body { background: #ffffff !important; }
     <li><a href="flow.html">成婚までの流れ</a></li>
     <li><a href="faq.html">よくある質問</a></li>
     <li><a href="blog.html">ブログ</a></li>
-    <li><a href="men.html" class="nav-men-link">オトナ男子の婚活</a></li>
+    <li><a href="men.html" class="nav-men-link">オトナ男子の婚活はこちら</a></li>
     <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで予約する</a></li>
   </ul>
   <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く">
@@ -1212,7 +1320,6 @@ body { background: #ffffff !important; }
   </button>
   <div class="mobile-nav-specialty">
     <span>MARRIAGE CONSULTING</span>
-    <em>20・30代のための賢い婚活のススメ</em>
   </div>
   <a href="index.html">ホーム</a>
   <a href="about.html">メッセージ</a>
@@ -1232,53 +1339,53 @@ body { background: #ffffff !important; }
 <main>
 
   <!-- ============================================================
-       SLIDE 1 — Magazine Hero
-       ============================================================ -->
-  <section class="msg-hero">
-    <p style="font-family: var(--font-serif); font-size: clamp(14px, 1.8vw, 16px); color: var(--text-light); letter-spacing: 0.05em; line-height: 2; margin-bottom: 32px;">「いつか、いい人に出会えたら」<br>そう思いながら、なんとなく時間だけが過ぎていく——<br>その感覚、ありませんか？</p>
-    <p class="msg-hero-sub">婚活は、<br>ひとつのきっかけ。</p>
-  </section>
-
-  <!-- ============================================================
-       SLIDE 2 — Message from Harukaze
-       ============================================================ -->
-  <section class="msg-section">
-    <div class="msg-section-inner">
-      <div class="msg-split">
-        <div class="msg-text-col">
-          <span class="msg-section-tag">Message from Harukaze</span>
-          <p class="msg-body" style="font-size: clamp(17px, 2vw, 20px); color: var(--navy); font-weight: 500; line-height: 1.6; margin-bottom: 20px; font-family: 'Shippori Mincho', 'Noto Serif JP', serif; letter-spacing: 0.06em;">いちばん近くで、<br>いちばんフラットに。</p>
-          <p class="msg-body">婚活は、小さな選択の積み重ね。<br>デートの準備も、ふとした違和感も。<br>どんなことでも聞かせてください。<br><br>プロの視点で、あなたの味方として<br>一緒に答えを出していきます。</p>
-          <div class="msg-signature">
-            <p class="msg-signature-name">
-              <span>代表・マッチングプランナー</span>
-              石神 りさ
-            </p>
-            <a href="profile.html" class="msg-signature-link">Profile →</a>
-          </div>
-        </div>
-        <div class="msg-photo">
-          <img src="newimages/Photoroom_20260609_200416.jpeg" alt="石神りさ" style="width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:8px;">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       SLIDE 3 — Philosophy
+       SLIDE 2 — ハルカゼの想い
        ============================================================ -->
   <section class="section-deco-wrap" style="padding: var(--section-py) clamp(24px, 5vw, 48px); background: var(--bg); position: relative;">
-    <span class="corner-deco corner-deco-tl"><svg width="120" height="120" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="6" r="3" fill="currentColor"/><circle cx="18" cy="12" r="3" fill="currentColor"/><circle cx="12" cy="18" r="3" fill="currentColor"/><circle cx="6" cy="12" r="3" fill="currentColor"/><circle cx="12" cy="12" r="2.5" fill="currentColor"/></svg></span>
-    <span class="corner-deco corner-deco-br"><svg width="120" height="120" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="6" r="3" fill="currentColor"/><circle cx="18" cy="12" r="3" fill="currentColor"/><circle cx="12" cy="18" r="3" fill="currentColor"/><circle cx="6" cy="12" r="3" fill="currentColor"/><circle cx="12" cy="12" r="2.5" fill="currentColor"/></svg></span>
     <div class="vision-inner" style="position: relative; z-index: 1;">
-      <span class="section-eyebrow fade-up">Philosophy</span>
+      <span class="section-eyebrow fade-up">Our Thoughts</span>
       <div class="vision-rule fade-up delay-1"></div>
-      <p class="vision-title fade-up delay-1" style="font-size: clamp(18px, 2.5vw, 26px); font-weight: 500; color: var(--navy); text-align: center; margin-bottom: 28px; line-height: 1.6; font-family: 'Shippori Mincho', 'Noto Serif JP', serif; letter-spacing: 0.06em;">婚活のセオリーよりも、<br>あなたの「納得」を一番に大切にしたい。</p>
-      <p class="vision-body fade-up delay-2" style="text-align: center;">「こうあるべき」という型に、自分を無理やり当てはめなくて大丈夫。<br>
-      できないことは、やらなくていい。<br>
-      違和感があることは、やらない方がいい。<br><br>
-      誰かの作った「正解」を探すのは、もうおしまい。<br>
-      「正しい婚活」よりも、あなたのしあわせを見つけていきます。</p>
+      <p class="vision-title fade-up delay-1" style="font-size: clamp(20px, 2.8vw, 30px); font-weight: 500; color: var(--navy); text-align: center; margin-bottom: 28px; line-height: 1.6; font-family: 'Shippori Mincho', 'Noto Serif JP', serif; letter-spacing: 0.06em; white-space: nowrap;">人生に、新しい風を。</p>
+      <p class="vision-body fade-up delay-2" style="text-align: center;">ハルカゼが目指しているのは、<br>
+      あなたの中にある「もっとこうだったらいいな」を、<br>
+      ひとつずつ叶えていくこと。<br><br>
+      理想の出会い、理想の自分。<br><br>
+      それは、別の誰かの特別な話じゃない。<br>
+      きっと、あなたが実現していくこと。</p>
+
+      <p class="value-cards-label fade-up delay-2">VALUE（大切にしていること）</p>
+      <div class="value-cards fade-up delay-2">
+        <div class="value-card-new">
+          <div class="value-card-num-wrap">
+            <span class="value-card-num">01</span>
+            <span class="value-card-num-label">Value</span>
+          </div>
+          <div class="value-card-content">
+            <h3 class="value-card-title">面白がる</h3>
+            <p class="value-card-body">不器用なところも、隙のない強さも、全部あなたの魅力。<br>自分を面白がれる人って、きっと自分の人生を一番楽しむ強さを持っている。<br>あなただけの面白さを大切にする。</p>
+          </div>
+        </div>
+        <div class="value-card-new">
+          <div class="value-card-num-wrap">
+            <span class="value-card-num">02</span>
+            <span class="value-card-num-label">Value</span>
+          </div>
+          <div class="value-card-content">
+            <h3 class="value-card-title">「らしさ」を活かす</h3>
+            <p class="value-card-body">あなたの「らしさ」は、あなただけの「特別」。<br>その魅力をしっかり活かし、届けていく。</p>
+          </div>
+        </div>
+        <div class="value-card-new">
+          <div class="value-card-num-wrap">
+            <span class="value-card-num">03</span>
+            <span class="value-card-num-label">Value</span>
+          </div>
+          <div class="value-card-content">
+            <h3 class="value-card-title">「本音」を芯にする</h3>
+            <p class="value-card-body">何が好きで、何が心地いいのか。自分の「本音」をごまかさないこと。</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1287,69 +1394,29 @@ body { background: #ffffff !important; }
   </div>
 
   <!-- ============================================================
-       素・良・芯 (Philosophy — unchanged)
+       SLIDE 3 — 代表メッセージ
        ============================================================ -->
-  <section class="shin-section section-deco-wrap">
-    <!-- 角装飾 -->
-    <div class="shin-inner">
-      <div class="shin-header fade-up">
-        <span class="section-eyebrow" style="color: var(--navy-mid);">Philosophy</span>
-        <h2 class="section-title" style="color: var(--navy);">3つの柱</h2>
-        <div class="section-rule section-rule-center"></div>
-        <p class="shin-intro">ハルカゼでは、3つのことを大切にしています。</p>
+  <section class="msg-section">
+    <div class="msg-section-inner">
+      <div class="rep-profile">
+        <div class="rep-profile-photo">
+          <img src="newimages/IMG_8907.jpeg" alt="石神りさ">
+        </div>
+        <p class="rep-profile-label">代表・マッチングプランナー</p>
+        <p class="rep-profile-name">石神 りさ<span class="rep-profile-name-en">（Ishigami Risa）</span></p>
+        <p class="rep-profile-meta">1987年生まれ ／ 3児の母</p>
+        <p class="rep-profile-bio">金融機関、ベンチャー企業の法人営業、コンサルティングファームでの顧客対応など、一貫して「カタチのない、人と関わる仕事」に携わる。自身の人生が「人との出会いや言葉」によって大きく拓かれてきた経験から、誰かの転機に寄り添い、人と人をつなぐ存在でありたいと「結婚相談所 ハルカゼ」を設立。</p>
       </div>
-
-      <!-- 三円 -->
-      <div class="shin-circles-wrap fade-up delay-1">
-        <div class="shin-circles-top">
-          <div class="shin-circle shin-circle-1" data-detail="1" role="button" tabindex="0" aria-expanded="false">
-            <span class="shin-circle-num">1</span>
-            <span class="shin-circle-en">Language</span>
-            <div class="shin-circle-rule"></div>
-            <span class="shin-circle-ja">言語化</span>
-            <span class="shin-circle-desc">モヤモヤを<br>言葉にする</span>
-            <span class="shin-circle-tap"></span>
-          </div>
-        </div>
-        <div class="shin-circles-bottom">
-          <div class="shin-circle shin-circle-2" data-detail="2" role="button" tabindex="0" aria-expanded="false">
-            <span class="shin-circle-num">2</span>
-            <span class="shin-circle-en">Decision</span>
-            <div class="shin-circle-rule"></div>
-            <span class="shin-circle-ja">意思決定</span>
-            <span class="shin-circle-desc">違和感を<br>放置しない</span>
-            <span class="shin-circle-tap"></span>
-          </div>
-          <div class="shin-circle shin-circle-3" data-detail="3" role="button" tabindex="0" aria-expanded="false">
-            <span class="shin-circle-num">3</span>
-            <span class="shin-circle-en">Momentum</span>
-            <div class="shin-circle-rule"></div>
-            <span class="shin-circle-ja">自走力</span>
-            <span class="shin-circle-desc">婚活の先も<br>続く習慣に</span>
-            <span class="shin-circle-tap"></span>
-          </div>
-        </div>
+      <div class="msg-text-col" style="max-width: 640px; margin: 0 auto;">
+        <span class="msg-section-tag">Message from Harukaze</span>
+        <p class="msg-heading">人との出会いで、<br>人生の風向きが変わることがある。</p>
+        <p class="msg-body">代表の石神りさです。<br>
+        私自身のこれまでの歩みを振り返ると、いつも傍には「誰かとの出会い」や「心に届いた言葉」がありました。人との関わりがあったからこそ、迷ったときも苦しい時も、進みながら自分らしい選択を重ねて来られたと感じています。<br><br>
+        婚活は、自分を見つめ直し、少し勇気のいる選択の連続です。だからこそ、ただお相手を紹介するだけでなく、あなたの本音に耳を傾け、肩の力を抜いて過ごせる伴走者でありたいと思っています。<br><br>
+        「ちょっと話を聞いてほしい」「自分の魅力を再発見してみたい」<br>
+        そんな軽い気持ちで大丈夫です。<br><br>
+        あなたの心が満足する方へ。</p>
       </div>
-
-      <!-- 詳細パネル -->
-      <div class="shin-detail-panels">
-        <div class="shin-detail" id="shin-detail-1">
-          <p class="shin-detail-tag">01 / 理想の言語化</p>
-          <h3 class="shin-detail-heading">理想の言語化</h3>
-          <p class="shin-detail-body">「条件だけで決めていいの？」そのモヤモヤを、まず言葉にする。</p>
-        </div>
-        <div class="shin-detail" id="shin-detail-2">
-          <p class="shin-detail-tag">02 / 納得の意思決定</p>
-          <h3 class="shin-detail-heading">納得の意思決定</h3>
-          <p class="shin-detail-body">「この人でいいのか」の違和感を、放置しない。</p>
-        </div>
-        <div class="shin-detail" id="shin-detail-3">
-          <p class="shin-detail-tag">03 / 自走する力</p>
-          <h3 class="shin-detail-heading">自走する力</h3>
-          <p class="shin-detail-body">結婚はゴールじゃない。ここで得た習慣が、その先も続く。</p>
-        </div>
-      </div>
-
     </div>
   </section>
 
@@ -1364,12 +1431,7 @@ body { background: #ffffff !important; }
     <div class="vision-inner">
       <span class="section-eyebrow fade-up">Vision</span>
       <div class="vision-rule fade-up delay-1"></div>
-      <p class="vision-title fade-up delay-1" style="font-size: clamp(19px, 2.6vw, 26px); font-weight: 500; color: var(--navy); text-align: center; margin-bottom: 28px; line-height: 1.7; font-family: 'Shippori Mincho', 'Noto Serif JP', serif; letter-spacing: 0.06em;">幸せな結婚は、<br>幸せな人から始まる。</p>
-      <p class="vision-body fade-up delay-2" style="text-align: center;">あなたが大切にしているものを、大切にしたい。<br><br>自分を上手に愛せている人は、<br>隣にいる人とも、力を抜いて温かな関係を築いていける。</p>
-      <div class="vision-highlight fade-up delay-2">
-        <p>自分を大切にできる人は、相手も大切にできる。<br>その積み重ねが、パートナーになり、家庭になり、<br>日常に、未来になる。</p>
-      </div>
-      <p class="vision-body fade-up delay-2" style="text-align: center;">あなたの「結婚」のその先に、<br>しあわせがずっと続きますように。</p>
+      <p class="vision-body fade-up delay-2" style="text-align: center;">しあわせのバトンは続く。<br>あなたの「結婚」のその先に、<br>しあわせがずっと続きますように。</p>
     </div>
   </section>
 
@@ -1379,7 +1441,6 @@ body { background: #ffffff !important; }
     <section class="unified-cta" id="cta">
   <div class="unified-cta-inner">
     <p class="unified-cta-label">Free Consultation</p>
-    <h2 class="unified-cta-title">一歩は、ここから。</h2>
     <p class="unified-cta-note">1分で登録完了</p>
     <div class="unified-cta-btns">
       <a href="apply.html" class="unified-btn-primary">無料カウンセリングを予約する</a>
@@ -1422,10 +1483,6 @@ body { background: #ffffff !important; }
   </div>
 </footer>
 
-<div class="float-side-btns">
-  <a href="apply.html" class="float-side-btn float-side-btn-line">初回無料面談を予約する</a>
-  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn float-side-btn-line">LINEで婚活突破口診断</a>
-</div>
 
 <script src="js/common.js"></script>
 <script>
