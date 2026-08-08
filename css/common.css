@@ -264,12 +264,30 @@ ul, ol { list-style: none; }
   -webkit-backdrop-filter: blur(16px);
   z-index: 999;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  padding: 60px 24px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  gap: 22px;
+  padding: 96px 40px 48px;
 }
 .mobile-nav-overlay.open { display: flex; }
+.mobile-nav-overlay::before {
+  content: '';
+  position: fixed;
+  left: 0; top: 0; bottom: 0;
+  width: 6px;
+  background: linear-gradient(180deg, var(--rose), var(--navy));
+  z-index: 1000;
+}
+.mobile-nav-title {
+  font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+  font-size: clamp(20px, 6.5vw, 30px);
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+  white-space: nowrap;
+}
 
 .mobile-nav-close {
   position: absolute;
@@ -293,13 +311,13 @@ ul, ol { list-style: none; }
 .mobile-nav-close span:nth-child(2) { transform: translateY(-3.75px) rotate(-45deg); }
 
 .mobile-nav-specialty {
-  text-align: center;
-  margin-bottom: 8px;
+  text-align: left;
+  margin-bottom: 0;
 }
 .mobile-nav-specialty span {
   display: block;
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 300;
   letter-spacing: 0.25em;
   color: #F4688A;
@@ -316,10 +334,10 @@ ul, ol { list-style: none; }
 }
 .mobile-nav-overlay a {
   font-family: var(--font-serif);
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 400;
   color: var(--navy);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   transition: color 0.2s;
 }
 .mobile-nav-overlay a:hover {
@@ -343,6 +361,36 @@ ul, ol { list-style: none; }
   border: none;
   border-top: 1px solid rgba(26,42,68,0.1);
   margin: 4px 0;
+}
+.mobile-nav-bottom {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.mobile-nav-social {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.mobile-nav-social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  color: var(--text-mid);
+  letter-spacing: 0.04em;
+}
+.mobile-nav-social svg { width: 16px; height: 16px; flex-shrink: 0; }
+.mobile-nav-copy {
+  font-size: 11px;
+  color: var(--text-light);
+  letter-spacing: 0.03em;
+  font-family: var(--font-sans);
 }
 .mobile-nav-overlay .btn-men-link {
   display: inline-flex;
