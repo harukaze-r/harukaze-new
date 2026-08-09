@@ -433,8 +433,11 @@ body { background: var(--cream); color: var(--text-w); }
   margin: 0 auto 56px;
 }
 .w-bridge-sub {
-  font-size: 16px;
-  color: var(--text-w-light);
+  font-family: var(--font-elegant);
+  font-size: clamp(20px, 3vw, 25px);
+  font-weight: 500;
+  color: var(--text-w);
+  line-height: 1.55;
   letter-spacing: 0.06em;
   margin-bottom: 18px;
 }
@@ -508,7 +511,6 @@ body { background: var(--cream); color: var(--text-w); }
   fill: var(--navy);
 }
 @media (max-width: 480px) {
-  .w-bridge-sub { font-size: 19px; }
   .w-venn-num { font-size: 30px; }
   .w-venn-label { font-size: 40px; }
 }
@@ -704,8 +706,8 @@ body { background: var(--cream); color: var(--text-w); }
 }
 .w-rep-section { background: #fff; }
 .w-rep-photo {
-  width: 128px;
-  height: 128px;
+  width: 256px;
+  height: 256px;
   border-radius: 50%;
   overflow: hidden;
   margin: 0 auto 24px;
@@ -727,12 +729,13 @@ body { background: var(--cream); color: var(--text-w); }
 }
 .w-rep-quote {
   font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
-  font-size: clamp(17px, 2.2vw, 21px);
-  font-weight: 600;
+  font-size: clamp(11px, 3.6vw, 20px);
+  font-weight: 500;
   color: var(--navy);
   line-height: 1.8;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   margin-bottom: 20px;
+  white-space: nowrap;
 }
 .w-rep-body {
   font-size: 14px;
@@ -1825,7 +1828,6 @@ body { background: var(--cream); color: var(--text-w); }
     <li><a href="flow.html">成婚までの流れ</a></li>
     <li><a href="faq.html">よくある質問</a></li>
     <li><a href="blog.html">ブログ</a></li>
-    <li><a href="men.html" class="nav-men-link">オトナ男子の婚活はこちら</a></li>
     <li><a href="#switch-campaign" class="nav-switch-link">乗り換えのご相談はこちら</a></li>
     <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで予約する</a></li>
   </ul>
@@ -1935,10 +1937,11 @@ body { background: var(--cream); color: var(--text-w); }
 <section class="w-section w-pain">
   <div class="w-section-inner">
     <div class="w-pain-closing">
-      <p>婚活プロフィール、こうなっていませんか。</p>
+      <p>結婚相談所に登録しているけど、ほとんど自走状態。</p>
       <p>盛りすぎた写真、経歴書のようなプロフィール文。<br>そして「とりあえず会いましょう」で進むマッチング。</p>
-      <p>ハルカゼは、その進め方に違和感があります。</p>
-      <p>アプリ、街コン、婚活パーティー……<br>結婚相談所に登録しているけど、ほとんど自走状態。<br>うまく活用できていない。<br><br>こんなご相談も、よく受けます。</p>
+      <p>無理をしながら進める婚活への違和感。</p>
+      <p>相談所、アプリ、街コン、婚活パーティー……<br>どれもうまく活用できていない。</p>
+      <p>こんなご相談も、よく受けます。</p>
     </div>
   </div>
 </section>
@@ -1957,26 +1960,6 @@ body { background: var(--cream); color: var(--text-w); }
       婚活で大切なこと、それは<br>どれだけ動くかよりも<br>どんなあなたで動くか。
     </p>
     <a href="about.html" class="w-concept-link">About Us — もっと読む →</a>
-  </div>
-</section>
-
-<!-- ============================================================
-     REPRESENTATIVE — 代表者メッセージ
-     ============================================================ -->
-<section class="w-section w-rep-section">
-  <div class="w-section-inner" style="max-width:560px; text-align:center;">
-    <div class="w-rep-photo">
-      <img src="newimages/Photoroom_20260428_162738.jpeg" alt="代表 石神りさ">
-    </div>
-    <p class="w-rep-name">石神 りさ</p>
-    <p class="w-rep-role">代表・マッチングプランナー</p>
-    <p class="w-rep-quote">人との出会いで、<br>人生の風向きが変わることがある。</p>
-    <p class="w-rep-body">
-      「ちょっと話を聞いてほしい」「自分の魅力を再発見してみたい」<br>
-      そんな軽い気持ちで大丈夫です。<br><br>
-      他社で活動中の方も、まずは今の状況を聞かせてください。
-    </p>
-    <a href="about.html" class="w-rep-link">代表からのメッセージを読む →</a>
   </div>
 </section>
 
@@ -2036,7 +2019,7 @@ body { background: var(--cream); color: var(--text-w); }
       <p>ハルカゼは、あなたの状況や想いに寄り添いながら、<br>客観的な視点でサポートします。</p>
       <p>一人で悩む時間を減らし、納得のいく決断へ。</p>
       <p>理想はある。迷いもある。妥協もしたくない。</p>
-      <p class="w-approach-poem-last">ハルカゼは、その「こうだったらいいな」を叶える、<br>きっかけの場所です。</p>
+      <p>ハルカゼは、その<span style="color:var(--rose-dark); font-weight:600;">「こうだったらいいな」</span>を叶える、<br>きっかけの場所です。</p>
     </div>
     <a href="apply.html" class="w-approach-soft-cta">無料カウンセリングで、自分に必要なところを見つける →</a>
   </div>
@@ -2067,7 +2050,7 @@ body { background: var(--cream); color: var(--text-w); }
         </div>
         <div class="w-point-body">
           <span class="w-point-num"><em>01</em></span>
-          <h3 class="w-point-title">あなたの良さを引き出す、<br><span class="w-point-title-accent">プロフィール写真撮影</span></h3>
+          <h3 class="w-point-title">あなたの良さを活かす<br><span class="w-point-title-accent">プロフィール写真撮影</span></h3>
           <p class="w-point-desc">
             「盛れる角度」を演じた写真は、本当のあなたが伝わらない。<br>
             よくある婚活写真は、アイドル図鑑のように整いすぎている。<br><br>
@@ -2089,7 +2072,7 @@ body { background: var(--cream); color: var(--text-w); }
         </div>
         <div class="w-point-body">
           <span class="w-point-num"><em>02</em></span>
-          <h3 class="w-point-title">あなたの本音を、<br><span class="w-point-title-accent">あなたの言葉で伝えるプロフィール</span></h3>
+          <h3 class="w-point-title">あなたの本音で、<br><span class="w-point-title-accent">価値観の合う人に出会えるプロフィール</span></h3>
           <p class="w-point-desc">
             そつなく書けているのに、誰の記憶にも残らない。<br>
             経歴はわかるのに、「どんな人か」が伝わらない文章。<br><br>
@@ -2167,6 +2150,21 @@ body { background: var(--cream); color: var(--text-w); }
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     REPRESENTATIVE — 代表者メッセージ
+     ============================================================ -->
+<section class="w-section w-rep-section">
+  <div class="w-section-inner" style="max-width:560px; text-align:center;">
+    <div class="w-rep-photo">
+      <img src="newimages/Photoroom_20260428_162738.jpeg" alt="代表 石神りさ">
+    </div>
+    <p class="w-rep-name">石神 りさ</p>
+    <p class="w-rep-role">代表・マッチングプランナー</p>
+    <p class="w-rep-quote">婚活のセオリーよりも、大切にしたいのはあなたの納得感</p>
+    <a href="about.html" class="w-rep-link">メッセージ →</a>
   </div>
 </section>
 
