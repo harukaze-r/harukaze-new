@@ -46,6 +46,28 @@ body { background: var(--cream); color: var(--text-w); }
 .nav-links a:hover { color: var(--rose); opacity: 1; }
 .nav-cta { background: var(--rose) !important; color: #fff !important; border-color: var(--rose) !important; }
 .nav-cta:hover { background: var(--rose-dark) !important; border-color: var(--rose-dark) !important; opacity: 1; }
+.nav-switch-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--navy);
+  color: var(--navy) !important;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  padding: 8px 16px;
+  border-radius: 100px;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+  opacity: 1 !important;
+}
+.nav-switch-link:hover { background: var(--navy); color: #fff !important; }
+.mobile-nav-overlay .nav-switch-link {
+  border-color: var(--navy);
+  padding: 10px 24px;
+  font-size: 14px;
+  margin-top: 4px;
+}
 
 /* ============================================================
    HERO — 全画面写真 + テキストオーバーレイ
@@ -680,6 +702,56 @@ body { background: var(--cream); color: var(--text-w); }
   display: block;
   text-align: center;
 }
+.w-rep-section { background: #fff; }
+.w-rep-photo {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 24px;
+}
+.w-rep-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+.w-rep-name {
+  font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+.w-rep-role {
+  font-size: 12px;
+  color: var(--text-w-light);
+  letter-spacing: 0.08em;
+  margin-bottom: 24px;
+}
+.w-rep-quote {
+  font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+  font-size: clamp(17px, 2.2vw, 21px);
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+  margin-bottom: 20px;
+}
+.w-rep-body {
+  font-size: 14px;
+  color: var(--text-w-mid);
+  line-height: 2;
+  margin-bottom: 28px;
+}
+.w-rep-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: var(--rose);
+  border-bottom: 1px solid var(--rose);
+  padding-bottom: 3px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.w-rep-link:hover { color: var(--rose-dark); border-color: var(--rose-dark); opacity: 1; }
 .w-concept-link:hover { color: #fff; border-color: #fff; opacity: 1; }
 
 .ibj-data {
@@ -1504,6 +1576,30 @@ body { background: var(--cream); color: var(--text-w); }
   font-feature-settings: "lnum";
 }
 .w-price-campaign-value span { font-size: 18px; margin-left: 4px; font-family: var(--font-sans); font-weight: 700; background: var(--rose); color: #fff; padding: 2px 8px; border-radius: 4px; vertical-align: middle; }
+.w-switch-campaign {
+  background: var(--rose-pale);
+  border: 1px solid rgba(244,104,138,0.3);
+  border-radius: 16px;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.w-switch-campaign-label { font-size: 11px; letter-spacing: 0.25em; color: var(--rose-dark); margin-bottom: 4px; font-family: 'Cormorant Garamond', serif; font-weight: 700; text-transform: uppercase; }
+.w-switch-campaign-title { font-size: 15px; font-weight: 600; color: var(--navy); font-family: 'Shippori Mincho', 'Noto Serif JP', serif; letter-spacing: 0.04em; }
+.w-switch-campaign-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 38px;
+  font-weight: 600;
+  color: var(--rose);
+  text-align: center;
+  line-height: 1;
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum";
+}
+.w-switch-campaign-value span { font-size: 15px; margin-left: 4px; font-family: var(--font-sans); font-weight: 700; color: var(--rose-dark); }
 .w-price-note { text-align: center; font-size: 12px; color: var(--text-w-light); line-height: 2; margin-top: 20px; }
 .w-price-detail-btn {
   display: block; width: 100%; margin-top: 20px;
@@ -1730,6 +1826,7 @@ body { background: var(--cream); color: var(--text-w); }
     <li><a href="faq.html">よくある質問</a></li>
     <li><a href="blog.html">ブログ</a></li>
     <li><a href="men.html" class="nav-men-link">オトナ男子の婚活はこちら</a></li>
+    <li><a href="#switch-campaign" class="nav-switch-link">乗り換えのご相談はこちら</a></li>
     <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで予約する</a></li>
   </ul>
   <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く">
@@ -1753,6 +1850,7 @@ body { background: var(--cream); color: var(--text-w); }
   <a href="flow.html">成婚までの流れ</a>
   <a href="faq.html">よくある質問</a>
   <a href="blog.html">ブログ</a>
+  <a href="#switch-campaign" class="nav-switch-link">乗り換えのご相談はこちら</a>
   <a href="apply.html" class="nav-cta">初回無料面談に申し込む</a>
   <div class="mobile-nav-bottom">
     <hr class="mobile-nav-divider">
@@ -1787,13 +1885,20 @@ body { background: var(--cream); color: var(--text-w); }
 
   <div class="w-hero-content">
     <div class="w-hero-top">
-      <p class="w-hero-label">20・30代のための結婚相談所</p>
+      <p class="w-hero-label">他社からの乗り換え<br>婚活のセカンドオピニオン</p>
       <h1 class="w-hero-headline">
         "頑張る婚活"は、もうやめる。<br>
         そのほうが、うまくいく。
       </h1>
     </div>
     <div class="w-hero-bottom">
+      <p class="w-hero-sub" style="letter-spacing:0.04em; line-height:1.9;">
+        今の延長線上の未来か。<br>
+        こうだったらいいなを叶える未来か。<br><br>
+        『今の進め方で、本当に大丈夫？』<br>
+        これまでの頑張りを、未来につなげる。<br>
+        それが、ハルカゼの婚活
+      </p>
       <p class="w-en-accent">Your Choice, Your Happiness.</p>
     </div>
   </div>
@@ -1806,8 +1911,23 @@ body { background: var(--cream); color: var(--text-w); }
 
 <!-- QUOTE BAR -->
 <div class="w-quote-bar">
-  <p>オンライン40分｜全国対応｜完全無料<br>最短5ヶ月・平均1年以内の成婚実績</p>
+  <p>他社からの乗り換えご相談もOK<br>無料カウンセリング　オンライン40分｜全国対応｜完全無料<br>最短5ヶ月・平均1年以内の成婚実績</p>
 </div>
+
+<!-- ============================================================
+     SWITCH CAMPAIGN — 乗り換え割引バナー
+     ============================================================ -->
+<section class="w-section" id="switch-campaign" style="padding-top:48px; padding-bottom:0;">
+  <div class="w-section-inner" style="max-width:800px;">
+    <div class="w-switch-campaign">
+      <div>
+        <p class="w-switch-campaign-label">CAMPAIGN</p>
+        <p class="w-switch-campaign-title">他社からの乗り換え割引キャンペーン</p>
+      </div>
+      <div class="w-switch-campaign-value">¥33,000<span>OFF</span></div>
+    </div>
+  </div>
+</section>
 
 <!-- ============================================================
      PAIN — 悩みリスト（見出しなし）
@@ -1815,9 +1935,10 @@ body { background: var(--cream); color: var(--text-w); }
 <section class="w-section w-pain">
   <div class="w-section-inner">
     <div class="w-pain-closing">
-      <p>どうやったら出会えるか。どうすれば選ばれるか。<br>なぜ出会えないのか、選ばれないのか。<br>このままでいいのか。</p>
-      <p>考えれば考えるほど、心が重くなっていく。</p>
-      <p>アプリ、街コン、婚活パーティー……<br>結婚相談所に登録したものの、<br>うまく活用できていない。<br>こんなご相談も、よく受けます。</p>
+      <p>婚活プロフィール、こうなっていませんか。</p>
+      <p>盛りすぎた写真、経歴書のようなプロフィール文。<br>そして「とりあえず会いましょう」で進むマッチング。</p>
+      <p>ハルカゼは、その進め方に違和感があります。</p>
+      <p>アプリ、街コン、婚活パーティー……<br>結婚相談所に登録しているけど、ほとんど自走状態。<br>うまく活用できていない。<br><br>こんなご相談も、よく受けます。</p>
     </div>
   </div>
 </section>
@@ -1836,6 +1957,26 @@ body { background: var(--cream); color: var(--text-w); }
       婚活で大切なこと、それは<br>どれだけ動くかよりも<br>どんなあなたで動くか。
     </p>
     <a href="about.html" class="w-concept-link">About Us — もっと読む →</a>
+  </div>
+</section>
+
+<!-- ============================================================
+     REPRESENTATIVE — 代表者メッセージ
+     ============================================================ -->
+<section class="w-section w-rep-section">
+  <div class="w-section-inner" style="max-width:560px; text-align:center;">
+    <div class="w-rep-photo">
+      <img src="newimages/Photoroom_20260428_162738.jpeg" alt="代表 石神りさ">
+    </div>
+    <p class="w-rep-name">石神 りさ</p>
+    <p class="w-rep-role">代表・マッチングプランナー</p>
+    <p class="w-rep-quote">人との出会いで、<br>人生の風向きが変わることがある。</p>
+    <p class="w-rep-body">
+      「ちょっと話を聞いてほしい」「自分の魅力を再発見してみたい」<br>
+      そんな軽い気持ちで大丈夫です。<br><br>
+      他社で活動中の方も、まずは今の状況を聞かせてください。
+    </p>
+    <a href="about.html" class="w-rep-link">代表からのメッセージを読む →</a>
   </div>
 </section>
 
@@ -1886,12 +2027,16 @@ body { background: var(--cream); color: var(--text-w); }
       </svg>
     </div>
     <p class="w-approach-poem-intro">
-      この3つのバランスで理想の出会いが動き始める。
+      出会いの場 × 恋愛コミュ力 × マインド<br><br>
+      どれか一つでも欠けていると、婚活は前に進みません。
     </p>
+    <div class="w-philo-rule" style="margin-bottom:32px;"></div>
     <div class="w-approach-poem">
-      <p>出会いの数が足りないなら、場を増やせば解決する。<br>会話が噛み合わないなら、学べば変えられる。</p>
-      <p>でも、"自分は愛される価値がある"と<br>信じきれていないなら、場所や話し方を変えても埋まらない。</p>
-      <p class="w-approach-poem-last">今のあなたに必要なのは、どこだろう。</p>
+      <p>いつものパターンで、進まない。<br>そんな時間が、もったいない。</p>
+      <p>ハルカゼは、あなたの状況や想いに寄り添いながら、<br>客観的な視点でサポートします。</p>
+      <p>一人で悩む時間を減らし、納得のいく決断へ。</p>
+      <p>理想はある。迷いもある。妥協もしたくない。</p>
+      <p class="w-approach-poem-last">ハルカゼは、その「こうだったらいいな」を叶える、<br>きっかけの場所です。</p>
     </div>
     <a href="apply.html" class="w-approach-soft-cta">無料カウンセリングで、自分に必要なところを見つける →</a>
   </div>
@@ -1924,7 +2069,8 @@ body { background: var(--cream); color: var(--text-w); }
           <span class="w-point-num"><em>01</em></span>
           <h3 class="w-point-title">あなたの良さを引き出す、<br><span class="w-point-title-accent">プロフィール写真撮影</span></h3>
           <p class="w-point-desc">
-            「盛れる角度」を演じた写真は、本当のあなたが伝わらない。<br><br>
+            「盛れる角度」を演じた写真は、本当のあなたが伝わらない。<br>
+            よくある婚活写真は、アイドル図鑑のように整いすぎている。<br><br>
             ヘア・メイク・ファッションのプロと一緒に、<br>
             "自然体で一番魅力的なあなた"を撮ります。
           </p>
@@ -1946,6 +2092,7 @@ body { background: var(--cream); color: var(--text-w); }
           <h3 class="w-point-title">あなたの本音を、<br><span class="w-point-title-accent">あなたの言葉で伝えるプロフィール</span></h3>
           <p class="w-point-desc">
             そつなく書けているのに、誰の記憶にも残らない。<br>
+            経歴はわかるのに、「どんな人か」が伝わらない文章。<br><br>
             プランナーが、あなたにしか書けないプロフィールに仕上げます。
           </p>
           <div class="w-point-tags">
@@ -1970,7 +2117,7 @@ body { background: var(--cream); color: var(--text-w); }
           </p>
           <details class="w-point-more">
             <summary>もっと見る</summary>
-            <p class="w-point-more-body">結婚への真剣な想いを持った10万人以上が登録する、業界最大級のIBJネットワークをご利用いただけます。<span style="color:#D94F73; font-weight:600;">お見合いごとの追加料金や、申し込み上限はなし！</span>可能性を狭めず、あなたが妥協せず「この人がいい」と思える選択を、ここから。</p>
+            <p class="w-point-more-body">結婚への真剣な想いを持った10万人以上が登録する、業界最大級のIBJネットワークをご利用いただけます。<span style="color:#D94F73; font-weight:600;">お見合いごとの追加料金や、申し込み上限はなし！</span>可能性を狭めず、あなたが妥協せず「この人がいい」と思える選択を、ここから。<br><br>ハルカゼは、婚活市場価値というものさしだけでお相手を勧めません。あなたが気づいた「本当はどうありたいか」を軸に、一緒に出会いの精度を上げていきます。</p>
           </details>
           <div class="ibj-data">
             <p class="ibj-data-label">IBJ Network Data</p>
@@ -2040,8 +2187,13 @@ body { background: var(--cream); color: var(--text-w); }
   <div class="w-section-inner" style="max-width:800px; text-align:center;">
     <p class="w-lab-cta-eyebrow">＼ 結婚の、その先までずっと続くしあわせを学ぶ ／</p>
     <h2 class="w-lab-cta-title">ハルカゼ <em>LAB</em></h2>
-    <p class="w-lab-cta-body">「結婚相談所で出会って、本当にうまくいく？」<br>
-    婚活は、成婚したら終わりじゃない。本当に大切なのは、そこから始まる「一生モノのパートナーシップ」をどう育んでいくか。</p>
+    <p class="w-lab-cta-body">「結婚相談所で出会って、本当にうまくいく？」<br><br>
+    短い期間で、成婚に進めることもある結婚相談所の婚活。<br>
+    でも、「早く決めなきゃ」という焦りから、<br>
+    本当は好きでもない人と結婚してしまう。<br>
+    そんな後悔は、私たちが届けたいものではありません。<br><br>
+    婚活は、成婚したら終わりじゃない。本当に大切なのは、<br>
+    そこから始まる「一生モノのパートナーシップ」をどう育んでいくか。</p>
     <a href="harukaze-lab.html" class="w-lab-cta-btn">ハルカゼLABとは？</a>
   </div>
 </section>
@@ -2249,14 +2401,6 @@ body { background: var(--cream); color: var(--text-w); }
           <p class="w-price-detail-note">※料金はすべて税込表示。</p>
         </div>
       </div>
-    </div>
-
-    <div class="w-price-campaign">
-      <div>
-        <p class="w-price-campaign-label">CAMPAIGN</p>
-        <p class="w-price-campaign-title">他社乗換え割引キャンペーン</p>
-      </div>
-      <div class="w-price-campaign-value">¥33,000<span>OFF</span></div>
     </div>
   </div>
 </section>
