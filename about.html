@@ -21,6 +21,28 @@ body { background: #ffffff !important; }
 .section-eyebrow span { color: var(--navy); opacity: 0.6; }
 .nav-cta { background: var(--rose) !important; color: #fff !important; border-color: var(--rose) !important; }
 .nav-cta:hover { background: #D94F73 !important; border-color: #D94F73 !important; opacity: 1; }
+.nav-switch-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--navy);
+  color: var(--navy) !important;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  padding: 8px 16px;
+  border-radius: 100px;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+  opacity: 1 !important;
+}
+.nav-switch-link:hover { background: var(--navy); color: #fff !important; }
+.mobile-nav-overlay .nav-switch-link {
+  border-color: var(--navy);
+  padding: 10px 24px;
+  font-size: 14px;
+  margin-top: 4px;
+}
 
 /* フォント統一: 3つの軸・出会い・魅力・本音 */
 .shin-section .section-title,
@@ -1306,7 +1328,7 @@ body { background: #ffffff !important; }
     <li><a href="flow.html">成婚までの流れ</a></li>
     <li><a href="faq.html">よくある質問</a></li>
     <li><a href="blog.html">ブログ</a></li>
-    <li><a href="men.html" class="nav-men-link">オトナ男子の婚活はこちら</a></li>
+    <li><a href="index.html#switch-campaign" class="nav-switch-link">乗り換えのご相談はこちら</a></li>
     <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで予約する</a></li>
   </ul>
   <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く">
@@ -1329,6 +1351,7 @@ body { background: #ffffff !important; }
   <a href="flow.html">成婚までの流れ</a>
   <a href="faq.html">よくある質問</a>
   <a href="blog.html">ブログ</a>
+  <a href="index.html#switch-campaign" class="nav-switch-link">乗り換えのご相談はこちら</a>
   <a href="apply.html" class="nav-cta">初回無料面談に申し込む</a>
   <div class="mobile-nav-bottom">
     <hr class="mobile-nav-divider">

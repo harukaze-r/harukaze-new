@@ -43,6 +43,15 @@ body { background: var(--cream); color: var(--text-w); }
   border-bottom: 1px solid rgba(244,104,138,0.12);
 }
 .site-nav .logo em { color: var(--rose); }
+.site-nav { height: 84px; }
+body { padding-top: 84px; }
+.logo-img { display: inline-flex; align-items: center; }
+.logo-img img { height: 68px; width: auto; display: block; }
+@media (max-width: 480px) {
+  .site-nav { height: 68px; }
+  body { padding-top: 68px; }
+  .logo-img img { height: 52px; }
+}
 .nav-links a:hover { color: var(--rose); opacity: 1; }
 .nav-cta { background: var(--rose) !important; color: #fff !important; border-color: var(--rose) !important; }
 .nav-cta:hover { background: var(--rose-dark) !important; border-color: var(--rose-dark) !important; opacity: 1; }
@@ -1817,9 +1826,8 @@ body { background: var(--cream); color: var(--text-w); }
 
 <!-- NAV -->
 <nav class="site-nav" id="siteNav">
-  <a href="index.html" class="logo">
-    <span class="logo-char">結</span><span class="logo-char">婚</span><span class="logo-char">相</span><span class="logo-char">談</span><span class="logo-char">所</span> <span class="logo-char">ハ</span><span class="logo-char">ル</span><span class="logo-char">カ</span><span class="logo-char">ゼ</span>
-    <span>MARRIAGE CONSULTING</span>
+  <a href="index.html" class="logo logo-img">
+    <img src="newimages/ロゴ.jpg" alt="結婚相談所ハルカゼ harukaze">
   </a>
   <ul class="nav-links">
     <li><a href="about.html">メッセージ</a></li>
@@ -1894,13 +1902,6 @@ body { background: var(--cream); color: var(--text-w); }
       </h1>
     </div>
     <div class="w-hero-bottom">
-      <p class="w-hero-sub" style="letter-spacing:0.04em; line-height:1.9;">
-        今の延長線上の未来か。<br>
-        こうだったらいいなを叶える未来か。<br><br>
-        『今の進め方で、本当に大丈夫？』<br>
-        これまでの頑張りを、未来につなげる。<br>
-        それが、ハルカゼの婚活
-      </p>
       <p class="w-en-accent">Your Choice, Your Happiness.</p>
     </div>
   </div>
@@ -1913,7 +1914,7 @@ body { background: var(--cream); color: var(--text-w); }
 
 <!-- QUOTE BAR -->
 <div class="w-quote-bar">
-  <p>他社からの乗り換えご相談もOK<br>無料カウンセリング　オンライン40分｜全国対応｜完全無料<br>最短5ヶ月・平均1年以内の成婚実績</p>
+  <p>他社からの乗り換えご相談もOK<br>無料カウンセリングはオンライン40分｜全国対応<br>最短5ヶ月・平均1年以内の成婚実績</p>
 </div>
 
 <!-- ============================================================
@@ -1941,7 +1942,7 @@ body { background: var(--cream); color: var(--text-w); }
       <p>盛りすぎた写真、経歴書のようなプロフィール文。<br>そして「とりあえず会いましょう」で進むマッチング。</p>
       <p>無理をしながら進める婚活への違和感。</p>
       <p>相談所、アプリ、街コン、婚活パーティー……<br>どれもうまく活用できていない。</p>
-      <p>動いているはずなのに、未来が見えない不安。</p>
+      <p>漠然として、将来への不安。</p>
       <p>こんなご相談を、よく受けます。</p>
     </div>
   </div>
@@ -2018,7 +2019,7 @@ body { background: var(--cream); color: var(--text-w); }
       <p>ハルカゼは、あなたの状況や想いに寄り添いながら、<br><span style="color:var(--rose-dark); font-weight:600;">客観的な視点</span>と<span style="color:var(--rose-dark); font-weight:600;">具体的なアドバイス</span>でサポートします。</p>
       <p>一人で悩む時間を減らし、納得のいく決断へ。</p>
       <p>理想はある。迷いもある。妥協もしたくない。</p>
-      <p>あなたの<span style="color:var(--rose-dark); font-weight:600;">「こうだったらいいな」</span>を叶える、<br>きっかけの場所です。</p>
+      <p>そんなあなたが進みだす場所。</p>
     </div>
     <a href="apply.html" class="w-approach-soft-cta">無料カウンセリングで、自分に必要なところを見つける →</a>
   </div>
@@ -2122,13 +2123,12 @@ body { background: var(--cream); color: var(--text-w); }
             <a href="https://www.ibjapan.jp/" target="_blank" rel="noopener noreferrer" class="ibj-data-btn">IBJを詳しく知る →</a>
           </div>
         </div>
-        <img src="newimages/ChatGPT Image 2026年7月2日 14_44_42.png" alt="" class="w-point-fullwidth-img w-point-extra-img" style="border-radius:8px;">
       </div>
 
       <!-- POINT 04 -->
       <div class="w-point-item w-point-item--reverse w-point-item--04">
         <div class="w-point-img">
-          <img src="newimages/名称未設定のデザイン (5).png" alt="LINE伴走サポート">
+          <img src="newimages/ChatGPT Image 2026年7月2日 14_44_42.png" alt="LINE伴走サポート">
         </div>
         <div class="w-point-body">
           <span class="w-point-num"><em>04</em></span>
@@ -2470,7 +2470,9 @@ body { background: var(--cream); color: var(--text-w); }
       <div style="margin-bottom: 16px;">
         <img src="images/Photoroom_20260409_154324.png" alt="結婚相談所ハルカゼ ロゴ" style="height: 56px; width: auto;">
       </div>
-      <a href="index.html" class="logo" style="white-space: nowrap;">結婚相談所　ハルカゼ<span>MARRIAGE CONSULTING</span></a>
+      <a href="index.html" class="logo" style="white-space: nowrap;">
+        <img src="newimages/ロゴ.jpg" alt="結婚相談所ハルカゼ harukaze" style="height: 52px; width: auto; display: block;">
+      </a>
     </div>
     <div class="footer-social">
       <a href="https://www.instagram.com/harukaze.ma?igsh=ZjFxNDU1MGYzMW5j&utm_source=qr" target="_blank" rel="noopener noreferrer">
