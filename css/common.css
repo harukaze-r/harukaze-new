@@ -931,10 +931,10 @@ body.nav-open { overflow: hidden; }
     letter-spacing: 0.05em;
     border-radius: 0;
     box-shadow: 0 -2px 10px rgba(26,42,68,0.12);
-    background: #EAF8FD;
-    color: #6AB5D6;
+    background: var(--pink-pale);
+    color: var(--pink);
   }
-  .float-side-btn:hover { transform: none; background: #d6f0f9; }
+  .float-side-btn:hover { transform: none; background: #FCE1E8; }
   .float-side-btn:nth-child(n+2) { display: none; }
 
   .site-footer { padding: 48px 24px 80px; }
