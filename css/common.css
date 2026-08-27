@@ -7,15 +7,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Montserrat:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;700&display=swap');
 
 /* ============================================================
-   DESIGN TOKENS
+   DESIGN TOKENS — 2026 minimal renewal (wimoa.co.jp参考)
    ============================================================ */
 :root {
   /* ── Brand Colors ── */
-  --text:          #333333;   /* 本文ダークグレー */
+  --text:          #1A1A1A;   /* 本文ほぼ黒に近いグレー */
   --bg:            #FFFFFF;   /* ページ背景ホワイト */
-  --bg-gray:       #F5F3EF;   /* グレージュ（グレー×ベージュ） */
-  --navy:          #1A2A44;   /* ネイビー（見出し・フッター・強調） */
-  --pink:          #E3768D;   /* ピンク（CTA・アクセント） */
+  --bg-off:        #F8F8F8;   /* セクション区切りのオフホワイト */
+  --bg-gray:       #F8F8F8;   /* グレージュ→オフホワイトに統一 */
+  --navy:          #1A2A44;   /* ネイビー（CTA・強調に最小限使用） */
+  --pink:          #E3768D;   /* コーラル（探す程度のワンポイント） */
+  --rose:          #E3768D;   /* pinkの別名（旧ページ互換） */
 
   /* ── Derived ── */
   --navy-dark:     #111d30;   /* ホバー用ダークネイビー */
@@ -27,18 +29,18 @@
   --white:         #ffffff;   /* ホワイト */
   --line-green:    #06C755;   /* LINE公式グリーン */
   --line-green-dark: #04a648; /* LINEグリーンホバー */
-  --text-mid:      #666666;   /* サブテキスト */
+  --text-mid:      #6B6B6B;   /* サブテキスト */
   --text-light:    #999999;   /* 補足テキスト */
   --border:        #E8E8E8;   /* ボーダー */
   --border-dark:   #D0D0D0;
-  --shadow-sm:     0 2px 12px rgba(26,42,68,0.06);
-  --shadow-md:     0 6px 24px rgba(26,42,68,0.10);
-  --shadow-lg:     0 12px 40px rgba(26,42,68,0.14);
+  --shadow-sm:     0 2px 12px rgba(0,0,0,0.05);
+  --shadow-md:     0 6px 24px rgba(0,0,0,0.08);
+  --shadow-lg:     0 12px 40px rgba(0,0,0,0.12);
 
   /* ── Typography ── */
-  --font-serif:    'Noto Serif JP', 'Yu Mincho', 'Hiragino Mincho ProN', serif;
+  --font-serif:    'Noto Serif JP', 'Yu Mincho', 'Hiragino Mincho ProN', serif; /* 用途を限定した明朝（原則不使用） */
   --font-sans:     'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-  --font-display:  'Cormorant Garamond', Georgia, serif; /* 英字装飾用 */
+  --font-display:  'Cormorant Garamond', Georgia, serif; /* 英字ラベルの控えめな味付け用 */
 
   /* ── Layout ── */
   --inner:         960px;    /* 標準コンテンツ幅 */
@@ -74,11 +76,11 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-weight: 500;
-  line-height: 1.45;
-  color: var(--navy);
-  letter-spacing: 0.04em;
+  line-height: 1.5;
+  color: var(--text);
+  letter-spacing: 0.02em;
 }
 
 p { line-height: 1.9; }
@@ -106,10 +108,10 @@ ul, ol { list-style: none; }
   top: 0; left: 0; right: 0;
   z-index: 900;
   height: var(--nav-h);
-  background: rgba(255,255,255,0.96);
+  background: rgba(255,255,255,0.97);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 0.5px solid rgba(244,104,138,0.15);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -122,17 +124,16 @@ ul, ol { list-style: none; }
 
 /* ロゴ（テキスト型） */
 .logo {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
-  font-size: 17px;
+  font-family: var(--font-sans);
+  font-size: 16px;
   font-weight: 600;
-  color: var(--navy);
-  letter-spacing: 0.12em;
+  color: var(--text);
+  letter-spacing: 0.08em;
   text-decoration: none;
   line-height: 1.2;
 }
 .logo .logo-char {
   display: inline-block;
-  transform: rotate(-4deg);
 }
 .logo span {
   font-size: 10px;
@@ -146,12 +147,12 @@ ul, ol { list-style: none; }
 .logo em {
   font-style: normal;
   font-size: 12px;
-  color: #F4688A;
+  color: var(--pink);
   display: flex;
   align-items: center;
   gap: 8px;
   letter-spacing: 0.1em;
-  font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+  font-family: var(--font-sans);
   font-weight: 500;
   margin-top: 2px;
 }
@@ -275,16 +276,16 @@ ul, ol { list-style: none; }
   content: '';
   position: fixed;
   left: 0; top: 0; bottom: 0;
-  width: 6px;
-  background: linear-gradient(180deg, var(--rose), var(--navy));
+  width: 3px;
+  background: var(--navy);
   z-index: 1000;
 }
 .mobile-nav-title {
-  font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
-  font-size: clamp(20px, 6.5vw, 30px);
+  font-family: var(--font-sans);
+  font-size: clamp(20px, 6.5vw, 28px);
   font-weight: 600;
-  color: var(--navy);
-  letter-spacing: 0.04em;
+  color: var(--text);
+  letter-spacing: 0.02em;
   margin-bottom: 4px;
   white-space: nowrap;
 }
@@ -322,40 +323,40 @@ ul, ol { list-style: none; }
   font-size: 11px;
   font-weight: 300;
   letter-spacing: 0.25em;
-  color: #F4688A;
+  color: var(--pink);
   margin-bottom: 6px;
 }
 .mobile-nav-specialty em {
   display: block;
   font-style: normal;
-  font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+  font-family: var(--font-sans);
   font-size: 15px;
   font-weight: 500;
-  letter-spacing: 0.12em;
-  color: #F4688A;
+  letter-spacing: 0.06em;
+  color: var(--pink);
 }
 .mobile-nav-overlay a {
-  font-family: var(--font-serif);
-  font-size: 20px;
-  font-weight: 400;
-  color: var(--navy);
-  letter-spacing: 0.08em;
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: 0.04em;
   transition: color 0.2s;
 }
 .mobile-nav-overlay a:hover {
-  color: #F4688A;
+  color: var(--pink);
   opacity: 1;
 }
 .mobile-nav-overlay .nav-cta {
   margin-top: 8px;
   font-size: 14px;
   padding: 12px 36px;
-  background: #F4688A !important;
+  background: var(--navy) !important;
   color: #fff !important;
 }
 .mobile-nav-overlay .nav-cta:hover {
-  background: #D94F73 !important;
-  box-shadow: 0 4px 14px rgba(244,104,138,0.35) !important;
+  background: var(--navy-dark) !important;
+  box-shadow: 0 4px 14px rgba(26,42,68,0.3) !important;
 }
 
 .mobile-nav-divider {
@@ -462,11 +463,11 @@ body.nav-open { overflow: hidden; }
   align-items: center;
 }
 .footer-brand .logo {
-  font-size: 18px;
-  color: var(--navy) !important;
-  font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
-  font-weight: 500;
-  letter-spacing: 0.12em;
+  font-size: 17px;
+  color: var(--text) !important;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: 0.06em;
 }
 .footer-men-btn {
   display: inline-flex;
@@ -726,13 +727,13 @@ body.nav-open { overflow: hidden; }
   margin-bottom: 14px;
 }
 .section-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(22px, 3.5vw, 34px);
-  font-weight: 500;
-  color: var(--navy);
-  line-height: 1.5;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.55;
   margin-bottom: 20px;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
 }
 .section-lead {
   font-size: 15px;
@@ -829,6 +830,38 @@ body.nav-open { overflow: hidden; }
 .float-side-btn-gold:hover {
   background: linear-gradient(135deg, #E2CC88 0%, #C0A058 100%);
   color: #5A4020;
+}
+
+/* ── LINEフローティングボタン（PC右下・SPでは下部バーに委譲） ── */
+.float-line-btn {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--pink);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 14px 22px;
+  border-radius: 100px;
+  box-shadow: 0 6px 20px rgba(227,118,141,0.35);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.3s, transform 0.3s, background 0.2s;
+}
+.float-line-btn.is-visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+.float-line-btn:hover { background: var(--pink-dark); transform: translateY(-2px); opacity: 1; }
+@media (max-width: 768px) {
+  .float-line-btn { display: none; }
+  .mobile-bottom-only { display: flex; }
+}
+@media (min-width: 769px) {
+  .mobile-bottom-only { display: none; }
 }
 
 /* ============================================================

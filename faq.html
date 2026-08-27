@@ -1,164 +1,78 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>よくある質問 | 結婚相談所ハルカゼ</title>
+<meta name="description" content="結婚相談所ハルカゼへのよくある質問。入会について、活動について、費用・退会についてまとめています。">
 <link rel="icon" href="newimages/使用ロゴ.jpeg">
-<meta name="description" content="結婚相談所ハルカゼへのよくある質問。入会・活動・費用・退会について詳しく解説します。">
-<meta property="og:title" content="よくある質問 | 結婚相談所ハルカゼ">
-<meta property="og:image" content="newimages/h. (1).png">
-<meta property="og:type" content="website">
 <link rel="stylesheet" href="css/common.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-/* ============================================================
-   faq.html — page styles
-   ============================================================ */
+.logo-img { display: inline-flex; align-items: center; }
+.logo-img img { height: 72px; width: auto; display: block; }
+@media (max-width: 480px) { .logo-img img { height: 58px; } }
+@media (min-width: 481px) {
+  .site-nav { height: 84px; }
+  body { padding-top: 84px; }
+}
 
-.page-hero {
-  background: #ffffff;
-  padding: 28px 24px 20px;
-  text-align: center; position: relative; overflow: hidden;
+.m-section { padding: var(--section-py) clamp(20px, 5vw, 48px); }
+.m-inner--narrow { max-width: 760px; margin: 0 auto; }
+.m-center { text-align: center; }
+.m-eyebrow {
+  display: flex; align-items: center; gap: 14px; justify-content: center;
+  font-family: var(--font-display); font-size: 13px; font-style: italic;
+  letter-spacing: 0.08em; color: var(--pink); margin-bottom: 18px;
 }
-.page-hero::before {
-  content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse 70% 80% at 20% 80%, rgba(184,199,230,0.15) 0%, transparent 60%);
-  pointer-events: none;
-}
-.page-hero-label { font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: #6AB5D6; margin-bottom: 12px; font-weight: 700; position: relative; font-family: 'Noto Sans JP', sans-serif; }
-.page-hero-title { font-size: clamp(18px, 2.8vw, 26px); font-weight: 500; line-height: 1.5; position: relative; color: #1A2A44; font-family: 'Shippori Mincho', 'Noto Serif JP', serif; letter-spacing: 0.06em; }
+.m-h2 { font-family: var(--font-serif); font-size: clamp(22px, 3vw, 30px); font-weight: 600; color: var(--text); line-height: 1.65; letter-spacing: 0.04em; }
 
-/* ── タブ ── */
-.faq-tabs {
-  display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 36px;
-}
+.m-pagehead { padding: clamp(64px, 9vw, 96px) clamp(20px, 5vw, 48px) 0; }
+.m-pagehead-en { font-family: var(--font-display); font-style: italic; font-size: 14px; color: var(--text-light); margin-bottom: 12px; }
+.m-pagehead-title { font-family: var(--font-serif); font-size: clamp(24px, 3.4vw, 34px); font-weight: 600; color: var(--text); letter-spacing: 0.04em; }
+
+/* TABS */
+.faq-tabs { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin: 48px 0 8px; }
 .faq-tab {
-  padding: 10px 22px; border-radius: 8px;
-  font-size: 13px; font-weight: 700; cursor: pointer;
-  border: 2px solid #E8E8E8;
-  background: #fff; color: #666;
-  transition: all 0.2s;
+  font-size: 13px; color: var(--text-mid); background: transparent;
+  border: 1px solid var(--border-dark); border-radius: 100px;
+  padding: 10px 22px; cursor: pointer; transition: all 0.2s;
 }
-.faq-tab:hover { border-color: #1A2A44; color: #1A2A44; }
-.faq-tab.active { background: #1A2A44; border-color: #1A2A44; color: #fff; }
+.faq-tab:hover { border-color: var(--navy); color: var(--navy); }
+.faq-tab.active { background: var(--navy); border-color: var(--navy); color: #fff; }
 
-/* ── カテゴリ ── */
+/* CATEGORY / LIST */
 .faq-category { display: none; }
 .faq-category.active { display: block; }
-
-/* ── アコーディオン ── */
-.faq-list { display: flex; flex-direction: column; gap: 0; }
-.faq-item { border-bottom: 1px solid #E8E8E8; }
-.faq-item:first-child { border-top: 1px solid #E8E8E8; }
-
-.faq-question {
-  display: flex; align-items: center; gap: 16px;
-  padding: 20px 0; cursor: pointer; user-select: none;
-}
-.faq-q-mark {
-  flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%;
-  background: #1A2A44; color: #fff;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 13px; font-weight: 900;
-}
-.faq-item.open .faq-q-mark { background: #F4688A; color: #fff; }
-.faq-q-text { flex: 1; font-size: 15px; font-weight: 700; color: #1A2A44; line-height: 1.5; }
-.faq-chevron {
-  flex-shrink: 0; width: 24px; height: 24px; color: #999;
-  transition: transform 0.3s;
-}
-.faq-item.open .faq-chevron { transform: rotate(180deg); color: #1A2A44; }
-.faq-chevron svg { width: 100%; height: 100%; }
-
+.faq-list { margin-top: 24px; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-question { display: flex; align-items: center; gap: 16px; padding: 22px 4px; cursor: pointer; }
+.faq-q-mark { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--pink); flex-shrink: 0; width: 20px; }
+.faq-q-text { flex: 1; font-size: 14px; font-weight: 600; color: var(--text); line-height: 1.7; }
+.faq-chevron { flex-shrink: 0; color: var(--text-light); transition: transform 0.25s; }
+.faq-chevron svg { width: 14px; height: 14px; }
+.faq-item.open .faq-chevron { transform: rotate(180deg); }
 .faq-answer {
-  overflow: hidden; max-height: 0;
-  transition: max-height 0.4s ease, padding 0.3s ease;
-  font-size: 14px; line-height: 1.95; color: #666;
-  padding: 0 0 0 48px;
+  max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease;
+  font-size: 13px; color: var(--text-mid); line-height: 2; padding: 0 4px 0 36px;
 }
-.faq-item.open .faq-answer { max-height: 600px; padding: 0 0 24px 48px; }
+.faq-item.open .faq-answer { max-height: 600px; padding: 0 4px 22px 36px; }
+.faq-answer a { color: var(--navy); font-weight: 600; text-decoration: underline; }
 
-/* ── まだ解決しない ── */
-.faq-cta-box {
-  margin-top: 48px; text-align: center;
-  padding: 40px 24px; background: #f9f9f9; border-radius: 16px;
-}
-.faq-cta-box p:first-child { font-size: 15px; font-weight: 700; color: #1A2A44; margin-bottom: 8px; }
-.faq-cta-box p:last-of-type { font-size: 14px; color: #666; margin-bottom: 24px; }
-
-/* ── CTA ── */
-.cta-section { background: var(--c-navy); padding: 96px 24px; text-align: center; color: #fff; }
-.cta-title { font-size: clamp(22px, 4vw, 36px); font-weight: 700; margin-bottom: 16px; line-height: 1.5; }
-.cta-sub { font-size: 15px; color: rgba(255,255,255,0.72); margin-bottom: 44px; line-height: 2; }
-.cta-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
-
-/* ── 統一CTAセクション ── */
-.unified-cta {
-  background: #ffffff;
-  padding: clamp(80px, 10vw, 140px) clamp(24px, 6vw, 80px);
-  text-align: center;
-}
-.unified-cta-inner { max-width: 640px; margin: 0 auto; }
-.unified-cta-label {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 11px; letter-spacing: 0.3em; color: #F4688A;
-  text-transform: uppercase; margin-bottom: 24px;
-}
-.unified-cta-title {
-  font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
-  font-size: clamp(22px, 3vw, 38px); font-weight: 500;
-  color: #1A2A44; line-height: 1.7; margin-bottom: 16px; letter-spacing: 0.06em;
-}
-.unified-cta-note { font-size: 12px; color: #aaa; letter-spacing: 0.08em; margin-bottom: 32px; }
-.unified-cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-bottom: 16px; }
-.unified-btn-primary {
-  background: #F4688A; color: #fff;
-  padding: 17px 44px; border-radius: 2px;
-  font-size: 14px; font-weight: 500; display: inline-block;
-  letter-spacing: 0.08em; transition: all 0.2s;
-}
-.unified-btn-primary:hover { background: #D94F73; transform: translateY(-2px); opacity: 1; }
-.unified-btn-line {
-  background: transparent; color: #06C755;
-  padding: 16px 36px; border-radius: 2px;
-  border: 1px solid #06C755; font-size: 13px;
-  display: inline-flex; align-items: center; gap: 6px;
-  letter-spacing: 0.08em; transition: all 0.2s;
-}
-.unified-btn-line:hover { background: #e8faf0; transform: translateY(-2px); opacity: 1; }
-.unified-cta-sub { font-size: 13px; color: #888; letter-spacing: 0.08em; }
-.nav-cta { background: #F4688A !important; color: #fff !important; border-color: #F4688A !important; }
-.nav-cta:hover { background: #D94F73 !important; border-color: #D94F73 !important; opacity: 1; }
-.nav-switch-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1.5px solid var(--navy);
-  color: var(--navy) !important;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.03em;
-  padding: 8px 16px;
-  border-radius: 100px;
-  white-space: nowrap;
-  transition: background 0.2s, color 0.2s;
-  opacity: 1 !important;
-}
-.nav-switch-link:hover { background: var(--navy); color: #fff !important; }
-.mobile-nav-overlay .nav-switch-link {
-  border-color: var(--navy);
-  padding: 10px 24px;
-  font-size: 14px;
-  margin-top: 4px;
-}
+.m-btn { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; letter-spacing: 0.05em; padding: 15px 32px; border-radius: 2px; transition: all 0.2s; }
+.m-btn--dark { background: var(--navy); color: #fff; }
+.m-btn--dark:hover { background: var(--navy-dark); opacity: 1; transform: translateY(-2px); }
+.m-btn--line { border: 1px solid var(--line-green); color: var(--line-green); }
+.m-btn--line:hover { background: #eafaf0; opacity: 1; transform: translateY(-2px); }
+.m-cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+.m-cta-note { font-size: 12px; color: var(--text-light); margin-top: 24px; }
 </style>
 </head>
 <body>
 
 <nav class="site-nav" id="siteNav">
-  <a href="index.html" class="logo">
-    <span class="logo-char">結</span><span class="logo-char">婚</span><span class="logo-char">相</span><span class="logo-char">談</span><span class="logo-char">所</span> <span class="logo-char">ハ</span><span class="logo-char">ル</span><span class="logo-char">カ</span><span class="logo-char">ゼ</span>
-    <span>MARRIAGE CONSULTING</span>
+  <a href="index.html" class="logo logo-img">
+    <img src="newimages/line_oa_chat_260826_154300.jpg" alt="結婚相談所ハルカゼ harukaze">
   </a>
   <ul class="nav-links">
     <li><a href="about.html">メッセージ</a></li>
@@ -174,12 +88,13 @@
     <span></span><span></span><span></span>
   </button>
 </nav>
+
 <div class="mobile-nav-overlay" id="mobileNavOverlay">
   <button class="mobile-nav-close" id="mobileNavClose" aria-label="閉じる">
     <span></span><span></span>
   </button>
   <div class="mobile-nav-logo">
-    <img src="newimages/ロゴ.jpg" alt="結婚相談所ハルカゼ harukaze">
+    <img src="newimages/line_oa_chat_260826_154300.jpg" alt="結婚相談所ハルカゼ harukaze">
   </div>
   <a href="index.html">ホーム</a>
   <a href="about.html">メッセージ</a>
@@ -212,201 +127,206 @@
 
 <main>
 
-  <section class="page-hero">
-    <p class="page-hero-label">FAQ</p>
-    <h1 class="page-hero-title">よくある質問</h1>
-  </section>
+<div class="m-pagehead">
+  <div class="m-inner--narrow m-center">
+    <p class="m-pagehead-en">FAQ</p>
+    <h1 class="m-pagehead-title">よくある質問</h1>
+  </div>
+</div>
 
-  <section class="section">
-    <div class="section-inner">
+<section class="m-section">
+  <div class="m-inner--narrow">
 
-      <div class="faq-tabs">
-        <button class="faq-tab active" data-target="cat-nyukai">入会について</button>
-        <button class="faq-tab" data-target="cat-katsudo">活動について</button>
-        <button class="faq-tab" data-target="cat-cost">費用・退会について</button>
-      </div>
-
-      <!-- カテゴリ① 入会について -->
-      <div class="faq-category active" id="cat-nyukai">
-        <div class="faq-list">
-
-          <div class="faq-item">
-            <div class="faq-question">
-              <div class="faq-q-mark">Q</div>
-              <p class="faq-q-text">誰でも入会できますか？</p>
-              <div class="faq-chevron"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            </div>
-            <div class="faq-answer">IBJで活動いただくための活動条件がございます。面談のうえ、ご希望に添えない場合など、入会をお断りさせていただくことがございます。</div>
-          </div>
-
-          <div class="faq-item">
-            <div class="faq-question">
-              <div class="faq-q-mark">Q</div>
-              <p class="faq-q-text">入会相談や手続きはどのように行うのですか？</p>
-              <div class="faq-chevron"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            </div>
-            <div class="faq-answer">直接お会いしてお話させていただくか、オンラインにてご案内いたします。</div>
-          </div>
-
-          <div class="faq-item">
-            <div class="faq-question">
-              <div class="faq-q-mark">Q</div>
-              <p class="faq-q-text">オフィスはありますか？</p>
-              <div class="faq-chevron"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            </div>
-            <div class="faq-answer">オフィスを持たないことで価格を抑えたご案内を行っております。オンラインでのご案内が基本となりますが、必要な場合にはカフェや、ヒルトン大阪内IBJラウンジをご案内させていただく場合もございます。</div>
-          </div>
-
-          <div class="faq-item">
-            <div class="faq-question">
-              <div class="faq-q-mark">Q</div>
-              <p class="faq-q-text">提出書類が用意済みの場合だと早く開始できるでしょうか？</p>
-              <div class="faq-chevron"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            </div>
-            <div class="faq-answer">すべて揃っていれば可能です。ただし提出書類はその方によって用意いただくものが異なることと、古い書類では受付できない場合があるため、初回面談後にご準備されることを推奨しています。</div>
-          </div>
-
-          <div class="faq-item">
-            <div class="faq-question">
-              <div class="faq-q-mark">Q</div>
-              <p class="faq-q-text">初回面談の準備に必要なものはありますか？</p>
-              <div class="faq-chevron"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            </div>
-            <div class="faq-answer">事前にLINE登録やアンケートをお願いしております。詳しくは、当日までに担当からご案内させていただきます。初回面談では、現状のヒアリングやサービス説明を行います。</div>
-          </div>
-
-          <div class="faq-item">
-            <div class="faq-question">
-              <div class="faq-q-mark">Q</div>
-              <p class="faq-q-text">活動するために必要な書類はありますか？</p>
-              <div class="faq-chevron"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            </div>
-            <div class="faq-answer">以下の書類が必要となります。<br><br>
-              ・身分証明書のコピー<br>・住民票<br>・独身証明書（3か月以内取得の原本）<br>・卒業証明書コピー（短大卒以上の方）<br>・国家資格免許証コピー<br>・収入証明書<br>・勤務先確認書類コピー<br><br>
-              ※当社で必要とする情報以外は取得および保有をいたしません</div>
-          </div>
-
-          <div class="faq-item">
-            <div class="faq-question">
-              <div class="faq-q-mark">Q</div>
-              <p class="faq-q-text">独身証明書ってなんですか？</p>
-              <div class="faq-chevron"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            </div>
-            <div class="faq-answer">独身証明書とは独身であることを証明する公的な書類で、本籍のある市区町村で結婚情報サービス・結婚相談業者に提出する証明書として発行していただけます。郵送等でのご請求方法や、発行手数料、請求に必要な書類（本人確認書類など）は、本籍のある市町村区役所・役場の公式サイトでご確認いただくか、電話でお問い合わせください。</div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- カテゴリ② 活動について -->
-      <div class="faq-category" id="cat-katsudo">
-        <div class="faq-list">
-
-          <div class="faq-item">
-            <div class="faq-question">
-              <div class="faq-q-mark">Q</div>
-              <p class="faq-q-text">とりあえず話を聞いてみたいです。無料相談してもいいですか？</p>
-              <div class="faq-chevron"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            </div>
-            <div class="faq-answer">結婚相談所に入ることを迷っていても大丈夫です。一度無料面談にお越しください。今のあなたの状況からどの手段で婚活するのが最適かアドバイスします。</div>
-          </div>
-
-          <div class="faq-item">
-            <div class="faq-question">
-              <div class="faq-q-mark">Q</div>
-              <p class="faq-q-text">しつこく勧誘されませんか？</p>
-              <div class="faq-chevron"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            </div>
-            <div class="faq-answer">無料相談で強引な勧誘をすることはありません。ご自身が決断されたタイミングで、気持ちよく動いていただくことが成婚にも繋がると考えています。</div>
-          </div>
-
-          <div class="faq-item">
-            <div class="faq-question">
-              <div class="faq-q-mark">Q</div>
-              <p class="faq-q-text">成婚の定義は何ですか？</p>
-              <div class="faq-chevron"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            </div>
-            <div class="faq-answer">成婚とは、一般的には交際相手が見つかり、結婚の意思がみえた段階で活動を終了することを意味します。ハルカゼではプロポーズをして結婚を約束したお二人を「成婚」と位置づけています。</div>
-          </div>
-
-          <div class="faq-item">
-            <div class="faq-question">
-              <div class="faq-q-mark">Q</div>
-              <p class="faq-q-text">面談やお見合いはどんな場所で行うのですか？</p>
-              <div class="faq-chevron"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            </div>
-            <div class="faq-answer">面談はオンラインです。お見合いはホテルのラウンジやカフェ、IBJラウンジをご案内させていただきます。</div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- カテゴリ③ 費用・退会 -->
-      <div class="faq-category" id="cat-cost">
-        <div class="faq-list">
-
-          <div class="faq-item">
-            <div class="faq-question">
-              <div class="faq-q-mark">Q</div>
-              <p class="faq-q-text">退会について教えてください。</p>
-              <div class="faq-chevron"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            </div>
-            <div class="faq-answer">20日までのお申し出で当月退会、以降は翌月退会を承ります。活動費用を先にいただいている場合、活動されなかった退会月以降分は返金させていただきますのでご安心ください。</div>
-          </div>
-
-          <div class="faq-item">
-            <div class="faq-question">
-              <div class="faq-q-mark">Q</div>
-              <p class="faq-q-text">料金プランについて詳しく教えてください。</p>
-              <div class="faq-chevron"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            </div>
-            <div class="faq-answer">ライトプラン（月会費13,800円〜）とパーソナルプラン（月会費15,800円〜）の2種類がございます。詳しくは<a href="service.html#price" style="color:var(--c-blue); font-weight:700;">サービス・料金ページ</a>をご覧ください。無料面談でも丁寧にご説明します。</div>
-          </div>
-
-        </div>
-      </div>
-
-
+    <div class="faq-tabs">
+      <button class="faq-tab active" data-target="cat-nyukai">入会について</button>
+      <button class="faq-tab" data-target="cat-katsudo">活動について</button>
+      <button class="faq-tab" data-target="cat-cost">費用・退会について</button>
     </div>
-  </section>
 
-  <!-- CTA -->
-    <section class="unified-cta" id="cta">
-  <div class="unified-cta-inner">
-    <p class="unified-cta-label">Free Consultation</p>
-    <h2 class="unified-cta-title">お気軽にご相談ください。</h2>
-    <p class="unified-cta-note">1分で登録完了</p>
-    <div class="unified-cta-btns">
-      <a href="apply.html" class="unified-btn-primary">無料カウンセリングを予約する</a>
-      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="unified-btn-line">
-        <span style="color:#06C755; font-weight:700;">LINE</span>で予約する
-      </a>
+    <!-- カテゴリ① 入会について -->
+    <div class="faq-category active" id="cat-nyukai">
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <div class="faq-q-mark">Q</div>
+            <p class="faq-q-text">誰でも入会できますか？</p>
+            <div class="faq-chevron"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <div class="faq-answer">IBJで活動いただくための活動条件がございます。面談のうえ、ご希望に添えない場合など、入会をお断りさせていただくことがございます。</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <div class="faq-q-mark">Q</div>
+            <p class="faq-q-text">入会相談や手続きはどのように行うのですか？</p>
+            <div class="faq-chevron"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <div class="faq-answer">直接お会いしてお話させていただくか、オンラインにてご案内いたします。</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <div class="faq-q-mark">Q</div>
+            <p class="faq-q-text">オフィスはありますか？</p>
+            <div class="faq-chevron"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <div class="faq-answer">オフィスを持たないことで価格を抑えたご案内を行っております。オンラインでのご案内が基本となりますが、必要な場合にはカフェや、ヒルトン大阪内IBJラウンジをご案内させていただく場合もございます。</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <div class="faq-q-mark">Q</div>
+            <p class="faq-q-text">提出書類が用意済みの場合だと早く開始できるでしょうか？</p>
+            <div class="faq-chevron"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <div class="faq-answer">すべて揃っていれば可能です。ただし提出書類はその方によって用意いただくものが異なることと、古い書類では受付できない場合があるため、初回面談後にご準備されることを推奨しています。</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <div class="faq-q-mark">Q</div>
+            <p class="faq-q-text">初回面談の準備に必要なものはありますか？</p>
+            <div class="faq-chevron"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <div class="faq-answer">事前にLINE登録やアンケートをお願いしております。詳しくは、当日までに担当からご案内させていただきます。初回面談では、現状のヒアリングやサービス説明を行います。</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <div class="faq-q-mark">Q</div>
+            <p class="faq-q-text">活動するために必要な書類はありますか？</p>
+            <div class="faq-chevron"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <div class="faq-answer">以下の書類が必要となります。<br><br>
+            ・身分証明書のコピー<br>・住民票<br>・独身証明書（3か月以内取得の原本）<br>・卒業証明書コピー（短大卒以上の方）<br>・国家資格免許証コピー<br>・収入証明書<br>・勤務先確認書類コピー<br><br>
+            ※当社で必要とする情報以外は取得および保有をいたしません</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <div class="faq-q-mark">Q</div>
+            <p class="faq-q-text">独身証明書ってなんですか？</p>
+            <div class="faq-chevron"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <div class="faq-answer">独身証明書とは独身であることを証明する公的な書類で、本籍のある市区町村で結婚情報サービス・結婚相談業者に提出する証明書として発行していただけます。郵送等でのご請求方法や、発行手数料、請求に必要な書類（本人確認書類など）は、本籍のある市町村区役所・役場の公式サイトでご確認いただくか、電話でお問い合わせください。</div>
+        </div>
+
+      </div>
     </div>
-    <p class="unified-cta-sub">オンライン40分　｜　全国対応　｜　完全無料</p>
+
+    <!-- カテゴリ② 活動について -->
+    <div class="faq-category" id="cat-katsudo">
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <div class="faq-q-mark">Q</div>
+            <p class="faq-q-text">とりあえず話を聞いてみたいです。無料相談してもいいですか？</p>
+            <div class="faq-chevron"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <div class="faq-answer">結婚相談所に入ることを迷っていても大丈夫です。一度無料面談にお越しください。今のあなたの状況からどの手段で婚活するのが最適かアドバイスします。</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <div class="faq-q-mark">Q</div>
+            <p class="faq-q-text">しつこく勧誘されませんか？</p>
+            <div class="faq-chevron"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <div class="faq-answer">無料相談で強引な勧誘をすることはありません。ご自身が決断されたタイミングで、気持ちよく動いていただくことが成婚にも繋がると考えています。</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <div class="faq-q-mark">Q</div>
+            <p class="faq-q-text">成婚の定義は何ですか？</p>
+            <div class="faq-chevron"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <div class="faq-answer">成婚とは、一般的には交際相手が見つかり、結婚の意思がみえた段階で活動を終了することを意味します。ハルカゼではプロポーズをして結婚を約束したお二人を「成婚」と位置づけています。</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <div class="faq-q-mark">Q</div>
+            <p class="faq-q-text">面談やお見合いはどんな場所で行うのですか？</p>
+            <div class="faq-chevron"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <div class="faq-answer">面談はオンラインです。お見合いはホテルのラウンジやカフェ、IBJラウンジをご案内させていただきます。</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- カテゴリ③ 費用・退会 -->
+    <div class="faq-category" id="cat-cost">
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <div class="faq-q-mark">Q</div>
+            <p class="faq-q-text">退会について教えてください。</p>
+            <div class="faq-chevron"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <div class="faq-answer">20日までのお申し出で当月退会、以降は翌月退会を承ります。活動費用を先にいただいている場合、活動されなかった退会月以降分は返金させていただきますのでご安心ください。</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <div class="faq-q-mark">Q</div>
+            <p class="faq-q-text">料金プランについて詳しく教えてください。</p>
+            <div class="faq-chevron"><svg viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <div class="faq-answer">ライトプラン（月会費13,800円〜）とパーソナルプラン（月会費15,800円〜）の2種類がございます。詳しくは<a href="service.html#price">サービス・料金ページ</a>をご覧ください。無料面談でも丁寧にご説明します。</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="m-section m-center" id="cta">
+  <div class="m-inner--narrow">
+    <p class="m-eyebrow">Free Consultation</p>
+    <h2 class="m-h2">お気軽にご相談ください。</h2>
+    <div class="m-cta-btns" style="margin-top:32px;">
+      <a href="apply.html" class="m-btn m-btn--dark">無料カウンセリングを予約する</a>
+      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="m-btn m-btn--line">LINEで予約する</a>
+    </div>
+    <p class="m-cta-note">オンライン40分｜全国対応｜完全無料｜1分で登録完了</p>
   </div>
 </section>
 
 </main>
 
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-brand">
-      <a href="index.html" class="logo" style="color: var(--white); white-space: nowrap;">結婚相談所　ハルカゼ<span>MARRIAGE CONSULTING</span></a>
-
-      <div style="margin-top: 16px;">
-        <img src="images/Photoroom_20260409_154324.png" alt="結婚相談所ハルカゼ ロゴ" style="height: 112px; width: auto;">
-      </div>
+    <div class="footer-brand">      <a href="index.html" class="logo" style="white-space: nowrap;">
+        <img src="newimages/line_oa_chat_260826_154300.jpg" alt="結婚相談所ハルカゼ harukaze" style="height: 60px; width: auto; display: block;">
+      </a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/harukaze.ma?igsh=ZjFxNDU1MGYzMW5j&utm_source=qr" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+        Instagram
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 8.2c1.2-.9 4.6-1.6 6.2.4.9 1.1 1 3.1-.2 4-1 .8-3 .9-3.6-.1-.5-.9.2-1.8 1.4-1.9 1.6-.1 3.4.6 3.9 2.1.5 1.5-.3 3.2-2.2 3.9-1.6.6-3.6.3-4.7-.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+        Threads
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="7" stroke="currentColor" stroke-width="1.8"/><text x="12" y="16.5" text-anchor="middle" font-size="11" font-family="'Georgia', serif" fill="currentColor">n</text></svg>
+        note
+      </a>
     </div>
     <div class="footer-links">
       <ul>
         <li><a href="faq.html">よくある質問</a></li>
-
         <li><a href="privacy.html">プライバシーポリシー</a></li>
         <li><a href="#">特定商取引法に基づく表記</a></li>
       </ul>
     </div>
-
   </div>
   <div class="footer-bottom">
     <span>© 2025 Harukaze Marriage Consulting. All rights reserved.</span>
@@ -414,14 +334,14 @@
   </div>
 </footer>
 
-<div class="float-side-btns">
-  <a href="apply.html" class="float-side-btn">初回無料面談を予約する</a>
-  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn">LINEで婚活突破口診断</a>
+<a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-line-btn"><span style="font-size:1.4em; font-weight:800;">9月</span>の初回無料面談の予約はこちら</a>
+
+<div class="float-side-btns mobile-bottom-only">
+  <a href="apply.html" class="float-side-btn" style="flex-direction:column; gap:2px; height:60px;"><span style="font-size:10px; opacity:0.85; letter-spacing:0.08em;">簡単1分</span><span>LINEで初回無料面談を予約する</span></a>
 </div>
 
 <script src="js/common.js"></script>
 <script>
-  /* ハンバーガーメニュー */
   (function () {
     var btn = document.getElementById('hamburgerBtn');
     var ovl = document.getElementById('mobileNavOverlay');
@@ -437,5 +357,3 @@
 </script>
 </body>
 </html>
-
-
