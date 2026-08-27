@@ -206,24 +206,32 @@
 @media (max-width: 768px) {
   .m-hero {
     height: clamp(400px, calc(100vh - 188px), 560px);
-    align-items: flex-end;
   }
   .m-hero-overlay {
     background: linear-gradient(
-      to top,
-      rgba(255,255,255,0.97) 0%,
-      rgba(255,255,255,0.88) 32%,
-      rgba(255,255,255,0.3) 58%,
-      rgba(26,42,68,0.06) 72%,
-      rgba(26,42,68,0.3) 100%
+      to bottom,
+      rgba(255,255,255,0.95) 0%,
+      rgba(255,255,255,0.72) 16%,
+      rgba(255,255,255,0.08) 30%,
+      rgba(255,255,255,0) 52%,
+      rgba(255,255,255,0.35) 70%,
+      rgba(26,42,68,0.06) 80%,
+      rgba(26,42,68,0.32) 100%
     );
   }
   .m-hero-photo img { object-position: 78% top; transform: none; }
-  .m-hero-content { max-width: none; padding: 0 24px 40px; }
-  .m-hero-title { font-size: clamp(26px, 7vw, 34px); }
-  .m-hero-caption { right: 16px; bottom: auto; top: 16px; padding: 8px 14px; }
-  .m-hero-caption-role { font-size: 10px; }
-  .m-hero-caption-name { font-size: 14px; }
+  .m-hero-content {
+    position: absolute;
+    inset: 0;
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px 24px 40px;
+  }
+  .m-hero-title { font-size: clamp(20px, 6vw, 24px); white-space: nowrap; }
+  .m-hero-note { margin-bottom: 0; }
+  .m-hero-caption { display: none; }
 }
 
 /* ============================================================
@@ -748,10 +756,14 @@
   </div>
   <div class="m-hero-overlay"></div>
   <div class="m-hero-content">
-    <span class="m-hero-eyebrow">婚活のセカンドオピニオン</span>
-    <p class="m-hero-kicker">「頑張っているのに、うまくいかない」人へ。</p>
-    <h1 class="m-hero-title">一人で抱えなくていい。<br>あなたの婚活に、<em>伴走者</em>を。</h1>
-    <p class="m-hero-note">あなたのペースと納得感を大切にしながら。<br>結婚に繋がる出会いのための、<br>ビジュアル・恋愛コミュ力・マインドのトータルプロデュース婚活。</p>
+    <div class="m-hero-top">
+      <span class="m-hero-eyebrow">婚活のセカンドオピニオン</span>
+      <p class="m-hero-kicker">「頑張っているのに、うまくいかない」人へ。</p>
+      <h1 class="m-hero-title">一人で抱えなくていい。<br>あなたの婚活に、<em>伴走者</em>を。</h1>
+    </div>
+    <div class="m-hero-bottom">
+      <p class="m-hero-note">あなたのペースと納得感を大切にしながら。<br>結婚に繋がる出会いのための、<br>ビジュアル・恋愛コミュ力・マインドのトータルプロデュース婚活。</p>
+    </div>
   </div>
 </section>
 
