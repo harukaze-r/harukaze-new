@@ -1,356 +1,90 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>サービス・料金 | 結婚相談所ハルカゼ</title>
+<meta name="description" content="結婚相談所ハルカゼの料金プラン。ライトプラン月13,800円、パーソナルプラン月15,800円。お見合い料無料、入会金・登録料・成婚料も明確に表示。">
 <link rel="icon" href="newimages/使用ロゴ.jpeg">
-<meta name="description" content="ハルカゼのサービス・料金プラン。ライトプラン13,800円〜、パーソナルプラン15,800円〜。お見合い料全プラン無料。IBJ正規加盟店。">
-<meta property="og:title" content="サービス・料金 | 結婚相談所ハルカゼ">
-<meta property="og:image" content="newimages/h. (1).png">
-<meta property="og:type" content="website">
 <link rel="stylesheet" href="css/common.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-/* ============================================================
-   service.html — page styles
-   ============================================================ */
-
-.page-hero {
-  background: #ffffff;
-  padding: 28px 24px 20px;
-  text-align: center; position: relative; overflow: hidden;
-}
-.page-hero::before {
-  content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse 70% 80% at 20% 80%, rgba(184,199,230,0.15) 0%, transparent 60%);
-  pointer-events: none;
-}
-.page-hero-label { font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: #6AB5D6; margin-bottom: 12px; font-weight: 700; position: relative; font-family: 'Noto Sans JP', sans-serif; }
-.page-hero-title { font-size: clamp(18px, 2.8vw, 26px); font-weight: 500; line-height: 1.5; position: relative; color: #1A2A44; font-family: 'Shippori Mincho', 'Noto Serif JP', serif; letter-spacing: 0.06em; }
-
-/* ── インフォバー ── */
-.info-bar {
-  background: var(--c-bg); border-bottom: 1px solid var(--c-border);
-  padding: 14px 24px;
-}
-.info-bar-inner {
-  max-width: 960px; margin: 0 auto;
-  display: flex; flex-wrap: wrap; justify-content: center; gap: 16px 32px;
-}
-.info-bar-item { font-size: 12px; font-weight: 700; color: var(--c-navy); letter-spacing: 0.08em; display: flex; align-items: center; gap: 6px; }
-.info-bar-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--c-coral); flex-shrink: 0; }
-
-/* ── プラン ── */
-.plan-wrap { max-width: 900px; margin: 0 auto; }
-.plan-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
-@media (min-width: 640px) { .plan-grid { grid-template-columns: 1fr 1fr; } }
-
-.plan-card {
-  background: var(--c-white); border-radius: 20px;
-  border: 1px solid var(--c-border);
-  padding: 36px 28px 32px;
-  box-shadow: 0 2px 20px rgba(74,98,120,0.06);
-  position: relative; overflow: hidden;
-}
-.plan-card.popular { border-color: var(--c-coral); }
-
-.popular-badge {
-  position: absolute; top: 20px; right: 20px;
-  background: var(--c-coral); color: var(--c-navy);
-  font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
-  padding: 4px 12px; border-radius: 20px;
-}
-.plan-eyebrow { font-size: 10px; letter-spacing: 0.24em; color: rgba(255,255,255,0.65); margin-bottom: 4px; font-weight: 700; text-transform: uppercase; }
-.plan-card.popular .plan-eyebrow { color: rgba(26,42,68,0.65); }
-
-/* プラン名バナー */
-.plan-name-band {
-  margin: -36px -28px 20px;
-  padding: 20px 28px 16px;
-}
-.plan-card:not(.popular) .plan-name-band {
-  background: linear-gradient(135deg, #1A2A44 0%, #2d6b8a 100%);
-}
-.plan-card.popular .plan-name-band {
-  background: linear-gradient(135deg, #E8859E 0%, #f5b8ca 100%);
-}
-.plan-name { font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 0; letter-spacing: 0.06em; }
-.plan-card.popular .plan-name { color: #1A2A44; }
-
-/* 価格ブロック */
-.plan-price-block {
-  background: rgba(106,181,214,0.10);
-  border-radius: 10px;
-  padding: 14px 20px 10px;
-  margin-bottom: 16px;
-  border: 1px solid rgba(106,181,214,0.22);
-}
-.plan-card.popular .plan-price-block {
-  background: rgba(232,133,158,0.10);
-  border-color: rgba(232,133,158,0.28);
-}
-.plan-price-wrap { display: flex; align-items: baseline; gap: 2px; margin-bottom: 4px; }
-.plan-price { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 48px; font-weight: 300; color: var(--c-navy); line-height: 1; }
-.plan-price-unit { font-size: 14px; color: var(--c-mid); font-weight: 400; }
-.plan-tax { font-size: 11px; color: var(--c-lt); margin-bottom: 0; }
-.plan-omiai {
-  display: inline-flex; align-items: center; gap: 6px;
-  background: rgba(184,199,230,0.20); color: var(--c-navy);
-  font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
-  padding: 6px 14px; border-radius: 20px; margin-bottom: 20px;
-}
-.plan-initial {
-  border: 1px solid var(--c-border); border-radius: 10px;
-  padding: 16px 18px; margin-bottom: 24px; background: var(--c-bg);
-}
-.plan-initial-row {
-  display: flex; justify-content: space-between; align-items: center;
-  font-size: 13px; padding: 5px 0;
-  border-bottom: 1px solid var(--c-border);
-}
-.plan-initial-row:last-child { border-bottom: none; }
-.plan-initial-label { color: var(--c-mid); }
-.plan-initial-val { font-weight: 700; color: var(--c-navy); }
-.plan-features { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
-.plan-features li { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: var(--c-text); line-height: 1.6; }
-.fi { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
-.fi-blue { color: var(--c-blue); }
-.fi-coral { color: #D4637C; font-weight: 700; }
-.feat-bold { font-weight: 700; color: #D4637C; }
-.plan-btn {
-  display: block; text-align: center;
-  background: var(--c-navy); color: #fff;
-  font-size: 14px; font-weight: 700; letter-spacing: 0.08em;
-  padding: 15px; border-radius: 10px;
-  transition: background 0.2s, transform 0.2s;
-}
-.plan-btn:hover { background: #3A5067; transform: translateY(-1px); }
-.plan-card.popular .plan-btn { background: var(--c-coral); color: var(--c-navy); }
-.plan-card.popular .plan-btn:hover { background: #E89BB0; }
-
-/* ── LABチケット ── */
-.lab-card {
-  background: var(--c-white); border-radius: 20px;
-  border: 1.5px solid rgba(184,199,230,0.40);
-  padding: 36px; margin-top: 24px; position: relative; overflow: hidden;
-}
-.lab-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-  background: linear-gradient(to right, var(--c-blue), var(--c-coral));
-}
-.lab-card-header {
-  display: flex; align-items: flex-start; justify-content: space-between;
-  gap: 20px; flex-wrap: wrap; margin-bottom: 28px;
-}
-.lab-tag-badge {
-  display: inline-block; background: var(--c-bg); color: var(--c-navy);
-  font-size: 10px; letter-spacing: 0.14em; padding: 4px 12px;
-  border-radius: 20px; margin-bottom: 8px; border: 1px solid rgba(184,199,230,0.40);
-}
-.lab-card-title { font-size: 22px; font-weight: 700; color: var(--c-navy); }
-.lab-card-title span { color: var(--c-coral); }
-.lab-card-sub { font-size: 12px; color: var(--c-lt); margin-top: 4px; }
-.lab-pay-badge {
-  display: flex; align-items: center; gap: 8px;
-  background: var(--c-bg); border: 1px solid rgba(184,199,230,0.40);
-  border-radius: 10px; padding: 10px 16px;
-  font-size: 11px; color: var(--c-navy); font-weight: 700; flex-shrink: 0;
-}
-.lab-tickets { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-.lab-ticket {
-  border: 1.5px solid var(--c-border); border-radius: 12px;
-  padding: 20px 14px; text-align: center; background: #fff;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.lab-ticket:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(74,98,120,0.10); }
-.ticket-name { font-size: 11px; letter-spacing: 0.06em; color: var(--c-lt); margin-bottom: 12px; line-height: 1.6; }
-.ticket-price { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 30px; font-weight: 300; color: var(--c-navy); line-height: 1; }
-.ticket-price span { font-size: 13px; font-weight: 400; }
-.ticket-per { font-size: 10px; color: #aaa; margin: 4px 0 10px; }
-.ticket-badge {
-  display: inline-block; background: var(--c-bg); color: var(--c-navy);
-  font-size: 10px; letter-spacing: 0.1em; padding: 2px 8px; border-radius: 20px;
-  border: 1px solid rgba(184,199,230,0.40);
-}
-.lab-footer { margin-top: 20px; display: flex; gap: 20px; flex-wrap: wrap; font-size: 11px; color: #888; }
-.lab-footer span::before { content: '✦ '; color: var(--c-coral); }
-@media (max-width: 640px) {
-  .lab-tickets { grid-template-columns: 1fr 1fr; }
-  .lab-card-header { flex-direction: column; }
-}
-@media (max-width: 480px) {
-  .lab-tickets { grid-template-columns: 1fr; }
+.logo-img { display: inline-flex; align-items: center; }
+.logo-img img { height: 72px; width: auto; display: block; }
+@media (max-width: 480px) { .logo-img img { height: 58px; } }
+@media (min-width: 481px) {
+  .site-nav { height: 84px; }
+  body { padding-top: 84px; }
 }
 
-/* ── 4つのサポート ── */
-.supports-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 40px;
+.m-section { padding: var(--section-py) clamp(20px, 5vw, 48px); }
+.m-section--off { background: var(--bg-off); }
+.m-inner { max-width: var(--inner-wide); margin: 0 auto; }
+.m-inner--narrow { max-width: 720px; margin: 0 auto; }
+.m-center { text-align: center; }
+.m-eyebrow {
+  display: flex; align-items: center; gap: 14px;
+  font-family: var(--font-display); font-size: 13px; font-style: italic;
+  letter-spacing: 0.08em; color: var(--pink); margin-bottom: 18px;
 }
-.support-card {
-  background: var(--c-white); border-radius: 16px;
-  padding: 24px 20px; border: 1px solid var(--c-border);
-  position: relative; overflow: hidden;
-}
-.support-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-}
-.s01::before { background: linear-gradient(to right, var(--c-navy), var(--c-blue)); }
-.s02::before { background: linear-gradient(to right, var(--c-coral), #ffaacc); }
-.s03::before { background: linear-gradient(to right, #c9a87a, #e8b84b); }
-.s04::before { background: linear-gradient(to right, var(--c-blue), var(--c-navy)); }
-.support-num { font-size: 30px; font-weight: 900; color: var(--c-bg); line-height: 1; margin-bottom: 8px; }
-.support-title { font-size: 14px; font-weight: 700; color: var(--c-navy); margin-bottom: 10px; line-height: 1.5; }
-.support-plan-badge {
-  display: inline-block; font-size: 10px; background: rgba(246,182,200,0.15);
-  color: var(--c-navy); border-radius: 4px; padding: 2px 8px; margin-bottom: 8px;
-  border: 1px solid rgba(246,182,200,0.35); font-weight: 700;
-}
-.support-body { font-size: 12px; line-height: 1.8; color: var(--c-mid); margin-bottom: 12px; }
-.support-note { font-size: 11px; color: var(--c-lt); border-top: 1px solid var(--c-border); padding-top: 10px; line-height: 1.7; }
-@media (min-width: 768px) { .supports-grid { grid-template-columns: repeat(4, 1fr); } }
-@media (max-width: 480px) { .supports-grid { grid-template-columns: 1fr; } }
+.m-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--pink); display: block; }
+.m-center .m-eyebrow { justify-content: center; }
+.m-center .m-eyebrow::before { display: none; }
+.m-h2 { font-family: var(--font-serif); font-size: clamp(22px, 3vw, 30px); font-weight: 600; color: var(--text); line-height: 1.65; letter-spacing: 0.04em; }
+.m-lead { font-size: 14px; color: var(--text-mid); line-height: 2.1; margin-top: 20px; }
+.m-center .m-lead { max-width: 560px; margin-left: auto; margin-right: auto; }
 
-/* ── 比較表 ── */
-.compare-wrap { overflow-x: auto; margin-top: 32px; }
-.compare-table {
-  width: 100%; border-collapse: separate; border-spacing: 0;
-  border-radius: 16px; overflow: hidden;
-  border: 1px solid var(--c-border); min-width: 580px;
-}
-.compare-table th, .compare-table td { padding: 12px 10px; font-size: 12px; text-align: center; line-height: 1.5; }
-.compare-table th { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; }
-.compare-table td { border-top: 1px solid var(--c-border); }
-.compare-table td:first-child { text-align: left; color: var(--c-mid); font-size: 11px; background: #fafbfc; letter-spacing: 0.04em; }
-.th-other { background: #f5f5f5; color: #888; }
-.th-b { background: #f2f6fb; color: #6080a0; }
-.th-hz-light { background: var(--c-bg); color: var(--c-navy); }
-.th-hz-personal { background: rgba(246,182,200,0.12); color: var(--c-navy); position: relative; }
-.best-badge {
-  position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
-  background: var(--c-coral); color: var(--c-navy); font-size: 9px; letter-spacing: 0.1em;
-  padding: 3px 10px; border-radius: 20px; white-space: nowrap; font-weight: 700;
-}
-.td-other { background: #fff; color: #bbb; }
-.td-b { background: #fafcff; color: #7090b0; }
-.td-hz-light { background: rgba(184,199,230,0.08); color: var(--c-navy); font-weight: 600; }
-.td-hz-personal { background: rgba(246,182,200,0.08); color: var(--c-navy); font-weight: 600; }
-.check-blue { color: var(--c-navy); font-weight: 700; }
-.check-coral { color: var(--c-navy); font-weight: 700; }
-.cross { color: #ddd; }
-.compare-note { font-size: 10px; color: #aaa; margin-top: 10px; text-align: right; }
+.m-pagehead { padding: clamp(64px, 9vw, 96px) clamp(20px, 5vw, 48px) 0; }
+.m-pagehead-en { font-family: var(--font-display); font-style: italic; font-size: 14px; color: var(--text-light); margin-bottom: 12px; }
+.m-pagehead-title { font-family: var(--font-serif); font-size: clamp(24px, 3.4vw, 34px); font-weight: 600; color: var(--text); letter-spacing: 0.04em; }
 
-/* キャンペーン */
-.svc-campaign {
-  margin-top: 28px;
-  background: linear-gradient(135deg, #FFF9C4 0%, #FFF0A0 100%);
-  border-radius: 16px;
-  border: 2.5px dashed var(--c-coral);
-  padding: 40px 32px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  position: relative;
-  overflow: hidden;
-}
-.svc-campaign::before {
-  content: '★ SPECIAL OFFER ★';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  background: var(--c-coral);
-  color: #fff;
-  font-size: 9px;
-  letter-spacing: 0.25em;
-  text-align: center;
-  padding: 4px 0;
-  font-family: 'Cormorant Garamond', serif;
-}
-.svc-campaign-label { font-size: 11px; letter-spacing: 0.25em; color: var(--c-coral); margin-bottom: 4px; font-family: 'Cormorant Garamond', serif; font-weight: 700; }
-.svc-campaign-title { font-size: 15px; font-weight: 700; color: #111; }
-.svc-campaign-value {
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: 48px;
-  font-weight: 700;
-  color: var(--c-coral);
-  text-align: center;
-  line-height: 1;
-}
-.svc-campaign-value span { font-size: 18px; margin-left: 4px; font-weight: 700; background: var(--c-coral); color: #fff; padding: 2px 8px; border-radius: 4px; vertical-align: middle; }
+/* PRICE CARDS */
+.m-price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
+.m-price-card { background: #fff; border: 1px solid var(--border); border-radius: 4px; padding: 36px 32px; position: relative; }
+.m-price-card--popular { border-color: var(--navy); }
+.m-price-badge { position: absolute; top: -1px; right: 24px; background: var(--navy); color: #fff; font-size: 10px; letter-spacing: 0.1em; padding: 5px 14px; }
+.m-price-eyebrow { font-size: 11px; letter-spacing: 0.1em; color: var(--text-light); margin-bottom: 6px; }
+.m-price-name { font-size: 19px; font-weight: 700; color: var(--text); margin-bottom: 24px; }
+.m-price-amount { display: flex; align-items: baseline; gap: 4px; margin-bottom: 4px; }
+.m-price-main { font-family: var(--font-display); font-size: 42px; font-weight: 600; color: var(--text); line-height: 1; }
+.m-price-unit { font-size: 13px; color: var(--text-mid); }
+.m-price-tax { font-size: 11px; color: var(--text-light); margin-bottom: 20px; }
+.m-price-omiai { display: inline-block; font-size: 11px; color: var(--navy); border: 1px solid var(--border-dark); border-radius: 100px; padding: 5px 14px; margin-bottom: 24px; }
+.m-price-initial { border-top: 1px solid var(--border); padding-top: 16px; margin-bottom: 24px; }
+.m-price-initial-row { display: flex; justify-content: space-between; font-size: 13px; color: var(--text-mid); padding: 6px 0; }
+.m-price-initial-row strong { color: var(--text); font-weight: 600; }
+.m-price-list { list-style: none; border-top: 1px solid var(--border); padding-top: 20px; }
+.m-price-list li { font-size: 13px; color: var(--text-mid); padding: 7px 0; padding-left: 20px; position: relative; line-height: 1.7; }
+.m-price-list li::before { content: '✓'; position: absolute; left: 0; color: var(--text-light); }
+.m-price-list li.is-accent { color: var(--text); font-weight: 600; }
+.m-price-list li.is-accent::before { color: var(--pink); }
+@media (max-width: 720px) { .m-price-grid { grid-template-columns: 1fr; } }
 
-/* ── CTA ── */
-.cta-section { background: #ffffff; padding: 96px 24px; text-align: center; color: var(--navy); }
-.cta-title { font-size: clamp(22px, 4vw, 36px); font-weight: 700; margin-bottom: 16px; line-height: 1.5; }
-.cta-sub { font-size: 15px; color: rgba(255,255,255,0.72); margin-bottom: 44px; line-height: 2; }
-.cta-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+/* CAMPAIGN */
+.m-campaign {
+  border: 1px solid var(--border); border-radius: 4px; padding: 28px 32px;
+  display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap; text-align: center;
+  margin-top: 40px;
+}
+.m-campaign-label { font-size: 11px; letter-spacing: 0.14em; color: var(--pink); margin-bottom: 4px; }
+.m-campaign-title { font-size: 15px; font-weight: 600; color: var(--text); }
+.m-campaign-value { font-family: var(--font-display); font-size: 34px; font-weight: 600; color: var(--pink); line-height: 1; }
+.m-campaign-value span { font-size: 14px; font-family: var(--font-sans); font-weight: 700; margin-left: 4px; }
 
-/* ── 統一CTAセクション ── */
-.unified-cta {
-  background: #ffffff;
-  padding: clamp(80px, 10vw, 140px) clamp(24px, 6vw, 80px);
-  text-align: center;
-}
-.unified-cta-inner { max-width: 640px; margin: 0 auto; }
-.unified-cta-label {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 11px; letter-spacing: 0.3em; color: #F4688A;
-  text-transform: uppercase; margin-bottom: 24px;
-}
-.unified-cta-title {
-  font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
-  font-size: clamp(22px, 3vw, 38px); font-weight: 500;
-  color: #1A2A44; line-height: 1.7; margin-bottom: 16px; letter-spacing: 0.06em;
-}
-.unified-cta-note { font-size: 12px; color: #aaa; letter-spacing: 0.08em; margin-bottom: 32px; }
-.unified-cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-bottom: 16px; }
-.unified-btn-primary {
-  background: #F4688A; color: #fff;
-  padding: 17px 44px; border-radius: 2px;
-  font-size: 14px; font-weight: 500; display: inline-block;
-  letter-spacing: 0.08em; transition: all 0.2s;
-}
-.unified-btn-primary:hover { background: #D94F73; transform: translateY(-2px); opacity: 1; }
-.unified-btn-line {
-  background: transparent; color: #06C755;
-  padding: 16px 36px; border-radius: 2px;
-  border: 1px solid #06C755; font-size: 13px;
-  display: inline-flex; align-items: center; gap: 6px;
-  letter-spacing: 0.08em; transition: all 0.2s;
-}
-.unified-btn-line:hover { background: #e8faf0; transform: translateY(-2px); opacity: 1; }
-.unified-cta-sub { font-size: 13px; color: #888; letter-spacing: 0.08em; }
-.nav-cta { background: #F4688A !important; color: #fff !important; border-color: #F4688A !important; }
-.nav-cta:hover { background: #D94F73 !important; border-color: #D94F73 !important; opacity: 1; }
-.nav-switch-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1.5px solid var(--navy);
-  color: var(--navy) !important;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.03em;
-  padding: 8px 16px;
-  border-radius: 100px;
-  white-space: nowrap;
-  transition: background 0.2s, color 0.2s;
-  opacity: 1 !important;
-}
-.nav-switch-link:hover { background: var(--navy); color: #fff !important; }
-.mobile-nav-overlay .nav-switch-link {
-  border-color: var(--navy);
-  padding: 10px 24px;
-  font-size: 14px;
-  margin-top: 4px;
-}
+.m-btn { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; letter-spacing: 0.05em; padding: 15px 32px; border-radius: 2px; transition: all 0.2s; }
+.m-btn--dark { background: var(--navy); color: #fff; }
+.m-btn--dark:hover { background: var(--navy-dark); opacity: 1; transform: translateY(-2px); }
+.m-btn--line { border: 1px solid var(--line-green); color: var(--line-green); }
+.m-btn--line:hover { background: #eafaf0; opacity: 1; transform: translateY(-2px); }
+.m-cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+.m-cta-note { font-size: 12px; color: var(--text-light); margin-top: 24px; }
 </style>
 </head>
 <body>
 
 <nav class="site-nav" id="siteNav">
-  <a href="index.html" class="logo">
-    <span class="logo-char">結</span><span class="logo-char">婚</span><span class="logo-char">相</span><span class="logo-char">談</span><span class="logo-char">所</span> <span class="logo-char">ハ</span><span class="logo-char">ル</span><span class="logo-char">カ</span><span class="logo-char">ゼ</span>
-    <span>MARRIAGE CONSULTING</span>
+  <a href="index.html" class="logo logo-img">
+    <img src="newimages/line_oa_chat_260826_154300.jpg" alt="結婚相談所ハルカゼ harukaze">
   </a>
   <ul class="nav-links">
     <li><a href="about.html">メッセージ</a></li>
@@ -366,12 +100,13 @@
     <span></span><span></span><span></span>
   </button>
 </nav>
+
 <div class="mobile-nav-overlay" id="mobileNavOverlay">
   <button class="mobile-nav-close" id="mobileNavClose" aria-label="閉じる">
     <span></span><span></span>
   </button>
   <div class="mobile-nav-logo">
-    <img src="newimages/ロゴ.jpg" alt="結婚相談所ハルカゼ harukaze">
+    <img src="newimages/line_oa_chat_260826_154300.jpg" alt="結婚相談所ハルカゼ harukaze">
   </div>
   <a href="index.html">ホーム</a>
   <a href="about.html">メッセージ</a>
@@ -404,152 +139,116 @@
 
 <main>
 
-  <!-- ページヒーロー -->
-  <section class="page-hero">
-    <p class="page-hero-label">Price</p>
-    <h1 class="page-hero-title">プラン料金</h1>
-  </section>
+<div class="m-pagehead">
+  <div class="m-inner--narrow m-center">
+    <p class="m-pagehead-en">Price</p>
+    <h1 class="m-pagehead-title">プラン料金</h1>
+  </div>
+</div>
 
-  <!-- インフォバー -->
+<section class="m-section" id="price">
+  <div class="m-inner--narrow" style="max-width:900px;">
+    <div class="m-price-grid">
 
-  <!-- プラン料金 -->
-  <section class="section" id="price">
-    <div class="section-inner">
-      <div class="plan-wrap">
-        <div class="plan-grid">
-
-          <!-- ライトプラン -->
-          <div class="plan-card">
-            <div class="plan-name-band">
-              <div class="plan-eyebrow">Light Plan</div>
-              <div class="plan-name">ライトプラン</div>
-            </div>
-            <div class="plan-price-block">
-              <div class="plan-price-wrap">
-                <span class="plan-price">13,800</span>
-                <span class="plan-price-unit">円/月</span>
-              </div>
-              <p class="plan-tax">税込・月額払い</p>
-            </div>
-            <div class="plan-omiai">✦ お見合い料 無料</div>
-            <div class="plan-initial">
-              <div class="plan-initial-row">
-                <span class="plan-initial-label">入会金</span>
-                <span class="plan-initial-val">33,000円</span>
-              </div>
-              <div class="plan-initial-row">
-                <span class="plan-initial-label">登録料</span>
-                <span class="plan-initial-val">22,000円</span>
-              </div>
-              <div class="plan-initial-row">
-                <span class="plan-initial-label">成婚料</span>
-                <span class="plan-initial-val">165,000円</span>
-              </div>
-            </div>
-            <ul class="plan-features">
-              <li><span class="fi fi-blue">✓</span> プロフィール写真撮影</li>
-              <li><span class="fi fi-blue">✓</span> お見合い申し込み 月100件</li>
-              <li><span class="fi fi-blue">✓</span> プランナーよりご紹介</li>
-              <li><span class="fi fi-blue">✓</span> お見合い後フィードバック</li>
-              <li><span class="fi fi-blue">✓</span> 定期面談 年6回</li>
-              <li><span class="fi fi-blue">✓</span> プロフィール作成</li>
-            </ul>
-          </div>
-
-          <!-- パーソナルプラン -->
-          <div class="plan-card popular">
-            <span class="popular-badge">一番人気</span>
-            <div class="plan-name-band">
-              <div class="plan-eyebrow">Personal Plan</div>
-              <div class="plan-name">パーソナルプラン</div>
-            </div>
-            <div class="plan-price-block">
-              <div class="plan-price-wrap">
-                <span class="plan-price">15,800</span>
-                <span class="plan-price-unit">円/月</span>
-              </div>
-              <p class="plan-tax">税込・月額払い</p>
-            </div>
-            <div class="plan-omiai">✦ お見合い料 無料</div>
-            <div class="plan-initial">
-              <div class="plan-initial-row">
-                <span class="plan-initial-label">入会金</span>
-                <span class="plan-initial-val">33,000円</span>
-              </div>
-              <div class="plan-initial-row">
-                <span class="plan-initial-label">登録料</span>
-                <span class="plan-initial-val">33,000円</span>
-              </div>
-              <div class="plan-initial-row">
-                <span class="plan-initial-label">成婚料</span>
-                <span class="plan-initial-val">230,000円</span>
-              </div>
-            </div>
-            <ul class="plan-features">
-              <li><span class="fi fi-blue">✓</span> お見合い申し込み 月200件</li>
-              <li><span class="fi fi-blue">✓</span> プランナーよりご紹介</li>
-              <li><span class="fi fi-blue">✓</span> お見合い後フィードバック</li>
-              <li><span class="fi fi-blue">✓</span> 定期面談 年12回</li>
-              <li><span class="fi fi-blue">✓</span> プロフィール作成</li>
-              <li><span class="fi fi-coral">✓</span> <span class="feat-bold">プロフィール写真撮影（スタジオ or ロケーション）</span></li>
-              <li><span class="fi fi-coral">✓</span> <span class="feat-bold">イメージコンサルタントによるお買い物同行or骨格診断orパーソナルカラー診断</span></li>
-              <li><span class="fi fi-coral">✓</span> <span class="feat-bold">LAB 各講座</span></li>
-              <li><span class="fi fi-coral">✓</span> <span class="feat-bold">お見合いアナリティクス診断</span></li>
-            </ul>
-          </div>
-
-        </div><!-- /plan-grid -->
-
-        <!-- キャンペーン -->
-        <div class="svc-campaign">
-          <div>
-            <p class="svc-campaign-label">CAMPAIGN</p>
-            <p class="svc-campaign-title">他社乗換え割引キャンペーン</p>
-          </div>
-          <div class="svc-campaign-value">¥33,000<span>OFF</span></div>
+      <div class="m-price-card">
+        <p class="m-price-eyebrow">Light Plan</p>
+        <p class="m-price-name">ライトプラン</p>
+        <div class="m-price-amount"><span class="m-price-main">13,800</span><span class="m-price-unit">円/月</span></div>
+        <p class="m-price-tax">税込・月額払い</p>
+        <div class="m-price-omiai">✦ お見合い料 無料</div>
+        <div class="m-price-initial">
+          <div class="m-price-initial-row"><span>入会金</span><strong>33,000円</strong></div>
+          <div class="m-price-initial-row"><span>登録料</span><strong>22,000円</strong></div>
+          <div class="m-price-initial-row"><span>成婚料</span><strong>165,000円</strong></div>
         </div>
+        <ul class="m-price-list">
+          <li>プロフィール写真撮影</li>
+          <li>お見合い申し込み 月100件</li>
+          <li>プランナーよりご紹介</li>
+          <li>お見合い後フィードバック</li>
+          <li>定期面談 年6回</li>
+          <li>プロフィール作成</li>
+        </ul>
+      </div>
 
-      </div><!-- /plan-wrap -->
-    </div>
-  </section>
+      <div class="m-price-card m-price-card--popular">
+        <span class="m-price-badge">一番人気</span>
+        <p class="m-price-eyebrow">Personal Plan</p>
+        <p class="m-price-name">パーソナルプラン</p>
+        <div class="m-price-amount"><span class="m-price-main">15,800</span><span class="m-price-unit">円/月</span></div>
+        <p class="m-price-tax">税込・月額払い</p>
+        <div class="m-price-omiai">✦ お見合い料 無料</div>
+        <div class="m-price-initial">
+          <div class="m-price-initial-row"><span>入会金</span><strong>33,000円</strong></div>
+          <div class="m-price-initial-row"><span>登録料</span><strong>33,000円</strong></div>
+          <div class="m-price-initial-row"><span>成婚料</span><strong>230,000円</strong></div>
+        </div>
+        <ul class="m-price-list">
+          <li>お見合い申し込み 月200件</li>
+          <li>プランナーよりご紹介</li>
+          <li>お見合い後フィードバック</li>
+          <li>定期面談 年12回</li>
+          <li>プロフィール作成</li>
+          <li class="is-accent">プロフィール写真撮影（スタジオ or ロケーション）</li>
+          <li class="is-accent">イメージコンサルタントによるお買い物同行 / 骨格診断 / パーソナルカラー診断</li>
+          <li class="is-accent">LAB 各講座</li>
+          <li class="is-accent">お見合いアナリティクス診断</li>
+        </ul>
+      </div>
 
-  <!-- CTA -->
-    <section class="unified-cta" id="cta">
-  <div class="unified-cta-inner">
-    <p class="unified-cta-label">Free Consultation</p>
-    <h2 class="unified-cta-title">一歩は、ここから。</h2>
-    <p class="unified-cta-note">1分で登録完了</p>
-    <div class="unified-cta-btns">
-      <a href="apply.html" class="unified-btn-primary">無料カウンセリングを予約する</a>
-      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="unified-btn-line">
-        <span style="color:#06C755; font-weight:700;">LINE</span>で予約する
-      </a>
     </div>
-    <p class="unified-cta-sub">オンライン40分　｜　全国対応　｜　完全無料</p>
+
+    <div class="m-campaign">
+      <div>
+        <p class="m-campaign-label">CAMPAIGN</p>
+        <p class="m-campaign-title">他社乗り換え割引キャンペーン</p>
+      </div>
+      <div class="m-campaign-value">¥33,000<span>OFF</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="m-section m-section--off m-center" id="cta">
+  <div class="m-inner--narrow">
+    <p class="m-eyebrow">Free Consultation</p>
+    <h2 class="m-h2">一歩は、ここから。</h2>
+    <div class="m-cta-btns" style="margin-top:32px;">
+      <a href="apply.html" class="m-btn m-btn--dark">無料カウンセリングを予約する</a>
+      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="m-btn m-btn--line">LINEで予約する</a>
+    </div>
+    <p class="m-cta-note">オンライン40分｜全国対応｜完全無料｜1分で登録完了</p>
   </div>
 </section>
 
 </main>
 
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-brand">
-      <a href="index.html" class="logo" style="color: var(--white); white-space: nowrap;">結婚相談所　ハルカゼ<span>MARRIAGE CONSULTING</span></a>
-
-      <div style="margin-top: 16px;">
-        <img src="images/Photoroom_20260409_154324.png" alt="結婚相談所ハルカゼ ロゴ" style="height: 112px; width: auto;">
-      </div>
+    <div class="footer-brand">      <a href="index.html" class="logo" style="white-space: nowrap;">
+        <img src="newimages/line_oa_chat_260826_154300.jpg" alt="結婚相談所ハルカゼ harukaze" style="height: 60px; width: auto; display: block;">
+      </a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/harukaze.ma?igsh=ZjFxNDU1MGYzMW5j&utm_source=qr" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+        Instagram
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 8.2c1.2-.9 4.6-1.6 6.2.4.9 1.1 1 3.1-.2 4-1 .8-3 .9-3.6-.1-.5-.9.2-1.8 1.4-1.9 1.6-.1 3.4.6 3.9 2.1.5 1.5-.3 3.2-2.2 3.9-1.6.6-3.6.3-4.7-.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+        Threads
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="7" stroke="currentColor" stroke-width="1.8"/><text x="12" y="16.5" text-anchor="middle" font-size="11" font-family="'Georgia', serif" fill="currentColor">n</text></svg>
+        note
+      </a>
     </div>
     <div class="footer-links">
       <ul>
         <li><a href="faq.html">よくある質問</a></li>
-
         <li><a href="privacy.html">プライバシーポリシー</a></li>
         <li><a href="#">特定商取引法に基づく表記</a></li>
       </ul>
     </div>
-
   </div>
   <div class="footer-bottom">
     <span>© 2025 Harukaze Marriage Consulting. All rights reserved.</span>
@@ -557,14 +256,14 @@
   </div>
 </footer>
 
-<div class="float-side-btns">
-  <a href="apply.html" class="float-side-btn">初回無料面談を予約する</a>
-  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn">LINEで婚活突破口診断</a>
+<a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-line-btn"><span style="font-size:1.4em; font-weight:800;">9月</span>の初回無料面談の予約はこちら</a>
+
+<div class="float-side-btns mobile-bottom-only">
+  <a href="apply.html" class="float-side-btn" style="flex-direction:column; gap:2px; height:60px;"><span style="font-size:10px; opacity:0.85; letter-spacing:0.08em;">簡単1分</span><span>LINEで初回無料面談を予約する</span></a>
 </div>
 
 <script src="js/common.js"></script>
 <script>
-  /* ハンバーガーメニュー */
   (function () {
     var btn = document.getElementById('hamburgerBtn');
     var ovl = document.getElementById('mobileNavOverlay');
@@ -580,5 +279,3 @@
 </script>
 </body>
 </html>
-
-

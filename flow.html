@@ -1,163 +1,82 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>成婚までの流れ | 結婚相談所ハルカゼ</title>
+<meta name="description" content="結婚相談所ハルカゼの成婚までの流れ。無料カウンセリングから入会、プロフィール作成、お見合い、交際、プロポーズまで9つのステップで丁寧にサポートします。">
 <link rel="icon" href="newimages/使用ロゴ.jpeg">
-<meta name="description" content="ハルカゼでの入会から成婚までの流れ。無料カウンセリングからプロポーズまで、専任カウンセラーが一貫サポート。">
-<meta property="og:title" content="成婚までの流れ | 結婚相談所ハルカゼ">
-<meta property="og:image" content="newimages/h. (1).png">
-<meta property="og:type" content="website">
 <link rel="stylesheet" href="css/common.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-/* ============================================================
-   flow.html — page styles
-   ============================================================ */
-
-.page-hero {
-  background: #ffffff;
-  padding: 28px 24px 20px;
-  text-align: center; position: relative; overflow: hidden;
-}
-.page-hero::before {
-  content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse 70% 80% at 20% 80%, rgba(184,199,230,0.15) 0%, transparent 60%);
-  pointer-events: none;
-}
-.page-hero-label { font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--rose, #F4688A); margin-bottom: 12px; font-weight: 700; position: relative; font-family: 'Noto Sans JP', sans-serif; }
-.page-hero-title { font-size: clamp(18px, 2.8vw, 26px); font-weight: 500; line-height: 1.5; position: relative; color: #1A2A44; font-family: 'Shippori Mincho', 'Noto Serif JP', serif; letter-spacing: 0.06em; }
-
-/* ── タイムライン ── */
-.timeline { position: relative; max-width: 720px; margin: 52px auto 0; }
-.timeline::before {
-  content: ''; position: absolute;
-  left: 29px; top: 0; bottom: 0; width: 2px;
-  background: linear-gradient(to bottom, rgba(244,104,138,0.4), #F4688A, #1A2A44);
-  opacity: 0.3;
-}
-.tl-item { position: relative; padding-left: 76px; margin-bottom: 36px; }
-.tl-num {
-  position: absolute; left: 0; top: 0;
-  width: 60px; height: 60px; border-radius: 50%;
-  background: #1A2A44; color: #fff;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  font-size: 9px; letter-spacing: 0.08em; line-height: 1.3; z-index: 1;
-  box-shadow: 0 4px 12px rgba(74,98,120,0.25);
-}
-.tl-num strong { font-size: 16px; font-weight: 700; }
-.tl-item.goal .tl-num { background: #F4688A; color: #fff; }
-.tl-card {
-  background: #fff; border: 1px solid rgba(26,42,68,0.1);
-  border-radius: 14px; padding: 22px 24px 20px;
-  box-shadow: 0 2px 12px rgba(74,98,120,0.05);
-  transition: box-shadow 0.2s;
-}
-.tl-card:hover { box-shadow: 0 6px 24px rgba(74,98,120,0.09); }
-.tl-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
-.tl-tag {
-  font-size: 11px; background: #f5f6f8;
-  color: #1A2A44; padding: 3px 10px; border-radius: 10px; font-weight: 500;
-}
-.tl-title { font-size: 17px; font-weight: 700; color: #1A2A44; margin-bottom: 10px; }
-.tl-body { font-size: 14px; line-height: 1.9; color: rgba(26,42,68,0.7); white-space: pre-line; }
-.tl-item.goal .tl-card { border-color: #F4688A; }
-
-@media (min-width: 768px) {
-  .timeline::before { left: 33px; }
-  .tl-num { width: 68px; height: 68px; }
-  .tl-item { padding-left: 90px; }
+.logo-img { display: inline-flex; align-items: center; }
+.logo-img img { height: 72px; width: auto; display: block; }
+@media (max-width: 480px) { .logo-img img { height: 58px; } }
+@media (min-width: 481px) {
+  .site-nav { height: 84px; }
+  body { padding-top: 84px; }
 }
 
-/* ── 4つの出会い方 ── */
-.meet-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 40px;
+.m-section { padding: var(--section-py) clamp(20px, 5vw, 48px); }
+.m-section--off { background: var(--bg-off); }
+.m-inner { max-width: var(--inner-wide); margin: 0 auto; }
+.m-inner--narrow { max-width: 720px; margin: 0 auto; }
+.m-center { text-align: center; }
+.m-eyebrow {
+  display: flex; align-items: center; gap: 14px;
+  font-family: var(--font-display); font-size: 13px; font-style: italic;
+  letter-spacing: 0.08em; color: var(--pink); margin-bottom: 18px;
 }
-.meet-card {
-  background: #fff; border: 1px solid rgba(26,42,68,0.1);
-  border-radius: 14px; padding: 28px 22px; text-align: center;
-  transition: box-shadow 0.2s, transform 0.2s;
-}
-.meet-card:hover { box-shadow: 0 6px 24px rgba(74,98,120,0.09); transform: translateY(-2px); }
-.meet-num { font-size: 11px; letter-spacing: 0.16em; color: rgba(244,104,138,0.4); margin-bottom: 8px; font-weight: 700; }
-.meet-icon { font-size: 32px; margin-bottom: 10px; }
-.meet-title { font-size: 15px; font-weight: 700; color: #1A2A44; margin-bottom: 8px; }
-.meet-text { font-size: 13px; color: rgba(26,42,68,0.7); line-height: 1.7; }
-@media (min-width: 640px) { .meet-grid { grid-template-columns: repeat(4, 1fr); } }
+.m-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--pink); display: block; }
+.m-center .m-eyebrow { justify-content: center; }
+.m-center .m-eyebrow::before { display: none; }
+.m-h2 { font-family: var(--font-serif); font-size: clamp(22px, 3vw, 30px); font-weight: 600; color: var(--text); line-height: 1.65; letter-spacing: 0.04em; }
+.m-lead { font-size: 14px; color: var(--text-mid); line-height: 2.1; margin-top: 20px; }
+.m-center .m-lead { max-width: 560px; margin-left: auto; margin-right: auto; }
 
-/* ── CTA ── */
-.cta-section { background: #1A2A44; padding: 96px 24px; text-align: center; color: #fff; }
-.cta-title { font-size: clamp(22px, 4vw, 36px); font-weight: 700; margin-bottom: 16px; line-height: 1.5; }
-.cta-sub { font-size: 15px; color: rgba(255,255,255,0.72); margin-bottom: 44px; line-height: 2; }
-.cta-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+.m-pagehead { padding: clamp(64px, 9vw, 96px) clamp(20px, 5vw, 48px) 0; }
+.m-pagehead-en { font-family: var(--font-display); font-style: italic; font-size: 14px; color: var(--text-light); margin-bottom: 12px; }
+.m-pagehead-title { font-family: var(--font-serif); font-size: clamp(24px, 3.4vw, 34px); font-weight: 600; color: var(--text); letter-spacing: 0.04em; }
 
-/* ── 統一CTAセクション ── */
-.unified-cta {
-  background: #ffffff;
-  padding: clamp(80px, 10vw, 140px) clamp(24px, 6vw, 80px);
-  text-align: center;
-}
-.unified-cta-inner { max-width: 640px; margin: 0 auto; }
-.unified-cta-label {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 11px; letter-spacing: 0.3em; color: #F4688A;
-  text-transform: uppercase; margin-bottom: 24px;
-}
-.unified-cta-title {
-  font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
-  font-size: clamp(22px, 3vw, 38px); font-weight: 500;
-  color: #1A2A44; line-height: 1.7; margin-bottom: 16px; letter-spacing: 0.06em;
-}
-.unified-cta-note { font-size: 12px; color: #aaa; letter-spacing: 0.08em; margin-bottom: 32px; }
-.unified-cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-bottom: 16px; }
-.unified-btn-primary {
-  background: #F4688A; color: #fff;
-  padding: 17px 44px; border-radius: 2px;
-  font-size: 14px; font-weight: 500; display: inline-block;
-  letter-spacing: 0.08em; transition: all 0.2s;
-}
-.unified-btn-primary:hover { background: #D94F73; transform: translateY(-2px); opacity: 1; }
-.unified-btn-line {
-  background: transparent; color: #06C755;
-  padding: 16px 36px; border-radius: 2px;
-  border: 1px solid #06C755; font-size: 13px;
-  display: inline-flex; align-items: center; gap: 6px;
-  letter-spacing: 0.08em; transition: all 0.2s;
-}
-.unified-btn-line:hover { background: #e8faf0; transform: translateY(-2px); opacity: 1; }
-.unified-cta-sub { font-size: 13px; color: #888; letter-spacing: 0.08em; }
-.nav-cta { background: #F4688A !important; color: #fff !important; border-color: #F4688A !important; }
-.nav-cta:hover { background: #D94F73 !important; border-color: #D94F73 !important; opacity: 1; }
-.nav-switch-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1.5px solid var(--navy);
-  color: var(--navy) !important;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.03em;
-  padding: 8px 16px;
-  border-radius: 100px;
-  white-space: nowrap;
-  transition: background 0.2s, color 0.2s;
-  opacity: 1 !important;
-}
-.nav-switch-link:hover { background: var(--navy); color: #fff !important; }
-.mobile-nav-overlay .nav-switch-link {
-  border-color: var(--navy);
-  padding: 10px 24px;
-  font-size: 14px;
-  margin-top: 4px;
-}
+/* TIMELINE */
+.m-tl { max-width: 780px; margin: 48px auto 0; }
+.m-tl-item { display: grid; grid-template-columns: 96px 1fr; gap: 32px; padding: 32px 0; border-top: 1px solid var(--border); }
+.m-tl-item:last-child { border-bottom: 1px solid var(--border); }
+.m-tl-step { font-family: var(--font-display); }
+.m-tl-step span { display: block; font-size: 11px; color: var(--text-light); letter-spacing: 0.1em; }
+.m-tl-step strong { display: block; font-size: 28px; font-weight: 500; color: var(--text-light); }
+.m-tl-item.is-goal .m-tl-step strong { color: var(--pink); font-size: 22px; }
+.m-tl-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+.m-tl-tag { font-size: 10px; color: var(--text-mid); border: 1px solid var(--border-dark); border-radius: 100px; padding: 3px 12px; }
+.m-tl-tag--goal { background: var(--navy); color: #fff; border-color: var(--navy); }
+.m-tl-title { font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 12px; }
+.m-tl-body { font-size: 13px; color: var(--text-mid); line-height: 2; white-space: pre-line; }
+@media (max-width: 600px) { .m-tl-item { grid-template-columns: 56px 1fr; gap: 20px; } .m-tl-step strong { font-size: 22px; } }
+
+/* MEET GRID */
+.m-meet-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 48px; background: var(--border); }
+.m-meet-card { background: #fff; padding: 32px 24px; text-align: center; }
+.m-meet-num { font-family: var(--font-display); font-size: 14px; color: var(--text-light); margin-bottom: 12px; }
+.m-meet-icon { font-size: 26px; margin-bottom: 14px; }
+.m-meet-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+.m-meet-text { font-size: 12px; color: var(--text-mid); line-height: 1.8; }
+@media (max-width: 768px) { .m-meet-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .m-meet-grid { grid-template-columns: 1fr; } }
+
+.m-btn { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; letter-spacing: 0.05em; padding: 15px 32px; border-radius: 2px; transition: all 0.2s; }
+.m-btn--dark { background: var(--navy); color: #fff; }
+.m-btn--dark:hover { background: var(--navy-dark); opacity: 1; transform: translateY(-2px); }
+.m-btn--line { border: 1px solid var(--line-green); color: var(--line-green); }
+.m-btn--line:hover { background: #eafaf0; opacity: 1; transform: translateY(-2px); }
+.m-cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+.m-cta-note { font-size: 12px; color: var(--text-light); margin-top: 24px; }
 </style>
 </head>
 <body>
 
 <nav class="site-nav" id="siteNav">
-  <a href="index.html" class="logo">
-    <span class="logo-char">結</span><span class="logo-char">婚</span><span class="logo-char">相</span><span class="logo-char">談</span><span class="logo-char">所</span> <span class="logo-char">ハ</span><span class="logo-char">ル</span><span class="logo-char">カ</span><span class="logo-char">ゼ</span>
-    <span>MARRIAGE CONSULTING</span>
+  <a href="index.html" class="logo logo-img">
+    <img src="newimages/line_oa_chat_260826_154300.jpg" alt="結婚相談所ハルカゼ harukaze">
   </a>
   <ul class="nav-links">
     <li><a href="about.html">メッセージ</a></li>
@@ -173,12 +92,13 @@
     <span></span><span></span><span></span>
   </button>
 </nav>
+
 <div class="mobile-nav-overlay" id="mobileNavOverlay">
   <button class="mobile-nav-close" id="mobileNavClose" aria-label="閉じる">
     <span></span><span></span>
   </button>
   <div class="mobile-nav-logo">
-    <img src="newimages/ロゴ.jpg" alt="結婚相談所ハルカゼ harukaze">
+    <img src="newimages/line_oa_chat_260826_154300.jpg" alt="結婚相談所ハルカゼ harukaze">
   </div>
   <a href="index.html">ホーム</a>
   <a href="about.html">メッセージ</a>
@@ -211,27 +131,25 @@
 
 <main>
 
-  <section class="page-hero">
-    <p class="page-hero-label">Flow</p>
-    <h1 class="page-hero-title">成婚までの流れ</h1>
-  </section>
+<div class="m-pagehead">
+  <div class="m-inner--narrow m-center">
+    <p class="m-pagehead-en">Flow</p>
+    <h1 class="m-pagehead-title">成婚までの流れ</h1>
+  </div>
+</div>
 
-  <!-- タイムライン -->
-  <section class="section">
-    <div class="section-inner">
-      <p class="section-label">Step by Step</p>
-      <div class="timeline">
+<section class="m-section">
+  <div class="m-inner--narrow">
+    <p class="m-eyebrow">Step by Step</p>
+  </div>
+  <div class="m-tl">
 
-        <div class="tl-item">
-          <div class="tl-num"><span>STEP</span><strong>01</strong></div>
-          <div class="tl-card">
-            <div class="tl-tags">
-              <span class="tl-tag">無料</span>
-              <span class="tl-tag">オンライン</span>
-              <span class="tl-tag">約40分</span>
-            </div>
-            <h3 class="tl-title">オンライン無料カウンセリング</h3>
-            <p class="tl-body">まずはオンラインでの無料カウンセリングから。あなたの想いや理想、これまでの恋愛経験などを丁寧にお伺いします。
+    <div class="m-tl-item">
+      <div class="m-tl-step"><span>STEP</span><strong>01</strong></div>
+      <div>
+        <div class="m-tl-tags"><span class="m-tl-tag">無料</span><span class="m-tl-tag">オンライン</span><span class="m-tl-tag">約40分</span></div>
+        <h3 class="m-tl-title">オンライン無料カウンセリング</h3>
+        <p class="m-tl-body">まずはオンラインでの無料カウンセリングから。あなたの想いや理想、これまでの恋愛経験などを丁寧にお伺いします。
 
 ・今までの婚活状況と改善アドバイス
 ・あなたに合う婚活のご提案
@@ -239,168 +157,170 @@
 ・ご紹介可能な実際の会員さまのご案内　等
 
 無理な勧誘は一切ありません。安心してお申込みください。</p>
-          </div>
-        </div>
+      </div>
+    </div>
 
-        <div class="tl-item">
-          <div class="tl-num"><span>STEP</span><strong>02</strong></div>
-          <div class="tl-card">
-            <div class="tl-tags"><span class="tl-tag">入会手続き</span></div>
-            <h3 class="tl-title">ご入会手続き・プロフィール作成</h3>
-            <p class="tl-body">下記の書類をご提出後、ご入会手続きへ。プロフィール作成では、あなたの魅力を自然に伝えられるよう、プランナーがヒアリングをもとに作成します。
+    <div class="m-tl-item">
+      <div class="m-tl-step"><span>STEP</span><strong>02</strong></div>
+      <div>
+        <div class="m-tl-tags"><span class="m-tl-tag">入会手続き</span></div>
+        <h3 class="m-tl-title">ご入会手続き・プロフィール作成</h3>
+        <p class="m-tl-body">下記の書類をご提出後、ご入会手続きへ。プロフィール作成では、あなたの魅力を自然に伝えられるよう、プランナーがヒアリングをもとに作成します。
 
 ・身分証明書　・学歴証明書　・独身証明書　・収入証明書など
 
 ※詳しくは無料カウンセリング時にご説明いたします。</p>
-          </div>
-        </div>
+      </div>
+    </div>
 
-        <div class="tl-item">
-          <div class="tl-num"><span>STEP</span><strong>03</strong></div>
-          <div class="tl-card">
-            <div class="tl-tags"><span class="tl-tag">写真撮影</span></div>
-            <h3 class="tl-title">プロフィール写真撮影</h3>
-            <p class="tl-body">パーソナルプランの場合：
+    <div class="m-tl-item">
+      <div class="m-tl-step"><span>STEP</span><strong>03</strong></div>
+      <div>
+        <div class="m-tl-tags"><span class="m-tl-tag">写真撮影</span></div>
+        <h3 class="m-tl-title">プロフィール写真撮影</h3>
+        <p class="m-tl-body">パーソナルプランの場合：
 第一印象を大切に、フォトスタジオまたはロケーション撮影を行います。
 
 事前に、服装や表情のアドバイスも行い、あなたらしさを引き出します。</p>
-          </div>
-        </div>
-
-        <div class="tl-item">
-          <div class="tl-num"><span>STEP</span><strong>04</strong></div>
-          <div class="tl-card">
-            <div class="tl-tags"><span class="tl-tag">自己理解</span></div>
-            <h3 class="tl-title">価値観面談（自己理解）</h3>
-            <p class="tl-body">ハルカゼでは「自己理解」を最も大切にしています。あなたの価値観や理想の関係性を整理し、どんなパートナーとなら自然体でいられるか、一緒に考えます。</p>
-          </div>
-        </div>
-
-        <div class="tl-item">
-          <div class="tl-num"><span>STEP</span><strong>05</strong></div>
-          <div class="tl-card">
-            <div class="tl-tags"><span class="tl-tag">お相手探し</span></div>
-            <h3 class="tl-title">お相手探し</h3>
-            <p class="tl-body">IBJアプリを使って、24時間いつでもご自身のペースでお相手検索が可能。プランナーが客観的な視点から「あなたに合いそうな方」を随時ご紹介します。データと人の両面から、出会いのチャンスを広げていきます。</p>
-          </div>
-        </div>
-
-        <div class="tl-item">
-          <div class="tl-num"><span>STEP</span><strong>06</strong></div>
-          <div class="tl-card">
-            <div class="tl-tags"><span class="tl-tag">お見合い</span></div>
-            <h3 class="tl-title">お見合い</h3>
-            <p class="tl-body">お見合いはホテルのラウンジや落ち着いたカフェで行います。日時や場所の調整、予約はすべて相談所がサポート。当日は会場に行くだけでOKです。</p>
-          </div>
-        </div>
-
-        <div class="tl-item">
-          <div class="tl-num"><span>STEP</span><strong>07</strong></div>
-          <div class="tl-card">
-            <div class="tl-tags"><span class="tl-tag">プレ交際</span></div>
-            <h3 class="tl-title">プレ交際（仮交際）</h3>
-            <p class="tl-body">お見合い後、双方が「もう一度会いたい」と思えばプレ交際へ。複数の方と同時進行でお会いすることができ、相性を見極めながら進めていきます。プランナーが間に入り、連絡の取り方やデートの進め方もサポートします。</p>
-          </div>
-        </div>
-
-        <div class="tl-item">
-          <div class="tl-num"><span>STEP</span><strong>08</strong></div>
-          <div class="tl-card">
-            <div class="tl-tags"><span class="tl-tag">本交際</span></div>
-            <h3 class="tl-title">本交際（真剣交際）</h3>
-            <p class="tl-body">お相手を1人に絞り、結婚を見据えたお付き合いへ。ご両親へのご挨拶やプロポーズのタイミングなども、カウンセラーが伴走します。お互いの価値観を深めながら、未来を一緒に描いていきます。</p>
-          </div>
-        </div>
-
-        <div class="tl-item goal">
-          <div class="tl-num"><span>GOAL</span><strong>🎉</strong></div>
-          <div class="tl-card">
-            <div class="tl-tags">
-              <span class="tl-tag" style="background:var(--c-coral); color:#fff;">ご成婚</span>
-            </div>
-            <h3 class="tl-title">プロポーズ・ご成婚</h3>
-            <p class="tl-body">プロポーズを経て、ご成婚となります。指輪選びや式場探しなど、希望される方には信頼できるプロのご紹介も可能です。
-
-ハルカゼは「結婚がゴール」ではなく、「しあわせのバトンを未来へ繋ぐ」その先まで寄り添います。</p>
-          </div>
-        </div>
-
-      </div><!-- /timeline -->
-    </div>
-  </section>
-
-  <!-- 4つの出会い方 -->
-  <section class="section section-ice">
-    <div class="section-inner">
-      <p class="section-label">How to Meet</p>
-      <h2 class="section-title">4つの出会い方。</h2>
-      <p class="section-sub">自分のペースで、自分に合った方法で出会えます。</p>
-      <div class="meet-grid">
-        <div class="meet-card">
-          <p class="meet-num">01</p>
-          <div class="meet-icon">📱</div>
-          <h3 class="meet-title">アプリで検索</h3>
-          <p class="meet-text">IBJアプリで24時間・全国の会員から自分のペースでお相手を探せます</p>
-        </div>
-        <div class="meet-card">
-          <p class="meet-num">02</p>
-          <div class="meet-icon">👤</div>
-          <h3 class="meet-title">プランナーご紹介</h3>
-          <p class="meet-text">あなたを熟知したプランナーが、最適なお相手を選んでご紹介します</p>
-        </div>
-        <div class="meet-card">
-          <p class="meet-num">03</p>
-          <div class="meet-icon">🥂</div>
-          <h3 class="meet-title">婚活パーティー</h3>
-          <p class="meet-text">自然な雰囲気の中でお会いできる、IBJ主催のパーティーに参加できます</p>
-        </div>
-        <div class="meet-card">
-          <p class="meet-num">04</p>
-          <div class="meet-icon">🤖</div>
-          <h3 class="meet-title">AIマッチング</h3>
-          <p class="meet-text">価値観データをもとにAIが相性の良いお相手を提案。新しい出会いの形です</p>
-        </div>
       </div>
     </div>
-  </section>
 
-  <!-- CTA -->
-    <section class="unified-cta" id="cta">
-  <div class="unified-cta-inner">
-    <p class="unified-cta-label">Free Consultation</p>
-    <h2 class="unified-cta-title">一歩は、ここから。</h2>
-    <p class="unified-cta-note">1分で登録完了</p>
-    <div class="unified-cta-btns">
-      <a href="apply.html" class="unified-btn-primary">無料カウンセリングを予約する</a>
-      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="unified-btn-line">
-        <span style="color:#06C755; font-weight:700;">LINE</span>で予約する
-      </a>
+    <div class="m-tl-item">
+      <div class="m-tl-step"><span>STEP</span><strong>04</strong></div>
+      <div>
+        <div class="m-tl-tags"><span class="m-tl-tag">自己理解</span></div>
+        <h3 class="m-tl-title">価値観面談（自己理解）</h3>
+        <p class="m-tl-body">ハルカゼでは「自己理解」を最も大切にしています。あなたの価値観や理想の関係性を整理し、どんなパートナーとなら自然体でいられるか、一緒に考えます。</p>
+      </div>
     </div>
-    <p class="unified-cta-sub">オンライン40分　｜　全国対応　｜　完全無料</p>
+
+    <div class="m-tl-item">
+      <div class="m-tl-step"><span>STEP</span><strong>05</strong></div>
+      <div>
+        <div class="m-tl-tags"><span class="m-tl-tag">お相手探し</span></div>
+        <h3 class="m-tl-title">お相手探し</h3>
+        <p class="m-tl-body">IBJアプリを使って、24時間いつでもご自身のペースでお相手検索が可能。プランナーが客観的な視点から「あなたに合いそうな方」を随時ご紹介します。データと人の両面から、出会いのチャンスを広げていきます。</p>
+      </div>
+    </div>
+
+    <div class="m-tl-item">
+      <div class="m-tl-step"><span>STEP</span><strong>06</strong></div>
+      <div>
+        <div class="m-tl-tags"><span class="m-tl-tag">お見合い</span></div>
+        <h3 class="m-tl-title">お見合い</h3>
+        <p class="m-tl-body">お見合いはホテルのラウンジや落ち着いたカフェで行います。日時や場所の調整、予約はすべて相談所がサポート。当日は会場に行くだけでOKです。</p>
+      </div>
+    </div>
+
+    <div class="m-tl-item">
+      <div class="m-tl-step"><span>STEP</span><strong>07</strong></div>
+      <div>
+        <div class="m-tl-tags"><span class="m-tl-tag">プレ交際</span></div>
+        <h3 class="m-tl-title">プレ交際（仮交際）</h3>
+        <p class="m-tl-body">お見合い後、双方が「もう一度会いたい」と思えばプレ交際へ。複数の方と同時進行でお会いすることができ、相性を見極めながら進めていきます。プランナーが間に入り、連絡の取り方やデートの進め方もサポートします。</p>
+      </div>
+    </div>
+
+    <div class="m-tl-item">
+      <div class="m-tl-step"><span>STEP</span><strong>08</strong></div>
+      <div>
+        <div class="m-tl-tags"><span class="m-tl-tag">本交際</span></div>
+        <h3 class="m-tl-title">本交際（真剣交際）</h3>
+        <p class="m-tl-body">お相手を1人に絞り、結婚を見据えたお付き合いへ。ご両親へのご挨拶やプロポーズのタイミングなども、カウンセラーが伴走します。お互いの価値観を深めながら、未来を一緒に描いていきます。</p>
+      </div>
+    </div>
+
+    <div class="m-tl-item is-goal">
+      <div class="m-tl-step"><span>GOAL</span><strong>🎉</strong></div>
+      <div>
+        <div class="m-tl-tags"><span class="m-tl-tag m-tl-tag--goal">ご成婚</span></div>
+        <h3 class="m-tl-title">プロポーズ・ご成婚</h3>
+        <p class="m-tl-body">プロポーズを経て、ご成婚となります。指輪選びや式場探しなど、希望される方には信頼できるプロのご紹介も可能です。
+
+ハルカゼは「結婚がゴール」ではなく、「しあわせのバトンを未来へ繋ぐ」その先まで寄り添います。</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="m-section m-section--off m-center">
+  <div class="m-inner--narrow">
+    <p class="m-eyebrow">How to Meet</p>
+    <h2 class="m-h2">4つの出会い方。</h2>
+    <p class="m-lead">自分のペースで、自分に合った方法で出会えます。</p>
+  </div>
+  <div class="m-inner">
+    <div class="m-meet-grid">
+      <div class="m-meet-card">
+        <p class="m-meet-num">01</p>
+        <div class="m-meet-icon">📱</div>
+        <h3 class="m-meet-title">アプリで検索</h3>
+        <p class="m-meet-text">IBJアプリで24時間・全国の会員から自分のペースでお相手を探せます</p>
+      </div>
+      <div class="m-meet-card">
+        <p class="m-meet-num">02</p>
+        <div class="m-meet-icon">👤</div>
+        <h3 class="m-meet-title">プランナーご紹介</h3>
+        <p class="m-meet-text">あなたを熟知したプランナーが、最適なお相手を選んでご紹介します</p>
+      </div>
+      <div class="m-meet-card">
+        <p class="m-meet-num">03</p>
+        <div class="m-meet-icon">🥂</div>
+        <h3 class="m-meet-title">婚活パーティー</h3>
+        <p class="m-meet-text">自然な雰囲気の中でお会いできる、IBJ主催のパーティーに参加できます</p>
+      </div>
+      <div class="m-meet-card">
+        <p class="m-meet-num">04</p>
+        <div class="m-meet-icon">🤖</div>
+        <h3 class="m-meet-title">AIマッチング</h3>
+        <p class="m-meet-text">価値観データをもとにAIが相性の良いお相手を提案。新しい出会いの形です</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="m-section m-center" id="cta">
+  <div class="m-inner--narrow">
+    <p class="m-eyebrow">Free Consultation</p>
+    <h2 class="m-h2">一歩は、ここから。</h2>
+    <div class="m-cta-btns" style="margin-top:32px;">
+      <a href="apply.html" class="m-btn m-btn--dark">無料カウンセリングを予約する</a>
+      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="m-btn m-btn--line">LINEで予約する</a>
+    </div>
+    <p class="m-cta-note">オンライン40分｜全国対応｜完全無料｜1分で登録完了</p>
   </div>
 </section>
 
 </main>
 
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-brand">
-      <a href="index.html" class="logo" style="color: var(--white); white-space: nowrap;">結婚相談所　ハルカゼ<span>MARRIAGE CONSULTING</span></a>
-
-      <div style="margin-top: 16px;">
-        <img src="images/Photoroom_20260409_154324.png" alt="結婚相談所ハルカゼ ロゴ" style="height: 112px; width: auto;">
-      </div>
+    <div class="footer-brand">      <a href="index.html" class="logo" style="white-space: nowrap;">
+        <img src="newimages/line_oa_chat_260826_154300.jpg" alt="結婚相談所ハルカゼ harukaze" style="height: 60px; width: auto; display: block;">
+      </a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/harukaze.ma?igsh=ZjFxNDU1MGYzMW5j&utm_source=qr" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+        Instagram
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 8.2c1.2-.9 4.6-1.6 6.2.4.9 1.1 1 3.1-.2 4-1 .8-3 .9-3.6-.1-.5-.9.2-1.8 1.4-1.9 1.6-.1 3.4.6 3.9 2.1.5 1.5-.3 3.2-2.2 3.9-1.6.6-3.6.3-4.7-.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+        Threads
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="7" stroke="currentColor" stroke-width="1.8"/><text x="12" y="16.5" text-anchor="middle" font-size="11" font-family="'Georgia', serif" fill="currentColor">n</text></svg>
+        note
+      </a>
     </div>
     <div class="footer-links">
       <ul>
         <li><a href="faq.html">よくある質問</a></li>
-
         <li><a href="privacy.html">プライバシーポリシー</a></li>
         <li><a href="#">特定商取引法に基づく表記</a></li>
       </ul>
     </div>
-
   </div>
   <div class="footer-bottom">
     <span>© 2025 Harukaze Marriage Consulting. All rights reserved.</span>
@@ -408,14 +328,14 @@
   </div>
 </footer>
 
-<div class="float-side-btns">
-  <a href="apply.html" class="float-side-btn">初回無料面談を予約する</a>
-  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn">LINEで婚活突破口診断</a>
+<a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-line-btn"><span style="font-size:1.4em; font-weight:800;">9月</span>の初回無料面談の予約はこちら</a>
+
+<div class="float-side-btns mobile-bottom-only">
+  <a href="apply.html" class="float-side-btn" style="flex-direction:column; gap:2px; height:60px;"><span style="font-size:10px; opacity:0.85; letter-spacing:0.08em;">簡単1分</span><span>LINEで初回無料面談を予約する</span></a>
 </div>
 
 <script src="js/common.js"></script>
 <script>
-  /* ハンバーガーメニュー */
   (function () {
     var btn = document.getElementById('hamburgerBtn');
     var ovl = document.getElementById('mobileNavOverlay');
@@ -431,5 +351,3 @@
 </script>
 </body>
 </html>
-
-

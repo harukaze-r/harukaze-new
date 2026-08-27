@@ -5,14 +5,17 @@
 (function () {
   'use strict';
 
-  /* ── フローティングサイドボタン スクロール表示（PC） ── */
+  /* ── フローティングボタン スクロール表示（PC側/SP側） ── */
     var sideBtns = document.querySelector('.float-side-btns');
-    if (sideBtns) {
-      var hero = document.querySelector('.hero, .page-hero');
+    var lineBtn = document.querySelector('.float-line-btn');
+    if (sideBtns || lineBtn) {
+      var hero = document.querySelector('.hero, .page-hero, .m-hero');
       var threshold = hero ? hero.offsetHeight : window.innerHeight * 0.6;
 
       function onScroll() {
-        sideBtns.classList.toggle('is-visible', window.scrollY > threshold);
+        var pastHero = window.scrollY > threshold;
+        if (sideBtns) sideBtns.classList.toggle('is-visible', pastHero);
+        if (lineBtn) lineBtn.classList.toggle('is-visible', pastHero);
       }
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
