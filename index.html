@@ -328,17 +328,23 @@
   margin-top: 48px;
 }
 .m-approach-item {
-  position: relative;
   background: #fff;
   border: 2px solid var(--item-color, var(--pink));
   border-radius: 12px;
-  padding: 44px 28px 60px;
-  text-align: center;
+  overflow: hidden;
 }
 .m-approach-item--1 { --item-color: var(--pink); }
 .m-approach-item--2 { --item-color: var(--navy); }
 .m-approach-item--3 { --item-color: #C9A24C; }
+.m-approach-summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 40px 24px 28px;
+  text-align: center;
+}
+.m-approach-summary::-webkit-details-marker { display: none; }
 .m-approach-num {
+  display: block;
   font-family: var(--font-display);
   font-style: italic;
   font-size: 14px;
@@ -347,14 +353,11 @@
   color: var(--item-color, var(--pink));
   margin-bottom: 10px;
 }
-.m-approach-head { font-size: 22px; font-weight: 700; color: var(--item-color, var(--pink)); margin-bottom: 16px; }
-.m-approach-body { font-size: 13px; color: var(--text-mid); line-height: 1.9; }
+.m-approach-head { display: block; font-size: 16px; font-weight: 700; color: var(--item-color, var(--pink)); line-height: 1.6; }
 .m-approach-arrow {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
   width: 32px;
   height: 32px;
+  margin: 20px auto 0;
   border-radius: 50%;
   border: 1.5px solid var(--item-color, var(--pink));
   color: var(--item-color, var(--pink));
@@ -362,7 +365,12 @@
   align-items: center;
   justify-content: center;
   font-size: 16px;
+  transition: transform 0.25s ease;
 }
+.m-approach-item[open] .m-approach-arrow { transform: rotate(90deg); }
+.m-approach-more { padding: 0 24px 32px; }
+.m-approach-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 16px; }
+.m-approach-more-body { font-size: 13px; color: var(--text-mid); line-height: 1.9; text-align: center; }
 @media (max-width: 640px) { .m-approach-grid { grid-template-columns: 1fr; gap: 24px; } }
 
 /* ============================================================
@@ -809,24 +817,47 @@
   </div>
   <div class="m-inner">
     <div class="m-approach-grid">
-      <div class="m-approach-item m-approach-item--1">
-        <p class="m-approach-num">Visual</p>
-        <p class="m-approach-head">ビジュアル</p>
-        <p class="m-approach-body">第一印象は、変えられる。似合う服装・髪型・写真の見せ方まで、一緒に整えます。</p>
-        <span class="m-approach-arrow">›</span>
-      </div>
-      <div class="m-approach-item m-approach-item--2">
-        <p class="m-approach-num">Communication</p>
-        <p class="m-approach-head">恋愛コミュ力</p>
-        <p class="m-approach-body">会話や距離の詰め方は、才能ではなく技術。実践しながら、無理なく身につけていきます。</p>
-        <span class="m-approach-arrow">›</span>
-      </div>
-      <div class="m-approach-item m-approach-item--3">
-        <p class="m-approach-num">Mindset</p>
-        <p class="m-approach-head">マインド</p>
-        <p class="m-approach-body">思考のクセに、そっと向き合う。実は気がついていない人が多いこと、自分を本当に大切にできる人が、大切にされる人になる。</p>
-        <span class="m-approach-arrow">›</span>
-      </div>
+      <details class="m-approach-item m-approach-item--1">
+        <summary class="m-approach-summary">
+          <span class="m-approach-num">Visual</span>
+          <span class="m-approach-head">①ビジュアル｜見た目が変わると、出会いが変わる</span>
+          <span class="m-approach-arrow">›</span>
+        </summary>
+        <div class="m-approach-more">
+          <div class="m-approach-tags">
+            <span class="m-tag">目標設定</span>
+            <span class="m-tag">Visionボード</span>
+            <span class="m-tag">服装・メイクレッスン</span>
+          </div>
+          <p class="m-approach-more-body">なりたい自分を、一緒に描くところから。<br>変わるのは、選ばれるためじゃない。<br>自分にワクワクするため。それが、出会いを変えていく。</p>
+        </div>
+      </details>
+      <details class="m-approach-item m-approach-item--2">
+        <summary class="m-approach-summary">
+          <span class="m-approach-num">Communication</span>
+          <span class="m-approach-head">②恋愛コミュ力｜伝わってはじめて、届く</span>
+          <span class="m-approach-arrow">›</span>
+        </summary>
+        <div class="m-approach-more">
+          <div class="m-approach-tags">
+            <span class="m-tag">伝える技術レッスン</span>
+          </div>
+          <p class="m-approach-more-body">誠実さも魅力も、伝わらなければ気づいてもらえない。<br>うまく話すためじゃなく、ちゃんと届くために。<br>伝え方が変わると、関係の築き方も変わっていく。</p>
+        </div>
+      </details>
+      <details class="m-approach-item m-approach-item--3">
+        <summary class="m-approach-summary">
+          <span class="m-approach-num">Mindset</span>
+          <span class="m-approach-head">③マインド｜軸があれば、迷わない</span>
+          <span class="m-approach-arrow">›</span>
+        </summary>
+        <div class="m-approach-more">
+          <div class="m-approach-tags">
+            <span class="m-tag">価値観整理</span>
+          </div>
+          <p class="m-approach-more-body">何を求めているのか。<br>誰かに合わせるためじゃなく、自分を知るために。<br>軸が見えてくると、出会いへの向き合い方も変わっていく。</p>
+        </div>
+      </details>
     </div>
   </div>
 </section>
