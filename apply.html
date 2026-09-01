@@ -340,8 +340,7 @@
         action="https://formspree.io/f/mlgzkakj"
         method="POST"
       >
-        <!-- 隠しフィールド：転送先メール -->
-        <input type="hidden" name="_replyto" value="marriage.salon.harukaze@gmail.com">
+        <!-- 隠しフィールド -->
         <input type="hidden" name="_subject" value="【ハルカゼ】無料面談のお申し込みが届きました">
         <input type="hidden" name="_next" value="thanks.html">
 
@@ -373,6 +372,39 @@
             name="フリガナ"
             class="form-input"
             placeholder="例）ヤマダ タロウ"
+            required
+          >
+        </div>
+
+        <!-- メールアドレス -->
+        <div class="form-group">
+          <label class="form-label" for="email">
+            メールアドレス
+            <span class="form-required">必須</span>
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="_replyto"
+            class="form-input"
+            placeholder="例）taro.yamada@example.com"
+            required
+          >
+        </div>
+
+        <!-- 電話番号 -->
+        <div class="form-group">
+          <label class="form-label" for="tel">
+            電話番号
+            <span class="form-required">必須</span>
+          </label>
+          <input
+            type="tel"
+            id="tel"
+            name="電話番号"
+            class="form-input"
+            placeholder="例）090-1234-5678"
+            pattern="[0-9\-+ ]{10,15}"
             required
           >
         </div>
