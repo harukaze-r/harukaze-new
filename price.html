@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -6,52 +6,6 @@
 <title>サービス・料金｜結婚相談所ハルカゼ</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <style>
-.hamburger-btn {
-  display: none;
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  z-index: 1000;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  flex-direction: column;
-  gap: 5px;
-}
-.hamburger-btn span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: #4a6fa5;
-  transition: all 0.3s ease;
-}
-.hamburger-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.hamburger-btn.open span:nth-child(2) { opacity: 0; }
-.hamburger-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-.mobile-nav-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(255,255,255,0.97);
-  z-index: 999;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 32px;
-}
-.mobile-nav-overlay.open { display: flex; }
-.mobile-nav-overlay a {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 1.1rem;
-  color: #2e4a7a;
-  text-decoration: none;
-  letter-spacing: 0.1em;
-}
-.mobile-nav-overlay a:hover { color: #4a6fa5; }
-@media (max-width: 768px) {
-  .hamburger-btn { display: flex; }
-}
 :root {
   --teal:#4a6fa5;--teal-dark:#2e4a7a;--teal-pale:#e8edf8;
   --sky:#87D2F0;--pink: #e8a0a0;--pink-dark: #d4697a;--pink-pale: #fdf0f0;
@@ -237,25 +191,47 @@ nav a.active{color:var(--teal-dark);font-weight:500;}
 .price-cta:hover{opacity:0.88;transform:translateY(-1px);}
 .price-card.popular .price-cta{background:var(--pink);}
 
-/* COLLEGE */
-.college-card{background:white;border-radius:24px;padding:36px 40px;border:1px solid var(--gold-border);position:relative;overflow:hidden;background:linear-gradient(135deg,white 70%,var(--gold-pale));}
-.college-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(to right,var(--gold-mid),var(--pink),var(--teal));}
-.college-header{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:28px;}
-.college-tag{display:inline-block;background:var(--gold-pale);color:var(--gold);font-size:10px;letter-spacing:0.15em;padding:4px 12px;border-radius:50px;margin-bottom:8px;border:1px solid var(--gold-border);}
-.college-title{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:500;color:#2e4a7a;}
-.college-title span{color:var(--pink);}
-.college-subtitle{font-size:12px;color:var(--mid);margin-top:6px;font-weight:300;}
-.college-paypay{display:flex;align-items:center;gap:8px;background:var(--gold-pale);border:1px solid var(--gold-border);border-radius:10px;padding:10px 16px;font-size:11px;color:var(--gold);font-weight:500;flex-shrink:0;}
-.college-tickets{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
-.ticket{border:1px solid var(--gold-border);border-radius:16px;padding:20px 16px;text-align:center;background:white;transition:transform 0.2s,box-shadow 0.2s;}
-.ticket:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(201,150,42,0.1);}
-.ticket-name{font-size:10px;letter-spacing:0.1em;color:var(--mid);margin-bottom:10px;line-height:1.5;}
-.ticket-price{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:400;color:var(--gold);line-height:1;}
-.ticket-price span{font-size:13px;}
-.ticket-per{font-size:10px;color:var(--light);margin:4px 0 8px;}
-.ticket-discount{display:inline-block;background:var(--gold-pale);color:var(--gold);font-size:9px;letter-spacing:0.1em;padding:2px 8px;border-radius:50px;border:1px solid var(--gold-border);}
-.college-footer{margin-top:20px;display:flex;gap:20px;flex-wrap:wrap;font-size:11px;color:var(--mid);}
-.college-footer span::before{content:'✦ ';color:var(--gold-mid);}
+/* LAB チケットカード */
+--lab-pink:#C0537A;--lab-pink-light:#E07EA0;--lab-pink-pale:rgba(192,83,122,0.07);--lab-pink-border:rgba(192,83,122,0.2);
+.lab-card{background:white;border-radius:24px;padding:36px 40px;border:1px solid var(--lab-pink-border);position:relative;overflow:hidden;background:linear-gradient(135deg,white 72%,rgba(224,126,160,0.06));}
+.lab-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(to right,#C0537A,#E07EA0);}
+.lab-card-header{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:12px;}
+.lab-card-tag{display:inline-block;background:var(--lab-pink-pale);color:var(--lab-pink);font-size:10px;letter-spacing:0.15em;padding:4px 12px;border-radius:50px;margin-bottom:8px;border:1px solid var(--lab-pink-border);}
+.lab-card-title{font-family:'Noto Serif JP',serif;font-size:20px;font-weight:500;color:#2e4a7a;}
+.lab-card-title span{color:#C0537A;}
+.lab-card-subtitle{font-size:12px;color:var(--mid);margin-top:6px;font-weight:300;}
+.lab-entry-msg{background:linear-gradient(135deg,#C0537A,#E07EA0);color:white;font-size:11px;font-weight:500;letter-spacing:0.05em;padding:10px 18px;border-radius:50px;flex-shrink:0;align-self:center;white-space:nowrap;}
+.lab-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:24px;}
+.lab-paypay{display:inline-flex;align-items:center;gap:7px;background:#FFF0F5;border:1.5px solid rgba(192,83,122,0.3);border-radius:50px;padding:7px 16px;font-size:12px;color:#C0537A;font-weight:700;letter-spacing:0.05em;}
+.lab-paypay-icon{width:20px;height:20px;background:#C0537A;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:white;font-size:9px;font-weight:800;letter-spacing:0;flex-shrink:0;}
+/* チケット グリッド */
+.lab-tickets{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:20px;}
+.lab-ticket{border-radius:16px;overflow:visible;position:relative;box-shadow:0 4px 18px rgba(0,0,0,0.07);transition:transform 0.22s,box-shadow 0.22s;}
+.lab-ticket:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(192,83,122,0.15);}
+/* チケット上部（スタブ） */
+.lab-ticket-stub{background:linear-gradient(140deg,#C0537A 0%,#E07EA0 100%);color:white;text-align:center;padding:20px 12px 14px;border-radius:16px 16px 0 0;position:relative;}
+.lab-ticket.popular .lab-ticket-stub{background:linear-gradient(140deg,#9B3060 0%,#C0537A 50%,#E07EA0 100%);}
+.lab-ticket-count{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:400;line-height:1;display:block;}
+.lab-ticket-unit{font-size:10px;letter-spacing:0.25em;opacity:0.82;margin-top:1px;display:block;text-transform:uppercase;}
+/* 人気バッジ */
+.lab-popular-badge{position:absolute;top:-1px;right:-1px;background:#FFD700;color:#5a3200;font-size:9px;font-weight:800;letter-spacing:0.1em;padding:5px 11px;border-radius:0 16px 0 10px;box-shadow:0 2px 6px rgba(0,0,0,0.12);}
+/* ミシン目 */
+.lab-ticket-perf{background:linear-gradient(140deg,#C0537A 0%,#E07EA0 100%);height:20px;position:relative;display:flex;align-items:center;}
+.lab-ticket.popular .lab-ticket-perf{background:linear-gradient(140deg,#9B3060 0%,#C0537A 50%,#E07EA0 100%);}
+.lab-ticket-perf::before{content:'';position:absolute;top:50%;left:4px;right:4px;border-top:2.5px dashed rgba(255,255,255,0.55);}
+.lab-ticket-notch{position:absolute;top:50%;width:20px;height:20px;background:white;border-radius:50%;transform:translateY(-50%);}
+.lab-ticket-notch.l{left:-10px;}
+.lab-ticket-notch.r{right:-10px;}
+/* チケット下部（本体） */
+.lab-ticket-body{background:white;padding:18px 14px 20px;text-align:center;border:1px solid rgba(192,83,122,0.15);border-top:none;border-radius:0 0 16px 16px;}
+.lab-ticket-label{font-size:11px;font-weight:700;color:#C0537A;letter-spacing:0.08em;margin-bottom:10px;}
+.lab-ticket-price{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:400;color:#2e4a7a;line-height:1;}
+.lab-ticket-price span{font-size:13px;}
+.lab-ticket-per{font-size:10px;color:var(--light);margin:6px 0 10px;}
+.lab-ticket-tag{display:inline-block;background:var(--lab-pink-pale);color:#C0537A;font-size:9px;letter-spacing:0.12em;padding:3px 10px;border-radius:50px;border:1px solid var(--lab-pink-border);}
+.lab-ticket.popular .lab-ticket-body{border-color:rgba(192,83,122,0.3);}
+.lab-footer{margin-top:4px;display:flex;gap:20px;flex-wrap:wrap;font-size:11px;color:var(--mid);}
+.lab-footer span::before{content:'✦ ';color:#E07EA0;}
 
 /* CTA */
 .flow-cta{padding:80px 24px;background:linear-gradient(135deg,var(--teal-pale) 0%,var(--pink-pale) 100%);}
@@ -281,12 +257,37 @@ footer{background:#2e4a7a;border-top:1px solid rgba(255,255,255,0.15);padding:40
 @media(max-width:768px){
   nav{display:none;}.hamburger{display:flex;}
   .price-grid{grid-template-columns:1fr;}
-  .college-tickets{grid-template-columns:1fr 1fr;}
-  .college-header{flex-direction:column;}
+  .lab-tickets{grid-template-columns:1fr 1fr;}
+  .lab-card-header{flex-direction:column;}
+  .lab-entry-msg{align-self:flex-start;}
   .compare-table th,.compare-table td{padding:10px 10px;font-size:10px;}
   .footer-inner{flex-direction:column;text-align:center;}
   .line-reassure-box{flex-direction:column;text-align:center;}
   .gold-band-inner{gap:16px;}
+}
+.nav-cta { background: #F4688A !important; color: #fff !important; border-color: #F4688A !important; }
+.nav-cta:hover { background: #D94F73 !important; border-color: #D94F73 !important; opacity: 1; }
+.nav-switch-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--navy);
+  color: var(--navy) !important;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  padding: 8px 16px;
+  border-radius: 100px;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+  opacity: 1 !important;
+}
+.nav-switch-link:hover { background: var(--navy); color: #fff !important; }
+.mobile-nav-overlay .nav-switch-link {
+  border-color: var(--navy);
+  padding: 10px 24px;
+  font-size: 14px;
+  margin-top: 4px;
 }
 </style>
 </head>
@@ -294,38 +295,98 @@ footer{background:#2e4a7a;border-top:1px solid rgba(255,255,255,0.15);padding:40
 <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニュー">
   <span></span><span></span><span></span>
 </button>
-<div class="mobile-nav-overlay" id="mobileNav">
-  <a href="index.html">トップ</a>
-  <a href="vision.html">ハルカゼの想い</a>
-  <a href="college.html">ハルカゼCollege</a>
-  <a href="service.html">サービス内容</a>
-  <a href="price.html">サービス・料金</a>
-  <a href="flow.html">ご成婚までの流れ</a>
+<div class="mobile-nav-overlay" id="mobileNavOverlay">
+  <button class="mobile-nav-close" id="mobileNavClose" aria-label="閉じる">
+    <span></span><span></span>
+  </button>
+  <div class="mobile-nav-logo">
+    <img src="newimages/ロゴ.jpg" alt="結婚相談所ハルカゼ harukaze">
+  </div>
+  <a href="index.html">ホーム</a>
+  <a href="about.html">メッセージ</a>
+  <a href="harukaze-lab.html">ハルカゼLAB</a>
+  <a href="service.html">プラン料金</a>
+  <a href="flow.html">成婚までの流れ</a>
   <a href="faq.html">よくある質問</a>
   <a href="blog.html">ブログ</a>
-  <a href="contact.html">お問い合わせ</a>
+  <a href="index.html#switch-campaign" class="nav-switch-link">乗り換えのご相談はこちら</a>
+  <a href="apply.html" class="nav-cta">初回無料面談に申し込む</a>
+  <div class="mobile-nav-bottom">
+    <hr class="mobile-nav-divider">
+    <div class="mobile-nav-social">
+      <a href="https://www.instagram.com/harukaze.ma?igsh=ZjFxNDU1MGYzMW5j&utm_source=qr" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+        Instagram
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 8.2c1.2-.9 4.6-1.6 6.2.4.9 1.1 1 3.1-.2 4-1 .8-3 .9-3.6-.1-.5-.9.2-1.8 1.4-1.9 1.6-.1 3.4.6 3.9 2.1.5 1.5-.3 3.2-2.2 3.9-1.6.6-3.6.3-4.7-.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+        Threads
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="7" stroke="currentColor" stroke-width="1.8"/><text x="12" y="16.5" text-anchor="middle" font-size="11" font-family="'Georgia', serif" fill="currentColor">n</text></svg>
+        note
+      </a>
+    </div>
+    <p class="mobile-nav-copy">© 2025 Harukaze Marriage Consulting. All rights reserved.</p>
+  </div>
 </div>
 
-<header>
-  <div class="header-inner">
-    <a href="index.html" class="logo">
-      <span class="logo-sub">オンラインで始める婚活</span>
-      <span class="logo-main">結婚相談所 ハルカゼ</span>
-    </a>
-    <nav>
-      <a href="vision.html">ハルカゼの想い</a>
-      <a href="college.html">ハルカゼcollege</a>
-      <a href="service.html">サービス内容</a>
-      <a href="#" class="active">サービス・料金</a>
-      <a href="flow.html">ご成婚までの流れ</a>
-      <a href="faq.html">よくある質問</a>
-      <a href="blog.html">ブログ</a>
-      <a href="contact.html">お問い合わせ</a>
-      <a href="https://lin.ee/SNU5ure" target="_blank" class="nav-cta">無料相談</a>
-    </nav>
-    <div class="hamburger"><span></span><span></span><span></span></div>
+<nav class="site-nav" id="siteNav">
+  <a href="index.html" class="logo">
+    <span class="logo-char">結</span><span class="logo-char">婚</span><span class="logo-char">相</span><span class="logo-char">談</span><span class="logo-char">所</span> <span class="logo-char">ハ</span><span class="logo-char">ル</span><span class="logo-char">カ</span><span class="logo-char">ゼ</span>
+    <span>MARRIAGE CONSULTING</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html">メッセージ</a></li>
+    <li><a href="harukaze-lab.html">ハルカゼLAB</a></li>
+    <li><a href="service.html">プラン料金</a></li>
+    <li><a href="flow.html">成婚までの流れ</a></li>
+    <li><a href="faq.html">よくある質問</a></li>
+    <li><a href="blog.html">ブログ</a></li>
+    <li><a href="index.html#switch-campaign" class="nav-switch-link">乗り換えのご相談はこちら</a></li>
+    <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで予約する</a></li>
+  </ul>
+  <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- モバイルメニュー -->
+<div class="mobile-nav-overlay" id="mobileNavOverlay">
+  <button class="mobile-nav-close" id="mobileNavClose" aria-label="閉じる">
+    <span></span><span></span>
+  </button>
+  <div class="mobile-nav-logo">
+    <img src="newimages/ロゴ.jpg" alt="結婚相談所ハルカゼ harukaze">
   </div>
-</header>
+  <a href="index.html">ホーム</a>
+  <a href="about.html">メッセージ</a>
+  <a href="harukaze-lab.html">ハルカゼLAB</a>
+  <a href="service.html">プラン料金</a>
+  <a href="flow.html">成婚までの流れ</a>
+  <a href="faq.html">よくある質問</a>
+  <a href="blog.html">ブログ</a>
+  <a href="index.html#switch-campaign" class="nav-switch-link">乗り換えのご相談はこちら</a>
+  <a href="apply.html" class="nav-cta">初回無料面談に申し込む</a>
+  <div class="mobile-nav-bottom">
+    <hr class="mobile-nav-divider">
+    <div class="mobile-nav-social">
+      <a href="https://www.instagram.com/harukaze.ma?igsh=ZjFxNDU1MGYzMW5j&utm_source=qr" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+        Instagram
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 8.2c1.2-.9 4.6-1.6 6.2.4.9 1.1 1 3.1-.2 4-1 .8-3 .9-3.6-.1-.5-.9.2-1.8 1.4-1.9 1.6-.1 3.4.6 3.9 2.1.5 1.5-.3 3.2-2.2 3.9-1.6.6-3.6.3-4.7-.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+        Threads
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="7" stroke="currentColor" stroke-width="1.8"/><text x="12" y="16.5" text-anchor="middle" font-size="11" font-family="'Georgia', serif" fill="currentColor">n</text></svg>
+        note
+      </a>
+    </div>
+    <p class="mobile-nav-copy">© 2025 Harukaze Marriage Consulting. All rights reserved.</p>
+  </div>
+</div>
 
 <!-- HERO -->
 <section class="page-hero">
@@ -395,7 +456,7 @@ footer{background:#2e4a7a;border-top:1px solid rgba(255,255,255,0.15);padding:40
         </div>
         <ul class="price-features">
           <li><span class="fi fi-teal">✓</span> お見合い申し込み 月100件</li>
-          <li><span class="fi fi-teal">✓</span> コンシェルジュよりご紹介</li>
+          <li><span class="fi fi-teal">✓</span> プランナーよりご紹介</li>
           <li><span class="fi fi-teal">✓</span> お見合い後フィードバック</li>
           <li><span class="fi fi-teal">✓</span> 定期面談 年6回</li>
           <li><span class="fi fi-teal">✓</span> プロフィール作成</li>
@@ -433,7 +494,7 @@ footer{background:#2e4a7a;border-top:1px solid rgba(255,255,255,0.15);padding:40
         </div>
         <ul class="price-features">
           <li><span class="fi fi-teal">✓</span> お見合い申し込み 月200件</li>
-          <li><span class="fi fi-teal">✓</span> コンシェルジュよりご紹介</li>
+          <li><span class="fi fi-teal">✓</span> プランナーよりご紹介</li>
           <li><span class="fi fi-teal">✓</span> お見合い後フィードバック</li>
           <li><span class="fi fi-teal">✓</span> 定期面談 年12回</li>
           <li><span class="fi fi-teal">✓</span> プロフィール作成</li>
@@ -446,41 +507,83 @@ footer{background:#2e4a7a;border-top:1px solid rgba(255,255,255,0.15);padding:40
       </div>
     </div>
 
-    <!-- COLLEGE -->
-    <div class="college-card reveal">
-      <div class="college-header">
+    <!-- ハルカゼLAB チケット -->
+    <div class="lab-card reveal">
+      <div class="lab-card-header">
         <div>
-          <span class="college-tag">会員以外もOK</span>
-          <div class="college-title">ハルカゼ<span>College</span></div>
-          <div class="college-subtitle">必要な講座を、必要な分だけ。まとめて購入するほどお得に。</div>
+          <span class="lab-card-tag">会員以外もOK</span>
+          <div class="lab-card-title">ハルカゼ<span>LAB</span></div>
+          <div class="lab-card-subtitle">学びのチケットで、必要な分だけ。まとめて購入するほどお得に。</div>
         </div>
-        <div class="college-paypay">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M7 12h10M7 16h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <div class="lab-entry-msg">🎟 会員じゃなくても、ここから始められる</div>
+      </div>
+
+      <div class="lab-meta">
+        <div class="lab-paypay">
+          <span class="lab-paypay-icon">P</span>
           PayPay払いOK
         </div>
       </div>
-      <div class="college-tickets">
 
-        <div class="ticket">
-          <div class="ticket-name">お試し<br>3枚セット</div>
-          <div class="ticket-price">3,000<span>円</span></div>
-          <div class="ticket-per">1枚あたり 1,000円</div>
-          <span class="ticket-discount">まずはお試し</span>
+      <div class="lab-tickets">
+
+        <!-- 3枚：まずはお試し -->
+        <div class="lab-ticket">
+          <div class="lab-ticket-stub">
+            <span class="lab-ticket-count">3</span>
+            <span class="lab-ticket-unit">TICKETS</span>
+          </div>
+          <div class="lab-ticket-perf">
+            <span class="lab-ticket-notch l"></span>
+            <span class="lab-ticket-notch r"></span>
+          </div>
+          <div class="lab-ticket-body">
+            <div class="lab-ticket-label">まずはお試し</div>
+            <div class="lab-ticket-price">3,000<span>円</span></div>
+            <div class="lab-ticket-per">1枚あたり 1,000円</div>
+            <span class="lab-ticket-tag">気軽にスタート</span>
+          </div>
         </div>
-        <div class="ticket">
-          <div class="ticket-name">スタンダード<br>5枚セット</div>
-          <div class="ticket-price">4,500<span>円</span></div>
-          <div class="ticket-per">1枚あたり 900円</div>
-          <span class="ticket-discount">10% OFF</span>
+
+        <!-- 5枚：スタンダード（一番人気） -->
+        <div class="lab-ticket popular">
+          <div class="lab-ticket-stub">
+            <span class="lab-popular-badge">★ 一番人気</span>
+            <span class="lab-ticket-count">5</span>
+            <span class="lab-ticket-unit">TICKETS</span>
+          </div>
+          <div class="lab-ticket-perf">
+            <span class="lab-ticket-notch l"></span>
+            <span class="lab-ticket-notch r"></span>
+          </div>
+          <div class="lab-ticket-body">
+            <div class="lab-ticket-label">スタンダード</div>
+            <div class="lab-ticket-price">4,500<span>円</span></div>
+            <div class="lab-ticket-per">1枚あたり 900円</div>
+            <span class="lab-ticket-tag">10% OFF</span>
+          </div>
         </div>
-        <div class="ticket">
-          <div class="ticket-name">集中<br>10枚セット</div>
-          <div class="ticket-price">8,000<span>円</span></div>
-          <div class="ticket-per">1枚あたり 800円</div>
-          <span class="ticket-discount">20% OFF</span>
+
+        <!-- 10枚：本気でアップデート -->
+        <div class="lab-ticket">
+          <div class="lab-ticket-stub">
+            <span class="lab-ticket-count">10</span>
+            <span class="lab-ticket-unit">TICKETS</span>
+          </div>
+          <div class="lab-ticket-perf">
+            <span class="lab-ticket-notch l"></span>
+            <span class="lab-ticket-notch r"></span>
+          </div>
+          <div class="lab-ticket-body">
+            <div class="lab-ticket-label">本気でアップデート</div>
+            <div class="lab-ticket-price">8,000<span>円</span></div>
+            <div class="lab-ticket-per">1枚あたり 800円</div>
+            <span class="lab-ticket-tag">20% OFF</span>
+          </div>
         </div>
+
       </div>
-      <div class="college-footer">
+      <div class="lab-footer">
         <span>有効期限：購入から6ヶ月</span>
         <span>リピート受講特典あり</span>
         <span>3枚から購入可能</span>
@@ -673,18 +776,28 @@ footer{background:#2e4a7a;border-top:1px solid rgba(255,255,255,0.15);padding:40
   </div>
 </section>
 
-<footer>
+<footer class="site-footer">
   <div class="footer-inner">
-    <a href="index.html" class="footer-logo">結婚相談所 ハルカゼ</a>
-    <div class="footer-links">
-      <a href="vision.html">ハルカゼの想い</a><a href="college.html">ハルカゼcollege</a>
-      <a href="service.html">サービス内容</a>
-      <a href="price.html">サービス・料金</a><a href="flow.html">ご成婚までの流れ</a>
-      <a href="faq.html">よくある質問</a><a href="blog.html">ブログ</a><a href="contact.html">お問い合わせ</a>
-      <a href="https://lin.ee/SNU5ure" target="_blank">無料相談</a>
-      <a href="privacy.html">プライバシーポリシー</a>
+    <div class="footer-brand">
+      <a href="index.html" class="logo" style="color: var(--white); white-space: nowrap;">結婚相談所　ハルカゼ<span>MARRIAGE CONSULTING</span></a>
+
+      <div style="margin-top: 16px;">
+        <img src="images/Photoroom_20260409_154324.png" alt="結婚相談所ハルカゼ ロゴ" style="height: 112px; width: auto;">
+      </div>
     </div>
-    <span class="footer-copy">© 2025 結婚相談所ハルカゼ</span>
+    <div class="footer-links">
+      <ul>
+        <li><a href="faq.html">よくある質問</a></li>
+
+        <li><a href="privacy.html">プライバシーポリシー</a></li>
+        <li><a href="#">特定商取引法に基づく表記</a></li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Harukaze Marriage Consulting. All rights reserved.</span>
+    <span>IBJ正規加盟店　大阪・北摂・吹田</span>
   </div>
 </footer>
 
@@ -696,18 +809,19 @@ const observer = new IntersectionObserver((entries) => {
 reveals.forEach(el=>observer.observe(el));
 </script>
 <script>
-const hamburgerBtn = document.getElementById('hamburgerBtn');
-const mobileNav = document.getElementById('mobileNav');
-hamburgerBtn.addEventListener('click', () => {
-  hamburgerBtn.classList.toggle('open');
-  mobileNav.classList.toggle('open');
-});
-mobileNav.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => {
-    hamburgerBtn.classList.remove('open');
-    mobileNav.classList.remove('open');
-  });
-});
+  /* ハンバーガーメニュー */
+  (function () {
+    var btn = document.getElementById('hamburgerBtn');
+    var ovl = document.getElementById('mobileNavOverlay');
+    var closeBtn = document.getElementById('mobileNavClose');
+    function openNav() { ovl.classList.add('open'); btn.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeNav() { ovl.classList.remove('open'); btn.classList.remove('open'); document.body.style.overflow = ''; }
+    if (btn && ovl) {
+      btn.addEventListener('click', function () { ovl.classList.contains('open') ? closeNav() : openNav(); });
+      if (closeBtn) closeBtn.addEventListener('click', closeNav);
+      ovl.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeNav); });
+    }
+  })();
 </script>
 </body>
 </html>

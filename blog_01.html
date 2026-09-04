@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -6,6 +6,7 @@
 <title>石神りさのはなし｜ハルカゼブログ</title>
 <meta name="description" content="結婚相談所ハルカゼ代表・石神りさの自己紹介。なぜこの相談所をつくったのか、ハルカゼという名前の由来、婚活への想いをつづります。">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/common.css">
 <style>
 .hamburger-btn {
   display: none;
@@ -401,24 +402,20 @@ footer { background: #2e4a7a; border-top: 1px solid rgba(255,255,255,0.15); padd
 <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニュー">
   <span></span><span></span><span></span>
 </button>
-<div class="mobile-nav-overlay" id="mobileNav">
-  <a href="index.html">トップ</a>
-  <a href="vision.html">ハルカゼの想い</a>
-  <a href="college.html">ハルカゼCollege</a>
-  <a href="service.html">サービス内容</a>
-  <a href="price.html">サービス・料金</a>
-  <a href="flow.html">ご成婚までの流れ</a>
-  <a href="faq.html">よくある質問</a>
-  <a href="blog.html">ブログ</a>
-  <a href="contact.html">お問い合わせ</a>
-</div>
+<div class="mobile-nav-overlay" id="mobileNavOverlay">
+  <button class="mobile-nav-close" id="mobileNavClose" aria-label="閉じる">
+    <span></span><span></span>
+  </button>
+  <div class="mobile-nav-specialty">
+    <span>MARRIAGE CONSULTING</span>
+    <em>20・30代のための賢い婚活のススメ</em>
+  </div>
 
 <!-- HEADER -->
 <header>
   <div class="header-inner">
     <a href="index.html" class="logo">
-      <span class="logo-sub">オンラインで始める婚活</span>
-      <span class="logo-main">結婚相談所 ハルカゼ</span>
+      <img src="newimages/ロゴ.jpg" alt="結婚相談所ハルカゼ harukaze" style="height: 44px; width: auto; display: block;">
     </a>
     <nav>
       <a href="vision.html">ハルカゼの想い</a>
@@ -572,22 +569,43 @@ footer { background: #2e4a7a; border-top: 1px solid rgba(255,255,255,0.15); padd
 </article>
 
 <!-- FOOTER -->
-<footer>
+<footer class="site-footer">
   <div class="footer-inner">
-    <a href="index.html" class="footer-logo">結婚相談所 ハルカゼ</a>
-    <div class="footer-links">
-      <a href="vision.html">ハルカゼの想い</a>
-      <a href="college.html">ハルカゼcollege</a>
-      <a href="service.html">サービス内容</a>
-      <a href="price.html">サービス・料金</a>
-      <a href="flow.html">ご成婚までの流れ</a>
-      <a href="faq.html">よくある質問</a>
-      <a href="blog.html">ブログ</a>
-      <a href="contact.html">お問い合わせ</a>
-      <a href="https://lin.ee/SNU5ure" target="_blank">無料相談</a>
-      <a href="privacy.html">プライバシーポリシー</a>
+    <div class="footer-brand">
+      <div style="margin-bottom: 16px;">
+        <img src="images/Photoroom_20260409_154324.png" alt="結婚相談所ハルカゼ ロゴ" style="height: 56px; width: auto;">
+      </div>
+      <a href="index.html" class="logo" style="white-space: nowrap;">
+        <img src="newimages/ロゴ.jpg" alt="結婚相談所ハルカゼ harukaze" style="height: 52px; width: auto; display: block;">
+      </a>
     </div>
-    <span class="footer-copy">© 2025 結婚相談所ハルカゼ</span>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/harukaze.ma?igsh=ZjFxNDU1MGYzMW5j&utm_source=qr" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+        Instagram
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 8.2c1.2-.9 4.6-1.6 6.2.4.9 1.1 1 3.1-.2 4-1 .8-3 .9-3.6-.1-.5-.9.2-1.8 1.4-1.9 1.6-.1 3.4.6 3.9 2.1.5 1.5-.3 3.2-2.2 3.9-1.6.6-3.6.3-4.7-.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+        Threads
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="7" stroke="currentColor" stroke-width="1.8"/><text x="12" y="16.5" text-anchor="middle" font-size="11" font-family="'Georgia', serif" fill="currentColor">n</text></svg>
+        note
+      </a>
+    </div>
+    <div class="footer-links">
+      <ul>
+        <li><a href="faq.html">よくある質問</a></li>
+
+        <li><a href="privacy.html">プライバシーポリシー</a></li>
+        <li><a href="#">特定商取引法に基づく表記</a></li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Harukaze Marriage Consulting. All rights reserved.</span>
+    <span>IBJ正規加盟店　大阪・北摂・吹田</span>
   </div>
 </footer>
 
@@ -689,6 +707,21 @@ mobileNav.querySelectorAll('a').forEach(a => {
     mobileNav.classList.remove('open');
   });
 });
+</script>
+<script>
+  /* ハンバーガーメニュー */
+  (function () {
+    var btn = document.getElementById('hamburgerBtn');
+    var ovl = document.getElementById('mobileNavOverlay');
+    var closeBtn = document.getElementById('mobileNavClose');
+    function openNav() { ovl.classList.add('open'); btn.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeNav() { ovl.classList.remove('open'); btn.classList.remove('open'); document.body.style.overflow = ''; }
+    if (btn && ovl) {
+      btn.addEventListener('click', function () { ovl.classList.contains('open') ? closeNav() : openNav(); });
+      if (closeBtn) closeBtn.addEventListener('click', closeNav);
+      ovl.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeNav); });
+    }
+  })();
 </script>
 </body>
 </html>

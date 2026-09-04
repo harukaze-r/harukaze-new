@@ -4,529 +4,271 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ハルカゼの想い | 結婚相談所ハルカゼ</title>
+<meta name="description" content="結婚相談所ハルカゼ代表・石神りさからのメッセージ。婚活で大切にしたいのは、あなたの納得感。人との出会いで、人生は変わる。">
 <link rel="icon" href="newimages/使用ロゴ.jpeg">
-<meta property="og:image" content="newimages/h. (1).png">
-<meta property="og:title" content="ハルカゼの想い | 結婚相談所ハルカゼ">
-<meta property="og:description" content="正直、損してない？その誠実さ。伝え方を変えるだけで、出会いは変わる。">
-<meta property="og:type" content="website">
 <link rel="stylesheet" href="css/common.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-/* ============================================================
-   about.html ページ固有スタイル
-   ============================================================ */
-
-/* ── ページヒーロー ── */
-.page-hero {
-  background: var(--color-navy);
-  padding: 80px 24px 72px;
-  text-align: center;
-  color: #fff;
-}
-.page-hero-label {
-  font-size: 11px;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--color-sky);
-  margin-bottom: 16px;
-}
-.page-hero-title {
-  font-size: clamp(32px, 6vw, 56px);
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  line-height: 1.3;
+.logo-img { display: inline-flex; align-items: center; }
+.logo-img img { height: 72px; width: auto; display: block; }
+@media (max-width: 480px) { .logo-img img { height: 58px; } }
+@media (min-width: 481px) {
+  .site-nav { height: 84px; }
+  body { padding-top: 84px; }
 }
 
-/* ── メッセージセクション ── */
-.about-message {
-  max-width: 960px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 48px;
-  align-items: start;
-}
-.about-photo {
-  border-radius: 16px;
-  overflow: hidden;
-  aspect-ratio: 3/4;
-  max-width: 320px;
-  margin: 0 auto;
-}
-.about-photo img {
-  width: 100%; height: 100%; object-fit: cover;
-}
-.about-message-body {
-  font-size: 16px;
-  line-height: 2.1;
-  color: #444;
-  white-space: pre-line;
-}
-.about-name {
-  display: inline-block;
-  margin-top: 28px;
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--color-navy);
-  border-bottom: 1px solid var(--color-sky);
-  padding-bottom: 3px;
-}
+.m-section { padding: var(--section-py) clamp(20px, 5vw, 48px); }
+.m-section--off { background: var(--bg-off); }
+.m-inner { max-width: var(--inner-wide); margin: 0 auto; }
+.m-inner--narrow { max-width: 720px; margin: 0 auto; }
+.m-center { text-align: center; }
 
-/* ── VISION ── */
-.vision-section {
-  background: linear-gradient(165deg, #0b1e38 0%, #1E3A5F 45%, #1a3a60 100%);
-  padding: 80px 24px;
-  color: #fff;
-  position: relative;
-  overflow: hidden;
+.m-eyebrow {
+  display: flex; align-items: center; gap: 14px;
+  font-family: var(--font-display); font-size: 13px; font-style: italic;
+  letter-spacing: 0.08em; color: var(--pink); margin-bottom: 18px;
 }
-/* 光の差し込み — 右上から */
-.vision-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 70% 55% at 90% -5%, rgba(255,255,255,0.18) 0%, transparent 55%),
-    radial-gradient(ellipse 40% 70% at 100% 10%, rgba(14,165,233,0.22) 0%, transparent 50%),
-    radial-gradient(ellipse 30% 40% at 80% 0%, rgba(224,242,254,0.28) 0%, transparent 45%);
-  pointer-events: none;
-}
-/* 斜めの光の筋 */
-.vision-section::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(145deg,
-      transparent 0%,
-      transparent 38%,
-      rgba(255,255,255,0.04) 40%,
-      rgba(255,255,255,0.07) 41%,
-      rgba(255,255,255,0.04) 42%,
-      transparent 44%,
-      transparent 55%,
-      rgba(255,255,255,0.03) 57%,
-      rgba(255,255,255,0.05) 58%,
-      rgba(255,255,255,0.03) 59%,
-      transparent 61%
-    );
-  pointer-events: none;
-}
-.vision-inner {
-  max-width: 720px;
-  margin: 0 auto;
-  text-align: center;
-}
-.vision-title {
-  font-size: clamp(26px, 4.5vw, 42px);
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  margin-bottom: 40px;
-  color: #fff;
-  position: relative;
-  z-index: 1;
-}
-.vision-body {
-  font-size: 16px;
-  line-height: 2.2;
-  color: rgba(255,255,255,0.85);
-  white-space: pre-line;
-  text-align: left;
-  position: relative;
-  z-index: 1;
-}
+.m-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--pink); display: block; }
+.m-center .m-eyebrow { justify-content: center; }
+.m-center .m-eyebrow::before { display: none; }
 
-/* ── VALUE ── */
-.value-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-  margin-top: 48px;
-}
-.value-card {
-  background: var(--color-white);
-  border: 1px solid var(--color-ice);
-  border-radius: 14px;
-  padding: 32px 28px;
-  position: relative;
-  transition: box-shadow 0.2s;
-}
-.value-card:hover {
-  box-shadow: 0 6px 24px rgba(30,58,95,0.1);
-}
-.value-num {
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  color: var(--color-sky);
-  margin-bottom: 10px;
-}
-.value-heading {
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--color-navy);
-  margin-bottom: 12px;
-}
-.value-text {
-  font-size: 14px;
-  line-height: 1.9;
-  color: #555;
-}
+.m-h2 { font-family: var(--font-serif); font-size: clamp(22px, 3vw, 30px); font-weight: 600; color: var(--text); line-height: 1.65; letter-spacing: 0.04em; }
+.m-lead { font-size: 14px; color: var(--text-mid); line-height: 2.1; margin-top: 20px; }
+.m-center .m-lead { max-width: 560px; margin-left: auto; margin-right: auto; }
+.m-thoughts-text { max-width: 520px; margin: 28px auto 0; text-align: left; }
+.m-thoughts-text p { font-size: 15px; color: var(--text-mid); line-height: 1.9; letter-spacing: 0.02em; margin-bottom: 24px; }
+.m-thoughts-text p:last-child { margin-bottom: 0; }
 
-/* ── FINAL MESSAGE ── */
-.final-msg-section {
-  background: var(--color-ice);
-  padding: 80px 24px;
-}
-.final-msg-inner {
-  max-width: 680px;
-  margin: 0 auto;
-  text-align: center;
-}
-.final-msg-body {
-  font-size: 16px;
-  line-height: 1.8;
-  color: var(--color-navy);
-  white-space: pre-line;
-  font-weight: 400;
-}
+/* PAGE HEADER */
+.m-pagehead { padding: clamp(64px, 9vw, 96px) clamp(20px, 5vw, 48px) 0; }
+.m-pagehead-en { font-family: var(--font-display); font-style: italic; font-size: 14px; color: var(--text-light); margin-bottom: 12px; }
+.m-pagehead-title { font-family: var(--font-serif); font-size: clamp(24px, 3.4vw, 34px); font-weight: 600; color: var(--text); letter-spacing: 0.04em; }
 
-/* ── ファイナルメッセージ 写真・署名 ── */
-.final-msg-lead {
-  font-size: 22px;
-  font-weight: 600;
-  color: var(--color-navy);
-  letter-spacing: 0.06em;
-  margin-bottom: 32px;
-  font-family: var(--font-display);
-}
-.final-msg-photo-wrap {
-  margin-top: 48px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-.final-msg-photo {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid var(--color-ice);
-  box-shadow: 0 6px 24px rgba(30,58,95,0.12);
-}
-.final-msg-photo img {
-  width: 100%; height: 100%; object-fit: cover; object-position: center top;
-}
-.final-msg-credit {
-  text-align: center;
-}
-.final-msg-credit-role {
-  font-size: 13px;
-  letter-spacing: 0.15em;
-  color: var(--color-sky);
-  margin-bottom: 6px;
-  font-family: var(--font-display);
-}
-.final-msg-credit-name {
-  font-size: 26px;
-  font-weight: 500;
-  color: var(--color-navy);
-  letter-spacing: 0.1em;
-  margin-bottom: 14px;
-  font-family: var(--font-display);
-}
-.final-msg-profile-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  color: var(--color-sky);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(14,165,233,0.4);
-  padding-bottom: 2px;
-  transition: opacity 0.2s;
-}
-.final-msg-profile-link:hover { opacity: 0.7; }
+/* REP PROFILE */
+.m-rep-grid { display: grid; grid-template-columns: 300px 1fr; gap: 56px; align-items: start; }
+.m-rep-photo { border-radius: 4px; overflow: hidden; }
+.m-rep-photo img { width: 100%; height: auto; object-fit: cover; display: block; }
+.m-rep-name { font-family: var(--font-sans); font-size: 20px; font-weight: 600; color: var(--text); letter-spacing: 0.03em; }
+.m-rep-name span { font-size: 12px; font-weight: 400; color: var(--text-light); margin-left: 8px; }
+.m-rep-meta { font-size: 12px; color: var(--text-light); margin-top: 6px; margin-bottom: 20px; }
+.m-rep-bio { font-size: 13px; color: var(--text-mid); line-height: 2.1; }
+.m-rep-msg-head { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--text); letter-spacing: 0.04em; margin: 32px 0 16px; }
+.m-rep-msg-body { font-size: 14px; color: var(--text-mid); line-height: 2.2; }
+@media (max-width: 720px) { .m-rep-grid { grid-template-columns: 1fr; } .m-rep-photo { max-width: 240px; margin: 0 auto; } }
 
-/* ── CTA ── */
-.cta-section {
-  background: var(--color-navy);
-  padding: 80px 24px;
-  text-align: center;
-  color: #fff;
-}
-.cta-title { font-size: clamp(22px, 4vw, 36px); font-weight: 500; margin-bottom: 16px; }
-.cta-sub { font-size: 15px; opacity: 0.85; margin-bottom: 40px; line-height: 1.9; }
-.cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+/* VALUE CARDS */
+.m-value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 48px; background: var(--border); }
+.m-value-card { background: #fff; padding: 36px 28px; }
+.m-value-num { font-family: var(--font-display); font-size: 15px; color: var(--text-light); margin-bottom: 14px; }
+.m-value-title { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 14px; }
+.m-value-body { font-size: 13px; color: var(--text-mid); line-height: 1.9; }
+@media (max-width: 768px) { .m-value-grid { grid-template-columns: 1fr; } }
 
-/* ── responsive ── */
-@media (min-width: 768px) {
-  .about-message { grid-template-columns: 300px 1fr; }
-  .about-photo { margin: 0; }
-  .value-grid { grid-template-columns: repeat(3, 1fr); }
-}
+.m-btn { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; letter-spacing: 0.05em; padding: 15px 32px; border-radius: 2px; transition: all 0.2s; }
+.m-btn--dark { background: var(--navy); color: #fff; }
+.m-btn--dark:hover { background: var(--navy-dark); opacity: 1; transform: translateY(-2px); }
+.m-btn--line { border: 1px solid var(--line-green); color: var(--line-green); }
+.m-btn--line:hover { background: #eafaf0; opacity: 1; transform: translateY(-2px); }
+.m-cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+.m-cta-note { font-size: 12px; color: var(--text-light); margin-top: 24px; }
 </style>
 </head>
 <body>
 
-<!-- ナビゲーション -->
-<nav class="site-nav">
-  <a href="index.html" class="nav-logo">
-    <span class="nav-logo-sub">IBJ正規加盟店</span>
-    <span class="nav-logo-main">結婚相談所ハルカゼ</span>
+<nav class="site-nav" id="siteNav">
+  <a href="index.html" class="logo logo-img">
+    <img src="newimages/line_oa_chat_260826_154300.jpg" alt="結婚相談所ハルカゼ harukaze">
   </a>
   <ul class="nav-links">
     <li><a href="about.html">メッセージ</a></li>
-    <li><a href="service.html">サービス・価格</a></li>
+    <li><a href="harukaze-lab.html">ハルカゼLAB</a></li>
+    <li><a href="service.html">プラン料金</a></li>
     <li><a href="flow.html">成婚までの流れ</a></li>
-    <li><a href="lab.html">ハルカゼLAB</a></li>
     <li><a href="faq.html">よくある質問</a></li>
     <li><a href="blog.html">ブログ</a></li>
-    <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで相談</a></li>
+    <li><a href="index.html#switch-campaign" class="nav-switch-link">乗り換えのご相談はこちら</a></li>
+    <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで予約する</a></li>
   </ul>
   <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<!-- モバイルオーバーレイ -->
 <div class="mobile-nav-overlay" id="mobileNavOverlay">
+  <button class="mobile-nav-close" id="mobileNavClose" aria-label="閉じる">
+    <span></span><span></span>
+  </button>
+  <div class="mobile-nav-logo">
+    <img src="newimages/line_oa_chat_260826_154300.jpg" alt="結婚相談所ハルカゼ harukaze">
+  </div>
+  <a href="index.html">ホーム</a>
   <a href="about.html">メッセージ</a>
-  <a href="service.html">サービス・価格</a>
+  <a href="harukaze-lab.html">ハルカゼLAB</a>
+  <a href="service.html">プラン料金</a>
   <a href="flow.html">成婚までの流れ</a>
-  <a href="lab.html">ハルカゼLAB</a>
   <a href="faq.html">よくある質問</a>
   <a href="blog.html">ブログ</a>
-  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで相談</a>
-
-  <hr class="mobile-nav-divider">
-  <span class="mobile-nav-girls-label">女性の方はこちら</span>
-  <a href="girls.html" class="mobile-nav-girls">女子の婚活 Girls LAB</a>
+  <a href="index.html#switch-campaign" class="nav-switch-link">乗り換えのご相談はこちら</a>
+  <a href="apply.html" class="nav-cta">初回無料面談に申し込む</a>
+  <div class="mobile-nav-bottom">
+    <hr class="mobile-nav-divider">
+    <div class="mobile-nav-social">
+      <a href="https://www.instagram.com/harukaze.ma?igsh=ZjFxNDU1MGYzMW5j&utm_source=qr" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+        Instagram
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 8.2c1.2-.9 4.6-1.6 6.2.4.9 1.1 1 3.1-.2 4-1 .8-3 .9-3.6-.1-.5-.9.2-1.8 1.4-1.9 1.6-.1 3.4.6 3.9 2.1.5 1.5-.3 3.2-2.2 3.9-1.6.6-3.6.3-4.7-.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+        Threads
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="7" stroke="currentColor" stroke-width="1.8"/><text x="12" y="16.5" text-anchor="middle" font-size="11" font-family="'Georgia', serif" fill="currentColor">n</text></svg>
+        note
+      </a>
+    </div>
+    <p class="mobile-nav-copy">© 2025 Harukaze Marriage Consulting. All rights reserved.</p>
+  </div>
 </div>
 
 <main>
 
-  <!-- ページヒーロー -->
-  <section class="page-hero">
-    <p class="page-hero-label">About</p>
-    <h1 class="page-hero-title">人生に、はじまりの風を。</h1>
-  </section>
-
-  <!-- VISION -->
-  <section class="vision-section" id="vision">
-    <div class="vision-inner" style="position:relative; z-index:1;">
-      <p class="section-label" style="color:var(--color-sky); position:relative; z-index:1;">Vision</p>
-      <p class="vision-body"><span style="font-weight:400; color:#F472A0; font-size:16px;">誰よりも幸せであれ。</span>
-誰とも比べなくていい。
-だけど、誰よりもあなた自身が幸せであること。
-
-あなたが心の底から人生を面白がるとき、
-その充実は心地よい風となって、大切な人へ自然に伝わっていくから。
-
-婚活を通して「自分の人生を、最高の主役で生きる人」を増やしたい。
-あなたが幸せの起点となり、喜びが次々と連鎖していく。
-そんな「幸せが止まらない世界」を、ハルカゼは広げていく。</p>
+<!-- OUR THOUGHTS -->
+<section class="m-section m-center">
+  <div class="m-inner--narrow">
+    <h2 class="m-h2" style="padding-top: clamp(64px, 9vw, 96px); font-size: clamp(16px, 2vw, 22px); font-weight: 500;">マッチングの、その先へ。</h2>
+    <div class="m-thoughts-text">
+      <p>婚活のゴールは、誰かに選ばれることじゃない。<br>あなたを、選ぶこと。</p>
+      <p>頑張り方が変われば、行動は結果になる。<br>迷ったことも、行動したことも、ちゃんと出会いに繋がっていく。</p>
+      <p>そしてそれは、結婚してからも、この先の人生をずっと動かす力になる。</p>
+      <p>私たちが大切にしたいのは、あなたが"あなたらしく"進んでいけること。</p>
+      <p>あなたのマッチングのその先に、しあわせがずっと続きますように。</p>
     </div>
-  </section>
-
-  <!-- VALUE -->
-  <section class="section">
-    <div class="section-inner">
-      <p class="section-label">Value</p>
-      <h2 class="section-title">ハルカゼが大切にしていること。</h2>
-      <div class="value-grid">
-        <div class="value-card">
-          <p class="value-num">01</p>
-          <h3 class="value-heading">自分を面白がる</h3>
-          <p class="value-text">不器用さも、隙も、魅力になる。完璧を脱ぎ捨てたとき、人は惹きつけられる。</p>
-        </div>
-        <div class="value-card">
-          <p class="value-num">02</p>
-          <h3 class="value-heading">「良さ」をデザインする</h3>
-          <p class="value-text">磨き、言葉にし、届けて価値になる。あなたの魅力を、戦略的に伝えていく。</p>
-        </div>
-        <div class="value-card">
-          <p class="value-num">03</p>
-          <h3 class="value-heading">「本音」を芯にする</h3>
-          <p class="value-text">好き嫌いを自覚する。大切な軸は、信頼になる。</p>
-        </div>
+  </div>
+  <div class="m-inner">
+    <div class="m-value-grid">
+      <div class="m-value-card">
+        <p class="m-value-num">01</p>
+        <p class="m-value-title">面白がる</p>
+        <p class="m-value-body">不器用でも、要領が悪くてもいい。そういう自分を、まず自分が面白がれるかどうか。人生を、面白く展開する。</p>
+      </div>
+      <div class="m-value-card">
+        <p class="m-value-num">02</p>
+        <p class="m-value-title">「らしさ」を活かす</p>
+        <p class="m-value-body">「らしさ」って、正直ふわっとした言葉だと思う。盛った自分でも、隠した自分でもなく、更新していくもの。</p>
+      </div>
+      <div class="m-value-card">
+        <p class="m-value-num">03</p>
+        <p class="m-value-title">「本音」を芯にする</p>
+        <p class="m-value-body">好きなものを好きと言えるか。嫌なことを嫌だと言えるか。そうやって、自分が選んで信じた道を正解にする。</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FINAL MESSAGE -->
-  <section class="final-msg-section">
-    <div class="final-msg-inner">
-      <p class="section-label" style="text-align:center;">Message</p>
-      <p class="final-msg-lead">「正しさ」よりも、心躍る方へ。</p>
-      <p class="final-msg-body">自分の人生を面白がる人は、かっこいい。
-その一歩に、伴走します。</p>
+<!-- MESSAGE -->
+<section class="m-section m-center">
+  <div class="m-inner--narrow">
+    <h2 class="m-h2" style="padding-top: clamp(64px, 9vw, 96px); font-size: clamp(16px, 2vw, 22px); font-weight: 500;">正しいより、楽しいを。</h2>
+    <div class="m-thoughts-text">
+      <p>10代、20代は、「ちゃんとしたい」でした。</p>
+      <p>ちゃんと、選ばれたい。<br>いつも幸せでいたい。</p>
+      <p>それなりに楽しいこともある。友達もいる。<br>だけど、どこかで「足りていない」という不安、<br>頑張らないと、幸せにはなれない、そんな感覚。</p>
+      <p>自己肯定感、という言葉もない時代、<br>ルッキズムが当たり前で、<br>何が好きかより、相手にどう思われるかを優先してしまう。<br>そんなうまく生きられなかった時代が、<br>今の私を支えてくれるものになっています。</p>
+      <p>もし今、それなりに満たされているって、満足できるならそれでいいのかも。</p>
+      <p>でも、目の前のことに追われて、「こうだったらいいな」と思うことが後回しになっているなら、<br>それは少し、もったいない気がしています。</p>
+      <p>迷って、選んで、自分で決めたことは、<br>たとえ失敗しても、後悔は、少ない！<br>きっと、この迷った時間ごと、笑って話せる日がくる。</p>
+      <p>ビジュアルも、伝え方も、マインドも<br>誰かの正解に合わせるためじゃなく、<br>あなたが、あなたを楽しめるように。</p>
+      <p>結婚って、本当はいいものです。<br>自分だけの特別な好きなことも、好きなモノも、好きな人が増えていく。</p>
+      <p>迷いながらも一歩踏み出した先で、そう思える自分に、きっと出会えます。</p>
+      <p>この時間が、その望む未来を、確実に叶えるひとつになりますように。</p>
+    </div>
+  </div>
+</section>
 
-      <!-- 写真・署名 -->
-      <div class="final-msg-photo-wrap">
-        <div class="final-msg-photo">
-          <img src="newimages/IMG_8907.jpeg" alt="石神りさ – ハルカゼ代表">
-        </div>
-        <div class="final-msg-credit">
-          <p class="final-msg-credit-role">代表　マッチングプランナー</p>
-          <p class="final-msg-credit-name">石神 りさ</p>
-          <a href="profile.html" class="final-msg-profile-link">挨拶・プロフィール →</a>
-        </div>
+<!-- REPRESENTATIVE -->
+<section class="m-section m-section--off">
+  <div class="m-inner">
+    <div class="m-rep-grid">
+      <div class="m-rep-photo">
+        <img src="newimages/IMG_8907.jpeg" alt="石神りさ">
+      </div>
+      <div>
+        <p class="m-rep-name">石神 りさ<span>（代表 / マッチングプランナー）</span></p>
+        <p class="m-rep-meta">Ishigami Risa ／ 1987年生まれ ／ 3児の母</p>
+        <p class="m-rep-bio">金融機関、ベンチャー企業の法人営業、コンサルティングファーム。<br>ふりかえれば、ずっと「カタチのないもの」で、人と関わってきました。<br><br>人との出会いで、何度も、道が開けてきた経験から、転機に寄り添う側に。<br><br>そんな想いで立ち上げたのが、結婚相談所ハルカゼです。</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CTA -->
-  <section class="cta-section">
-    <p class="section-label" style="color: var(--color-sky);">Contact</p>
-    <h2 class="cta-title">「話してみる」が、すべての始まり。</h2>
-    <p class="cta-sub">入会を迷っていても大丈夫。<br>まずはあなたの話を聞かせてください。</p>
-    <div class="cta-btns">
-      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn btn-line">初回無料面談に申し込む</a>
-      <a href="service.html" class="btn btn-outline">サービスを見る</a>
+<!-- CTA -->
+<section class="m-section m-section--off m-center">
+  <div class="m-inner--narrow">
+    <p class="m-eyebrow">Free Consultation</p>
+    <div class="m-cta-btns">
+      <a href="apply.html" class="m-btn m-btn--dark">無料カウンセリングを予約する</a>
+      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="m-btn m-btn--line">LINEで予約する</a>
     </div>
-  </section>
+    <p class="m-cta-note">オンライン40分｜全国対応｜完全無料｜1分で登録完了</p>
+  </div>
+</section>
 
 </main>
 
-<!-- フッター -->
 <footer class="site-footer">
   <div class="footer-inner">
-    <p class="footer-brand">大阪・吹田結婚相談所 ハルカゼ</p>
-    <nav class="footer-links">
-      <a href="about.html">メッセージ</a>
-      <a href="about.html#vision">ハルカゼの想い（VISION）</a>
-      <a href="lab.html">ハルカゼLAB</a>
-      <a href="service.html">サービス内容</a>
-      <a href="service.html#price">サービス・料金</a>
-      <a href="flow.html">ご成婚までの流れ</a>
-      <a href="faq.html">よくある質問</a>
-      <a href="blog.html">ブログ</a>
-      <a href="privacy.html">プライバシーポリシー</a>
-    </nav>
-    <p class="footer-girls-label">女性の方はこちら</p>
-    <a href="girls.html" class="footer-girls-link">▶ 女子の婚活 Girls LAB</a>
-    <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="footer-line-btn">初回無料面談に申し込む</a>
-    <p class="footer-copy">© 2025 結婚相談所ハルカゼ</p>
+    <div class="footer-brand">      <a href="index.html" class="logo" style="white-space: nowrap;">
+        <img src="newimages/line_oa_chat_260826_154300.jpg" alt="結婚相談所ハルカゼ harukaze" style="height: 60px; width: auto; display: block;">
+      </a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/harukaze.ma?igsh=ZjFxNDU1MGYzMW5j&utm_source=qr" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+        Instagram
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 8.2c1.2-.9 4.6-1.6 6.2.4.9 1.1 1 3.1-.2 4-1 .8-3 .9-3.6-.1-.5-.9.2-1.8 1.4-1.9 1.6-.1 3.4.6 3.9 2.1.5 1.5-.3 3.2-2.2 3.9-1.6.6-3.6.3-4.7-.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+        Threads
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="7" stroke="currentColor" stroke-width="1.8"/><text x="12" y="16.5" text-anchor="middle" font-size="11" font-family="'Georgia', serif" fill="currentColor">n</text></svg>
+        note
+      </a>
+    </div>
+    <div class="footer-links">
+      <ul>
+        <li><a href="faq.html">よくある質問</a></li>
+        <li><a href="privacy.html">プライバシーポリシー</a></li>
+        <li><a href="#">特定商取引法に基づく表記</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Harukaze Marriage Consulting. All rights reserved.</span>
+    <span>IBJ正規加盟店　大阪・北摂・吹田</span>
   </div>
 </footer>
 
-<!-- フローティングボタン -->
-<a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-line-btn">LINEで相談する</a>
-<div class="float-side-btns">
-  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn">面談を予約する</a>
-  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn">LINEで婚活突破口診断</a>
+<a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-line-btn"><span style="font-size:1.4em; font-weight:800;">9月</span>の初回無料面談の予約はこちら</a>
+
+<div class="float-side-btns mobile-bottom-only">
+  <a href="apply.html" class="float-side-btn" style="flex-direction:column; gap:2px; height:60px;"><span style="font-size:10px; opacity:0.85; letter-spacing:0.08em;">簡単1分</span><span><span style="font-size:1.2em; font-weight:800;">9月</span>の初回無料面談の予約はこちら</span></a>
 </div>
 
 <script src="js/common.js"></script>
 <script>
-/* ── 花びら・春風（VISIONページ） ── */
-(function() {
-  const style = document.createElement('style');
-  style.textContent = `
-    .petal {
-      position: fixed;
-      pointer-events: none;
-      z-index: 1000;
-      opacity: 0;
-      will-change: transform, opacity;
+  (function () {
+    var btn = document.getElementById('hamburgerBtn');
+    var ovl = document.getElementById('mobileNavOverlay');
+    var closeBtn = document.getElementById('mobileNavClose');
+    function openNav() { ovl.classList.add('open'); btn.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeNav() { ovl.classList.remove('open'); btn.classList.remove('open'); document.body.style.overflow = ''; }
+    if (btn && ovl) {
+      btn.addEventListener('click', function () { ovl.classList.contains('open') ? closeNav() : openNav(); });
+      if (closeBtn) closeBtn.addEventListener('click', closeNav);
+      ovl.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeNav); });
     }
-    /* 春風：左上→右斜め下へ、S字にゆらぎながら流れる */
-    @keyframes petalWind {
-      0%   { opacity:0;    transform: translate(0, 0)                          rotate(var(--r0)); }
-      5%   { opacity:1; }
-      25%  {               transform: translate(var(--x1), var(--y1))          rotate(var(--r1)); }
-      50%  {               transform: translate(var(--x2), var(--y2))          rotate(var(--r2)); }
-      75%  {               transform: translate(var(--x3), var(--y3))          rotate(var(--r3)); }
-      92%  { opacity:0.7; }
-      100% { opacity:0;    transform: translate(var(--x4), var(--y4))          rotate(var(--r4)); }
-    }
-  `;
-  document.head.appendChild(style);
-
-  function makePetalSVG(w, h, color, uid) {
-    /* 桜の花弁：上部に切れ込み・中心グラデーション・葉脈 */
-    return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 20 26">
-      <defs>
-        <radialGradient id="pg${uid}" cx="50%" cy="42%" r="58%">
-          <stop offset="0%"   stop-color="rgba(255,240,245,0.97)"/>
-          <stop offset="55%"  stop-color="${color}"/>
-          <stop offset="100%" stop-color="${color.replace(/[\d.]+\)$/, v => (parseFloat(v)+0.1).toFixed(2)+')')}"/>
-        </radialGradient>
-      </defs>
-      <!-- 花弁本体：上部に桜特有のV字切れ込み -->
-      <path d="M10,25 C5,22 0,16 1,9 C2,4 5,1 8,2.5 C9,3 9.4,1 10,1 C10.6,1 11,3 12,2.5 C15,1 18,4 19,9 C20,16 15,22 10,25 Z"
-            fill="url(#pg${uid})"/>
-      <!-- 中心の主脈 -->
-      <path d="M10,25 C10,17 10,9 10,2"
-            stroke="rgba(195,110,135,0.22)" stroke-width="0.7" fill="none"/>
-      <!-- 左側小脈 -->
-      <path d="M10,14 C8,12 5,12 4,13"
-            stroke="rgba(195,110,135,0.16)" stroke-width="0.55" fill="none"/>
-      <!-- 右側小脈 -->
-      <path d="M10,14 C12,12 15,12 16,13"
-            stroke="rgba(195,110,135,0.16)" stroke-width="0.55" fill="none"/>
-    </svg>`;
-  }
-
-  const colors = [
-    'rgba(242,160,178,0.80)',
-    'rgba(230,148,165,0.76)',
-    'rgba(252,178,195,0.78)',
-    'rgba(238,155,172,0.74)',
-  ];
-
-  function spawnPetal() {
-    const el = document.createElement('div');
-    el.className = 'petal';
-
-    const uid = Math.random().toString(36).slice(2, 8);
-    const w   = 14 + Math.random() * 10;  /* 14〜24px */
-    const h   = w * 1.4;
-    const color = colors[Math.floor(Math.random() * colors.length)];
-    const dur = 6 + Math.random() * 5;    /* 6〜11秒 */
-
-    /* 開始位置：画面左寄り〜中央上あたり */
-    const startX = -5 + Math.random() * 40; /* vw */
-    const startY = -5 + Math.random() * 35; /* vh */
-
-    /* 横移動量（右方向に強め） */
-    const travelX = 55 + Math.random() * 45; /* vw */
-    /* 縦移動量（斜め下へ、横より控えめ） */
-    const travelY = 30 + Math.random() * 30; /* vh */
-
-    /* S字ゆらぎ（横軸にサイン波） */
-    const sway = 4 + Math.random() * 6;     /* vw単位の横ゆれ幅 */
-
-    /* 回転 */
-    const baseR = Math.random() * 360;
-    const spin  = (Math.random() > 0.5 ? 1 : -1) * (120 + Math.random() * 200);
-
-    el.innerHTML = makePetalSVG(w, h, color, uid);
-    el.style.cssText = `
-      left:${startX}vw; top:${startY}vh;
-      width:${w}px; height:${h}px;
-      --r0:${baseR}deg;
-      --x1:${travelX*0.25 - sway}vw; --y1:${travelY*0.25}vh; --r1:${baseR + spin*0.25}deg;
-      --x2:${travelX*0.5  + sway}vw; --y2:${travelY*0.5 }vh; --r2:${baseR + spin*0.5 }deg;
-      --x3:${travelX*0.75 - sway*0.5}vw; --y3:${travelY*0.75}vh; --r3:${baseR + spin*0.75}deg;
-      --x4:${travelX}vw;              --y4:${travelY}vh;      --r4:${baseR + spin}deg;
-      animation: petalWind ${dur}s ease-in-out forwards;
-    `;
-
-    document.body.appendChild(el);
-    el.addEventListener('animationend', () => el.remove());
-  }
-
-  /* 同時最大4枚、間隔1.5〜3秒 */
-  let count = 0;
-  const MAX = 4;
-  function loop() {
-    if (count < MAX) { spawnPetal(); count++; }
-    setTimeout(() => { count = Math.max(0, count - 1); }, 9000);
-    setTimeout(loop, 1500 + Math.random() * 1500);
-  }
-  window.addEventListener('load', () => setTimeout(loop, 600));
-})();
+  })();
 </script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -179,24 +179,85 @@
     .counselors-grid { grid-template-columns: 1fr; gap: 3.5rem; }
     .counselor-photo { width: 150px; height: 150px; }
   }
+
+/* ── 統一CTAセクション ── */
+.unified-cta {
+  background: #ffffff;
+  padding: clamp(80px, 10vw, 140px) clamp(24px, 6vw, 80px);
+  text-align: center;
+}
+.unified-cta-inner { max-width: 640px; margin: 0 auto; }
+.unified-cta-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px; letter-spacing: 0.3em; color: #F4688A;
+  text-transform: uppercase; margin-bottom: 24px;
+}
+.unified-cta-title {
+  font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+  font-size: clamp(22px, 3vw, 38px); font-weight: 500;
+  color: #1A2A44; line-height: 1.7; margin-bottom: 16px; letter-spacing: 0.06em;
+}
+.unified-cta-note { font-size: 12px; color: #aaa; letter-spacing: 0.08em; margin-bottom: 32px; }
+.unified-cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-bottom: 16px; }
+.unified-btn-primary {
+  background: #F4688A; color: #fff;
+  padding: 17px 44px; border-radius: 2px;
+  font-size: 14px; font-weight: 500; display: inline-block;
+  letter-spacing: 0.08em; transition: all 0.2s;
+}
+.unified-btn-primary:hover { background: #D94F73; transform: translateY(-2px); opacity: 1; }
+.unified-btn-line {
+  background: transparent; color: #06C755;
+  padding: 16px 36px; border-radius: 2px;
+  border: 1px solid #06C755; font-size: 13px;
+  display: inline-flex; align-items: center; gap: 6px;
+  letter-spacing: 0.08em; transition: all 0.2s;
+}
+.unified-btn-line:hover { background: #e8faf0; transform: translateY(-2px); opacity: 1; }
+.unified-cta-sub { font-size: 13px; color: #888; letter-spacing: 0.08em; }
+.nav-cta { background: #F4688A !important; color: #fff !important; border-color: #F4688A !important; }
+.nav-cta:hover { background: #D94F73 !important; border-color: #D94F73 !important; opacity: 1; }
+.nav-switch-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--navy);
+  color: var(--navy) !important;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  padding: 8px 16px;
+  border-radius: 100px;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+  opacity: 1 !important;
+}
+.nav-switch-link:hover { background: var(--navy); color: #fff !important; }
+.mobile-nav-overlay .nav-switch-link {
+  border-color: var(--navy);
+  padding: 10px 24px;
+  font-size: 14px;
+  margin-top: 4px;
+}
 </style>
 </head>
 <body>
 
 <!-- ナビゲーション -->
-<nav class="site-nav">
-  <a href="index.html" class="nav-logo">
-    <span class="nav-logo-sub">IBJ正規加盟店</span>
-    <span class="nav-logo-main">結婚相談所ハルカゼ</span>
+<nav class="site-nav" id="siteNav">
+  <a href="index.html" class="logo">
+    <span class="logo-char">結</span><span class="logo-char">婚</span><span class="logo-char">相</span><span class="logo-char">談</span><span class="logo-char">所</span> <span class="logo-char">ハ</span><span class="logo-char">ル</span><span class="logo-char">カ</span><span class="logo-char">ゼ</span>
+    <span>MARRIAGE CONSULTING</span>
   </a>
   <ul class="nav-links">
     <li><a href="about.html">メッセージ</a></li>
-    <li><a href="service.html">サービス・価格</a></li>
+    <li><a href="harukaze-lab.html">ハルカゼLAB</a></li>
+    <li><a href="service.html">プラン料金</a></li>
     <li><a href="flow.html">成婚までの流れ</a></li>
-    <li><a href="lab.html">ハルカゼLAB</a></li>
     <li><a href="faq.html">よくある質問</a></li>
     <li><a href="blog.html">ブログ</a></li>
-    <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで相談</a></li>
+    <li><a href="index.html#switch-campaign" class="nav-switch-link">乗り換えのご相談はこちら</a></li>
+    <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで予約する</a></li>
   </ul>
   <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く">
     <span></span><span></span><span></span>
@@ -205,29 +266,41 @@
 
 <!-- モバイルオーバーレイ -->
 <div class="mobile-nav-overlay" id="mobileNavOverlay">
+  <button class="mobile-nav-close" id="mobileNavClose" aria-label="閉じる">
+    <span></span><span></span>
+  </button>
+  <div class="mobile-nav-logo">
+    <img src="newimages/ロゴ.jpg" alt="結婚相談所ハルカゼ harukaze">
+  </div>
+  <a href="index.html">ホーム</a>
   <a href="about.html">メッセージ</a>
-  <a href="service.html">サービス・価格</a>
+  <a href="harukaze-lab.html">ハルカゼLAB</a>
+  <a href="service.html">プラン料金</a>
   <a href="flow.html">成婚までの流れ</a>
-  <a href="lab.html">ハルカゼLAB</a>
   <a href="faq.html">よくある質問</a>
   <a href="blog.html">ブログ</a>
-  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで相談</a>
-
-  <hr class="mobile-nav-divider">
-  <span class="mobile-nav-girls-label">女性の方はこちら</span>
-  <a href="girls.html" class="mobile-nav-girls">女子の婚活 Girls LAB</a>
-</div>
-
-<!-- パンくず -->
-<div class="gladia-breadcrumb">
-  <div class="gladia-breadcrumb-inner">
-    <a href="index.html">ホーム</a>
-    <span class="gladia-breadcrumb-sep">›</span>
-    <a href="lab.html">ハルカゼLAB</a>
-    <span class="gladia-breadcrumb-sep">›</span>
-    <span>GLADIÀ</span>
+  <a href="index.html#switch-campaign" class="nav-switch-link">乗り換えのご相談はこちら</a>
+  <a href="apply.html" class="nav-cta">初回無料面談に申し込む</a>
+  <div class="mobile-nav-bottom">
+    <hr class="mobile-nav-divider">
+    <div class="mobile-nav-social">
+      <a href="https://www.instagram.com/harukaze.ma?igsh=ZjFxNDU1MGYzMW5j&utm_source=qr" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+        Instagram
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 8.2c1.2-.9 4.6-1.6 6.2.4.9 1.1 1 3.1-.2 4-1 .8-3 .9-3.6-.1-.5-.9.2-1.8 1.4-1.9 1.6-.1 3.4.6 3.9 2.1.5 1.5-.3 3.2-2.2 3.9-1.6.6-3.6.3-4.7-.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+        Threads
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="7" stroke="currentColor" stroke-width="1.8"/><text x="12" y="16.5" text-anchor="middle" font-size="11" font-family="'Georgia', serif" fill="currentColor">n</text></svg>
+        note
+      </a>
+    </div>
+    <p class="mobile-nav-copy">© 2025 Harukaze Marriage Consulting. All rights reserved.</p>
   </div>
 </div>
+
 
 <!-- HERO -->
 <div class="gladia-hero">
@@ -372,24 +445,18 @@
 
 
 <!-- CTA -->
-<section class="section-cta">
-  <div class="cta-inner reveal">
-    <span class="section-label" style="color:var(--rose-deep); display:block; text-align:center;">Apply</span>
-    <h2 class="cta-title">受講は公式LINEより</h2>
-    <div class="g-divider" style="margin: 1.5rem auto;"></div>
-    <p class="cta-sub">
-      ご参加希望の方は、ハルカゼ公式LINEよりお申し込みください。<br>
-      まずはお気軽にメッセージをお送りください。
-    </p>
-    <br>
-    <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="line-cta">
-      <svg class="line-icon-g" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
-      </svg>
-      公式LINEから申し込む
-    </a>
-    <br>
-    <a href="lab.html" class="btn-outline">← ハルカゼLABへ戻る</a>
+  <section class="unified-cta" id="cta">
+  <div class="unified-cta-inner">
+    <p class="unified-cta-label">Free Consultation</p>
+    <h2 class="unified-cta-title">一歩は、ここから。</h2>
+    <p class="unified-cta-note">1分で登録完了</p>
+    <div class="unified-cta-btns">
+      <a href="apply.html" class="unified-btn-primary">無料カウンセリングを予約する</a>
+      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="unified-btn-line">
+        <span style="color:#06C755; font-weight:700;">LINE</span>で予約する
+      </a>
+    </div>
+    <p class="unified-cta-sub">オンライン40分　｜　全国対応　｜　完全無料</p>
   </div>
 </section>
 
@@ -397,30 +464,34 @@
 <!-- フッター -->
 <footer class="site-footer">
   <div class="footer-inner">
-    <p class="footer-brand">大阪・吹田結婚相談所 ハルカゼ</p>
-    <nav class="footer-links">
-      <a href="about.html">メッセージ</a>
-      <a href="about.html#vision">ハルカゼの想い（VISION）</a>
-      <a href="lab.html">ハルカゼLAB</a>
-      <a href="service.html">サービス内容</a>
-      <a href="service.html#price">サービス・料金</a>
-      <a href="flow.html">ご成婚までの流れ</a>
-      <a href="faq.html">よくある質問</a>
-      <a href="blog.html">ブログ</a>
-      <a href="privacy.html">プライバシーポリシー</a>
-    </nav>
-    <p class="footer-girls-label">女性の方はこちら</p>
-    <a href="girls.html" class="footer-girls-link">▶ 女子の婚活 Girls LAB</a>
-    <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="footer-line-btn">初回無料面談に申し込む</a>
-    <p class="footer-copy">© 2025 結婚相談所ハルカゼ</p>
+    <div class="footer-brand">
+      <a href="index.html" class="logo" style="color: var(--white); white-space: nowrap;">結婚相談所　ハルカゼ<span>MARRIAGE CONSULTING</span></a>
+
+      <div style="margin-top: 16px;">
+        <img src="images/Photoroom_20260409_154324.png" alt="結婚相談所ハルカゼ ロゴ" style="height: 112px; width: auto;">
+      </div>
+    </div>
+    <div class="footer-links">
+      <ul>
+        <li><a href="faq.html">よくある質問</a></li>
+
+        <li><a href="privacy.html">プライバシーポリシー</a></li>
+        <li><a href="#">特定商取引法に基づく表記</a></li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Harukaze Marriage Consulting. All rights reserved.</span>
+    <span>IBJ正規加盟店　大阪・北摂・吹田</span>
   </div>
 </footer>
 
 <!-- フローティングボタン -->
-<a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-line-btn">LINEで相談する</a>
+<a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-line-btn"><span style="font-size:1.4em; font-weight:800;">9月</span>の初回無料面談の予約はこちら</a>
 <div class="float-side-btns">
-  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn">面談を予約する</a>
-  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn">LINEで婚活突破口診断</a>
+  <a href="apply.html" class="float-side-btn"><span style="font-size:1.15em; font-weight:800;">9月</span>の初回無料面談の予約はこちら</a>
+  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn"><span style="font-size:1.15em; font-weight:800;">9月</span>の初回無料面談の予約はこちら</a>
 </div>
 
 <script src="js/common.js"></script>
@@ -437,5 +508,22 @@
   }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
   reveals.forEach(el => obs.observe(el));
 </script>
+<script>
+  /* ハンバーガーメニュー */
+  (function () {
+    var btn = document.getElementById('hamburgerBtn');
+    var ovl = document.getElementById('mobileNavOverlay');
+    var closeBtn = document.getElementById('mobileNavClose');
+    function openNav() { ovl.classList.add('open'); btn.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeNav() { ovl.classList.remove('open'); btn.classList.remove('open'); document.body.style.overflow = ''; }
+    if (btn && ovl) {
+      btn.addEventListener('click', function () { ovl.classList.contains('open') ? closeNav() : openNav(); });
+      if (closeBtn) closeBtn.addEventListener('click', closeNav);
+      ovl.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeNav); });
+    }
+  })();
+</script>
 </body>
 </html>
+
+

@@ -1,175 +1,143 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>送信完了｜結婚相談所ハルカゼ</title>
-<meta name="robots" content="noindex,nofollow">
-<link rel="icon" type="image/png" href="newimages/使用ロゴ.jpeg">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<title>送信完了 | 結婚相談所ハルカゼ</title>
+<link rel="icon" href="newimages/使用ロゴ.jpeg">
+<link rel="stylesheet" href="css/common.css">
 <style>
-:root {
-  --teal: #4a6fa5;
-  --teal-dark: #2e4a7a;
-  --teal-pale: #e8edf8;
-  --pink: #e8a0a0;
-  --pink-dark: #d4697a;
-  --pink-pale: #fdf0f0;
-  --bg: #ffffff;
-  --white: #ffffff;
-  --deep: #2e4a7a;
-  --mid: #333333;
-  --light: #888888;
-  --border: #e8e4f0;
-  --line-green: #06C755;
-  --line-green-dark: #05A847;
+.thanks-section {
+  min-height: calc(100svh - 64px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 80px 24px;
+  background: var(--c-bg);
 }
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior: smooth; }
-body {
-  background: var(--bg);
-  font-family: 'Noto Sans JP', sans-serif;
-  color: var(--deep);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 24px;
+.thanks-box {
+  background: var(--c-white); border-radius: 20px;
+  border: 1px solid var(--c-border);
+  padding: 64px 48px; text-align: center;
+  max-width: 520px; width: 100%;
+  box-shadow: 0 4px 32px rgba(74,98,120,0.08);
 }
-
-@keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
-@keyframes checkDraw {
-  from { stroke-dashoffset: 60; }
-  to   { stroke-dashoffset: 0; }
-}
-
-.thanks-card {
-  background: white;
-  border-radius: 24px;
-  border: 1px solid var(--border);
-  box-shadow: 0 8px 40px rgba(74,111,165,0.1);
-  padding: 60px 48px;
-  max-width: 560px;
-  width: 100%;
-  text-align: center;
-  animation: fadeUp 0.8s ease forwards 0.2s;
-  opacity: 0;
-}
-
-.check-icon {
-  width: 72px;
-  height: 72px;
-  margin: 0 auto 28px;
-}
-.check-icon circle {
-  fill: none;
-  stroke: var(--teal-pale);
-  stroke-width: 3;
-}
-.check-icon path {
-  fill: none;
-  stroke: var(--teal);
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 60;
-  stroke-dashoffset: 60;
-  animation: checkDraw 0.6s ease forwards 0.8s;
-}
-
-.thanks-eyebrow {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 12px;
-  letter-spacing: 0.3em;
-  color: var(--teal);
-  display: block;
-  margin-bottom: 16px;
-}
-
-.thanks-title {
-  font-family: 'Noto Serif JP', serif;
-  font-size: clamp(22px, 3.5vw, 28px);
-  font-weight: 300;
-  color: var(--deep);
-  line-height: 1.7;
-  margin-bottom: 24px;
-}
-
-.thanks-body {
-  font-size: 13px;
-  color: var(--mid);
-  line-height: 2.2;
-  margin-bottom: 36px;
-  letter-spacing: 0.04em;
-}
-
-.thanks-note {
-  background: rgba(74,111,165,0.06);
-  border-radius: 10px;
-  padding: 16px 20px;
-  font-size: 12px;
-  color: var(--mid);
-  line-height: 2;
-  margin-bottom: 36px;
-  text-align: left;
-}
-
-.btn-back {
+.thanks-icon { font-size: 56px; margin-bottom: 24px; }
+.thanks-title { font-size: clamp(22px, 4vw, 30px); font-weight: 700; color: var(--c-navy); margin-bottom: 16px; }
+.thanks-body { font-size: 14px; line-height: 2; color: var(--c-mid); margin-bottom: 36px; }
+@media (max-width: 480px) { .thanks-box { padding: 48px 24px; } }
+.nav-cta { background: #F4688A !important; color: #fff !important; border-color: #F4688A !important; }
+.nav-cta:hover { background: #D94F73 !important; border-color: #D94F73 !important; opacity: 1; }
+.nav-switch-link {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: linear-gradient(135deg, var(--teal), var(--teal-dark));
-  color: white;
-  font-family: 'Noto Serif JP', serif;
-  font-size: 14px;
+  justify-content: center;
+  border: 1.5px solid var(--navy);
+  color: var(--navy) !important;
+  font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0.12em;
-  padding: 15px 40px;
-  border-radius: 50px;
-  text-decoration: none;
-  box-shadow: 0 6px 20px rgba(74,111,165,0.28);
-  transition: transform 0.2s, box-shadow 0.2s;
+  letter-spacing: 0.03em;
+  padding: 8px 16px;
+  border-radius: 100px;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+  opacity: 1 !important;
 }
-.btn-back:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(74,111,165,0.36);
-}
-
-@media (max-width: 600px) {
-  .thanks-card { padding: 40px 24px; }
+.nav-switch-link:hover { background: var(--navy); color: #fff !important; }
+.mobile-nav-overlay .nav-switch-link {
+  border-color: var(--navy);
+  padding: 10px 24px;
+  font-size: 14px;
+  margin-top: 4px;
 }
 </style>
 </head>
 <body>
 
-<div class="thanks-card">
-  <svg class="check-icon" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="36" cy="36" r="33"/>
-    <path d="M22 37l10 10 18-20"/>
-  </svg>
-
-  <span class="thanks-eyebrow">Thank you</span>
-  <h1 class="thanks-title">
-    お問い合わせを<br>受け付けました
-  </h1>
-  <p class="thanks-body">
-    この度はお問い合わせいただき、ありがとうございます。<br>
-    ご入力いただいたメールアドレス宛に<br>
-    確認メールをお送りいたします。
-  </p>
-
-  <div class="thanks-note">
-    ・通常2〜3営業日以内にご連絡いたします。<br>
-    ・確認メールが届かない場合は、迷惑メールフォルダをご確認ください。<br>
-    ・お急ぎの場合は LINEよりご連絡ください。
-  </div>
-
-  <a href="index.html" class="btn-back">
-    トップページへ戻る
+<nav class="site-nav" id="siteNav">
+  <a href="index.html" class="logo">
+    <span class="logo-char">結</span><span class="logo-char">婚</span><span class="logo-char">相</span><span class="logo-char">談</span><span class="logo-char">所</span> <span class="logo-char">ハ</span><span class="logo-char">ル</span><span class="logo-char">カ</span><span class="logo-char">ゼ</span>
+    <span>MARRIAGE CONSULTING</span>
   </a>
+  <ul class="nav-links">
+    <li><a href="about.html">メッセージ</a></li>
+    <li><a href="harukaze-lab.html">ハルカゼLAB</a></li>
+    <li><a href="service.html">プラン料金</a></li>
+    <li><a href="flow.html">成婚までの流れ</a></li>
+    <li><a href="faq.html">よくある質問</a></li>
+    <li><a href="blog.html">ブログ</a></li>
+    <li><a href="index.html#switch-campaign" class="nav-switch-link">乗り換えのご相談はこちら</a></li>
+    <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで予約する</a></li>
+  </ul>
+  <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-nav-overlay" id="mobileNavOverlay">
+  <button class="mobile-nav-close" id="mobileNavClose" aria-label="閉じる">
+    <span></span><span></span>
+  </button>
+  <div class="mobile-nav-logo">
+    <img src="newimages/ロゴ.jpg" alt="結婚相談所ハルカゼ harukaze">
+  </div>
+  <a href="index.html">ホーム</a>
+  <a href="about.html">メッセージ</a>
+  <a href="harukaze-lab.html">ハルカゼLAB</a>
+  <a href="service.html">プラン料金</a>
+  <a href="flow.html">成婚までの流れ</a>
+  <a href="faq.html">よくある質問</a>
+  <a href="blog.html">ブログ</a>
+  <a href="index.html#switch-campaign" class="nav-switch-link">乗り換えのご相談はこちら</a>
+  <a href="apply.html" class="nav-cta">初回無料面談に申し込む</a>
+  <div class="mobile-nav-bottom">
+    <hr class="mobile-nav-divider">
+    <div class="mobile-nav-social">
+      <a href="https://www.instagram.com/harukaze.ma?igsh=ZjFxNDU1MGYzMW5j&utm_source=qr" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+        Instagram
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 8.2c1.2-.9 4.6-1.6 6.2.4.9 1.1 1 3.1-.2 4-1 .8-3 .9-3.6-.1-.5-.9.2-1.8 1.4-1.9 1.6-.1 3.4.6 3.9 2.1.5 1.5-.3 3.2-2.2 3.9-1.6.6-3.6.3-4.7-.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+        Threads
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="7" stroke="currentColor" stroke-width="1.8"/><text x="12" y="16.5" text-anchor="middle" font-size="11" font-family="'Georgia', serif" fill="currentColor">n</text></svg>
+        note
+      </a>
+    </div>
+    <p class="mobile-nav-copy">© 2025 Harukaze Marriage Consulting. All rights reserved.</p>
+  </div>
 </div>
 
+<main>
+  <section class="thanks-section">
+    <div class="thanks-box">
+      <div class="thanks-icon">🎉</div>
+      <h1 class="thanks-title">送信完了しました</h1>
+      <p class="thanks-body">お問い合わせいただき、ありがとうございます。<br>
+      担当者より、2〜3営業日以内にご連絡いたします。<br><br>
+      お急ぎの場合は、LINEでお気軽にご連絡ください。</p>
+      <div style="display:flex; flex-direction:column; gap:12px; align-items:center;">
+        <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn btn-sky">LINEでお問い合わせ</a>
+        <a href="index.html" class="btn btn-outline" style="border-color:var(--c-border); color:var(--c-navy);">トップページへ戻る</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="js/common.js"></script>
+<script>
+  /* ハンバーガーメニュー */
+  (function () {
+    var btn = document.getElementById('hamburgerBtn');
+    var ovl = document.getElementById('mobileNavOverlay');
+    var closeBtn = document.getElementById('mobileNavClose');
+    function openNav() { ovl.classList.add('open'); btn.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeNav() { ovl.classList.remove('open'); btn.classList.remove('open'); document.body.style.overflow = ''; }
+    if (btn && ovl) {
+      btn.addEventListener('click', function () { ovl.classList.contains('open') ? closeNav() : openNav(); });
+      if (closeBtn) closeBtn.addEventListener('click', closeNav);
+      ovl.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeNav); });
+    }
+  })();
 </body>
 </html>
+

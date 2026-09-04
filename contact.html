@@ -1,780 +1,370 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>無料相談・お問い合わせ｜結婚相談所ハルカゼ</title>
-<meta name="description" content="結婚相談所ハルカゼへのお問い合わせ・無料相談のご予約はこちらから。LINEのほか、フォームからもお気軽にどうぞ。">
-<link rel="icon" type="image/png" href="newimages/使用ロゴ.jpeg">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<title>お問い合わせ・無料相談 | 結婚相談所ハルカゼ</title>
+<link rel="icon" href="newimages/使用ロゴ.jpeg">
+<meta name="description" content="結婚相談所ハルカゼへの無料相談・お問い合わせ。LINEで気軽にご相談ください。無理な勧誘は一切ありません。">
+<meta property="og:title" content="お問い合わせ | 結婚相談所ハルカゼ">
+<meta property="og:image" content="newimages/h. (1).png">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="css/common.css">
 <style>
-.hamburger-btn {
-  display: none;
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  z-index: 1000;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  flex-direction: column;
-  gap: 5px;
-}
-.hamburger-btn span {
-  display: block;
-  width: 24px;
-  height: 2px;
-  background: #4a6fa5;
-  transition: all 0.3s ease;
-}
-.hamburger-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.hamburger-btn.open span:nth-child(2) { opacity: 0; }
-.hamburger-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-.mobile-nav-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(255,255,255,0.97);
-  z-index: 999;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 32px;
-}
-.mobile-nav-overlay.open { display: flex; }
-.mobile-nav-overlay a {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 1.1rem;
-  color: #2e4a7a;
-  text-decoration: none;
-  letter-spacing: 0.1em;
-}
-.mobile-nav-overlay a:hover { color: #4a6fa5; }
-@media (max-width: 768px) {
-  .hamburger-btn { display: flex; }
-}
-:root {
-  --teal: #4a6fa5;
-  --teal-dark: #2e4a7a;
-  --teal-pale: #e8edf8;
-  --sky: #87b8e8;
-  --pink: #e8a0a0;
-  --pink-dark: #d4697a;
-  --pink-pale: #fdf0f0;
-  --bg: #ffffff;
-  --white: #ffffff;
-  --deep: #2e4a7a;
-  --mid: #333333;
-  --light: #888888;
-  --border: #e8e4f0;
-  --line-green: #06C755;
-  --line-green-dark: #05A847;
-}
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior: smooth; }
-body { background: var(--bg); font-family: 'Noto Sans JP', sans-serif; color: var(--deep); overflow-x: hidden; }
+/* ============================================================
+   contact.html — page styles
+   ============================================================ */
 
-/* HEADER */
-header {
-  position: fixed; top:0; left:0; right:0; z-index:200;
-  background: rgba(255,255,255,0.97); backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border);
-}
-.header-inner {
-  max-width: 1100px; margin:0 auto; padding:0 24px;
-  height: 64px; display:flex; align-items:center;
-}
-.logo { display:flex; flex-direction:column; gap:1px; text-decoration:none; flex-shrink:0; margin-right:32px; }
-.logo-sub { font-size:8px; letter-spacing:0.18em; color:var(--mid); font-weight:400; }
-.logo-main { font-family:'Noto Serif JP',serif; font-size:14px; font-weight:500; letter-spacing:0.25em; color:#2e4a7a; }
-nav { display:flex; align-items:center; gap:6px; flex:1; }
-nav a { font-size:11px; letter-spacing:0.1em; color:#2e4a7a; text-decoration:none; padding:6px 10px; border-radius:6px; transition:background 0.2s,color 0.2s; white-space:nowrap; }
-nav a:hover { background:var(--teal-pale); color:var(--teal-dark); }
-nav a.active { color:var(--teal-dark); font-weight:500; }
-.nav-cta { margin-left:auto; background:var(--pink) !important; color:white !important; padding:10px 18px !important; border-radius:50px !important; font-size:12px !important; font-weight:500 !important; box-shadow:0 4px 14px rgba(240,96,154,0.3); }
-.nav-cta:hover { background:var(--pink-dark) !important; transform:translateY(-1px); }
-.hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; margin-left:auto; padding:8px; }
-.hamburger span { display:block; width:22px; height:1.5px; background:var(--deep); border-radius:2px; }
-
-@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
-
-/* PAGE HERO */
 .page-hero {
-  padding: 120px 24px 64px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+  background: var(--c-navy);
+  padding: 96px 24px 80px;
+  text-align: center; color: #fff; position: relative; overflow: hidden;
 }
-.page-hero-bg {
-  position: absolute; inset:0;
-  background:
-    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(135,210,240,0.18) 0%, transparent 55%),
-    radial-gradient(ellipse 50% 60% at 20% 30%, rgba(74,111,165,0.1) 0%, transparent 55%),
-    var(--bg);
+.page-hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 70% at 20% 80%, rgba(184,199,230,0.20) 0%, transparent 60%);
+  pointer-events: none;
 }
-.page-hero-inner { position:relative; z-index:1; max-width:700px; margin:0 auto; }
-.page-eyebrow {
-  font-family:'Cormorant Garamond',serif; font-style:italic;
-  font-size:12px; letter-spacing:0.3em; color:var(--teal);
-  display:block; margin-bottom:16px;
-  animation: fadeUp 0.8s ease forwards 0.3s; opacity:0;
+.page-hero-label { font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--c-blue); margin-bottom: 16px; font-weight: 700; position: relative; }
+.page-hero-title { font-size: clamp(28px, 5vw, 48px); font-weight: 700; line-height: 1.3; position: relative; }
+.page-hero-note { font-size: 14px; color: rgba(255,255,255,0.65); margin-top: 14px; position: relative; }
+
+/* ── LINEメインCTA ── */
+.line-main-box {
+  background: var(--c-white);
+  border-radius: 20px; border: 1px solid var(--c-border);
+  padding: 48px 40px;
+  box-shadow: 0 4px 32px rgba(74,98,120,0.08);
+  text-align: center; margin-bottom: 48px;
 }
-.page-title {
-  font-family:'Noto Serif JP',serif; font-weight:300;
-  font-size: clamp(24px, 3.5vw, 36px);
-  line-height:1.6; color:var(--deep);
-  animation: fadeUp 0.8s ease forwards 0.5s; opacity:0;
+.line-main-label { font-size: 11px; letter-spacing: 0.28em; color: var(--c-navy); font-weight: 700; margin-bottom: 16px; text-transform: uppercase; opacity: 0.55; }
+.line-main-title { font-size: clamp(20px, 3.5vw, 28px); font-weight: 700; color: var(--c-navy); margin-bottom: 12px; }
+.line-main-sub { font-size: 14px; color: var(--c-mid); line-height: 1.9; margin-bottom: 32px; }
+.line-main-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #06C755; color: #fff;
+  font-size: 16px; font-weight: 700; letter-spacing: 0.06em;
+  padding: 18px 48px; border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(6,199,85,0.30);
+  transition: background 0.2s, transform 0.2s;
 }
-.page-note {
-  font-size: 11px;
-  color: var(--light);
-  letter-spacing: 0.08em;
-  margin-top: 10px;
-  animation: fadeUp 0.8s ease forwards 0.7s; opacity:0;
+.line-main-btn:hover { background: #05a847; transform: translateY(-2px); }
+.line-main-btn svg { width: 22px; height: 22px; }
+.line-note { font-size: 12px; color: var(--c-lt); margin-top: 16px; }
+
+/* ── 相談の流れ ── */
+.steps-row {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px;
+  margin: 40px 0 0; position: relative;
+}
+.steps-row::before {
+  content: ''; position: absolute;
+  top: 28px; left: calc(50% / 3 + 8px); right: calc(50% / 3 + 8px);
+  height: 2px; background: var(--c-border); z-index: 0;
+}
+.flow-step { text-align: center; position: relative; z-index: 1; padding: 0 8px; }
+.flow-step-num {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--c-navy); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; font-weight: 900; margin: 0 auto 12px;
+}
+.flow-step:nth-child(3) .flow-step-num { background: var(--c-coral); color: var(--c-navy); }
+.flow-step-title { font-size: 13px; font-weight: 700; color: var(--c-navy); margin-bottom: 6px; }
+.flow-step-text { font-size: 12px; color: var(--c-mid); line-height: 1.7; }
+@media (max-width: 480px) {
+  .steps-row { grid-template-columns: 1fr; gap: 20px; }
+  .steps-row::before { display: none; }
 }
 
-/* MAIN SECTION */
-.contact-section { padding: 0 24px 96px; }
-.contact-inner { max-width: 680px; margin: 0 auto; }
+/* ── よくある安心ポイント ── */
+.reassure-grid {
+  display: grid; grid-template-columns: 1fr;
+  gap: 16px; margin-top: 40px;
+}
+.reassure-card {
+  display: flex; align-items: flex-start; gap: 16px;
+  background: var(--c-white); border: 1px solid var(--c-border);
+  border-radius: 12px; padding: 20px 22px;
+}
+.reassure-icon {
+  flex-shrink: 0; width: 40px; height: 40px;
+  border-radius: 50%; background: var(--c-bg);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+}
+.reassure-body { flex: 1; }
+.reassure-title { font-size: 14px; font-weight: 700; color: var(--c-navy); margin-bottom: 4px; }
+.reassure-text { font-size: 13px; color: var(--c-mid); line-height: 1.7; }
+@media (min-width: 640px) { .reassure-grid { grid-template-columns: 1fr 1fr; } }
 
-/* LINE CTA */
-.line-cta-block {
-  background: white;
-  border-radius: 16px;
-  border: 1.5px solid rgba(6,199,85,0.22);
-  box-shadow: 0 4px 20px rgba(6,199,85,0.08);
-  padding: 32px 36px;
+/* ── CTA下部 ── */
+.cta-section { background: var(--c-navy); padding: 96px 24px; text-align: center; color: #fff; }
+.cta-title { font-size: clamp(22px, 4vw, 36px); font-weight: 700; margin-bottom: 16px; line-height: 1.5; }
+.cta-sub { font-size: 15px; color: rgba(255,255,255,0.72); margin-bottom: 44px; line-height: 2; }
+.cta-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+
+/* ── 統一CTAセクション ── */
+.unified-cta {
+  background: #ffffff;
+  padding: clamp(80px, 10vw, 140px) clamp(24px, 6vw, 80px);
   text-align: center;
-  margin-bottom: 40px;
 }
-.line-cta-label {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 14px;
-  color: var(--deep);
-  margin-bottom: 20px;
-  line-height: 1.9;
-  letter-spacing: 0.05em;
+.unified-cta-inner { max-width: 640px; margin: 0 auto; }
+.unified-cta-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px; letter-spacing: 0.3em; color: #F4688A;
+  text-transform: uppercase; margin-bottom: 24px;
 }
-.line-cta-label strong { color: var(--line-green); }
-.btn-line-main {
+.unified-cta-title {
+  font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+  font-size: clamp(22px, 3vw, 38px); font-weight: 500;
+  color: #1A2A44; line-height: 1.7; margin-bottom: 16px; letter-spacing: 0.06em;
+}
+.unified-cta-note { font-size: 12px; color: #aaa; letter-spacing: 0.08em; margin-bottom: 32px; }
+.unified-cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-bottom: 16px; }
+.unified-btn-primary {
+  background: #F4688A; color: #fff;
+  padding: 17px 44px; border-radius: 2px;
+  font-size: 14px; font-weight: 500; display: inline-block;
+  letter-spacing: 0.08em; transition: all 0.2s;
+}
+.unified-btn-primary:hover { background: #D94F73; transform: translateY(-2px); opacity: 1; }
+.unified-btn-line {
+  background: transparent; color: #06C755;
+  padding: 16px 36px; border-radius: 2px;
+  border: 1px solid #06C755; font-size: 13px;
+  display: inline-flex; align-items: center; gap: 6px;
+  letter-spacing: 0.08em; transition: all 0.2s;
+}
+.unified-btn-line:hover { background: #e8faf0; transform: translateY(-2px); opacity: 1; }
+.unified-cta-sub { font-size: 13px; color: #888; letter-spacing: 0.08em; }
+.nav-cta { background: #F4688A !important; color: #fff !important; border-color: #F4688A !important; }
+.nav-cta:hover { background: #D94F73 !important; border-color: #D94F73 !important; opacity: 1; }
+.nav-switch-link {
   display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: var(--line-green);
-  color: white;
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  padding: 16px 36px;
-  border-radius: 50px;
-  text-decoration: none;
-  box-shadow: 0 6px 20px rgba(6,199,85,0.32);
-  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-}
-.btn-line-main:hover {
-  background: var(--line-green-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(6,199,85,0.38);
-}
-.btn-line-main svg { flex-shrink:0; }
-.line-sub-note {
-  display: block;
-  font-size: 11px;
-  color: var(--light);
-  margin-top: 10px;
-  letter-spacing: 0.05em;
-}
-
-/* DIVIDER */
-.form-divider {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin: 0 0 36px;
-  color: var(--light);
-  font-size: 12px;
-  letter-spacing: 0.1em;
-}
-.form-divider::before, .form-divider::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--border);
-}
-
-/* FORM */
-.form-intro {
-  font-size: 13px;
-  color: var(--mid);
-  line-height: 2;
-  margin-bottom: 32px;
-  letter-spacing: 0.04em;
-}
-
-.contact-form { display: flex; flex-direction: column; gap: 24px; }
-
-.form-group { display: flex; flex-direction: column; gap: 8px; }
-
-.form-label {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--deep);
-  letter-spacing: 0.06em;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.label-required {
-  font-size: 10px;
-  background: var(--pink);
-  color: white;
-  padding: 2px 7px;
-  border-radius: 3px;
-  letter-spacing: 0.08em;
-}
-
-.form-input,
-.form-textarea {
-  width: 100%;
-  padding: 13px 16px;
-  border: 1.5px solid var(--border);
-  border-radius: 8px;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: 14px;
-  color: var(--deep);
-  background: white;
-  transition: border-color 0.2s, box-shadow 0.2s;
-  outline: none;
-}
-.form-input:focus,
-.form-textarea:focus {
-  border-color: var(--teal);
-  box-shadow: 0 0 0 3px rgba(74,111,165,0.12);
-}
-.form-input::placeholder,
-.form-textarea::placeholder { color: #aac4c2; font-size: 13px; }
-.form-textarea { min-height: 120px; resize: vertical; line-height: 1.8; }
-
-/* Radio group */
-.radio-group { display: flex; flex-direction: column; gap: 12px; }
-.radio-label {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  font-size: 14px;
-  color: var(--deep);
-}
-.radio-label input[type="radio"] { display: none; }
-.radio-custom {
-  width: 20px; height: 20px;
-  border-radius: 50%;
-  border: 2px solid var(--teal-pale);
-  background: white;
-  flex-shrink: 0;
-  display: flex;
   align-items: center;
   justify-content: center;
-  transition: border-color 0.2s;
-}
-.radio-label input[type="radio"]:checked + .radio-custom {
-  border-color: var(--teal);
-}
-.radio-label input[type="radio"]:checked + .radio-custom::after {
-  content: '';
-  display: block;
-  width: 10px; height: 10px;
-  border-radius: 50%;
-  background: var(--teal);
-}
-
-/* Conditional section */
-.conditional-section {
-  display: none;
-  background: rgba(74,111,165,0.04);
-  border-left: 3px solid var(--teal-pale);
-  border-radius: 0 8px 8px 0;
-  padding: 20px 20px 20px 24px;
-  margin-top: 8px;
-}
-.conditional-section.visible { display: block; }
-.conditional-title {
+  border: 1.5px solid var(--navy);
+  color: var(--navy) !important;
   font-size: 12px;
-  color: var(--light);
-  letter-spacing: 0.1em;
-  margin-bottom: 16px;
-}
-.subfield-row { display: flex; flex-direction: column; gap: 12px; }
-.subfield-group { display: flex; flex-direction: column; gap: 6px; }
-.subfield-label {
-  font-size: 12px;
-  color: var(--mid);
-  letter-spacing: 0.06em;
-}
-.subfield-hint {
-  font-size: 11px;
-  color: var(--light);
-  margin-bottom: 4px;
-}
-
-/* Referral section */
-.referral-section {
-  background: rgba(240,96,154,0.04);
-  border-left: 3px solid var(--pink-pale);
-  border-radius: 0 8px 8px 0;
-  padding: 20px 20px 20px 24px;
-  margin-top: 16px;
-}
-.referral-title {
-  font-size: 12px;
-  color: var(--pink);
-  letter-spacing: 0.1em;
-  margin-bottom: 12px;
-}
-
-/* Submit button */
-.form-submit-wrap { text-align: center; padding-top: 8px; }
-.btn-submit {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: linear-gradient(135deg, var(--teal), var(--teal-dark));
-  color: white;
-  font-family: 'Noto Serif JP', serif;
-  font-size: 15px;
   font-weight: 500;
-  letter-spacing: 0.15em;
-  padding: 18px 56px;
-  border-radius: 50px;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 8px 24px rgba(74,111,165,0.3);
-  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  letter-spacing: 0.03em;
+  padding: 8px 16px;
+  border-radius: 100px;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+  opacity: 1 !important;
 }
-.btn-submit:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(74,111,165,0.38);
-}
-.form-privacy-note {
-  font-size: 11px;
-  color: var(--light);
-  text-align: center;
-  margin-top: 16px;
-  letter-spacing: 0.05em;
-}
-.form-privacy-note a { color: var(--teal); text-decoration: none; }
-.form-privacy-note a:hover { text-decoration: underline; }
-
-/* Error message */
-.error-msg {
-  font-size: 11px;
-  color: var(--pink);
+.nav-switch-link:hover { background: var(--navy); color: #fff !important; }
+.mobile-nav-overlay .nav-switch-link {
+  border-color: var(--navy);
+  padding: 10px 24px;
+  font-size: 14px;
   margin-top: 4px;
-  display: none;
-}
-.form-input.error, .form-textarea.error {
-  border-color: var(--pink);
-}
-
-/* FOOTER */
-footer { padding: 40px 24px; border-top: 1px solid rgba(255,255,255,0.15); background: #2e4a7a; }
-.footer-inner { max-width:1100px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap; }
-.footer-logo { color:#FFFFFF; text-decoration:none; font-family:'Noto Serif JP',serif; font-size:14px; letter-spacing:0.2em; }
-.footer-links { display:flex; gap:20px; flex-wrap:wrap; }
-.footer-links a { font-size:11px; color:rgba(255,255,255,0.7); text-decoration:none; letter-spacing:0.1em; transition:color 0.2s; }
-.footer-links a:hover { color:var(--pink); }
-.footer-copy { font-size:10px; color:rgba(255,255,255,0.7); letter-spacing:0.1em; }
-
-@media (max-width: 768px) {
-  nav { display: none; }
-  .hamburger { display: flex; }
-  .page-hero { padding: 100px 20px 48px; }
-  .contact-section { padding: 0 16px 64px; }
-  .line-cta-block { padding: 24px 20px; }
-  .btn-line-main { font-size: 14px; padding: 14px 28px; }
-  .footer-inner { flex-direction: column; text-align: center; align-items: center; }
 }
 </style>
 </head>
 <body>
 
-<button class="hamburger-btn" id="hamburgerBtn" aria-label="メニュー">
-  <span></span><span></span><span></span>
-</button>
-
-<div class="mobile-nav-overlay" id="mobileNav">
-  <a href="index.html">トップ</a>
-  <a href="vision.html">ハルカゼの想い</a>
-  <a href="college.html">ハルカゼCollege</a>
-  <a href="service.html">サービス内容</a>
-  <a href="price.html">サービス・料金</a>
-  <a href="flow.html">ご成婚までの流れ</a>
+<nav class="site-nav" id="siteNav">
+  <a href="index.html" class="logo">
+    <span class="logo-char">結</span><span class="logo-char">婚</span><span class="logo-char">相</span><span class="logo-char">談</span><span class="logo-char">所</span> <span class="logo-char">ハ</span><span class="logo-char">ル</span><span class="logo-char">カ</span><span class="logo-char">ゼ</span>
+    <span>MARRIAGE CONSULTING</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html">メッセージ</a></li>
+    <li><a href="harukaze-lab.html">ハルカゼLAB</a></li>
+    <li><a href="service.html">プラン料金</a></li>
+    <li><a href="flow.html">成婚までの流れ</a></li>
+    <li><a href="faq.html">よくある質問</a></li>
+    <li><a href="blog.html">ブログ</a></li>
+    <li><a href="index.html#switch-campaign" class="nav-switch-link">乗り換えのご相談はこちら</a></li>
+    <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで予約する</a></li>
+  </ul>
+  <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-nav-overlay" id="mobileNavOverlay">
+  <button class="mobile-nav-close" id="mobileNavClose" aria-label="閉じる">
+    <span></span><span></span>
+  </button>
+  <div class="mobile-nav-logo">
+    <img src="newimages/ロゴ.jpg" alt="結婚相談所ハルカゼ harukaze">
+  </div>
+  <a href="index.html">ホーム</a>
+  <a href="about.html">メッセージ</a>
+  <a href="harukaze-lab.html">ハルカゼLAB</a>
+  <a href="service.html">プラン料金</a>
+  <a href="flow.html">成婚までの流れ</a>
   <a href="faq.html">よくある質問</a>
   <a href="blog.html">ブログ</a>
-  <a href="contact.html">お問い合わせ</a>
+  <a href="index.html#switch-campaign" class="nav-switch-link">乗り換えのご相談はこちら</a>
+  <a href="apply.html" class="nav-cta">初回無料面談に申し込む</a>
+  <div class="mobile-nav-bottom">
+    <hr class="mobile-nav-divider">
+    <div class="mobile-nav-social">
+      <a href="https://www.instagram.com/harukaze.ma?igsh=ZjFxNDU1MGYzMW5j&utm_source=qr" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+        Instagram
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 8.2c1.2-.9 4.6-1.6 6.2.4.9 1.1 1 3.1-.2 4-1 .8-3 .9-3.6-.1-.5-.9.2-1.8 1.4-1.9 1.6-.1 3.4.6 3.9 2.1.5 1.5-.3 3.2-2.2 3.9-1.6.6-3.6.3-4.7-.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+        Threads
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="7" stroke="currentColor" stroke-width="1.8"/><text x="12" y="16.5" text-anchor="middle" font-size="11" font-family="'Georgia', serif" fill="currentColor">n</text></svg>
+        note
+      </a>
+    </div>
+    <p class="mobile-nav-copy">© 2025 Harukaze Marriage Consulting. All rights reserved.</p>
+  </div>
 </div>
 
-<!-- HEADER -->
-<header>
-  <div class="header-inner">
-    <a href="index.html" class="logo">
-      <span class="logo-sub">IBJ正規加盟店＼全国から入会受付中／</span>
-      <span class="logo-main">結婚相談所 ハルカゼ</span>
-    </a>
-    <nav>
-      <a href="vision.html">ハルカゼの想い</a>
-      <a href="college.html">ハルカゼcollege</a>
-      <a href="service.html">サービス内容</a>
-      <a href="price.html">サービス・料金</a>
-      <a href="flow.html">ご成婚までの流れ</a>
-      <a href="faq.html">よくある質問</a>
-      <a href="blog.html">ブログ</a>
-      <a href="contact.html" class="active">お問い合わせ</a>
-      <a href="https://lin.ee/SNU5ure" target="_blank" class="nav-cta">無料相談</a>
-    </nav>
-    <div class="hamburger"><span></span><span></span><span></span></div>
-  </div>
-</header>
+<main>
 
-<!-- PAGE HERO -->
-<section class="page-hero">
-  <div class="page-hero-bg"></div>
-  <div class="page-hero-inner">
-    <span class="page-eyebrow">contact</span>
-    <h1 class="page-title">無料相談・お問い合わせ</h1>
-    <p class="page-note">無料相談で無理な勧誘など一切ございません。</p>
-  </div>
-</section>
+  <section class="page-hero">
+    <p class="page-hero-label">Contact</p>
+    <h1 class="page-hero-title">無料相談・お問い合わせ</h1>
+    <p class="page-hero-note">無理な勧誘は一切ございません。まずはお気軽にどうぞ。</p>
+  </section>
 
-<!-- CONTACT SECTION -->
-<section class="contact-section">
-  <div class="contact-inner">
+  <!-- LINEメイン相談 -->
+  <section class="section">
+    <div class="section-inner">
 
-    <!-- LINE CTA (メイン) -->
-    <div class="line-cta-block">
-      <p class="line-cta-label">
-        まずはLINEで気軽にご相談ください。<br>
-        <strong>公式LINEからのご予約が一番スムーズです。</strong>
-      </p>
-      <a href="https://lin.ee/SNU5ure" target="_blank" class="btn-line-main">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2C6.48 2 2 6.03 2 11c0 2.92 1.56 5.5 4 7.17V22l3.5-2.1c.81.22 1.63.1 2.5.1 5.52 0 10-4.03 10-9S17.52 2 12 2z" fill="white"/>
-        </svg>
-        LINEで予約する
-      </a>
-      <span class="line-sub-note">登録後、簡単1分</span>
-    </div>
+      <div class="line-main-box">
+        <p class="line-main-label">Recommended</p>
+        <h2 class="line-main-title">LINEで初回無料面談に申し込む</h2>
+        <p class="line-main-sub">LINEからのご予約が一番スムーズです。<br>ご質問だけでも大歓迎。お気軽にメッセージをどうぞ。</p>
+        <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="line-main-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.92 2 10.67c0 2.8 1.54 5.3 3.95 6.93-.17.59-.55 2.13-.63 2.46-.1.41.15.4.32.29.13-.09 1.72-1.14 2.42-1.62.62.09 1.27.13 1.94.13 5.52 0 10-3.93 10-8.67C22 5.92 17.52 2 12 2z"/></svg>
+          LINEで無料相談する
+        </a>
+        <p class="line-note">※ 友だち追加後、メッセージをお送りください</p>
 
-    <!-- フォームへの誘導 -->
-    <div class="form-divider">LINEが苦手な方はこちら</div>
-
-    <p class="form-intro">
-      LINE登録せずにご予約される方は、下記の情報をご入力のうえ確認画面へお進みください。
-    </p>
-
-    <!-- CONTACT FORM (Netlify Forms) -->
-    <form
-      name="contact"
-      method="POST"
-      action="thanks.html"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      class="contact-form"
-      id="contactForm"
-      novalidate
-    >
-      <!-- Netlify hidden fields -->
-      <input type="hidden" name="form-name" value="contact">
-      <p style="display:none;"><label>Do not fill: <input name="bot-field"></label></p>
-
-      <!-- お問い合せ内容 -->
-      <div class="form-group">
-        <label class="form-label">
-          お問い合せ内容
-          <span class="label-required">必須</span>
-        </label>
-        <div class="radio-group">
-          <label class="radio-label">
-            <input type="radio" name="inquiry_type" value="無料相談予約（オンライン）" id="typeConsult" required>
-            <span class="radio-custom"></span>
-            無料相談予約（オンライン）
-          </label>
-          <label class="radio-label">
-            <input type="radio" name="inquiry_type" value="その他のお問い合わせ" id="typeOther">
-            <span class="radio-custom"></span>
-            その他のお問い合わせ
-          </label>
-        </div>
-        <span class="error-msg" id="err_inquiry_type">お問い合せ内容をお選びください</span>
-
-        <!-- 無料相談予約の場合：希望日 -->
-        <div class="conditional-section" id="consultSection">
-          <div class="conditional-title">▸ 無料相談予約の場合　希望日をご記入ください（記入例：5月1日 13時〜18時）</div>
-          <div class="subfield-row">
-            <div class="subfield-group">
-              <label class="subfield-label" for="date1">第1希望</label>
-              <input type="text" class="form-input" id="date1" name="date1" placeholder="例：5月1日 13時〜18時">
-            </div>
-            <div class="subfield-group">
-              <label class="subfield-label" for="date2">第2希望</label>
-              <input type="text" class="form-input" id="date2" name="date2" placeholder="例：5月3日 10時〜12時">
-            </div>
-            <div class="subfield-group">
-              <label class="subfield-label" for="date3">第3希望</label>
-              <input type="text" class="form-input" id="date3" name="date3" placeholder="例：5月5日 終日">
-            </div>
+        <!-- 相談の流れ -->
+        <div class="steps-row">
+          <div class="flow-step">
+            <div class="flow-step-num">1</div>
+            <div class="flow-step-title">友だち追加</div>
+            <p class="flow-step-text">LINEボタンから公式アカウントを追加</p>
+          </div>
+          <div class="flow-step">
+            <div class="flow-step-num">2</div>
+            <div class="flow-step-title">日程調整</div>
+            <p class="flow-step-text">ご希望の日時をメッセージでお知らせください</p>
+          </div>
+          <div class="flow-step">
+            <div class="flow-step-num">3</div>
+            <div class="flow-step-title">無料面談</div>
+            <p class="flow-step-text">オンラインで約40分。入会不要でOK</p>
           </div>
         </div>
       </div>
 
-      <!-- ご紹介の場合 -->
-      <div class="form-group">
-        <div class="referral-section">
-          <div class="referral-title">▸ ご紹介の場合　ご紹介者名をご記入ください</div>
-          <input type="text" class="form-input" name="referral_name" placeholder="ご紹介者のお名前">
+      <!-- 安心ポイント -->
+      <p class="section-label">よくある不安</p>
+      <h2 class="section-title">こんな方も安心してご相談ください。</h2>
+      <div class="reassure-grid">
+        <div class="reassure-card">
+          <div class="reassure-icon">🙅</div>
+          <div class="reassure-body">
+            <div class="reassure-title">しつこい勧誘は一切ありません</div>
+            <p class="reassure-text">無料相談はあなたの状況を聞かせていただく場。入会を強制することは絶対にありません。</p>
+          </div>
+        </div>
+        <div class="reassure-card">
+          <div class="reassure-icon">💬</div>
+          <div class="reassure-body">
+            <div class="reassure-title">まだ迷っていても大丈夫</div>
+            <p class="reassure-text">「結婚相談所に入るべきかわからない」という段階でも歓迎です。最適な婚活手段をご提案します。</p>
+          </div>
+        </div>
+        <div class="reassure-card">
+          <div class="reassure-icon">🕐</div>
+          <div class="reassure-body">
+            <div class="reassure-title">所要時間は約40分</div>
+            <p class="reassure-text">オンライン面談なので、自宅からご参加いただけます。仕事の昼休みや休日でもOK。</p>
+          </div>
+        </div>
+        <div class="reassure-card">
+          <div class="reassure-icon">🔒</div>
+          <div class="reassure-body">
+            <div class="reassure-title">個人情報は厳重に管理</div>
+            <p class="reassure-text">ご相談内容・個人情報は厳重に管理し、第三者への提供は一切行いません。</p>
+          </div>
         </div>
       </div>
 
-      <!-- お名前 -->
-      <div class="form-group">
-        <label class="form-label" for="name">
-          お名前
-          <span class="label-required">必須</span>
-        </label>
-        <input type="text" class="form-input" id="name" name="name" placeholder="山田 花子" autocomplete="name">
-        <span class="error-msg" id="err_name">お名前をご入力ください</span>
-      </div>
+    </div>
+  </section>
 
-      <!-- ふりがな -->
-      <div class="form-group">
-        <label class="form-label" for="furigana">
-          ふりがな（ひらがな入力）
-          <span class="label-required">必須</span>
-        </label>
-        <input type="text" class="form-input" id="furigana" name="furigana" placeholder="やまだ はなこ">
-        <span class="error-msg" id="err_furigana">ふりがなをひらがなでご入力ください</span>
-      </div>
-
-      <!-- メールアドレス -->
-      <div class="form-group">
-        <label class="form-label" for="email">
-          メールアドレス
-          <span class="label-required">必須</span>
-        </label>
-        <input type="email" class="form-input" id="email" name="email" placeholder="example@email.com" autocomplete="email">
-        <span class="error-msg" id="err_email">正しいメールアドレスをご入力ください</span>
-      </div>
-
-      <!-- メールアドレス確認 -->
-      <div class="form-group">
-        <label class="form-label" for="email_confirm">
-          メールアドレス（確認用）
-          <span class="label-required">必須</span>
-        </label>
-        <input type="email" class="form-input" id="email_confirm" name="email_confirm" placeholder="example@email.com">
-        <span class="error-msg" id="err_email_confirm">メールアドレスが一致しません</span>
-      </div>
-
-      <!-- 電話番号 -->
-      <div class="form-group">
-        <label class="form-label" for="tel">
-          電話番号（半角数字）
-          <span class="label-required">必須</span>
-        </label>
-        <input type="tel" class="form-input" id="tel" name="tel" placeholder="09012345678" autocomplete="tel" inputmode="numeric">
-        <span class="error-msg" id="err_tel">電話番号をご入力ください</span>
-      </div>
-
-      <!-- 生年月日 -->
-      <div class="form-group">
-        <label class="form-label" for="birthday">
-          生年月日
-          <span class="label-required">必須</span>
-        </label>
-        <input type="text" class="form-input" id="birthday" name="birthday" placeholder="1985年8月26日">
-        <span class="error-msg" id="err_birthday">生年月日をご入力ください</span>
-      </div>
-
-      <!-- お問い合せ内容（フリーテキスト） -->
-      <div class="form-group">
-        <label class="form-label" for="message">お問い合せ内容</label>
-        <textarea class="form-textarea" id="message" name="message" placeholder="ご質問・ご要望などがあればご記入ください"></textarea>
-      </div>
-
-      <!-- 送信ボタン -->
-      <div class="form-submit-wrap">
-        <button type="submit" class="btn-submit">確認画面へ進む</button>
-        <p class="form-privacy-note">
-          送信いただいた情報は<a href="privacy.html">プライバシーポリシー</a>に基づき適切に管理します。
-        </p>
-      </div>
-    </form>
-
+  <!-- CTA -->
+    <section class="unified-cta" id="cta">
+  <div class="unified-cta-inner">
+    <p class="unified-cta-label">Free Consultation</p>
+    <h2 class="unified-cta-title">一歩は、ここから。</h2>
+    <p class="unified-cta-note">1分で登録完了</p>
+    <div class="unified-cta-btns">
+      <a href="apply.html" class="unified-btn-primary">無料カウンセリングを予約する</a>
+      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="unified-btn-line">
+        <span style="color:#06C755; font-weight:700;">LINE</span>で予約する
+      </a>
+    </div>
+    <p class="unified-cta-sub">オンライン40分　｜　全国対応　｜　完全無料</p>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
+</main>
+
+<footer class="site-footer">
   <div class="footer-inner">
-    <a href="index.html" class="footer-logo">結婚相談所 ハルカゼ</a>
-    <div class="footer-links">
-      <a href="vision.html">ハルカゼの想い</a>
-      <a href="college.html">ハルカゼcollege</a>
-      <a href="service.html">サービス内容</a>
-      <a href="price.html">サービス・料金</a>
-      <a href="flow.html">ご成婚までの流れ</a>
-      <a href="faq.html">よくある質問</a>
-      <a href="blog.html">ブログ</a>
-      <a href="contact.html">お問い合わせ</a>
-      <a href="https://lin.ee/SNU5ure" target="_blank">無料相談（LINE）</a>
-      <a href="privacy.html">プライバシーポリシー</a>
+    <div class="footer-brand">
+      <a href="index.html" class="logo" style="color: var(--white); white-space: nowrap;">結婚相談所　ハルカゼ<span>MARRIAGE CONSULTING</span></a>
+
+      <div style="margin-top: 16px;">
+        <img src="images/Photoroom_20260409_154324.png" alt="結婚相談所ハルカゼ ロゴ" style="height: 112px; width: auto;">
+      </div>
     </div>
-    <span class="footer-copy">© 2025 結婚相談所ハルカゼ</span>
+    <div class="footer-links">
+      <ul>
+        <li><a href="faq.html">よくある質問</a></li>
+
+        <li><a href="privacy.html">プライバシーポリシー</a></li>
+        <li><a href="#">特定商取引法に基づく表記</a></li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Harukaze Marriage Consulting. All rights reserved.</span>
+    <span>IBJ正規加盟店　大阪・北摂・吹田</span>
   </div>
 </footer>
 
+<div class="float-side-btns">
+  <a href="apply.html" class="float-side-btn"><span style="font-size:1.15em; font-weight:800;">9月</span>の初回無料面談の予約はこちら</a>
+  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn"><span style="font-size:1.15em; font-weight:800;">9月</span>の初回無料面談の予約はこちら</a>
+</div>
+
+<script src="js/common.js"></script>
 <script>
-// ハンバーガーメニュー
-const hamburgerBtn = document.getElementById('hamburgerBtn');
-const mobileNav = document.getElementById('mobileNav');
-if (hamburgerBtn && mobileNav) {
-  hamburgerBtn.addEventListener('click', () => {
-    hamburgerBtn.classList.toggle('open');
-    mobileNav.classList.toggle('open');
-  });
-  mobileNav.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      hamburgerBtn.classList.remove('open');
-      mobileNav.classList.remove('open');
-    });
-  });
-}
-
-// 旧ハンバーガー（nav内）
-const hamburger = document.querySelector('.hamburger');
-if (hamburger) {
-  hamburger.addEventListener('click', () => {
-    hamburgerBtn.classList.toggle('open');
-    mobileNav.classList.toggle('open');
-  });
-}
-
-// お問い合せ内容の条件表示
-const radioConsult = document.getElementById('typeConsult');
-const radioOther = document.getElementById('typeOther');
-const consultSection = document.getElementById('consultSection');
-
-function toggleConsultSection() {
-  if (radioConsult && radioConsult.checked) {
-    consultSection.classList.add('visible');
-  } else {
-    consultSection.classList.remove('visible');
-  }
-}
-if (radioConsult) radioConsult.addEventListener('change', toggleConsultSection);
-if (radioOther) radioOther.addEventListener('change', toggleConsultSection);
-
-// フォームバリデーション
-const form = document.getElementById('contactForm');
-if (form) {
-  form.addEventListener('submit', function(e) {
-    let valid = true;
-
-    // お問い合せ内容
-    const inquiryType = form.querySelector('input[name="inquiry_type"]:checked');
-    const errInquiry = document.getElementById('err_inquiry_type');
-    if (!inquiryType) {
-      errInquiry.style.display = 'block';
-      valid = false;
-    } else {
-      errInquiry.style.display = 'none';
+  /* ハンバーガーメニュー */
+  (function () {
+    var btn = document.getElementById('hamburgerBtn');
+    var ovl = document.getElementById('mobileNavOverlay');
+    var closeBtn = document.getElementById('mobileNavClose');
+    function openNav() { ovl.classList.add('open'); btn.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeNav() { ovl.classList.remove('open'); btn.classList.remove('open'); document.body.style.overflow = ''; }
+    if (btn && ovl) {
+      btn.addEventListener('click', function () { ovl.classList.contains('open') ? closeNav() : openNav(); });
+      if (closeBtn) closeBtn.addEventListener('click', closeNav);
+      ovl.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeNav); });
     }
-
-    // お名前
-    const name = document.getElementById('name');
-    const errName = document.getElementById('err_name');
-    if (!name.value.trim()) {
-      name.classList.add('error');
-      errName.style.display = 'block';
-      valid = false;
-    } else {
-      name.classList.remove('error');
-      errName.style.display = 'none';
-    }
-
-    // ふりがな（ひらがな）
-    const furigana = document.getElementById('furigana');
-    const errFurigana = document.getElementById('err_furigana');
-    const hiraganaPattern = /^[ぁ-ん\s　ー]+$/;
-    if (!furigana.value.trim() || !hiraganaPattern.test(furigana.value.trim())) {
-      furigana.classList.add('error');
-      errFurigana.style.display = 'block';
-      valid = false;
-    } else {
-      furigana.classList.remove('error');
-      errFurigana.style.display = 'none';
-    }
-
-    // メールアドレス
-    const email = document.getElementById('email');
-    const errEmail = document.getElementById('err_email');
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email.value.trim() || !emailPattern.test(email.value.trim())) {
-      email.classList.add('error');
-      errEmail.style.display = 'block';
-      valid = false;
-    } else {
-      email.classList.remove('error');
-      errEmail.style.display = 'none';
-    }
-
-    // メールアドレス確認
-    const emailConfirm = document.getElementById('email_confirm');
-    const errEmailConfirm = document.getElementById('err_email_confirm');
-    if (emailConfirm.value.trim() !== email.value.trim()) {
-      emailConfirm.classList.add('error');
-      errEmailConfirm.style.display = 'block';
-      valid = false;
-    } else {
-      emailConfirm.classList.remove('error');
-      errEmailConfirm.style.display = 'none';
-    }
-
-    // 電話番号
-    const tel = document.getElementById('tel');
-    const errTel = document.getElementById('err_tel');
-    if (!tel.value.trim()) {
-      tel.classList.add('error');
-      errTel.style.display = 'block';
-      valid = false;
-    } else {
-      tel.classList.remove('error');
-      errTel.style.display = 'none';
-    }
-
-    // 生年月日
-    const birthday = document.getElementById('birthday');
-    const errBirthday = document.getElementById('err_birthday');
-    if (!birthday.value.trim()) {
-      birthday.classList.add('error');
-      errBirthday.style.display = 'block';
-      valid = false;
-    } else {
-      birthday.classList.remove('error');
-      errBirthday.style.display = 'none';
-    }
-
-    if (!valid) {
-      e.preventDefault();
-      // 最初のエラーへスクロール
-      const firstError = form.querySelector('.error, .error-msg[style*="block"]');
-      if (firstError) {
-        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    }
-  });
-}
-</script>
+  })();
 </body>
 </html>
+
+

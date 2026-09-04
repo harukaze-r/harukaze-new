@@ -1,0 +1,565 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>無料面談お申し込み | 結婚相談所ハルカゼ</title>
+<link rel="icon" href="newimages/使用ロゴ.jpeg">
+<meta name="description" content="結婚相談所ハルカゼの無料面談お申し込みフォームです。オンライン40分、全国対応。">
+<meta property="og:title" content="無料面談お申し込み | 結婚相談所ハルカゼ">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="css/common.css">
+<style>
+.page-hero {
+  background: var(--c-bg, #faf9f7);
+  padding: 72px 24px 56px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 80% at 20% 80%, rgba(184,199,230,0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+.page-hero-label {
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #6AB5D6;
+  margin-bottom: 12px;
+  font-weight: 700;
+  position: relative;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+.page-hero-title {
+  font-size: clamp(18px, 2.8vw, 26px);
+  font-weight: 500;
+  line-height: 1.5;
+  position: relative;
+  color: #1A2A44;
+  font-family: 'Noto Sans JP', sans-serif;
+  letter-spacing: 0.06em;
+}
+.page-hero-sub {
+  font-size: 13px;
+  color: var(--text-mid);
+  margin-top: 12px;
+  letter-spacing: 0.05em;
+  position: relative;
+}
+
+/* フォームセクション */
+.form-section {
+  padding: 64px 24px 96px;
+  background: var(--bg, #fff);
+}
+.form-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 32px;
+}
+.form-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--navy, #1A2A44);
+  margin-bottom: 10px;
+  letter-spacing: 0.05em;
+}
+.form-required {
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--pink, #E3768D);
+  padding: 2px 7px;
+  border-radius: 2px;
+  letter-spacing: 0.04em;
+}
+.form-optional {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-light, #999);
+  background: #f0f0f0;
+  padding: 2px 7px;
+  border-radius: 2px;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 15px;
+  font-family: var(--font-sans, 'Noto Sans JP', sans-serif);
+  color: var(--navy, #1A2A44);
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--pink, #E3768D);
+  box-shadow: 0 0 0 3px rgba(227,118,141,0.1);
+  background: #fff;
+}
+.form-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23999' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+/* 日程グループ */
+.date-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.date-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.date-label-num {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--navy, #1A2A44);
+  white-space: nowrap;
+  min-width: 48px;
+  letter-spacing: 0.05em;
+}
+.date-row .form-input {
+  flex: 1;
+}
+
+/* チェックボックス */
+.checkbox-block {
+  background: #faf9f7;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 24px 20px;
+  margin-bottom: 32px;
+}
+.checkbox-block-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--navy, #1A2A44);
+  margin-bottom: 14px;
+  letter-spacing: 0.04em;
+}
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.7;
+}
+.checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--pink, #E3768D);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+/* 注意事項 */
+.form-note {
+  font-size: 12px;
+  color: var(--text-mid, #666);
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 16px 18px;
+  line-height: 1.9;
+  margin-bottom: 36px;
+}
+.form-note strong {
+  color: var(--navy, #1A2A44);
+}
+
+/* 送信ボタン */
+.form-submit-wrap {
+  text-align: center;
+}
+.form-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--navy, #1A2A44);
+  color: #fff;
+  border: none;
+  padding: 18px 56px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-family: var(--font-sans, 'Noto Sans JP', sans-serif);
+  width: 100%;
+  max-width: 360px;
+}
+.form-submit:hover {
+  background: #111d30;
+}
+.form-submit-note {
+  font-size: 12px;
+  color: var(--text-light, #999);
+  margin-top: 14px;
+  letter-spacing: 0.04em;
+}
+
+/* セパレーター */
+.form-divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 40px 0;
+}
+
+@media (max-width: 599px) {
+  .date-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .date-label-num {
+    min-width: unset;
+  }
+}
+.nav-cta { background: #F4688A !important; color: #fff !important; border-color: #F4688A !important; }
+.nav-cta:hover { background: #D94F73 !important; border-color: #D94F73 !important; opacity: 1; }
+.nav-switch-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--navy);
+  color: var(--navy) !important;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  padding: 8px 16px;
+  border-radius: 100px;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+  opacity: 1 !important;
+}
+.nav-switch-link:hover { background: var(--navy); color: #fff !important; }
+.mobile-nav-overlay .nav-switch-link {
+  border-color: var(--navy);
+  padding: 10px 24px;
+  font-size: 14px;
+  margin-top: 4px;
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav" id="siteNav">
+  <a href="index.html" class="logo">
+    <span class="logo-char">結</span><span class="logo-char">婚</span><span class="logo-char">相</span><span class="logo-char">談</span><span class="logo-char">所</span> <span class="logo-char">ハ</span><span class="logo-char">ル</span><span class="logo-char">カ</span><span class="logo-char">ゼ</span>
+    <span>MARRIAGE CONSULTING</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html">メッセージ</a></li>
+    <li><a href="harukaze-lab.html">ハルカゼLAB</a></li>
+    <li><a href="service.html">プラン料金</a></li>
+    <li><a href="flow.html">成婚までの流れ</a></li>
+    <li><a href="faq.html">よくある質問</a></li>
+    <li><a href="blog.html">ブログ</a></li>
+    <li><a href="index.html#switch-campaign" class="nav-switch-link">乗り換えのご相談はこちら</a></li>
+    <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで予約する</a></li>
+  </ul>
+  <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-nav-overlay" id="mobileNavOverlay">
+  <button class="mobile-nav-close" id="mobileNavClose" aria-label="閉じる">
+    <span></span><span></span>
+  </button>
+  <div class="mobile-nav-logo">
+    <img src="newimages/ロゴ.jpg" alt="結婚相談所ハルカゼ harukaze">
+  </div>
+  <a href="index.html">ホーム</a>
+  <a href="about.html">メッセージ</a>
+  <a href="harukaze-lab.html">ハルカゼLAB</a>
+  <a href="service.html">プラン料金</a>
+  <a href="flow.html">成婚までの流れ</a>
+  <a href="faq.html">よくある質問</a>
+  <a href="blog.html">ブログ</a>
+  <a href="index.html#switch-campaign" class="nav-switch-link">乗り換えのご相談はこちら</a>
+  <a href="apply.html" class="nav-cta">初回無料面談に申し込む</a>
+  <div class="mobile-nav-bottom">
+    <hr class="mobile-nav-divider">
+    <div class="mobile-nav-social">
+      <a href="https://www.instagram.com/harukaze.ma?igsh=ZjFxNDU1MGYzMW5j&utm_source=qr" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+        Instagram
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 8.2c1.2-.9 4.6-1.6 6.2.4.9 1.1 1 3.1-.2 4-1 .8-3 .9-3.6-.1-.5-.9.2-1.8 1.4-1.9 1.6-.1 3.4.6 3.9 2.1.5 1.5-.3 3.2-2.2 3.9-1.6.6-3.6.3-4.7-.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+        Threads
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="7" stroke="currentColor" stroke-width="1.8"/><text x="12" y="16.5" text-anchor="middle" font-size="11" font-family="'Georgia', serif" fill="currentColor">n</text></svg>
+        note
+      </a>
+    </div>
+    <p class="mobile-nav-copy">© 2025 Harukaze Marriage Consulting. All rights reserved.</p>
+  </div>
+</div>
+
+<main>
+  <section class="page-hero">
+    <p class="page-hero-label">Application</p>
+    <h1 class="page-hero-title">無料面談お申し込み</h1>
+    <p class="page-hero-sub">オンライン40分 ｜ 全国対応 ｜ 完全無料</p>
+  </section>
+
+  <section class="form-section">
+    <div class="form-inner">
+
+      <form
+        action="https://formspree.io/f/mlgzkakj"
+        method="POST"
+      >
+        <!-- 隠しフィールド -->
+        <input type="hidden" name="_subject" value="【ハルカゼ】無料面談のお申し込みが届きました">
+        <input type="hidden" name="_next" value="thanks.html">
+
+        <!-- 名前 -->
+        <div class="form-group">
+          <label class="form-label" for="name">
+            お名前（フルネーム・漢字）
+            <span class="form-required">必須</span>
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="名前（漢字）"
+            class="form-input"
+            placeholder="例）山田 太郎"
+            required
+          >
+        </div>
+
+        <!-- カナ -->
+        <div class="form-group">
+          <label class="form-label" for="kana">
+            フリガナ（カタカナ）
+            <span class="form-required">必須</span>
+          </label>
+          <input
+            type="text"
+            id="kana"
+            name="フリガナ"
+            class="form-input"
+            placeholder="例）ヤマダ タロウ"
+            required
+          >
+        </div>
+
+        <!-- メールアドレス -->
+        <div class="form-group">
+          <label class="form-label" for="email">
+            メールアドレス
+            <span class="form-required">必須</span>
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="_replyto"
+            class="form-input"
+            placeholder="例）taro.yamada@example.com"
+            required
+          >
+        </div>
+
+        <!-- 電話番号 -->
+        <div class="form-group">
+          <label class="form-label" for="tel">
+            電話番号
+            <span class="form-required">必須</span>
+          </label>
+          <input
+            type="tel"
+            id="tel"
+            name="電話番号"
+            class="form-input"
+            placeholder="例）090-1234-5678"
+            pattern="[0-9\-+ ]{10,15}"
+            required
+          >
+        </div>
+
+        <!-- 都道府県 -->
+        <div class="form-group">
+          <label class="form-label" for="prefecture">
+            お住まいの都道府県
+            <span class="form-required">必須</span>
+          </label>
+          <select id="prefecture" name="都道府県" class="form-select" required>
+            <option value="" disabled selected>都道府県を選択してください</option>
+            <option>北海道</option><option>青森県</option><option>岩手県</option>
+            <option>宮城県</option><option>秋田県</option><option>山形県</option>
+            <option>福島県</option><option>茨城県</option><option>栃木県</option>
+            <option>群馬県</option><option>埼玉県</option><option>千葉県</option>
+            <option>東京都</option><option>神奈川県</option><option>新潟県</option>
+            <option>富山県</option><option>石川県</option><option>福井県</option>
+            <option>山梨県</option><option>長野県</option><option>岐阜県</option>
+            <option>静岡県</option><option>愛知県</option><option>三重県</option>
+            <option>滋賀県</option><option>京都府</option><option>大阪府</option>
+            <option>兵庫県</option><option>奈良県</option><option>和歌山県</option>
+            <option>鳥取県</option><option>島根県</option><option>岡山県</option>
+            <option>広島県</option><option>山口県</option><option>徳島県</option>
+            <option>香川県</option><option>愛媛県</option><option>高知県</option>
+            <option>福岡県</option><option>佐賀県</option><option>長崎県</option>
+            <option>熊本県</option><option>大分県</option><option>宮崎県</option>
+            <option>鹿児島県</option><option>沖縄県</option>
+          </select>
+        </div>
+
+        <!-- 年齢 -->
+        <div class="form-group">
+          <label class="form-label" for="age">
+            年齢
+            <span class="form-required">必須</span>
+          </label>
+          <input
+            type="number"
+            id="age"
+            name="年齢"
+            class="form-input"
+            placeholder="例）35"
+            min="20"
+            max="70"
+            style="max-width: 160px;"
+            required
+          >
+        </div>
+
+        <hr class="form-divider">
+
+        <!-- 希望日程 -->
+        <div class="form-group">
+          <label class="form-label">
+            ご希望の面談日時
+            <span class="form-required">必須</span>
+          </label>
+          <p style="font-size: 12px; color: var(--text-mid, #666); margin-bottom: 14px; letter-spacing: 0.03em;">
+            第3希望まで入力してください。日程調整後、確定連絡をお送りします。
+          </p>
+          <div class="date-group">
+            <div class="date-row">
+              <span class="date-label-num">第1希望</span>
+              <input type="datetime-local" name="希望日程_第1希望" class="form-input" required>
+            </div>
+            <div class="date-row">
+              <span class="date-label-num">第2希望</span>
+              <input type="datetime-local" name="希望日程_第2希望" class="form-input">
+            </div>
+            <div class="date-row">
+              <span class="date-label-num">第3希望</span>
+              <input type="datetime-local" name="希望日程_第3希望" class="form-input">
+            </div>
+          </div>
+        </div>
+
+        <hr class="form-divider">
+
+        <!-- チェックボックス -->
+        <div class="checkbox-block">
+          <p class="checkbox-block-title">現在の婚活状況について</p>
+          <label class="checkbox-label">
+            <input type="checkbox" name="他所で婚活中" value="はい、現在他の婚活サービスを利用中です">
+            他の婚活サービスをご利用中の方はチェックしてください
+          </label>
+        </div>
+
+        <!-- 注意事項 -->
+        <div class="form-note">
+          <strong>ご確認ください</strong><br>
+          ・面談はオンライン（Zoom等）で行います。全国どこからでもご参加いただけます。<br>
+          ・所要時間は約30分です。<br>
+          ・お申し込み後、2営業日以内にご連絡いたします。<br>
+          ・ご入力いただいた情報は面談調整のみに使用し、第三者への提供は行いません。
+        </div>
+
+        <!-- 送信ボタン -->
+        <div class="form-submit-wrap">
+          <button type="submit" class="form-submit">送信する</button>
+          <p class="form-submit-note">送信後、確認メールをお送りします</p>
+        </div>
+
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo" style="color: var(--white); white-space: nowrap;">結婚相談所　ハルカゼ<span>MARRIAGE CONSULTING</span></a>
+
+      <div style="margin-top: 16px;">
+        <img src="images/Photoroom_20260409_154324.png" alt="結婚相談所ハルカゼ ロゴ" style="height: 112px; width: auto;">
+      </div>
+    </div>
+    <div class="footer-links">
+      <ul>
+        <li><a href="faq.html">よくある質問</a></li>
+
+        <li><a href="privacy.html">プライバシーポリシー</a></li>
+        <li><a href="#">特定商取引法に基づく表記</a></li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Harukaze Marriage Consulting. All rights reserved.</span>
+    <span>IBJ正規加盟店　大阪・北摂・吹田</span>
+  </div>
+</footer>
+
+<div class="float-side-btns">
+  <a href="apply.html" class="float-side-btn"><span style="font-size:1.15em; font-weight:800;">9月</span>の初回無料面談の予約はこちら</a>
+  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn"><span style="font-size:1.15em; font-weight:800;">9月</span>の初回無料面談の予約はこちら</a>
+</div>
+
+<script src="js/common.js"></script>
+<script>
+  /* ハンバーガーメニュー */
+  (function () {
+    var btn = document.getElementById('hamburgerBtn');
+    var ovl = document.getElementById('mobileNavOverlay');
+    var closeBtn = document.getElementById('mobileNavClose');
+    function openNav() { ovl.classList.add('open'); btn.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeNav() { ovl.classList.remove('open'); btn.classList.remove('open'); document.body.style.overflow = ''; }
+    if (btn && ovl) {
+      btn.addEventListener('click', function () { ovl.classList.contains('open') ? closeNav() : openNav(); });
+      if (closeBtn) closeBtn.addEventListener('click', closeNav);
+      ovl.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeNav); });
+    }
+  })();
+</body>
+</html>
+
+

@@ -1,0 +1,1190 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ハルカゼLAB | 結婚相談所ハルカゼ</title>
+<link rel="icon" href="newimages/使用ロゴ.jpeg">
+<meta property="og:title" content="ハルカゼLAB | 結婚相談所ハルカゼ">
+<meta property="og:description" content="成婚をゴールにしない、しあわせな結婚が続くためのオリジナルサポート。">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="css/common.css">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   harukaze-lab.html — 女性向けLABページ
+   カラー: コーラルピンク × ホワイト
+   ============================================================ */
+
+:root {
+  --rose:         #F4688A;
+  --rose-light:   #F98FAA;
+  --rose-dark:    #D94F73;
+  --rose-pale:    #FFF3F6;
+  --rose-pale2:   #FFE4EC;
+  --warm-beige:   #FFF0F4;
+  --cream:        #FFFFFF;
+  --text-w:       #222222;
+  --text-w-mid:   #666666;
+  --text-w-light: #999999;
+  --font-elegant: 'Shippori Mincho', 'Noto Serif JP', serif;
+}
+
+.logo-img { display: inline-flex; align-items: center; }
+.logo-img img { height: 72px; width: auto; display: block; }
+@media (max-width: 480px) { .logo-img img { height: 58px; } }
+@media (min-width: 481px) {
+  .site-nav { height: 84px; }
+  body { padding-top: 84px; }
+}
+
+/* ── HERO ── */
+.wlab-hero {
+  position: relative;
+  background: var(--rose-pale2);
+  overflow: hidden;
+  min-height: 90vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: end;
+}
+@media (min-width: 768px) {
+  .wlab-hero { grid-template-columns: 1fr 1fr; min-height: 100vh; align-items: stretch; }
+}
+.wlab-hero-image {
+  position: relative;
+  overflow: hidden;
+  min-height: 50vw;
+}
+@media (min-width: 768px) { .wlab-hero-image { min-height: unset; } }
+.wlab-hero-image img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.wlab-hero-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent 50%, var(--rose-pale2) 100%);
+}
+@media (max-width: 767px) {
+  .wlab-hero-image::after {
+    background: linear-gradient(to bottom, transparent 60%, var(--rose-pale2) 100%);
+  }
+}
+.wlab-hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(40px, 6vw, 80px) clamp(28px, 5vw, 64px);
+  position: relative;
+  z-index: 1;
+}
+.wlab-hero-eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--rose);
+  display: block;
+  margin-bottom: 20px;
+}
+.wlab-hero-title {
+  font-family: var(--font-elegant);
+  font-size: clamp(20px, 2.8vw, 32px);
+  font-weight: 500;
+  color: var(--text-w);
+  line-height: 1.65;
+  letter-spacing: 0.06em;
+  margin-bottom: 28px;
+}
+.wlab-hero-lead {
+  font-size: clamp(13px, 1.4vw, 15px);
+  color: var(--text-w-mid);
+  line-height: 2.1;
+  letter-spacing: 0.04em;
+  max-width: 420px;
+}
+.wlab-hero-lead strong {
+  color: var(--rose-dark);
+  font-weight: 500;
+}
+.wlab-hero-rule {
+  width: 36px; height: 1.5px;
+  background: var(--rose);
+  margin-top: 32px;
+}
+
+/* ── CONCEPT ── */
+.wlab-concept {
+  background: #fff;
+  padding: clamp(72px, 10vw, 120px) clamp(16px, 3vw, 32px);
+  position: relative;
+  overflow: hidden;
+}
+.wlab-concept::before {
+  content: 'LAB';
+  position: absolute;
+  right: -2%; bottom: -5%;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(80px, 18vw, 200px);
+  font-weight: 700;
+  color: rgba(244,104,138,0.04);
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.wlab-concept-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.wlab-concept-eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--rose);
+  display: block;
+  margin-bottom: 24px;
+}
+.wlab-concept-heading {
+  font-family: var(--font-elegant);
+  font-size: clamp(18px, 2.5vw, 26px);
+  font-weight: 500;
+  color: var(--text-w);
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+  margin-bottom: 32px;
+}
+.wlab-concept-heading em {
+  font-style: normal;
+  color: var(--rose);
+}
+.wlab-concept-body {
+  font-size: clamp(14px, 1.6vw, 16px);
+  color: var(--text-w-mid);
+  line-height: 2.2;
+  letter-spacing: 0.04em;
+}
+
+/* ── SYSTEM ── */
+.wlab-system {
+  background: var(--rose-pale);
+  padding: clamp(48px, 7vw, 80px) clamp(24px, 5vw, 64px);
+}
+.wlab-system-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.wlab-system-eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--rose);
+  display: block;
+  margin-bottom: 16px;
+}
+.wlab-system-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 32px;
+}
+@media (min-width: 600px) {
+  .wlab-system-cards { grid-template-columns: repeat(3, 1fr); }
+}
+.wlab-system-card {
+  background: #fff;
+  border: 0.5px solid rgba(244,104,138,0.2);
+  padding: 24px 20px;
+}
+.wlab-system-card-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--rose);
+  display: block;
+  margin-bottom: 10px;
+}
+.wlab-system-card-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-w);
+  line-height: 1.8;
+}
+
+/* ── PROGRAM HEADER ── */
+.wlab-program-header {
+  text-align: center;
+  padding: clamp(64px, 9vw, 100px) clamp(24px, 5vw, 64px) clamp(32px, 4vw, 48px);
+  background: #fff;
+}
+.wlab-program-header-inner { max-width: 640px; margin: 0 auto; }
+.wlab-program-eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--rose);
+  display: block;
+  margin-bottom: 16px;
+}
+.wlab-program-title {
+  font-family: var(--font-elegant);
+  font-size: clamp(16px, 2vw, 22px);
+  font-weight: 500;
+  color: var(--text-w);
+  line-height: 1.7;
+  letter-spacing: 0.06em;
+}
+
+.wlab-program-subtitle {
+  font-family: var(--font-elegant);
+  font-size: clamp(12px, 1.4vw, 15px);
+  font-weight: 400;
+  color: var(--text-w);
+  line-height: 1.9;
+  letter-spacing: 0.06em;
+  margin-top: 12px;
+  opacity: 0.85;
+}
+
+/* ── STEPS ── */
+.wlab-steps-section { background: #fff; }
+
+.wlab-step-item {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(56px, 8vw, 96px) clamp(24px, 6vw, 80px);
+  display: flex;
+  align-items: center;
+  min-height: clamp(540px, 65vh, 720px);
+}
+.wlab-step-photo-bg {
+  position: absolute;
+  inset: 0;
+  background-size: auto 92%;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-color: var(--rose-pale);
+  z-index: 0;
+}
+.wlab-step-item:nth-child(odd)  .wlab-step-photo-bg { background-position: right top; }
+.wlab-step-item:nth-child(even) .wlab-step-photo-bg { background-position: left top; }
+.wlab-step-photo-bg-half {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 50%;
+  background-size: cover;
+  background-position: center top;
+  z-index: 0;
+}
+.wlab-step-photo-bg-half.left  { left: 0; }
+.wlab-step-photo-bg-half.right { right: 0; }
+.wlab-step-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.wlab-step-item:nth-child(odd) .wlab-step-overlay {
+  background: linear-gradient(100deg,
+    rgba(255,255,255,0.94) 0%,
+    rgba(255,255,255,0.76) 48%,
+    rgba(255,255,255,0.22) 100%
+  );
+}
+.wlab-step-item:nth-child(even) .wlab-step-overlay {
+  background: linear-gradient(260deg,
+    rgba(255,243,246,0.94) 0%,
+    rgba(255,243,246,0.76) 48%,
+    rgba(255,243,246,0.22) 100%
+  );
+}
+.wlab-step-bg-num {
+  position: absolute;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(160px, 22vw, 280px);
+  font-weight: 900;
+  color: var(--rose);
+  opacity: 0.06;
+  line-height: 1;
+  pointer-events: none;
+  top: 50%;
+  transform: translateY(-50%);
+  letter-spacing: -0.05em;
+  user-select: none;
+  z-index: 2;
+}
+.wlab-step-item:nth-child(odd)  .wlab-step-bg-num { right: clamp(-10px, 2vw, 20px); }
+.wlab-step-item:nth-child(even) .wlab-step-bg-num { left:  clamp(-10px, 2vw, 20px); }
+.wlab-step-content {
+  position: relative;
+  z-index: 3;
+  max-width: 520px;
+  width: 100%;
+}
+.wlab-step-item:nth-child(odd)  .wlab-step-content { margin-right: auto; }
+.wlab-step-item:nth-child(even) .wlab-step-content { margin-left: auto; }
+@media (max-width: 600px) {
+  .wlab-step-item:nth-child(odd)  .wlab-step-content,
+  .wlab-step-item:nth-child(even) .wlab-step-content { margin-left: 0; margin-right: 0; }
+  .wlab-step-bg-num { opacity: 0.04; }
+  .wlab-step-s3 .wlab-step-photo-bg-half {
+    width: 100%;
+    height: 50%;
+    left: 0 !important;
+    right: 0 !important;
+  }
+  .wlab-step-s3 .wlab-step-photo-bg-half.left  { top: 0; bottom: 50%; }
+  .wlab-step-s3 .wlab-step-photo-bg-half.right { top: 50%; bottom: 0; }
+}
+.wlab-step-num-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.wlab-step-num-badge {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #fff;
+  background: var(--step-color, var(--rose));
+  border-radius: 20px;
+  padding: 4px 14px;
+}
+.wlab-step-category {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--step-color, var(--rose));
+}
+.wlab-step-s1 { --step-color: #F4688A; }
+.wlab-step-s2 { --step-color: #c97ab2; }
+.wlab-step-s3 { --step-color: #e0896b; }
+.wlab-step-s4 { --step-color: #7aaa98; }
+.wlab-step-s5 { --step-color: #a07ac8; }
+.wlab-step-rule {
+  width: 36px; height: 2px;
+  background: var(--step-color, var(--rose));
+  border-radius: 2px;
+  margin-bottom: 18px;
+  opacity: 0.6;
+}
+.wlab-step-title {
+  font-family: var(--font-elegant);
+  font-size: clamp(17px, 2.8vw, 22px);
+  font-weight: 700;
+  color: var(--text-w);
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+.wlab-step-subtitle {
+  font-size: 13px;
+  color: var(--step-color, var(--rose));
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+  margin-top: -8px;
+}
+.wlab-step-desc {
+  font-size: 14px;
+  color: var(--text-w-mid);
+  line-height: 2.1;
+  margin-bottom: 20px;
+}
+.wlab-step-note {
+  font-size: 12px;
+  color: var(--text-w-light);
+  line-height: 1.8;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+.wlab-step-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.wlab-step-points li {
+  font-size: 13px;
+  color: var(--text-w-mid);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.8;
+}
+.wlab-step-points li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 10px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--step-color, var(--rose));
+  opacity: 0.7;
+}
+.wlab-step-ticket {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--step-color, var(--rose));
+  border: 1px solid var(--step-color, var(--rose));
+  border-radius: 4px;
+  padding: 4px 12px;
+  margin-top: 14px;
+  opacity: 0.9;
+}
+.wlab-step-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+.wlab-step-tag {
+  font-size: 11px;
+  color: var(--step-color, var(--rose));
+  border: 1px solid var(--step-color, var(--rose));
+  border-radius: 20px;
+  padding: 4px 12px;
+  letter-spacing: 0.04em;
+  opacity: 0.85;
+}
+.wlab-step-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 20px;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 50px;
+  color: #1A2A44;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.2s;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+.wlab-step-link-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+.wlab-step-link-btn::after {
+  content: '→';
+  font-size: 14px;
+}
+.wlab-step-coming {
+  font-size: 11px;
+  color: var(--text-w-light);
+  border: 1px dashed #ccc;
+  border-radius: 20px;
+  padding: 4px 12px;
+  letter-spacing: 0.08em;
+}
+.wlab-step-item + .wlab-step-item::before {
+  content: '';
+  position: absolute;
+  top: 0; left: clamp(24px, 6vw, 80px); right: clamp(24px, 6vw, 80px);
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(244,104,138,0.15) 30%, rgba(244,104,138,0.15) 70%, transparent);
+}
+
+/* ── PRICE ── */
+.wlab-price {
+  background: #ffffff;
+  padding: clamp(72px, 10vw, 120px) clamp(24px, 5vw, 64px);
+  position: relative;
+  overflow: hidden;
+}
+.wlab-price::before {
+  content: 'PRICE';
+  position: absolute;
+  right: -2%; bottom: -4%;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(60px, 12vw, 140px);
+  font-weight: 700;
+  color: rgba(255,255,255,0.07);
+  letter-spacing: 0.08em;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.wlab-price-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.wlab-price-eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  display: block;
+  margin-bottom: 16px;
+}
+.wlab-price-heading {
+  font-family: var(--font-elegant);
+  font-size: clamp(18px, 2.5vw, 26px);
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.wlab-price-lead {
+  font-size: clamp(13px, 1.5vw, 15px);
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 40px;
+  letter-spacing: 0.04em;
+}
+.wlab-price-card {
+  background: rgba(255,255,255,0.12);
+  border: 0.5px solid rgba(255,255,255,0.3);
+  padding: clamp(24px, 3vw, 36px) clamp(20px, 3vw, 32px);
+  max-width: 360px;
+  margin-bottom: 32px;
+}
+.wlab-price-card-label {
+  font-size: 14px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 8px;
+}
+.wlab-price-card-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 4vw, 38px);
+  font-weight: 300;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-top: 8px;
+}
+.wlab-price-card-unit {
+  font-size: 0.48em;
+  font-weight: 400;
+  margin-left: 2px;
+}
+.wlab-price-card-note {
+  font-size: 10px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 6px;
+}
+.wlab-price-member {
+  background: #F4688A;
+  border: none;
+  border-radius: 16px;
+  padding: clamp(32px, 5vw, 52px) clamp(24px, 5vw, 52px);
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(244, 104, 138, 0.25);
+}
+.wlab-price-member-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #F4688A;
+  background: #fff;
+  border-radius: 20px;
+  padding: 4px 16px;
+  margin-bottom: 20px;
+}
+.wlab-price-member-catch {
+  font-family: var(--font-elegant);
+  font-size: clamp(18px, 2.5vw, 26px);
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+}
+.wlab-price-member-catch em {
+  font-style: normal;
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(255,255,255,0.5);
+}
+.wlab-price-member-title {
+  font-size: clamp(13px, 1.5vw, 15px);
+  font-weight: 400;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+  margin-bottom: 24px;
+}
+.wlab-price-member-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 0.5px solid rgba(255,255,255,0.5);
+  padding-bottom: 2px;
+  transition: opacity 0.2s;
+}
+.wlab-price-member-link:hover { opacity: 0.7; }
+
+/* ── CLOSING ── */
+.wlab-closing {
+  background: #fff;
+  padding: clamp(80px, 12vw, 140px) clamp(24px, 5vw, 64px);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.wlab-closing-inner { max-width: 640px; margin: 0 auto; }
+.wlab-closing-eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--rose);
+  display: block;
+  margin-bottom: 20px;
+}
+.wlab-closing-title {
+  font-family: var(--font-elegant);
+  font-size: clamp(14px, 1.8vw, 20px);
+  font-weight: 500;
+  color: var(--text-w);
+  line-height: 1.8;
+  letter-spacing: 0.06em;
+  margin-bottom: 28px;
+}
+.wlab-closing-body {
+  font-size: clamp(14px, 1.6vw, 16px);
+  color: var(--text-w-mid);
+  line-height: 2.2;
+  letter-spacing: 0.04em;
+  margin-bottom: 40px;
+}
+.wlab-closing-btn {
+  display: inline-block;
+  background: var(--rose);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  padding: 18px 44px;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: opacity 0.2s;
+}
+.wlab-closing-btn:hover { opacity: 0.85; }
+
+/* ── HOW TO JOIN ── */
+.wlab-ticket {
+  background: var(--rose-pale);
+  padding: clamp(72px, 10vw, 120px) clamp(24px, 5vw, 64px);
+}
+.wlab-ticket-inner { max-width: 900px; margin: 0 auto; }
+.wlab-ticket-cta { text-align: center; margin-top: 56px; }
+.wlab-ticket-header { text-align: center; margin-bottom: 64px; }
+.wlab-ticket-eyebrow {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--rose);
+  display: block;
+  margin-bottom: 16px;
+}
+.wlab-ticket-title {
+  font-family: var(--font-elegant);
+  font-size: clamp(16px, 2vw, 22px);
+  font-weight: 500;
+  color: var(--text-w);
+  line-height: 1.7;
+}
+.wlab-ticket-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+.wlab-ticket-steps::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 12.5%; right: 12.5%;
+  height: 1px;
+  background: var(--rose);
+  opacity: 0.25;
+  z-index: 0;
+}
+.wlab-ticket-step {
+  text-align: center;
+  padding: 0 16px;
+  position: relative;
+  z-index: 1;
+}
+.wlab-ticket-step-num {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--rose);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  flex-direction: column;
+  box-shadow: 0 4px 16px rgba(244,104,138,0.15);
+}
+.wlab-ticket-step-num-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--rose);
+}
+.wlab-ticket-step-num-digit {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  color: var(--rose);
+  line-height: 1;
+}
+.wlab-ticket-step-title {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--text-w);
+  margin-bottom: 8px;
+}
+.wlab-ticket-step-text {
+  font-size: 11px;
+  color: var(--text-w-mid);
+  line-height: 1.8;
+  letter-spacing: 0.03em;
+}
+@media (max-width: 600px) {
+  .wlab-ticket-steps { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .wlab-ticket-steps::before { display: none; }
+}
+
+/* ── CTA override ── */
+.cta-section {
+  background: #fff;
+}
+.cta-section::before { display: none; }
+.cta-section .btn-primary {
+  background: var(--rose) !important;
+  color: #fff !important;
+}
+.cta-section .btn-primary:hover { opacity: 0.85; }
+.cta-section .btn-line {
+  border-color: var(--rose) !important;
+  color: var(--rose) !important;
+}
+.cta-section .btn-line:hover {
+  background: var(--rose-pale) !important;
+}
+.cta-note { color: var(--text-w-light) !important; }
+
+/* ── FADE ── */
+.fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.fade-up.is-visible { opacity: 1; transform: translateY(0); }
+.delay-1 { transition-delay: 0.12s; }
+.delay-2 { transition-delay: 0.24s; }
+.delay-3 { transition-delay: 0.36s; }
+
+/* ── 統一CTAセクション ── */
+.unified-cta {
+  background: #ffffff;
+  padding: clamp(80px, 10vw, 140px) clamp(24px, 6vw, 80px);
+  text-align: center;
+}
+.unified-cta-inner { max-width: 640px; margin: 0 auto; }
+.unified-cta-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px; letter-spacing: 0.3em; color: #F4688A;
+  text-transform: uppercase; margin-bottom: 24px;
+}
+.unified-cta-subtitle {
+  font-size: clamp(13px, 1.6vw, 16px);
+  color: rgba(26,42,68,0.7);
+  line-height: 1.9;
+  margin-bottom: 24px;
+  letter-spacing: 0.04em;
+}
+.unified-cta-title {
+  font-family: 'Shippori Mincho', 'Noto Serif JP', serif;
+  font-size: clamp(22px, 3vw, 38px); font-weight: 500;
+  color: #1A2A44; line-height: 1.7; margin-bottom: 16px; letter-spacing: 0.06em;
+}
+.unified-cta-note { font-size: 12px; color: #aaa; letter-spacing: 0.08em; margin-bottom: 32px; }
+.unified-cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-bottom: 16px; }
+.unified-btn-primary {
+  background: #F4688A; color: #fff;
+  padding: 17px 44px; border-radius: 2px;
+  font-size: 14px; font-weight: 500; display: inline-block;
+  letter-spacing: 0.08em; transition: all 0.2s;
+}
+.unified-btn-primary:hover { background: #D94F73; transform: translateY(-2px); opacity: 1; }
+.unified-btn-line {
+  background: transparent; color: #06C755;
+  padding: 16px 36px; border-radius: 2px;
+  border: 1px solid #06C755; font-size: 13px;
+  display: inline-flex; align-items: center; gap: 6px;
+  letter-spacing: 0.08em; transition: all 0.2s;
+}
+.unified-btn-line:hover { background: #e8faf0; transform: translateY(-2px); opacity: 1; }
+.unified-cta-sub { font-size: 13px; color: #888; letter-spacing: 0.08em; }
+.nav-cta { background: #F4688A !important; color: #fff !important; border-color: #F4688A !important; }
+.nav-cta:hover { background: #D94F73 !important; border-color: #D94F73 !important; opacity: 1; }
+.nav-switch-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--navy);
+  color: var(--navy) !important;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  padding: 8px 16px;
+  border-radius: 100px;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+  opacity: 1 !important;
+}
+.nav-switch-link:hover { background: var(--navy); color: #fff !important; }
+.mobile-nav-overlay .nav-switch-link {
+  border-color: var(--navy);
+  padding: 10px 24px;
+  font-size: 14px;
+  margin-top: 4px;
+}
+</style>
+</head>
+<body>
+
+<!-- ナビゲーション -->
+<nav class="site-nav" id="siteNav">
+  <a href="index.html" class="logo logo-img">
+    <img src="newimages/line_oa_chat_260826_154300.jpg" alt="結婚相談所ハルカゼ harukaze">
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html">メッセージ</a></li>
+    <li><a href="harukaze-lab.html">ハルカゼLAB</a></li>
+    <li><a href="service.html">プラン料金</a></li>
+    <li><a href="flow.html">成婚までの流れ</a></li>
+    <li><a href="faq.html">よくある質問</a></li>
+    <li><a href="blog.html">ブログ</a></li>
+    <li><a href="index.html#switch-campaign" class="nav-switch-link">乗り換えのご相談はこちら</a></li>
+    <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで予約する</a></li>
+  </ul>
+  <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- モバイルオーバーレイ -->
+<div class="mobile-nav-overlay" id="mobileNavOverlay">
+  <button class="mobile-nav-close" id="mobileNavClose" aria-label="閉じる">
+    <span></span><span></span>
+  </button>
+  <div class="mobile-nav-logo">
+    <img src="newimages/line_oa_chat_260826_154300.jpg" alt="結婚相談所ハルカゼ harukaze">
+  </div>
+  <a href="index.html">ホーム</a>
+  <a href="about.html">メッセージ</a>
+  <a href="harukaze-lab.html">ハルカゼLAB</a>
+  <a href="service.html">プラン料金</a>
+  <a href="flow.html">成婚までの流れ</a>
+  <a href="faq.html">よくある質問</a>
+  <a href="blog.html">ブログ</a>
+  <a href="index.html#switch-campaign" class="nav-switch-link">乗り換えのご相談はこちら</a>
+  <a href="apply.html" class="nav-cta">初回無料面談に申し込む</a>
+  <div class="mobile-nav-bottom">
+    <hr class="mobile-nav-divider">
+    <div class="mobile-nav-social">
+      <a href="https://www.instagram.com/harukaze.ma?igsh=ZjFxNDU1MGYzMW5j&utm_source=qr" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+        Instagram
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 8.2c1.2-.9 4.6-1.6 6.2.4.9 1.1 1 3.1-.2 4-1 .8-3 .9-3.6-.1-.5-.9.2-1.8 1.4-1.9 1.6-.1 3.4.6 3.9 2.1.5 1.5-.3 3.2-2.2 3.9-1.6.6-3.6.3-4.7-.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+        Threads
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="7" stroke="currentColor" stroke-width="1.8"/><text x="12" y="16.5" text-anchor="middle" font-size="11" font-family="'Georgia', serif" fill="currentColor">n</text></svg>
+        note
+      </a>
+    </div>
+    <p class="mobile-nav-copy">© 2025 Harukaze Marriage Consulting. All rights reserved.</p>
+  </div>
+</div>
+
+<main>
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="wlab-hero">
+    <div class="wlab-hero-image">
+      <img src="newimages/スクリーンショット 2026-04-16 150058.png" alt="ハルカゼLAB">
+    </div>
+    <div class="wlab-hero-text">
+      <span class="wlab-hero-eyebrow">Harukaze LAB</span>
+      <h1 class="wlab-hero-title">「結婚相談所で出会って、<br><span style="color:#F4688A;">本当にうまくいく？</span>」</h1>
+      <p class="wlab-hero-lead">
+        成婚することが、婚活の正解ではないと私たちは考えます。<br>
+        大切なのは、その先。<br><br>
+        自分の価値観を知り、自分らしさを言葉にし、<br>
+        パートナーと対等に関係を育てていける「土台」をつくること。<br>
+        それが、ハルカゼLABのテーマです。
+      </p>
+      <div class="wlab-hero-rule"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROGRAM HEADER
+       ============================================================ -->
+  <div class="wlab-program-header">
+    <div class="wlab-program-header-inner">
+      <span class="wlab-program-eyebrow fade-up">Program</span>
+      <h2 class="wlab-program-title fade-up delay-1">「選んだ人と、ずっと笑っていたい」</h2>
+      <p class="wlab-program-subtitle fade-up delay-2">婚活の先にある「結婚生活」を見据えた、<br>あなただけのオリジナルサポートプログラム</p>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       STEPS
+       ============================================================ -->
+  <section class="wlab-steps-section">
+
+    <!-- 01 -->
+    <div class="wlab-step-item wlab-step-s1">
+      <div class="wlab-step-photo-bg" style="background-image: url('newimages/IMG_2149.jpeg');"></div>
+      <div class="wlab-step-overlay"></div>
+      <span class="wlab-step-bg-num" aria-hidden="true">01</span>
+      <div class="wlab-step-content fade-up">
+        <div class="wlab-step-num-label">
+          <span class="wlab-step-num-badge">01</span>
+          <span class="wlab-step-category">自己解析ワーク・カウンセリング</span>
+        </div>
+        <div class="wlab-step-rule"></div>
+        <h2 class="wlab-step-title">SELF DISCOVERY —<br>「本当の自分」を知るセッション</h2>
+        <p class="wlab-step-desc">「なんとなく好き」ではなく、「なぜ好き？」「なぜ嫌い？」を深ぼってこれまでの恋愛パターンを整理し、自分の価値観・魅力・ブロックを丁寧に掘り起こす40分のセッション。</p>
+        <div class="wlab-step-tags">
+          <span class="wlab-step-tag">婚活カウンセラー</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 -->
+    <div class="wlab-step-item wlab-step-s2">
+      <div class="wlab-step-photo-bg" style="background-image: url('newimages/492004979_3368927726583503_3366660712559650101_n.jpg');"></div>
+      <div class="wlab-step-overlay"></div>
+      <span class="wlab-step-bg-num" aria-hidden="true">02</span>
+      <div class="wlab-step-content fade-up">
+        <div class="wlab-step-num-label">
+          <span class="wlab-step-num-badge">02</span>
+          <span class="wlab-step-category">セルフラブ・セクシャルウェルネス</span>
+        </div>
+        <div class="wlab-step-rule"></div>
+        <h2 class="wlab-step-title">SEXUAL WELLNESS —<br>自分と相手を大切にする関係性の基本</h2>
+        <p class="wlab-step-subtitle">自分と相手を大切にする関係性の基本</p>
+        <p class="wlab-step-desc">セクシャルウェルネスコーチが教える、自分と相手を大切にする関係性の基本。心と体、コミュニケーション、健全な親密さとは——なかなか聞けない、だけど知っておきたいはなし。</p>
+        <div class="wlab-step-tags">
+          <span class="wlab-step-tag">セクシャルウェルネスコーチ・精神対話士</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 -->
+    <div class="wlab-step-item wlab-step-s3">
+      <div class="wlab-step-photo-bg-half left" style="background-image: url('images/本間千尋１.jpeg'); background-position: center top;"></div>
+      <div class="wlab-step-photo-bg-half right" style="background-image: url('newimages/ともちゃん.jpg'); background-position: center top;"></div>
+      <div class="wlab-step-overlay"></div>
+      <span class="wlab-step-bg-num" aria-hidden="true">03</span>
+      <div class="wlab-step-content fade-up">
+        <div class="wlab-step-num-label">
+          <span class="wlab-step-num-badge">03</span>
+          <span class="wlab-step-category">パートナーシップ・ライフコーチング</span>
+        </div>
+        <div class="wlab-step-rule"></div>
+        <h2 class="wlab-step-title">GLADIÀ —<br>グラデーション思考の学び</h2>
+        <p class="wlab-step-subtitle">グラデーション思考の学び</p>
+        <p class="wlab-step-desc">ライフコーチが教える、0か100かではなくグラデーション思考の学び。恋愛、仕事、家族——あらゆる人間関係の課題に使える、柔軟な思考のエッセンスを学ぶ講座。</p>
+        <ul class="wlab-step-points">
+          <li>人間関係のストレスが軽くなる思考法</li>
+          <li>ちょうどいい距離感を知る</li>
+        </ul>
+        <div class="wlab-step-tags">
+          <span class="wlab-step-tag">コーチング</span>
+          <span class="wlab-step-tag">パートナーシップ</span>
+        </div>
+        <a href="gladia.html" class="wlab-step-link-btn">GLADIÀについて詳しく</a>
+      </div>
+    </div>
+
+    <!-- 04 -->
+    <div class="wlab-step-item wlab-step-s4">
+      <div class="wlab-step-photo-bg" style="background-image: url('newimages/E33B9947-5CAC-4CBF-8048-B0505AAA80B0 (1).jpeg');"></div>
+      <div class="wlab-step-overlay"></div>
+      <span class="wlab-step-bg-num" aria-hidden="true">04</span>
+      <div class="wlab-step-content fade-up">
+        <div class="wlab-step-num-label">
+          <span class="wlab-step-num-badge">04</span>
+          <span class="wlab-step-category">イメージコンサルティング</span>
+        </div>
+        <div class="wlab-step-rule"></div>
+        <h2 class="wlab-step-title">IMAGE STYLING —<br>「なりたい私」を、まとう</h2>
+        <p class="wlab-step-desc">内面の魅力を、見た目にも表現できるように。骨格・パーソナルカラーをもとに、あなたらしさが自然と伝わるスタイリングを提案。第一印象から好意を生む、外見の戦略。</p>
+        <div class="wlab-step-tags">
+          <span class="wlab-step-tag">パーソナルカラー診断</span>
+          <span class="wlab-step-tag">スタイリング</span>
+          <span class="wlab-step-coming">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 -->
+    <div class="wlab-step-item wlab-step-s5">
+      <div class="wlab-step-photo-bg" style="background-color: #f3eff8;"></div>
+      <div class="wlab-step-overlay"></div>
+      <span class="wlab-step-bg-num" aria-hidden="true">05</span>
+      <div class="wlab-step-content fade-up">
+        <div class="wlab-step-num-label">
+          <span class="wlab-step-num-badge">05</span>
+          <span class="wlab-step-category">ビジョンワーク</span>
+        </div>
+        <div class="wlab-step-rule"></div>
+        <h2 class="wlab-step-title">VISION BOARD —<br>「しあわせの解像度」を上げる</h2>
+        <p class="wlab-step-desc">「なんとなく幸せになりたい」から、「これが私の望む暮らし」へ。自分の理想を言語化・視覚化することで、本当に出会いたい人・築きたい関係が明確になるビジョンワークショップ。</p>
+        <ul class="wlab-step-points">
+          <li>自分の価値観と理想が明確になる</li>
+          <li>理想の相手像が自然と見えてくる</li>
+        </ul>
+        <div class="wlab-step-tags">
+          <span class="wlab-step-tag">ワークショップ</span>
+          <span class="wlab-step-tag">ビジョン</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============================================================
+       PRICE & MEMBERSHIP
+       ============================================================ -->
+  <section class="wlab-price">
+    <div class="wlab-price-inner">
+<div class="wlab-price-member fade-up delay-1">
+        <span class="wlab-price-member-badge">パーソナルプラン</span>
+        <p class="wlab-price-member-title">パーソナルプラン会員様は、ハルカゼLABのすべてのプログラムを、<br>追加料金なし（無料）でご参加いただけます。</p>
+        <a href="service.html" class="wlab-price-member-link">➔ パーソナル会員の詳細はこちら</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+    <section class="unified-cta" id="cta">
+  <div class="unified-cta-inner">
+    <p class="unified-cta-label">Free Consultation</p>
+    <h2 class="unified-cta-title">「失敗したくない」</h2>
+    <p class="unified-cta-subtitle">婚活に不安を感じるのは、それだけ真剣だから。<br>まずは、あなたの話を聞かせてください。</p>
+    <p class="unified-cta-note">1分で登録完了</p>
+    <div class="unified-cta-btns">
+      <a href="apply.html" class="unified-btn-primary">無料カウンセリングを予約する</a>
+      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="unified-btn-line">
+        <span style="color:#06C755; font-weight:700;">LINE</span>で予約する
+      </a>
+    </div>
+    <p class="unified-cta-sub">オンライン40分　｜　全国対応　｜　完全無料</p>
+  </div>
+</section>
+
+</main>
+
+<!-- フッター -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div style="margin-bottom: 16px;">
+        <img src="images/Photoroom_20260409_154324.png" alt="結婚相談所ハルカゼ ロゴ" style="height: 56px; width: auto;">
+      </div>
+      <a href="index.html" class="logo" style="white-space: nowrap;">
+        <img src="newimages/ロゴ.jpg" alt="結婚相談所ハルカゼ harukaze" style="height: 52px; width: auto; display: block;">
+      </a>
+    </div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/harukaze.ma?igsh=ZjFxNDU1MGYzMW5j&utm_source=qr" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+        Instagram
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 8.2c1.2-.9 4.6-1.6 6.2.4.9 1.1 1 3.1-.2 4-1 .8-3 .9-3.6-.1-.5-.9.2-1.8 1.4-1.9 1.6-.1 3.4.6 3.9 2.1.5 1.5-.3 3.2-2.2 3.9-1.6.6-3.6.3-4.7-.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+        Threads
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="7" stroke="currentColor" stroke-width="1.8"/><text x="12" y="16.5" text-anchor="middle" font-size="11" font-family="'Georgia', serif" fill="currentColor">n</text></svg>
+        note
+      </a>
+    </div>
+    <div class="footer-links">
+      <ul>
+        <li><a href="faq.html">よくある質問</a></li>
+
+        <li><a href="privacy.html">プライバシーポリシー</a></li>
+        <li><a href="#">特定商取引法に基づく表記</a></li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Harukaze Marriage Consulting. All rights reserved.</span>
+    <span>IBJ正規加盟店　大阪・北摂・吹田</span>
+  </div>
+</footer>
+
+<!-- フローティングボタン（モバイルの下部固定バーのみ表示） -->
+<div class="float-side-btns mobile-bottom-only">
+  <a href="apply.html" class="float-side-btn float-side-btn-line"><span style="font-size:1.15em; font-weight:800;">9月</span>の初回無料面談の予約はこちら</a>
+  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn float-side-btn-line"><span style="font-size:1.15em; font-weight:800;">9月</span>の初回無料面談の予約はこちら</a>
+</div>
+
+<script src="js/common.js"></script>
+<script>
+(function () {
+  'use strict';
+  /* ハンバーガーメニュー */
+  var btn = document.getElementById('hamburgerBtn');
+  var ovl = document.getElementById('mobileNavOverlay');
+  var closeBtn = document.getElementById('mobileNavClose');
+  function openNav() { ovl.classList.add('open'); btn.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeNav() { ovl.classList.remove('open'); btn.classList.remove('open'); document.body.style.overflow = ''; }
+  if (btn && ovl) {
+    btn.addEventListener('click', function () { ovl.classList.contains('open') ? closeNav() : openNav(); });
+    if (closeBtn) closeBtn.addEventListener('click', closeNav);
+    ovl.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeNav); });
+  }
+
+  var nav = document.getElementById('siteNav');
+  if (nav) {
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+  }
+  var items = document.querySelectorAll('.fade-up');
+  if (items.length && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    items.forEach(function (el) { io.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>
