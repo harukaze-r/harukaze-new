@@ -1,18 +1,18 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>なぜ、いい人どまりになるのか。 | HARUKAZE BLOG</title>
+<title>相談所で恋愛はできるのか？ | HARUKAZE BLOG</title>
 <link rel="icon" href="newimages/使用ロゴ.jpeg">
-<meta property="og:image" content="newimages/h. (1).png">
-<meta property="og:title" content="なぜ、いい人どまりになるのか。 | HARUKAZE BLOG">
-<meta property="og:description" content="真面目で誠実なのに、なぜか選ばれない。問題は中身ではなく、伝え方にある。">
+<meta property="og:image" content="newimages/ネイビー シンプル ビジネス 対談 YOUTUBE サムネイル画像.png">
+<meta property="og:title" content="相談所で恋愛はできるのか？ | HARUKAZE BLOG">
+<meta property="og:description" content="条件で選ぶ婚活で「好き」になれるのか。心理学の視点から、相談所と自由恋愛の「好きになるプロセス」の違いを解説。">
 <meta property="og:type" content="article">
 <link rel="stylesheet" href="css/common.css">
 <style>
 /* ============================================================
-   blog-post.html ページ固有スタイル
+   blog_03.html ページ固有スタイル
    ============================================================ */
 
 /* ── パンくず ── */
@@ -122,6 +122,90 @@
   font-style: normal;
   color: #555;
 }
+
+/* ── スピーカー発言 ── */
+.speaker-line {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.speaker-badge {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-sky);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+.speaker-line p {
+  margin-bottom: 4px;
+}
+.speaker-name {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 4px;
+  display: block;
+}
+
+/* ── 心理学メモ ── */
+.psych-memo {
+  background: var(--color-ice);
+  border-radius: 10px;
+  padding: 18px 22px;
+  margin: 20px 0 32px;
+  font-size: 14px;
+  line-height: 1.9;
+  color: #444;
+}
+.psych-memo-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* ── 4要素リスト ── */
+.factor-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin: 20px 0 28px;
+}
+@media (max-width: 480px) { .factor-grid { grid-template-columns: 1fr; } }
+.factor-item {
+  background: #fff;
+  border: 1px solid var(--color-ice);
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+.factor-num { font-size: 12px; color: var(--color-sky); font-weight: 700; margin-bottom: 4px; }
+.factor-title { font-size: 14px; font-weight: 700; color: var(--color-navy); margin-bottom: 2px; }
+.factor-desc { font-size: 12px; color: #888; }
+
+/* ── 比較 ── */
+.compare-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 20px 0 28px;
+}
+.compare-item {
+  flex: 1;
+  min-width: 220px;
+  background: #fff;
+  border: 1px solid var(--color-ice);
+  border-radius: 10px;
+  padding: 18px 20px;
+}
+.compare-label { font-size: 12px; font-weight: 700; color: var(--color-navy); margin-bottom: 8px; }
+.compare-flow { font-size: 13px; color: #555; line-height: 1.8; }
 
 /* ── 記事末CTA ── */
 .post-cta {
@@ -285,12 +369,11 @@
 <!-- パンくず -->
 <nav class="breadcrumb" aria-label="パンくずリスト">
   <div class="breadcrumb-inner">
-    <span class="mobile-nav-specialty">男性専門結婚相談所</span>
-  <a href="index.html">ホーム</a>
+    <a href="index.html">ホーム</a>
     <span class="breadcrumb-sep">›</span>
     <a href="blog.html">ブログ</a>
     <span class="breadcrumb-sep">›</span>
-    <span>なぜ、いい人どまりになるのか。</span>
+    <span>相談所で恋愛はできるのか？</span>
   </div>
 </nav>
 
@@ -298,45 +381,137 @@
   <div class="post-wrap">
 
     <!-- アイキャッチ -->
-    <div class="post-eyecatch">💬</div>
+    <div class="post-eyecatch">
+      <img src="newimages/ネイビー シンプル ビジネス 対談 YOUTUBE サムネイル画像.png" alt="相談所で恋愛はできるのか？">
+    </div>
 
     <!-- メタ情報 -->
     <div class="post-meta">
-      <span class="tag-sky">婚活のヒント</span>
-      <span class="post-date">2025.04.01</span>
+      <span class="tag-sky">公式LINEコラム</span>
+      <span class="post-date">2025.06.28</span>
     </div>
 
     <!-- タイトル -->
-    <h1 class="post-title">なぜ、いい人どまりになるのか。</h1>
+    <h1 class="post-title">相談所で恋愛はできるのか？</h1>
 
-    <!-- 本文（ダミーテキスト・後から差し替え） -->
+    <!-- 本文 -->
     <div class="post-body">
-      <p>「真面目で誠実なのに、なぜか選ばれない」——婚活相談をしていると、こんな言葉を何度も聞いてきました。</p>
+      <p>「やっぱり、相談所の出会いでは心が動かない……！」って思ったみなさん、そもそもリアルでも、心躍らせ、好き！になっていますか？自由恋愛でも「好き」になれていない人は意外と多い。問題は出会いの場所じゃなく、「好き」の作り方かもしれません。</p>
 
-      <blockquote>「プロフィールを褒められるのに、先に進まない。」<br>「いい人なんだけど…と言われたことがある。」</blockquote>
+      <p>今回は、婚活Rちゃんの本音トークをきっかけに、心理学の人と相談所の中の人に「好き」と婚活の関係について、ざっくばらんに聞いてみました。</p>
 
-      <p>これは、中身の問題ではありません。問題は「伝え方」にあります。</p>
+      <h2>Q.01 条件で選ぶと、好きになれないのでは？</h2>
+      <div class="speaker-line">
+        <div class="speaker-badge">R</div>
+        <div>
+          <span class="speaker-name">婚活Rちゃん</span>
+          <p>相談所のメリットも理解はしてるんだけど、条件ではやっぱり「好き」になれる気がしない…</p>
+        </div>
+      </div>
+      <div class="speaker-line">
+        <div class="speaker-badge">中</div>
+        <div>
+          <span class="speaker-name">相談所の中の人</span>
+          <p>条件で好きにはなれません…！だけど、相談所の出会い＝恋愛じゃない、は間違いです。出会いはあくまで「きっかけ」。うまくいくカップルには必ず「好き」が入ってます。</p>
+        </div>
+      </div>
+      <div class="psych-memo">
+        <span class="psych-memo-label">🧠 心理学メモ</span>
+        「接触仮説」といって、条件が合った人と繰り返し会うことで好意は育まれます。出会いのきっかけが何であれ、感情は後からついてくる——これは人のあるあるです。だけど、今までそんな風な出会いをしてこなかったから、この出会い方に拒絶感をもつのもまた自然なこと。
+      </div>
 
-      <h2>「いい人」が持つ落とし穴</h2>
+      <h2>Q.02 「1番好きな人じゃないと結婚できない」って思うのは変？</h2>
+      <p>Rちゃんのこの言葉、実はすごく多くの人が感じていること。心理学の人に聞いてみると——</p>
+      <div class="speaker-line">
+        <div class="speaker-badge">R</div>
+        <div>
+          <span class="speaker-name">婚活Rちゃん</span>
+          <p>そもそも好きとか、結婚ほど非合理なものってないよね…でも「1番好きな人じゃないと結婚できない」って思ってる</p>
+        </div>
+      </div>
+      <div class="speaker-line">
+        <div class="speaker-badge">心</div>
+        <div>
+          <span class="speaker-name">心理学の人</span>
+          <p>それは「心から好きにならないと結婚してはいけない」という呪いにかかっている状態かも。結婚は"一生に一度"という思いが強いほど、この呪いは強くなります。</p>
+        </div>
+      </div>
+      <div class="psych-memo">
+        <span class="psych-memo-label">🧠 心理学メモ</span>
+        「完璧主義バイアス」と「損失回避」が重なると、"最高の人じゃないと動けない"状態に。「ちょっと違う」だけで諦めてしまうのも、これが原因のひとつです。
+      </div>
 
-      <p>真面目で誠実な人ほど、自分を「正確に」伝えようとします。プロフィールには事実を書き、お見合いでは正直に話す。それ自体は素晴らしいことです。</p>
+      <h2>Q.03 そもそも「好き」って何？</h2>
+      <p>「好き」という感情、なんとなくわかるようで、実はあいまい。中の人に整理してもらいました。</p>
+      <div class="speaker-line">
+        <div class="speaker-badge">R</div>
+        <div>
+          <span class="speaker-name">婚活Rちゃん</span>
+          <p>じゃあ「好き」ってそもそも何なの…？フィーリング？感覚？</p>
+        </div>
+      </div>
+      <div class="speaker-line">
+        <div class="speaker-badge">中</div>
+        <div>
+          <span class="speaker-name">相談所の中の人</span>
+          <p>人を好きになる要素って、実はこの4つだと思うんです。</p>
+        </div>
+      </div>
+      <div class="factor-grid">
+        <div class="factor-item">
+          <p class="factor-num">①</p>
+          <p class="factor-title">体臭・本能</p>
+          <p class="factor-desc">生物学的な引力</p>
+        </div>
+        <div class="factor-item">
+          <p class="factor-num">②</p>
+          <p class="factor-title">外見</p>
+          <p class="factor-desc">第一印象・見た目</p>
+        </div>
+        <div class="factor-item">
+          <p class="factor-num">③</p>
+          <p class="factor-title">中身・人柄</p>
+          <p class="factor-desc">話してわかる魅力</p>
+        </div>
+        <div class="factor-item">
+          <p class="factor-num">④</p>
+          <p class="factor-title">生活スタイル</p>
+          <p class="factor-desc">一緒にいてラクか</p>
+        </div>
+      </div>
+      <div class="psych-memo">
+        <span class="psych-memo-label">🧠 心理学メモ</span>
+        自由恋愛は①②から始まることが多い。でも長続きする関係には③④が必須。フィーリング100%で動くと、③④を確かめないまま進んでしまうことも。
+      </div>
 
-      <p>でも、婚活の場では「正確さ」よりも「伝わり方」の方がずっと重要です。同じ事実でも、言葉の選び方や順番によって、相手に与える印象はまったく変わります。</p>
+      <h2>Q.04 相談所と自由恋愛、「好きになる」プロセスはどう違う？</h2>
+      <p>ここが、今日いちばん聞きたかったところ。中の人の答えは意外とシンプルでした。</p>
+      <div class="speaker-line">
+        <div class="speaker-badge">中</div>
+        <div>
+          <span class="speaker-name">相談所の中の人</span>
+          <p>自由恋愛では長く付き合ってからわかる価値観や生活スタイルを、相談所では先に確かめられる。これが大きな違いです。</p>
+        </div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-item">
+          <p class="compare-label">自由恋愛</p>
+          <p class="compare-flow">好き → 付き合う → 価値観を知る<br>（時間がかかる）</p>
+        </div>
+        <div class="compare-item">
+          <p class="compare-label">相談所</p>
+          <p class="compare-flow">条件＋価値観を先に確認 →<br>プレ交際で「恋」を育む</p>
+        </div>
+      </div>
+      <div class="psych-memo">
+        <span class="psych-memo-label">🧠 心理学メモ</span>
+        「価値観の一致」は関係の長期満足度に最も影響する要因のひとつ。でも忙しいと後回しにしがち。それを最初に確かめるのが相談所の構造です。
+      </div>
 
-      <h2>「伝え方」を変えると何が起きるか</h2>
-
-      <p>たとえば「休日は家でゲームをしています」という事実。そのまま書けばイメージが固まりがちですが、「好きなゲームを通じて、戦略的な思考を楽しんでいます。一緒に楽しめる趣味も増やしたいと思っています」と表現すれば、印象はガラリと変わります。</p>
-
-      <h3>具体的に変えるべき3つのポイント</h3>
-      <ul>
-        <li>プロフィールの「書き出し」——最初の一文で印象が決まる</li>
-        <li>趣味・仕事の「意味づけ」——事実ではなく、あなたらしさを伝える</li>
-        <li>お見合いの「質問への答え方」——受け身ではなく、自分から展開する</li>
-      </ul>
-
-      <p>ハルカゼでは、こうした「伝え方」を一緒に整えることをサポートしています。中身は十分にある。あとは、それをちゃんと届けるだけです。</p>
-
-      <p>気になった方は、まずLINEで話してみてください。</p>
+      <h2>まとめ ── まず、今の自分の「心の状態」を知ろう</h2>
+      <p>「心が動かない」と感じているなら、それを頭で知ることが最初の一歩。どう好きになっていくかは、自分の心の動き方を理解することから始まります。</p>
+      <p>大事なのは、出会い方より自分の心を知ること。何に心が動くのか、よーく観察してみてください。</p>
+      <p>フレフレ、婚活民！</p>
     </div>
 
     <!-- 記事末CTA -->
@@ -406,10 +581,9 @@
 </footer>
 
 <!-- フローティングボタン -->
-<a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-line-btn"><span style="font-size:1.4em; font-weight:800;">10月</span>の初回無料面談の予約はこちら</a>
-<div class="float-side-btns">
-  <a href="apply.html" class="float-side-btn"><span style="font-size:1.15em; font-weight:800;">10月</span>の初回無料面談の予約はこちら</a>
-  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn"><span style="font-size:1.15em; font-weight:800;">10月</span>の初回無料面談の予約はこちら</a>
+<a href="apply.html" class="float-line-btn"><span style="font-size:1.4em; font-weight:800;">10月</span>の初回無料面談の予約はこちら</a>
+<div class="float-side-btns mobile-bottom-only">
+  <a href="apply.html" class="float-side-btn" style="flex-direction:column; gap:2px; height:60px;"><span style="font-size:10px; opacity:0.85; letter-spacing:0.08em;">簡単1分</span><span><span style="font-size:1.2em; font-weight:800;">10月</span>の初回無料面談の予約はこちら</span></a>
 </div>
 
 <script src="js/common.js"></script>
@@ -427,7 +601,6 @@
       ovl.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeNav); });
     }
   })();
+</script>
 </body>
 </html>
-
-

@@ -35,7 +35,7 @@
 .m-h2 { font-family: var(--font-serif); font-size: clamp(22px, 3vw, 30px); font-weight: 600; color: var(--text); line-height: 1.65; letter-spacing: 0.04em; }
 .m-lead { font-size: 14px; color: var(--text-mid); line-height: 2.1; margin-top: 20px; }
 .m-center .m-lead { max-width: 560px; margin-left: auto; margin-right: auto; }
-.m-thoughts-text { max-width: 520px; margin: 28px auto 0; }
+.m-thoughts-text { max-width: 520px; margin: 28px auto 0; text-align: left; }
 .m-thoughts-text p { font-size: 15px; color: var(--text-mid); line-height: 1.9; letter-spacing: 0.02em; margin-bottom: 24px; }
 .m-thoughts-text p:last-child { margin-bottom: 0; }
 
@@ -48,7 +48,7 @@
 .m-rep-grid { display: grid; grid-template-columns: 300px 1fr; gap: 56px; align-items: start; }
 .m-rep-photo { border-radius: 4px; overflow: hidden; }
 .m-rep-photo img { width: 100%; height: auto; object-fit: cover; display: block; }
-.m-rep-name { font-family: var(--font-serif); font-size: 20px; font-weight: 600; color: var(--text); letter-spacing: 0.03em; }
+.m-rep-name { font-family: var(--font-sans); font-size: 20px; font-weight: 600; color: var(--text); letter-spacing: 0.03em; }
 .m-rep-name span { font-size: 12px; font-weight: 400; color: var(--text-light); margin-left: 8px; }
 .m-rep-meta { font-size: 12px; color: var(--text-light); margin-top: 6px; margin-bottom: 20px; }
 .m-rep-bio { font-size: 13px; color: var(--text-mid); line-height: 2.1; }
@@ -137,9 +137,10 @@
   <div class="m-inner--narrow">
     <h2 class="m-h2" style="padding-top: clamp(64px, 9vw, 96px); font-size: clamp(16px, 2vw, 22px); font-weight: 500;">マッチングの、その先へ。</h2>
     <div class="m-thoughts-text">
-      <p>婚活のゴールは、誰かに選ばれることじゃない。あなたが、選ぶこと。</p>
-      <p>迷ったこと。行動したこと。きっとそれが、結婚してからも、この先の人生をずっと動かす力になる。</p>
-      <p>私たちが大切にしたいのは、あなたが"あなたらしく"輝き続けること。</p>
+      <p>婚活のゴールは、誰かに選ばれることじゃない。<br>あなたを、選ぶこと。</p>
+      <p>頑張り方が変われば、行動は結果になる。<br>迷ったことも、行動したことも、ちゃんと出会いに繋がっていく。</p>
+      <p>そしてそれは、結婚してからも、この先の人生をずっと動かす力になる。</p>
+      <p>私たちが大切にしたいのは、あなたが"あなたらしく"進んでいけること。</p>
       <p>あなたのマッチングのその先に、しあわせがずっと続きますように。</p>
     </div>
   </div>
@@ -164,6 +165,26 @@
   </div>
 </section>
 
+<!-- MESSAGE -->
+<section class="m-section m-center">
+  <div class="m-inner--narrow">
+    <h2 class="m-h2" style="padding-top: clamp(64px, 9vw, 96px); font-size: clamp(16px, 2vw, 22px); font-weight: 500;">正しいより、楽しいを。</h2>
+    <div class="m-thoughts-text">
+      <p>10代、20代は、「ちゃんとしたい」でした。</p>
+      <p>ちゃんと、選ばれたい。<br>いつも幸せでいたい。</p>
+      <p>それなりに楽しいこともある。友達もいる。<br>だけど、どこかで「足りていない」という不安、<br>頑張らないと、幸せにはなれない、そんな感覚。</p>
+      <p>自己肯定感、という言葉もない時代、<br>ルッキズムが当たり前で、<br>何が好きかより、相手にどう思われるかを優先してしまう。<br>そんなうまく生きられなかった時代が、<br>今の私を支えてくれるものになっています。</p>
+      <p>もし今、それなりに満たされているって、満足できるならそれでいいのかも。</p>
+      <p>でも、目の前のことに追われて、「こうだったらいいな」と思うことが後回しになっているなら、<br>それは少し、もったいない気がしています。</p>
+      <p>迷って、選んで、自分で決めたことは、<br>たとえ失敗しても、後悔は、少ない！<br>きっと、この迷った時間ごと、笑って話せる日がくる。</p>
+      <p>ビジュアルも、伝え方も、マインドも<br>誰かの正解に合わせるためじゃなく、<br>あなたが、あなたを楽しめるように。</p>
+      <p>結婚って、本当はいいものです。<br>自分だけの特別な好きなことも、好きなモノも、好きな人が増えていく。</p>
+      <p>迷いながらも一歩踏み出した先で、そう思える自分に、きっと出会えます。</p>
+      <p>この時間が、その望む未来を、確実に叶えるひとつになりますように。</p>
+    </div>
+  </div>
+</section>
+
 <!-- REPRESENTATIVE -->
 <section class="m-section m-section--off">
   <div class="m-inner">
@@ -174,7 +195,7 @@
       <div>
         <p class="m-rep-name">石神 りさ<span>（代表 / マッチングプランナー）</span></p>
         <p class="m-rep-meta">Ishigami Risa ／ 1987年生まれ ／ 3児の母</p>
-        <p class="m-rep-bio">金融機関、ベンチャー企業の法人営業、コンサルティングファームでの顧客対応など、一貫して「カタチのない、人と関わる仕事」に携わる。自身の人生が「人との出会いや言葉」によって大きく拓かれてきた経験から、誰かの転機に寄り添い、人と人をつなぐ存在でありたいと「結婚相談所 ハルカゼ」を設立。</p>
+        <p class="m-rep-bio">金融機関、ベンチャー企業の法人営業、コンサルティングファーム。<br>ふりかえれば、ずっと「カタチのないもの」で、人と関わってきました。<br><br>人との出会いで、何度も、道が開けてきた経験から、転機に寄り添う側に。<br><br>そんな想いで立ち上げたのが、結婚相談所ハルカゼです。</p>
       </div>
     </div>
   </div>
