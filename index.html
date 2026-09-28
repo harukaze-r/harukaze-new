@@ -257,32 +257,6 @@
 }
 
 /* ============================================================
-   STATS STRIP
-   ============================================================ */
-.m-stats { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-.m-stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  text-align: center;
-}
-.m-stat { padding: 40px 16px; border-left: 1px solid var(--border); }
-.m-stat:first-child { border-left: none; }
-.m-stat-num {
-  font-family: var(--font-display);
-  font-size: clamp(26px, 3.4vw, 38px);
-  font-weight: 600;
-  color: var(--navy);
-  line-height: 1;
-}
-.m-stat-num span { font-size: 14px; font-family: var(--font-sans); font-weight: 500; margin-left: 2px; }
-.m-stat-label { font-size: 12px; color: var(--text-light); margin-top: 10px; letter-spacing: 0.04em; }
-@media (max-width: 640px) {
-  .m-stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .m-stat:nth-child(3) { border-left: none; }
-  .m-stat { padding: 28px 12px; }
-}
-
-/* ============================================================
    CAMPAIGN BANNER
    ============================================================ */
 .m-campaign {
@@ -781,16 +755,6 @@
 <div class="m-hero-label-bar">
   <p>他社からの乗り換えご相談も<br>無料カウンセリングはオンライン40分｜全国対応<br>最短5ヶ月・平均1年以内の成婚実績</p>
 </div>
-
-<!-- STATS STRIP -->
-<section class="m-stats">
-  <div class="m-inner m-stats-grid">
-    <div class="m-stat"><div class="m-stat-num">10<span>万人以上</span></div><div class="m-stat-label">登録会員数</div></div>
-    <div class="m-stat"><div class="m-stat-num">6,000<span>社以上</span></div><div class="m-stat-label">全国加盟相談所数</div></div>
-    <div class="m-stat"><div class="m-stat-num">No.1</div><div class="m-stat-label">成婚者数 業界最多</div></div>
-    <div class="m-stat"><div class="m-stat-num">5<span>ヶ月〜</span></div><div class="m-stat-label">最短成婚・平均1年以内</div></div>
-  </div>
-</section>
 
 <!-- ============================================================
      差別化セクション（他社からの乗り換え）
