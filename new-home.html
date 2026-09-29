@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>結婚相談所ハルカゼ｜この人を選んだ私の人生が、もっと好きになった。</title>
+<meta name="description" content="あなたにしか選べない人生を、進めていく場所。ハルカゼには、決めて、動けるサポートがあります。IBJ正規加盟店の結婚相談所ハルカゼ（大阪・北摂・吹田／オンライン全国対応）。">
+<link rel="icon" href="newimages/使用ロゴ.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Klee+One:wght@400;600&family=Shippori+Mincho+B1:wght@500;800&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   TOKENS
+   参考：marico-paisen.com（グレー地・細い罫線・ゴールドの英字ラベル）
+   ゴールドの役割を、ロゴの「h」のピンクに置き換えています
+   ============================================================ */
+:root {
+  --bg:        #FFFFFF;  /* ページ全体の地色（ヒーロー以降は白） */
+  --white:     #FFFFFF;
+  --ink:       #2E2B2C;  /* 本文 */
+  --ink-mid:   #5E595B;
+  --ink-light: #8F888B;
+  --rule:      #D6D0D2;  /* 罫線 */
+  --accent:    #E0719F;  /* 英字ラベル（ロゴのピンクを少し落ち着かせた色） */
+  --accent-deep: #B83D70;/* 本文中の強調 */
+  --chip:      #F7E3EB;  /* 小さなタグの地色 */
+  --pink:      #E9609A;  /* ロゴの h */
+  --dark-1:    #6A6165;  /* 最下部エリア グラデーション上 */
+  --dark-2:    #3B3839;  /* ロゴの文字色／フッター */
+
+  --f-serif:  'Noto Serif JP', 'Yu Mincho', 'Hiragino Mincho ProN', serif;
+  --f-latin:  'Cormorant Garamond', 'Times New Roman', serif;
+  --f-hand:   'Klee One', 'Noto Serif JP', serif;
+
+  /* 文字サイズは2種類だけ：見出し（--fs-title）と、それ以外すべて（--fs-body） */
+  --fs-title: 26px;
+  --fs-body:  16px;
+  /* 下は旧名。すべて上の2つのどちらかを指しています */
+  --fs-label: var(--fs-body);
+  --fs-sub:   var(--fs-body);
+  --fs-h4:    var(--fs-body);
+  --fs-note:  var(--fs-body);
+  --fs-small: var(--fs-body);
+  --fs-big:   var(--fs-title);
+  --fs-num:   var(--fs-title);
+  --lh-body:  1.8;
+
+  --inner: 1100px;
+  --gutter: clamp(20px, 6vw, 70px);
+  --sec-py: clamp(80px, 10vw, 130px);
+}
+
+@media (max-width: 590px) { :root { --fs-title: 21px; --fs-body: 14px; } }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--f-serif);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  letter-spacing: .04em;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  font-variant-numeric: lining-nums;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; transition: opacity .25s, background .25s, color .25s; }
+a:hover { opacity: .7; }
+ul, ol { list-style: none; }
+
+.inner { max-width: calc(var(--inner) + var(--gutter) * 2); margin: 0 auto; padding: 0 var(--gutter); }
+.sec { padding: var(--sec-py) 0; position: relative; }
+.sec--flush { padding-top: 0; }
+.pc-only { display: inline; }
+@media (max-width: 720px) { .pc-only { display: none; } }
+.sp-only { display: none; }
+@media (max-width: 720px) { .sp-only { display: inline; } }
+
+/* 未記入の差し込み項目（公開前に書き換え） */
+.todo { background: linear-gradient(transparent 60%, rgba(233, 96, 154, .25) 60%); color: var(--accent-deep); }
+
+/* ============================================================
+   PHOTO PLACEHOLDER — .ph の中に <img> を入れると写真に置き換わります
+   ============================================================ */
+.ph { position: relative; overflow: hidden; background: linear-gradient(160deg, #E4DCDE 0%, #D5CBCE 100%); }
+.ph > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ph-label {
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  font-family: var(--f-latin); font-size: var(--fs-body); letter-spacing: .14em; color: rgba(46, 43, 44, .4); text-align: center;
+}
+.ph-label small { font-family: var(--f-serif); font-size: var(--fs-body); letter-spacing: .06em; }
+.ph > img + .ph-label { display: none; }
+
+/* ============================================================
+   SECTION HEAD — 英字ラベル + 罫線 + 和文見出し（参考サイトと同じ組み方）
+   ============================================================ */
+.head-en {
+  font-family: var(--f-latin); font-weight: 500;
+  font-size: var(--fs-label); letter-spacing: .1em; line-height: 1.15;
+  color: var(--accent); text-transform: uppercase;
+  padding-bottom: 22px; border-bottom: 1px solid var(--rule);
+}
+.head-ja {
+  font-size: var(--fs-title); font-weight: 400; line-height: 1.8; letter-spacing: .05em;
+  margin-top: clamp(36px, 5vw, 56px);
+}
+.lead { max-width: 760px; margin-top: 28px; }
+.lead p + p { margin-top: 1em; }
+.big-en { /* 参考サイトの「FAQ」「Message」相当の大きな英字見出し */
+  font-family: var(--f-latin); font-weight: 400;
+  font-size: var(--fs-big); line-height: 1.15; letter-spacing: .03em; color: #333;
+}
+.big-en-sub { font-size: var(--fs-body); letter-spacing: .06em; margin-top: 10px; color: #333; }
+
+/* 小さなタグ */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips li {
+  font-size: var(--fs-body); line-height: 1.6; letter-spacing: .04em;
+  padding: 3px 11px; border-radius: 999px; background: var(--chip); color: var(--accent-deep);
+}
+
+/* 参考サイトの四角い枠線ボタン（矢印なし） */
+.btn-line {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 260px; padding: 18px 26px; border: 1px solid currentColor;
+  font-size: var(--fs-body); letter-spacing: .06em; margin-top: 44px;
+}
+.btn-line:hover { opacity: 1; background: var(--ink); color: #fff; border-color: var(--ink); }
+.btn-line--fill { background: var(--pink); border-color: var(--pink); color: #fff; }
+.btn-line--fill:hover { background: #D24B85; border-color: #D24B85; }
+
+/* 未作成セクションの空き枠 */
+.frame {
+  margin-top: 40px; min-height: 220px; padding: 32px;
+  border: 1px dashed #C9C0C3; border-radius: 10px; background: #FAF8F8;
+  color: var(--ink-light); font-size: var(--fs-note);
+}
+
+/* ============================================================
+   MENU（右上のボタン + 全画面メニュー）
+   ============================================================ */
+.menu-btn {
+  position: fixed; z-index: 60; top: 20px; right: 20px;
+  width: 56px; height: 56px; border-radius: 50%; border: 0; cursor: pointer;
+  background: rgba(255,255,255,.92); box-shadow: 0 4px 18px rgba(46,43,44,.12);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+}
+.menu-btn span { width: 20px; height: 1px; background: var(--ink); transition: transform .3s, opacity .3s; }
+.menu-btn.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-btn.is-open span:nth-child(2) { opacity: 0; }
+.menu-btn.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.menu {
+  position: fixed; inset: 0; z-index: 55; background: rgba(255, 255, 255, .98);
+  display: flex; align-items: center; justify-content: center; padding: 0 var(--gutter);
+  opacity: 0; visibility: hidden; transition: opacity .35s, visibility .35s; overflow-y: auto;
+}
+.menu.is-open { opacity: 1; visibility: visible; }
+.menu ul { display: grid; gap: 14px; padding: 90px 0 40px; }
+.menu a { display: flex; align-items: baseline; gap: 18px; font-size: var(--fs-body); letter-spacing: .1em; }
+.menu a .en { font-family: var(--f-latin); font-size: var(--fs-body); color: var(--accent); letter-spacing: .12em; width: 110px; flex-shrink: 0; }
+.menu .menu-cta { margin-top: 14px; padding-top: 18px; border-top: 1px solid var(--rule); }
+
+/* ============================================================
+   MAIN VISUAL
+   ============================================================ */
+.mv { position: relative; height: clamp(560px, 62vw, 720px); }
+.mv-photo { position: absolute; inset: 0; }
+.mv-photo .ph { width: 100%; height: 100%; background: linear-gradient(160deg, #E8DFE2 0%, #D8CCD0 100%); }
+.mv-photo .ph .ph-label { left: 45%; }
+.mv::after { /* 参考サイトの「写真の左側に色がかかる」表現をロゴのピンクで */
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(90deg, rgba(222, 110, 157, .82) 0%, rgba(232, 150, 184, .55) 32%, rgba(240, 190, 210, 0) 62%);
+}
+.mv-logo {
+  position: absolute; z-index: 2; top: clamp(20px, 3vw, 32px); left: var(--gutter);
+  background: #fff; padding: 8px 14px; border-radius: 4px;
+}
+.mv-logo img { height: clamp(44px, 5vw, 60px); width: auto; }
+.mv-body { position: absolute; z-index: 2; left: var(--gutter); top: 50%; transform: translateY(-50%); color: #fff; }
+/* キャッチコピーだけは本文の2サイズとは別の、大きく印象的な書体とサイズ */
+.mv-catch {
+  font-family: 'Shippori Mincho B1', var(--f-serif); font-weight: 500;
+  font-size: clamp(26px, 3vw, 44px); line-height: 1.6; letter-spacing: .1em;
+  color: #1B2A4A; /* 濃いネイビー */
+  text-shadow: 0 0 10px rgba(255, 255, 255, .95), 0 0 22px rgba(255, 255, 255, .7); /* 白いにじみ */
+}
+.mv-catch span { display: block; white-space: nowrap; }
+.mv-catch .bold { font-weight: 800; }
+.mv-catch .sub { font-size: .5em; letter-spacing: .16em; margin-top: 1.1em; } /* 3行目は小さく添える */
+.mv-catch .sp-br { display: none; }
+.mv-name { margin-top: clamp(24px, 3vw, 40px); }
+.mv-name .co { font-size: var(--fs-body); margin-top: 4px; }
+@media (max-width: 720px) {
+  .mv { height: 620px; }
+  .mv::after { background: linear-gradient(180deg, rgba(240,190,210,0) 25%, rgba(232,150,184,.6) 55%, rgba(222,110,157,.85) 100%); }
+  .mv-photo .ph .ph-label { left: 0; bottom: 45%; }
+  .mv-body { top: auto; bottom: 48px; transform: none; right: var(--gutter); }
+  .mv-catch { font-size: min(8.2vw, 34px); }
+  .mv-catch .sub { font-size: .56em; }
+  .mv-catch .sp-br { display: inline; } /* スマホでは「もっと好きになった。」を次の行に */
+}
+
+/* ============================================================
+   INTRO（縦書き見出し + 本文）
+   ============================================================ */
+.intro { padding-top: var(--sec-py); }
+.intro-lead {
+  display: grid; grid-template-columns: auto minmax(0, 500px); justify-content: center;
+  gap: clamp(48px, 8vw, 110px); align-items: start;
+}
+.tate { /* 「しあわせは、もっと欲張っていい。」を大きく */
+  writing-mode: vertical-rl; font-weight: 500;
+  font-size: calc(var(--fs-title) * 1.35); line-height: 1.5; letter-spacing: .14em;
+}
+.tate span { display: block; }
+.intro-em { font-size: var(--fs-sub); line-height: 1.6; margin-top: 12px; }
+.intro-text { margin-top: 12px; line-height: 1.7; }
+.intro-text p + p { margin-top: .5em; }
+@media (max-width: 720px) {
+  .intro-lead { grid-template-columns: 1fr; justify-content: stretch; }
+  .tate { writing-mode: horizontal-tb; letter-spacing: .06em; }
+}
+
+/* ============================================================
+   SPLIT — 見出しを左、本文を右に置いて、縦の長さを半分に
+   ============================================================ */
+.split { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(32px, 6vw, 80px); align-items: start; margin-top: clamp(36px, 5vw, 56px); }
+.split > .head-ja { margin-top: 0; }
+.split .lead { margin-top: 0; }
+.split .lead p { font-size: var(--fs-body); }
+.lead p.em { font-size: var(--fs-sub); color: var(--accent-deep); line-height: 1.6; margin-top: 1.4em; }
+@media (max-width: 800px) { .split { grid-template-columns: 1fr; gap: 24px; } }
+
+/* ============================================================
+   CONCEPT
+   ============================================================ */
+.concept-body { margin-top: clamp(36px, 5vw, 56px); }
+
+/* Concept 内の見出し「あなたにしか選べない人生を、進めていく場所。」 */
+.concept-head { font-size: var(--fs-title); font-weight: 500; line-height: 1.6; letter-spacing: .05em; margin-bottom: .9em; }
+
+/* STEPS の「答えは、…」 */
+.lead p.answer { /* 「無料相談を予約する」ボタンと同じピンクの長方形 */
+  display: inline-block; background: var(--pink); color: #fff; padding: 14px 26px;
+  font-size: var(--fs-title); font-weight: 500; line-height: 1.6; letter-spacing: .05em;
+}
+.lead p.answer + .em { margin-top: 1.1em; }
+@media (max-width: 720px) { .lead p.answer { padding: 12px 18px; } }
+
+
+
+/* ============================================================
+   STEPS — ふんわりにじんだ丸を並べ、タップで説明を開く
+   ============================================================ */
+/* PCでは4つの丸を少しずつ重ねて寄せる（位置と大きさは並び全体の幅に対する％） */
+.bubbles { position: relative; max-width: 860px; aspect-ratio: 860 / 450; margin-top: 48px; margin-bottom: 24px; }
+.bubble {
+  --c: 233, 96, 154; --size: 30%;
+  position: absolute; width: var(--size); aspect-ratio: 1; border: 0; border-radius: 50%; cursor: pointer;
+  /* 中心は色、ふちは透明へ溶ける */
+  background: radial-gradient(circle at 50% 48%, rgba(var(--c), .92) 0%, rgba(var(--c), .78) 46%, rgba(var(--c), .28) 64%, rgba(var(--c), 0) 71%);
+  color: #fff; font-family: var(--f-serif); text-align: center;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  transition: transform .4s ease, filter .4s ease;
+}
+.bubble:hover { transform: scale(1.04); }
+.bubble[aria-expanded="true"] { transform: scale(1.06); filter: saturate(1.15); }
+.bubble .lbl { font-family: var(--f-latin); font-size: var(--fs-body); letter-spacing: .24em; opacity: .95; }
+.bubble .num { font-family: var(--f-latin); font-size: calc(var(--fs-title) * 2.2); line-height: .95; }
+.bubble .verb { font-size: var(--fs-title); font-weight: 500; letter-spacing: .14em; line-height: 1.3; }
+.bubble .plus { position: relative; width: 26px; height: 26px; margin-top: 8px; border: 1px solid rgba(255,255,255,.8); border-radius: 50%; }
+.bubble .plus::before, .bubble .plus::after { content: ''; position: absolute; left: 7px; top: 12px; width: 10px; height: 1px; background: #fff; transition: transform .3s; }
+.bubble .plus::after { transform: rotate(90deg); }
+.bubble[aria-expanded="true"] .plus::after { transform: rotate(0deg); }
+/* 丸の位置（参考画像のように、上下にずらして重ねる） */
+.bubble--1 { --c: 170, 150, 205; --size: 31.5%; left: 0;   top: 4%; }
+.bubble--2 { --c: 236, 128, 150; --size: 29%;   left: 24%; top: 40%; }
+.bubble--3 { --c: 140, 162, 218; --size: 30%;   left: 47%; top: 0; }
+.bubble--4 { --c: 233, 96, 154;  --size: 29%;   left: 71%; top: 38%; }
+
+/* 開いた説明 */
+.step-panel { max-width: 760px; margin-top: 8px; padding: 28px clamp(22px, 4vw, 40px); border: 1px solid #E2DCDE; border-radius: 10px; background: #fff; }
+.step-panel[hidden] { display: none; }
+.step-panel:not([hidden]) { animation: panelIn .5s ease; }
+@keyframes panelIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.step-panel .ttl { display: flex; align-items: baseline; gap: 14px; font-size: var(--fs-title); font-weight: 500; letter-spacing: .1em; color: var(--accent-deep); }
+.step-panel .ttl span { font-family: var(--f-latin); font-size: var(--fs-body); color: var(--accent); letter-spacing: .2em; }
+.step-panel p { margin-top: 12px; }
+.step-panel .chips { margin-top: 18px; }
+.steps-cta { margin-top: 36px; }
+@media (prefers-reduced-motion: reduce) { .bubble, .bubble .plus::after { transition: none; } .step-panel:not([hidden]) { animation: none; } }
+
+@media (max-width: 900px) {
+  /* スマホ・タブレットは2列に並べ、右の列を少し下げて互い違いに */
+  .bubbles { aspect-ratio: auto; margin-bottom: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 4px; padding-bottom: 12%; max-width: 460px; } /* タブレットで丸が大きくなりすぎないように */
+  .bubble { position: relative; left: auto; top: auto; width: 100%; height: auto; aspect-ratio: 1; }
+  .bubble:nth-child(even) { transform: translateY(24%); }
+  .bubble:nth-child(even):hover { transform: translateY(24%) scale(1.04); }
+  .bubble:nth-child(even)[aria-expanded="true"] { transform: translateY(24%) scale(1.06); }
+  .bubble .num { font-size: calc(var(--fs-title) * 1.9); }
+}
+
+/* ============================================================
+   HARUKAZE LAB
+   ============================================================ */
+.lab-banner {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); margin-top: 48px;
+  background: var(--white); border: 1px solid #E2DCDE; border-radius: 10px; overflow: hidden;
+}
+.lab-banner:hover { opacity: 1; box-shadow: 0 16px 36px -24px rgba(46,43,44,.4); }
+.lab-banner .ph { min-height: 220px; }
+.lab-banner-body { padding: clamp(28px, 4vw, 44px); display: flex; flex-direction: column; justify-content: center; }
+.lab-banner .q { font-size: var(--fs-note); color: var(--ink-mid); }
+.lab-banner .ttl { font-size: var(--fs-sub); letter-spacing: .06em; line-height: 1.6; margin-top: 8px; }
+.lab-banner .src { font-size: var(--fs-note); color: var(--accent-deep); margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; }
+@media (max-width: 720px) { .lab-banner { grid-template-columns: 1fr; } .lab-banner .ph { min-height: 0; aspect-ratio: 16 / 9; } }
+
+.lab-emblem { width: 120px; } /* 以前（360px）の3分の1 */
+.lab-emblem svg { display: block; width: 100%; height: auto; }
+.lab-support { display: grid; grid-template-columns: 120px 1fr; gap: clamp(40px, 6vw, 80px); margin-top: clamp(36px, 5vw, 56px); }
+.lab-title { font-size: var(--fs-title); font-weight: 500; line-height: 1.6; letter-spacing: .05em; }
+.lab-support .body { margin-top: 20px; }
+.lab-support .body p + p { margin-top: 1em; }
+.coaches { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 44px; }
+@media (max-width: 1000px) and (min-width: 561px) { .coaches { grid-template-columns: repeat(2, 1fr); row-gap: 32px; } .coach:nth-child(2n) { border-right: 1px solid var(--rule); } }
+.coach { padding: 0 20px; border-left: 1px solid var(--rule); }
+.coach:last-child { border-right: 1px solid var(--rule); }
+.coach .ph { aspect-ratio: 1; border-radius: 50%; max-width: 150px; }
+.coach .lbl { font-family: var(--f-latin); font-size: var(--fs-body); letter-spacing: .16em; color: var(--accent); margin-top: 18px; }
+.coach .nm { font-size: var(--fs-note); line-height: 1.6; margin-top: 4px; }
+@media (max-width: 800px) { .lab-support { grid-template-columns: 1fr; } .lab-emblem { width: 140px; } }
+@media (max-width: 560px) {
+  .coaches { grid-template-columns: 1fr; row-gap: 32px; }
+  .coach { border-right: 1px solid var(--rule); display: grid; grid-template-columns: 96px 1fr; gap: 0 20px; align-items: center; }
+  .coach .ph { grid-row: span 2; }
+  .coach .lbl { margin-top: 0; }
+}
+
+/* ============================================================
+   PROFILE — 写真を画面端まで + 文章（参考サイトの ABOUT ME）
+   ============================================================ */
+/* 代表紹介の開閉（最初は閉じている） */
+.profile-more > summary { display: block; list-style: none; cursor: pointer; }
+.profile-more > summary::-webkit-details-marker { display: none; }
+.profile-card { display: flex; align-items: center; gap: clamp(24px, 4vw, 48px); }
+.profile-card .ph { display: block; width: 270px; flex-shrink: 0; aspect-ratio: 1; border-radius: 50%; } /* LAB の COACH 写真（150px）の1.8倍 */
+.profile-card .who { display: flex; flex-direction: column; align-items: flex-start; }
+.profile-card .nw { white-space: nowrap; } /* 「マッチングプランナー」の途中で折り返さない */
+/* 「Profile」＋ 下向きの矢印だけの控えめな表示。開くと矢印が上を向く */
+.more-btn {
+  display: inline-flex; align-items: center; gap: 12px; margin-top: 14px; padding-bottom: 4px;
+  font-family: var(--f-latin); letter-spacing: .16em; color: var(--accent-deep);
+  border-bottom: 1px solid var(--accent);
+}
+.more-btn i { width: 8px; height: 8px; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; transform: translateY(-3px) rotate(45deg); transition: transform .3s; }
+.profile-more[open] .more-btn i { transform: translateY(2px) rotate(-135deg); }
+.profile-more > summary:hover .more-btn { opacity: .7; }
+@media (max-width: 560px) {
+  .profile-card { flex-direction: column; align-items: flex-start; gap: 18px; }
+  .profile-card .ph { width: 173px; } /* スマホの COACH 写真（96px）の1.8倍 */
+}
+.profile-more[open] > summary ~ * { animation: profileIn .6s ease; }
+@keyframes profileIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .profile-more[open] > summary ~ * { animation: none; } }
+
+.am { margin-top: clamp(40px, 5vw, 56px); }
+.am-text { max-width: 760px; }
+.am-title { font-size: var(--fs-title); font-weight: 500; line-height: 1.6; letter-spacing: .05em; }
+.am-body { margin-top: 28px; }
+.am-body p + p { margin-top: 1.1em; }
+.am-body .em { font-size: var(--fs-sub); color: var(--accent-deep); line-height: 1.6; }
+
+.career { max-width: 760px; margin-top: clamp(48px, 6vw, 72px); }
+.career-table { border-top: 1px solid var(--rule); }
+.career-table > div { display: grid; grid-template-columns: 130px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--rule); }
+.career-table dt { color: var(--accent); font-size: var(--fs-body); }
+.career-table dd li { font-size: var(--fs-body); line-height: 1.6; }
+.career-note { margin-top: 32px; }
+.career-note p + p { margin-top: 1em; }
+@media (max-width: 480px) { .career-table > div { grid-template-columns: 1fr; gap: 6px; } }
+
+/* ============================================================
+   COURSE — 白いカード + 表組み（参考サイトの料金プランの組み方）
+   ============================================================ */
+.course-note { margin-top: 16px; color: var(--ink-mid); }
+.plans { display: grid; gap: 20px; margin-top: 40px; }
+.plan { background: var(--white); border: 1px solid #E2DCDE; border-radius: 10px; padding: clamp(28px, 4vw, 48px); }
+.plan--popular { border-color: var(--accent); }
+.plan-title { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; font-size: var(--fs-title); font-weight: 500; letter-spacing: .06em; }
+.plan-title .en { font-family: var(--f-latin); font-size: var(--fs-body); color: var(--accent); letter-spacing: .08em; }
+.plan-title .badge { font-size: var(--fs-body); font-weight: 400; color: #fff; background: var(--accent); padding: 2px 14px; letter-spacing: .1em; }
+.plan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 5vw, 64px); margin-top: 28px; align-items: start; }
+.plan-table { border-top: 1px solid var(--rule); }
+.plan-table div { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+.plan-table dt { color: var(--accent); }
+.plan-table .monthly dd { font-size: var(--fs-title); }
+.plan-table dd small { font-size: var(--fs-body); color: var(--ink-mid); margin-left: 8px; }
+.plan-list li { position: relative; padding: 7px 0 7px 22px; line-height: 1.6; }
+.plan-list li::before { content: ''; position: absolute; left: 2px; top: 16px; width: 8px; height: 4px; border-left: 1px solid var(--accent); border-bottom: 1px solid var(--accent); transform: rotate(-45deg); }
+.plan-list li.hl { color: var(--accent-deep); }
+.plan-note { margin-top: 14px; color: var(--ink-mid); line-height: 1.7; }
+/* キャンペーンは料金表に埋もれないよう、ロゴのピンクで塗りつぶして白抜きに */
+.campaign {
+  margin-top: 28px; padding: 26px clamp(24px, 4vw, 48px); border-radius: 10px;
+  background: linear-gradient(115deg, #E9609A 0%, #F07FAE 100%); color: #fff;
+  box-shadow: 0 14px 30px -16px rgba(207, 74, 131, .7);
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px 24px;
+}
+.campaign .lbl {
+  display: inline-block; font-family: var(--f-latin); letter-spacing: .16em; line-height: 1.5;
+  padding: 2px 12px; margin-bottom: 8px; background: #FFE14D; color: var(--dark-2); /* 黄色の札で目を引く */
+}
+.campaign .nw { white-space: nowrap; }
+.campaign .ttl { font-size: var(--fs-title); font-weight: 500; letter-spacing: .06em; line-height: 1.5; }
+.campaign .val { font-size: calc(var(--fs-title) * 1.5); font-weight: 500; letter-spacing: .04em; line-height: 1.2; white-space: nowrap; }
+.campaign .val small { font-size: .55em; margin-left: .2em; }
+@media (max-width: 800px) { .plan-grid { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   FAQ — 大きな英字見出しを左、中身を右（参考サイトの FAQ の組み方）
+   ============================================================ */
+.faq-grid { display: grid; grid-template-columns: minmax(0, 300px) 1fr; gap: clamp(40px, 6vw, 80px); padding-top: clamp(56px, 7vw, 80px); border-top: 1px solid var(--rule); }
+.faq-grid .frame { margin-top: 0; }
+@media (max-width: 800px) { .faq-grid { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   BLOG
+   ============================================================ */
+.blog-cats { margin-top: 24px; align-items: center; }
+.blog-cats .lbl { font-size: var(--fs-body); color: var(--ink-mid); margin-right: 6px; }
+.blog-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 44px; }
+.blog-card { background: var(--white); border: 1px solid #E2DCDE; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; }
+.blog-card .ph { aspect-ratio: 16 / 10; }
+.blog-card-body { padding: 22px 22px 26px; }
+.blog-card-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.blog-card-meta time { font-family: var(--f-latin); font-size: var(--fs-body); color: var(--ink-light); letter-spacing: .06em; }
+.blog-card-title { font-size: var(--fs-h4); font-weight: 400; line-height: 1.6; margin-top: 12px; }
+.blog-card.is-empty { background: #FAF8F8; border: 1px dashed #C9C0C3; }
+.blog-card.is-empty .blog-card-title { color: var(--ink-light); }
+@media (max-width: 900px) { .blog-cards { grid-template-columns: 1fr; max-width: 520px; } }
+
+/* ============================================================
+   CLOSING（濃色）— 参考サイト最下部の予約エリア
+   ============================================================ */
+.closing { background: linear-gradient(var(--dark-1) 55%, var(--dark-2) 100%); color: #fff; }
+.closing .head-en { color: #fff; border-color: rgba(255,255,255,.25); }
+.closing-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(40px, 6vw, 80px); margin-top: clamp(40px, 5vw, 56px); align-items: end; }
+.closing-msg { margin: clamp(40px, 5vw, 56px) 0 clamp(64px, 9vw, 110px); font-size: var(--fs-sub); line-height: 1.8; letter-spacing: .06em; }
+.closing-msg p + p { margin-top: 1.4em; }
+.closing-grid { padding-top: clamp(40px, 5vw, 56px); border-top: 1px solid rgba(255,255,255,.25); }
+.closing-catch { font-family: var(--f-hand); font-weight: 600; font-size: var(--fs-title); line-height: 1.7; }
+.closing-body p { font-size: var(--fs-body); }
+.closing-body p + p { margin-top: .6em; }
+.closing .btn-line { margin-top: 32px; }
+@media (max-width: 800px) { .closing-grid { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   FOOTER — 大きな筆記体の名前
+   ============================================================ */
+.ft { background: var(--dark-2); color: #fff; padding: 60px 0 120px; overflow: hidden; }
+.ft-grid { display: grid; grid-template-columns: 1fr auto; gap: 40px; }
+.ft-tag { font-size: var(--fs-sub); margin-top: 20px; letter-spacing: .06em; }
+.ft-logo { display: inline-block; background: #fff; padding: 8px 12px; border-radius: 4px; }
+.ft-logo img { height: 44px; width: auto; }
+.ft-nav { display: grid; grid-template-columns: repeat(2, auto); gap: 14px 48px; align-content: end; font-size: var(--fs-body); }
+.ft-sns { display: flex; align-items: center; gap: 8px; }
+.ft-sns svg { width: 16px; height: 16px; }
+.ft-copy { margin-top: 48px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: var(--fs-body); letter-spacing: .1em; color: #BDB6B8; }
+@media (max-width: 800px) { .ft-grid { grid-template-columns: 1fr; } .ft-nav { gap: 14px 28px; } }
+
+/* 画面下の固定予約ボタン（既存ページと同じ導線） */
+.float-cta {
+  position: fixed; z-index: 40; right: 20px; bottom: 20px;
+  display: flex; align-items: center; gap: 12px;
+  background: var(--pink); color: #fff; font-size: var(--fs-body); letter-spacing: .06em; line-height: 1.4;
+  padding: 15px 24px; border-radius: 999px; box-shadow: 0 12px 28px -12px rgba(200, 60, 120, .7);
+  transform: translateY(160%); transition: transform .4s;
+}
+.float-cta.is-show { transform: none; }
+.float-cta:hover { opacity: 1; background: #D24B85; }
+.float-cta b { font-size: inherit; font-weight: 500; }
+.ft-copy small { font-size: inherit; }
+@media (max-width: 720px) { .float-cta { left: 12px; right: 12px; bottom: 12px; justify-content: center; } }
+
+/* ============================================================
+   REVEAL
+   ============================================================ */
+.js .rv { opacity: 0; transform: translateY(20px); transition: opacity 1s ease, transform 1s ease; }
+.js .rv.is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .js .rv { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================== MENU ============================== -->
+<button class="menu-btn" id="menuBtn" aria-label="メニューを開く" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+<nav class="menu" id="menu" aria-label="メニュー">
+  <ul>
+    <li><a href="#concept"><span class="en">CONCEPT</span>ハルカゼの婚活</a></li>
+    <li><a href="#steps"><span class="en">STEPS</span>婚活の進め方</a></li>
+    <li><a href="#lab"><span class="en">LAB</span>ハルカゼLAB</a></li>
+    <li><a href="#profile"><span class="en">PROFILE</span>代表紹介</a></li>
+    <li><a href="#course"><span class="en">COURSE</span>料金プラン</a></li>
+    <li><a href="#flow"><span class="en">FLOW</span>ご入会までの流れ</a></li>
+    <li><a href="#faq"><span class="en">FAQ</span>よくある質問</a></li>
+    <li><a href="#blog"><span class="en">BLOG</span>婚活ノート</a></li>
+    <li class="menu-cta"><a href="apply.html"><span class="en">RESERVATION</span>無料相談を予約する</a></li>
+  </ul>
+</nav>
+
+<!-- ============================== MAIN VISUAL ============================== -->
+<header class="mv" id="top">
+  <div class="mv-photo">
+    <!-- 写真差し替え：<img src="newimages/xxx.jpg" alt=""> を .ph の中に追加 -->
+    <div class="ph"><span class="ph-label">MAIN PHOTO<small>メイン写真</small></span></div>
+  </div>
+  <a class="mv-logo" href="#top"><img src="newimages/line_oa_chat_260826_154300.jpg" alt="結婚相談所ハルカゼ harukaze"></a>
+  <div class="mv-body">
+    <h1 class="mv-catch">
+      <span>この人を選んだ</span>
+      <span>私の人生が、<br class="sp-br"><b class="bold">もっと好き</b>になった。</span>
+      <span class="sub">そんな出会いを、ハルカゼで。</span>
+    </h1>
+    <div class="mv-name">
+      <p class="co">IBJ正規加盟店｜大阪・北摂・吹田／オンライン全国対応</p>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================== INTRO ============================== -->
+<section class="sec intro" id="intro">
+  <div class="inner">
+    <div class="intro-lead">
+      <h2 class="tate rv"><span>しあわせは、</span><span>もっと欲張っていい。</span></h2>
+      <div class="rv">
+        <div class="intro-text">
+          <p>好きな仕事も、好きな時間も、好きになる人との未来も。</p>
+        </div>
+        <p class="intro-em">誰かと生きる人生は、かけ算。</p>
+        <div class="intro-text">
+          <p>楽しいことが、どんどん増えていく。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CONCEPT ============================== -->
+<section class="sec sec--flush concept" id="concept">
+  <div class="inner">
+    <p class="head-en rv">Concept</p>
+    <div class="lead concept-body rv">
+      <h2 class="concept-head">あなたにしか選べない人生を、<br>進めていく場所。</h2>
+      <p>「本当はこうなりたい」を最優先に、自分の未来に上限をつけない。</p>
+      <p>そのために、出会いから決断まで、一緒に進みます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== STEPS ============================== -->
+<section class="sec sec--flush" id="steps">
+  <div class="inner">
+    <p class="head-en rv">Steps</p>
+    <div class="split">
+      <h2 class="head-ja rv">婚活が進む人って、<br>どんな人？</h2>
+      <div class="lead rv">
+        <p class="answer">答えは、<br class="sp-only">「結婚する」って決めた人。</p>
+        <p class="em">ハルカゼには、決めて、動けるサポートがあります。</p>
+      </div>
+    </div>
+
+    <!-- 丸をタップすると、下に説明が開く -->
+    <div class="bubbles rv">
+      <button class="bubble bubble--1" type="button" aria-expanded="false" aria-controls="stepPanel1"><span class="lbl">STEP</span><span class="num">1</span><span class="verb">整理する</span><span class="plus" aria-hidden="true"></span></button>
+      <button class="bubble bubble--2" type="button" aria-expanded="false" aria-controls="stepPanel2"><span class="lbl">STEP</span><span class="num">2</span><span class="verb">描く</span><span class="plus" aria-hidden="true"></span></button>
+      <button class="bubble bubble--3" type="button" aria-expanded="false" aria-controls="stepPanel3"><span class="lbl">STEP</span><span class="num">3</span><span class="verb">動く</span><span class="plus" aria-hidden="true"></span></button>
+      <button class="bubble bubble--4" type="button" aria-expanded="false" aria-controls="stepPanel4"><span class="lbl">STEP</span><span class="num">4</span><span class="verb">叶える</span><span class="plus" aria-hidden="true"></span></button>
+    </div>
+    <div class="step-panel" id="stepPanel1" hidden>
+      <h3 class="ttl"><span>STEP 1</span>整理する</h3>
+      <p>「なんとなく好き」「なんとなく苦手」を言葉にして、自分の軸をつくる。</p>
+      <ul class="chips"><li>価値観整理</li><li>魅力・強み発見</li><li>婚活プラン作成</li></ul>
+    </div>
+    <div class="step-panel" id="stepPanel2" hidden>
+      <h3 class="ttl"><span>STEP 2</span>描く</h3>
+      <p>なりたい未来を描いて、見た目もプロフィールも整える。</p>
+      <ul class="chips"><li>Visionボード</li><li>骨格診断・お買い物同行</li><li>服装メイクレッスン</li><li>写真撮影</li><li>プロフィール作成</li></ul>
+    </div>
+    <div class="step-panel" id="stepPanel3" hidden>
+      <h3 class="ttl"><span>STEP 3</span>動く</h3>
+      <p>IBJの10万人以上から、お見合い料や申し込み上限を気にせず出会う。<br>「なんとなく違う」で、すぐに終わらせない。</p>
+      <ul class="chips"><li>お見合い・交際サポート</li><li>伝える技術レッスン</li></ul>
+    </div>
+    <div class="step-panel" id="stepPanel4" hidden>
+      <h3 class="ttl"><span>STEP 4</span>叶える</h3>
+      <p>定期面談とLINEで、迷いをその都度整理。最後は、自分で選ぶ。</p>
+      <ul class="chips"><li>定期フィードバック面談</li><li>LINE伴走サポート</li></ul>
+    </div>
+
+    <a class="btn-line btn-line--fill steps-cta rv" href="apply.html">無料相談を予約する</a>
+  </div>
+</section>
+
+<!-- ============================== ハルカゼLAB ============================== -->
+<section class="sec sec--flush" id="lab">
+  <div class="inner">
+    <p class="head-en rv">マッチングの先にある「結婚生活」まで見据えたサポートも用意</p>
+    <div class="lab-support">
+      <!-- ハルカゼLAB のロゴ風エンブレム（紺地・ピンクの曲線・グラデーションの LAB） -->
+      <div class="lab-emblem rv">
+        <svg viewBox="0 0 600 360" role="img" aria-label="ハルカゼLAB">
+          <defs>
+            <linearGradient id="labPink" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#FBE3EC"/>
+              <stop offset=".55" stop-color="#E57FA4"/>
+              <stop offset="1" stop-color="#F6CCDA"/>
+            </linearGradient>
+            <linearGradient id="labSilver" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#AEB6C1"/>
+              <stop offset="1" stop-color="#DCE1E7"/>
+            </linearGradient>
+            <linearGradient id="labLine" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#E57FA4" stop-opacity=".35"/>
+              <stop offset=".5" stop-color="#F2A9C2"/>
+              <stop offset="1" stop-color="#E57FA4" stop-opacity=".6"/>
+            </linearGradient>
+          </defs>
+          <rect width="600" height="360" fill="#1D2A47"/>
+          <g fill="none" stroke="url(#labLine)" stroke-linecap="round">
+            <path d="M232 40 A195 150 0 1 0 410 322" stroke-width="2"/>
+            <path d="M462 92 A195 150 0 0 1 478 250" stroke-width="1.6"/>
+            <path d="M150 262 C240 300 300 246 380 262 S470 302 520 272" stroke-width="1.8"/>
+            <path d="M262 304 C330 284 388 284 452 298" stroke-width="1.3"/>
+          </g>
+          <text x="300" y="118" text-anchor="middle" font-family="Noto Serif JP, serif" font-size="40" letter-spacing="20" fill="url(#labSilver)">ハルカゼ</text>
+          <text x="300" y="246" text-anchor="middle" font-family="Cormorant Garamond, serif" font-weight="500" font-size="150" letter-spacing="6" fill="url(#labPink)">LAB</text>
+        </svg>
+      </div>
+      <div class="rv">
+        <h2 class="lab-title">「選んだ人と、ずっと笑っていたい」</h2>
+        <div class="body">
+          <p>そのために、それぞれの分野の専門コーチが、あなただけのお悩みをサポートします。</p>
+        </div>
+        <ul class="coaches">
+          <li class="coach">
+            <div class="ph"><span class="ph-label">PHOTO</span></div>
+            <p class="lbl">COACH 01</p>
+            <p class="nm"><span class="todo">【名前／専門分野】</span></p>
+          </li>
+          <li class="coach">
+            <div class="ph"><span class="ph-label">PHOTO</span></div>
+            <p class="lbl">COACH 02</p>
+            <p class="nm"><span class="todo">【名前／専門分野】</span></p>
+          </li>
+          <li class="coach">
+            <div class="ph"><span class="ph-label">PHOTO</span></div>
+            <p class="lbl">COACH 03</p>
+            <p class="nm"><span class="todo">【名前／専門分野】</span></p>
+          </li>
+          <li class="coach">
+            <div class="ph"><span class="ph-label">PHOTO</span></div>
+            <p class="lbl">COACH 04</p>
+            <p class="nm"><span class="todo">【名前／専門分野】</span></p>
+          </li>
+        </ul>
+        <a class="btn-line" href="harukaze-lab.html">ハルカゼLABとは</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PROFILE ============================== -->
+<section class="sec sec--flush" id="profile">
+  <!-- 最初は閉じておき、「代表紹介を見る」で開く -->
+  <details class="profile-more" id="profileMore">
+    <summary class="inner">
+      <!-- COACH と同じ大きさの丸い写真 + 名前。押すとプロフィールが開く -->
+      <span class="profile-card">
+        <span class="ph"><span class="ph-label">PHOTO</span></span>
+        <span class="who">
+          <span class="nm"><span class="nw">石神りさ／</span><span class="nw">代表　マッチングプランナー</span></span>
+          <span class="more-btn">Profile<i aria-hidden="true"></i></span>
+        </span>
+      </span>
+    </summary>
+
+  <div class="inner am">
+    <div class="am-text">
+      <h2 class="am-title">あの頃の私が、<br>出会いたかった場所。</h2>
+      <div class="am-body">
+        <p>「こうあるべき」がたくさんあって、がんばるほど空回り。</p>
+        <p>あの頃の私に必要だったのは、何かを変えなきゃと、むやみやたらに頑張ることより、まず「本当は、どうしたいの？」と、ちゃんと聞いてくれる人でした。</p>
+        <p>だから私は、あなたの「本当は、どうしたいの？」が見つかったら、全力で応援したい。</p>
+        <p class="em">正しいより、楽しく。</p>
+        <p>自分で選んでいく人生は、きっと楽しいで溢れてく。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="inner">
+    <div class="career">
+      <div>
+        <dl class="career-table">
+          <div>
+            <dt>経歴</dt>
+            <dd><ul>
+              <li>金融機関の窓口担当</li>
+              <li>ベンチャー企業の法人営業</li>
+              <li>経営コンサルティングファームでの経営者様対応</li>
+            </ul></dd>
+          </div>
+          <div>
+            <dt>仕事のほかに</dt>
+            <dd><ul>
+              <li>子ども向けワークショップの主催</li>
+              <li>コーチングの学び</li>
+            </ul></dd>
+          </div>
+        </dl>
+        <div class="career-note">
+          <p>ずっと「人と関わる仕事」をしてきました。<br>年代も立場もちがう、たくさんの人と話すなかで、その人らしさや、人と人との相性を見る目を、自然と鍛えてきました。</p>
+          <p>今は、かつての私と同じように悩む方の目線に立って、気持ちに寄り添うだけで終わらせず、具体的な改善と行動まで、一緒に落とし込んでいきます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </details>
+</section>
+
+<!-- ============================== COURSE（未作成・枠のみ） ============================== -->
+<section class="sec sec--flush" id="course">
+  <div class="inner">
+    <p class="head-en rv">Course</p>
+    <h2 class="head-ja rv">料金プラン</h2>
+    <p class="course-note rv">金額はすべて税込です。どのプランも、お見合い料は無料です。</p>
+
+    <!-- 料金は harukaze-marriage.com/service.html と同じ内容 -->
+    <div class="plans">
+      <article class="plan rv">
+        <h3 class="plan-title"><span class="en">Trial Plan</span>お試しプラン</h3>
+        <div class="plan-grid">
+          <div>
+            <dl class="plan-table">
+              <div class="monthly"><dt>月会費</dt><dd>5,500円</dd></div>
+            </dl>
+            <p class="plan-note">１ヶ月お試し入会（お見合い成立または継続利用時は標準プランのいずれかに移行）</p>
+          </div>
+          <ul class="plan-list">
+            <li>申込み30件/月、お見合い料０円</li>
+            <li>婚活ロードマップ作成</li>
+            <li>プロフィール添削</li>
+            <li>LINE・電話相談、個別面談（オンライン可）</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="plan rv">
+        <h3 class="plan-title"><span class="en">Light Plan</span>ライトプラン</h3>
+        <div class="plan-grid">
+          <dl class="plan-table">
+            <div class="monthly"><dt>月会費</dt><dd>13,800円<small>月額払い</small></dd></div>
+            <div><dt>入会金</dt><dd>33,000円</dd></div>
+            <div><dt>登録料</dt><dd>22,000円</dd></div>
+            <div><dt>成婚料</dt><dd>165,000円</dd></div>
+            <div><dt>お見合い料</dt><dd>無料</dd></div>
+          </dl>
+          <ul class="plan-list">
+            <li>プロフィール写真撮影</li>
+            <li>お見合い申し込み 月100件</li>
+            <li>プランナーよりご紹介</li>
+            <li>お見合い後フィードバック</li>
+            <li>定期面談 月1回</li>
+            <li>プロフィール作成</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="plan plan--popular rv">
+        <h3 class="plan-title"><span class="en">Personal Plan</span>パーソナルプラン<span class="badge">一番人気</span></h3>
+        <div class="plan-grid">
+          <dl class="plan-table">
+            <div class="monthly"><dt>月会費</dt><dd>15,800円<small>月額払い</small></dd></div>
+            <div><dt>入会金</dt><dd>33,000円</dd></div>
+            <div><dt>登録料</dt><dd>33,000円</dd></div>
+            <div><dt>成婚料</dt><dd>230,000円</dd></div>
+            <div><dt>お見合い料</dt><dd>無料</dd></div>
+          </dl>
+          <ul class="plan-list">
+            <li>お見合い申し込み 月200件</li>
+            <li>プランナーよりご紹介</li>
+            <li>お見合い後フィードバック</li>
+            <li>定期面談 月2回</li>
+            <li>プロフィール作成</li>
+            <li class="hl">プロフィール写真撮影（スタジオ or ロケーション）</li>
+            <li class="hl">イメージコンサルタントによるお買い物同行／骨格診断／パーソナルカラー診断</li>
+            <li class="hl">LAB 各講座</li>
+            <li class="hl">お見合いアナリティクス診断</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+
+    <div class="campaign rv">
+      <div>
+        <p class="lbl">CAMPAIGN</p>
+        <p class="ttl"><span class="nw">他社乗り換え</span><span class="nw">割引キャンペーン</span></p>
+      </div>
+      <p class="val">33,000<small>円 OFF</small></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FLOW（未作成・枠のみ） ============================== -->
+<section class="sec sec--flush" id="flow">
+  <div class="inner">
+    <p class="head-en rv">Flow</p>
+    <h2 class="head-ja rv">ご入会までの流れ</h2>
+    <div class="frame rv"><span class="todo">【無料相談 → ご入会 → 活動スタート などの流れを入れる】</span></div>
+  </div>
+</section>
+
+<!-- ============================== FAQ（未作成・枠のみ） ============================== -->
+<section class="sec sec--flush" id="faq">
+  <div class="inner faq-grid">
+    <div class="rv">
+      <h2 class="big-en">FAQ</h2>
+      <p class="big-en-sub">よくある質問</p>
+    </div>
+    <div>
+      <div class="frame rv"><span class="todo">【よくある質問を入れる】</span></div>
+      <!-- 外部サイトへのリンクは、離脱を防ぐためページ後半のFAQに置く -->
+      <a class="lab-banner rv" href="https://www.ibjapan.jp/mirai-lab/" target="_blank" rel="noopener">
+        <!-- バナー画像差し替え：<img src="newimages/xxx.jpg" alt=""> を .ph の中に追加 -->
+        <div class="ph"><span class="ph-label">BANNER<small>バナー画像</small></span></div>
+        <div class="lab-banner-body">
+          <p class="q">成婚までの期間は？ どんな人が結婚している？</p>
+          <p class="ttl">婚活のリアルを、データで見る</p>
+          <p class="src">IBJ結婚みらい研究所</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== BLOG ============================== -->
+<section class="sec sec--flush" id="blog">
+  <div class="inner">
+    <p class="head-en rv">Blog</p>
+    <h2 class="head-ja rv">婚活ノート</h2>
+    <p class="lead rv">婚活のリアルや、自分を知るヒントを綴っています。</p>
+    <ul class="chips blog-cats rv">
+      <li>自分を知る</li><li>お見合い・デート</li><li>ハルカゼの日常</li>
+    </ul>
+    <!-- 新着記事は js/blog-posts.js から 3 件を自動で表示します -->
+    <div class="blog-cards rv" id="blogCards"></div>
+    <a class="btn-line rv" href="blog.html">ブログ一覧を見る</a>
+  </div>
+</section>
+
+<!-- ============================== CLOSING ============================== -->
+<section class="sec closing" id="reserve">
+  <div class="inner">
+    <p class="head-en rv">Last Message</p>
+    <div class="closing-msg rv">
+      <p>他人の目を気にしたり、<br>変えられない過去に、執着し続けたり。<br>みんな色々あるけれど、<br>人生も、使えるエネルギーも、有限。<br>だったら、自分の生きたい生き方をする。<br>大事なものを、ちゃんと大事にする。<br>そっちを選ぶ方が、ずっといい。</p>
+    </div>
+    <div class="closing-grid">
+      <div class="rv">
+        <p class="closing-catch">この人を選んだ<br>私の人生が、もっと好きになった。<br>そんな出会いを、ハルカゼで。</p>
+      </div>
+      <div class="closing-body rv">
+        <p>オンライン40分｜全国対応｜完全無料｜1分で登録完了</p>
+        <a class="btn-line btn-line--fill" href="apply.html">無料相談を予約する</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="ft">
+  <div class="inner">
+    <div class="ft-grid">
+      <div>
+        <a class="ft-logo" href="#top"><img src="newimages/line_oa_chat_260826_154300.jpg" alt="結婚相談所ハルカゼ harukaze"></a>
+        <p class="ft-tag">IBJ正規加盟店　結婚相談所ハルカゼ</p>
+      </div>
+      <nav class="ft-nav" aria-label="フッターメニュー">
+        <a href="#concept">ハルカゼの婚活</a>
+        <a href="#course">料金プラン</a>
+        <a href="#steps">婚活の進め方</a>
+        <a href="#flow">ご入会までの流れ</a>
+        <a href="harukaze-lab.html">ハルカゼLAB</a>
+        <a href="#faq">よくある質問</a>
+        <a href="#profile">代表紹介</a>
+        <a href="blog.html">ブログ</a>
+        <a href="privacy.html">プライバシーポリシー</a>
+        <a class="ft-sns" href="https://www.instagram.com/harukaze.ma?igsh=ZjFxNDU1MGYzMW5j&utm_source=qr" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor"/></svg>Instagram</a>
+      </nav>
+    </div>
+    <div class="ft-copy">
+      <span>IBJ正規加盟店　大阪・北摂・吹田</span>
+      <small>© 2025 Harukaze Marriage Consulting.</small>
+    </div>
+  </div>
+</footer>
+
+<a class="float-cta" id="floatCta" href="apply.html"><span><b>10月</b>の初回無料面談の予約はこちら</span></a>
+
+<script src="js/blog-posts.js"></script>
+<script>
+(function () {
+  document.documentElement.classList.add('js');
+
+  /* ---------- 新着記事（js/blog-posts.js の先頭3件） ---------- */
+  var wrap = document.getElementById('blogCards');
+  var posts = (window.HARUKAZE_POSTS || []).slice().sort(function (a, b) {
+    return String(b.date || '').localeCompare(String(a.date || ''));
+  }).slice(0, 3);
+
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text) n.textContent = text;
+    return n;
+  }
+  function card(post) {
+    var c = el(post ? 'a' : 'div', 'blog-card' + (post ? '' : ' is-empty'));
+    if (post) c.href = post.url;
+    var ph = el('div', 'ph');
+    if (post && post.thumb) {
+      var img = document.createElement('img');
+      img.src = post.thumb; img.alt = ''; img.loading = 'lazy';
+      ph.appendChild(img);
+    } else {
+      ph.appendChild(el('span', 'ph-label', post ? 'NOTE' : 'COMING SOON'));
+    }
+    c.appendChild(ph);
+    var body = el('div', 'blog-card-body');
+    var meta = el('div', 'blog-card-meta');
+    if (post && post.category) { var ch = el('ul', 'chips'); ch.appendChild(el('li', '', post.category)); meta.appendChild(ch); }
+    if (post && post.date) { var t = el('time', '', post.date.replace(/-/g, '.')); t.setAttribute('datetime', post.date); meta.appendChild(t); }
+    body.appendChild(meta);
+    body.appendChild(el('h3', 'blog-card-title', post ? post.title : '新しい記事を準備中です'));
+    c.appendChild(body);
+    return c;
+  }
+  for (var i = 0; i < 3; i++) wrap.appendChild(card(posts[i]));
+
+  /* ---------- STEPS の丸：タップで説明を開く（同時に開くのは1つ） ---------- */
+  var bubbles = document.querySelectorAll('.bubble');
+  bubbles.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var open = b.getAttribute('aria-expanded') !== 'true';
+      bubbles.forEach(function (o) {
+        o.setAttribute('aria-expanded', 'false');
+        document.getElementById(o.getAttribute('aria-controls')).hidden = true;
+      });
+      if (open) {
+        b.setAttribute('aria-expanded', 'true');
+        var panel = document.getElementById(b.getAttribute('aria-controls'));
+        panel.hidden = false;
+        // 開いた説明が画面の外にあるときは、見える位置までスクロール
+        var r = panel.getBoundingClientRect();
+        if (r.bottom > window.innerHeight - 90 || r.top < 0) {
+          var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          panel.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+        }
+      }
+    });
+  });
+
+  /* ---------- 代表紹介へのリンクで開く ---------- */
+  var more = document.getElementById('profileMore');
+  document.querySelectorAll('a[href="#profile"]').forEach(function (a) { a.addEventListener('click', function () { more.open = true; }); });
+  if (location.hash === '#profile') more.open = true;
+
+  /* ---------- 固定予約ボタン ---------- */
+  var cta = document.getElementById('floatCta');
+  function onScroll() { cta.classList.toggle('is-show', window.scrollY > window.innerHeight * 0.7); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* ---------- メニュー ---------- */
+  var btn = document.getElementById('menuBtn');
+  var menu = document.getElementById('menu');
+  function setMenu(open) {
+    menu.classList.toggle('is-open', open);
+    btn.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', open);
+    btn.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  btn.addEventListener('click', function () { setMenu(!menu.classList.contains('is-open')); });
+  menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
+
+  /* ---------- ふわっと表示 ---------- */
+  var els = document.querySelectorAll('.rv');
+  if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('is-in'); }); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  els.forEach(function (e) { io.observe(e); });
+})();
+</script>
+</body>
+</html>
