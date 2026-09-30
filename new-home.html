@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>結婚相談所ハルカゼ｜この人を選んだ私の人生が、もっと好きになった。</title>
-<meta name="description" content="あなたにしか選べない人生を、進めていく場所。ハルカゼには、決めて、動けるサポートがあります。IBJ正規加盟店の結婚相談所ハルカゼ（大阪・北摂・吹田／オンライン全国対応）。">
-<link rel="icon" href="newimages/使用ロゴ.jpeg">
+<meta name="description" content="あなたにしか選べない人生を、ここから。ハルカゼには、決めて、動けるサポートがあります。IBJ正規加盟店の結婚相談所ハルカゼ（大阪・北摂・吹田／オンライン全国対応）。">
+<link rel="icon" href="newimages/icon-harukaze.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Klee+One:wght@400;600&family=Shippori+Mincho+B1:wght@500;800&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
@@ -109,6 +109,8 @@ ul, ol { list-style: none; }
 }
 .lead { max-width: 760px; margin-top: 28px; }
 .lead p + p { margin-top: 1em; }
+/* 線を文字の上に引くタイプ（LAB） */
+.head-en--top { padding: 22px 0 0; border-bottom: 0; border-top: 1px solid var(--rule); line-height: 1.7; }
 .big-en { /* 参考サイトの「FAQ」「Message」相当の大きな英字見出し */
   font-family: var(--f-latin); font-weight: 400;
   font-size: var(--fs-big); line-height: 1.15; letter-spacing: .03em; color: #333;
@@ -170,37 +172,38 @@ ul, ol { list-style: none; }
 .mv-photo { position: absolute; inset: 0; }
 .mv-photo .ph { width: 100%; height: 100%; background: linear-gradient(160deg, #E8DFE2 0%, #D8CCD0 100%); }
 .mv-photo .ph .ph-label { left: 45%; }
-.mv::after { /* 参考サイトの「写真の左側に色がかかる」表現をロゴのピンクで */
+.mv::after { /* 写真の左側だけ、白に近いごく淡いピンクを重ねて文字を読みやすく（写真の雰囲気は残す） */
   content: ''; position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(90deg, rgba(222, 110, 157, .82) 0%, rgba(232, 150, 184, .55) 32%, rgba(240, 190, 210, 0) 62%);
+  background: linear-gradient(90deg, rgba(255, 250, 251, .92) 0%, rgba(253, 243, 246, .72) 34%, rgba(253, 243, 246, 0) 64%);
 }
 .mv-logo {
   position: absolute; z-index: 2; top: clamp(20px, 3vw, 32px); left: var(--gutter);
   background: #fff; padding: 8px 14px; border-radius: 4px;
 }
 .mv-logo img { height: clamp(44px, 5vw, 60px); width: auto; }
-.mv-body { position: absolute; z-index: 2; left: var(--gutter); top: 50%; transform: translateY(-50%); color: #fff; }
+.mv-body { position: absolute; z-index: 2; left: var(--gutter); top: 50%; transform: translateY(-50%); color: #1B2A4A; }
 /* キャッチコピーだけは本文の2サイズとは別の、大きく印象的な書体とサイズ */
 .mv-catch {
   font-family: 'Shippori Mincho B1', var(--f-serif); font-weight: 500;
-  font-size: clamp(26px, 3vw, 44px); line-height: 1.6; letter-spacing: .1em;
-  color: #1B2A4A; /* 濃いネイビー */
-  text-shadow: 0 0 10px rgba(255, 255, 255, .95), 0 0 22px rgba(255, 255, 255, .7); /* 白いにじみ */
+  font-size: clamp(28px, 3.2vw, 46px); line-height: 1.55; letter-spacing: .06em;
+  font-feature-settings: 'palt'; /* 和文の字間を文字ごとに詰める（プロポーショナル詰め） */
+  color: #1B2A4A; /* 濃いネイビー。文字に効果は付けない */
 }
 .mv-catch span { display: block; white-space: nowrap; }
-.mv-catch .bold { font-weight: 800; }
-.mv-catch .sub { font-size: .5em; letter-spacing: .16em; margin-top: 1.1em; } /* 3行目は小さく添える */
-.mv-catch .sp-br { display: none; }
+.mv-catch .bold { font-weight: inherit; } /* 太さは行全体でそろえる */
+.mv-catch .sub { /* 3行目は細い線で区切って、小さく添える */
+  width: max-content; font-size: .42em; letter-spacing: .2em; font-feature-settings: normal;
+  margin-top: 1.6em; padding-top: 1.1em; border-top: 1px solid var(--accent);
+}
 .mv-name { margin-top: clamp(24px, 3vw, 40px); }
-.mv-name .co { font-size: var(--fs-body); margin-top: 4px; }
+.mv-name .co { font-size: var(--fs-body); margin-top: 4px; color: var(--ink-mid); letter-spacing: .06em; }
 @media (max-width: 720px) {
   .mv { height: 620px; }
-  .mv::after { background: linear-gradient(180deg, rgba(240,190,210,0) 25%, rgba(232,150,184,.6) 55%, rgba(222,110,157,.85) 100%); }
+  .mv::after { background: linear-gradient(180deg, rgba(253,243,246,0) 22%, rgba(253,243,246,.75) 50%, rgba(255,250,251,.95) 100%); }
   .mv-photo .ph .ph-label { left: 0; bottom: 45%; }
   .mv-body { top: auto; bottom: 48px; transform: none; right: var(--gutter); }
   .mv-catch { font-size: min(8.2vw, 34px); }
-  .mv-catch .sub { font-size: .56em; }
-  .mv-catch .sp-br { display: inline; } /* スマホでは「もっと好きになった。」を次の行に */
+  .mv-catch .sub { font-size: .5em; }
 }
 
 /* ============================================================
@@ -216,7 +219,7 @@ ul, ol { list-style: none; }
   font-size: calc(var(--fs-title) * 1.35); line-height: 1.5; letter-spacing: .14em;
 }
 .tate span { display: block; }
-.intro-em { font-size: var(--fs-sub); line-height: 1.6; margin-top: 12px; }
+.intro-em { font-size: var(--fs-sub); line-height: 1.6; margin-top: 12px; color: var(--accent-deep); }
 .intro-text { margin-top: 12px; line-height: 1.7; }
 .intro-text p + p { margin-top: .5em; }
 @media (max-width: 720px) {
@@ -234,20 +237,13 @@ ul, ol { list-style: none; }
 .lead p.em { font-size: var(--fs-sub); color: var(--accent-deep); line-height: 1.6; margin-top: 1.4em; }
 @media (max-width: 800px) { .split { grid-template-columns: 1fr; gap: 24px; } }
 
-/* ============================================================
-   CONCEPT
-   ============================================================ */
-.concept-body { margin-top: clamp(36px, 5vw, 56px); }
-
-/* Concept 内の見出し「あなたにしか選べない人生を、進めていく場所。」 */
-.concept-head { font-size: var(--fs-title); font-weight: 500; line-height: 1.6; letter-spacing: .05em; margin-bottom: .9em; }
-
 /* STEPS の「答えは、…」 */
 .lead p.answer { /* 「無料相談を予約する」ボタンと同じピンクの長方形 */
   display: inline-block; background: var(--pink); color: #fff; padding: 14px 26px;
   font-size: var(--fs-title); font-weight: 500; line-height: 1.6; letter-spacing: .05em;
 }
 .lead p.answer + .em { margin-top: 1.1em; }
+.lead .em .key { color: var(--ink); font-weight: 500; font-size: 1.25em; } /* 「決めて」「動ける」を黒く、少し大きく */
 @media (max-width: 720px) { .lead p.answer { padding: 12px 18px; } }
 
 
@@ -411,13 +407,37 @@ ul, ol { list-style: none; }
 }
 .campaign .lbl {
   display: inline-block; font-family: var(--f-latin); letter-spacing: .16em; line-height: 1.5;
-  padding: 2px 12px; margin-bottom: 8px; background: #FFE14D; color: var(--dark-2); /* 黄色の札で目を引く */
+  padding: 2px 12px; margin-bottom: 8px; background: #fff; color: var(--pink);
 }
 .campaign .nw { white-space: nowrap; }
 .campaign .ttl { font-size: var(--fs-title); font-weight: 500; letter-spacing: .06em; line-height: 1.5; }
 .campaign .val { font-size: calc(var(--fs-title) * 1.5); font-weight: 500; letter-spacing: .04em; line-height: 1.2; white-space: nowrap; }
 .campaign .val small { font-size: .55em; margin-left: .2em; }
 @media (max-width: 800px) { .plan-grid { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   FLOW — 成婚までの5ステップ（番号を細い線でつないだ流れ）
+   ============================================================ */
+.flow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; margin-top: 44px; position: relative; }
+.flow::before { /* 番号どうしをつなぐ線 */
+  content: ''; position: absolute; left: 0; right: 0; top: calc(var(--fs-title) * .6); height: 1px; background: var(--rule);
+}
+.flow-step { position: relative; padding-right: 20px; }
+.flow-no {
+  position: relative; display: inline-block; padding-right: 12px; background: var(--bg);
+  font-family: var(--f-latin); font-size: var(--fs-title); line-height: 1.2; color: var(--accent);
+}
+.flow-ttl { font-size: var(--fs-body); font-weight: 500; letter-spacing: .06em; margin-top: 14px; }
+.flow-txt { margin-top: 8px; line-height: 1.7; color: var(--ink-mid); }
+@media (max-width: 900px) {
+  /* スマホ・タブレットは縦の流れに */
+  .flow { grid-template-columns: 1fr; gap: 0; }
+  .flow::before { left: calc(var(--fs-title) * .55); right: auto; top: 8px; bottom: 8px; width: 1px; height: auto; }
+  .flow-step { display: grid; grid-template-columns: calc(var(--fs-title) * 2) 1fr; column-gap: 12px; padding: 0 0 26px; }
+  .flow-no { grid-row: span 2; padding: 0 0 6px; text-align: left; }
+  .flow-ttl { margin-top: 2px; }
+  .flow-txt { margin-top: 4px; }
+}
 
 /* ============================================================
    FAQ — 大きな英字見出しを左、中身を右（参考サイトの FAQ の組み方）
@@ -447,15 +467,13 @@ ul, ol { list-style: none; }
    ============================================================ */
 .closing { background: linear-gradient(var(--dark-1) 55%, var(--dark-2) 100%); color: #fff; }
 .closing .head-en { color: #fff; border-color: rgba(255,255,255,.25); }
-.closing-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(40px, 6vw, 80px); margin-top: clamp(40px, 5vw, 56px); align-items: end; }
+.closing-grid { margin-top: clamp(40px, 5vw, 56px); }
 .closing-msg { margin: clamp(40px, 5vw, 56px) 0 clamp(64px, 9vw, 110px); font-size: var(--fs-sub); line-height: 1.8; letter-spacing: .06em; }
 .closing-msg p + p { margin-top: 1.4em; }
 .closing-grid { padding-top: clamp(40px, 5vw, 56px); border-top: 1px solid rgba(255,255,255,.25); }
-.closing-catch { font-family: var(--f-hand); font-weight: 600; font-size: var(--fs-title); line-height: 1.7; }
 .closing-body p { font-size: var(--fs-body); }
 .closing-body p + p { margin-top: .6em; }
 .closing .btn-line { margin-top: 32px; }
-@media (max-width: 800px) { .closing-grid { grid-template-columns: 1fr; } }
 
 /* ============================================================
    FOOTER — 大きな筆記体の名前
@@ -502,12 +520,11 @@ ul, ol { list-style: none; }
 <button class="menu-btn" id="menuBtn" aria-label="メニューを開く" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
 <nav class="menu" id="menu" aria-label="メニュー">
   <ul>
-    <li><a href="#concept"><span class="en">CONCEPT</span>ハルカゼの婚活</a></li>
     <li><a href="#steps"><span class="en">STEPS</span>婚活の進め方</a></li>
     <li><a href="#lab"><span class="en">LAB</span>ハルカゼLAB</a></li>
     <li><a href="#profile"><span class="en">PROFILE</span>代表紹介</a></li>
     <li><a href="#course"><span class="en">COURSE</span>料金プラン</a></li>
-    <li><a href="#flow"><span class="en">FLOW</span>ご入会までの流れ</a></li>
+    <li><a href="#flow"><span class="en">FLOW</span>成婚までの流れ</a></li>
     <li><a href="#faq"><span class="en">FAQ</span>よくある質問</a></li>
     <li><a href="#blog"><span class="en">BLOG</span>婚活ノート</a></li>
     <li class="menu-cta"><a href="apply.html"><span class="en">RESERVATION</span>無料相談を予約する</a></li>
@@ -520,11 +537,11 @@ ul, ol { list-style: none; }
     <!-- 写真差し替え：<img src="newimages/xxx.jpg" alt=""> を .ph の中に追加 -->
     <div class="ph"><span class="ph-label">MAIN PHOTO<small>メイン写真</small></span></div>
   </div>
-  <a class="mv-logo" href="#top"><img src="newimages/line_oa_chat_260826_154300.jpg" alt="結婚相談所ハルカゼ harukaze"></a>
+  <a class="mv-logo" href="#top"><img src="newimages/logo-harukaze-header.jpg" alt="結婚相談所ハルカゼ harukaze"></a>
   <div class="mv-body">
     <h1 class="mv-catch">
-      <span>この人を選んだ</span>
-      <span>私の人生が、<br class="sp-br"><b class="bold">もっと好き</b>になった。</span>
+      <span>私の人生が、</span>
+      <span><b class="bold">もっと好き</b>になった。</span>
       <span class="sub">そんな出会いを、ハルカゼで。</span>
     </h1>
     <div class="mv-name">
@@ -542,25 +559,12 @@ ul, ol { list-style: none; }
       <h2 class="tate rv"><span>しあわせは、</span><span>もっと欲張っていい。</span></h2>
       <div class="rv">
         <div class="intro-text">
-          <p>好きな仕事も、好きな時間も、好きになる人との未来も。</p>
+          <p>自分のやりたいことも、仕事も、好きな人との未来も。</p>
+          <p>誰かと生きる人生は、かけ算で広がっていく。</p>
+          <p>出会いから決断まで、寄り添います。</p>
         </div>
-        <p class="intro-em">誰かと生きる人生は、かけ算。</p>
-        <div class="intro-text">
-          <p>楽しいことが、どんどん増えていく。</p>
-        </div>
+        <p class="intro-em">あなたにしか選べない人生を、ここから。</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================== CONCEPT ============================== -->
-<section class="sec sec--flush concept" id="concept">
-  <div class="inner">
-    <p class="head-en rv">Concept</p>
-    <div class="lead concept-body rv">
-      <h2 class="concept-head">あなたにしか選べない人生を、<br>進めていく場所。</h2>
-      <p>「本当はこうなりたい」を最優先に、自分の未来に上限をつけない。</p>
-      <p>そのために、出会いから決断まで、一緒に進みます。</p>
     </div>
   </div>
 </section>
@@ -573,7 +577,7 @@ ul, ol { list-style: none; }
       <h2 class="head-ja rv">婚活が進む人って、<br>どんな人？</h2>
       <div class="lead rv">
         <p class="answer">答えは、<br class="sp-only">「結婚する」って決めた人。</p>
-        <p class="em">ハルカゼには、決めて、動けるサポートがあります。</p>
+        <p class="em">ハルカゼには、<b class="key">決めて</b>、<b class="key">動ける</b>サポートがあります。</p>
       </div>
     </div>
 
@@ -612,7 +616,7 @@ ul, ol { list-style: none; }
 <!-- ============================== ハルカゼLAB ============================== -->
 <section class="sec sec--flush" id="lab">
   <div class="inner">
-    <p class="head-en rv">マッチングの先にある「結婚生活」まで見据えたサポートも用意</p>
+    <p class="head-en head-en--top rv">結婚相談所で出会ってうまくいく？<br>「結婚生活」まで見据えたサポートも用意</p>
     <div class="lab-support">
       <!-- ハルカゼLAB のロゴ風エンブレム（紺地・ピンクの曲線・グラデーションの LAB） -->
       <div class="lab-emblem rv">
@@ -687,7 +691,7 @@ ul, ol { list-style: none; }
         <span class="ph"><span class="ph-label">PHOTO</span></span>
         <span class="who">
           <span class="nm"><span class="nw">石神りさ／</span><span class="nw">代表　マッチングプランナー</span></span>
-          <span class="more-btn">Profile<i aria-hidden="true"></i></span>
+          <span class="more-btn">Profile＆Message<i aria-hidden="true"></i></span>
         </span>
       </span>
     </summary>
@@ -822,8 +826,36 @@ ul, ol { list-style: none; }
 <section class="sec sec--flush" id="flow">
   <div class="inner">
     <p class="head-en rv">Flow</p>
-    <h2 class="head-ja rv">ご入会までの流れ</h2>
-    <div class="frame rv"><span class="todo">【無料相談 → ご入会 → 活動スタート などの流れを入れる】</span></div>
+    <h2 class="head-ja rv">成婚までの5ステップ</h2>
+    <!-- 内容は harukaze-marriage.com/index.html の「成婚までの5ステップ」と同じ -->
+    <ol class="flow">
+      <li class="flow-step rv">
+        <p class="flow-no">01</p>
+        <h3 class="flow-ttl">無料カウンセリング</h3>
+        <p class="flow-txt">現状と目標を整理。費用・期間の説明も丁寧に</p>
+      </li>
+      <li class="flow-step rv">
+        <p class="flow-no">02</p>
+        <h3 class="flow-ttl">カウンセリング</h3>
+        <p class="flow-txt">あなたの魅力を言語化。プロフィール・写真を戦略的に磨き上げる</p>
+      </li>
+      <li class="flow-step rv">
+        <p class="flow-no">03</p>
+        <h3 class="flow-ttl">お見合い開始</h3>
+        <p class="flow-txt">IBJ 10万名超からマッチング。事前準備を徹底サポート</p>
+      </li>
+      <li class="flow-step rv">
+        <p class="flow-no">04</p>
+        <h3 class="flow-ttl">プレ交際・本交際</h3>
+        <p class="flow-txt">定期面談で関係の深め方を伴走。悩みをすぐに相談できる</p>
+      </li>
+      <li class="flow-step rv">
+        <p class="flow-no">05</p>
+        <h3 class="flow-ttl">成婚・卒業</h3>
+        <p class="flow-txt">プロポーズのタイミングや準備もサポート</p>
+      </li>
+    </ol>
+    <a class="btn-line rv" href="flow.html">成婚までの流れを詳しく見る</a>
   </div>
 </section>
 
@@ -857,7 +889,7 @@ ul, ol { list-style: none; }
     <h2 class="head-ja rv">婚活ノート</h2>
     <p class="lead rv">婚活のリアルや、自分を知るヒントを綴っています。</p>
     <ul class="chips blog-cats rv">
-      <li>自分を知る</li><li>お見合い・デート</li><li>ハルカゼの日常</li>
+      <li>自分を知る</li><li>お見合い・デート</li><li>マッチングプランナーの日常</li>
     </ul>
     <!-- 新着記事は js/blog-posts.js から 3 件を自動で表示します -->
     <div class="blog-cards rv" id="blogCards"></div>
@@ -870,12 +902,9 @@ ul, ol { list-style: none; }
   <div class="inner">
     <p class="head-en rv">Last Message</p>
     <div class="closing-msg rv">
-      <p>他人の目を気にしたり、<br>変えられない過去に、執着し続けたり。<br>みんな色々あるけれど、<br>人生も、使えるエネルギーも、有限。<br>だったら、自分の生きたい生き方をする。<br>大事なものを、ちゃんと大事にする。<br>そっちを選ぶ方が、ずっといい。</p>
+      <p>自分の生きたい生き方をする。<br>大事なものを、ちゃんと大事にする。<br>そっちを選ぶ方が、ずっといい。</p>
     </div>
     <div class="closing-grid">
-      <div class="rv">
-        <p class="closing-catch">この人を選んだ<br>私の人生が、もっと好きになった。<br>そんな出会いを、ハルカゼで。</p>
-      </div>
       <div class="closing-body rv">
         <p>オンライン40分｜全国対応｜完全無料｜1分で登録完了</p>
         <a class="btn-line btn-line--fill" href="apply.html">無料相談を予約する</a>
@@ -891,14 +920,14 @@ ul, ol { list-style: none; }
   <div class="inner">
     <div class="ft-grid">
       <div>
-        <a class="ft-logo" href="#top"><img src="newimages/line_oa_chat_260826_154300.jpg" alt="結婚相談所ハルカゼ harukaze"></a>
+        <a class="ft-logo" href="#top"><img src="newimages/logo-harukaze-header.jpg" alt="結婚相談所ハルカゼ harukaze"></a>
         <p class="ft-tag">IBJ正規加盟店　結婚相談所ハルカゼ</p>
       </div>
       <nav class="ft-nav" aria-label="フッターメニュー">
-        <a href="#concept">ハルカゼの婚活</a>
+        <a href="#intro">ハルカゼの婚活</a>
         <a href="#course">料金プラン</a>
         <a href="#steps">婚活の進め方</a>
-        <a href="#flow">ご入会までの流れ</a>
+        <a href="#flow">成婚までの流れ</a>
         <a href="harukaze-lab.html">ハルカゼLAB</a>
         <a href="#faq">よくある質問</a>
         <a href="#profile">代表紹介</a>
