@@ -80,6 +80,7 @@
 .m-cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
 .m-cta-note { font-size: 12px; color: var(--text-light); margin-top: 24px; }
 </style>
+<link rel="stylesheet" href="css/menu.css">
 </head>
 <body>
 
@@ -102,40 +103,19 @@
   </button>
 </nav>
 
-<div class="mobile-nav-overlay" id="mobileNavOverlay">
-  <button class="mobile-nav-close" id="mobileNavClose" aria-label="閉じる">
-    <span></span><span></span>
-  </button>
-  <div class="mobile-nav-logo">
-    <img src="newimages/logo-harukaze-header.jpg" alt="結婚相談所ハルカゼ harukaze">
-  </div>
-  <a href="index.html">ホーム</a>
-  <a href="about.html">メッセージ</a>
-  <a href="harukaze-lab.html">ハルカゼLAB</a>
-  <a href="service.html">プラン料金</a>
-  <a href="flow.html">成婚までの流れ</a>
-  <a href="faq.html">よくある質問</a>
-  <a href="blog.html">ブログ</a>
-  <a href="index.html#switch-campaign" class="nav-switch-link">乗り換えのご相談はこちら</a>
-  <a href="apply.html" class="nav-cta">初回無料面談に申し込む</a>
-  <div class="mobile-nav-bottom">
-    <hr class="mobile-nav-divider">
-    <div class="mobile-nav-social">
-      <a href="https://www.instagram.com/harukaze.ma?igsh=ZjFxNDU1MGYzMW5j&utm_source=qr" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
-        Instagram
-      </a>
-      <a href="#" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 8.2c1.2-.9 4.6-1.6 6.2.4.9 1.1 1 3.1-.2 4-1 .8-3 .9-3.6-.1-.5-.9.2-1.8 1.4-1.9 1.6-.1 3.4.6 3.9 2.1.5 1.5-.3 3.2-2.2 3.9-1.6.6-3.6.3-4.7-.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
-        Threads
-      </a>
-      <a href="#" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="7" stroke="currentColor" stroke-width="1.8"/><text x="12" y="16.5" text-anchor="middle" font-size="11" font-family="'Georgia', serif" fill="currentColor">n</text></svg>
-        note
-      </a>
-    </div>
-    <p class="mobile-nav-copy">© 2025 Harukaze Marriage Consulting. All rights reserved.</p>
-  </div>
+<div class="mobile-nav-overlay hz-menu" id="mobileNavOverlay">
+  <!-- トップページ（index.html）と同じメニュー。見た目は css/menu.css -->
+  <button class="mobile-nav-close" id="mobileNavClose" aria-label="メニューを閉じる"><span></span><span></span></button>
+  <ul class="hz-menu-list">
+    <li><a href="index.html#steps"><span class="en">STEPS</span>婚活の進め方</a></li>
+    <li><a href="index.html#lab"><span class="en">LAB</span>ハルカゼLAB</a></li>
+    <li><a href="index.html#profile"><span class="en">PROFILE</span>代表紹介</a></li>
+    <li><a href="index.html#course"><span class="en">COURSE</span>料金プラン</a></li>
+    <li><a href="index.html#flow"><span class="en">FLOW</span>成婚までの流れ</a></li>
+    <li><a href="blog.html"><span class="en">BLOG</span>婚活ノート</a></li>
+    <li><a href="index.html#faq"><span class="en">FAQ</span>よくある質問</a></li>
+    <li class="menu-cta"><a href="apply.html"><span class="en">RESERVATION</span>無料相談を予約する</a></li>
+  </ul>
 </div>
 
 <main>
