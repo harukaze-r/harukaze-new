@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>結婚相談所ハルカゼ｜人生が、動きだす。</title>
+<title>結婚相談所ハルカゼ｜人生に新しい風を吹かす</title>
 <meta name="description" content="あなたにしか選べない人生を、ここから。ハルカゼには、決めて、動けるサポートがあります。IBJ正規加盟店の結婚相談所ハルカゼ（大阪・北摂・吹田／オンライン全国対応）。">
 <link rel="icon" href="newimages/icon-harukaze.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -203,7 +203,7 @@ ul, ol { list-style: none; }
   .mv::after { background: linear-gradient(180deg, rgba(253,243,246,0) 22%, rgba(253,243,246,.75) 50%, rgba(255,250,251,.95) 100%); }
   .mv-photo .ph .ph-label { left: 0; bottom: 45%; }
   .mv-body { top: auto; bottom: 48px; transform: none; right: var(--gutter); }
-  .mv-catch { font-size: min(8.2vw, 34px); }
+  .mv-catch { font-size: min(6.2vw, 34px); } /* 1行目（13文字）がスマホ幅に収まる大きさ */
   .mv-catch .sub { font-size: .5em; }
 }
 
@@ -229,6 +229,28 @@ ul, ol { list-style: none; }
 }
 
 /* ============================================================
+   YOUR FEELINGS — 3つのお悩みを吹き出しカードで
+   ============================================================ */
+.feel-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 40px; }
+.feel-list li {
+  position: relative; padding: 26px 24px 24px 56px; border-radius: 10px;
+  background: #FBF4F7; line-height: 1.7;
+}
+.feel-list li::before { /* 引用符 */
+  content: '“'; position: absolute; left: 18px; top: 8px;
+  font-family: var(--f-latin); font-size: 48px; line-height: 1; color: var(--accent);
+}
+.feel-answer {
+  margin-top: clamp(36px, 5vw, 56px); padding-left: 20px; border-left: 2px solid var(--accent);
+  font-size: var(--fs-title); font-weight: 500; line-height: 1.6; letter-spacing: .05em; color: var(--accent-deep);
+}
+@media (max-width: 900px) {
+  .feel-list { grid-template-columns: 1fr; gap: 10px; }
+  .feel-list li { padding: 18px 18px 16px 46px; }
+  .feel-list li::before { left: 14px; top: 4px; font-size: 42px; }
+}
+
+/* ============================================================
    SPLIT — 見出しを左、本文を右に置いて、縦の長さを半分に
    ============================================================ */
 .split { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(32px, 6vw, 80px); align-items: start; margin-top: clamp(36px, 5vw, 56px); }
@@ -239,13 +261,12 @@ ul, ol { list-style: none; }
 @media (max-width: 800px) { .split { grid-template-columns: 1fr; gap: 24px; } }
 
 /* STEPS の「答えは、…」 */
-.lead p.answer { /* 「無料相談を予約する」ボタンと同じピンクの長方形 */
+.lead .answer { /* 「無料相談を予約する」ボタンと同じピンクの長方形 */
   display: inline-block; background: var(--pink); color: #fff; padding: 14px 26px;
   font-size: var(--fs-title); font-weight: 500; line-height: 1.6; letter-spacing: .05em;
 }
-.lead p.answer + .em { margin-top: 1.1em; }
-.lead .em .key { color: var(--ink); font-weight: 500; font-size: 1.25em; } /* 「決めて」「動ける」を黒く、少し大きく */
-@media (max-width: 720px) { .lead p.answer { padding: 12px 18px; } }
+@media (max-width: 720px) { .lead .answer { padding: 12px 18px; } }
+.steps-lead { margin-top: clamp(36px, 5vw, 56px); }
 
 
 
@@ -299,6 +320,18 @@ ul, ol { list-style: none; }
 .step-panel p { margin-top: 12px; }
 .step-panel .chips { margin-top: 18px; }
 .steps-cta { margin-top: 36px; }
+.step-panel .quote { color: var(--accent-deep); }
+
+/* 婚活のGOAL（3つの旗） */
+.goal { margin-top: clamp(40px, 6vw, 64px); padding-top: 28px; border-top: 1px solid var(--rule); }
+.goal .lbl { font-family: var(--f-latin); letter-spacing: .16em; color: var(--accent); }
+.goal-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px 28px; margin-top: 14px; }
+.goal-list li { position: relative; padding-left: 26px; line-height: 1.7; }
+.goal-list li::before { /* 小さな旗 */
+  content: ''; position: absolute; left: 2px; top: .45em; width: 0; height: 0;
+  border-left: 14px solid var(--accent); border-top: 6px solid transparent; border-bottom: 6px solid transparent;
+}
+@media (max-width: 800px) { .goal-list { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .bubble, .bubble .plus::after { transition: none; } .step-panel:not([hidden]) { animation: none; } }
 
 @media (max-width: 900px) {
@@ -424,6 +457,12 @@ ul, ol { list-style: none; }
 .campaign .ttl { font-size: var(--fs-title); font-weight: 500; letter-spacing: .06em; line-height: 1.5; }
 .campaign .val { font-size: calc(var(--fs-title) * 1.5); font-weight: 500; letter-spacing: .04em; line-height: 1.2; white-space: nowrap; }
 .campaign .val small { font-size: .55em; margin-left: .2em; }
+
+/* ハルカゼの安心（LINE相談） */
+.assure { margin-top: 28px; padding: 28px clamp(24px, 4vw, 48px); border: 1px solid var(--accent); border-radius: 10px; }
+.assure .lbl { font-family: var(--f-latin); letter-spacing: .16em; color: var(--accent); }
+.assure .ttl { margin-top: 4px; font-size: var(--fs-title); font-weight: 500; letter-spacing: .06em; line-height: 1.5; color: var(--accent-deep); }
+.assure p:not(.lbl):not(.ttl) { margin-top: 12px; line-height: 1.9; }
 @media (max-width: 800px) { .plan-grid { grid-template-columns: 1fr; } }
 
 /* ============================================================
@@ -579,7 +618,8 @@ ul, ol { list-style: none; }
   <a class="mv-logo" href="#top"><img src="newimages/logo-harukaze-header.jpg" alt="結婚相談所ハルカゼ harukaze"></a>
   <div class="mv-body">
     <h1 class="mv-catch">
-      <span>人生が、動きだす。</span>
+      <span>自分らしくいられる相手と、</span>
+      <span>自分らしく生きていく</span>
       <span class="sub">そんな出会いを、ハルカゼで。</span>
     </h1>
     <div class="mv-name">
@@ -594,16 +634,30 @@ ul, ol { list-style: none; }
 <section class="sec intro" id="intro">
   <div class="inner">
     <div class="intro-lead">
-      <h2 class="tate rv"><span>しあわせは、</span><span>もっと欲張っていい。</span></h2>
+      <h2 class="tate rv"><span>あなたにしか選べない</span><span>人生を、ここから。</span></h2>
       <div class="rv">
         <div class="intro-text">
           <p>やりたいことも、仕事も、好きな人との未来も。</p>
           <p>誰かと生きる人生は、かけ算で広がっていく。</p>
-          <p>出会いから決断まで、</p>
+          <p>出会いのその先に、ずっと続く幸せを。</p>
         </div>
-        <p class="intro-em">あなたにしか選べない人生を、ここから。</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============================== YOUR FEELINGS（お悩み） ============================== -->
+<section class="sec sec--flush" id="feelings">
+  <div class="inner">
+    <p class="head-en rv">Your Feelings</p>
+    <ul class="feel-list">
+      <li class="rv">目の前のことに追われていて、出会いを後回しにしてしまう。</li>
+      <li class="rv">どんな人が合うのか分からない。</li>
+      <li class="rv">いつか結婚したい、でも何から始めたらいいかわからない。</li>
+      <li class="rv">会社と家の往復で、新しい出会いがない。</li>
+      <li class="rv">うまくいかない恋愛を、繰り返してしまう。</li>
+    </ul>
+    <p class="feel-answer rv">全部ひとりで、頑張らなくて大丈夫。<br>1人ひとりに合った進め方で、<br class="sp-only">納得できる出会いを。</p>
   </div>
 </section>
 
@@ -611,12 +665,8 @@ ul, ol { list-style: none; }
 <section class="sec sec--flush" id="steps">
   <div class="inner">
     <p class="head-en rv">Steps</p>
-    <div class="split">
-      <h2 class="head-ja rv">婚活が進む人って、<br>どんな人？</h2>
-      <div class="lead rv">
-        <p class="answer">答えは、<br class="sp-only">「結婚する」って決めた人。</p>
-        <p class="em">ハルカゼには、<b class="key">決めて</b>、<b class="key">動ける</b>サポートがあります。</p>
-      </div>
+    <div class="lead steps-lead rv">
+      <h2 class="answer">ハルカゼの出会えるサポート</h2>
     </div>
 
     <!-- 丸をタップすると、下に説明が開く -->
@@ -629,19 +679,21 @@ ul, ol { list-style: none; }
     <!-- 背景画像：newimages/step-1.jpg を置くと表示されます（ファイル名を変える場合はここを書き換え） -->
     <div class="step-panel" id="stepPanel1" style="--step-bg: url('newimages/step-1.jpg');" hidden>
       <h3 class="ttl"><span>STEP 1</span>合う人を具体的にする</h3>
-      <p>「なんとなく好き」「なんとなく苦手」を言葉にして、自分の軸をつくる。</p>
+      <p>「なんとなく好き」「なんとなく苦手」を言葉にして、自分の軸をつくる。<br>自分を知ることは、相手を理解する力と、関係を健全に保つ力に繋がります。</p>
       <ul class="chips"><li>価値観整理</li><li>魅力・強み発見</li><li>婚活プラン作成</li></ul>
     </div>
     <!-- 背景画像：newimages/step-2.jpg を置くと表示されます（ファイル名を変える場合はここを書き換え） -->
     <div class="step-panel" id="stepPanel2" style="--step-bg: url('newimages/step-2.jpg');" hidden>
       <h3 class="ttl"><span>STEP 2</span>理想の暮らしを描く</h3>
       <p>なりたい未来を描いて、見た目もプロフィールも整える。</p>
+      <p class="quote">外見を変えると、内面も変わる。<br>内面が変わると、出会いも変わる。</p>
       <ul class="chips"><li>Visionボード</li><li>骨格診断・お買い物同行</li><li>服装メイクレッスン</li><li>写真撮影</li><li>プロフィール作成</li></ul>
     </div>
     <!-- 背景画像：newimages/step-3.jpg を置くと表示されます（ファイル名を変える場合はここを書き換え） -->
     <div class="step-panel" id="stepPanel3" style="--step-bg: url('newimages/step-3.jpg');" hidden>
       <h3 class="ttl"><span>STEP 3</span>出会いを重ねる</h3>
       <p>IBJの10万人以上から、お見合い料や申し込み上限を気にせず出会う。<br>「なんとなく違う」で、すぐに終わらせない。</p>
+      <p class="quote">目指すのは、「また会いたい」と思われる人。</p>
       <ul class="chips"><li>お見合い・交際サポート</li><li>伝える技術レッスン</li></ul>
     </div>
     <!-- 背景画像：newimages/step-4.jpg を置くと表示されます（ファイル名を変える場合はここを書き換え） -->
@@ -649,6 +701,15 @@ ul, ol { list-style: none; }
       <h3 class="ttl"><span>STEP 4</span>理想を現実にする</h3>
       <p>定期面談とLINEで、迷いをその都度整理。最後は、自分で選ぶ。</p>
       <ul class="chips"><li>定期フィードバック面談</li><li>LINE伴走サポート</li></ul>
+    </div>
+
+    <div class="goal rv">
+      <p class="lbl">HARUKAZE GOAL ｜ ハルカゼの婚活のゴール</p>
+      <ul class="goal-list">
+        <li>良きパートナーとの出会い</li>
+        <li>自分の魅力を高める</li>
+        <li>どんな時も、自分に立ち返ることのできる軸を知る</li>
+      </ul>
     </div>
 
     <a class="btn-line btn-line--fill steps-cta rv" href="apply.html">無料相談を予約する</a>
@@ -863,6 +924,13 @@ ul, ol { list-style: none; }
       </div>
       <p class="val">33,000<small>円 OFF</small></p>
     </div>
+
+    <div class="assure rv">
+      <p class="lbl">SUPPORT</p>
+      <p class="ttl">LINEで、いつでも相談OK</p>
+      <p>友達でも家族でもない、あなたをジャッジしない関係で。<br>あなたの本音を、聞かせてください。</p>
+      <p>小さな相談所だからこそ、ひとり一人に合わせた細かいサポートを。<br>お見合いの日程調整やお返事も、担当が代行します。</p>
+    </div>
   </div>
 </section>
 
@@ -974,6 +1042,10 @@ ul, ol { list-style: none; }
         <details class="faq-item">
           <summary><span class="q">Q</span>成婚の定義は何ですか？</summary>
           <p>成婚とは、一般的には交際相手が見つかり、結婚の意思がみえた段階で活動を終了することを意味します。ハルカゼではプロポーズをして結婚を約束したお二人を「成婚」と位置づけています。</p>
+        </details>
+        <details class="faq-item">
+          <summary><span class="q">Q</span>お見合い相手と、連絡先はいつ交換しますか？</summary>
+          <p>お見合いが終わり、お互いに「また会いたい」となってから、相談所を通して交換します。それまでに個人の連絡先が相手に伝わることはないので安心です。お見合いの日程調整やお返事も、担当が代行します。</p>
         </details>
         <details class="faq-item">
           <summary><span class="q">Q</span>面談やお見合いはどんな場所で行うのですか？</summary>
