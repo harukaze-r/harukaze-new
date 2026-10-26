@@ -184,6 +184,16 @@ ul, ol { list-style: none; }
   color: var(--navy);
   opacity: 1;
 }
+/* 幅が狭いPCでも「LINEで無料面談を予約」ボタンが画面からはみ出さないように詰める */
+@media (max-width: 1180px) {
+  .nav-links { gap: 16px; }
+  .nav-links .nav-cta { padding: 9px 14px; letter-spacing: 0.02em; }
+}
+/* それでも収まらない幅ではハンバーガーメニューに切り替える */
+@media (max-width: 1000px) {
+  .nav-links { display: none; }
+  .hamburger-btn { display: flex !important; } /* 基本の display:none がこの下にあるため !important */
+}
 
 /* オトナ男子の婚活リンク（ナビ内） */
 .nav-men-link {
