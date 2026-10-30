@@ -97,25 +97,25 @@ ul, ol { list-style: none; }
 /* ============================================================
    SECTION HEAD — 英字ラベル + 罫線 + 和文見出し（参考サイトと同じ組み方）
    ============================================================ */
+/* 見出しは中央に：細い英字ラベル → ゆるやかな波線 → 字間を広くとった和文見出し（本文は左揃えのまま） */
 .head-en {
-  font-family: var(--f-latin); font-weight: 500;
-  font-size: var(--fs-label); letter-spacing: .1em; line-height: 1.15;
-  color: var(--accent); text-transform: uppercase;
-  padding-bottom: 22px; border-bottom: 1px solid var(--rule);
+  font-family: var(--f-latin); font-weight: 400;
+  font-size: calc(var(--fs-title) * 1.15); letter-spacing: .18em; line-height: 1.2;
+  color: var(--ink-mid); text-transform: uppercase; text-align: center;
+}
+.head-en::after { /* 波線 */
+  content: ''; display: block; width: 160px; height: 14px; margin: 16px auto 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 14'%3E%3Cpath d='M2 9 C 32 1, 58 2, 80 7 S 126 13, 158 5' fill='none' stroke='%23E0719F' stroke-width='1.5' stroke-linecap='round' opacity='.75'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 .head-ja {
-  font-size: var(--fs-title); font-weight: 400; line-height: 1.8; letter-spacing: .05em;
-  margin-top: clamp(36px, 5vw, 56px);
+  font-size: var(--fs-title); font-weight: 400; line-height: 1.8; letter-spacing: .14em; text-align: center;
+  margin-top: clamp(24px, 3vw, 32px);
 }
+@media (max-width: 590px) { .head-ja { letter-spacing: .08em; } }
+/* キーフレーズのマーカー */
+.mk { background: linear-gradient(transparent 60%, rgba(233, 96, 154, .22) 60%); }
 .lead { max-width: 760px; margin-top: 28px; }
 .lead p + p { margin-top: 1em; }
-/* 線を文字の上に引くタイプ（LAB） */
-.head-en--top { padding: 22px 0 0; border-bottom: 0; border-top: 1px solid var(--rule); line-height: 1.7; }
-.big-en { /* 参考サイトの「FAQ」「Message」相当の大きな英字見出し */
-  font-family: var(--f-latin); font-weight: 400;
-  font-size: var(--fs-big); line-height: 1.15; letter-spacing: .03em; color: #333;
-}
-.big-en-sub { font-size: var(--fs-body); letter-spacing: .06em; margin-top: 10px; color: #333; }
 
 /* 小さなタグ */
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -127,12 +127,13 @@ ul, ol { list-style: none; }
 /* 参考サイトの四角い枠線ボタン（矢印なし） */
 .btn-line {
   display: inline-flex; align-items: center; justify-content: center;
-  min-width: 260px; padding: 18px 26px; border: 1px solid currentColor;
+  min-width: 260px; padding: 18px 32px; border: 1px solid currentColor; border-radius: 999px;
   font-size: var(--fs-body); letter-spacing: .06em; margin-top: 44px;
 }
 .btn-line:hover { opacity: 1; background: var(--ink); color: #fff; border-color: var(--ink); }
 .btn-line--fill { background: var(--pink); border-color: var(--pink); color: #fff; }
 .btn-line--fill:hover { background: #D24B85; border-color: #D24B85; }
+.sec .inner > .btn-line { display: flex; width: fit-content; margin-left: auto; margin-right: auto; }
 
 /* 未作成セクションの空き枠 */
 .frame {
@@ -268,7 +269,13 @@ ul, ol { list-style: none; }
 }
 
 /* 「→ ○○を見る」の文字リンク */
-.link-more { display: inline-block; margin-top: 36px; padding-bottom: 2px; border-bottom: 1px solid var(--accent); color: var(--accent-deep); letter-spacing: .06em; }
+.link-more { /* 丸い枠線ボタン（＋付き） */
+  display: flex; align-items: center; justify-content: center; gap: 16px; width: fit-content; min-width: 260px;
+  margin: 44px auto 0; padding: 16px 36px; border: 1px solid var(--accent); border-radius: 999px; background: var(--white);
+  color: var(--accent-deep); letter-spacing: .12em;
+}
+.link-more::after { content: '＋'; font-size: 1.1em; line-height: 1; }
+.link-more:hover { opacity: 1; background: var(--accent); color: #fff; }
 
 /* ============================================================
    HARUKAZE LAB
@@ -394,8 +401,7 @@ ul, ol { list-style: none; }
 /* ============================================================
    FAQ — 大きな英字見出しを左、中身を右（参考サイトの FAQ の組み方）
    ============================================================ */
-.faq-grid { display: grid; grid-template-columns: minmax(0, 300px) 1fr; gap: clamp(40px, 6vw, 80px); padding-top: clamp(56px, 7vw, 80px); border-top: 1px solid var(--rule); }
-.faq-grid .frame { margin-top: 0; }
+.faq-list { max-width: 860px; margin: 40px auto 0; }
 /* 質問を押すと回答が開く */
 .faq-list { border-top: 1px solid var(--rule); }
 .faq-item { border-bottom: 1px solid var(--rule); }
@@ -412,7 +418,6 @@ ul, ol { list-style: none; }
 .faq-item .q { font-family: var(--f-latin); font-size: var(--fs-title); line-height: 1; color: var(--accent); flex-shrink: 0; }
 .faq-item > p { display: flex; align-items: baseline; gap: 14px; padding: 0 0 20px; color: var(--ink-mid); line-height: 1.8; }
 .faq-item .a { font-family: var(--f-latin); font-size: var(--fs-title); line-height: 1; color: var(--ink-light); flex-shrink: 0; }
-@media (max-width: 800px) { .faq-grid { grid-template-columns: 1fr; } }
 
 /* ============================================================
    BLOG
@@ -440,7 +445,7 @@ ul, ol { list-style: none; }
    CLOSING（濃色）— 参考サイト最下部の予約エリア
    ============================================================ */
 .closing { background: linear-gradient(var(--dark-1) 55%, var(--dark-2) 100%); color: #fff; }
-.closing .head-en { color: #fff; border-color: rgba(255,255,255,.25); }
+.closing .head-en { color: #fff; }
 /* さいごには中央揃え。行間と余白を多めに */
 .closing { text-align: center; }
 .closing-msg { margin-top: clamp(48px, 6vw, 72px); line-height: 2.1; letter-spacing: .06em; }
@@ -534,14 +539,14 @@ ul, ol { list-style: none; }
 <section class="sec" id="worries">
   <div class="inner">
     <p class="head-en rv">Your Feelings</p>
-    <h2 class="head-ja rv">大切に想い合える人に出会いたい</h2>
+    <h2 class="head-ja rv">大切に想い合える人に<br class="sp-only">出会いたい</h2>
     <ul class="worry-list">
       <li class="rv">このままでいいのか、どこかに迷いがある</li>
       <li class="rv">相手に気を使っているのに、空回りしてしまう</li>
       <li class="rv">婚活用の自分をつくりたくない</li>
       <li class="rv">この人だと思える人に、出会えない</li>
     </ul>
-    <p class="worry-answer rv">「このままでいいのか」<br class="sp-only">そんな漠然としたモヤモヤを手放しませんか？</p>
+    <p class="worry-answer rv">「このままでいいのか」<br class="sp-only"><span class="mk">そんな漠然としたモヤモヤを手放しませんか？</span></p>
   </div>
 </section>
 
@@ -596,7 +601,7 @@ ul, ol { list-style: none; }
         <p class="step-no">STEP<b>3</b></p>
         <div>
           <h3 class="step-ttl">数を気にせず、「この人かも」に気づける</h3>
-          <p class="step-lead">申し込みの上限を気にしなくていいから、出会いのチャンスに制限をかけない。</p>
+          <p class="step-lead">申し込みの上限を気にしなくていいから、<span class="mk">出会いのチャンスに制限をかけない。</span></p>
           <ul class="svc-list">
             <li><b>IBJの10万人以上から出会える</b>：お見合い料や申し込み数の上限がないので、気になる人に気軽に申し込めます</li>
             <li><b>お見合い・交際サポート</b>：お見合いの前後に振り返り、「なんとなく違う」の理由を一緒に確かめます</li>
@@ -614,7 +619,7 @@ ul, ol { list-style: none; }
 <section class="sec sec--flush" id="lab">
   <div class="inner">
     <p class="head-en rv">Harukaze LAB</p>
-    <h2 class="head-ja rv">選んだ人と、ずっと笑っていたい</h2>
+    <h2 class="head-ja rv">選んだ人と、<br class="sp-only">ずっと笑っていたい</h2>
     <div class="lab-support">
       <!-- ハルカゼLAB のロゴ風エンブレム（紺地・ピンクの曲線・グラデーションの LAB） -->
       <div class="lab-emblem rv">
@@ -651,7 +656,7 @@ ul, ol { list-style: none; }
           <p class="ask-big">「結婚相談所で出会って、本当にうまくいく？」</p>
           <p>そんな不安にも、ちゃんと向き合います。</p>
         </div>
-        <p class="lab-text rv">ハルカゼの婚活は、出会って終わりではありません。<br>結婚したあとの暮らしまで考えて、それぞれの分野の専門コーチに相談できます。</p>
+        <p class="lab-text rv">ハルカゼの婚活は、出会って終わりではありません。<br><span class="mk">結婚したあとの暮らしまで考えて</span>、それぞれの分野の専門コーチに相談できます。</p>
         <h3 class="lab-sub rv">こんなことを相談できます</h3>
         <ul class="coaches">
           <li class="coach rv">
@@ -676,7 +681,7 @@ ul, ol { list-style: none; }
             <p class="nm">TOMOMI<span class="role">イメージコンサルタント</span></p>
           </li>
         </ul>
-        <a class="link-more rv" href="harukaze-lab.html">→ ハルカゼLABを見る</a>
+        <a class="link-more rv" href="harukaze-lab.html">ハルカゼLABを見る</a>
       </div>
     </div>
   </div>
@@ -690,7 +695,7 @@ ul, ol { list-style: none; }
       <div class="ph"><img src="newimages/ishigami-risa-3.jpeg" alt="石神りさ" loading="lazy"><span class="ph-label">PHOTO</span></div>
       <div>
         <h2 class="am-title">あの頃の私が、出会いたかった場所。</h2>
-        <p class="pf-msg">「こうあるべき」にしばられて、がんばるほど空回りしていた頃。<br>私に必要だったのは、「本当は、どうしたいの？」と聞いてくれる人でした。<br>だからハルカゼでは、あなたの本音を聞くところから始めます。</p>
+        <p class="pf-msg">「こうあるべき」にしばられて、がんばるほど空回りしていた頃。<br>私に必要だったのは、「本当は、どうしたいの？」と聞いてくれる人でした。<br>だからハルカゼでは、<span class="mk">あなたの本音を聞くところから始めます。</span></p>
         <p class="pf-name">石神りさ</p>
         <p class="pf-role">3児の母／ハルカゼ代表</p>
       </div>
@@ -705,7 +710,7 @@ ul, ol { list-style: none; }
         <li><b>3児の母</b>：結婚生活や子育てのリアルも、実体験からお話しできます</li>
       </ul>
       <!-- 代表のストーリーのページができたら、リンク先を差し替え -->
-      <a class="link-more" href="#">→ 代表のストーリーを読む</a>
+      <a class="link-more" href="#">代表のストーリーを読む</a>
     </div>
   </div>
 </section>
@@ -847,11 +852,9 @@ ul, ol { list-style: none; }
 
 <!-- ============================== 8. よくある質問 ============================== -->
 <section class="sec sec--flush" id="faq">
-  <div class="inner faq-grid">
-    <div class="rv">
-      <p class="big-en">FAQ</p>
-      <h2 class="big-en-sub">よくある質問</h2>
-    </div>
+  <div class="inner">
+    <p class="head-en rv">FAQ</p>
+    <h2 class="head-ja rv">よくある質問</h2>
     <div class="faq-list rv">
       <details class="faq-item">
         <summary><span class="q">Q</span>婚活がはじめてでも大丈夫ですか？</summary>
@@ -888,7 +891,7 @@ ul, ol { list-style: none; }
     </ul>
     <!-- 新着記事は js/blog-posts.js から 3 件を自動で表示します -->
     <div class="blog-cards rv" id="blogCards"></div>
-    <a class="link-more rv" href="blog.html">→ ブログ一覧を見る</a>
+    <a class="link-more rv" href="blog.html">ブログ一覧を見る</a>
   </div>
 </section>
 
