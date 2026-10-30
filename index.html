@@ -345,12 +345,17 @@ ul, ol { list-style: none; }
 }
 .flow-ttl { font-size: var(--fs-body); font-weight: 500; letter-spacing: .06em; margin-top: 14px; }
 .flow-txt { margin-top: 8px; line-height: 1.7; color: var(--ink-mid); }
+.flow-docs-ttl { margin-top: 14px; font-size: .9em; letter-spacing: .08em; color: var(--accent-deep); }
+.flow-docs { margin-top: 4px; font-size: .9em; line-height: 1.7; color: var(--ink-mid); }
+.flow-docs li { position: relative; padding-left: 1em; }
+.flow-docs li::before { content: '・'; position: absolute; left: 0; }
 @media (max-width: 900px) {
   /* スマホ・タブレットは縦の流れに */
   .flow { grid-template-columns: 1fr; gap: 0; }
   .flow::before { left: calc(var(--fs-title) * .55); right: auto; top: 8px; bottom: 8px; width: 1px; height: auto; }
   .flow-step { display: grid; grid-template-columns: calc(var(--fs-title) * 2) 1fr; column-gap: 12px; padding: 0 0 26px; }
   .flow-no { grid-row: span 2; padding: 0 0 6px; text-align: left; }
+  .flow-step > :not(.flow-no) { grid-column: 2; } /* 必要書類のリストも番号の右に */
   .flow-ttl { margin-top: 2px; }
   .flow-txt { margin-top: 4px; }
 }
@@ -772,7 +777,17 @@ ul, ol { list-style: none; }
       <li class="flow-step rv">
         <p class="flow-no">02</p>
         <h3 class="flow-ttl">ご入会</h3>
-        <p class="flow-txt">内容に納得していただけたら、お手続きへ。<span class="todo">【必要書類：独身証明書・本人確認書類など】</span></p>
+        <p class="flow-txt">内容に納得していただけたら、お手続きへ。</p>
+        <p class="flow-docs-ttl">必要書類</p>
+        <ul class="flow-docs">
+          <li>身分証明書のコピー</li>
+          <li>住民票</li>
+          <li>独身証明書（3か月以内に取得した原本）</li>
+          <li>卒業証明書のコピー（短大卒以上の方）</li>
+          <li>国家資格免許証のコピー</li>
+          <li>収入証明書</li>
+          <li>勤務先確認書類のコピー</li>
+        </ul>
       </li>
       <li class="flow-step rv">
         <p class="flow-no">03</p>
