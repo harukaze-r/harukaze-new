@@ -397,8 +397,13 @@ ul, ol { list-style: none; }
 }
 .flow-ttl { font-size: var(--fs-body); font-weight: 500; letter-spacing: .06em; margin-top: 14px; }
 .flow-txt { margin-top: 8px; line-height: 1.7; color: var(--ink-mid); }
-.flow-docs-ttl { margin-top: 14px; font-size: .9em; letter-spacing: .08em; color: var(--accent-deep); }
-.flow-docs { margin-top: 4px; font-size: .9em; line-height: 1.7; color: var(--ink-mid); }
+/* 必要書類は折り畳み（押すと開く） */
+.flow-docs-wrap { margin-top: 14px; }
+.flow-docs-ttl { display: inline-flex; align-items: center; gap: 8px; list-style: none; cursor: pointer; font-size: .9em; letter-spacing: .08em; color: var(--accent-deep); border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
+.flow-docs-ttl::-webkit-details-marker { display: none; }
+.flow-docs-ttl::after { content: '＋'; font-size: .9em; }
+.flow-docs-wrap[open] .flow-docs-ttl::after { content: '－'; }
+.flow-docs { margin-top: 8px; font-size: .9em; line-height: 1.7; color: var(--ink-mid); }
 .flow-docs li { position: relative; padding-left: 1em; }
 .flow-docs li::before { content: '・'; position: absolute; left: 0; }
 @media (max-width: 900px) {
@@ -836,7 +841,8 @@ ul, ol { list-style: none; }
         <p class="flow-no">02</p>
         <h3 class="flow-ttl">ご入会</h3>
         <p class="flow-txt">内容に納得していただけたら、お手続きへ。</p>
-        <p class="flow-docs-ttl">必要書類</p>
+        <details class="flow-docs-wrap">
+          <summary class="flow-docs-ttl">必要書類</summary>
         <ul class="flow-docs">
           <li>身分証明書のコピー</li>
           <li>住民票</li>
@@ -846,6 +852,7 @@ ul, ol { list-style: none; }
           <li>収入証明書</li>
           <li>勤務先確認書類のコピー</li>
         </ul>
+        </details>
       </li>
       <li class="flow-step rv">
         <p class="flow-no">03</p>
