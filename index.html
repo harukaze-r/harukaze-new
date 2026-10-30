@@ -215,24 +215,23 @@ ul, ol { list-style: none; }
 /* ============================================================
    WORRIES — お悩み（暗めのモノクロ写真の上に、チェック付きの半透明カードを縦に並べる）
    ============================================================ */
-.worries { position: relative; overflow: hidden; color: #fff; isolation: isolate; }
+.worries { position: relative; overflow: hidden; color: #fff; isolation: isolate; padding: clamp(56px, 7vw, 88px) 0; } /* スペースを取りすぎないよう、ほかのセクションより上下の余白を少なめに */
 .worries::before { /* 背景の写真はモノクロにして暗く沈める */
   content: ''; position: absolute; inset: 0; z-index: -2;
-  background: url('newimages/step-1-online.jpg') center / cover no-repeat; filter: grayscale(1);
+  background: url('newimages/worries-bg.jpg') center 30% / cover no-repeat; filter: grayscale(1);
 }
 .worries::after { content: ''; position: absolute; inset: 0; z-index: -1; background: rgba(46, 43, 44, .78); }
 .worries .head-en { color: rgba(255, 255, 255, .85); }
 .worries .head-ja { color: #fff; font-weight: 500; }
-.worry-list { display: grid; gap: 16px; max-width: 680px; margin: 44px auto 0; }
+.worry-list { display: grid; gap: 10px; max-width: 680px; margin: 36px auto 0; }
 .worry-list li {
-  display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center;
-  padding: 24px clamp(20px, 4vw, 40px); border-radius: 16px;
+  text-align: center;
+  padding: 14px clamp(16px, 3vw, 32px); border-radius: 12px;
   background: rgba(255, 255, 255, .12); border: 1px solid rgba(255, 255, 255, .16);
   font-weight: 500; line-height: 1.7; letter-spacing: .04em;
 }
-.worry-list svg { width: 28px; height: 28px; flex-shrink: 0; }
 .worry-answer {
-  max-width: 680px; margin: clamp(44px, 6vw, 64px) auto 0; text-align: center;
+  max-width: 680px; margin: clamp(32px, 4vw, 44px) auto 0; text-align: center;
   font-size: calc(var(--fs-title) * .85); font-weight: 500; line-height: 1.8; letter-spacing: .04em;
 }
 .worry-answer .mk { background: linear-gradient(transparent 62%, rgba(233, 96, 154, .55) 62%); }
@@ -571,16 +570,16 @@ ul, ol { list-style: none; }
 <main>
 
 <!-- ============================== 2. お悩み ============================== -->
-<section class="sec worries" id="worries">
+<section class="worries" id="worries">
   <div class="inner">
     <p class="head-en rv">Your Feelings</p>
     <h2 class="head-ja rv">大切に想い合える人に<br class="sp-only">出会いたい</h2>
     <ul class="worry-list">
-      <li class="rv"><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="12.5" fill="none" stroke="#fff" stroke-width="1.5"/><path d="M8.5 14.5l3.6 3.6 7.4-8" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>このままでいいのか、どこかに迷いがある</span></li>
-      <li class="rv"><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="12.5" fill="none" stroke="#fff" stroke-width="1.5"/><path d="M8.5 14.5l3.6 3.6 7.4-8" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>相手に気を使っているのに、空回りしてしまう</span></li>
-      <li class="rv"><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="12.5" fill="none" stroke="#fff" stroke-width="1.5"/><path d="M8.5 14.5l3.6 3.6 7.4-8" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>婚活用の自分をつくりたくない</span></li>
-      <li class="rv"><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="12.5" fill="none" stroke="#fff" stroke-width="1.5"/><path d="M8.5 14.5l3.6 3.6 7.4-8" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>この人だと思える人に、出会えない</span></li>
-      <li class="rv"><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="12.5" fill="none" stroke="#fff" stroke-width="1.5"/><path d="M8.5 14.5l3.6 3.6 7.4-8" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>今更、出会いを求めるのもきっかけがない</span></li>
+      <li class="rv">このままでいいのか、どこかに迷いがある</li>
+      <li class="rv">相手に気を使っているのに、空回りしてしまう</li>
+      <li class="rv">婚活用の自分をつくりたくない</li>
+      <li class="rv">この人だと思える人に、出会えない</li>
+      <li class="rv">今更、出会いを求めるのもきっかけがない</li>
     </ul>
     <p class="worry-answer rv">だけど「このままでいいのか」<br><span class="mk">そんな漠然としたモヤモヤを手放しませんか？</span></p>
   </div>
