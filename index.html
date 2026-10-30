@@ -185,7 +185,7 @@ ul, ol { list-style: none; }
   position: absolute; z-index: 2; top: clamp(20px, 3vw, 32px); left: var(--gutter);
   background: #fff; padding: 8px 14px; border-radius: 4px;
 }
-.mv-logo img { height: clamp(48px, 5.5vw, 66px); width: auto; }
+.mv-logo img { height: clamp(58px, 6.6vw, 79px); width: auto; } /* スマホ */
 @media (min-width: 721px) { .mv-logo img { height: clamp(97px, 11vw, 132px); } } /* PCでは2倍の大きさ（最大132px） */
 /* キャッチは写真上部の明るい空に置く（ロゴのすぐ下から） */
 .mv-body { position: absolute; z-index: 2; left: var(--gutter); top: calc(clamp(20px, 3vw, 32px) + clamp(97px, 11vw, 132px) + 16px + clamp(24px, 3vw, 40px)); color: #1B2A4A; }
@@ -211,7 +211,7 @@ ul, ol { list-style: none; }
   .mv::after { display: none; }
   .mv-photo { position: relative; inset: auto; order: 2; aspect-ratio: 816 / 453; }
   .mv-photo .ph .ph-label { left: 0; }
-  .mv-body { position: static; order: 1; padding: calc(20px + 48px + 16px + 24px) var(--gutter) 24px; }
+  .mv-body { position: static; order: 1; padding: calc(20px + 58px + 16px + 24px) var(--gutter) 24px; }
   .mv-foot { position: static; order: 3; padding: 24px var(--gutter) 44px; }
   .mv-catch { font-size: min(6.2vw, 34px); } /* 1行目（13文字）がスマホ幅に収まる大きさ */
 }
