@@ -211,21 +211,45 @@ ul, ol { list-style: none; }
 }
 
 /* ============================================================
-   CHANGE — ハルカゼで起きる変化（ビフォー → アフター → 説明 のカード）
+   WORRIES — お悩み（引用符つきの淡いピンクのカード）
    ============================================================ */
-.chg-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 44px; }
-.chg { padding: clamp(24px, 3vw, 36px); border: 1px solid #E2DCDE; border-radius: 10px; background: var(--white); }
-.chg-before { font-size: .9em; line-height: 1.7; color: var(--ink-light); } /* 悩みの声：薄く小さく */
-.chg-arrow { display: block; margin: 10px 0 8px; font-family: var(--f-latin); line-height: 1; color: var(--accent); }
-.chg-after { font-size: calc(var(--fs-title) * .8); font-weight: 600; line-height: 1.6; letter-spacing: .04em; color: var(--accent-deep); } /* 変化：太く強調色で */
-.chg-desc { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--rule); font-size: .9em; line-height: 1.8; color: var(--ink-mid); }
-@media (max-width: 800px) { .chg-list { grid-template-columns: 1fr; gap: 14px; } }
+.worry-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 40px; }
+.worry-list li {
+  position: relative; padding: 24px 24px 22px 56px; border-radius: 10px;
+  background: #FBF4F7; line-height: 1.7;
+}
+.worry-list li::before { /* 引用符 */
+  content: '“'; position: absolute; left: 18px; top: 8px;
+  font-family: var(--f-latin); font-size: 48px; line-height: 1; color: var(--accent);
+}
+.worry-answer {
+  margin-top: clamp(36px, 5vw, 56px); padding-left: 20px; border-left: 2px solid var(--accent);
+  font-size: calc(var(--fs-title) * .85); font-weight: 500; line-height: 1.7; letter-spacing: .04em; color: var(--accent-deep);
+}
+@media (max-width: 800px) {
+  .worry-list { grid-template-columns: 1fr; gap: 10px; }
+  .worry-list li { padding: 18px 18px 16px 46px; }
+  .worry-list li::before { left: 14px; top: 4px; font-size: 42px; }
+}
 
 /* ============================================================
-   STEPS — ハルカゼでできること（STEP番号＋見出し → リード文 → サービス一覧）
+   CHANGE — ハルカゼで起きる変化
+   ============================================================ */
+.chg-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 40px; }
+.chg {
+  display: flex; align-items: center; gap: 16px; padding: clamp(20px, 2.6vw, 30px);
+  border: 1px solid #E2DCDE; border-radius: 10px; background: var(--white);
+  font-size: calc(var(--fs-title) * .8); font-weight: 600; line-height: 1.6; letter-spacing: .04em; color: var(--accent-deep);
+}
+.chg-no { flex-shrink: 0; font-family: var(--f-latin); font-weight: 400; font-size: var(--fs-title); color: var(--accent); }
+@media (max-width: 800px) { .chg-list { grid-template-columns: 1fr; gap: 12px; } }
+
+/* ============================================================
+   STEPS — ハルカゼのサポート（STEP番号＋見出し → リード文 → サービス一覧 ＋ イメージ写真）
    ============================================================ */
 .step-list { margin-top: 44px; border-top: 1px solid var(--rule); }
-.step { display: grid; grid-template-columns: 120px 1fr; gap: clamp(20px, 4vw, 48px); padding: clamp(28px, 4vw, 44px) 0; border-bottom: 1px solid var(--rule); }
+.step { display: grid; grid-template-columns: 120px minmax(0, 1fr) minmax(0, 320px); gap: clamp(20px, 4vw, 48px); padding: clamp(28px, 4vw, 44px) 0; border-bottom: 1px solid var(--rule); }
+.step-img { aspect-ratio: 16 / 10; border-radius: 10px; } /* 文字が続くので、STEPごとにイメージ写真を添える */
 .step-no { font-family: var(--f-latin); letter-spacing: .2em; line-height: 1; color: var(--accent); }
 .step-no b { display: block; margin-top: 6px; font-weight: 400; font-size: calc(var(--fs-title) * 2.2); letter-spacing: 0; }
 .step-ttl { font-size: var(--fs-title); font-weight: 500; line-height: 1.6; letter-spacing: .05em; }
@@ -235,8 +259,10 @@ ul, ol { list-style: none; }
 .svc-list li { position: relative; padding-left: 18px; line-height: 1.8; }
 .svc-list li::before { content: ''; position: absolute; left: 2px; top: .8em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 .svc-list b { font-weight: 600; color: var(--accent-deep); }
+@media (max-width: 1000px) and (min-width: 721px) { .step { grid-template-columns: 90px minmax(0, 1fr) minmax(0, 240px); } }
 @media (max-width: 720px) {
   .step { grid-template-columns: 1fr; gap: 12px; }
+  .step-img { grid-row: 2; } /* スマホは STEP番号 → 写真 → 文章 の順 */
   .step-no { display: flex; align-items: baseline; gap: 10px; }
   .step-no b { display: inline; margin-top: 0; font-size: calc(var(--fs-title) * 1.6); }
 }
@@ -468,8 +494,9 @@ ul, ol { list-style: none; }
 <button class="menu-btn" id="menuBtn" aria-label="メニューを開く" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
 <nav class="menu" id="menu" aria-label="メニュー">
   <ul>
+    <li><a href="#worries"><span class="en">FEELINGS</span>こんなお悩みありませんか</a></li>
     <li><a href="#change"><span class="en">CHANGE</span>ハルカゼで起きる変化</a></li>
-    <li><a href="#steps"><span class="en">STEPS</span>ハルカゼでできること</a></li>
+    <li><a href="#steps"><span class="en">STEPS</span>ハルカゼのサポート</a></li>
     <li><a href="#lab"><span class="en">LAB</span>ハルカゼLAB</a></li>
     <li><a href="#profile"><span class="en">PROFILE</span>代表紹介</a></li>
     <li><a href="#course"><span class="en">PRICE</span>料金</a></li>
@@ -503,45 +530,40 @@ ul, ol { list-style: none; }
 
 <main>
 
-<!-- ============================== 2. ハルカゼで起きる変化 ============================== -->
-<section class="sec" id="change">
+<!-- ============================== 2. お悩み ============================== -->
+<section class="sec" id="worries">
+  <div class="inner">
+    <p class="head-en rv">Your Feelings</p>
+    <h2 class="head-ja rv">大切と想い合える人に出会いたい</h2>
+    <ul class="worry-list">
+      <li class="rv">このままでいいのか、どこかに迷いがある</li>
+      <li class="rv">相手に気を使っているのに、空回りしてしまう</li>
+      <li class="rv">婚活用の自分をつくりたくない</li>
+      <li class="rv">この人だと思える人に、出会えない</li>
+    </ul>
+    <p class="worry-answer rv">「このままでいいのか」<br class="sp-only">そんな漠然としたモヤモヤを手放しませんか？</p>
+  </div>
+</section>
+
+<!-- ============================== 3. ハルカゼで起きる変化 ============================== -->
+<section class="sec sec--flush" id="change">
   <div class="inner">
     <p class="head-en rv">Change</p>
     <h2 class="head-ja rv">ハルカゼで起きる変化</h2>
     <ul class="chg-list">
-      <li class="chg rv">
-        <p class="chg-before">婚活用の自分をつくりたくない</p>
-        <span class="chg-arrow" aria-hidden="true">↓</span>
-        <p class="chg-after">飾らない自分のままで、ちゃんと魅力が伝わる</p>
-        <p class="chg-desc">自分の強みを言葉にして、似合う服・写真・プロフィールで見える形にします。</p>
-      </li>
-      <li class="chg rv">
-        <p class="chg-before">相手に気を使っているのに、空回りしてしまう</p>
-        <span class="chg-arrow" aria-hidden="true">↓</span>
-        <p class="chg-after">無理に合わせなくても、自然に会話が続く</p>
-        <p class="chg-desc">「気を使う」を「伝わる」に変える、伝え方のコツを一緒に練習します。</p>
-      </li>
-      <li class="chg rv">
-        <p class="chg-before">この人だと思える人に、出会えない</p>
-        <span class="chg-arrow" aria-hidden="true">↓</span>
-        <p class="chg-after">自分の軸がわかって、「この人かも」に気づける</p>
-        <p class="chg-desc">「なんとなく違う」の理由を言葉にして、出会いをすぐに手放さないようにします。</p>
-      </li>
-      <li class="chg rv">
-        <p class="chg-before">このままでいいのか、どこかに迷いがある</p>
-        <span class="chg-arrow" aria-hidden="true">↓</span>
-        <p class="chg-after">迷っても、自分で決められる</p>
-        <p class="chg-desc">定期面談とLINEで、迷うたびに気持ちを整理。最後は、自分で選べるように。</p>
-      </li>
+      <li class="chg rv"><span class="chg-no">01</span>飾らない自分のままで、ちゃんと魅力が伝わる</li>
+      <li class="chg rv"><span class="chg-no">02</span>無理に合わせなくても、自然に会話が続く</li>
+      <li class="chg rv"><span class="chg-no">03</span>自分の軸がわかって、「この人かも」に気づける</li>
+      <li class="chg rv"><span class="chg-no">04</span>自分に人生プランを見つけられる</li>
     </ul>
   </div>
 </section>
 
-<!-- ============================== 3. ハルカゼでできること（STEPS） ============================== -->
+<!-- ============================== 4. ハルカゼのサポート（STEPS） ============================== -->
 <section class="sec sec--flush" id="steps">
   <div class="inner">
     <p class="head-en rv">Steps</p>
-    <h2 class="head-ja rv">ハルカゼでできること</h2>
+    <h2 class="head-ja rv">ハルカゼのサポート</h2>
     <ol class="step-list">
       <li class="step rv">
         <p class="step-no">STEP<b>1</b></p>
@@ -554,6 +576,7 @@ ul, ol { list-style: none; }
             <li><b>婚活プラン作成</b>：いつまでに、どんな人と、どう動くか。あなたに合った進め方を一緒に決めます</li>
           </ul>
         </div>
+        <div class="ph step-img"><img src="newimages/step-1-online.jpg" alt="オンラインで面談する女性" loading="lazy"><span class="ph-label">PHOTO</span></div>
       </li>
       <li class="step rv">
         <p class="step-no">STEP<b>2</b></p>
@@ -568,18 +591,20 @@ ul, ol { list-style: none; }
             <li><b>プロフィール作成</b>：あなたの言葉を活かしながら、人柄が伝わる文章に仕上げます</li>
           </ul>
         </div>
+        <div class="ph step-img"><img src="newimages/step-2-photo.jpg" alt="プロフィール写真の撮影" loading="lazy"><span class="ph-label">PHOTO</span></div>
       </li>
       <li class="step rv">
         <p class="step-no">STEP<b>3</b></p>
         <div>
           <h3 class="step-ttl">数を気にせず、「この人かも」に気づける</h3>
-          <p class="step-lead">申し込みの上限を気にしなくていいから、気になる人には迷わず会えます。</p>
+          <p class="step-lead">申し込みの上限を気にしなくていいから、出会いのチャンスに制限をかけない。</p>
           <ul class="svc-list">
             <li><b>IBJの10万人以上から出会える</b>：お見合い料や申し込み数の上限がないので、気になる人に気軽に申し込めます</li>
             <li><b>お見合い・交際サポート</b>：お見合いの前後に振り返り、「なんとなく違う」の理由を一緒に確かめます</li>
             <li><b>伝える技術レッスン</b>：気を使いすぎず、自然に会話が続く話し方・聞き方を練習します</li>
           </ul>
         </div>
+        <div class="ph step-img"><img src="newimages/step-3-ibj-app.jpg" alt="IBJのアプリでお相手を探す男性" loading="lazy"><span class="ph-label">PHOTO</span></div>
       </li>
     </ol>
     <a class="btn-line btn-line--fill rv" href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer">無料相談を予約する</a>
@@ -896,7 +921,7 @@ ul, ol { list-style: none; }
       <nav class="ft-nav" aria-label="フッターメニュー">
         <a href="#change">ハルカゼで起きる変化</a>
         <a href="#course">料金</a>
-        <a href="#steps">ハルカゼでできること</a>
+        <a href="#steps">ハルカゼのサポート</a>
         <a href="#flow">ご入会までの流れ</a>
         <a href="harukaze-lab.html">ハルカゼLAB</a>
         <a href="#faq">よくある質問</a>
