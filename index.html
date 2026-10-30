@@ -192,18 +192,21 @@ ul, ol { list-style: none; }
   color: #1B2A4A; /* 濃いネイビー。文字に効果は付けない */
 }
 .mv-catch span { display: block; white-space: nowrap; }
+/* サブコピー・IBJの行・予約ボタンは写真の下部に */
+.mv-foot { position: absolute; z-index: 2; left: var(--gutter); bottom: clamp(32px, 5vw, 56px); }
 .mv-sub { /* サブコピーはメインより小さく、細い線で区切る */
-  margin-top: clamp(20px, 2.4vw, 30px); padding-top: clamp(16px, 2vw, 22px); border-top: 1px solid var(--accent);
+  padding-top: clamp(14px, 1.8vw, 20px); border-top: 1px solid var(--accent);
   font-size: var(--fs-body); line-height: 1.9; letter-spacing: .06em; color: var(--ink);
 }
 .mv-co { margin-top: 12px; font-size: .85em; color: var(--ink-mid); letter-spacing: .06em; } /* IBJの行は小さめに */
-.mv-body .mv-cta { margin-top: clamp(20px, 2.4vw, 30px); }
+.mv-foot .mv-cta { margin-top: clamp(18px, 2.2vw, 26px); }
 @media (max-width: 720px) {
   .mv { height: 720px; }
-  .mv::after { background: linear-gradient(180deg, rgba(255,250,251,.95) 0%, rgba(253,243,246,.8) 45%, rgba(253,243,246,0) 72%); } /* 文字のある上側を淡く、2人が写る下側は写真のまま */
+  .mv::after { background: linear-gradient(180deg, rgba(255,250,251,.95) 0%, rgba(253,243,246,.6) 26%, rgba(253,243,246,0) 40%, rgba(253,243,246,0) 52%, rgba(253,243,246,.85) 70%, rgba(255,250,251,.95) 100%); } /* 文字のある上と下を淡く、2人が写る真ん中は写真のまま */
   .mv-photo .ph .ph-label { left: 0; bottom: 45%; }
   .mv-photo .ph > img { object-position: 62% center; } /* スマホでは2人が画面に入る位置で切り抜く */
   .mv-body { top: calc(20px + 44px + 16px + 24px); right: var(--gutter); }
+  .mv-foot { right: var(--gutter); bottom: 28px; }
   .mv-catch { font-size: min(6.2vw, 34px); } /* 1行目（13文字）がスマホ幅に収まる大きさ */
 }
 
@@ -489,6 +492,9 @@ ul, ol { list-style: none; }
       <span>選ばれるためじゃなく、</span>
       <span>自分らしさで出会う婚活。</span>
     </h1>
+  </div>
+  <!-- サブコピー以降は画面の下に -->
+  <div class="mv-foot">
     <p class="mv-sub">自分の魅力を知って、活かして、相手に伝わるまで。<br>ハルカゼが、一緒に進みます。</p>
     <p class="mv-co">IBJ正規加盟店｜大阪・北摂・吹田／オンライン全国対応</p>
     <a class="btn-line btn-line--fill mv-cta" href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer">無料相談を予約する</a>
