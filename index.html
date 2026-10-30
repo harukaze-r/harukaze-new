@@ -243,7 +243,7 @@ ul, ol { list-style: none; }
    HARUKAZE LAB
    ============================================================ */
 .lab-banner {
-  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); margin-top: 32px;
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); max-width: 880px; margin-bottom: clamp(56px, 7vw, 80px);
   background: var(--white); border: 1px solid #E2DCDE; border-radius: 10px; overflow: hidden;
 }
 .lab-banner:hover { opacity: 1; box-shadow: 0 16px 36px -24px rgba(46,43,44,.4); }
@@ -629,15 +629,6 @@ ul, ol { list-style: none; }
           <p class="ask-big">「結婚相談所で出会って、本当にうまくいく？」</p>
           <p>そんな不安にも、ちゃんと向き合います。</p>
         </div>
-        <!-- IBJ結婚みらい研究所（別タブで開く） -->
-        <a class="lab-banner rv" href="https://www.ibjapan.jp/mirai-lab/" target="_blank" rel="noopener">
-          <div class="ph"><img src="newimages/banner-konkatsu-data.jpg" alt="" loading="lazy"><span class="ph-label">BANNER<small>バナー画像</small></span></div>
-          <div class="lab-banner-body">
-            <p class="q">成婚までの期間は？ どんな人が結婚している？</p>
-            <p class="sub">婚活のリアルを、データで見る</p>
-            <p class="src">IBJ結婚みらい研究所 →</p>
-          </div>
-        </a>
         <p class="lab-text rv">ハルカゼの婚活は、出会って終わりではありません。<br>結婚したあとの暮らしまで考えて、それぞれの分野の専門コーチに相談できます。</p>
         <h3 class="lab-sub rv">こんなことを相談できます</h3>
         <ul class="coaches">
@@ -815,6 +806,21 @@ ul, ol { list-style: none; }
         <p class="flow-txt">STEP 1の価値観整理から、一緒に始めます。</p>
       </li>
     </ol>
+  </div>
+</section>
+
+<!-- ============================== 今どきの婚活事情（IBJ結婚みらい研究所のバナー） ============================== -->
+<section class="sec sec--flush" id="data">
+  <div class="inner">
+    <!-- 別タブで開く -->
+    <a class="lab-banner rv" href="https://www.ibjapan.jp/mirai-lab/" target="_blank" rel="noopener">
+      <div class="ph"><img src="newimages/banner-konkatsu-data.jpg" alt="" loading="lazy"><span class="ph-label">BANNER<small>バナー画像</small></span></div>
+      <div class="lab-banner-body">
+        <p class="q">成婚までの期間は？ どんな人が結婚している？</p>
+        <p class="sub">婚活のリアルを、データで見る</p>
+        <p class="src">IBJ結婚みらい研究所 →</p>
+      </div>
+    </a>
   </div>
 </section>
 
