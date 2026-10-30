@@ -201,6 +201,7 @@ ul, ol { list-style: none; }
   .mv { height: 720px; }
   .mv::after { background: linear-gradient(180deg, rgba(253,243,246,0) 22%, rgba(253,243,246,.75) 50%, rgba(255,250,251,.95) 100%); }
   .mv-photo .ph .ph-label { left: 0; bottom: 45%; }
+  .mv-photo .ph > img { object-position: 62% center; } /* スマホでは2人が画面に入る位置で切り抜く */
   .mv-body { top: auto; bottom: 48px; transform: none; right: var(--gutter); }
   .mv-catch { font-size: min(6.2vw, 34px); } /* 1行目（13文字）がスマホ幅に収まる大きさ */
 }
@@ -479,7 +480,7 @@ ul, ol { list-style: none; }
 <header class="mv" id="top">
   <div class="mv-photo">
     <!-- 写真差し替え：<img src="newimages/xxx.jpg" alt=""> を .ph の中に追加 -->
-    <div class="ph"><img src="newimages/priscilla-du-preez-rf5U-IXqxzg-unsplash.jpg" alt=""><span class="ph-label">MAIN PHOTO<small>メイン写真</small></span></div>
+    <div class="ph"><img src="newimages/ibj-network.png" alt=""><span class="ph-label">MAIN PHOTO<small>メイン写真</small></span></div>
   </div>
   <a class="mv-logo" href="#top"><img src="newimages/logo-harukaze-header.jpg" alt="結婚相談所ハルカゼ harukaze"></a>
   <div class="mv-body">
