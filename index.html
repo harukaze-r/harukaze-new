@@ -205,13 +205,14 @@ ul, ol { list-style: none; }
 }
 .mv-co { margin-top: 12px; font-size: .85em; color: var(--ink-mid); letter-spacing: .06em; } /* IBJの行は小さめに */
 .mv-foot .mv-cta { margin-top: clamp(18px, 2.2vw, 26px); }
+/* スマホは写真を引き伸ばさず、元の縦横比のまま横幅いっぱいに。キャッチは写真の上、サブコピーとボタンは写真の下 */
 @media (max-width: 720px) {
-  .mv { height: 720px; }
-  .mv::after { background: linear-gradient(180deg, rgba(250,251,252,.95) 0%, rgba(246,248,250,.6) 26%, rgba(246,248,250,0) 40%, rgba(246,248,250,0) 52%, rgba(246,248,250,.85) 70%, rgba(250,251,252,.95) 100%); } /* 文字のある上と下を淡く、2人が写る真ん中は写真のまま */
-  .mv-photo .ph .ph-label { left: 0; bottom: 45%; }
-  .mv-photo .ph > img { object-position: 62% center; } /* スマホでは2人が画面に入る位置で切り抜く */
-  .mv-body { top: calc(20px + 44px + 16px + 24px); right: var(--gutter); }
-  .mv-foot { right: var(--gutter); bottom: 28px; }
+  .mv { height: auto; display: flex; flex-direction: column; }
+  .mv::after { display: none; }
+  .mv-photo { position: relative; inset: auto; order: 2; aspect-ratio: 816 / 453; }
+  .mv-photo .ph .ph-label { left: 0; }
+  .mv-body { position: static; order: 1; padding: calc(20px + 44px + 16px + 24px) var(--gutter) 24px; }
+  .mv-foot { position: static; order: 3; padding: 24px var(--gutter) 44px; }
   .mv-catch { font-size: min(6.2vw, 34px); } /* 1行目（13文字）がスマホ幅に収まる大きさ */
 }
 
