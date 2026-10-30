@@ -113,6 +113,7 @@ ul, ol { list-style: none; }
 }
 @media (max-width: 590px) { .head-ja { letter-spacing: .08em; } }
 /* キーフレーズのマーカー */
+.head-en--wave::after { margin-top: 0; }
 .mk { background: linear-gradient(transparent 60%, rgba(233, 96, 154, .22) 60%); }
 .lead { max-width: 760px; margin-top: 28px; }
 .lead p + p { margin-top: 1em; }
@@ -292,9 +293,9 @@ ul, ol { list-style: none; }
 .lab-banner .src { margin-top: 14px; font-size: .9em; color: var(--accent-deep); letter-spacing: .06em; }
 @media (max-width: 720px) { .lab-banner { grid-template-columns: 1fr; } .lab-banner .ph { min-height: 0; aspect-ratio: 16 / 9; } }
 
-.lab-emblem { width: 120px; } /* 以前（360px）の3分の1 */
+.lab-emblem { width: 240px; }
 .lab-emblem svg { display: block; width: 100%; height: auto; }
-.lab-support { display: grid; grid-template-columns: 120px 1fr; gap: clamp(40px, 6vw, 80px); margin-top: clamp(36px, 5vw, 56px); }
+.lab-support { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: clamp(40px, 6vw, 80px); margin-top: clamp(36px, 5vw, 56px); }
 .lab-lead .ask-big { font-size: calc(var(--fs-title) * .8); font-weight: 500; line-height: 1.6; letter-spacing: .04em; }
 .lab-lead p + p { margin-top: .4em; }
 .lab-text { margin-top: 36px; }
@@ -308,7 +309,7 @@ ul, ol { list-style: none; }
 .coach .nm { font-size: var(--fs-note); line-height: 1.6; margin-top: 4px; }
 .coach .nm .role { display: block; margin-top: 2px; color: var(--ink-mid); line-height: 1.5; }
 .coach .ask { margin-top: 10px; font-size: .92em; line-height: 1.7; }
-@media (max-width: 800px) { .lab-support { grid-template-columns: 1fr; } .lab-emblem { width: 140px; } }
+@media (max-width: 800px) { .lab-support { grid-template-columns: 1fr; } .lab-emblem { width: 240px; } }
 @media (max-width: 560px) {
   .coaches { grid-template-columns: 1fr; row-gap: 32px; }
   .coach { border-right: 1px solid var(--rule); display: grid; grid-template-columns: 96px 1fr; gap: 0 20px; align-items: center; }
@@ -618,7 +619,7 @@ ul, ol { list-style: none; }
 <!-- ============================== 4. ハルカゼLAB ============================== -->
 <section class="sec sec--flush" id="lab">
   <div class="inner">
-    <p class="head-en rv">Harukaze LAB</p>
+    <p class="head-en head-en--wave rv" aria-hidden="true"></p><!-- 英字は入れず、波線だけ -->
     <h2 class="head-ja rv">選んだ人と、<br class="sp-only">ずっと笑っていたい</h2>
     <div class="lab-support">
       <!-- ハルカゼLAB のロゴ風エンブレム（紺地・ピンクの曲線・グラデーションの LAB） -->
