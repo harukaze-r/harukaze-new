@@ -182,7 +182,8 @@ ul, ol { list-style: none; }
 }
 .mv-logo img { height: clamp(44px, 5vw, 60px); width: auto; }
 @media (min-width: 721px) { .mv-logo img { height: clamp(88px, 10vw, 120px); } } /* PCでは2倍の大きさ（最大120px） */
-.mv-body { position: absolute; z-index: 2; left: var(--gutter); top: 57%; transform: translateY(-50%); color: #1B2A4A; } /* ロゴと重ならないよう、中央より少し下 */
+/* キャッチは写真上部の明るい空に置く（ロゴのすぐ下から） */
+.mv-body { position: absolute; z-index: 2; left: var(--gutter); top: calc(clamp(20px, 3vw, 32px) + clamp(88px, 10vw, 120px) + 16px + clamp(24px, 3vw, 40px)); color: #1B2A4A; }
 /* キャッチコピーだけは本文の2サイズとは別の、大きく印象的な書体とサイズ */
 .mv-catch {
   font-family: 'Shippori Mincho B1', var(--f-serif); font-weight: 500;
@@ -199,10 +200,10 @@ ul, ol { list-style: none; }
 .mv-body .mv-cta { margin-top: clamp(20px, 2.4vw, 30px); }
 @media (max-width: 720px) {
   .mv { height: 720px; }
-  .mv::after { background: linear-gradient(180deg, rgba(253,243,246,0) 22%, rgba(253,243,246,.75) 50%, rgba(255,250,251,.95) 100%); }
+  .mv::after { background: linear-gradient(180deg, rgba(255,250,251,.95) 0%, rgba(253,243,246,.8) 45%, rgba(253,243,246,0) 72%); } /* 文字のある上側を淡く、2人が写る下側は写真のまま */
   .mv-photo .ph .ph-label { left: 0; bottom: 45%; }
   .mv-photo .ph > img { object-position: 62% center; } /* スマホでは2人が画面に入る位置で切り抜く */
-  .mv-body { top: auto; bottom: 48px; transform: none; right: var(--gutter); }
+  .mv-body { top: calc(20px + 44px + 16px + 24px); right: var(--gutter); }
   .mv-catch { font-size: min(6.2vw, 34px); } /* 1行目（13文字）がスマホ幅に収まる大きさ */
 }
 
