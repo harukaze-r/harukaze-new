@@ -386,11 +386,11 @@ ul, ol { list-style: none; }
 /* ============================================================
    FLOW — 成婚までの5ステップ（番号を細い線でつないだ流れ）
    ============================================================ */
-.flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 44px; position: relative; }
+.flow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; margin-top: 44px; position: relative; }
 .flow::before { /* 番号どうしをつなぐ線 */
   content: ''; position: absolute; left: 0; right: 0; top: calc(var(--fs-title) * .6); height: 1px; background: var(--rule);
 }
-.flow-step { position: relative; padding-right: 32px; }
+.flow-step { position: relative; padding-right: 20px; }
 .flow-no {
   position: relative; display: inline-block; padding-right: 12px; background: var(--bg);
   font-family: var(--f-latin); font-size: var(--fs-title); line-height: 1.2; color: var(--accent);
@@ -519,7 +519,7 @@ ul, ol { list-style: none; }
     <li><a href="#lab"><span class="en">LAB</span>ハルカゼLAB</a></li>
     <li><a href="#profile"><span class="en">PROFILE</span>代表紹介</a></li>
     <li><a href="#course"><span class="en">PRICE</span>料金</a></li>
-    <li><a href="#flow"><span class="en">FLOW</span>ご入会までの流れ</a></li>
+    <li><a href="#flow"><span class="en">FLOW</span>成婚までの5ステップ</a></li>
     <li><a href="#faq"><span class="en">FAQ</span>よくある質問</a></li>
     <li><a href="#blog"><span class="en">BLOG</span>ハルカゼの婚活ノート</a></li>
     <li class="menu-cta"><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer"><span class="en">RESERVATION</span>無料相談を予約する</a></li>
@@ -821,11 +821,11 @@ ul, ol { list-style: none; }
   </div>
 </section>
 
-<!-- ============================== 7. ご入会までの流れ ============================== -->
+<!-- ============================== 7. 成婚までの5ステップ ============================== -->
 <section class="sec sec--flush" id="flow">
   <div class="inner">
     <p class="head-en rv">Flow</p>
-    <h2 class="head-ja rv">ご入会までの流れ</h2>
+    <h2 class="head-ja rv">成婚までの5ステップ</h2>
     <ol class="flow">
       <li class="flow-step rv">
         <p class="flow-no">01</p>
@@ -849,10 +849,21 @@ ul, ol { list-style: none; }
       </li>
       <li class="flow-step rv">
         <p class="flow-no">03</p>
-        <h3 class="flow-ttl">活動スタート</h3>
-        <p class="flow-txt">STEP 1の価値観整理から、一緒に始めます。</p>
+        <h3 class="flow-ttl">お見合い開始</h3>
+        <p class="flow-txt">IBJ 10万名超からマッチング。事前準備を徹底サポート</p>
+      </li>
+      <li class="flow-step rv">
+        <p class="flow-no">04</p>
+        <h3 class="flow-ttl">プレ交際・本交際</h3>
+        <p class="flow-txt">定期面談で関係の深め方を伴走。悩みをすぐに相談できる</p>
+      </li>
+      <li class="flow-step rv">
+        <p class="flow-no">05</p>
+        <h3 class="flow-ttl">成婚・卒業</h3>
+        <p class="flow-txt">プロポーズのタイミングや準備もサポート</p>
       </li>
     </ol>
+    <a class="link-more rv" href="flow.html">成婚までの流れを詳しく見る</a>
   </div>
 </section>
 
@@ -945,7 +956,7 @@ ul, ol { list-style: none; }
         <a href="#change">ハルカゼで起きる変化</a>
         <a href="#course">料金</a>
         <a href="#steps">ハルカゼのサポート</a>
-        <a href="#flow">ご入会までの流れ</a>
+        <a href="#flow">成婚までの5ステップ</a>
         <a href="harukaze-lab.html">ハルカゼLAB</a>
         <a href="#faq">よくある質問</a>
         <a href="#profile">代表紹介</a>
