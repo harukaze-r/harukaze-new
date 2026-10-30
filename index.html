@@ -388,13 +388,13 @@ ul, ol { list-style: none; }
 
 /* モニター募集のお知らせ（参考サイトの配色：淡いスカイブルーの地・くすんだブルー・墨色の文字） */
 .monitor {
-  --m-bg: #EFF5F8; --m-blue: #A3C5D5; --m-deep: #4E7284; --m-ink: #4A4B45; --m-line: #D5D8D6; --m-mint: #B3E3E0;
+  --m-bg: #EFF5F8; --m-blue: #A3C5D5; --m-deep: #4E7284; --m-ink: #4A4B45; --m-line: #D5D8D6; --m-mint: #B3E3E0; --m-navy: #1B2A4A; /* MONITOR と見出しはメインのキャッチと同じネイビー */
   margin-top: 28px; padding: clamp(28px, 4vw, 48px); border: 1px solid var(--m-blue); border-radius: 10px;
   background: var(--m-bg); color: var(--m-ink);
 }
 .monitor-head { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 16px; }
-.monitor-head .lbl { width: 100%; font-family: var(--f-latin); letter-spacing: .16em; color: var(--m-deep); }
-.monitor-ttl { font-size: var(--fs-title); font-weight: 500; letter-spacing: .06em; line-height: 1.5; color: var(--m-ink); }
+.monitor-head .lbl { width: 100%; font-family: var(--f-latin); letter-spacing: .16em; color: var(--m-navy); }
+.monitor-ttl { font-size: var(--fs-title); font-weight: 500; letter-spacing: .06em; line-height: 1.5; color: var(--m-navy); }
 .monitor-badge { padding: 2px 14px; border-radius: 999px; background: var(--m-deep); color: #fff; letter-spacing: .1em; }
 .monitor-table { max-width: 560px; margin-top: 24px; border-top-color: var(--m-line); }
 .monitor-table div { border-bottom-color: var(--m-line); }
