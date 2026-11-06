@@ -211,7 +211,11 @@ ul, ol { list-style: none; }
   .mv::after { display: none; }
   .mv-photo { position: relative; inset: auto; order: 2; aspect-ratio: 816 / 453; }
   .mv-photo .ph .ph-label { left: 0; }
-  .mv-body { position: static; order: 1; padding: calc(20px + 58px + 16px + 24px) var(--gutter) 24px; }
+  /* ロゴは2倍（116px）。右上のメニューボタンと重ならないよう、狭い画面では画面幅に合わせて少し小さく */
+  .mv { --logo-h: min(116px, calc((100vw - 100px) * .43)); }
+  .mv-logo { top: 16px; left: 12px; padding: 4px 6px; }
+  .mv-logo img { height: var(--logo-h); }
+  .mv-body { position: static; order: 1; padding: calc(16px + var(--logo-h) + 8px + 24px) var(--gutter) 24px; }
   .mv-foot { position: static; order: 3; padding: 24px var(--gutter) 44px; }
   .mv-catch { font-size: min(6.2vw, 34px); } /* 1行目（13文字）がスマホ幅に収まる大きさ */
 }
