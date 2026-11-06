@@ -272,7 +272,7 @@ ul, ol { list-style: none; }
 .step-sum:hover .step-ttl { opacity: .75; }
 .step-no { flex-shrink: 0; width: 2.2em; font-family: var(--f-latin); font-size: calc(var(--fs-title) * 1.5); line-height: 1; color: var(--accent); }
 .step-ttl { font-size: var(--fs-title); font-weight: 500; line-height: 1.6; letter-spacing: .05em; }
-.step-ttl small { font-size: .6em; letter-spacing: .04em; color: var(--ink-mid); }
+.step-ttl small { display: block; font-size: max(.6em, 12px); line-height: 1.4; letter-spacing: .04em; color: var(--ink-mid); } /* （コースによって）は改行して添える */
 .step-toggle { position: absolute; right: 4px; top: 50%; width: 26px; height: 26px; margin-top: -13px; border: 1px solid var(--accent); border-radius: 50%; }
 .step-toggle::before, .step-toggle::after { content: ''; position: absolute; left: 7px; top: 12px; width: 10px; height: 1px; background: var(--accent); transition: transform .3s; }
 .step-toggle::after { transform: rotate(90deg); }
@@ -291,6 +291,7 @@ ul, ol { list-style: none; }
 @media (max-width: 720px) {
   .step-body { grid-template-columns: 1fr; padding-left: 0; gap: 16px; }
   .step-no { width: 1.8em; font-size: calc(var(--fs-title) * 1.3); }
+  .step-ttl { font-size: 17px; } /* スマホの項目名 */
 }
 
 /* 「→ ○○を見る」の文字リンク */
