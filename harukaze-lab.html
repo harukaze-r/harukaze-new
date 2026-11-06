@@ -901,7 +901,18 @@ body { padding-top: 0 !important; }
 .site-nav .nav-links { display: none !important; }
 .site-nav .logo-img img { height: clamp(97px, 11vw, 132px); }
 .site-nav .hamburger-btn { display: flex !important; position: fixed; top: 20px; right: 20px; }
+/* 画面下の固定予約ボタン（トップページと同じ見た目） */
+.float-cta {
+  position: fixed; z-index: 40; right: 20px; bottom: 20px;
+  display: flex; align-items: center; gap: 12px;
+  background: #E9609A; color: #fff; font-family: 'Noto Serif JP', 'Yu Mincho', serif; font-size: 16px; letter-spacing: .06em; line-height: 1.4;
+  padding: 15px 24px; border-radius: 999px; box-shadow: 0 12px 28px -12px rgba(200, 60, 120, .7);
+  transform: translateY(160%); transition: transform .4s;
+}
+.float-cta.is-show { transform: none; }
+.float-cta:hover { opacity: 1; background: #D24B85; color: #fff; }
 @media (max-width: 720px) {
+  .float-cta { left: 12px; right: 12px; bottom: 12px; justify-content: center; font-size: 14px; }
   .site-nav { padding: 16px 12px 8px; }
   .site-nav .logo-img img { height: min(116px, calc((100vw - 100px) * .43)); }
 }
@@ -1175,14 +1186,20 @@ body { padding-top: 0 !important; }
   </div>
 </footer>
 
-<!-- フローティングボタン（モバイルの下部固定バーのみ表示） -->
-<div class="float-side-btns mobile-bottom-only">
-  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn float-side-btn-line">LINEで無料面談を予約</a>
-</div>
+<!-- 画面下の固定予約ボタン（トップページと同じ。少しスクロールすると出てくる） -->
+<a class="float-cta" id="floatCta" href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer"><span>LINEで無料面談を予約</span></a>
 
 <script src="js/common.js"></script>
 <script>
 (function () {
+  /* 固定予約ボタン：画面の7割ほどスクロールしたら出す（トップページと同じ） */
+  var cta = document.getElementById('floatCta');
+  if (cta) {
+    var onScroll = function () { cta.classList.toggle('is-show', window.scrollY > window.innerHeight * 0.7); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
   'use strict';
   /* ハンバーガーメニュー */
   var btn = document.getElementById('hamburgerBtn');
