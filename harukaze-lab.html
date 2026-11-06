@@ -117,6 +117,29 @@
   margin-top: 32px;
 }
 
+/* 上部の画像：文字入りの横長画像なので、切り抜かずに全体を表示 */
+.wlab-top-image { background: #fff; }
+.wlab-top-image img { display: block; width: 100%; height: auto; max-width: 1600px; margin: 0 auto; }
+/* ハルカゼLAB の帯 */
+.wlab-band {
+  display: flex; flex-direction: column; align-items: center;
+  padding: clamp(22px, 3.2vw, 40px) 16px clamp(18px, 2.8vw, 34px);
+  background: #1D2A47;
+}
+.wlab-band-kana {
+  font-family: var(--font-elegant); font-size: clamp(18px, 2.4vw, 30px); line-height: 1.2;
+  letter-spacing: .5em; padding-left: .5em;
+  background: linear-gradient(90deg, #AEB6C1, #DCE1E7); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.wlab-band-lab {
+  font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(64px, 9vw, 124px); line-height: .95; letter-spacing: .04em;
+  background: linear-gradient(90deg, #FBE3EC 0%, #E57FA4 55%, #F6CCDA 100%); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+/* 画像と帯を上に出したので、その下の文章は1列で中央に */
+.wlab-hero--text { min-height: 0; grid-template-columns: 1fr; }
+@media (min-width: 768px) { .wlab-hero--text { grid-template-columns: 1fr; min-height: 0; } }
+.wlab-hero--text .wlab-hero-text { width: 100%; max-width: 760px; margin: 0 auto; }
+
 /* ── CONCEPT ── */
 .wlab-concept {
   background: #fff;
@@ -907,10 +930,18 @@
   <!-- ============================================================
        HERO
        ============================================================ -->
-  <section class="wlab-hero">
-    <div class="wlab-hero-image">
-      <img src="newimages/logo-harukaze-lab.png" alt="ハルカゼLAB">
-    </div>
+  <!-- 上部の画像（コーチ陣の写真とメッセージ） -->
+  <div class="wlab-top-image">
+    <img src="newimages/lab-hero-team.jpg" alt="マッチングの先に、幸せが続く未来へ。私たちがサポートします">
+  </div>
+
+  <!-- ハルカゼLAB の帯（紺地にシルバーの「ハルカゼ」とピンクの「LAB」） -->
+  <div class="wlab-band" role="img" aria-label="ハルカゼLAB">
+    <span class="wlab-band-kana" aria-hidden="true">ハルカゼ</span>
+    <span class="wlab-band-lab" aria-hidden="true">LAB</span>
+  </div>
+
+  <section class="wlab-hero wlab-hero--text">
     <div class="wlab-hero-text">
       <span class="wlab-hero-eyebrow">Harukaze LAB</span>
       <h1 class="wlab-hero-title">「結婚相談所で出会って、<br><span style="color:#F4688A;">本当にうまくいく？</span>」</h1>
