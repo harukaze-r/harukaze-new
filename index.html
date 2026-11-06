@@ -233,6 +233,8 @@ ul, ol { list-style: none; }
 }
 .worries::after { content: ''; position: absolute; inset: 0; z-index: -1; background: rgba(46, 43, 44, .78); }
 .worries .head-en { color: rgba(255, 255, 255, .85); }
+/* 和文のラベル：英字ラベルの3分の2の大きさ */
+.head-en--ja { font-family: var(--f-serif); font-size: calc(var(--fs-title) * 1.15 * 2 / 3); letter-spacing: .12em; text-transform: none; }
 .worries .head-ja { color: #fff; font-weight: 500; }
 .worry-list { display: grid; gap: 10px; max-width: 680px; margin: 36px auto 0; }
 .worry-list li {
@@ -618,8 +620,7 @@ ul, ol { list-style: none; }
 <!-- ============================== 2. お悩み ============================== -->
 <section class="worries" id="worries">
   <div class="inner">
-    <p class="head-en rv">Your Feelings</p>
-    <h2 class="head-ja rv">大切に想い合える人に<br class="sp-only">出会いたい</h2>
+    <h2 class="head-en head-en--ja rv">こんな気持ちありませんか？</h2>
     <ul class="worry-list">
       <li class="rv">このままでいいのか、どこかに迷いがある</li>
       <li class="rv">相手に気を使っているのに、空回りしてしまう</li>
