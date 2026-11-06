@@ -180,8 +180,6 @@ ul, ol { list-style: none; }
 .mv-slides > img { opacity: 0; transition: opacity 1.6s ease; }
 .mv-slides > img.is-active { opacity: 1; }
 @media (prefers-reduced-motion: reduce) { .mv-slides > img { transition: none; } }
-/* PCではキャッチが左に重なるので、人物が左にいる写真は左右反転して右側に寄せる */
-@media (min-width: 721px) { .mv-slides > img.mv-flip { transform: scaleX(-1); } }
 .mv::after { /* 写真の左側だけ、白に近いごく淡いピンクを重ねて文字を読みやすく（写真の雰囲気は残す） */
   content: ''; position: absolute; inset: 0; pointer-events: none;
   background: linear-gradient(90deg, rgba(250, 251, 252, .92) 0%, rgba(246, 248, 250, .72) 34%, rgba(246, 248, 250, 0) 64%);
@@ -595,7 +593,7 @@ ul, ol { list-style: none; }
     <div class="ph mv-slides">
       <img class="is-active" src="newimages/ibj-network.png" alt="">
       <img src="newimages/hero-2.jpg" alt="" loading="lazy">
-      <img class="mv-flip" src="newimages/hero-3.jpg" alt="" loading="lazy">
+      <img src="newimages/hero-3.jpg" alt="" loading="lazy">
     </div>
   </div>
   <a class="mv-logo" href="#top"><img src="newimages/logo-harukaze-header.jpg" alt="結婚相談所ハルカゼ harukaze"></a>
