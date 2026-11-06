@@ -411,6 +411,15 @@ ul, ol { list-style: none; }
 .monitor-items li { background: #fff; color: var(--m-deep); border: 1px solid var(--m-line); }
 .monitor .link-more { margin-top: 32px; border-color: var(--m-deep); color: var(--m-deep); }
 .monitor .link-more:hover { background: var(--m-deep); color: #fff; }
+/* 「モニター募集の詳細を見る」を押すと開く詳細 */
+.monitor-more > summary { list-style: none; cursor: pointer; }
+.monitor-more > summary::-webkit-details-marker { display: none; }
+.monitor-more[open] > summary.link-more::after { content: '－'; }
+.monitor-detail { margin-top: 24px; padding: 8px clamp(18px, 3vw, 32px) 24px; background: #fff; border: 1px solid var(--m-line); border-radius: 10px; animation: panelIn .5s ease; }
+.monitor-cond div { display: grid; grid-template-columns: 5em minmax(0, 1fr); gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--m-line); line-height: 1.8; }
+.monitor-cond dt { color: var(--m-deep); }
+.monitor-after { margin-top: 16px; line-height: 1.9; }
+@media (max-width: 480px) { .monitor-cond div { grid-template-columns: 1fr; gap: 2px; } }
 
 /* お見合い料0円・申し込み数の上限なし（目立つ帯） */
 .price-band { display: inline-block; margin-top: 28px; padding: 12px 24px; background: var(--pink); color: #fff; font-size: calc(var(--fs-title) * .8); font-weight: 500; letter-spacing: .06em; line-height: 1.6; }
@@ -877,8 +886,17 @@ ul, ol { list-style: none; }
       <ul class="chips monitor-items">
         <li>プロフィール写真撮影</li><li>プロフィール作成</li><li>ビジョンボード作成</li><li>定期面談12回</li>
       </ul>
-      <!-- 詳細ページができたら、リンク先を差し替え -->
-      <a class="link-more" href="#">モニター募集の詳細を見る</a>
+      <!-- ボタンを押すと、この下に詳細が開く -->
+      <details class="monitor-more">
+        <summary class="link-more">モニター募集の詳細を見る</summary>
+        <div class="monitor-detail">
+          <dl class="monitor-cond">
+            <div><dt>条件</dt><dd>「結婚したい」意思のある方<br>顔出しなしで面談時の写真撮影（オンラインを含む）にご協力いただける方</dd></div>
+            <div><dt>エリア</dt><dd>特にありません</dd></div>
+          </dl>
+          <p class="monitor-after">モニターサポート期間を過ぎて以降も活動いただける方は、成婚退会料はなし・月会費を特別価格にてご案内させていただきます。</p>
+        </div>
+      </details>
     </div>
   </div>
 </section>
