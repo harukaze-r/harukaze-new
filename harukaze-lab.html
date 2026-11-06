@@ -886,6 +886,26 @@
 }
 </style>
 <link rel="stylesheet" href="css/menu.css">
+<style>
+/* ============================================================
+   ヘッダーをトップページ（index.html）と同じ形に
+   左上に白い枠のロゴ（スクロールで流れる）、右上に丸いメニューボタン（常に表示）
+   ============================================================ */
+body { padding-top: 0 !important; }
+.site-nav {
+  position: relative; height: auto !important; justify-content: flex-start;
+  padding: clamp(20px, 3vw, 32px) clamp(20px, 6vw, 70px) clamp(12px, 2vw, 20px);
+  background: #fff; border-bottom: 0; box-shadow: none !important;
+  backdrop-filter: none; -webkit-backdrop-filter: none;
+}
+.site-nav .nav-links { display: none !important; }
+.site-nav .logo-img img { height: clamp(97px, 11vw, 132px); }
+.site-nav .hamburger-btn { display: flex !important; position: fixed; top: 20px; right: 20px; }
+@media (max-width: 720px) {
+  .site-nav { padding: 16px 12px 8px; }
+  .site-nav .logo-img img { height: min(116px, calc((100vw - 100px) * .43)); }
+}
+</style>
 </head>
 <body>
 
@@ -911,17 +931,17 @@
 
 <!-- モバイルオーバーレイ -->
 <div class="mobile-nav-overlay hz-menu" id="mobileNavOverlay">
-  <!-- トップページ（index.html）と同じメニュー。見た目は css/menu.css -->
+  <!-- トップページ（index.html）と同じメニュー項目。見た目は css/menu.css -->
   <button class="mobile-nav-close" id="mobileNavClose" aria-label="メニューを閉じる"><span></span><span></span></button>
   <ul class="hz-menu-list">
-    <li><a href="index.html#steps"><span class="en">STEPS</span>婚活の進め方</a></li>
-    <li><a href="index.html#lab"><span class="en">LAB</span>ハルカゼLAB</a></li>
-    <li><a href="index.html#profile"><span class="en">PROFILE</span>代表紹介</a></li>
-    <li><a href="index.html#course"><span class="en">COURSE</span>料金プラン</a></li>
-    <li><a href="index.html#flow"><span class="en">FLOW</span>成婚までの流れ</a></li>
-    <li><a href="blog.html"><span class="en">BLOG</span>婚活ノート</a></li>
+    <li><a href="index.html#steps"><span class="en">STEPS</span>サポート</a></li>
+    <li><a href="harukaze-lab.html"><span class="en">LAB</span>ハルカゼLAB</a></li>
+    <li><a href="index.html#profile"><span class="en">MESSAGE</span>メッセージ</a></li>
+    <li><a href="index.html#course"><span class="en">PRICE</span>料金</a></li>
+    <li><a href="index.html#flow"><span class="en">FLOW</span>成婚までの5ステップ</a></li>
     <li><a href="index.html#faq"><span class="en">FAQ</span>よくある質問</a></li>
-    <li class="menu-cta"><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer"><span class="en">RESERVATION</span>LINEで初回無料面談を予約する</a></li>
+    <li><a href="index.html#blog"><span class="en">NOTE</span>婚活note</a></li>
+    <li class="menu-cta"><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer"><span class="en">RESERVATION</span>無料相談を予約する</a></li>
   </ul>
 </div>
 
