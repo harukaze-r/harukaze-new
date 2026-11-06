@@ -3,719 +3,1217 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>結婚相談所ハルカゼ｜いい奴で、終わらせない。</title>
-<link rel="icon" href="newimages/使用ロゴ.jpeg">
-<meta property="og:image" content="newimages/h. (1).png">
-<meta property="og:title" content="結婚相談所ハルカゼ｜いい奴で、終わらせない。">
-<meta property="og:description" content="正直、損してない？その誠実さ。伝え方を変えるだけで、出会いは変わる。">
-<meta property="og:type" content="website">
-<link rel="stylesheet" href="css/common.css">
+<title>結婚相談所ハルカゼ｜人生に新しい風を吹かす</title>
+<meta name="description" content="マッチングの先に、しあわせが続く未来へ。自分らしさで出会う婚活。自分の魅力を知って、活かして、相手に伝わるまで。IBJ正規加盟店の結婚相談所ハルカゼ（大阪・北摂・吹田／オンライン全国対応）。">
+<link rel="icon" href="newimages/icon-harukaze.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Klee+One:wght@400;600&family=Shippori+Mincho+B1:wght@500;800&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   index.html ページ固有スタイル
+   TOKENS
+   参考：marico-paisen.com（グレー地・細い罫線・ゴールドの英字ラベル）
+   ゴールドの役割を、ロゴの「h」のピンクに置き換えています
    ============================================================ */
+:root {
+  --bg:        #FFFFFF;  /* ページ全体の地色（ヒーロー以降は白） */
+  --white:     #FFFFFF;
+  --ink:       #2E2B2C;  /* 本文 */
+  --ink-mid:   #5E595B;
+  --ink-light: #8F888B;
+  --rule:      #D6D0D2;  /* 罫線 */
+  --accent:    #E0719F;  /* 英字ラベル（ロゴのピンクを少し落ち着かせた色） */
+  --accent-deep: #B83D70;/* 本文中の強調 */
+  --chip:      #E3F0F8;  /* 小さなタグの地色（ピンクの文字が映える、淡いブルー） */
+  --bg-mist:   #EAF4FA;  /* 交互に敷くセクションの地色。ピンク一色に寄らず、男性にも届く爽やかな淡いブルー */
+  --pink:      #E9609A;  /* ロゴの h */
+  --dark-1:    #6A6165;  /* 最下部エリア グラデーション上 */
+  --dark-2:    #3B3839;  /* ロゴの文字色／フッター */
 
-/* ── ヒーロー ── */
-.hero {
-  position: relative;
-  min-height: 100svh;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  margin-top: -64px; /* nav分を引いて全画面に */
-  padding-top: 64px;
-}
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background: url('newimages/IMG_0160.jpeg') right center / 70% auto no-repeat;
-  z-index: 0;
-}
-.hero-bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, rgba(30,58,95,1.00) 0%, rgba(30,58,95,1.00) 32%, rgba(30,58,95,0.50) 55%, rgba(30,58,95,0.00) 100%);
-}
-.hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 700px;
-  padding: 80px 24px;
-  color: #fff;
-}
-.hero-tag { margin-bottom: 20px; }
-.hero-title {
-  font-size: clamp(38px, 8vw, 72px);
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: 0.04em;
-  margin-bottom: 24px;
-}
-.hero-sub {
-  font-size: clamp(15px, 2.2vw, 19px);
-  line-height: 1.9;
-  opacity: 0.92;
-  margin-bottom: 40px;
-}
-.hero-btns {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  align-items: center;
-}
-.hero-link-sub {
-  font-size: 14px;
-  color: rgba(255,255,255,0.85);
-  text-decoration: underline;
-  transition: opacity 0.2s;
-}
-.hero-link-sub:hover { opacity: 0.65; }
+  --f-serif:  'Noto Serif JP', 'Yu Mincho', 'Hiragino Mincho ProN', serif;
+  --f-latin:  'Cormorant Garamond', 'Times New Roman', serif;
+  --f-hand:   'Klee One', 'Noto Serif JP', serif;
 
-/* ── チェックリスト ── */
-.checklist-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-  margin-top: 40px;
-}
-.checklist-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  background: var(--color-white);
-  border: 1px solid var(--color-ice);
-  border-radius: 12px;
-  padding: 20px 22px;
-  transition: box-shadow 0.2s;
-}
-.checklist-item:hover { box-shadow: 0 4px 16px rgba(30,58,95,0.08); }
-.check-icon {
-  width: 28px;
-  height: 28px;
-  min-width: 28px;
-  border-radius: 50%;
-  background: var(--color-pink);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 1px;
-}
-.check-icon svg { width: 14px; height: 14px; }
-.checklist-text { font-size: 15px; line-height: 1.7; }
+  /* 文字サイズは2種類だけ：見出し（--fs-title）と、それ以外すべて（--fs-body） */
+  --fs-title: 26px;
+  --fs-body:  16px;
+  /* 下は旧名。すべて上の2つのどちらかを指しています */
+  --fs-label: var(--fs-body);
+  --fs-sub:   var(--fs-body);
+  --fs-h4:    var(--fs-body);
+  --fs-note:  var(--fs-body);
+  --fs-small: var(--fs-body);
+  --fs-big:   var(--fs-title);
+  --fs-num:   var(--fs-title);
+  --lh-body:  1.8;
 
-/* ── 診断バナー ── */
-.shindan-wrap {
+  --inner: 1100px;
+  --gutter: clamp(20px, 6vw, 70px);
+  --sec-py: clamp(80px, 10vw, 130px);
+}
+
+@media (max-width: 590px) { :root { --fs-title: 21px; --fs-body: 14px; } }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--f-serif);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  letter-spacing: .04em;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  font-variant-numeric: lining-nums;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; transition: opacity .25s, background .25s, color .25s; }
+a:hover { opacity: .7; }
+ul, ol { list-style: none; }
+
+.inner { max-width: calc(var(--inner) + var(--gutter) * 2); margin: 0 auto; padding: 0 var(--gutter); }
+.sec { padding: var(--sec-py) 0; position: relative; }
+.sec--flush { padding-top: 0; }
+.sec--mist { background: var(--bg-mist); }
+.sec--mist .flow-no { background: var(--bg-mist); } /* 番号の後ろで線を隠す地色をそろえる */
+.pc-only { display: inline; }
+@media (max-width: 720px) { .pc-only { display: none; } }
+.sp-only { display: none; }
+@media (max-width: 720px) { .sp-only { display: inline; } }
+
+/* 未記入の差し込み項目（公開前に書き換え） */
+.todo { background: linear-gradient(transparent 60%, rgba(233, 96, 154, .25) 60%); color: var(--accent-deep); }
+
+/* ============================================================
+   PHOTO PLACEHOLDER — .ph の中に <img> を入れると写真に置き換わります
+   ============================================================ */
+.ph { position: relative; overflow: hidden; background: linear-gradient(160deg, #E4DCDE 0%, #D5CBCE 100%); }
+.ph > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ph-label {
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  font-family: var(--f-latin); font-size: var(--fs-body); letter-spacing: .14em; color: rgba(46, 43, 44, .4); text-align: center;
+}
+.ph-label small { font-family: var(--f-serif); font-size: var(--fs-body); letter-spacing: .06em; }
+.ph > img + .ph-label { display: none; }
+
+/* ============================================================
+   SECTION HEAD — 英字ラベル + 罫線 + 和文見出し（参考サイトと同じ組み方）
+   ============================================================ */
+/* 見出しは中央に：細い英字ラベル → ゆるやかな波線 → 字間を広くとった和文見出し（本文は左揃えのまま） */
+.head-en {
+  font-family: var(--f-latin); font-weight: 400;
+  font-size: calc(var(--fs-title) * 1.15); letter-spacing: .18em; line-height: 1.2;
+  color: var(--ink-mid); text-transform: uppercase; text-align: center;
+}
+.head-en::after { /* 波線 */
+  content: ''; display: block; width: 160px; height: 14px; margin: 16px auto 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 14'%3E%3Cpath d='M2 9 C 32 1, 58 2, 80 7 S 126 13, 158 5' fill='none' stroke='%23E0719F' stroke-width='1.5' stroke-linecap='round' opacity='.75'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.head-ja {
+  font-size: var(--fs-title); font-weight: 400; line-height: 1.8; letter-spacing: .14em; text-align: center;
+  margin-top: clamp(24px, 3vw, 32px);
+}
+@media (max-width: 590px) { .head-ja { letter-spacing: .08em; } }
+/* キーフレーズのマーカー */
+.head-en--wave::after { margin-top: 0; }
+.mk { background: linear-gradient(transparent 60%, rgba(233, 96, 154, .22) 60%); }
+.lead { max-width: 760px; margin-top: 28px; }
+.lead p + p { margin-top: 1em; }
+
+/* 小さなタグ */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips li {
+  font-size: var(--fs-body); line-height: 1.6; letter-spacing: .04em;
+  padding: 3px 11px; border-radius: 999px; background: var(--chip); color: var(--accent-deep);
+}
+
+/* 参考サイトの四角い枠線ボタン（矢印なし） */
+.btn-line {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 260px; padding: 18px 32px; border: 1px solid currentColor; border-radius: 999px;
+  font-size: var(--fs-body); letter-spacing: .06em; margin-top: 44px;
+}
+.btn-line:hover { opacity: 1; background: var(--ink); color: #fff; border-color: var(--ink); }
+.btn-line--fill { background: var(--pink); border-color: var(--pink); color: #fff; }
+.btn-line--fill:hover { background: #D24B85; border-color: #D24B85; }
+.sec .inner > .btn-line { display: flex; width: fit-content; margin-left: auto; margin-right: auto; }
+
+/* 未作成セクションの空き枠 */
+.frame {
+  margin-top: 40px; min-height: 220px; padding: 32px;
+  border: 1px dashed #C9C0C3; border-radius: 10px; background: #FAF8F8;
+  color: var(--ink-light); font-size: var(--fs-note);
+}
+
+/* ============================================================
+   MENU（右上のボタン + 全画面メニュー）
+   ============================================================ */
+.menu-btn {
+  position: fixed; z-index: 60; top: 20px; right: 20px;
+  width: 56px; height: 56px; border-radius: 50%; border: 0; cursor: pointer;
+  background: rgba(255,255,255,.92); box-shadow: 0 4px 18px rgba(46,43,44,.12);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+}
+.menu-btn span { width: 20px; height: 1px; background: var(--ink); transition: transform .3s, opacity .3s; }
+.menu-btn.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-btn.is-open span:nth-child(2) { opacity: 0; }
+.menu-btn.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.menu {
+  position: fixed; inset: 0; z-index: 55; background: rgba(255, 255, 255, .98);
+  display: flex; align-items: center; justify-content: center; padding: 0 var(--gutter);
+  opacity: 0; visibility: hidden; transition: opacity .35s, visibility .35s; overflow-y: auto;
+}
+.menu.is-open { opacity: 1; visibility: visible; }
+.menu ul { display: grid; gap: 14px; padding: 90px 0 40px; }
+.menu a { display: flex; align-items: baseline; gap: 18px; font-size: var(--fs-body); letter-spacing: .1em; }
+.menu a .en { font-family: var(--f-latin); font-size: var(--fs-body); color: var(--accent); letter-spacing: .12em; width: 110px; flex-shrink: 0; }
+.menu .menu-cta { margin-top: 14px; padding-top: 18px; border-top: 1px solid var(--rule); }
+
+/* ============================================================
+   MAIN VISUAL
+   ============================================================ */
+.mv { position: relative; height: clamp(560px, 62vw, 720px); }
+.mv-photo { position: absolute; inset: 0; }
+.mv-photo .ph { width: 100%; height: 100%; background: linear-gradient(160deg, #E8DFE2 0%, #D8CCD0 100%); }
+.mv-photo .ph .ph-label { left: 45%; }
+.mv-slides > img { opacity: 0; transition: opacity 1.6s ease; }
+.mv-slides > img.is-active { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .mv-slides > img { transition: none; } }
+.mv::after { /* 写真の左側だけ、白に近いごく淡いピンクを重ねて文字を読みやすく（写真の雰囲気は残す） */
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(90deg, rgba(250, 251, 252, .92) 0%, rgba(246, 248, 250, .72) 34%, rgba(246, 248, 250, 0) 64%);
+}
+.mv-logo {
+  position: absolute; z-index: 2; top: clamp(20px, 3vw, 32px); left: var(--gutter);
+  background: #fff; padding: 8px 14px; border-radius: 4px;
+}
+.mv-logo img { height: clamp(58px, 6.6vw, 79px); width: auto; } /* スマホ */
+@media (min-width: 721px) { .mv-logo img { height: clamp(97px, 11vw, 132px); } } /* PCでは2倍の大きさ（最大132px） */
+/* キャッチは写真上部の明るい空に置く（ロゴのすぐ下から） */
+.mv-body { position: absolute; z-index: 2; left: var(--gutter); top: calc(clamp(20px, 3vw, 32px) + clamp(97px, 11vw, 132px) + 16px + clamp(24px, 3vw, 40px)); color: #1B2A4A; }
+/* キャッチコピーだけは本文の2サイズとは別の、大きく印象的な書体とサイズ */
+.mv-catch {
+  font-family: 'Shippori Mincho B1', var(--f-serif); font-weight: 500;
+  font-size: clamp(28px, 3.2vw, 46px); line-height: 1.55; letter-spacing: .06em;
+  font-feature-settings: 'palt'; /* 和文の字間を文字ごとに詰める（プロポーショナル詰め） */
+  color: #1B2A4A; /* 濃いネイビー。文字に効果は付けない */
+}
+.mv-catch span { display: block; white-space: nowrap; }
+/* サブコピー・IBJの行・予約ボタンは写真の下部に */
+.mv-foot { position: absolute; z-index: 2; left: var(--gutter); bottom: clamp(32px, 5vw, 56px); }
+.mv-sub { /* サブコピーはメインより小さく、細い線で区切る */
+  padding-top: clamp(14px, 1.8vw, 20px); border-top: 1px solid var(--accent);
+  font-size: var(--fs-body); line-height: 1.9; letter-spacing: .06em; color: var(--ink);
+}
+.mv-co { margin-top: 12px; font-size: .85em; color: var(--ink-mid); letter-spacing: .06em; } /* IBJの行は小さめに */
+.mv-foot .mv-cta { margin-top: clamp(18px, 2.2vw, 26px); }
+/* スマホは写真を引き伸ばさず、元の縦横比のまま横幅いっぱいに。キャッチは写真の上、サブコピーとボタンは写真の下 */
+@media (max-width: 720px) {
+  .mv { height: auto; display: flex; flex-direction: column; }
+  .mv::after { display: none; }
+  .mv-photo { position: relative; inset: auto; order: 2; aspect-ratio: 816 / 453; }
+  .mv-photo .ph .ph-label { left: 0; }
+  /* ロゴは2倍（116px）。右上のメニューボタンと重ならないよう、狭い画面では画面幅に合わせて少し小さく */
+  .mv { --logo-h: min(116px, calc((100vw - 100px) * .43)); }
+  .mv-logo { top: 16px; left: 12px; padding: 4px 6px; }
+  .mv-logo img { height: var(--logo-h); }
+  .mv-body { position: static; order: 1; padding: calc(16px + var(--logo-h) + 8px + 24px) var(--gutter) 24px; }
+  .mv-foot { position: static; order: 3; padding: 24px var(--gutter) 44px; }
+  .mv-catch { font-size: min(6.2vw, 34px); } /* 1行目（13文字）がスマホ幅に収まる大きさ */
+}
+
+/* ============================================================
+   WORRIES — お悩み（暗めのモノクロ写真の上に、チェック付きの半透明カードを縦に並べる）
+   ============================================================ */
+.worries { position: relative; overflow: hidden; color: #fff; isolation: isolate; padding: clamp(56px, 7vw, 88px) 0; } /* スペースを取りすぎないよう、ほかのセクションより上下の余白を少なめに */
+.worries::before { /* 背景の写真はモノクロにして暗く沈める */
+  content: ''; position: absolute; inset: 0; z-index: -2;
+  background: url('newimages/worries-bg.jpg') center 30% / cover no-repeat; filter: grayscale(1);
+}
+.worries::after { content: ''; position: absolute; inset: 0; z-index: -1; background: rgba(46, 43, 44, .78); }
+.worries .head-en { color: rgba(255, 255, 255, .85); }
+/* 和文のラベル：英字ラベルの3分の2の大きさ */
+.head-en--ja { font-family: var(--f-serif); font-size: calc(var(--fs-title) * 1.15 * 2 / 3); letter-spacing: .12em; text-transform: none; }
+.worries .head-ja { color: #fff; font-weight: 500; }
+.worry-list { display: grid; gap: 10px; max-width: 680px; margin: 36px auto 0; }
+.worry-list li {
   text-align: center;
-  padding: 16px 0;
+  padding: 14px clamp(16px, 3vw, 32px); border-radius: 12px;
+  background: rgba(255, 255, 255, .12); border: 1px solid rgba(255, 255, 255, .16);
+  font-weight: 500; line-height: 1.7; letter-spacing: .04em;
 }
-.shindan-img-link {
-  display: inline-block;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow:
-    0 6px 20px rgba(30,58,95,0.16),
-    0 18px 52px rgba(30,58,95,0.12),
-    0 2px 6px rgba(0,0,0,0.07);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 620px;
-  width: 100%;
-  /* 画像内の上下余白をクロップ */
-  aspect-ratio: 3 / 1;
+.worry-answer {
+  max-width: 680px; margin: clamp(32px, 4vw, 44px) auto 0; text-align: center;
+  font-size: calc(var(--fs-title) * .85); font-weight: 500; line-height: 1.8; letter-spacing: .04em;
 }
-.shindan-img-link:hover {
-  transform: translateY(-5px);
-  box-shadow:
-    0 12px 32px rgba(30,58,95,0.22),
-    0 28px 64px rgba(30,58,95,0.16),
-    0 4px 10px rgba(0,0,0,0.1);
+.worry-answer .mk { background: linear-gradient(transparent 62%, rgba(233, 96, 154, .55) 62%); }
+
+/* ============================================================
+   CHANGE — ハルカゼで起きる変化
+   ============================================================ */
+.chg-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 40px; } /* 4枚を2列×2段で */
+.chg {
+  display: flex; align-items: center; gap: 16px; padding: clamp(20px, 2.6vw, 30px);
+  border: 1px solid #E2DCDE; border-radius: 10px; background: var(--white);
+  font-size: calc(var(--fs-title) * .8); font-weight: 600; line-height: 1.6; letter-spacing: .04em; color: var(--accent-deep);
 }
-.shindan-img-link img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-  border-radius: 0;
+/* 各カードの背景に、写真をうっすら敷く */
+.chg { position: relative; overflow: hidden; isolation: isolate; min-height: 128px; }
+.chg::before { content: ''; position: absolute; inset: 0; z-index: -1; background: var(--chg-bg) center 30% / cover no-repeat; opacity: .2; }
+@media (max-width: 800px) { .chg-list { grid-template-columns: 1fr; gap: 12px; } }
+
+/* ============================================================
+   STEPS — ハルカゼのサポート（STEP番号＋見出し → リード文 → サービス一覧 ＋ イメージ写真）
+   ============================================================ */
+.step-list { max-width: 960px; margin: 44px auto 0; border-top: 1px solid var(--rule); }
+.step { border-bottom: 1px solid var(--rule); }
+/* 番号と項目名だけを見せ、押すと説明・タグ・写真が開く */
+.step-sum { position: relative; display: flex; align-items: center; gap: clamp(16px, 3vw, 32px); padding: clamp(18px, 2.4vw, 26px) 48px clamp(18px, 2.4vw, 26px) 0; list-style: none; cursor: pointer; }
+.step-sum::-webkit-details-marker { display: none; }
+.step-sum:hover .step-ttl { opacity: .75; }
+.step-no { flex-shrink: 0; width: 2.2em; font-family: var(--f-latin); font-size: calc(var(--fs-title) * 1.5); line-height: 1; color: var(--accent); }
+.step-ttl { font-size: var(--fs-title); font-weight: 500; line-height: 1.6; letter-spacing: .05em; }
+.step-ttl small { display: block; font-size: max(.6em, 12px); line-height: 1.4; letter-spacing: .04em; color: var(--ink-mid); } /* （コースによって）は改行して添える */
+.step-toggle { position: absolute; right: 4px; top: 50%; width: 26px; height: 26px; margin-top: -13px; border: 1px solid var(--accent); border-radius: 50%; }
+.step-toggle::before, .step-toggle::after { content: ''; position: absolute; left: 7px; top: 12px; width: 10px; height: 1px; background: var(--accent); transition: transform .3s; }
+.step-toggle::after { transform: rotate(90deg); }
+.step-fold[open] .step-toggle::after { transform: rotate(0deg); }
+.step-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 300px); gap: clamp(20px, 4vw, 48px); align-items: start; padding: 0 0 clamp(24px, 3vw, 36px) calc(var(--fs-title) * 1.5 * 2.2 + clamp(16px, 3vw, 32px)); animation: panelIn .5s ease; }
+.step-body--noimg { grid-template-columns: minmax(0, 1fr); }
+.step-img { aspect-ratio: 16 / 10; border-radius: 10px; } /* 文字が続くので、STEPごとにイメージ写真を添える */
+.step-lead { font-size: 1.05em; color: var(--ink-mid); }
+.step-tags { margin-top: 16px; }
+@media (prefers-reduced-motion: reduce) { .step-body { animation: none; } }
+/* 「サービス名：説明」のリスト（STEPS と 代表紹介の経験で共通） */
+.svc-list { display: grid; gap: 10px; margin-top: 20px; }
+.svc-list li { position: relative; padding-left: 18px; line-height: 1.8; }
+.svc-list li::before { content: ''; position: absolute; left: 2px; top: .8em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+.svc-list b { font-weight: 600; color: var(--accent-deep); }
+@media (max-width: 720px) {
+  .step-body { grid-template-columns: 1fr; padding-left: 0; gap: 16px; }
+  .step-no { width: 1.8em; font-size: calc(var(--fs-title) * 1.3); }
+  .step-ttl { font-size: 17px; } /* スマホの項目名 */
 }
 
-/* ── りさのメッセージ ── */
-.message-section { background: var(--color-ice); padding: 80px 24px; }
-.message-inner {
-  max-width: 960px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 48px;
-  align-items: center;
+/* 「→ ○○を見る」の文字リンク */
+.link-more { /* 丸い枠線ボタン（＋付き） */
+  display: flex; align-items: center; justify-content: center; gap: 16px; width: fit-content; min-width: 260px;
+  margin: 44px auto 0; padding: 16px 36px; border: 1px solid var(--accent); border-radius: 999px; background: var(--white);
+  color: var(--accent-deep); letter-spacing: .12em;
 }
-.message-photo {
-  border-radius: 16px;
-  overflow: hidden;
-  aspect-ratio: 3/4;
-  max-width: 320px;
-  margin: 0 auto;
-}
-.message-photo img { width: 100%; height: 100%; object-fit: cover; }
-.message-body {
-  font-size: 15px;
-  line-height: 2;
-  color: #444;
-  white-space: pre-line;
-  margin-top: 20px;
-}
-.message-quote {
-  margin-top: 24px;
-  padding: 16px 20px;
-  background: var(--color-ice);
-  border-left: 3px solid var(--color-sky);
-  border-radius: 0 8px 8px 0;
-  font-size: 14px;
-  line-height: 1.9;
-  color: #444;
-  font-style: italic;
-}
-.message-sig {
-  display: inline-block;
-  margin-top: 24px;
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--color-navy);
-  border-bottom: 1px solid var(--color-sky);
-  padding-bottom: 2px;
-  transition: opacity 0.2s;
-}
-.message-sig:hover { opacity: 0.7; }
+.link-more::after { content: '＋'; font-size: 1.1em; line-height: 1; }
+.link-more:hover { opacity: 1; background: var(--accent); color: #fff; }
+@media (max-width: 590px) { .link-more { min-width: 0; padding: 14px 26px; gap: 12px; white-space: nowrap; letter-spacing: .06em; } }
 
-/* ── IBJ実績 ── */
-.ibj-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  margin-top: 40px;
+/* ============================================================
+   HARUKAZE LAB
+   ============================================================ */
+.lab-banner {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); max-width: 880px; margin: 40px 0 12px;
+  background: var(--white); border: 1px solid #E2DCDE; border-radius: 10px; overflow: hidden;
 }
-.ibj-card {
-  background: var(--color-ice);
-  border-radius: 12px;
-  padding: 28px 16px;
-  text-align: center;
-}
-.ibj-number {
-  font-size: clamp(26px, 4.5vw, 38px);
-  font-weight: 500;
-  color: var(--color-navy);
-  line-height: 1.2;
-  margin-bottom: 8px;
-}
-.ibj-label { font-size: 12px; color: #555; line-height: 1.6; }
-.ibj-source { font-size: 11px; color: #999; margin-top: 24px; text-align: center; }
-.ibj-bnr-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  margin-top: 28px;
-  flex-wrap: wrap;
-}
-.ibj-bnr {
-  height: 80px;
-  width: auto;
-  object-fit: contain;
-  border-radius: 8px;
-}
-@media (max-width: 600px) {
-  .ibj-bnr { height: 60px; }
-  .ibj-bnr-row { gap: 10px; }
+.lab-banner:hover { opacity: 1; box-shadow: 0 16px 36px -24px rgba(46,43,44,.4); }
+.lab-banner .ph { min-height: 220px; }
+.lab-banner-body { padding: clamp(20px, 3vw, 32px); display: flex; flex-direction: column; justify-content: center; }
+.lab-banner .q { font-size: calc(var(--fs-title) * .75); font-weight: 500; line-height: 1.7; letter-spacing: .04em; color: var(--ink); }
+.lab-banner .sub { margin-top: 8px; color: var(--ink-mid); }
+.lab-banner .src { margin-top: 14px; font-size: .9em; color: var(--accent-deep); letter-spacing: .06em; }
+@media (max-width: 720px) { .lab-banner { grid-template-columns: 1fr; } .lab-banner .ph { min-height: 0; aspect-ratio: 16 / 9; } }
+
+.lab-emblem { width: 240px; }
+.lab-emblem svg { display: block; width: 100%; height: auto; }
+.lab-support { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: clamp(40px, 6vw, 80px); margin-top: clamp(36px, 5vw, 56px); }
+.lab-lead .ask-big { font-size: calc(var(--fs-title) * .8); font-weight: 500; line-height: 1.6; letter-spacing: .04em; }
+.lab-lead p + p { margin-top: .4em; }
+.lab-text { margin-top: 36px; }
+.lab-sub { margin-top: 44px; font-weight: 500; letter-spacing: .08em; color: var(--accent-deep); }
+.coaches { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 20px; }
+@media (max-width: 1000px) and (min-width: 561px) { .coaches { grid-template-columns: repeat(2, 1fr); row-gap: 32px; } .coach:nth-child(2n) { border-right: 1px solid var(--rule); } }
+.coach { padding: 0 20px; border-left: 1px solid var(--rule); }
+.coach:last-child { border-right: 1px solid var(--rule); }
+.coach .ph { aspect-ratio: 1; border-radius: 50%; max-width: 150px; }
+.coach .lbl { font-family: var(--f-latin); font-size: var(--fs-body); letter-spacing: .16em; color: var(--accent); margin-top: 18px; }
+.coach .nm { font-size: var(--fs-note); line-height: 1.6; margin-top: 4px; }
+.coach .nm .role { display: block; margin-top: 2px; color: var(--ink-mid); line-height: 1.5; }
+.coach .ask { margin-top: 10px; font-size: .92em; line-height: 1.7; }
+@media (max-width: 800px) { .lab-support { grid-template-columns: 1fr; } .lab-emblem { width: 240px; } }
+@media (max-width: 560px) {
+  .coaches { grid-template-columns: 1fr; row-gap: 32px; }
+  .coach { border-right: 1px solid var(--rule); display: grid; grid-template-columns: 96px 1fr; gap: 0 20px; align-items: center; }
+  .coach .ph { grid-row: span 3; align-self: start; }
+  .coach .lbl { margin-top: 0; }
 }
 
-/* ── IBJ + 少人数制 比較 ── */
-.ibj-compare-section {
-  background: var(--color-ice);
-  padding: 80px 24px;
+/* ============================================================
+   PROFILE — 代表写真＋見出し＋短い文章＋名前、その下に経験のリスト
+   ============================================================ */
+.pf { display: grid; grid-template-columns: 270px minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); align-items: center; margin-top: clamp(36px, 5vw, 56px); }
+.pf .ph { aspect-ratio: 1; border-radius: 50%; }
+.am-title { font-size: var(--fs-title); font-weight: 500; line-height: 1.6; letter-spacing: .05em; }
+.pf-msg { margin-top: 20px; line-height: 1.9; }
+.pf-name { margin-top: 24px; font-size: calc(var(--fs-title) * .8); letter-spacing: .1em; }
+.pf-role { color: var(--ink-mid); font-size: .9em; letter-spacing: .06em; }
+.exp { max-width: 860px; margin-top: clamp(44px, 6vw, 64px); }
+.exp-text { margin-top: 18px; line-height: 1.9; }
+.exp-ttl { padding-bottom: 14px; border-bottom: 1px solid var(--rule); font-weight: 500; letter-spacing: .08em; color: var(--accent-deep); }
+@media (max-width: 640px) { .pf { grid-template-columns: 1fr; gap: 24px; } .pf .ph { width: 173px; } }
+
+/* ============================================================
+   COURSE — 白いカード + 表組み（参考サイトの料金プランの組み方）
+   ============================================================ */
+.course-note { margin-top: 16px; color: var(--ink-mid); }
+.plans { display: grid; gap: 20px; margin-top: 40px; }
+.plan { background: var(--white); border: 1px solid #E2DCDE; border-radius: 10px; padding: 0 clamp(24px, 4vw, 48px); }
+/* プラン名と月会費だけ見せて、押すと内容が開く */
+.plan-sum { display: flex; align-items: center; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; padding: clamp(22px, 3vw, 32px) 40px clamp(22px, 3vw, 32px) 0; position: relative; list-style: none; cursor: pointer; }
+.plan-sum::-webkit-details-marker { display: none; }
+.plan-price { display: flex; align-items: baseline; gap: 12px; font-size: var(--fs-title); letter-spacing: .04em; }
+.plan-price span { font-size: var(--fs-body); color: var(--accent); }
+.plan-toggle { position: absolute; right: 4px; top: 50%; width: 22px; height: 22px; margin-top: -11px; border: 1px solid var(--accent); border-radius: 50%; }
+.plan-toggle::before, .plan-toggle::after { content: ''; position: absolute; left: 5px; top: 10px; width: 10px; height: 1px; background: var(--accent); transition: transform .3s; }
+.plan-toggle::after { transform: rotate(90deg); }
+.plan[open] .plan-toggle::after { transform: rotate(0deg); }
+.plan-sum:hover .plan-title { opacity: .75; }
+.plan[open] > .plan-grid { padding-bottom: clamp(24px, 3.5vw, 40px); border-top: 1px solid var(--rule); padding-top: 24px; animation: panelIn .5s ease; }
+@keyframes panelIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .plan[open] > .plan-grid { animation: none; } }
+.plan--popular { border-color: var(--accent); }
+.plan-title { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; font-size: var(--fs-title); font-weight: 500; letter-spacing: .06em; }
+.plan-title .en { font-family: var(--f-latin); font-size: var(--fs-body); color: var(--accent); letter-spacing: .08em; }
+.plan-title .badge { font-size: var(--fs-body); font-weight: 400; color: #fff; background: var(--accent); padding: 2px 14px; letter-spacing: .1em; }
+.plan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 5vw, 64px); align-items: start; }
+.plan-table { border-top: 1px solid var(--rule); }
+.plan-table div { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+.plan-table dt { color: var(--accent); }
+.plan-table dd small { font-size: var(--fs-body); color: var(--ink-mid); margin-left: 8px; }
+.plan-list li { position: relative; padding: 7px 0 7px 22px; line-height: 1.6; }
+.plan-list li::before { content: ''; position: absolute; left: 2px; top: 16px; width: 8px; height: 4px; border-left: 1px solid var(--accent); border-bottom: 1px solid var(--accent); transform: rotate(-45deg); }
+.plan-list li.hl { color: var(--accent-deep); }
+.plan-note { margin-top: 14px; color: var(--ink-mid); line-height: 1.7; }
+.plan-note--top { margin-top: 0; }
+/* キャンペーンは料金表に埋もれないよう、ロゴのピンクで塗りつぶして白抜きに */
+.campaign {
+  margin-top: 28px; padding: 26px clamp(24px, 4vw, 48px); border-radius: 10px;
+  background: linear-gradient(115deg, #E9609A 0%, #F07FAE 100%); color: #fff;
+  box-shadow: 0 14px 30px -16px rgba(207, 74, 131, .7);
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px 24px;
 }
-.ibj-compare-inner {
-  max-width: 820px;
-  margin: 0 auto;
+.campaign .lbl {
+  display: inline-block; font-family: var(--f-latin); letter-spacing: .16em; line-height: 1.5;
+  padding: 2px 12px; margin-bottom: 8px; background: #fff; color: var(--pink);
 }
-.ibj-compare-lead {
-  font-size: 14px;
-  line-height: 2.2;
-  color: #555;
-  text-align: center;
-  margin-bottom: 48px;
+.campaign .nw { white-space: nowrap; }
+.campaign .ttl { font-size: var(--fs-title); font-weight: 500; letter-spacing: .06em; line-height: 1.5; }
+.campaign .val { font-size: calc(var(--fs-title) * 1.5); font-weight: 500; letter-spacing: .04em; line-height: 1.2; white-space: nowrap; }
+.campaign .val small { font-size: .55em; margin-left: .2em; }
+
+/* モニター募集のお知らせ（参考サイトの配色：淡いスカイブルーの地・くすんだブルー・墨色の文字） */
+.monitor {
+  --m-bg: #EFF5F8; --m-blue: #A3C5D5; --m-deep: #4E7284; --m-ink: #4A4B45; --m-line: #D5D8D6; --m-mint: #B3E3E0; --m-navy: #1B2A4A; /* MONITOR と見出しはメインのキャッチと同じネイビー */
+  margin-top: 28px; padding: clamp(28px, 4vw, 48px); border: 1px solid var(--m-blue); border-radius: 10px;
+  background: var(--m-bg); color: var(--m-ink);
 }
-.ibj-compare-lead strong {
-  color: var(--color-navy);
-  font-weight: 600;
+.monitor-head { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 16px; }
+.monitor-head .lbl { width: 100%; font-family: var(--f-latin); letter-spacing: .16em; color: var(--m-navy); }
+.monitor-ttl { font-size: var(--fs-title); font-weight: 500; letter-spacing: .06em; line-height: 1.5; color: var(--m-navy); }
+.monitor-badge { padding: 2px 14px; border-radius: 999px; background: var(--m-deep); color: #fff; letter-spacing: .1em; }
+.monitor-table { max-width: 560px; margin-top: 24px; border-top-color: var(--m-line); }
+.monitor-table div { border-bottom-color: var(--m-line); }
+.monitor-table dt { color: var(--m-deep); flex-shrink: 0; white-space: nowrap; }
+.monitor-table dd { text-align: right; }
+.monitor-table dd small { font-size: .85em; color: #5F6059; margin-left: 4px; }
+.monitor-note { display: block; margin-top: 4px; font-size: .85em; color: #5F6059; }
+.monitor-items { margin-top: 20px; }
+.monitor-items li { background: #fff; color: var(--m-deep); border: 1px solid var(--m-line); }
+.monitor .link-more { margin-top: 32px; border-color: var(--m-deep); color: var(--m-deep); }
+.monitor .link-more:hover { background: var(--m-deep); color: #fff; }
+/* 「モニター募集の詳細を見る」を押すと開く詳細 */
+.monitor-more > summary { list-style: none; cursor: pointer; }
+.monitor-more > summary::-webkit-details-marker { display: none; }
+.monitor-more[open] > summary.link-more::after { content: '－'; }
+.monitor-detail { margin-top: 24px; padding: 8px clamp(18px, 3vw, 32px) 24px; background: #fff; border: 1px solid var(--m-line); border-radius: 10px; animation: panelIn .5s ease; }
+.monitor-cond div { display: grid; grid-template-columns: 5em minmax(0, 1fr); gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--m-line); line-height: 1.8; }
+.monitor-cond dt { color: var(--m-deep); }
+.monitor-after { margin-top: 16px; line-height: 1.9; }
+@media (max-width: 480px) { .monitor-cond div { grid-template-columns: 1fr; gap: 2px; } }
+
+/* お見合い料0円・申し込み数の上限なし（目立つ帯） */
+.price-band { display: inline-block; margin-top: 28px; padding: 12px 24px; background: var(--pink); color: #fff; font-size: calc(var(--fs-title) * .8); font-weight: 500; letter-spacing: .06em; line-height: 1.6; }
+@media (max-width: 800px) { .plan-grid { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   FLOW — 成婚までの5ステップ（番号を細い線でつないだ流れ）
+   ============================================================ */
+.flow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; margin-top: 44px; position: relative; }
+.flow::before { /* 番号どうしをつなぐ線 */
+  content: ''; position: absolute; left: 0; right: 0; top: calc(var(--fs-title) * .6); height: 1px; background: var(--rule);
 }
-.ibj-vs-wrap {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: 0 20px;
-  align-items: center;
-  margin-bottom: 40px;
+.flow-step { position: relative; padding-right: 20px; }
+.flow-no {
+  position: relative; display: inline-block; padding-right: 12px; background: var(--bg);
+  font-family: var(--f-latin); font-size: var(--fs-title); line-height: 1.2; color: var(--accent);
 }
-.ibj-vs-card {
-  background: #fff;
-  border-radius: 20px;
-  padding: 32px 24px;
-  text-align: center;
-  border: 2px solid #e4eaf5;
-}
-.ibj-vs-card.harukaze {
-  border-color: var(--color-sky);
-  box-shadow: 0 4px 28px rgba(14,165,233,0.12);
-}
-.ibj-vs-tag {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  padding: 4px 16px;
-  border-radius: 50px;
-  display: inline-block;
-  margin-bottom: 14px;
-}
-.ibj-vs-card:not(.harukaze) .ibj-vs-tag {
-  background: #f0f0f0;
-  color: #888;
-}
-.ibj-vs-card.harukaze .ibj-vs-tag {
-  background: rgba(14,165,233,0.1);
-  color: var(--color-sky);
-  border: 1px solid rgba(14,165,233,0.3);
-}
-.ibj-vs-number {
-  font-size: 42px;
-  font-weight: 700;
-  color: var(--color-navy);
-  line-height: 1;
-  margin-bottom: 6px;
-  font-family: var(--font-display);
-}
-.ibj-vs-card.harukaze .ibj-vs-number {
-  color: var(--color-sky);
-}
-.ibj-vs-unit {
-  font-size: 14px;
-  font-weight: 400;
-  color: #999;
-  margin-bottom: 14px;
-  display: block;
-}
-.ibj-vs-title {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--color-navy);
-  margin-bottom: 10px;
-  line-height: 1.6;
-}
-.ibj-vs-desc {
-  font-size: 12px;
-  color: #888;
-  line-height: 1.9;
-}
-.ibj-vs-card.harukaze .ibj-vs-desc {
-  color: #555;
-}
-.ibj-vs-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(14,165,233,0.08);
-  border: 1px solid rgba(14,165,233,0.25);
-  color: var(--color-sky);
-  font-size: 12px;
-  font-weight: 600;
-  padding: 6px 16px;
-  border-radius: 50px;
-  margin-top: 14px;
-}
-.ibj-vs-separator {
-  font-size: 22px;
-  font-weight: 800;
-  color: var(--color-pink);
-  text-align: center;
-  letter-spacing: 0.05em;
-}
-@media (max-width: 600px) {
-  .ibj-vs-wrap {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .ibj-vs-separator { font-size: 18px; }
+.flow-ttl { font-size: var(--fs-body); font-weight: 500; letter-spacing: .06em; margin-top: 14px; }
+.flow-txt { margin-top: 8px; line-height: 1.7; color: var(--ink-mid); }
+/* 必要書類は折り畳み（押すと開く） */
+.flow-docs-wrap { margin-top: 14px; }
+.flow-docs-ttl { display: inline-flex; align-items: center; gap: 8px; list-style: none; cursor: pointer; font-size: .9em; letter-spacing: .08em; color: var(--accent-deep); border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
+.flow-docs-ttl::-webkit-details-marker { display: none; }
+.flow-docs-ttl::after { content: '＋'; font-size: .9em; }
+.flow-docs-wrap[open] .flow-docs-ttl::after { content: '－'; }
+.flow-docs { margin-top: 8px; font-size: .9em; line-height: 1.7; color: var(--ink-mid); }
+.flow-docs li { position: relative; padding-left: 1em; }
+.flow-docs li::before { content: '・'; position: absolute; left: 0; }
+@media (max-width: 900px) {
+  /* スマホ・タブレットは縦の流れに */
+  .flow { grid-template-columns: 1fr; gap: 0; }
+  .flow::before { left: calc(var(--fs-title) * .55); right: auto; top: 8px; bottom: 8px; width: 1px; height: auto; }
+  .flow-step { display: grid; grid-template-columns: calc(var(--fs-title) * 2) 1fr; column-gap: 12px; padding: 0 0 26px; }
+  .flow-no { grid-row: span 2; padding: 0 0 6px; text-align: left; }
+  .flow-step > :not(.flow-no) { grid-column: 2; } /* 必要書類のリストも番号の右に */
+  .flow-ttl { margin-top: 2px; }
+  .flow-txt { margin-top: 4px; }
 }
 
-/* ── WHAT WE DO ── */
-.whatwedo-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-top: 40px;
+/* ============================================================
+   FAQ — 大きな英字見出しを左、中身を右（参考サイトの FAQ の組み方）
+   ============================================================ */
+.faq-list { max-width: 860px; margin: 40px auto 0; }
+/* 質問を押すと回答が開く */
+.faq-list { border-top: 1px solid var(--rule); }
+.faq-item { border-bottom: 1px solid var(--rule); }
+.faq-item > summary {
+  position: relative; display: flex; align-items: baseline; gap: 14px; list-style: none; cursor: pointer;
+  padding: 18px 36px 18px 0; line-height: 1.6;
 }
-.whatwedo-item {
-  padding: 28px 32px;
-  background: var(--color-white);
-  border-radius: 16px;
-  border-left: 4px solid var(--color-sky);
-  transition: box-shadow 0.2s, transform 0.2s;
+.faq-item > summary::-webkit-details-marker { display: none; }
+.faq-item > summary::after { /* 開閉の矢印 */
+  content: ''; position: absolute; right: 8px; top: 26px; width: 8px; height: 8px;
+  border-right: 1px solid var(--accent); border-bottom: 1px solid var(--accent); transform: rotate(45deg); transition: transform .3s;
 }
-.whatwedo-item:hover { box-shadow: 0 6px 24px rgba(30,58,95,0.09); transform: translateY(-2px); }
-.whatwedo-num {
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  color: var(--color-sky);
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-.whatwedo-title {
-  font-size: 17px;
-  font-weight: 600;
-  color: var(--color-navy);
-  margin-bottom: 14px;
-  line-height: 1.5;
-}
-.whatwedo-body {
-  font-size: 14px;
-  line-height: 2;
-  color: #555;
-  white-space: pre-line;
-}
-.whatwedo-footer { margin-top: 32px; text-align: center; }
+.faq-item[open] > summary::after { transform: translateY(4px) rotate(-135deg); }
+.faq-item .q { font-family: var(--f-latin); font-size: var(--fs-title); line-height: 1; color: var(--accent); flex-shrink: 0; }
+.faq-item > p { display: flex; align-items: baseline; gap: 14px; padding: 0 0 20px; color: var(--ink-mid); line-height: 1.8; }
+.faq-item .a { font-family: var(--f-latin); font-size: var(--fs-title); line-height: 1; color: var(--ink-light); flex-shrink: 0; }
 
-/* ── CTA締め ── */
-.cta-section {
-  background: var(--color-navy);
-  padding: 80px 24px;
-  text-align: center;
-  color: #fff;
+/* ============================================================
+   BLOG
+   ============================================================ */
+.blog-cats { margin-top: 24px; align-items: center; }
+.blog-cats .lbl { font-size: var(--fs-body); color: var(--ink-mid); margin-right: 6px; }
+/* 新着3件を3列で。スマホは画像を左に置いた横長カード */
+.blog-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 44px; }
+.blog-card { background: var(--white); border: 1px solid #E2DCDE; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; }
+.blog-card .ph { aspect-ratio: 16 / 10; }
+.blog-card-body { padding: 16px 20px; display: flex; flex-direction: column; justify-content: center; }
+.blog-card-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.blog-card-meta time { font-family: var(--f-latin); font-size: var(--fs-body); color: var(--ink-light); letter-spacing: .06em; }
+.blog-card-title { font-size: var(--fs-h4); font-weight: 400; line-height: 1.6; margin-top: 8px; }
+.blog-card.is-empty { background: #FAF8F8; border: 1px dashed #C9C0C3; }
+.blog-card.is-empty .blog-card-title { color: var(--ink-light); }
+@media (max-width: 900px) {
+  .blog-cards { grid-template-columns: 1fr; max-width: 560px; }
+  .blog-card { flex-direction: row; }
+  .blog-card .ph { flex: 0 0 176px; }
 }
-.cta-title { font-size: clamp(24px, 4.5vw, 40px); font-weight: 500; margin-bottom: 16px; }
-.cta-sub { font-size: 15px; opacity: 0.85; margin-bottom: 40px; line-height: 1.9; }
-.cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+@media (max-width: 480px) { .blog-card .ph { flex-basis: 40%; } .blog-card-body { padding: 12px 14px; } }
 
-/* ── responsive ── */
-@media (min-width: 600px) {
-  .checklist-grid { grid-template-columns: repeat(2, 1fr); }
+/* ============================================================
+   CLOSING（濃色）— 参考サイト最下部の予約エリア
+   ============================================================ */
+.closing { background: linear-gradient(var(--dark-1) 55%, var(--dark-2) 100%); color: #fff; }
+.closing .head-en { color: #fff; }
+/* さいごには中央揃え。行間と余白を多めに */
+.closing { text-align: center; }
+.closing-msg { margin-top: clamp(48px, 6vw, 72px); line-height: 2.1; letter-spacing: .06em; }
+.closing-msg p + p { margin-top: 2.2em; }
+.closing-msg .closing-big { font-size: var(--fs-title); line-height: 1.8; }
+.closing .btn-line { margin-top: clamp(40px, 5vw, 56px); }
+
+/* ============================================================
+   FOOTER — 大きな筆記体の名前
+   ============================================================ */
+.ft { background: var(--dark-2); color: #fff; padding: 60px 0 120px; overflow: hidden; }
+.ft-grid { display: grid; grid-template-columns: 1fr auto; gap: 40px; }
+.ft-ibj { display: block; margin-top: 16px; width: 170px; height: 60px; } /* IBJ正規加盟店のロゴ */
+/* ハルカゼのロゴと IBJ正規加盟店のロゴを同じ大きさ（170×60px）・角ばった白い枠にそろえる */
+.ft-logo { display: flex; align-items: center; justify-content: center; width: 170px; height: 60px; background: #fff; overflow: hidden; }
+.ft-logo img { width: 180px; max-width: none; height: auto; flex-shrink: 0; } /* 画像のまわりの余白を枠の外に出し、文字を「正規加盟店」と同じくらいの大きさに */
+.ft-nav { display: grid; grid-template-columns: repeat(2, auto); gap: 14px 48px; align-content: end; font-size: var(--fs-body); }
+.ft-sns { display: flex; align-items: center; gap: 8px; }
+.ft-sns svg { width: 16px; height: 16px; }
+.ft-copy { margin-top: 48px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: var(--fs-body); letter-spacing: .1em; color: #BDB6B8; }
+@media (max-width: 800px) { .ft-grid { grid-template-columns: 1fr; } .ft-nav { gap: 14px 28px; } }
+
+/* 画面下の固定予約ボタン（既存ページと同じ導線） */
+.float-cta {
+  position: fixed; z-index: 40; right: 20px; bottom: 20px;
+  display: flex; align-items: center; gap: 12px;
+  background: var(--pink); color: #fff; font-size: var(--fs-body); letter-spacing: .06em; line-height: 1.4;
+  padding: 15px 24px; border-radius: 999px; box-shadow: 0 12px 28px -12px rgba(200, 60, 120, .7);
+  transform: translateY(160%); transition: transform .4s;
 }
-@media (min-width: 768px) {
-  .message-inner { grid-template-columns: 300px 1fr; }
-  .message-photo { margin: 0; }
-  .ibj-grid { grid-template-columns: repeat(4, 1fr); }
-  .whatwedo-list { flex-direction: column; }
+.float-cta.is-show { transform: none; }
+.float-cta:hover { opacity: 1; background: #D24B85; }
+.float-cta b { font-size: inherit; font-weight: 500; }
+.ft-copy small { font-size: inherit; }
+@media (max-width: 720px) { .float-cta { left: 12px; right: 12px; bottom: 12px; justify-content: center; } }
+
+/* ============================================================
+   REVEAL
+   ============================================================ */
+.js .rv { opacity: 0; transform: translateY(20px); transition: opacity 1s ease, transform 1s ease; }
+.js .rv.is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .js .rv { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
 }
-/* ── 桜の花びらアニメーション ── */
-.sakura-container {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  pointer-events: none;
-  z-index: 9999;
-  overflow: hidden;
-}
-.petal {
-  position: absolute;
-  top: -40px;
-  width: 12px;
-  height: 14px;
-  background: radial-gradient(ellipse at 40% 35%, #fff0f5 0%, #ffc2d4 50%, #ffaac5 100%);
-  border-radius: 150% 0 150% 0;
-  opacity: 0;
-  animation: sakura-fall linear infinite;
-}
-@keyframes sakura-fall {
-  0%   { transform: translateY(0)   rotate(0deg)   translateX(0px);  opacity: 0;   }
-  5%   { opacity: 0.75; }
-  90%  { opacity: 0.55; }
-  100% { transform: translateY(105vh) rotate(400deg) translateX(50px); opacity: 0; }
-}
-.petal:nth-child(1)  { left:  5%; width:10px; height:12px; animation-duration:8s;  animation-delay:0s;   }
-.petal:nth-child(2)  { left: 12%; width:14px; height:16px; animation-duration:10s; animation-delay:1.5s; }
-.petal:nth-child(3)  { left: 22%; width: 9px; height:11px; animation-duration:7s;  animation-delay:0.8s; }
-.petal:nth-child(4)  { left: 33%; width:13px; height:15px; animation-duration:9s;  animation-delay:3s;   }
-.petal:nth-child(5)  { left: 44%; width:11px; height:13px; animation-duration:11s; animation-delay:0.3s; }
-.petal:nth-child(6)  { left: 55%; width:10px; height:12px; animation-duration:8s;  animation-delay:2.2s; }
-.petal:nth-child(7)  { left: 63%; width:14px; height:16px; animation-duration:9s;  animation-delay:4.5s; }
-.petal:nth-child(8)  { left: 72%; width: 9px; height:11px; animation-duration:7s;  animation-delay:1s;   }
-.petal:nth-child(9)  { left: 80%; width:12px; height:14px; animation-duration:12s; animation-delay:2.8s; }
-.petal:nth-child(10) { left: 88%; width:11px; height:13px; animation-duration:8s;  animation-delay:0.5s; }
-.petal:nth-child(11) { left: 17%; width:13px; height:15px; animation-duration:10s; animation-delay:5.5s; }
-.petal:nth-child(12) { left: 50%; width:10px; height:12px; animation-duration:9s;  animation-delay:3.8s; }
-.petal:nth-child(13) { left: 38%; width:12px; height:14px; animation-duration:11s; animation-delay:6.2s; }
-.petal:nth-child(14) { left: 68%; width: 9px; height:11px; animation-duration:8s;  animation-delay:1.8s; }
-.petal:nth-child(15) { left: 92%; width:11px; height:13px; animation-duration:10s; animation-delay:4s;   }
 </style>
 </head>
 <body>
 
-<!-- ナビゲーション -->
-<nav class="site-nav">
-  <a href="index.html" class="nav-logo">
-    <span class="nav-logo-sub">IBJ正規加盟店</span>
-    <span class="nav-logo-main">結婚相談所ハルカゼ</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="about.html">メッセージ</a></li>
-    <li><a href="service.html">サービス・価格</a></li>
-    <li><a href="flow.html">成婚までの流れ</a></li>
-    <li><a href="lab.html">ハルカゼLAB</a></li>
-    <li><a href="faq.html">よくある質問</a></li>
-    <li><a href="blog.html">ブログ</a></li>
-    <li><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで相談</a></li>
+<!-- ============================== MENU ============================== -->
+<button class="menu-btn" id="menuBtn" aria-label="メニューを開く" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+<nav class="menu" id="menu" aria-label="メニュー">
+  <ul>
+    <li><a href="#top"><span class="en">TOP</span>トップページ</a></li>
+    <li><a href="#steps"><span class="en">STEPS</span>サポート</a></li>
+    <li><a href="harukaze-lab.html"><span class="en">LAB</span>ハルカゼLAB</a></li>
+    <li><a href="#profile"><span class="en">MESSAGE</span>メッセージ</a></li>
+    <li><a href="#course"><span class="en">PRICE</span>料金</a></li>
+    <li><a href="#flow"><span class="en">FLOW</span>成婚までの5ステップ</a></li>
+    <li><a href="#faq"><span class="en">FAQ</span>よくある質問</a></li>
+    <li><a href="#blog"><span class="en">NOTE</span>婚活note</a></li>
+    <li class="menu-cta"><a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer"><span class="en">RESERVATION</span>無料相談を予約する</a></li>
   </ul>
-  <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く">
-    <span></span><span></span><span></span>
-  </button>
 </nav>
 
-<!-- モバイルオーバーレイ -->
-<div class="mobile-nav-overlay" id="mobileNavOverlay">
-  <a href="about.html">メッセージ</a>
-  <a href="service.html">サービス・価格</a>
-  <a href="flow.html">成婚までの流れ</a>
-  <a href="lab.html">ハルカゼLAB</a>
-  <a href="faq.html">よくある質問</a>
-  <a href="blog.html">ブログ</a>
-  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="nav-cta">LINEで相談</a>
-
-  <hr class="mobile-nav-divider">
-  <span class="mobile-nav-girls-label">女性の方はこちら</span>
-  <a href="girls.html" class="mobile-nav-girls">女子の婚活 Girls LAB</a>
-</div>
+<!-- ============================== 1. MAIN VISUAL ============================== -->
+<header class="mv" id="top">
+  <div class="mv-photo">
+    <!-- 写真差し替え：<img src="newimages/xxx.jpg" alt=""> を .ph の中に追加 -->
+    <!-- 男性 → 女性 → 2人 の順に、6秒ごとにゆっくり切り替わる（動きを減らす設定の端末では1枚目のまま） -->
+    <div class="ph mv-slides">
+      <img class="is-active" src="newimages/hero-3.jpg" alt="">
+      <img src="newimages/hero-2.jpg" alt="" loading="lazy">
+      <img src="newimages/ibj-network.png" alt="" loading="lazy">
+    </div>
+  </div>
+  <a class="mv-logo" href="#top"><img src="newimages/logo-harukaze-header.jpg" alt="結婚相談所ハルカゼ harukaze"></a>
+  <div class="mv-body">
+    <h1 class="mv-catch">
+      <span>マッチングの先に、</span>
+      <span>しあわせが続く未来へ。</span>
+    </h1>
+  </div>
+  <!-- サブコピー以降は画面の下に -->
+  <div class="mv-foot">
+    <p class="mv-sub">自分らしさで出会う婚活。<br>自分の魅力を知って、活かして、相手に伝わるまで。<br>ハルカゼが、一緒に進みます。</p>
+    <p class="mv-co">IBJ正規加盟店｜大阪・北摂・吹田／オンライン全国対応</p>
+    <a class="btn-line btn-line--fill mv-cta" href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer">無料相談を予約する</a>
+  </div>
+</header>
 
 <main>
 
-  <!-- ① ヒーロー -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-content">
-      <div class="hero-tag">
-        <span class="tag-pink">20・30代男性向け結婚相談所</span>
-      </div>
-      <h1 class="hero-title">いい人で、<br>終わらせない。</h1>
-      <p class="hero-sub">なぜか選ばれない。そのループを、一緒に抜け出そう。</p>
-      <div class="hero-btns">
-        <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn btn-sky">初回無料面談に申し込む</a>
-        <a href="service.html" class="hero-link-sub">どんなサポートか →</a>
-      </div>
-    </div>
-  </section>
+<!-- ============================== 2. お悩み ============================== -->
+<section class="worries" id="worries">
+  <div class="inner">
+    <h2 class="head-en head-en--ja rv">こんな気持ちありませんか？</h2>
+    <ul class="worry-list">
+      <li class="rv">このままでいいのか、どこかに迷いがある</li>
+      <li class="rv">相手に気を使っているのに、空回りしてしまう</li>
+      <li class="rv">婚活用の自分をつくりたくない</li>
+      <li class="rv">この人だと思える人に、出会えない</li>
+      <li class="rv">今更、出会いを求めるのもきっかけがない</li>
+    </ul>
+    <p class="worry-answer rv">「このままでいいのか」<br><span class="mk">そんな漠然としたモヤモヤを手放しませんか？</span></p>
+  </div>
+</section>
 
-  <!-- ② 「俺だ！チェックリスト」 -->
-  <section class="section">
-    <div class="section-inner">
-      <p class="section-label">Check List</p>
-      <h2 class="section-title">一生懸命な<em style="font-style:normal;">"いい人"</em><span style="font-size:0.55em;font-weight:400;color:#666;">に、</span><br><span style="font-weight:400;color:var(--color-pink);">当てはまるほど、ハルカゼ向き。</span></h2>
-      <div class="checklist-grid">
-        <div class="checklist-item">
-          <div class="check-icon">
-            <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 7l3.5 3.5 6.5-6.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+<!-- ============================== 3. ハルカゼで起きる変化 ============================== -->
+<section class="sec" id="change">
+  <div class="inner">
+    <p class="head-en rv">Change</p>
+    <h2 class="head-ja rv">マッチングだけじゃない<br class="sp-only">ハルカゼで起きる変化</h2>
+    <ul class="chg-list">
+      <li class="chg rv" style="--chg-bg: url('newimages/change-1.jpg');">無理にして合わせなくても、自然体な自分で会話が続く。</li>
+      <li class="chg rv" style="--chg-bg: url('newimages/change-2.jpg');">なんとなく自信を持てずにいたのが、自分の生き方に自信を持って生きていける。</li>
+      <li class="chg rv" style="--chg-bg: url('newimages/change-4.jpg');">頑張らなくても、大切にされる。</li>
+      <li class="chg rv" style="--chg-bg: url('newimages/change-3.jpg');">自分の軸がわかって、これからの生き方の方向性が見えてくる。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================== 4. ハルカゼのサポート（STEPS） ============================== -->
+<section class="sec sec--mist" id="steps">
+  <div class="inner">
+    <p class="head-en rv">Support</p>
+    <h2 class="head-ja rv">サポート内容</h2>
+    <ol class="step-list">
+      <li class="step rv">
+        <details class="step-fold">
+          <summary class="step-sum">
+            <span class="step-no">01</span>
+            <h3 class="step-ttl">ファーストカウンセリング</h3>
+            <span class="step-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="step-body">
+            <div>
+              <p class="step-lead">本音と、自分の魅力が言葉になる</p>
+              <ul class="chips step-tags"><li>価値観整理</li><li>魅力・強み発見</li></ul>
+            </div>
+            <div class="ph step-img"><img src="newimages/step-1-online.jpg" alt="オンラインで面談する女性" loading="lazy"><span class="ph-label">PHOTO</span></div>
           </div>
-          <p class="checklist-text">真面目なのになぜか選ばれない</p>
-        </div>
-        <div class="checklist-item">
-          <div class="check-icon">
-            <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 7l3.5 3.5 6.5-6.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+        </details>
+      </li>
+      <li class="step rv">
+        <details class="step-fold">
+          <summary class="step-sum">
+            <span class="step-no">02</span>
+            <h3 class="step-ttl">婚活ロードマップ作成</h3>
+            <span class="step-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="step-body step-body--noimg">
+            <div>
+              <p class="step-lead">結婚後の毎日と、そこまでの進め方が決まる</p>
+              <ul class="chips step-tags"><li>Visionボード</li><li>婚活プラン作成</li></ul>
+            </div>
           </div>
-          <p class="checklist-text">何を話せばいいかわからない</p>
-        </div>
-        <div class="checklist-item">
-          <div class="check-icon">
-            <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 7l3.5 3.5 6.5-6.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+        </details>
+      </li>
+      <li class="step rv">
+        <details class="step-fold">
+          <summary class="step-sum">
+            <span class="step-no">03</span>
+            <h3 class="step-ttl">お買い物同行<small>（コースによって）</small></h3>
+            <span class="step-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="step-body step-body--noimg">
+            <div>
+              <p class="step-lead">似合う服がわかって、自分らしく見える</p>
+              <ul class="chips step-tags"><li>骨格診断</li><li>服装・メイクレッスン</li></ul>
+            </div>
           </div>
-          <p class="checklist-text">プロフィールを褒められるのに先に進まない</p>
-        </div>
-        <div class="checklist-item">
-          <div class="check-icon">
-            <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 7l3.5 3.5 6.5-6.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+        </details>
+      </li>
+      <li class="step rv">
+        <details class="step-fold">
+          <summary class="step-sum">
+            <span class="step-no">04</span>
+            <h3 class="step-ttl">写真撮影</h3>
+            <span class="step-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="step-body">
+            <div>
+              <p class="step-lead">一番自然な表情で、人柄が伝わるプロフィールができる</p>
+              <ul class="chips step-tags"><li>写真撮影</li><li>プロフィール作成</li></ul>
+            </div>
+            <div class="ph step-img"><img src="newimages/step-2-photo.jpg" alt="プロフィール写真の撮影" loading="lazy"><span class="ph-label">PHOTO</span></div>
           </div>
-          <p class="checklist-text">「いい人なんだけど…」と言われたことがある</p>
-        </div>
-        <div class="checklist-item">
-          <div class="check-icon">
-            <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2 7l3.5 3.5 6.5-6.5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+        </details>
+      </li>
+      <li class="step rv">
+        <details class="step-fold">
+          <summary class="step-sum">
+            <span class="step-no">05</span>
+            <h3 class="step-ttl">IBJアプリで出会う</h3>
+            <span class="step-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="step-body">
+            <div>
+              <p class="step-lead">10万人以上から、申し込みの上限を気にせず出会える</p>
+              <ul class="chips step-tags"><li>お見合い料0円・申し込み上限なし</li></ul>
+            </div>
+            <div class="ph step-img"><img src="newimages/step-3-ibj-app.jpg" alt="IBJのアプリでお相手を探す男性" loading="lazy"><span class="ph-label">PHOTO</span></div>
           </div>
-          <p class="checklist-text">婚活に疲れた！</p>
+        </details>
+      </li>
+      <li class="step rv">
+        <details class="step-fold">
+          <summary class="step-sum">
+            <span class="step-no">06</span>
+            <h3 class="step-ttl">お見合い日程調整</h3>
+            <span class="step-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="step-body step-body--noimg">
+            <div>
+              <p class="step-lead">お見合いはカフェやホテルのラウンジで60分<br>初めて出会うまでの面倒なメッセージのやり取りや予約の手間が不要</p>
+            </div>
+          </div>
+        </details>
+      </li>
+      <li class="step rv">
+        <details class="step-fold">
+          <summary class="step-sum">
+            <span class="step-no">07</span>
+            <h3 class="step-ttl">定期面談</h3>
+            <span class="step-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="step-body step-body--noimg">
+            <div>
+              <p class="step-lead">「なんとなく違う」を一緒に確かめて、最後は自分で決められる</p>
+              <ul class="chips step-tags"><li>お見合い・交際サポート</li><li>伝える技術レッスン</li><li>LINE伴走</li></ul>
+            </div>
+          </div>
+        </details>
+      </li>
+    </ol>
+    <a class="btn-line btn-line--fill rv" href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer">無料相談を予約する</a>
+  </div>
+</section>
+
+<!-- ============================== 4. ハルカゼLAB ============================== -->
+<section class="sec" id="lab">
+  <div class="inner">
+    <p class="head-en head-en--wave rv" aria-hidden="true"></p><!-- 英字は入れず、波線だけ -->
+    <h2 class="head-ja rv">選んだ人と、<br class="sp-only">ずっと笑っていたい</h2>
+    <div class="lab-support">
+      <!-- ハルカゼLAB のロゴ風エンブレム（紺地・ピンクの曲線・グラデーションの LAB） -->
+      <div class="lab-emblem rv">
+        <svg viewBox="0 0 600 360" role="img" aria-label="ハルカゼLAB">
+          <defs>
+            <linearGradient id="labPink" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#FBE3EC"/>
+              <stop offset=".55" stop-color="#E57FA4"/>
+              <stop offset="1" stop-color="#F6CCDA"/>
+            </linearGradient>
+            <linearGradient id="labSilver" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#AEB6C1"/>
+              <stop offset="1" stop-color="#DCE1E7"/>
+            </linearGradient>
+            <linearGradient id="labLine" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#E57FA4" stop-opacity=".35"/>
+              <stop offset=".5" stop-color="#F2A9C2"/>
+              <stop offset="1" stop-color="#E57FA4" stop-opacity=".6"/>
+            </linearGradient>
+          </defs>
+          <rect width="600" height="360" fill="#1D2A47"/>
+          <g fill="none" stroke="url(#labLine)" stroke-linecap="round">
+            <path d="M232 40 A195 150 0 1 0 410 322" stroke-width="2"/>
+            <path d="M462 92 A195 150 0 0 1 478 250" stroke-width="1.6"/>
+            <path d="M150 262 C240 300 300 246 380 262 S470 302 520 272" stroke-width="1.8"/>
+            <path d="M262 304 C330 284 388 284 452 298" stroke-width="1.3"/>
+          </g>
+          <text x="300" y="118" text-anchor="middle" font-family="Noto Serif JP, serif" font-size="40" letter-spacing="20" fill="url(#labSilver)">ハルカゼ</text>
+          <text x="300" y="246" text-anchor="middle" font-family="Cormorant Garamond, serif" font-weight="500" font-size="150" letter-spacing="6" fill="url(#labPink)">LAB</text>
+        </svg>
+      </div>
+      <div>
+        <div class="lab-lead rv">
+          <p class="ask-big">「結婚相談所で出会って、本当にうまくいく？」</p>
         </div>
+        <p class="lab-text rv">ハルカゼの婚活は、出会って終わりではありません。<br><span class="mk">結婚したあとの暮らしまで考えて</span>、それぞれの分野の専門コーチに相談できます。</p>
+        <h3 class="lab-sub rv">こんなことを相談できます</h3>
+        <ul class="coaches">
+          <li class="coach rv">
+            <div class="ph"><img src="newimages/coach-smith-tomomi.jpg" alt="スミス 知美" loading="lazy"><span class="ph-label">PHOTO</span></div>
+            <p class="lbl">COACH 01</p>
+            <p class="nm">スミス 知美<span class="role">パートナーシップ<br>ライフコーチ</span></p>
+            <p class="ask">「価値観がちがったとき、どう話し合えばいい？」</p>
+          </li>
+          <li class="coach rv">
+            <div class="ph"><img src="newimages/honma-chihiro-1.jpeg" alt="本間 知尋" loading="lazy"><span class="ph-label">PHOTO</span></div>
+            <p class="lbl">COACH 02</p>
+            <p class="nm">本間 知尋<span class="role">パートナーシップ<br>ライフコーチ</span></p>
+            <p class="ask">「歳の差が心配で、この先に漠然と不安があります。歳の差婚どう思う？」</p>
+          </li>
+          <li class="coach rv">
+            <div class="ph"><img src="newimages/coach-sexual-wellness.jpg" alt="エマ" loading="lazy"><span class="ph-label">PHOTO</span></div>
+            <p class="lbl">COACH 03</p>
+            <p class="nm">エマ<span class="role">セクシャルウェルネスコーチ<br>精神対話士</span></p>
+            <p class="ask">「あまり経験がなく、成婚退会後が楽しみであり、不安でもあります」</p>
+          </li>
+          <li class="coach rv">
+            <div class="ph"><img src="newimages/coach-image-consultant.jpeg" alt="TOMOMI" loading="lazy"><span class="ph-label">PHOTO</span></div>
+            <p class="lbl">COACH 04</p>
+            <p class="nm">TOMOMI<span class="role">イメージコンサルタント</span></p>
+            <p class="ask">「婚活のために、服を選ぶことに抵抗がありますが、婚活服ってそんなに大事？」</p>
+          </li>
+        </ul>
+        <a class="link-more rv" href="harukaze-lab.html">ハルカゼLABを見る</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ③ 婚活突破口診断（チェックリスト直後） -->
-  <section class="section section-ice" style="padding: 32px 24px;">
-    <div class="section-inner">
-      <div class="shindan-wrap">
-        <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="shindan-img-link">
-          <img src="newimages/①LINE リッチメニュー (2).png"
-               alt="婚活突破口診断 – LINEで無料診断">
-        </a>
+<!-- ============================== 5. 代表紹介 ============================== -->
+<section class="sec sec--mist" id="profile">
+  <div class="inner">
+    <p class="head-en rv">Profile</p>
+    <div class="pf rv">
+      <div class="ph"><img src="newimages/ishigami-risa-3.jpeg" alt="石神りさ" loading="lazy"><span class="ph-label">PHOTO</span></div>
+      <div>
+        <h2 class="am-title">成婚をゴールにしない、<br>あなたのしあわせが続くように。</h2>
+        <p class="pf-msg">あなたが、あなたらしく生きれるように。<br>毎日がより色鮮やかになるように。<br>成婚に導くサポートはもちろん、それ以上に、<span class="mk">「婚活をしてよかった」心からそう思ってもらえる時間</span>になるようにサポートします。</p>
+        <p class="pf-name">石神りさ</p>
+        <p class="pf-role">マッチングプランナー／ハルカゼ代表</p>
       </div>
     </div>
-  </section>
-
-  <!-- ④ りさのメッセージ -->
-  <section class="message-section">
-    <div class="message-inner">
-      <div class="message-photo">
-        <img src="newimages/IMG_8907.jpeg" alt="石神りさ – ハルカゼ代表">
-      </div>
-      <div class="message-text-area">
-        <p class="section-label">MESSAGE FROM RISA</p>
-        <h2 class="section-title">自分の魅力、<br>ちゃんと知ってますか？</h2>
-        <p class="message-body">スペック競争は、もう卒業。<br>自分の「良さ」を面白がる婚活を。</p>
-        <a href="profile.html" class="message-sig">— 代表 石神 りさ</a>
-      </div>
+    <div class="exp rv">
+      <h3 class="exp-ttl">これまでの経験を、あなたのサポートに</h3>
+      <p class="exp-text">金融機関の窓口からキャリアをスタート、ベンチャー企業の法人営業、プライム市場上場の経営コンサルティング会社での経営者サポート、ライフワークとして、場作りワークショップの開催と、コーチングの学び。プライベートでは、3児の母として結婚生活や子育てのリアルから、恋愛と結婚で大きく変わった気づきや学びもお伝えしています。</p>
+      <!-- 代表のストーリーのページができたら、リンク先を差し替え -->
+      <a class="link-more" href="#">代表のストーリーを読む</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ④-b 大手 VS ハルカゼ 比較 -->
-  <section class="ibj-compare-section">
-    <div class="ibj-compare-inner">
-      <p class="section-label">Why Harukaze</p>
-      <h2 class="section-title">大手の安心感と、<br>少人数制の手厚さを、両方。</h2>
-      <p class="ibj-compare-lead">ハルカゼはIBJ（日本結婚相談所連盟）の正規加盟店として、<br><strong>業界最大級の10万名超のネットワーク</strong>を持ちながら、<br>少人数制だからこそできる、あなた一人ひとりへの深いサポートを両立。</p>
-      <div class="ibj-vs-wrap">
-        <div class="ibj-vs-card">
-          <span class="ibj-vs-tag">大手相談所</span>
-          <p class="ibj-vs-number">100<span style="font-size:16px;font-weight:400;">人以上</span></p>
-          <span class="ibj-vs-unit">カウンセラー1人が担当する会員数</span>
-          <p class="ibj-vs-title">手が回らず、<br>流れ作業になりがち</p>
+<!-- ============================== 6. 料金 ============================== -->
+<section class="sec" id="course">
+  <div class="inner">
+    <p class="head-en rv">Price</p>
+    <h2 class="head-ja rv">料金</h2>
+    <p class="course-note rv">金額はすべて税込です。どのプランも、お見合い料は無料です。</p>
+
+    <!-- 料金は harukaze-marriage.com/service.html と同じ内容 -->
+    <div class="plans">
+      <details class="plan rv">
+        <summary class="plan-sum">
+          <h3 class="plan-title"><span class="en">Trial Plan</span>お試しプラン</h3>
+          <p class="plan-price"><span>月会費</span>5,500円</p>
+          <span class="plan-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="plan-grid">
+          <div>
+            <p class="plan-note plan-note--top">１ヶ月お試し入会（お見合い成立または継続利用時は標準プランのいずれかに移行）</p>
+          </div>
+          <ul class="plan-list">
+            <li>申込み30件/月、お見合い料０円</li>
+            <li>婚活ロードマップ作成</li>
+            <li>プロフィール添削</li>
+            <li>LINE・電話相談、個別面談（オンライン可）</li>
+          </ul>
         </div>
-        <div class="ibj-vs-separator">VS</div>
-        <div class="ibj-vs-card harukaze">
-          <span class="ibj-vs-tag">ハルカゼ</span>
-          <p class="ibj-vs-number" style="font-size:28px;line-height:1.3;">少人数制</p>
-          <span class="ibj-vs-unit">あなたのことをちゃんとわかるから</span>
-          <p class="ibj-vs-title">「その人らしい」<br>サポートができる</p>
+      </details>
+
+      <details class="plan rv">
+        <summary class="plan-sum">
+          <h3 class="plan-title"><span class="en">Light Plan</span>ライトプラン</h3>
+          <p class="plan-price"><span>月会費</span>11,000円</p>
+          <span class="plan-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="plan-grid">
+          <dl class="plan-table">
+            <div><dt>入会金</dt><dd>33,000円</dd></div>
+            <div><dt>登録料</dt><dd>22,000円</dd></div>
+            <div><dt>成婚料</dt><dd>165,000円</dd></div>
+            <div><dt>お見合い料</dt><dd>無料</dd></div>
+          </dl>
+          <ul class="plan-list">
+            <li>プロフィール写真撮影</li>
+            <li>お見合い申し込み 月100件</li>
+            <li>プランナーよりご紹介</li>
+            <li>お見合い後フィードバック</li>
+            <li>定期面談 月1回</li>
+            <li>プロフィール作成</li>
+          </ul>
         </div>
-      </div>
+      </details>
+
+      <details class="plan plan--popular rv">
+        <summary class="plan-sum">
+          <h3 class="plan-title"><span class="en">Personal Plan</span>パーソナルプラン<span class="badge">一番人気</span></h3>
+          <p class="plan-price"><span>月会費</span>15,800円</p>
+          <span class="plan-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="plan-grid">
+          <dl class="plan-table">
+            <div><dt>入会金</dt><dd>33,000円</dd></div>
+            <div><dt>登録料</dt><dd>33,000円</dd></div>
+            <div><dt>成婚料</dt><dd>230,000円</dd></div>
+            <div><dt>お見合い料</dt><dd>無料</dd></div>
+          </dl>
+          <ul class="plan-list">
+            <li>お見合い申し込み 月200件</li>
+            <li>プランナーよりご紹介</li>
+            <li>お見合い後フィードバック</li>
+            <li>定期面談 月2回</li>
+            <li>プロフィール作成</li>
+            <li class="hl">プロフィール写真撮影（スタジオ or ロケーション）</li>
+            <li class="hl">選べるサポート　イメージコンサルタントによるお買い物同行or骨格診断orパーソナルカラー診断</li>
+            <li class="hl">LAB 各講座</li>
+            <li class="hl">お見合いアナリティクス診断</li>
+          </ul>
+        </div>
+      </details>
     </div>
-  </section>
 
-  <!-- ⑤ IBJ数値・実績 -->
-  <section class="section">
-    <div class="section-inner">
-      <p class="section-label">IBJ Data</p>
-      <h2 class="section-title">数字が証明する、<br>確かな出会いの場。</h2>
-      <p class="section-sub">ハルカゼが加盟するIBJは、業界No.1の成婚実績を持つ日本最大の婚活ネットワークです。</p>
-      <div class="ibj-grid">
-        <div class="ibj-card">
-          <p class="ibj-number">業界<br>No.1</p>
-          <p class="ibj-label">年間成婚者数<br>（日本マーケティングリサーチ機構調べ）</p>
-        </div>
-        <div class="ibj-card">
-          <p class="ibj-number">160,435<span style="font-size:16px">組</span></p>
-          <p class="ibj-label">年間交際成立数<br>（2025年実績・1日約440組）</p>
-        </div>
-        <div class="ibj-card">
-          <p class="ibj-number">89.1<span style="font-size:16px">%</span></p>
-          <p class="ibj-label">男性成婚者の<br>「カウンセラー必要だった」率</p>
-        </div>
-        <div class="ibj-card">
-          <p class="ibj-number">4〜10<span style="font-size:16px">ヶ月</span></p>
-          <p class="ibj-label">成婚者の<br>代表的な活動期間</p>
-        </div>
+    <p class="price-band rv">お見合い料0円・申し込み数の上限なし</p>
+
+    <div class="campaign rv" id="switch-campaign"><!-- ほかのページの「乗り換えのご相談」リンク（index.html#switch-campaign）の飛び先 -->
+      <div>
+        <p class="lbl">CAMPAIGN</p>
+        <p class="ttl"><span class="nw">他社乗り換え</span><span class="nw">割引キャンペーン</span></p>
       </div>
-      <p style="text-align:center;margin-bottom:12px;"><a href="https://www.ibjapan.com/ibj/data/" target="_blank" rel="noopener noreferrer" style="font-size:13px;color:var(--color-sky);text-decoration:underline;text-underline-offset:3px;">IBJの詳しいデータを見る →</a></p>
-      <p class="ibj-source">※出典：IBJ公式サイト（2025〜2026年実績）　初婚比率89.2% / お見合い数：10回以内が最多</p>
-      <div class="ibj-bnr-row">
-        <img src="newimages/ibj_no1_all.png" alt="IBJ No.1 総合" class="ibj-bnr">
-        <img src="newimages/ibj_no1_marriage.png" alt="IBJ No.1 成婚" class="ibj-bnr">
-        <img src="newimages/ibj_no1_member.png" alt="IBJ No.1 会員数" class="ibj-bnr">
-        <img src="newimages/ibj_no1_omiai.png" alt="IBJ No.1 お見合い" class="ibj-bnr">
-      </div>
+      <p class="val">33,000<small>円 OFF</small></p>
     </div>
-  </section>
 
-  <!-- ⑥ WHAT WE DO -->
-  <section class="section section-ice">
-    <div class="section-inner">
-      <p class="section-label">What We Do</p>
-      <h2 class="section-title">ハルカゼで大切にしていること</h2>
-      <div class="whatwedo-list">
-
-        <div class="whatwedo-item">
-          <p class="whatwedo-num">01</p>
-          <p class="whatwedo-title">本音を魅力に変える「届く言葉へ」</p>
-          <p class="whatwedo-body">セオリー通りに自分を型にハメて、履歴書のような「婚活」になってないか。
-うまくいかないのは、他人の価値観に自分を当てはめようとしてきたからかもしれない。
-あなただけの本音（ストーリー）を「届く言葉」へとデザインする。</p>
-        </div>
-
-        <div class="whatwedo-item">
-          <p class="whatwedo-num">02</p>
-          <p class="whatwedo-title">「孤独な戦い」を、「二人三脚の息つく場所」へ</p>
-          <p class="whatwedo-body">デートの振り返りから次の一手まで、ロジカルかつワクワクしながら伴走する。
-失敗さえも「最高のネタ」に変えて、不器用なあなたのままで一緒に勝ちにいく。
-誰かのための人生はもう卒業。あなたが主役の物語を突き進もう。</p>
-        </div>
-
-        <div class="whatwedo-item">
-          <p class="whatwedo-num">03</p>
-          <p class="whatwedo-title">一貫した「深い」サポート、だから迷わない。</p>
-          <p class="whatwedo-body">あなたの性格、価値観、時には言葉にできない「本音」まで。
-大手にはない「深さ」で、成婚の先を見据えたサポート。</p>
-        </div>
-
+    <!-- モニター募集のお知らせ -->
+    <div class="monitor rv" id="monitor">
+      <div class="monitor-head">
+        <p class="lbl">MONITOR</p>
+        <h3 class="monitor-ttl">モニター募集のお知らせ</h3>
+        <p class="monitor-badge">各月1名</p>
       </div>
-      <div class="whatwedo-footer">
-        <a href="service.html" class="text-link">サービス（成婚戦略）の詳細を見る →</a>
-      </div>
+      <dl class="plan-table monitor-table">
+        <div><dt>費用</dt><dd>110,000円<small>（税込）</small><span class="monitor-note">※入会金・諸経費・月会費・成婚退会料含む</span></dd></div>
+        <div><dt>期間</dt><dd>6ヶ月間</dd></div>
+      </dl>
+      <ul class="chips monitor-items">
+        <li>プロフィール写真撮影</li><li>プロフィール作成</li><li>ビジョンボード作成</li><li>定期面談12回</li>
+      </ul>
+      <!-- ボタンを押すと、この下に詳細が開く -->
+      <details class="monitor-more">
+        <summary class="link-more">モニター募集の詳細を見る</summary>
+        <div class="monitor-detail">
+          <dl class="monitor-cond">
+            <div><dt>条件</dt><dd>「結婚したい」意思のある方<br>顔出しなしで面談時の写真撮影（オンラインを含む）にご協力いただける方</dd></div>
+            <div><dt>エリア</dt><dd>特にありません</dd></div>
+          </dl>
+          <p class="monitor-after">モニターサポート期間を過ぎて以降も活動いただける方は、成婚退会料はなし・月会費を特別価格にてご案内させていただきます。</p>
+        </div>
+      </details>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ⑦ CTA締め -->
-  <section class="cta-section">
-    <p class="section-label" style="color: var(--color-sky);">Contact</p>
-    <h2 class="cta-title">「話してみる」が、すべての始まり。</h2>
-    <p class="cta-sub">入会を迷っていても大丈夫。<br>まずはあなたの話を聞かせてください。</p>
-    <div class="cta-btns">
-      <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="btn btn-line">初回無料面談に申し込む</a>
-      <a href="service.html" class="btn btn-outline">サービスを見る</a>
+<!-- ============================== 7. 成婚までの5ステップ ============================== -->
+<section class="sec sec--mist" id="flow">
+  <div class="inner">
+    <p class="head-en rv">Flow</p>
+    <h2 class="head-ja rv">成婚までの5ステップ</h2>
+    <ol class="flow">
+      <li class="flow-step rv">
+        <p class="flow-no">01</p>
+        <h3 class="flow-ttl">オンライン無料面談</h3>
+        <p class="flow-txt">今の気持ちや、これまでの婚活のことをお聞きします。あなたの魅力のヒントと、ハルカゼでの進め方をお伝えします。</p>
+      </li>
+      <li class="flow-step rv">
+        <p class="flow-no">02</p>
+        <h3 class="flow-ttl">ご入会</h3>
+        <p class="flow-txt">内容に納得していただけたら、お手続きへ。</p>
+        <details class="flow-docs-wrap">
+          <summary class="flow-docs-ttl">必要書類</summary>
+        <ul class="flow-docs">
+          <li>身分証明書のコピー</li>
+          <li>住民票</li>
+          <li>独身証明書（3か月以内に取得した原本）</li>
+          <li>卒業証明書のコピー（短大卒以上の方）</li>
+          <li>国家資格免許証のコピー</li>
+          <li>収入証明書</li>
+          <li>勤務先確認書類のコピー</li>
+        </ul>
+        </details>
+      </li>
+      <li class="flow-step rv">
+        <p class="flow-no">03</p>
+        <h3 class="flow-ttl">お見合い開始</h3>
+        <p class="flow-txt">IBJ 10万名超からマッチング。事前準備を徹底サポート</p>
+      </li>
+      <li class="flow-step rv">
+        <p class="flow-no">04</p>
+        <h3 class="flow-ttl">プレ交際・本交際</h3>
+        <p class="flow-txt">定期面談で関係の深め方を伴走。悩みをすぐに相談できる</p>
+      </li>
+      <li class="flow-step rv">
+        <p class="flow-no">05</p>
+        <h3 class="flow-ttl">成婚・卒業</h3>
+        <p class="flow-txt">プロポーズのタイミングや準備もサポート</p>
+      </li>
+    </ol>
+    <a class="link-more rv" href="flow.html">成婚までの流れを詳しく見る</a>
+  </div>
+</section>
+
+<!-- ============================== 8. よくある質問 ============================== -->
+<section class="sec" id="faq">
+  <div class="inner">
+    <p class="head-en rv">FAQ</p>
+    <h2 class="head-ja rv">よくある質問</h2>
+    <div class="faq-list rv">
+      <details class="faq-item">
+        <summary><span class="q">Q</span>モニターに興味があります。<br>こちらも好きなタイミングで開始できますか？</summary>
+        <p><span class="a">A</span><span>各月1名となりますので、都度申し込み状況をお問合せください。開始については、良いタイミングで活動できるようにご提案させていただきます。</span></p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="q">Q</span>結婚したい気持ちはありますが、絶対に結婚！というまでの覚悟はありません。この状態でも婚活しても良いでしょうか？</summary>
+        <p><span class="a">A</span><span>正直なところ、絶対結婚する！と「決めている」人が成婚までのスピードは早いです。ただ、覚悟なんて、口でいうほど100パーセントなものだとも思っていません。覚悟したつもりだったけど…ということは、婚活以外でもやってみてわかることもあると思います。それよりは、やってみるくらいの気持ちでいいと思います。やってみて気がつくことに価値があると思います。時間がなにより大切なものと感じているので、この婚活を通して自分と向き合うお時間になればきっと結果に関わらず、自分の選択や未来に納得感があるのではないでしょうか。</span></p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="q">Q</span>お見合いやデートで何を着たらいいかまったくわかりません。</summary>
+        <p><span class="a">A</span><span>イメージコンサルタントによる骨格診断やお買い物同行で、似合うものを一緒に見つけながら、あなたの良さが活きる装いを大切にしています。また、デートやお見合いのお洋服について、面談時や、LINEからでも都度ご相談を受けています。</span></p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="q">Q</span>仕事が忙しくても続けられますか？</summary>
+        <p><span class="a">A</span><span>面談はオンラインでもでき、ふだんの相談はLINEで受けています。あなたのペースに合わせて進めます。</span></p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="q">Q</span>大阪以外に住んでいても入会できますか？</summary>
+        <p><span class="a">A</span><span>オンラインで全国対応しています。関東、東海など大阪に限らず、他府県からも入会いただいております。</span></p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="q">Q</span>無料相談で、入会をすすめられませんか？</summary>
+        <p><span class="a">A</span><span>当日の決断を促すことや、強引な勧誘は行いませんのでご安心ください。</span></p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="q">Q</span>事実婚を希望していますが、可能ですか？</summary>
+        <p><span class="a">A</span><span>事実婚を希望される方もいらっしゃいます。<br>様々なパートナーシップのかたちがある中で、入籍が必須とは考えていません。2人が納得しながら進んでいけるようにサポートさせていただきます。</span></p>
+      </details>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- ============================== 9. ブログ ============================== -->
+<section class="sec sec--mist" id="blog">
+  <div class="inner">
+    <p class="head-en head-en--wave rv" aria-hidden="true"></p>
+    <h2 class="head-ja rv">婚活ノート</h2>
+    <!-- 今どきの婚活事情（IBJ結婚みらい研究所・別タブで開く） -->
+    <a class="lab-banner rv" href="https://www.ibjapan.jp/mirai-lab/" target="_blank" rel="noopener">
+      <div class="ph"><img src="newimages/banner-konkatsu-data.jpg" alt="" loading="lazy"><span class="ph-label">BANNER<small>バナー画像</small></span></div>
+      <div class="lab-banner-body">
+        <p class="q">成婚までの期間は？ どんな人が結婚している？</p>
+        <p class="sub">婚活のリアルを、データで見る</p>
+        <p class="src">IBJ結婚みらい研究所 →</p>
+      </div>
+    </a>
+    <p class="lead rv">自分の魅力を知るヒントや、お見合い・デートで役立つことを書いています。</p>
+    <ul class="chips blog-cats rv">
+      <li>自分を知る</li><li>お見合い・デート</li><li>ハルカゼの日常</li>
+    </ul>
+    <!-- 新着記事は js/blog-posts.js から 3 件を自動で表示します -->
+    <div class="blog-cards rv" id="blogCards"></div>
+    <a class="link-more rv" href="blog.html">ブログ一覧を見る</a>
+  </div>
+</section>
+
+<!-- ============================== 10. さいごに ============================== -->
+<section class="sec closing" id="reserve">
+  <div class="inner">
+    <p class="head-en rv">Last Message</p>
+    <div class="closing-msg rv">
+      <p>婚活用の自分をつくらなくていい。<br>誰かに選ばれるために、がんばらなくていい。</p>
+      <p>自分の魅力を知って、自分らしく出会えたら、<br>選ぶ相手も、選んだあとの毎日も、きっと変わります。</p>
+      <p class="closing-big">この人を選んだ<br>私の人生が、もっと好きになった。</p>
+      <p>そんな出会いを、ハルカゼで。</p>
+      <p>まずは無料相談で、今の気持ちを聞かせてください。<br>オンラインでも受け付けています。</p>
+    </div>
+    <a class="btn-line btn-line--fill rv" href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer">無料相談を予約する</a>
+  </div>
+</section>
 
 </main>
 
-<!-- フッター -->
-<footer class="site-footer">
-  <div class="footer-inner">
-    <p class="footer-brand">大阪・吹田結婚相談所 ハルカゼ</p>
-    <nav class="footer-links">
-      <a href="about.html">メッセージ</a>
-      <a href="about.html#vision">ハルカゼの想い（VISION）</a>
-      <a href="lab.html">ハルカゼLAB</a>
-      <a href="service.html">サービス内容</a>
-      <a href="service.html#price">サービス・料金</a>
-      <a href="flow.html">ご成婚までの流れ</a>
-      <a href="faq.html">よくある質問</a>
-      <a href="blog.html">ブログ</a>
-      <a href="privacy.html">プライバシーポリシー</a>
-    </nav>
-    <p class="footer-girls-label">女性の方はこちら</p>
-    <a href="girls.html" class="footer-girls-link">▶ 女子の婚活 Girls LAB</a>
-    <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="footer-line-btn">初回無料面談に申し込む</a>
-    <p class="footer-copy">© 2025 結婚相談所ハルカゼ</p>
+<!-- ============================== FOOTER ============================== -->
+<footer class="ft">
+  <div class="inner">
+    <div class="ft-grid">
+      <div>
+        <a class="ft-logo" href="#top"><img src="newimages/logo-harukaze-header.jpg" alt="結婚相談所ハルカゼ harukaze"></a>
+        <img class="ft-ibj" src="newimages/ibj-member-badge.gif" alt="IBJ正規加盟店">
+      </div>
+      <nav class="ft-nav" aria-label="フッターメニュー">
+        <a href="#change">ハルカゼで起きる変化</a>
+        <a href="#course">料金</a>
+        <a href="#steps">サポート内容</a>
+        <a href="#flow">成婚までの5ステップ</a>
+        <a href="harukaze-lab.html">ハルカゼLAB</a>
+        <a href="#faq">よくある質問</a>
+        <a href="#profile">代表紹介</a>
+        <a href="blog.html">ブログ</a>
+        <a href="privacy.html">プライバシーポリシー</a>
+        <a class="ft-sns" href="https://www.instagram.com/harukaze.ma?igsh=ZjFxNDU1MGYzMW5j&utm_source=qr" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor"/></svg>Instagram</a>
+      </nav>
+    </div>
+    <div class="ft-copy">
+      <span>IBJ正規加盟店　大阪・北摂・吹田</span>
+      <small>© 2025 Harukaze Marriage Consulting.</small>
+    </div>
   </div>
 </footer>
 
-<!-- フローティングボタン -->
-<a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-line-btn">LINEで相談する</a>
-<div class="float-side-btns">
-  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn">面談を予約する</a>
-  <a href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer" class="float-side-btn">LINEで婚活突破口診断</a>
-</div>
+<a class="float-cta" id="floatCta" href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer"><span>LINEで無料面談を予約</span></a>
 
-<script src="js/common.js"></script>
+<script src="js/blog-posts.js"></script>
+<script>
+(function () {
+  document.documentElement.classList.add('js');
+
+  /* ---------- 新着記事（js/blog-posts.js の先頭3件） ---------- */
+  var wrap = document.getElementById('blogCards');
+  var posts = (window.HARUKAZE_POSTS || []).slice().sort(function (a, b) {
+    return String(b.date || '').localeCompare(String(a.date || ''));
+  }).slice(0, 3);
+
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text) n.textContent = text;
+    return n;
+  }
+  function card(post) {
+    var c = el(post ? 'a' : 'div', 'blog-card' + (post ? '' : ' is-empty'));
+    if (post) c.href = post.url;
+    var ph = el('div', 'ph');
+    if (post && post.thumb) {
+      var img = document.createElement('img');
+      img.src = post.thumb; img.alt = ''; img.loading = 'lazy';
+      ph.appendChild(img);
+    } else {
+      ph.appendChild(el('span', 'ph-label', post ? 'NOTE' : 'COMING SOON'));
+    }
+    c.appendChild(ph);
+    var body = el('div', 'blog-card-body');
+    var meta = el('div', 'blog-card-meta');
+    if (post && post.category) { var ch = el('ul', 'chips'); ch.appendChild(el('li', '', post.category)); meta.appendChild(ch); }
+    if (post && post.date) { var t = el('time', '', post.date.replace(/-/g, '.')); t.setAttribute('datetime', post.date); meta.appendChild(t); }
+    body.appendChild(meta);
+    body.appendChild(el('h3', 'blog-card-title', post ? post.title : '新しい記事を準備中です'));
+    c.appendChild(body);
+    return c;
+  }
+  for (var i = 0; i < 3; i++) wrap.appendChild(card(posts[i]));
+
+  /* ---------- メイン写真の切り替え ---------- */
+  var slides = document.querySelectorAll('.mv-slides > img');
+  if (slides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var cur = 0;
+    setInterval(function () {
+      slides[cur].classList.remove('is-active');
+      cur = (cur + 1) % slides.length;
+      slides[cur].classList.add('is-active');
+    }, 6000);
+  }
+
+  /* ---------- 固定予約ボタン ---------- */
+  var cta = document.getElementById('floatCta');
+  function onScroll() { cta.classList.toggle('is-show', window.scrollY > window.innerHeight * 0.7); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* ---------- メニュー ---------- */
+  var btn = document.getElementById('menuBtn');
+  var menu = document.getElementById('menu');
+  function setMenu(open) {
+    menu.classList.toggle('is-open', open);
+    btn.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', open);
+    btn.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  btn.addEventListener('click', function () { setMenu(!menu.classList.contains('is-open')); });
+  menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
+
+  /* ---------- ふわっと表示 ---------- */
+  var els = document.querySelectorAll('.rv');
+  if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('is-in'); }); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  els.forEach(function (e) { io.observe(e); });
+})();
+</script>
 </body>
 </html>

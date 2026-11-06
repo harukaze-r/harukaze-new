@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -1006,17 +1006,14 @@
 <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニュー">
   <span></span><span></span><span></span>
 </button>
-<div class="mobile-nav-overlay" id="mobileNav">
-  <a href="index.html">トップ</a>
-  <a href="vision.html">ハルカゼの想い</a>
-  <a href="college.html">ハルカゼCollege</a>
-  <a href="service.html">サービス内容</a>
-  <a href="price.html">サービス・料金</a>
-  <a href="flow.html">ご成婚までの流れ</a>
-  <a href="faq.html">よくある質問</a>
-  <a href="blog.html">ブログ</a>
-  <a href="contact.html">お問い合わせ</a>
-</div>
+<div class="mobile-nav-overlay" id="mobileNavOverlay">
+  <button class="mobile-nav-close" id="mobileNavClose" aria-label="閉じる">
+    <span></span><span></span>
+  </button>
+  <div class="mobile-nav-specialty">
+    <span>MARRIAGE CONSULTING</span>
+    <em>20・30代のための賢い婚活のススメ</em>
+  </div>
 
 <!-- Firefly Canvas -->
 <canvas class="firefly-canvas" id="fireflyCanvas"></canvas>
@@ -1280,8 +1277,28 @@
 
 <!-- FOOTER -->
 <footer class="site-footer">
-  <div class="footer-brand">Harukaze College — 結婚相談所ハルカゼ</div>
-  <div class="footer-copy">© 2025 Harukaze Marriage Consultation. All rights reserved. ｜ <a href="privacy.html" style="color:inherit; text-decoration:underline;">プライバシーポリシー</a></div>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo" style="color: var(--white); white-space: nowrap;">結婚相談所　ハルカゼ<span>MARRIAGE CONSULTING</span></a>
+
+      <div style="margin-top: 16px;">
+        <img src="images/Photoroom_20260409_154324.png" alt="結婚相談所ハルカゼ ロゴ" style="height: 112px; width: auto;">
+      </div>
+    </div>
+    <div class="footer-links">
+      <ul>
+        <li><a href="faq.html">よくある質問</a></li>
+
+        <li><a href="privacy.html">プライバシーポリシー</a></li>
+        <li><a href="#">特定商取引法に基づく表記</a></li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Harukaze Marriage Consulting. All rights reserved.</span>
+    <span>IBJ正規加盟店　大阪・北摂・吹田</span>
+  </div>
 </footer>
 
 <script>
@@ -1361,6 +1378,21 @@ mobileNav.querySelectorAll('a').forEach(a => {
     mobileNav.classList.remove('open');
   });
 });
+</script>
+<script>
+  /* ハンバーガーメニュー */
+  (function () {
+    var btn = document.getElementById('hamburgerBtn');
+    var ovl = document.getElementById('mobileNavOverlay');
+    var closeBtn = document.getElementById('mobileNavClose');
+    function openNav() { ovl.classList.add('open'); btn.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeNav() { ovl.classList.remove('open'); btn.classList.remove('open'); document.body.style.overflow = ''; }
+    if (btn && ovl) {
+      btn.addEventListener('click', function () { ovl.classList.contains('open') ? closeNav() : openNav(); });
+      if (closeBtn) closeBtn.addEventListener('click', closeNav);
+      ovl.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeNav); });
+    }
+  })();
 </script>
 </body>
 </html>

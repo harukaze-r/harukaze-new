@@ -1,0 +1,51 @@
+/* ============================================================
+   トップページ（index.html）と同じ見た目のメニュー
+   各ページの古いハンバーガーメニュー（#mobileNavOverlay）に
+   class="hz-menu" を付けて読み込みます。開閉の仕組み（JS）は各ページのまま。
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Noto+Serif+JP:wght@400&display=swap');
+
+/* 開くボタン：トップページと同じ白い丸 */
+.hamburger-btn {
+  width: 56px; height: 56px; padding: 0; border-radius: 50%;
+  background: rgba(255, 255, 255, .92); box-shadow: 0 4px 18px rgba(46, 43, 44, .12);
+  align-items: center; gap: 6px;
+}
+.hamburger-btn span { width: 20px; height: 1px; background: #2E2B2C; border-radius: 0; }
+.hamburger-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* メニュー本体 */
+.mobile-nav-overlay.hz-menu {
+  background: rgba(255, 255, 255, .98);
+  align-items: center; justify-content: center; text-align: left;
+  gap: 0; padding: 90px 20px 40px;
+}
+.mobile-nav-overlay.hz-menu::before { display: none; }
+
+/* 閉じるボタン：右上の白い丸に × */
+.mobile-nav-overlay.hz-menu .mobile-nav-close {
+  position: fixed; top: 20px; right: 20px; z-index: 1002;
+  width: 56px; height: 56px; padding: 0; border-radius: 50%;
+  background: rgba(255, 255, 255, .92); box-shadow: 0 4px 18px rgba(46, 43, 44, .12);
+}
+.mobile-nav-overlay.hz-menu .mobile-nav-close span {
+  position: absolute; left: 18px; top: 27px; width: 20px; height: 1px; margin: 0;
+  background: #2E2B2C; border-radius: 0;
+}
+.mobile-nav-overlay.hz-menu .mobile-nav-close span:nth-child(1) { transform: rotate(45deg); }
+.mobile-nav-overlay.hz-menu .mobile-nav-close span:nth-child(2) { transform: rotate(-45deg); }
+
+.hz-menu-list { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
+.mobile-nav-overlay.hz-menu .hz-menu-list a {
+  display: flex; align-items: baseline; gap: 18px;
+  font-family: 'Noto Serif JP', 'Shippori Mincho', 'Yu Mincho', 'Hiragino Mincho ProN', serif;
+  font-size: 16px; font-weight: 400; line-height: 2; letter-spacing: .1em; color: #2E2B2C;
+  background: none; padding: 0; margin: 0; box-shadow: none;
+}
+.mobile-nav-overlay.hz-menu .hz-menu-list a:hover { opacity: .7; color: #2E2B2C; }
+.hz-menu-list .en {
+  width: 110px; flex-shrink: 0;
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif; font-size: 14px; letter-spacing: .12em; color: #E0719F;
+}
+.hz-menu-list .menu-cta { margin-top: 14px; padding-top: 18px; border-top: 1px solid #D6D0D2; }
