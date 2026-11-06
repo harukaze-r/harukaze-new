@@ -177,6 +177,11 @@ ul, ol { list-style: none; }
 .mv-photo { position: absolute; inset: 0; }
 .mv-photo .ph { width: 100%; height: 100%; background: linear-gradient(160deg, #E8DFE2 0%, #D8CCD0 100%); }
 .mv-photo .ph .ph-label { left: 45%; }
+.mv-slides > img { opacity: 0; transition: opacity 1.6s ease; }
+.mv-slides > img.is-active { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .mv-slides > img { transition: none; } }
+/* PCではキャッチが左に重なるので、人物が左にいる写真は左右反転して右側に寄せる */
+@media (min-width: 721px) { .mv-slides > img.mv-flip { transform: scaleX(-1); } }
 .mv::after { /* 写真の左側だけ、白に近いごく淡いピンクを重ねて文字を読みやすく（写真の雰囲気は残す） */
   content: ''; position: absolute; inset: 0; pointer-events: none;
   background: linear-gradient(90deg, rgba(250, 251, 252, .92) 0%, rgba(246, 248, 250, .72) 34%, rgba(246, 248, 250, 0) 64%);
@@ -586,7 +591,12 @@ ul, ol { list-style: none; }
 <header class="mv" id="top">
   <div class="mv-photo">
     <!-- 写真差し替え：<img src="newimages/xxx.jpg" alt=""> を .ph の中に追加 -->
-    <div class="ph"><img src="newimages/ibj-network.png" alt=""><span class="ph-label">MAIN PHOTO<small>メイン写真</small></span></div>
+    <!-- 3枚の写真が6秒ごとにゆっくり切り替わる（動きを減らす設定の端末では1枚目のまま） -->
+    <div class="ph mv-slides">
+      <img class="is-active" src="newimages/ibj-network.png" alt="">
+      <img src="newimages/hero-2.jpg" alt="" loading="lazy">
+      <img class="mv-flip" src="newimages/hero-3.jpg" alt="" loading="lazy">
+    </div>
   </div>
   <a class="mv-logo" href="#top"><img src="newimages/logo-harukaze-header.jpg" alt="結婚相談所ハルカゼ harukaze"></a>
   <div class="mv-body">
@@ -1158,6 +1168,17 @@ ul, ol { list-style: none; }
     return c;
   }
   for (var i = 0; i < 3; i++) wrap.appendChild(card(posts[i]));
+
+  /* ---------- メイン写真の切り替え ---------- */
+  var slides = document.querySelectorAll('.mv-slides > img');
+  if (slides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var cur = 0;
+    setInterval(function () {
+      slides[cur].classList.remove('is-active');
+      cur = (cur + 1) % slides.length;
+      slides[cur].classList.add('is-active');
+    }, 6000);
+  }
 
   /* ---------- 固定予約ボタン ---------- */
   var cta = document.getElementById('floatCta');
