@@ -255,28 +255,33 @@ ul, ol { list-style: none; }
 /* ============================================================
    STEPS — ハルカゼのサポート（STEP番号＋見出し → リード文 → サービス一覧 ＋ イメージ写真）
    ============================================================ */
-.step-list { margin-top: 44px; border-top: 1px solid var(--rule); }
-.step { display: grid; grid-template-columns: 120px minmax(0, 1fr) minmax(0, 320px); gap: clamp(20px, 4vw, 48px); padding: clamp(28px, 4vw, 44px) 0; border-bottom: 1px solid var(--rule); }
-.step-img { aspect-ratio: 16 / 10; border-radius: 10px; } /* 文字が続くので、STEPごとにイメージ写真を添える */
-.step--noimg { grid-template-columns: 120px minmax(0, 1fr); } /* 写真のないSTEPは文章を広く */
-.step-ttl small { font-size: .6em; letter-spacing: .04em; color: var(--ink-mid); }
-.step-lead { font-size: 1.05em; }
-.step-tags { margin-top: 16px; }
-.step-no { font-family: var(--f-latin); letter-spacing: .2em; line-height: 1; color: var(--accent); }
-.step-no b { display: block; margin-top: 0; font-weight: 400; font-size: calc(var(--fs-title) * 2.2); letter-spacing: 0; }
+.step-list { max-width: 960px; margin: 44px auto 0; border-top: 1px solid var(--rule); }
+.step { border-bottom: 1px solid var(--rule); }
+/* 番号と項目名だけを見せ、押すと説明・タグ・写真が開く */
+.step-sum { position: relative; display: flex; align-items: center; gap: clamp(16px, 3vw, 32px); padding: clamp(18px, 2.4vw, 26px) 48px clamp(18px, 2.4vw, 26px) 0; list-style: none; cursor: pointer; }
+.step-sum::-webkit-details-marker { display: none; }
+.step-sum:hover .step-ttl { opacity: .75; }
+.step-no { flex-shrink: 0; width: 2.2em; font-family: var(--f-latin); font-size: calc(var(--fs-title) * 1.5); line-height: 1; color: var(--accent); }
 .step-ttl { font-size: var(--fs-title); font-weight: 500; line-height: 1.6; letter-spacing: .05em; }
-.step-lead { margin-top: 10px; color: var(--ink-mid); }
+.step-ttl small { font-size: .6em; letter-spacing: .04em; color: var(--ink-mid); }
+.step-toggle { position: absolute; right: 4px; top: 50%; width: 26px; height: 26px; margin-top: -13px; border: 1px solid var(--accent); border-radius: 50%; }
+.step-toggle::before, .step-toggle::after { content: ''; position: absolute; left: 7px; top: 12px; width: 10px; height: 1px; background: var(--accent); transition: transform .3s; }
+.step-toggle::after { transform: rotate(90deg); }
+.step-fold[open] .step-toggle::after { transform: rotate(0deg); }
+.step-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 300px); gap: clamp(20px, 4vw, 48px); align-items: start; padding: 0 0 clamp(24px, 3vw, 36px) calc(var(--fs-title) * 1.5 * 2.2 + clamp(16px, 3vw, 32px)); animation: panelIn .5s ease; }
+.step-body--noimg { grid-template-columns: minmax(0, 1fr); }
+.step-img { aspect-ratio: 16 / 10; border-radius: 10px; } /* 文字が続くので、STEPごとにイメージ写真を添える */
+.step-lead { font-size: 1.05em; color: var(--ink-mid); }
+.step-tags { margin-top: 16px; }
+@media (prefers-reduced-motion: reduce) { .step-body { animation: none; } }
 /* 「サービス名：説明」のリスト（STEPS と 代表紹介の経験で共通） */
 .svc-list { display: grid; gap: 10px; margin-top: 20px; }
 .svc-list li { position: relative; padding-left: 18px; line-height: 1.8; }
 .svc-list li::before { content: ''; position: absolute; left: 2px; top: .8em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 .svc-list b { font-weight: 600; color: var(--accent-deep); }
-@media (max-width: 1000px) and (min-width: 721px) { .step { grid-template-columns: 90px minmax(0, 1fr) minmax(0, 240px); } .step--noimg { grid-template-columns: 90px minmax(0, 1fr); } }
 @media (max-width: 720px) {
-  .step, .step--noimg { grid-template-columns: 1fr; gap: 12px; }
-  .step-img { grid-row: 2; } /* スマホは STEP番号 → 写真 → 文章 の順 */
-  .step-no { display: flex; align-items: baseline; gap: 10px; }
-  .step-no b { display: inline; margin-top: 0; font-size: calc(var(--fs-title) * 1.6); }
+  .step-body { grid-template-columns: 1fr; padding-left: 0; gap: 16px; }
+  .step-no { width: 1.8em; font-size: calc(var(--fs-title) * 1.3); }
 }
 
 /* 「→ ○○を見る」の文字リンク */
@@ -631,62 +636,111 @@ ul, ol { list-style: none; }
     <h2 class="head-ja rv">ハルカゼのサポート</h2>
     <ol class="step-list">
       <li class="step rv">
-        <p class="step-no"><b>01</b></p>
-        <div>
-          <h3 class="step-ttl">ファーストカウンセリング</h3>
-          <p class="step-lead">本音と、自分の魅力が言葉になる</p>
-          <ul class="chips step-tags"><li>価値観整理</li><li>魅力・強み発見</li></ul>
-        </div>
-        <div class="ph step-img"><img src="newimages/step-1-online.jpg" alt="オンラインで面談する女性" loading="lazy"><span class="ph-label">PHOTO</span></div>
-      </li>
-      <li class="step step--noimg rv">
-        <p class="step-no"><b>02</b></p>
-        <div>
-          <h3 class="step-ttl">婚活プラン面談</h3>
-          <p class="step-lead">結婚後の毎日と、そこまでの進め方が決まる</p>
-          <ul class="chips step-tags"><li>Visionボード</li><li>婚活プラン作成</li></ul>
-        </div>
-      </li>
-      <li class="step step--noimg rv">
-        <p class="step-no"><b>03</b></p>
-        <div>
-          <h3 class="step-ttl">お買い物同行<small>（コースによって）</small></h3>
-          <p class="step-lead">似合う服がわかって、自分らしく見える</p>
-          <ul class="chips step-tags"><li>骨格診断</li><li>服装・メイクレッスン</li></ul>
-        </div>
+        <details class="step-fold">
+          <summary class="step-sum">
+            <span class="step-no">01</span>
+            <h3 class="step-ttl">ファーストカウンセリング</h3>
+            <span class="step-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="step-body">
+            <div>
+              <p class="step-lead">本音と、自分の魅力が言葉になる</p>
+              <ul class="chips step-tags"><li>価値観整理</li><li>魅力・強み発見</li></ul>
+            </div>
+            <div class="ph step-img"><img src="newimages/step-1-online.jpg" alt="オンラインで面談する女性" loading="lazy"><span class="ph-label">PHOTO</span></div>
+          </div>
+        </details>
       </li>
       <li class="step rv">
-        <p class="step-no"><b>04</b></p>
-        <div>
-          <h3 class="step-ttl">写真撮影</h3>
-          <p class="step-lead">一番自然な表情で、人柄が伝わるプロフィールができる</p>
-          <ul class="chips step-tags"><li>写真撮影</li><li>プロフィール作成</li></ul>
-        </div>
-        <div class="ph step-img"><img src="newimages/step-2-photo.jpg" alt="プロフィール写真の撮影" loading="lazy"><span class="ph-label">PHOTO</span></div>
+        <details class="step-fold">
+          <summary class="step-sum">
+            <span class="step-no">02</span>
+            <h3 class="step-ttl">婚活プラン面談</h3>
+            <span class="step-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="step-body step-body--noimg">
+            <div>
+              <p class="step-lead">結婚後の毎日と、そこまでの進め方が決まる</p>
+              <ul class="chips step-tags"><li>Visionボード</li><li>婚活プラン作成</li></ul>
+            </div>
+          </div>
+        </details>
       </li>
       <li class="step rv">
-        <p class="step-no"><b>05</b></p>
-        <div>
-          <h3 class="step-ttl">IBJアプリで出会う</h3>
-          <p class="step-lead">10万人以上から、申し込みの上限を気にせず出会える</p>
-          <ul class="chips step-tags"><li>お見合い料0円・申し込み上限なし</li></ul>
-        </div>
-        <div class="ph step-img"><img src="newimages/step-3-ibj-app.jpg" alt="IBJのアプリでお相手を探す男性" loading="lazy"><span class="ph-label">PHOTO</span></div>
+        <details class="step-fold">
+          <summary class="step-sum">
+            <span class="step-no">03</span>
+            <h3 class="step-ttl">お買い物同行<small>（コースによって）</small></h3>
+            <span class="step-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="step-body step-body--noimg">
+            <div>
+              <p class="step-lead">似合う服がわかって、自分らしく見える</p>
+              <ul class="chips step-tags"><li>骨格診断</li><li>服装・メイクレッスン</li></ul>
+            </div>
+          </div>
+        </details>
       </li>
-      <li class="step step--noimg rv">
-        <p class="step-no"><b>06</b></p>
-        <div>
-          <h3 class="step-ttl">お見合い日程調整</h3>
-          <p class="step-lead">お見合いはカフェやホテルのラウンジで60分<br>初めて出会うまでの面倒なメッセージのやり取りや予約の手間が不要</p>
-        </div>
+      <li class="step rv">
+        <details class="step-fold">
+          <summary class="step-sum">
+            <span class="step-no">04</span>
+            <h3 class="step-ttl">写真撮影</h3>
+            <span class="step-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="step-body">
+            <div>
+              <p class="step-lead">一番自然な表情で、人柄が伝わるプロフィールができる</p>
+              <ul class="chips step-tags"><li>写真撮影</li><li>プロフィール作成</li></ul>
+            </div>
+            <div class="ph step-img"><img src="newimages/step-2-photo.jpg" alt="プロフィール写真の撮影" loading="lazy"><span class="ph-label">PHOTO</span></div>
+          </div>
+        </details>
       </li>
-      <li class="step step--noimg rv">
-        <p class="step-no"><b>07</b></p>
-        <div>
-          <h3 class="step-ttl">定期面談</h3>
-          <p class="step-lead">「なんとなく違う」を一緒に確かめて、最後は自分で決められる</p>
-          <ul class="chips step-tags"><li>お見合い・交際サポート</li><li>伝える技術レッスン</li><li>LINE伴走</li></ul>
-        </div>
+      <li class="step rv">
+        <details class="step-fold">
+          <summary class="step-sum">
+            <span class="step-no">05</span>
+            <h3 class="step-ttl">IBJアプリで出会う</h3>
+            <span class="step-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="step-body">
+            <div>
+              <p class="step-lead">10万人以上から、申し込みの上限を気にせず出会える</p>
+              <ul class="chips step-tags"><li>お見合い料0円・申し込み上限なし</li></ul>
+            </div>
+            <div class="ph step-img"><img src="newimages/step-3-ibj-app.jpg" alt="IBJのアプリでお相手を探す男性" loading="lazy"><span class="ph-label">PHOTO</span></div>
+          </div>
+        </details>
+      </li>
+      <li class="step rv">
+        <details class="step-fold">
+          <summary class="step-sum">
+            <span class="step-no">06</span>
+            <h3 class="step-ttl">お見合い日程調整</h3>
+            <span class="step-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="step-body step-body--noimg">
+            <div>
+              <p class="step-lead">お見合いはカフェやホテルのラウンジで60分<br>初めて出会うまでの面倒なメッセージのやり取りや予約の手間が不要</p>
+            </div>
+          </div>
+        </details>
+      </li>
+      <li class="step rv">
+        <details class="step-fold">
+          <summary class="step-sum">
+            <span class="step-no">07</span>
+            <h3 class="step-ttl">定期面談</h3>
+            <span class="step-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="step-body step-body--noimg">
+            <div>
+              <p class="step-lead">「なんとなく違う」を一緒に確かめて、最後は自分で決められる</p>
+              <ul class="chips step-tags"><li>お見合い・交際サポート</li><li>伝える技術レッスン</li><li>LINE伴走</li></ul>
+            </div>
+          </div>
+        </details>
       </li>
     </ol>
     <a class="btn-line btn-line--fill rv" href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer">無料相談を予約する</a>
