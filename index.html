@@ -273,14 +273,14 @@ ul, ol { list-style: none; }
 .step-sum { position: relative; display: flex; align-items: center; gap: clamp(16px, 3vw, 32px); padding: clamp(18px, 2.4vw, 26px) 48px clamp(18px, 2.4vw, 26px) 0; list-style: none; cursor: pointer; }
 .step-sum::-webkit-details-marker { display: none; }
 .step-sum:hover .step-ttl { opacity: .75; }
-.step-no { flex-shrink: 0; width: 2.2em; font-family: var(--f-latin); font-size: calc(var(--fs-title) * .75); line-height: 1; color: var(--accent); } /* PCでは以前（1.5倍）の半分 */
-.step-ttl { font-size: calc(var(--fs-title) * .75); font-weight: 500; line-height: 1.6; letter-spacing: .05em; }
+.step-no { flex-shrink: 0; width: 2.2em; font-family: var(--f-latin); font-size: calc(var(--fs-title) * .75 - 2px); line-height: 1; color: var(--accent); } /* PCの番号（タイトルと同じ大きさ） */
+.step-ttl { font-size: calc(var(--fs-title) * .75 - 2px); font-weight: 500; line-height: 1.6; letter-spacing: .05em; }
 .step-ttl small { display: block; font-size: max(.6em, 12px); line-height: 1.4; letter-spacing: .04em; color: var(--ink-mid); } /* （コースによって）は改行して添える */
 .step-toggle { position: absolute; right: 4px; top: 50%; width: 26px; height: 26px; margin-top: -13px; border: 1px solid var(--accent); border-radius: 50%; }
 .step-toggle::before, .step-toggle::after { content: ''; position: absolute; left: 7px; top: 12px; width: 10px; height: 1px; background: var(--accent); transition: transform .3s; }
 .step-toggle::after { transform: rotate(90deg); }
 .step-fold[open] .step-toggle::after { transform: rotate(0deg); }
-.step-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 300px); gap: clamp(20px, 4vw, 48px); align-items: start; padding: 0 0 clamp(24px, 3vw, 36px) calc(var(--fs-title) * .75 * 2.2 + clamp(16px, 3vw, 32px)); animation: panelIn .5s ease; }
+.step-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 300px); gap: clamp(20px, 4vw, 48px); align-items: start; padding: 0 0 clamp(24px, 3vw, 36px) calc((var(--fs-title) * .75 - 2px) * 2.2 + clamp(16px, 3vw, 32px)); animation: panelIn .5s ease; }
 .step-body--noimg { grid-template-columns: minmax(0, 1fr); }
 .step-img { aspect-ratio: 16 / 10; border-radius: 10px; } /* 文字が続くので、STEPごとにイメージ写真を添える */
 .step-lead { font-size: 1.05em; color: var(--ink-mid); }
@@ -294,7 +294,7 @@ ul, ol { list-style: none; }
 @media (max-width: 720px) {
   .step-body { grid-template-columns: 1fr; padding-left: 0; gap: 16px; }
   .step-no { width: 1.8em; font-size: calc(var(--fs-title) * 1.3); }
-  .step-ttl { font-size: 17px; } /* スマホの項目名 */
+  .step-ttl { font-size: 15px; } /* スマホの項目名 */
 }
 
 /* 「→ ○○を見る」の文字リンク */
@@ -1095,7 +1095,7 @@ ul, ol { list-style: none; }
   <div class="inner">
     <p class="head-en rv">Last Message</p>
     <div class="closing-msg rv">
-      <p>婚活用の自分をつくらなくていい。<br>誰かに選ばれるために、がんばらなくていい。</p>
+      <p>誰かに選ばれるために、がんばらなくていい。</p>
       <p>自分の魅力を知って、自分らしく出会えたら、<br>選ぶ相手も、選んだあとの毎日も、きっと変わります。</p>
       <p class="closing-big">この人を選んだ<br>私の人生が、もっと好きになった。</p>
       <p>そんな出会いを、ハルカゼで。</p>
