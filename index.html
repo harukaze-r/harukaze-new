@@ -273,7 +273,7 @@ ul, ol { list-style: none; }
 .step-sum::-webkit-details-marker { display: none; }
 .step-sum:hover .step-ttl { opacity: .75; }
 .step-no { flex-shrink: 0; width: 2.2em; font-family: var(--f-latin); font-size: calc(var(--fs-title) * .75); line-height: 1; color: var(--accent); } /* PCでは以前（1.5倍）の半分 */
-.step-ttl { font-size: var(--fs-title); font-weight: 500; line-height: 1.6; letter-spacing: .05em; }
+.step-ttl { font-size: calc(var(--fs-title) * .75); font-weight: 500; line-height: 1.6; letter-spacing: .05em; }
 .step-ttl small { display: block; font-size: max(.6em, 12px); line-height: 1.4; letter-spacing: .04em; color: var(--ink-mid); } /* （コースによって）は改行して添える */
 .step-toggle { position: absolute; right: 4px; top: 50%; width: 26px; height: 26px; margin-top: -13px; border: 1px solid var(--accent); border-radius: 50%; }
 .step-toggle::before, .step-toggle::after { content: ''; position: absolute; left: 7px; top: 12px; width: 10px; height: 1px; background: var(--accent); transition: transform .3s; }
