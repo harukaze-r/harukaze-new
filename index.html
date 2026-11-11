@@ -527,8 +527,12 @@ ul, ol { list-style: none; }
 /* さいごには中央揃え。行間と余白を多めに */
 .closing { text-align: center; }
 .closing-msg { margin-top: clamp(48px, 6vw, 72px); line-height: 2.1; letter-spacing: .06em; }
-.closing-msg p + p { margin-top: 2.2em; }
+.closing-msg p + p { margin-top: 1em; }
 .closing-msg .closing-big { font-size: var(--fs-title); line-height: 1.8; }
+/* 無料相談の案内（中央に置いた枠の中で、項目は左揃え） */
+.closing-points { display: inline-grid; gap: 10px; margin-top: clamp(32px, 4vw, 44px); padding: clamp(20px, 3vw, 28px) clamp(24px, 4vw, 40px); border: 1px solid rgba(255, 255, 255, .3); border-radius: 10px; text-align: left; line-height: 1.7; }
+.closing-points li { position: relative; padding-left: 18px; }
+.closing-points li::before { content: ''; position: absolute; left: 2px; top: .75em; width: 6px; height: 6px; border-radius: 50%; background: var(--pink); }
 .closing .btn-line { margin-top: clamp(40px, 5vw, 56px); }
 
 /* ============================================================
@@ -1091,14 +1095,16 @@ ul, ol { list-style: none; }
 <!-- ============================== 10. さいごに ============================== -->
 <section class="sec closing" id="reserve">
   <div class="inner">
-    <p class="head-en rv">Last Message</p>
     <div class="closing-msg rv">
-      <p>誰かに選ばれるために、がんばらなくていい。</p>
-      <p>自分の魅力を知って、自分らしく出会えたら、<br>選ぶ相手も、選んだあとの毎日も、きっと変わります。</p>
-      <p class="closing-big">この人を選んだ<br>私の人生が、もっと好きになった。</p>
-      <p>そんな出会いを、ハルカゼで。</p>
-      <p>まずは無料相談で、今の気持ちを聞かせてください。<br>オンラインでも受け付けています。</p>
+      <p class="closing-big">まずは、話すだけでいい。</p>
+      <p>婚活するか迷っている段階でも、大丈夫です。</p>
     </div>
+    <ul class="closing-points rv">
+      <li>無料／オンラインで全国から</li>
+      <li>所要時間：約40分</li>
+      <li>今の気持ちを聞いたうえで、ハルカゼが合うかどうかを一緒に考えます</li>
+      <li>無理な勧誘はしません</li>
+    </ul>
     <a class="btn-line btn-line--fill rv" href="https://lin.ee/VsG7xJk" target="_blank" rel="noopener noreferrer">無料相談を予約する</a>
   </div>
 </section>
