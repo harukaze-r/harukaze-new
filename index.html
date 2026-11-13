@@ -290,11 +290,16 @@ ul, ol { list-style: none; }
 .step-list { max-width: 960px; margin: 44px auto 0; border-top: 1px solid var(--rule); }
 .step { border-bottom: 1px solid var(--rule); }
 /* 番号と項目名だけを見せ、押すと説明・タグ・写真が開く */
-.step-sum { position: relative; display: flex; align-items: center; gap: clamp(16px, 3vw, 32px); padding: clamp(18px, 2.4vw, 26px) 48px clamp(18px, 2.4vw, 26px) 0; list-style: none; cursor: pointer; }
+.step-sum { position: relative; display: flex; align-items: flex-end; gap: clamp(16px, 3vw, 32px); padding: clamp(18px, 2.4vw, 26px) 48px clamp(18px, 2.4vw, 26px) 0; list-style: none; cursor: pointer; }
 .step-sum::-webkit-details-marker { display: none; }
 .step-sum:hover .step-ttl { opacity: .75; }
 .step-no { flex-shrink: 0; width: 2.2em; font-family: var(--f-latin); font-size: calc(var(--fs-title) * .75 - 2px); line-height: 1; color: var(--accent); } /* PCの番号（タイトルと同じ大きさ） */
 .step-ttl { font-size: calc(var(--fs-title) * .75 - 2px); font-weight: 500; line-height: 1.6; letter-spacing: .05em; }
+/* 「こんな悩みに → このサポート」：悩みの声を項目名の上に小さく添える */
+.step-head { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.step-worry { font-size: .9em; line-height: 1.6; letter-spacing: .03em; color: var(--ink-mid); }
+.step-worry::after { content: ' →'; color: var(--accent); }
+.step-no { padding-bottom: .3em; }
 .step-ttl small { display: block; font-size: max(.6em, 12px); line-height: 1.4; letter-spacing: .04em; color: var(--ink-mid); } /* （コースによって）は改行して添える */
 .step-toggle { position: absolute; right: 4px; top: 50%; width: 26px; height: 26px; margin-top: -13px; border: 1px solid var(--accent); border-radius: 50%; }
 .step-toggle::before, .step-toggle::after { content: ''; position: absolute; left: 7px; top: 12px; width: 10px; height: 1px; background: var(--accent); transition: transform .3s; }
@@ -672,7 +677,10 @@ ul, ol { list-style: none; }
         <details class="step-fold">
           <summary class="step-sum">
             <span class="step-no">01</span>
-            <h3 class="step-ttl">ファーストカウンセリング</h3>
+            <div class="step-head">
+              <p class="step-worry">「どんな人が合うのか、自分のことも、まだよくわからない」</p>
+              <h3 class="step-ttl">ファーストカウンセリング</h3>
+            </div>
             <span class="step-toggle" aria-hidden="true"></span>
           </summary>
           <div class="step-body">
@@ -688,7 +696,10 @@ ul, ol { list-style: none; }
         <details class="step-fold">
           <summary class="step-sum">
             <span class="step-no">02</span>
-            <h3 class="step-ttl">婚活ロードマップ作成</h3>
+            <div class="step-head">
+              <p class="step-worry">「やることが多すぎて、何から始めればいいの？」</p>
+              <h3 class="step-ttl">婚活ロードマップ作成</h3>
+            </div>
             <span class="step-toggle" aria-hidden="true"></span>
           </summary>
           <div class="step-body step-body--noimg">
@@ -703,7 +714,10 @@ ul, ol { list-style: none; }
         <details class="step-fold">
           <summary class="step-sum">
             <span class="step-no">03</span>
-            <h3 class="step-ttl">お買い物同行<small>（コースによって）</small></h3>
+            <div class="step-head">
+              <p class="step-worry">「似合う服がわからなくて、いつも無難な服ばかり」</p>
+              <h3 class="step-ttl">お買い物同行<small>（コースによって）</small></h3>
+            </div>
             <span class="step-toggle" aria-hidden="true"></span>
           </summary>
           <div class="step-body step-body--noimg">
@@ -718,7 +732,10 @@ ul, ol { list-style: none; }
         <details class="step-fold">
           <summary class="step-sum">
             <span class="step-no">04</span>
-            <h3 class="step-ttl">写真撮影</h3>
+            <div class="step-head">
+              <p class="step-worry">「写真を撮られるのが苦手！」</p>
+              <h3 class="step-ttl">写真撮影</h3>
+            </div>
             <span class="step-toggle" aria-hidden="true"></span>
           </summary>
           <div class="step-body">
@@ -734,7 +751,10 @@ ul, ol { list-style: none; }
         <details class="step-fold">
           <summary class="step-sum">
             <span class="step-no">05</span>
-            <h3 class="step-ttl">IBJアプリで出会う</h3>
+            <div class="step-head">
+              <p class="step-worry">「申し込みの数を気にして、ついためらってしまう」</p>
+              <h3 class="step-ttl">IBJアプリで出会う</h3>
+            </div>
             <span class="step-toggle" aria-hidden="true"></span>
           </summary>
           <div class="step-body">
@@ -750,7 +770,10 @@ ul, ol { list-style: none; }
         <details class="step-fold">
           <summary class="step-sum">
             <span class="step-no">06</span>
-            <h3 class="step-ttl">お見合い日程調整</h3>
+            <div class="step-head">
+              <p class="step-worry">「日程調整やメッセージのやり取りで、会う前から疲れる」</p>
+              <h3 class="step-ttl">お見合い日程調整</h3>
+            </div>
             <span class="step-toggle" aria-hidden="true"></span>
           </summary>
           <div class="step-body step-body--noimg">
@@ -764,7 +787,10 @@ ul, ol { list-style: none; }
         <details class="step-fold">
           <summary class="step-sum">
             <span class="step-no">07</span>
-            <h3 class="step-ttl">定期面談</h3>
+            <div class="step-head">
+              <p class="step-worry">「いい人なのに、なぜかピンとこない」</p>
+              <h3 class="step-ttl">定期面談</h3>
+            </div>
             <span class="step-toggle" aria-hidden="true"></span>
           </summary>
           <div class="step-body step-body--noimg">
