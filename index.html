@@ -349,9 +349,9 @@ ul, ol { list-style: none; }
 .lab-emblem { width: 240px; }
 .lab-emblem svg { display: block; width: 100%; height: auto; }
 .lab-support { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: clamp(40px, 6vw, 80px); margin-top: clamp(36px, 5vw, 56px); }
-.lab-lead .ask-big { font-size: calc(var(--fs-title) * .8); font-weight: 500; line-height: 1.6; letter-spacing: .04em; }
-.lab-lead p + p { margin-top: .4em; }
-.lab-text { margin-top: 36px; }
+.lab-text { line-height: 1.95; }
+.lab-text p + p { margin-top: 1.2em; }
+.lab-wish { font-size: calc(var(--fs-title) * .8); font-weight: 500; line-height: 1.6; letter-spacing: .04em; color: var(--accent-deep); }
 .lab-sub { margin-top: 44px; font-weight: 500; letter-spacing: .08em; color: var(--accent-deep); }
 .coaches { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 20px; }
 @media (max-width: 1000px) and (min-width: 561px) { .coaches { grid-template-columns: repeat(2, 1fr); row-gap: 32px; } .coach:nth-child(2n) { border-right: 1px solid var(--rule); } }
@@ -808,8 +808,8 @@ ul, ol { list-style: none; }
 <!-- ============================== 4. ハルカゼLAB ============================== -->
 <section class="sec" id="lab">
   <div class="inner">
-    <p class="head-en head-en--wave rv" aria-hidden="true"></p><!-- 英字は入れず、波線だけ -->
-    <h2 class="head-ja rv">選んだ人と、<br class="sp-only">ずっと笑っていたい</h2>
+    <p class="head-en head-en--ja rv">ハルカゼ独自のサポート<span class="pc-only">｜</span><br class="sp-only">ハルカゼLAB</p>
+    <h2 class="head-ja rv">退会したあとも、<br class="sp-only">専門コーチに相談できる</h2>
     <div class="lab-support">
       <!-- ハルカゼLAB のロゴ風エンブレム（紺地・ピンクの曲線・グラデーションの LAB） -->
       <div class="lab-emblem rv">
@@ -842,10 +842,11 @@ ul, ol { list-style: none; }
         </svg>
       </div>
       <div>
-        <div class="lab-lead rv">
-          <p class="ask-big">「結婚相談所で出会って、本当にうまくいく？」</p>
+        <div class="lab-text rv">
+          <p>ふたりの話し合い方、価値観の違い、性の悩み。<br>活動中にどれだけ確かめあっても、結婚が決まってからの方が、悩みは増えていくもの。</p>
+          <p>ハルカゼは、成婚をゴールにしない。<br>成婚退会したあとも、それぞれの分野の専門コーチに相談できます。</p>
+          <p class="lab-wish"><span class="mk">選んだ人と、<br class="sp-only">ずっと笑っていられるように。</span></p>
         </div>
-        <p class="lab-text rv">ハルカゼの婚活は、出会って終わりではありません。<br><span class="mk">結婚したあとの暮らしまで考えて</span>、それぞれの分野の専門コーチに相談できます。</p>
         <h3 class="lab-sub rv">こんなことを相談できます</h3>
         <ul class="coaches">
           <li class="coach rv">
