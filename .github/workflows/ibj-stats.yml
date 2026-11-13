@@ -1,0 +1,44 @@
+# トップページに表示する IBJ 登録会員数を、毎月自動で更新する
+# IBJ は毎月1日ごろに「先月末時点」の数字へ切り替えるので、その後の 2日と5日（日本時間 9:00）に取りに行く
+name: IBJ会員数の月次更新
+
+on:
+  schedule:
+    - cron: '0 0 2,5 * *'   # UTC 0:00 = 日本時間 9:00
+  workflow_dispatch:        # GitHub の Actions 画面から手動でも実行できる
+
+permissions:
+  contents: write   # data/ibj-stats.json をコミットするため
+  pages: write      # 更新後にサイトの公開処理を走らせるため
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: IBJ の会員数を取得
+        run: node scripts/update-ibj-stats.mjs
+
+      - name: 変わっていればコミットしてサイトを更新
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if git diff --quiet -- data/ibj-stats.json; then
+            echo "数字に変更はありません"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ibj-stats.json
+          git commit -m "IBJ会員数を更新"
+          git push
+          # 自動のコミットではサイトの公開処理が動かないことがあるので、明示的に依頼する
+          curl -fsS -X POST \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/pages/builds" || echo "公開処理の依頼に失敗しました（次の更新時に反映されます）"
