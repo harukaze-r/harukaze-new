@@ -177,6 +177,25 @@ ul, ol { list-style: none; }
 .mv-photo { position: absolute; inset: 0; }
 .mv-photo .ph { width: 100%; height: 100%; background: linear-gradient(160deg, #E8DFE2 0%, #D8CCD0 100%); }
 .mv-photo .ph .ph-label { left: 45%; }
+/* 右下の IBJ 登録会員数 */
+.mv-stat {
+  position: absolute; z-index: 3; right: var(--gutter); bottom: clamp(24px, 4vw, 44px);
+  display: flex; flex-direction: column; align-items: flex-end; gap: 2px;
+  padding: 12px 18px; border-radius: 10px; background: rgba(255, 255, 255, .88);
+  box-shadow: 0 8px 24px -14px rgba(46, 43, 44, .5); color: var(--ink); line-height: 1.3;
+}
+.mv-stat:hover { opacity: 1; background: #fff; }
+.mv-stat .lbl { font-size: 12px; letter-spacing: .1em; color: var(--ink-mid); }
+.mv-stat .num { font-size: 14px; letter-spacing: .04em; }
+.mv-stat .num b { font-family: var(--f-latin); font-weight: 500; font-size: 30px; color: var(--accent-deep); margin-right: 2px; }
+.mv-stat .as-of { font-size: 11px; color: var(--ink-light); letter-spacing: .06em; }
+@media (max-width: 720px) {
+  .mv-stat { right: 10px; bottom: 10px; padding: 7px 11px; border-radius: 8px; }
+  .mv-stat .lbl { font-size: 10px; }
+  .mv-stat .num { font-size: 11px; }
+  .mv-stat .num b { font-size: 20px; }
+  .mv-stat .as-of { font-size: 9px; }
+}
 .mv-slides > img { opacity: 0; transition: opacity 1.6s ease; }
 .mv-slides > img.is-active { opacity: 1; }
 @media (prefers-reduced-motion: reduce) { .mv-slides > img { transition: none; } }
@@ -603,6 +622,12 @@ ul, ol { list-style: none; }
       <img src="newimages/hero-2.jpg" alt="" loading="lazy">
       <img src="newimages/ibj-network.png" alt="" loading="lazy">
     </div>
+    <!-- IBJ登録会員数：data/ibj-stats.json を毎月自動で更新（.github/workflows/ibj-stats.yml）。下の数字は読み込めなかったときの表示 -->
+    <a class="mv-stat" id="ibjStat" href="https://www.ibjapan.com/ibj/data/" target="_blank" rel="noopener">
+      <span class="lbl">IBJ登録会員数</span>
+      <span class="num"><b data-ibj="member">111,572</b>名</span>
+      <span class="as-of" data-ibj="asOf">2026年10月末時点</span>
+    </a>
   </div>
   <a class="mv-logo" href="#top"><img src="newimages/logo-harukaze-header.jpg" alt="結婚相談所ハルカゼ harukaze"></a>
   <div class="mv-body">
@@ -1180,6 +1205,14 @@ ul, ol { list-style: none; }
     return c;
   }
   for (var i = 0; i < 3; i++) wrap.appendChild(card(posts[i]));
+
+  /* ---------- IBJ登録会員数（毎月自動更新される data/ibj-stats.json から） ---------- */
+  if (window.fetch) {
+    fetch('data/ibj-stats.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (!d || !d.member || !d.asOf) return;
+      document.querySelectorAll('[data-ibj]').forEach(function (el) { el.textContent = d[el.getAttribute('data-ibj')]; });
+    }).catch(function () {});
+  }
 
   /* ---------- メイン写真の切り替え ---------- */
   var slides = document.querySelectorAll('.mv-slides > img');
