@@ -391,6 +391,7 @@ ul, ol { list-style: none; }
 /* 「こんな悩みに → このサポート」：悩みの声を項目名の上に小さく添える */
 .step-head { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
 .step-worry { font-size: .9em; line-height: 1.6; letter-spacing: .03em; color: var(--ink-mid); }
+.step-catch { color: var(--accent-deep); }
 .step-no { padding-bottom: .3em; }
 .step-ttl small { display: block; font-size: max(.6em, 12px); line-height: 1.4; letter-spacing: .04em; color: var(--ink-mid); } /* （コースによって）は改行して添える */
 .step-toggle { position: absolute; right: 4px; top: 50%; width: 26px; height: 26px; margin-top: -13px; border: 1px solid var(--accent); border-radius: 50%; }
@@ -698,7 +699,7 @@ ul, ol { list-style: none; }
 /* ============================================================
    MEETING — 4つの出会い方（PCは4列、タブレットは2列、スマホは縦積み）
    ============================================================ */
-.meet-lead { margin-top: 18px; text-align: center; color: var(--ink-mid); }
+.meet-lead, .sec-lead { margin-top: 18px; text-align: center; color: var(--ink-mid); }
 .meet-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 40px; }
 .meet-card { background: var(--white); border: 1px solid #E2DCDE; border-radius: 10px; padding: clamp(20px, 2.4vw, 28px); }
 .meet-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
@@ -864,21 +865,22 @@ ul, ol { list-style: none; }
 <section class="sec sec--mist" id="steps">
   <div class="inner">
     <h2 class="head-ja head-ja--wave rv">サポート内容</h2>
+    <p class="sec-lead rv">出会いのチャンス、恋愛コミュ力、マインド。<br class="sp-only">あなたに必要なところを整える。</p>
     <ol class="step-list">
       <li class="step rv">
         <details class="step-fold">
           <summary class="step-sum">
             <span class="step-no">01</span>
             <div class="step-head">
-              <p class="step-worry">「どんな人が合うのか、自分のことも、まだよくわからない」</p>
+              <p class="step-worry step-catch">大事にしたいことを、言葉にする</p>
               <h3 class="step-ttl">ファーストカウンセリング</h3>
             </div>
             <span class="step-toggle" aria-hidden="true"></span>
           </summary>
           <div class="step-body">
             <div>
-              <p class="step-lead">本音と、自分の魅力が言葉になる</p>
-              <ul class="chips step-tags"><li>価値観整理</li><li>魅力・強み発見</li></ul>
+              <p class="step-lead">「どんな人がいい？」に、すぐ答えられなくて大丈夫です。<br>話しながら、あなたの価値観と魅力を一緒に見つけます。</p>
+              <ul class="chips step-tags"><li>価値観の整理</li><li>魅力・強みの発見</li></ul>
             </div>
             <div class="ph step-img"><img src="newimages/step-1-online.jpg" alt="オンラインで面談する女性" loading="lazy"></div>
           </div>
@@ -889,14 +891,14 @@ ul, ol { list-style: none; }
           <summary class="step-sum">
             <span class="step-no">02</span>
             <div class="step-head">
-              <p class="step-worry">「やることが多すぎて、何から始めればいいの？」</p>
+              <p class="step-worry step-catch">何から始めればいいか、がわかる</p>
               <h3 class="step-ttl">婚活ロードマップ作成</h3>
             </div>
             <span class="step-toggle" aria-hidden="true"></span>
           </summary>
           <div class="step-body step-body--noimg">
             <div>
-              <p class="step-lead">結婚後の毎日と、そこまでの進め方が決まる</p>
+              <p class="step-lead">結婚したあと、どんな毎日を送りたいか。<br>そこから逆算して、出会うまでの進め方を一緒に決めます。</p>
               <ul class="chips step-tags"><li>Visionボード</li><li>婚活プラン作成</li></ul>
             </div>
           </div>
@@ -907,15 +909,15 @@ ul, ol { list-style: none; }
           <summary class="step-sum">
             <span class="step-no">03</span>
             <div class="step-head">
-              <p class="step-worry">「似合う服がわからなくて、いつも無難な服ばかり」</p>
-              <h3 class="step-ttl">お買い物同行<small>（コースによって）</small></h3>
+              <p class="step-worry step-catch">盛るのではなく、「似合う」を見つける</p>
+              <h3 class="step-ttl">骨格診断・服装／メイクレッスン</h3>
             </div>
             <span class="step-toggle" aria-hidden="true"></span>
           </summary>
           <div class="step-body step-body--noimg">
             <div>
-              <p class="step-lead">似合う服がわかって、自分らしく見える</p>
-              <ul class="chips step-tags"><li>骨格診断</li><li>服装・メイクレッスン</li></ul>
+              <p class="step-lead">似合う服の形がわかると、無理せず自分らしく見えます。<br>コースによっては、お買い物にも一緒に行きます。</p>
+              <ul class="chips step-tags"><li>骨格診断</li><li>服装・メイクレッスン</li><li>お買い物同行（コースによる）</li></ul>
             </div>
           </div>
         </details>
@@ -925,14 +927,14 @@ ul, ol { list-style: none; }
           <summary class="step-sum">
             <span class="step-no">04</span>
             <div class="step-head">
-              <p class="step-worry">「写真を撮られるのが苦手！」</p>
-              <h3 class="step-ttl">写真撮影</h3>
+              <p class="step-worry step-catch">「あなた」が伝わる写真とプロフィール</p>
+              <h3 class="step-ttl">写真撮影・プロフィール作成</h3>
             </div>
             <span class="step-toggle" aria-hidden="true"></span>
           </summary>
           <div class="step-body">
             <div>
-              <p class="step-lead">一番自然な表情で、人柄が伝わるプロフィールができる</p>
+              <p class="step-lead">会ったときの印象が、そのまま伝わる写真を撮ります。<br>プロフィールも、あなたの言葉で一緒につくります。</p>
               <ul class="chips step-tags"><li>写真撮影</li><li>プロフィール作成</li></ul>
             </div>
             <div class="ph step-img"><img src="newimages/step-2-photo.jpg" alt="プロフィール写真の撮影" loading="lazy"></div>
@@ -944,14 +946,14 @@ ul, ol { list-style: none; }
           <summary class="step-sum">
             <span class="step-no">05</span>
             <div class="step-head">
-              <p class="step-worry">「日程調整やメッセージのやり取りで、会う前から疲れる」</p>
-              <h3 class="step-ttl">お見合い日程調整</h3>
+              <p class="step-worry step-catch">会うまでの、面倒なやりとりはなし</p>
+              <h3 class="step-ttl">お見合いの日程調整</h3>
             </div>
             <span class="step-toggle" aria-hidden="true"></span>
           </summary>
           <div class="step-body step-body--noimg">
             <div>
-              <p class="step-lead">お見合いはカフェやホテルのラウンジで60分。<br>初めて出会うまでの面倒なメッセージのやり取りや予約の手間が不要</p>
+              <p class="step-lead">日程の調整や予約は、ハルカゼが行います。<br>お見合いはカフェやホテルのラウンジで、60分。</p>
             </div>
           </div>
         </details>
@@ -961,15 +963,14 @@ ul, ol { list-style: none; }
           <summary class="step-sum">
             <span class="step-no">06</span>
             <div class="step-head">
-              <p class="step-worry">「いい人なのに、なぜかピンとこない」</p>
+              <p class="step-worry step-catch">ひとりで反省会をしなくていい</p>
               <h3 class="step-ttl">定期面談</h3>
             </div>
             <span class="step-toggle" aria-hidden="true"></span>
           </summary>
           <div class="step-body step-body--noimg">
             <div>
-              <p class="step-lead">「なんとなく違う」を一緒に確かめて、最後は自分で決められる</p>
-              <ul class="chips step-tags"><li>お見合い・交際サポート</li><li>伝える技術レッスン</li><li>LINE伴走</li></ul>
+              <p class="step-lead">お見合いやデートのあとにモヤモヤしたら、そのまま話してください。<br>うまくいかなかった理由と次の一歩を、そしてあなたの大切にしたい生き方まで大事にするから、この婚活の時間を無駄にしない。</p>
             </div>
           </div>
         </details>
