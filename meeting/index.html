@@ -101,15 +101,16 @@ ul, ol { list-style: none; }
 .way p { margin-top: 18px; line-height: 2; }
 .way h3 { margin-top: 32px; padding-bottom: 10px; border-bottom: 1px solid var(--rule); font-size: calc(var(--fs-body) * 1.1); font-weight: 500; letter-spacing: .06em; color: var(--accent-deep); }
 .way h3 + p { margin-top: 14px; }
+.ai-logo { width: min(100%, 360px); height: auto; margin: 24px auto 0; }
 /* 01「アプリでできること」の枠 */
-.app-box { margin-top: 32px; padding: clamp(22px, 3vw, 32px); border: 1px solid var(--accent); border-radius: 10px; background: var(--white); display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px clamp(24px, 4vw, 40px); align-items: center; }
+.app-box { margin-top: 32px; padding: clamp(22px, 3vw, 32px); border: 1px solid var(--accent); border-radius: 10px; background: var(--white); }
 .app-box-ttl { font-weight: 500; letter-spacing: .08em; color: var(--accent-deep); }
 .app-list { margin-top: 12px; }
 .app-list li { position: relative; padding: 6px 0 6px 22px; line-height: 1.6; }
 .app-list li::before { content: ''; position: absolute; left: 2px; top: 14px; width: 8px; height: 4px; border-left: 1px solid var(--accent); border-bottom: 1px solid var(--accent); transform: rotate(-45deg); }
-.app-shots { display: flex; gap: 12px; }
-.app-shot { width: 130px; aspect-ratio: 9 / 19; border-radius: 14px; }
-@media (max-width: 640px) { .app-box { grid-template-columns: 1fr; } .app-shots { justify-content: center; } .app-shot { width: 42%; max-width: 150px; } }
+.app-shots { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; align-items: center; margin-top: 24px; }
+.app-shot img { width: 100%; height: auto; border-radius: 8px; }
+@media (max-width: 640px) { .app-shots { grid-template-columns: 1fr; } }
 
 /* 締めの無料相談 */
 .closing { background: linear-gradient(var(--dark-1) 55%, var(--dark-2) 100%); color: #fff; text-align: center; }
@@ -189,10 +190,9 @@ ul, ol { list-style: none; }
             <li>お相手からのお申し込みの確認</li>
           </ul>
         </div>
-        <!-- アプリ画面の画像（使用許可が取れたら <img src="../newimages/xxx.png" alt="IBJアプリの画面"> を .ph の中に入れる） -->
         <div class="app-shots">
-          <div class="ph app-shot"><span class="ph-label">IMAGE<small>アプリ画面</small></span></div>
-          <div class="ph app-shot"><span class="ph-label">IMAGE<small>アプリ画面</small></span></div>
+          <figure class="app-shot"><img src="../newimages/ibj-app.jpg" alt="IBJアプリでお相手のプロフィールを見る男性" width="1200" height="675" loading="lazy"></figure>
+          <figure class="app-shot"><img src="../newimages/ibj-network-diagram.png" alt="IBJに加盟する他の結婚相談所の会員ともお見合いできる仕組みの図" loading="lazy"></figure>
         </div>
       </div>
     </article>
@@ -204,6 +204,7 @@ ul, ol { list-style: none; }
       </div>
       <h2><small>データで出会う</small>AIマッチング</h2>
       <p>条件や写真だけでお相手を探していると、出会いの幅はどうしても狭くなります。ハルカゼでは、IBJの2つのAI機能があなたに合いそうなお相手を見つけます。</p>
+      <img class="ai-logo" src="../newimages/ai-matching.png" alt="IBJのAIマッチング（IBJS 4.0）" width="800" height="400" loading="lazy">
       <h3>AI looks（エーアイ ルックス）</h3>
       <p>あなたの「好きな顔」の傾向をAIが分析し、好みに近いお相手をピックアップします。写真を一枚ずつ見て探す手間がなくなります。「日本顔タイプ診断協会」の監修で、分析の精度も高まっています。</p>
       <h3>AI history（エーアイ ヒストリー）</h3>
