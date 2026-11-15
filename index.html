@@ -432,6 +432,7 @@ ul, ol { list-style: none; }
 .campaign .ttl { font-size: var(--fs-title); font-weight: 500; letter-spacing: .06em; line-height: 1.5; }
 .campaign .val { font-size: calc(var(--fs-title) * 1.5); font-weight: 500; letter-spacing: .04em; line-height: 1.2; white-space: nowrap; }
 .campaign .val small { font-size: .55em; margin-left: .2em; }
+.campaign .cond { width: 100%; padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, .5); line-height: 1.8; }
 
 /* モニター募集のお知らせ（参考サイトの配色：淡いスカイブルーの地・くすんだブルー・墨色の文字） */
 .monitor {
@@ -463,7 +464,7 @@ ul, ol { list-style: none; }
 .monitor-after { margin-top: 16px; line-height: 1.9; }
 @media (max-width: 480px) { .monitor-cond div { grid-template-columns: 1fr; gap: 2px; } }
 
-/* お見合い料0円・申し込み数の上限なし（目立つ帯） */
+/* お見合い料0円（目立つ帯） */
 .price-band { display: inline-block; margin-top: 28px; padding: 12px 24px; background: var(--pink); color: #fff; font-size: calc(var(--fs-title) * .8); font-weight: 500; letter-spacing: .06em; line-height: 1.6; }
 @media (max-width: 800px) { .plan-grid { grid-template-columns: 1fr; } }
 
@@ -687,7 +688,7 @@ ul, ol { list-style: none; }
               <p class="step-lead">本音と、自分の魅力が言葉になる</p>
               <ul class="chips step-tags"><li>価値観整理</li><li>魅力・強み発見</li></ul>
             </div>
-            <div class="ph step-img"><img src="newimages/step-1-online.jpg" alt="オンラインで面談する女性" loading="lazy"><span class="ph-label">PHOTO</span></div>
+            <div class="ph step-img"><img src="newimages/step-1-online.jpg" alt="オンラインで面談する女性" loading="lazy"></div>
           </div>
         </details>
       </li>
@@ -742,7 +743,7 @@ ul, ol { list-style: none; }
               <p class="step-lead">一番自然な表情で、人柄が伝わるプロフィールができる</p>
               <ul class="chips step-tags"><li>写真撮影</li><li>プロフィール作成</li></ul>
             </div>
-            <div class="ph step-img"><img src="newimages/step-2-photo.jpg" alt="プロフィール写真の撮影" loading="lazy"><span class="ph-label">PHOTO</span></div>
+            <div class="ph step-img"><img src="newimages/step-2-photo.jpg" alt="プロフィール写真の撮影" loading="lazy"></div>
           </div>
         </details>
       </li>
@@ -758,10 +759,10 @@ ul, ol { list-style: none; }
           </summary>
           <div class="step-body">
             <div>
-              <p class="step-lead">10万人以上から、申し込みの上限を気にせず出会える</p>
-              <ul class="chips step-tags"><li>お見合い料0円・申し込み上限なし</li></ul>
+              <p class="step-lead">10万人以上の会員から、自分に合うお相手を探せる</p>
+              <ul class="chips step-tags"><li>お見合い料0円</li></ul>
             </div>
-            <div class="ph step-img"><img src="newimages/step-3-ibj-app.jpg" alt="IBJのアプリでお相手を探す男性" loading="lazy"><span class="ph-label">PHOTO</span></div>
+            <div class="ph step-img"><img src="newimages/step-3-ibj-app.jpg" alt="IBJのアプリでお相手を探す男性" loading="lazy"></div>
           </div>
         </details>
       </li>
@@ -850,25 +851,25 @@ ul, ol { list-style: none; }
         <h3 class="lab-sub rv">こんなことを相談できます</h3>
         <ul class="coaches">
           <li class="coach rv">
-            <div class="ph"><img src="newimages/coach-smith-tomomi.jpg" alt="スミス 知美" loading="lazy"><span class="ph-label">PHOTO</span></div>
+            <div class="ph"><img src="newimages/coach-smith-tomomi.jpg" alt="スミス 知美" loading="lazy"></div>
             <p class="lbl">COACH 01</p>
             <p class="nm">スミス 知美<span class="role">パートナーシップ<br>ライフコーチ</span></p>
             <p class="ask">「価値観がちがったとき、どう話し合えばいい？」</p>
           </li>
           <li class="coach rv">
-            <div class="ph"><img src="newimages/honma-chihiro-1.jpeg" alt="本間 知尋" loading="lazy"><span class="ph-label">PHOTO</span></div>
+            <div class="ph"><img src="newimages/honma-chihiro-1.jpeg" alt="本間 知尋" loading="lazy"></div>
             <p class="lbl">COACH 02</p>
             <p class="nm">本間 知尋<span class="role">パートナーシップ<br>ライフコーチ</span></p>
             <p class="ask">「歳の差が心配で、この先に漠然と不安があります。歳の差婚どう思う？」</p>
           </li>
           <li class="coach rv">
-            <div class="ph"><img src="newimages/coach-sexual-wellness.jpg" alt="エマ" loading="lazy"><span class="ph-label">PHOTO</span></div>
+            <div class="ph"><img src="newimages/coach-sexual-wellness.jpg" alt="エマ" loading="lazy"></div>
             <p class="lbl">COACH 03</p>
             <p class="nm">エマ<span class="role">セクシャルウェルネスコーチ<br>精神対話士</span></p>
             <p class="ask">「あまり経験がなく、成婚退会後が楽しみであり、不安でもあります」</p>
           </li>
           <li class="coach rv">
-            <div class="ph"><img src="newimages/coach-image-consultant.jpeg" alt="TOMOMI" loading="lazy"><span class="ph-label">PHOTO</span></div>
+            <div class="ph"><img src="newimages/coach-image-consultant.jpeg" alt="TOMOMI" loading="lazy"></div>
             <p class="lbl">COACH 04</p>
             <p class="nm">TOMOMI<span class="role">イメージコンサルタント</span></p>
             <p class="ask">「婚活のために、服を選ぶことに抵抗がありますが、婚活服ってそんなに大事？」</p>
@@ -885,10 +886,10 @@ ul, ol { list-style: none; }
   <div class="inner">
     <p class="head-en rv">Profile</p>
     <div class="pf rv">
-      <div class="ph"><img src="newimages/ishigami-risa-3.jpeg" alt="石神りさ" loading="lazy"><span class="ph-label">PHOTO</span></div>
+      <div class="ph"><img src="newimages/ishigami-risa-3.jpeg" alt="石神りさ" loading="lazy"></div>
       <div>
         <h2 class="am-title">成婚をゴールにしない、<br>あなたのしあわせが続くように。</h2>
-        <p class="pf-msg">あなたが、あなたらしく生きれるように。<br>毎日がより色鮮やかになるように。<br>成婚に導くサポートはもちろん、それ以上に、<span class="mk">「婚活をしてよかった」心からそう思ってもらえる時間</span>になるようにサポートします。</p>
+        <p class="pf-msg">あなたが、あなたらしく生きられるように。<br>毎日がより色鮮やかになるように。<br>成婚に導くサポートはもちろん、それ以上に、<span class="mk">「婚活をしてよかった」心からそう思ってもらえる時間</span>になるようにサポートします。</p>
         <p class="pf-name">石神りさ</p>
         <p class="pf-role">マッチングプランナー／ハルカゼ代表</p>
       </div>
@@ -933,10 +934,10 @@ ul, ol { list-style: none; }
         </summary>
         <div class="plan-grid">
           <div>
-            <p class="plan-note plan-note--top">１ヶ月お試し入会（お見合い成立または継続利用時は標準プランのいずれかに移行）</p>
+            <p class="plan-note plan-note--top">1か月お試し入会（お見合い成立または継続利用時は標準プランのいずれかに移行）</p>
           </div>
           <ul class="plan-list">
-            <li>申込み30件/月、お見合い料０円</li>
+            <li>お見合い申し込み 月30件</li>
             <li>婚活ロードマップ作成</li>
             <li>プロフィール添削</li>
             <li>LINE・電話相談、個別面談（オンライン可）</li>
@@ -996,7 +997,7 @@ ul, ol { list-style: none; }
       </details>
     </div>
 
-    <p class="price-band rv">お見合い料0円・申し込み数の上限なし</p>
+    <p class="price-band rv">どのプランもお見合い料0円</p>
 
     <div class="campaign rv" id="switch-campaign"><!-- ほかのページの「乗り換えのご相談」リンク（index.html#switch-campaign）の飛び先 -->
       <div>
@@ -1004,6 +1005,7 @@ ul, ol { list-style: none; }
         <p class="ttl"><span class="nw">他社乗り換え</span><span class="nw">割引キャンペーン</span></p>
       </div>
       <p class="val">33,000<small>円 OFF</small></p>
+      <p class="cond">他の結婚相談所から乗り換えてご入会される方が対象です。IBJ系列の相談所からの乗り換えもご利用いただけます。</p>
     </div>
 
     <!-- モニター募集のお知らせ -->
@@ -1015,7 +1017,7 @@ ul, ol { list-style: none; }
       </div>
       <dl class="plan-table monitor-table">
         <div><dt>費用</dt><dd>110,000円<small>（税込）</small><span class="monitor-note">※入会金・諸経費・月会費・成婚退会料含む</span></dd></div>
-        <div><dt>期間</dt><dd>6ヶ月間</dd></div>
+        <div><dt>期間</dt><dd>6か月間</dd></div>
       </dl>
       <ul class="chips monitor-items">
         <li>プロフィール写真撮影</li><li>プロフィール作成</li><li>ビジョンボード作成</li><li>定期面談12回</li>
@@ -1025,7 +1027,7 @@ ul, ol { list-style: none; }
         <summary class="link-more">モニター募集の詳細を見る</summary>
         <div class="monitor-detail">
           <dl class="monitor-cond">
-            <div><dt>条件</dt><dd>「結婚したい」意思のある方<br>顔出しなしで面談時の写真撮影（オンラインを含む）にご協力いただける方</dd></div>
+            <div><dt>条件</dt><dd>「結婚したい」意思のある方<br>面談時の写真撮影（オンラインを含む）にご協力いただける方<span class="monitor-note">※面談の様子を撮影させていただきますが、お顔は写しません。</span></dd></div>
             <div><dt>エリア</dt><dd>特にありません</dd></div>
           </dl>
           <p class="monitor-after">モニターサポート期間を過ぎて以降も活動いただける方は、成婚退会料はなし・月会費を特別価格にてご案内させていただきます。</p>
